@@ -1,4 +1,4 @@
-package gozwave
+package serialapi
 
 import (
 	"encoding/hex"
