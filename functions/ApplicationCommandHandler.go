@@ -1,8 +1,7 @@
 package functions
 
 import (
-	"fmt"
-
+	"github.com/Sirupsen/logrus"
 	"github.com/stampzilla/gozwave/commands"
 )
 
@@ -30,14 +29,22 @@ func (self *FuncApplicationCommandHandler) Decode(data []byte) {
 		switch self.Class {
 		case 0x05: // Report
 			self.Data = commands.NewCmdAlarm(data[2:])
-			fmt.Printf("%+v\n", self.Data)
+			logrus.Debugf("%+v\n", self.Data)
+		}
+	case commands.ManufacturerSpecific:
+		switch self.Class {
+		case 0x05: // Report
+			self.Data = commands.NewCmdManufacturerSpecific(data[2:])
+			logrus.Debugf("%+v\n", self.Data)
 		}
 	case commands.SensorMultiLevel:
 		switch self.Class {
 		case 0x05: // Report
 			self.Data = commands.NewCmdSensorMultiLevel(data[2:])
-			fmt.Printf("%+v\n", self.Data)
+			logrus.Debugf("%+v\n", self.Data)
 		}
 	case commands.WakeUp:
+	default:
+		self.Data = data
 	}
 }

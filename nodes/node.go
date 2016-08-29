@@ -2,6 +2,7 @@ package nodes
 
 import (
 	"github.com/Sirupsen/logrus"
+	"github.com/stampzilla/gozwave/commands"
 	"github.com/stampzilla/gozwave/functions"
 )
 
@@ -16,7 +17,7 @@ type node struct {
 	id byte
 
 	ProtocolInfo        *functions.FuncGetNodeProtocolInfo
-	ManufacurerSpecific *ManufacurerSpecific
+	ManufacurerSpecific *commands.CmdManufacturerSpecific
 
 	awake      chan struct{}
 	identified bool

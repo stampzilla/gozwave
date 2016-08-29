@@ -13,6 +13,10 @@ func (l list) Add(node Node) {
 	go node.Identify()
 }
 
+func (l list) All() map[byte]Node {
+	return l
+}
+
 func (l list) Get(id byte) Node {
 	return l[id]
 }

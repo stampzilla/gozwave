@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"log"
 	"time"
@@ -13,7 +14,13 @@ import (
 func main() {
 
 	//direction := flag.Bool("d", false, "true == down, false == up")
-	//flag.Parse()
+	debug := flag.Bool("v", false, "Verbose - show more debuging info")
+	flag.Parse()
+
+	logrus.SetLevel(logrus.WarnLevel)
+	if *debug {
+		logrus.SetLevel(logrus.DebugLevel)
+	}
 
 	// We communicate with the z-stick thru an "serial port"
 	// on ubuntu it showes up as an ACM interface
@@ -24,7 +31,9 @@ func main() {
 	}
 
 	nodes, _ := z.GetNodes()
-	fmt.Printf("%#v\n", nodes)
+	for _, node := range nodes.All() {
+		fmt.Printf("%#v\n", node)
+	}
 
 	//switch node := nodes.Get(2).(type) {
 	//case Blind:
