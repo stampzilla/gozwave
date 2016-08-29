@@ -38,7 +38,7 @@ func Decode(data []byte) (length int, msg *Message) {
 		if checksum != generateChecksum(checksumData) {
 			logrus.Errorf("Invalid checksum, is %b should be %b, (len=%d)", checksum, generateChecksum(checksumData), length)
 			fmt.Println(hex.Dump(checksumData))
-			return length + 2, nil
+			return -1, nil
 		}
 
 		logrus.Info("Found SOF")
@@ -53,6 +53,8 @@ func Decode(data []byte) (length int, msg *Message) {
 	case 0x18: // CAN
 		logrus.Info("Found CAN")
 		return 1, nil
+	default:
+		return -1, nil // Not a valid start char
 	}
 
 	return

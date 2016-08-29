@@ -19,7 +19,7 @@ import (
 //sync.Mutex
 //}
 
-func Connect(port string) (*serialapi.Connection, error) {
+func Connect(port string, file ...string) (*serialapi.Connection, error) {
 
 	z := serialapi.NewConnection()
 	z.Name = port

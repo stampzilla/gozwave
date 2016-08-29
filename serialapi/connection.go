@@ -20,6 +20,8 @@ type Connection struct {
 	port      io.ReadWriteCloser
 	Connected bool
 
+	Nodes nodes.List
+
 	// Keep track of requests wating a response
 	inFlight map[string]chan *Message
 
@@ -28,6 +30,7 @@ type Connection struct {
 
 func NewConnection() *Connection {
 	z := &Connection{
+		Nodes:    nodes.NewList(),
 		inFlight: make(map[string]chan *Message),
 	}
 	return z
@@ -89,8 +92,6 @@ func (self *Connection) GetNodes() (nodes.List, error) {
 		return nil, fmt.Errorf("Send failed, timeut?")
 	}
 
-	nodelist := nodes.NewList()
-
 	switch r := resp.Data.(type) {
 	case *functions.FuncDiscoveryNodes:
 		for index, active := range r.ActiveNodes {
@@ -106,13 +107,13 @@ func (self *Connection) GetNodes() (nodes.List, error) {
 
 			node := nodes.New(byte(index+1), nil)
 
-			nodelist.Add(node)
+			self.Nodes.Add(node)
 		}
 	default:
 		logrus.Errorf("Got wrong response type: %t", r)
 	}
 
-	return nodelist, nil
+	return self.Nodes, nil
 }
 
 func (self *Connection) Connect(connectChan chan error) (err error) {
@@ -181,6 +182,11 @@ func (self *Connection) Connect(connectChan chan error) (err error) {
 			}
 
 			if l <= len(incomming) { // If complete message was decoded, remove it from buffer
+				if l == -1 { // Invalid checksum
+					incomming = incomming[1:] // Remove first char and try again
+					logrus.Infof("Removing first byte, buffer len=%d", len(incomming))
+					continue
+				}
 				incomming = incomming[l:]
 				if l > 1 {
 					self.port.Write([]byte{0x06}) // Send ACK to stick
@@ -205,5 +211,5 @@ func (self *Connection) Connect(connectChan chan error) (err error) {
 		//}
 	}
 
-	return nil
+	//return nil
 }
