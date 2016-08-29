@@ -24,7 +24,9 @@ func main() {
 	}
 
 	nodes, _ := z.GetNodes()
-	fmt.Printf("%#v\n", nodes)
+	for _, node := range nodes.All() {
+		fmt.Printf("%#v\n", node)
+	}
 
 	//switch node := nodes.Get(2).(type) {
 	//case Blind:

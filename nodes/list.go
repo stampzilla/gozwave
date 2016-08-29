@@ -7,8 +7,11 @@ type Node interface {
 }
 
 type List interface {
+	All() map[byte]Node
 	Get(byte) Node
 }
+
+/***********************************************/
 
 type list map[byte]Node
 
@@ -25,9 +28,15 @@ func (l list) Add(node Node) {
 	l[node.Id()] = node
 }
 
+func (l list) All() map[byte]Node {
+	return l
+}
+
 func (l list) Get(id byte) Node {
 	return l[id]
 }
+
+/***********************************************/
 
 type node struct {
 	id byte

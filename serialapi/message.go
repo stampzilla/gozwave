@@ -2,7 +2,6 @@ package serialapi
 
 import (
 	"encoding/hex"
-	"fmt"
 
 	"github.com/Sirupsen/logrus"
 	"github.com/stampzilla/gozwave/functions"
@@ -37,21 +36,21 @@ func Decode(data []byte) (length int, msg *Message) {
 		checksumData := append(data[1:length+1], byte(0x00))
 		if checksum != generateChecksum(checksumData) {
 			logrus.Errorf("Invalid checksum, is %b should be %b, (len=%d)", checksum, generateChecksum(checksumData), length)
-			fmt.Println(hex.Dump(checksumData))
+			logrus.Debug(hex.Dump(checksumData))
 			return length + 2, nil
 		}
 
-		logrus.Info("Found SOF")
+		logrus.Debug("Found SOF")
 
 		return length + 2, CreateMessage(data)
 	case 0x06: // ACK
-		logrus.Info("Found ACK")
+		logrus.Debug("Found ACK")
 		return 1, nil
 	case 0x15: // NAK
-		logrus.Info("Found NAK")
+		logrus.Warn("Found NAK")
 		return 1, nil
 	case 0x18: // CAN
-		logrus.Info("Found CAN")
+		logrus.Warn("Found CAN")
 		return 1, nil
 	}
 
@@ -91,10 +90,11 @@ func CreateMessage(data []byte) *Message {
 		if len(data) > 5 {
 			message.Data = data[5:]
 		}
+		logrus.Warnf("Dropping message function='%s' with data %x (not implemented)", message.Function, data[4:])
 	}
 
-	fmt.Printf("%+v\n", message)
-	fmt.Printf("%+v\n", message.Data)
+	logrus.Debugf("Message: %+v", message)
+	logrus.Debugf("Message data: %+v", message.Data)
 	return message
 
 	// 1 FrameHeader (type of message)

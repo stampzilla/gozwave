@@ -9,6 +9,7 @@ import (
 
 	"github.com/Sirupsen/logrus"
 	"github.com/pborman/uuid"
+	"github.com/stampzilla/gozwave/commands"
 	"github.com/stampzilla/gozwave/functions"
 	"github.com/stampzilla/gozwave/nodes"
 	"github.com/tarm/serial"
@@ -57,8 +58,7 @@ func (self *Connection) SendRaw(data []byte) chan *Message {
 	// Add header
 	msg = append([]byte{0x01}, msg...)
 
-	fmt.Println("Sending: ")
-	fmt.Println(hex.Dump(msg))
+	logrus.Infof("Sending: %s", hex.Dump(msg))
 	self.Lock()
 	self.port.Write(msg)
 	self.Unlock()
@@ -101,8 +101,30 @@ func (self *Connection) GetNodes() (nodes.List, error) {
 			<-self.SendRaw([]byte{functions.GetNodeProtocolInfo, byte(index + 1)}) // Request node information
 			//		nodeinfo := self.WaitForGetNodeProtocolInfo()
 
-			<-self.SendRaw([]byte{0x62, byte(index + 1)}) // Request is failed node
+			<-self.SendRaw([]byte{functions.IsFailedNode, byte(index + 1)}) // Request is failed node
 			//	<-self.SendRaw([]byte{0xa0, byte(index + 1)}) // Request ?
+
+			//<-self.SendRaw([]byte{
+			//functions.SendData, // Function
+			//0x12,
+			//0x02,
+			//commands.ManufacturerSpecific, // Command
+			//0x04,            // Function class (GET)
+			//byte(index + 1), // Node id
+			//0x03,            // report
+			//}) // Request node information
+
+			resp := <-self.SendRaw([]byte{
+				functions.SendData, // Function
+				byte(index + 1),    // Node id
+				0x02,               // Length
+				commands.ManufacturerSpecific, // Command
+				0x04, // MANUFACTURER_SPECIFIC_GET
+				0x05, // TransmitOptions?
+				0x23, // Callback?
+			}) // Request node information
+
+			logrus.Infof("RESP: %#v", resp)
 
 			node := nodes.New(byte(index+1), nil)
 
@@ -117,7 +139,7 @@ func (self *Connection) GetNodes() (nodes.List, error) {
 
 func (self *Connection) Connect(connectChan chan error) (err error) {
 	defer func() {
-		fmt.Print("Disonnected\n\n")
+		logrus.Error("Disonnected\n\n")
 		self.Connected = false
 	}()
 
@@ -136,7 +158,7 @@ func (self *Connection) Connect(connectChan chan error) (err error) {
 
 	go func() {
 		<-time.After(time.Millisecond * 200)
-		fmt.Print("Connected\n\n")
+		logrus.Debug("Connected\n\n")
 		select {
 		case connectChan <- nil:
 		default:
@@ -150,6 +172,7 @@ func (self *Connection) Connect(connectChan chan error) (err error) {
 	//self.port.Write(msg)
 
 	incomming := make([]byte, 0)
+	age := time.Now()
 
 	for {
 		buf := make([]byte, 128)
@@ -162,7 +185,14 @@ func (self *Connection) Connect(connectChan chan error) (err error) {
 		}
 
 		//fmt.Println(hex.Dump(buf[:n]))
+
+		// If data in buffer is older than 40ms, clear buffer before appending data
+		if time.Now().Sub(age) > (time.Millisecond * 40) {
+			incomming = make([]byte, 0)
+		}
+
 		incomming = append(incomming, buf[:n]...)
+		age = time.Now()
 
 		for len(incomming) > 0 {
 			l, msg := Decode(incomming)
@@ -181,6 +211,7 @@ func (self *Connection) Connect(connectChan chan error) (err error) {
 			}
 
 			if l <= len(incomming) { // If complete message was decoded, remove it from buffer
+				logrus.Infof("Recive: %s", hex.Dump(incomming))
 				incomming = incomming[l:]
 				if l > 1 {
 					self.port.Write([]byte{0x06}) // Send ACK to stick
