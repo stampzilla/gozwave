@@ -4,12 +4,13 @@ import (
 	"github.com/Sirupsen/logrus"
 	"github.com/stampzilla/gozwave/commands"
 	"github.com/stampzilla/gozwave/functions"
+	"github.com/stampzilla/gozwave/serialapi"
 )
 
-func New(address byte, nodeinfo *functions.FuncGetNodeProtocolInfo) *node {
+func New(address byte, connection *serialapi.Connection) *node {
 	return &node{
-		id:           address,
-		ProtocolInfo: nodeinfo,
+		id:         address,
+		connection: connection,
 	}
 }
 
@@ -19,6 +20,7 @@ type node struct {
 	ProtocolInfo        *functions.FuncGetNodeProtocolInfo
 	ManufacurerSpecific *commands.CmdManufacturerSpecific
 
+	connection *serialapi.Connection
 	awake      chan struct{}
 	identified bool
 }
@@ -29,7 +31,7 @@ func (n *node) Id() byte {
 
 func (n *node) isAwake() chan struct{} {
 	c := make(chan struct{})
-
+	close(c)
 	return c
 }
 
@@ -47,6 +49,12 @@ func (n *node) Identify() {
 			}
 		}
 
+		//<-self.Connection.SendRaw([]byte{functions.GetNodeProtocolInfo, byte(index + 1)}) // Request node information
+		//		nodeinfo := self.WaitForGetNodeProtocolInfo()
+
+		//<-self.Connection.SendRaw([]byte{functions.IsFailedNode, byte(index + 1)}) // Request is failed node
+		//	<-self.SendRaw([]byte{0xa0, byte(index + 1)}) // Request ?
+
 		// All firmware and Z-Wave version information
 		// All switching and reporting capabilities including current switching states and sensor values.
 		// Number and maximum size of association groups
@@ -58,5 +66,6 @@ func (n *node) Identify() {
 		// The user can change all values. However it needs to be clear that particularly removing the gateways Node ID from the association groups may cause malfunctions of the gateway.
 
 		n.identified = true
+		return
 	}
 }

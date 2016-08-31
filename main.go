@@ -4,6 +4,7 @@ import (
 	"time"
 
 	"github.com/Sirupsen/logrus"
+	"github.com/stampzilla/gozwave/nodes"
 	"github.com/stampzilla/gozwave/serialapi"
 )
 
@@ -19,20 +20,28 @@ import (
 //sync.Mutex
 //}
 
-func Connect(port string, file ...string) (*serialapi.Connection, error) {
+func Connect(port string, file ...string) (*Controller, error) {
 
-	z := serialapi.NewConnection()
-	z.Name = port
-	z.Baud = 115200
+	c := &Controller{
+		Nodes:      nodes.NewList(),
+		Connection: serialapi.NewConnection(),
+	}
+
+	c.Connection.Name = port
+	c.Connection.Baud = 115200
 	connected := make(chan error)
 
 	go func() {
 		for {
-			err := z.Connect(connected)
+			err := c.Connection.Connect(connected)
 			logrus.Error(err)
 			<-time.After(time.Second)
 		}
 	}()
 
-	return z, <-connected
+	err := <-connected
+
+	go c.getNodes()
+
+	return c, err
 }

@@ -2,7 +2,6 @@ package serialapi
 
 import (
 	"encoding/hex"
-	"fmt"
 	"io"
 	"strings"
 	"sync"
@@ -10,8 +9,6 @@ import (
 
 	"github.com/Sirupsen/logrus"
 	"github.com/pborman/uuid"
-	"github.com/stampzilla/gozwave/functions"
-	"github.com/stampzilla/gozwave/nodes"
 	"github.com/tarm/serial"
 )
 
@@ -21,18 +18,32 @@ type Connection struct {
 	port      io.ReadWriteCloser
 	Connected bool
 
-	Nodes nodes.List
-
 	// Keep track of requests wating a response
-	inFlight map[string]chan *Message
+	inFlight    map[string]*sendPackage
+	send        chan *sendPackage
+	lastCommand string // Uuid of last sent command
+	lastResult  chan byte
 
 	sync.Mutex
 }
 
+type sendPackage struct {
+	message []byte
+	uuid    string
+	result  byte // ACK, NAC, CAN
+
+	function     byte
+	commandclass byte
+	node         byte
+
+	returnChan chan *Message
+}
+
 func NewConnection() *Connection {
 	z := &Connection{
-		Nodes:    nodes.NewList(),
-		inFlight: make(map[string]chan *Message),
+		inFlight:   make(map[string]*sendPackage),
+		send:       make(chan *sendPackage),
+		lastResult: make(chan byte),
 	}
 	return z
 }
@@ -41,11 +52,11 @@ type Encodable interface {
 	Encode() []byte
 }
 
-func (self *Connection) Send(data Encodable) chan *Message {
-	return self.SendRaw(data.Encode())
+func (self *Connection) Send(data Encodable, timeout time.Duration) chan *Message {
+	return self.SendRaw(data.Encode(), timeout)
 }
 
-func (self *Connection) SendRaw(data []byte) chan *Message {
+func (self *Connection) SendRaw(data []byte, timeout time.Duration) chan *Message {
 	returnChan := make(chan *Message)
 
 	// Compile message
@@ -61,69 +72,41 @@ func (self *Connection) SendRaw(data []byte) chan *Message {
 	// Add header
 	msg = append([]byte{0x01}, msg...)
 
-	logrus.Infof("Sending: %s", strings.TrimSpace(hex.Dump(msg)))
-	self.Lock()
-	self.port.Write(msg)
-	self.Unlock()
-
 	uuid := uuid.New()
-	self.inFlight[uuid] = returnChan
+	logrus.Infof("Sending: %s", strings.TrimSpace(hex.Dump(msg)))
+	pkg := &sendPackage{
+		message:    msg,
+		uuid:       uuid,
+		returnChan: returnChan,
+	}
+
+	if len(data) > 0 {
+		pkg.function = data[0]
+	}
+	if len(data) > 1 {
+		pkg.node = data[1]
+	}
+	if len(data) > 3 {
+		pkg.commandclass = data[3]
+	}
+
+	self.send <- pkg
 
 	// Timeout
 	go func() {
-		<-time.After(time.Second)
+		<-time.After(timeout)
 		self.Lock()
 		for index, c := range self.inFlight {
 			if index == uuid {
+				logrus.Warnf("TIMEOUT: %s - %#v", uuid, c)
 				delete(self.inFlight, uuid)
-				close(c)
+				close(c.returnChan)
 			}
 		}
 		self.Unlock()
 	}()
 
 	return returnChan
-}
-
-func (self *Connection) GetNodes() (nodes.List, error) {
-
-	resp := <-self.SendRaw([]byte{0x02})
-	if resp == nil {
-		return nil, fmt.Errorf("Send failed, timeut?")
-	}
-
-	switch r := resp.Data.(type) {
-	case *functions.FuncDiscoveryNodes:
-		for index, active := range r.ActiveNodes {
-			if !active {
-				continue
-			}
-
-			<-self.SendRaw([]byte{functions.GetNodeProtocolInfo, byte(index + 1)}) // Request node information
-			//		nodeinfo := self.WaitForGetNodeProtocolInfo()
-
-			<-self.SendRaw([]byte{functions.IsFailedNode, byte(index + 1)}) // Request is failed node
-			//	<-self.SendRaw([]byte{0xa0, byte(index + 1)}) // Request ?
-
-			//<-self.SendRaw([]byte{
-			//functions.SendData, // Function
-			//0x12,
-			//0x02,
-			//commands.ManufacturerSpecific, // Command
-			//0x04,            // Function class (GET)
-			//byte(index + 1), // Node id
-			//0x03,            // report
-			//}) // Request node information
-
-			node := nodes.New(byte(index+1), nil)
-
-			self.Nodes.Add(node)
-		}
-	default:
-		logrus.Errorf("Got wrong response type: %t", r)
-	}
-
-	return self.Nodes, nil
 }
 
 func (self *Connection) Connect(connectChan chan error) (err error) {
@@ -155,11 +138,34 @@ func (self *Connection) Connect(connectChan chan error) (err error) {
 		self.Connected = true
 	}()
 
-	//<-time.After(time.Millisecond * 100)
-	////self.port.Write([]byte{0x01, 0x09, 0x00, 0x13, 0x06, 0x03, 0x20, 0x01, 0xFF, 0x05, 0x3B})
-	//msg := []byte{0x01, 0x03, 0x00, 0x07, 0xfb}
-	//self.port.Write(msg)
+	go self.Writer()
+	return self.Reader()
+}
 
+func (self *Connection) Writer() {
+	for {
+		select {
+		case pkg := <-self.send:
+			self.Lock()
+			logrus.Errorf("Sending: %#v", pkg)
+			self.inFlight[pkg.uuid] = pkg
+			self.port.Write(pkg.message)
+			self.lastCommand = pkg.uuid
+			self.Unlock()
+
+			select {
+			case result := <-self.lastResult:
+				//logrus.Infof("RESULT: %s", pkg.uuid)
+				pkg.result = result
+			case <-time.After(time.Second):
+				// SEND TIMEOUT
+			}
+			self.lastCommand = ""
+		}
+	}
+}
+
+func (self *Connection) Reader() error {
 	incomming := make([]byte, 0)
 	age := time.Now()
 
@@ -186,24 +192,61 @@ func (self *Connection) Connect(connectChan chan error) (err error) {
 		for len(incomming) > 0 {
 			l, msg := Decode(incomming)
 
-			if msg != nil {
-				self.Lock()
+			if l == 1 {
 				for index, c := range self.inFlight {
-					select {
-					case c <- msg: // Try to deliver message
-					default: // Else close and remove
-						delete(self.inFlight, index)
-						close(c)
+					if c.uuid == self.lastCommand {
+						select {
+						case self.lastResult <- incomming[0]:
+						default:
+						}
+
+						if incomming[0] == 0x15 || incomming[0] == 0x18 { // NAK or CAN
+							logrus.Warnf("Command failed: %s - %#v", c.uuid, c)
+							delete(self.inFlight, index)
+							close(c.returnChan)
+						}
 					}
 				}
-				self.Unlock()
 			}
 
 			if l <= len(incomming) { // If complete message was decoded, remove it from buffer
 				if l == -1 { // Invalid checksum
 					incomming = incomming[1:] // Remove first char and try again
 					logrus.Infof("Removing first byte, buffer len=%d", len(incomming))
+
 					continue
+				}
+
+				if l > 1 { // A message was received
+					self.Lock()
+					for index, c := range self.inFlight {
+						if len(incomming) > 3 {
+							if c.function != 0 && c.function != incomming[3] && !(c.function == 0x13 && incomming[3] == 0x04) {
+								//logrus.Warnf("Skipping pkg %s, function %x != %x", c.uuid, c.function, incomming[3])
+								continue
+							}
+						}
+						if len(incomming) > 5 {
+							if c.node != 0 && c.node != incomming[5] {
+								//logrus.Warnf("Skipping pkg %s, node %x != %x", c.uuid, c.node, incomming[5])
+								continue
+							}
+						}
+						if len(incomming) > 7 {
+							if c.commandclass != 0 && c.commandclass != incomming[7] {
+								//logrus.Warn("Skipping pkg %s, command %x is not %x", c.uuid, c.commandclass, incomming[7])
+								continue
+							}
+						}
+
+						select {
+						case c.returnChan <- msg: // Try to deliver message
+						default:
+						}
+						delete(self.inFlight, index)
+						close(c.returnChan)
+					}
+					self.Unlock()
 				}
 
 				logrus.Infof("Recived: %s", strings.TrimSpace(hex.Dump(incomming)))
@@ -215,21 +258,6 @@ func (self *Connection) Connect(connectChan chan error) (err error) {
 				break
 			}
 		}
-		//fmt.Println(n)
-
-		//for {
-		//n := strings.Index(incomming, footer)
-
-		//if n < 0 {
-		//break
-		//}
-
-		//msg := incomming[:n]
-		//incomming = incomming[n+len(footer):]
-
-		////go callback(msg)
-		//}
 	}
 
-	//return nil
 }
