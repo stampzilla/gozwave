@@ -3,30 +3,40 @@ package nodes
 import (
 	"github.com/Sirupsen/logrus"
 	"github.com/stampzilla/gozwave/commands"
+	"github.com/stampzilla/gozwave/events"
 	"github.com/stampzilla/gozwave/functions"
 	"github.com/stampzilla/gozwave/serialapi"
 )
 
-func New(address byte, connection *serialapi.Connection) *node {
-	return &node{
-		id:         address,
+func New(address byte, connection *serialapi.Connection, eventQue chan interface{}) (*node, chan struct{}) {
+	n := &node{
+		Id_:        address,
 		connection: connection,
+		eventQue:   eventQue,
 	}
+
+	c := make(chan struct{})
+	go n.Worker(c)
+
+	return n, c
 }
 
 type node struct {
-	id byte
+	Id_     byte `json:"id"`
+	IsAwake bool `json:"is_awake"`
 
 	ProtocolInfo        *functions.FuncGetNodeProtocolInfo
 	ManufacurerSpecific *commands.CmdManufacturerSpecific
 
 	connection *serialapi.Connection
+	eventQue   chan interface{}
+
 	awake      chan struct{}
 	identified bool
 }
 
 func (n *node) Id() byte {
-	return n.id
+	return n.Id_
 }
 
 func (n *node) isAwake() chan struct{} {
@@ -35,11 +45,52 @@ func (n *node) isAwake() chan struct{} {
 	return c
 }
 
-func (n *node) Identify() {
-	logrus.Warnf("Started identification on node %d", n.Id())
+func (n *node) Worker(basicDone chan struct{}) {
+	go n.Identify(basicDone)
+
+	n.pushEvent(events.NodeDiscoverd{
+		Address: n.Id(),
+	})
 
 	for {
+		select {}
+	}
+}
+func (n *node) Identify(basicDone chan struct{}) {
+	logrus.Warnf("Started identification on node %d", n.Id())
+
+	defer func() {
+		if basicDone != nil {
+			close(basicDone)
+			basicDone = nil
+		}
+	}()
+
+	if n.Id() == 1 {
+		return
+	}
+
+	for {
+		if n.ProtocolInfo == nil {
+			err := n.RequestProtocolInfo()
+			if err != nil {
+				continue
+			}
+			n.pushEvent(events.NodeUpdated{
+				Address: n.Id(),
+			})
+		}
+
+		n.IsAwake = n.ProtocolInfo.Listening
+
+		if basicDone != nil {
+			close(basicDone)
+			basicDone = nil
+		}
+
 		<-n.isAwake()
+		//<-self.Connection.SendRaw([]byte{functions.GetNodeProtocolInfo, byte(index + 1)}) // Request node information
+		//		nodeinfo := self.WaitForGetNodeProtocolInfo()
 
 		// All manufacturer specific information such as vendor, vendors product ID and product type
 		if n.ManufacurerSpecific == nil {
@@ -47,10 +98,10 @@ func (n *node) Identify() {
 			if err != nil {
 				continue
 			}
+			n.pushEvent(events.NodeUpdated{
+				Address: n.Id(),
+			})
 		}
-
-		//<-self.Connection.SendRaw([]byte{functions.GetNodeProtocolInfo, byte(index + 1)}) // Request node information
-		//		nodeinfo := self.WaitForGetNodeProtocolInfo()
 
 		//<-self.Connection.SendRaw([]byte{functions.IsFailedNode, byte(index + 1)}) // Request is failed node
 		//	<-self.SendRaw([]byte{0xa0, byte(index + 1)}) // Request ?
@@ -67,5 +118,12 @@ func (n *node) Identify() {
 
 		n.identified = true
 		return
+	}
+}
+
+func (self *node) pushEvent(event interface{}) {
+	select {
+	case self.eventQue <- event:
+	default:
 	}
 }

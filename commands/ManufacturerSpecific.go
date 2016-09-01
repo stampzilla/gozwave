@@ -9,9 +9,9 @@ import (
 )
 
 type CmdManufacturerSpecific struct {
-	Manufacturer uint16
-	Type         uint16
-	Id           uint16
+	Manufacturer string `json:"manufacturer"`
+	Type         string `json:"type"`
+	Id           string `json:"id"`
 }
 
 func NewCmdManufacturerSpecific(data []byte) *CmdManufacturerSpecific {
@@ -21,18 +21,30 @@ func NewCmdManufacturerSpecific(data []byte) *CmdManufacturerSpecific {
 		return nil
 	}
 
-	ms := &CmdManufacturerSpecific{}
+	type AliasCmdManufacturerSpecific struct {
+		Manufacturer uint16
+		Type         uint16
+		Id           uint16
+	}
+
+	ms := &AliasCmdManufacturerSpecific{}
 
 	buf := bytes.NewReader(data)
-	err := binary.Read(buf, binary.LittleEndian, ms)
+	err := binary.Read(buf, binary.BigEndian, ms)
 	if err != nil {
 		logrus.Warn("Failed to decode ManufacturerSpecific: %s", err)
 		return nil
 	}
 
-	return ms
+	ret := &CmdManufacturerSpecific{}
+
+	ret.Manufacturer = fmt.Sprintf("%04x", ms.Manufacturer)
+	ret.Type = fmt.Sprintf("%04x", ms.Type)
+	ret.Id = fmt.Sprintf("%04x", ms.Id)
+
+	return ret
 }
 
 func (ms *CmdManufacturerSpecific) String() string {
-	return fmt.Sprintf("%04x:%04x:%04x", ms.Manufacturer, ms.Type, ms.Id)
+	return fmt.Sprintf("%s:%s:%s", ms.Manufacturer, ms.Type, ms.Id)
 }

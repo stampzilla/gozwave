@@ -1,22 +1,20 @@
 package nodes
 
-type list map[byte]Node
+type List map[byte]Node
 
-func NewList() *list {
-	l := make(list)
+func NewList() *List {
+	l := make(List)
 	return &l
 }
 
-func (l list) Add(node Node) {
+func (l List) Add(node Node) {
 	l[node.Id()] = node
-
-	go node.Identify()
 }
 
-func (l list) All() map[byte]Node {
+func (l List) All() map[byte]Node {
 	return l
 }
 
-func (l list) Get(id byte) Node {
+func (l List) Get(id byte) Node {
 	return l[id]
 }

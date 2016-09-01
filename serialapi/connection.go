@@ -24,6 +24,8 @@ type Connection struct {
 	lastCommand string // Uuid of last sent command
 	lastResult  chan byte
 
+	callback byte
+
 	sync.Mutex
 }
 
@@ -200,10 +202,15 @@ func (self *Connection) Reader() error {
 						default:
 						}
 
-						if incomming[0] == 0x15 || incomming[0] == 0x18 { // NAK or CAN
+						if incomming[0] == 0x15 { // NAK - request failed
 							logrus.Warnf("Command failed: %s - %#v", c.uuid, c)
 							delete(self.inFlight, index)
 							close(c.returnChan)
+						}
+
+						if incomming[0] == 0x18 { // CAN - resend request
+							<-time.After(time.Millisecond * 100)
+							self.send <- c
 						}
 					}
 				}
@@ -222,20 +229,22 @@ func (self *Connection) Reader() error {
 					for index, c := range self.inFlight {
 						if len(incomming) > 3 {
 							if c.function != 0 && c.function != incomming[3] && !(c.function == 0x13 && incomming[3] == 0x04) {
-								//logrus.Warnf("Skipping pkg %s, function %x != %x", c.uuid, c.function, incomming[3])
+								logrus.Warnf("Skipping pkg %s, function %x != %x", c.uuid, c.function, incomming[3])
 								continue
 							}
 						}
-						if len(incomming) > 5 {
-							if c.node != 0 && c.node != incomming[5] {
-								//logrus.Warnf("Skipping pkg %s, node %x != %x", c.uuid, c.node, incomming[5])
-								continue
+						if c.function != 0x41 {
+							if len(incomming) > 5 {
+								if c.node != 0 && c.node != incomming[5] {
+									logrus.Warnf("Skipping pkg %s, node %x != %x", c.uuid, c.node, incomming[5])
+									continue
+								}
 							}
-						}
-						if len(incomming) > 7 {
-							if c.commandclass != 0 && c.commandclass != incomming[7] {
-								//logrus.Warn("Skipping pkg %s, command %x is not %x", c.uuid, c.commandclass, incomming[7])
-								continue
+							if len(incomming) > 7 {
+								if c.commandclass != 0 && c.commandclass != incomming[7] {
+									logrus.Warn("Skipping pkg %s, command %x is not %x", c.uuid, c.commandclass, incomming[7])
+									continue
+								}
 							}
 						}
 
