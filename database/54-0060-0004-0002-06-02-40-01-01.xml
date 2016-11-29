@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0060"/>
+        <productType value="0004"/>
+    <productId value="0002"/>
+    <libType value="06"/>
+    <protoVersion value="02"/>
+    <protoSubVersion value="40"/>
+    <appVersion value="01"/>
+    <appSubVersion value="01"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+                    
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Schalter Zwischenstecker mit Meterfunnktion</lang>
+            <lang xml:lang="en">Switch Meter Plugin</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Einfacher Tastendruck</lang>
+            <lang xml:lang="en">Single Press button</lang>
+          </inclusionNote>
+            <productName>AN158</productName>
+            <brandName>Everspring</brandName>
+            <productLine>Plugins</productLine>
+                            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0086"/>
+        <commandClass id="0027"/>
+        <commandClass id="0072"/>
+        <commandClass id="0070"/>
+        <commandClass id="0032" version="2"/>
+        <commandClass id="0025"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="2" maxNodes="4">
+            <description>
+                <lang xml:lang="de">Tastendruck, um andere Geräte zu schalten</lang>
+                <lang xml:lang="en">Pressing button to switch other devices</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="de">Sende Alarm und andere Statusmeldungen</lang>
+                <lang xml:lang="en">Send Alarm, Switch Report and Meter Report</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="1" default="0a">
+            <name>
+                <lang xml:lang="de">Mindestschaltperiode</lang>
+                <lang xml:lang="en">True Period</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Das ist die Mindestzeit, die ein Schaltzustand anhalten muss, bevor ein Funkkommando ausgesendet wird.</lang>
+                <lang xml:lang="en">This is the time the switching status needs to remain unchanged after a change to cause the device to send out a status message</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Ausgeschaltet</lang>
+                    <lang xml:lang="en">Disable</lang>
+                  </description>
+              </value>
+            <value from="01" to="78" unit="* 100 ms">
+                <description>
+                    <lang xml:lang="de">10 * 100 ms  = 1 sec</lang>
+                    <lang xml:lang="en">10 * 100 ms  = 1 sec</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Sendet Basic Kommando</lang>
+                <lang xml:lang="en">Send Out Basic Command</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"> Aktivieren oder Deaktivieren des Sendens automatischer Statusnachrichten</lang>
+                <lang xml:lang="en">Enable or Disable the status message function when the local button press changes the switching state</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Disable</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Aktiviert</lang>
+                    <lang xml:lang="en">Enable</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="range" size="2" default="0003">
+            <name>
+                <lang xml:lang="de">Interval zum automatischen Senden des Stromreports</lang>
+                <lang xml:lang="en">Meter Report Period</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Es wird der Interval eingestellt, innerhalb dessen automatisch Leistungsdaten an Gruppe 2 gesendet werden. Der Wert 0 deaktiviert das automatische Senden.</lang>
+                <lang xml:lang="en">The device will report its meter value within the interval set. Set to 0 will disable the autoreporting function.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="de">Ausgeschaltet</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                  </description>
+              </value>
+            <value from="0001" to="0ca8" unit="* 10 s">
+                <description>
+                    <lang xml:lang="de">Period = value * 10 sec</lang>
+                    <lang xml:lang="en">Interval = Wert * 10 sec</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/3115aaf330dca9d17154c9efad3fe9c874407c3a.gif" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

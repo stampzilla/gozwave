@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="008a"/>
+        <productType value="0008"/>
+    <productId value="0100"/>
+    <libType value="06"/>
+    <protoVersion value="02"/>
+    <protoSubVersion value="61"/>
+    <appVersion value="01"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+            <certId>14323</certId>
+            <certNumber>ZC08-11060010</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Plugin module for a power socket which can switch on/off the socket</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Press and hold the push button for 4 seconds and release to start the inclusion or exclusion process.</lang>
+          </inclusionNote>
+            <productName>Power Switch</productName>
+            <brandName>Power Switch</brandName>
+            <productLine>Control</productLine>
+            <productCode>8</productCode>
+            <productVersion>1.0</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" inNIF="false"/>
+        <commandClass id="0025"/>
+        <commandClass id="0086"/>
+        <commandClass id="0027"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+        <commandClass id="0073"/>
+        <commandClass id="0075"/>
+        <commandClass id="0085"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="en">The devices that are
+associated can be controlled on application level. Every time the push button is pressed a switch binary report is sent to the associated node.
+The Power Switch can be associated into a grouping. If so, the Power Switch can be controlled by another ZWave
+device (does not have to be a controller).</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="1" default="55">
+            <name>
+                <lang xml:lang="en">Set to default</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Set all config values to default values (factory settings).</lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="en">All values (0x00 – 0xFF) except for 0x55 can be used to default all the
+configuration params.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Startup with last known socket status</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The state in what the switch is when power is supplied.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">When power applied socket is always off.</lang>
+                  </description>
+              </value>
+            <value from="01" to="ff">
+                <description>
+                    <lang xml:lang="en">When power applied socket is the state before power
+was disconnected.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Temperature offset</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">A offset for the temperature.</lang>
+              </description>
+      
+                  <value from="8000" to="7fff">
+                <description>
+                    <lang xml:lang="en">A signed integer to determine the offset off the temperature.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/30271e8206e4e9fb2180c478746b22244ad60d98.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

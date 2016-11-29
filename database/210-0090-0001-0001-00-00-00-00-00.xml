@@ -1,0 +1,1466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0090"/>
+        <productType value="0001"/>
+    <productId value="0001"/>
+    <libType value="00"/>
+    <protoVersion value="00"/>
+    <protoSubVersion value="00"/>
+    <appVersion value="00"/>
+    <appSubVersion value="00"/>
+        <basicClass value="03"/>
+            <genericClass value="40"/>
+            <specificClass value="03"/>
+        <optional value="false"/>
+    <listening value="true"/>
+    <routing value="false"/>
+            <rfFrequency>US</rfFrequency>
+            <certId>14663</certId>
+            <certNumber>ZC08-12020011</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Keyless entry lock with Zwave</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Press button B on the lock once (see also Home Connect Lock Installation Instructions)</lang>
+          </inclusionNote>
+            <productName>Smart Code with Home Connect Technology </productName>
+            <brandName>Kwikset</brandName>
+            <productLine>Residential Access Solutions</productLine>
+            <productCode>910</productCode>
+            <productVersion>2.6</productVersion>
+            <batteryType>AA</batteryType>
+            <batteryCount>4</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0071" secure="true"/>
+        <commandClass id="0085" secure="true"/>
+        <commandClass id="0020" secure="true"/>
+        <commandClass id="0080" secure="true"/>
+        <commandClass id="0070" secure="true"/>
+        <commandClass id="0062" secure="true"/>
+        <commandClass id="0072" secure="true"/>
+        <commandClass id="0075" secure="true"/>
+        <commandClass id="0098" secure="true"/>
+        <commandClass id="008b" secure="true"/>
+        <commandClass id="0063" secure="true"/>
+        <commandClass id="0086" secure="true"/>
+        <commandClass id="004c" secure="true"/>
+        <commandClass id="004e" version="2" secure="true"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="en">Device to which unsolicited alarm reports may be sent. </lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code Type 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">User Code Type: Guest (Required for Year Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">User Code Type: Worker (Required for Week Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Value of 0xFF is returned when there is no corresponding user
+code for the requested. (Ignored for write)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code Type 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">User Code Type: Guest (Required for Year Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">User Code Type: Worker (Required for Week Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Value of 0xFF is returned when there is no corresponding user
+code for the requested. (Ignored for write)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code Type 3</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">User Code Type: Guest (Required for Year Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">User Code Type: Worker (Required for Week Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Value of 0xFF is returned when there is no corresponding user
+code for the requested. (Ignored for write)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code Type 4</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">User Code Type: Guest (Required for Year Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">User Code Type: Worker (Required for Week Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Value of 0xFF is returned when there is no corresponding user
+code for the requested. (Ignored for write)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code Type 5</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">User Code Type: Guest (Required for Year Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">User Code Type: Worker (Required for Week Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Value of 0xFF is returned when there is no corresponding user
+code for the requested. (Ignored for write)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code Type 6</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">User Code Type: Guest (Required for Year Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">User Code Type: Worker (Required for Week Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Value of 0xFF is returned when there is no corresponding user
+code for the requested. (Ignored for write)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code Type 7</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">User Code Type: Guest (Required for Year Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">User Code Type: Worker (Required for Week Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Value of 0xFF is returned when there is no corresponding user
+code for the requested. (Ignored for write)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code Type 8</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">User Code Type: Guest (Required for Year Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">User Code Type: Worker (Required for Week Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Value of 0xFF is returned when there is no corresponding user
+code for the requested. (Ignored for write)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code Type 9</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">User Code Type: Guest (Required for Year Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">User Code Type: Worker (Required for Week Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Value of 0xFF is returned when there is no corresponding user
+code for the requested. (Ignored for write)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code Type 10</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">User Code Type: Guest (Required for Year Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">User Code Type: Worker (Required for Week Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Value of 0xFF is returned when there is no corresponding user
+code for the requested. (Ignored for write)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code Type 11</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">User Code Type: Guest (Required for Year Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">User Code Type: Worker (Required for Week Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Value of 0xFF is returned when there is no corresponding user
+code for the requested. (Ignored for write)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code Type 12</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">User Code Type: Guest (Required for Year Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">User Code Type: Worker (Required for Week Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Value of 0xFF is returned when there is no corresponding user
+code for the requested. (Ignored for write)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code Type 13</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">User Code Type: Guest (Required for Year Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">User Code Type: Worker (Required for Week Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Value of 0xFF is returned when there is no corresponding user
+code for the requested. (Ignored for write)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="14" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code Type 14</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">User Code Type: Guest (Required for Year Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">User Code Type: Worker (Required for Week Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Value of 0xFF is returned when there is no corresponding user
+code for the requested. (Ignored for write)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="15" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code Type 15</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">User Code Type: Guest (Required for Year Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">User Code Type: Worker (Required for Week Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Value of 0xFF is returned when there is no corresponding user
+code for the requested. (Ignored for write)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="16" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code Type 16</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">User Code Type: Guest (Required for Year Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">User Code Type: Worker (Required for Week Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Value of 0xFF is returned when there is no corresponding user
+code for the requested. (Ignored for write)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="17" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code Type 17</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">User Code Type: Guest (Required for Year Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">User Code Type: Worker (Required for Week Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Value of 0xFF is returned when there is no corresponding user
+code for the requested. (Ignored for write)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="18" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code Type 18</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">User Code Type: Guest (Required for Year Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">User Code Type: Worker (Required for Week Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Value of 0xFF is returned when there is no corresponding user
+code for the requested. (Ignored for write)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="19" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code Type 19</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">User Code Type: Guest (Required for Year Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">User Code Type: Worker (Required for Week Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Value of 0xFF is returned when there is no corresponding user
+code for the requested. (Ignored for write)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="20" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code Type 20</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">User Code Type: Guest (Required for Year Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">User Code Type: Worker (Required for Week Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Value of 0xFF is returned when there is no corresponding user
+code for the requested. (Ignored for write)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="21" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code Type 21</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">User Code Type: Guest (Required for Year Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">User Code Type: Worker (Required for Week Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Value of 0xFF is returned when there is no corresponding user
+code for the requested. (Ignored for write)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="22" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code Type 22</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">User Code Type: Guest (Required for Year Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">User Code Type: Worker (Required for Week Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Value of 0xFF is returned when there is no corresponding user
+code for the requested. (Ignored for write)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="23" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code Type 23</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">User Code Type: Guest (Required for Year Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">User Code Type: Worker (Required for Week Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Value of 0xFF is returned when there is no corresponding user
+code for the requested. (Ignored for write)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="24" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code Type 24</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">User Code Type: Guest (Required for Year Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">User Code Type: Worker (Required for Week Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Value of 0xFF is returned when there is no corresponding user
+code for the requested. (Ignored for write)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="25" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code Type 25</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">User Code Type: Guest (Required for Year Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">User Code Type: Worker (Required for Week Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Value of 0xFF is returned when there is no corresponding user
+code for the requested. (Ignored for write)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="26" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code Type 26</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">User Code Type: Guest (Required for Year Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">User Code Type: Worker (Required for Week Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Value of 0xFF is returned when there is no corresponding user
+code for the requested. (Ignored for write)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="27" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code Type 27</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">User Code Type: Guest (Required for Year Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">User Code Type: Worker (Required for Week Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Value of 0xFF is returned when there is no corresponding user
+code for the requested. (Ignored for write)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="28" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code Type 28</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">User Code Type: Guest (Required for Year Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">User Code Type: Worker (Required for Week Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Value of 0xFF is returned when there is no corresponding user
+code for the requested. (Ignored for write)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="29" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code Type 29</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">User Code Type: Guest (Required for Year Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">User Code Type: Worker (Required for Week Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Value of 0xFF is returned when there is no corresponding user
+code for the requested. (Ignored for write)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="30" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code Type 30</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">User Code Type: Guest (Required for Year Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">User Code Type: Worker (Required for Week Day Schedules)</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Value of 0xFF is returned when there is no corresponding user
+code for the requested. (Ignored for write)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="31" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Returns state of user accessible dipswitches</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+          </configParam>
+        <configParam number="32" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Set Powerlevel</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Low power inclusion/exclusion</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Normal power inclusion/exclusion</lang>
+                  </description>
+              </value>
+            <value from="02" to="ff">
+                <description>
+                    <lang xml:lang="en">Undefined (ignored)</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/213eac5f8bac292cea755b44a5c18221f675fd0a.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

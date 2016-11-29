@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="013c"/>
+        <productType value="0001"/>
+    <productId value="0015"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="5f"/>
+    <appVersion value="01"/>
+    <appSubVersion value="01"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="07"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">The in-wall Roller Shutter Controller is designed to switch rise/lower roller shutter connected to its terminals using radio waves, controllers and a push button directlyconnected to this Roller Controller.</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Pressing Include button three times within 2 seconds will enter inclusion mode.</lang>
+          </inclusionNote>
+            <productName>Roller shutter controller</productName>
+            <brandName>Philio</brandName>
+            <productLine>Philio Z-Wave Products</productLine>
+            <productCode>PAN08-1A </productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="005a"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0073"/>
+        <commandClass id="0025"/>
+        <commandClass id="0020"/>
+        <commandClass id="0026" version="3"/>
+        <commandClass id="0070"/>
+        <commandClass id="0071"/>
+        <commandClass id="0032" version="3"/>
+        <commandClass id="002b"/>
+        <commandClass id="002c"/>
+        <commandClass id="007a" version="2"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="en">MULTILEVEL_SWITCH_REPORT、METER_REPORT_COMMAND_V3、ALARM_REPORT</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="2" default="02d0">
+            <name>
+                <lang xml:lang="en">Watt Meter Report Period</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Set report period.
+5*720s=3600s=1 hour
+</lang>
+              </description>
+      
+                  <value from="0001" to="7fff" unit="x5 sec">
+                <description>
+                    <lang xml:lang="en">Set time interval of watt meter report period.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="2" default="0006">
+            <name>
+                <lang xml:lang="en">KWH Meter Report Period</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Set report period.
+6*10min= 1 hour</lang>
+              </description>
+      
+                  <value from="0001" to="7fff" unit="x10 min">
+                <description>
+                    <lang xml:lang="en">Set time interval of KWH meter report period.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="range" size="2" default="01f4">
+            <name>
+                <lang xml:lang="en">Threshold of current for Load caution</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Define treshold.</lang>
+              </description>
+      
+                  <value from="000a" to="01f4" unit="x0.01A">
+                <description>
+                    <lang xml:lang="en">Set value of treshold warning.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="2" default="2710">
+            <name>
+                <lang xml:lang="en">Threshold of KWh for Load caution</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Define treshold.</lang>
+              </description>
+      
+                  <value from="0001" to="2710" unit="x1KWh">
+                <description>
+                    <lang xml:lang="en">Set value of treshold warning.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="constant" size="1" default="02">
+            <name>
+                <lang xml:lang="en">External switch type</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Choose external switch type.
+</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">1: One Push button</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">2:Two Push button</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="constant" size="1" default="02">
+            <name>
+                <lang xml:lang="en">Level report mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Select level report mode.</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">1:Report destination
+level in 5s</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">2:Report 10 percent
+level while
+running</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/6672c10447e9c81010b21a3cfaad516be0966b8f.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

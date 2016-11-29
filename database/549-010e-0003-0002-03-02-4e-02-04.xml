@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="010e"/>
+        <productType value="0003"/>
+    <productId value="0002"/>
+    <libType value="03"/>
+    <protoVersion value="02"/>
+    <protoSubVersion value="4e"/>
+    <appVersion value="02"/>
+    <appSubVersion value="04"/>
+        <basicClass value="04"/>
+            <genericClass value="40"/>
+            <specificClass value="02"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="true"/>
+        <beamSensor>1000</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Z-Wave Türschloss</lang>
+            <lang xml:lang="en">Z-Wave Door Lock</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">User-Taste drücken und halten bis 2 mal Signalton ertönt</lang>
+            <lang xml:lang="en">Hold button untill second beep</lang>
+          </inclusionNote>
+            <productName>Danalock Circle</productName>
+            <brandName>Polycontrol</brandName>
+                    <productVersion>2.4</productVersion>
+            <batteryType>Lithium Battery Pack 3.0V</batteryType>
+            <batteryCount>1</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0072" secure="true"/>
+        <commandClass id="0080" secure="true"/>
+        <commandClass id="0086" secure="true"/>
+        <commandClass id="0098" secure="true"/>
+        <commandClass id="004e" inNIF="false" secure="true"/>
+        <commandClass id="0062" inNIF="false" secure="true"/>
+        <commandClass id="0063" inNIF="false" secure="true"/>
+        <commandClass id="0070" inNIF="false" secure="true"/>
+        <commandClass id="008a" inNIF="false" secure="true"/>
+      </commandClasses>
+  
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Drehrichtung</lang>
+                <lang xml:lang="en">Turning Direction</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Parameter definiert in welche Richtung der Motor das Schloss in Relation zum Schließbolzen dreht</lang>
+                <lang xml:lang="en">parameter defines which direction the motor turns the lock in relation to the latch</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">in Uhrzeigerrichtung beim Schließen</lang>
+                    <lang xml:lang="en">Clockwise when latching</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">gegen Uhrzeigerrichtung beim Schließen</lang>
+                    <lang xml:lang="en">Counterclockwise when latching</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="1" default="03">
+            <name>
+                <lang xml:lang="de">Drehgeschwindigkeit (Drehmoment)</lang>
+                <lang xml:lang="en">Turning Speed (Torque)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Parameter definiert, ob Motor langsam (mehr Drehmoment) oder schnell (weniger Drehmoment) dreht</lang>
+                <lang xml:lang="en">parameter defines whether the motor goes slower (more torque) or faster (less torque) when turning the lock</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">niedrigste Geschwindigkeit, höchstes Drehmoment</lang>
+                    <lang xml:lang="en">Slowest Speed, Strongest Torque</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">niedrige Geschwindigkeit, hoches Drehmoment</lang>
+                    <lang xml:lang="en">Slow Speed, Stronger Torque</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">normale Geschwindigkeit, normales Drehmoment</lang>
+                    <lang xml:lang="en">Normal Speed,	Normal Torque</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">hohe Geschwindigkeit, geringes Drehmoment</lang>
+                    <lang xml:lang="en">Fast Speed, Weak Torque</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de">höchste Geschwindigkeit, geringstes Drehmoment</lang>
+                    <lang xml:lang="en">Fastest Speed, Weakest Torque</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Drehmoment-Einstellung</lang>
+                <lang xml:lang="en">Torque Setup</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Parameter definiert ob Motor mit viel oder wenig Drehmoment dreht beim Öffnen/Schließen (weniger Drehmoment spart Energie)</lang>
+                <lang xml:lang="en">parameter defines if more or less torque is used at latch/unlatch operations (less torque safes power)</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">geringes Drehmoment, Energiespar-Modus</lang>
+                    <lang xml:lang="en">Less torque, Power Saving mode	</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Normaler Modus</lang>
+                    <lang xml:lang="en">Normal Mode</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="1" default="09">
+            <name>
+                <lang xml:lang="de">Drehwinkel</lang>
+                <lang xml:lang="en">Turning degrees</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Parameter definiert wieviel Grad das Schloss dreht bei Öffnen/Schließen</lang>
+                <lang xml:lang="en">parameter defines how many degrees the lock turns at latch/unlatch operations</lang>
+              </description>
+      
+                  <value from="01" to="64" unit="*10°">
+                <description>
+                    <lang xml:lang="de">Faktor 10;
+1 = 10°;
+72 = 720° = 2 Umdrehungen</lang>
+                    <lang xml:lang="en">factor 10;
+1 = 10°;
+72 = 720° = 2 turns</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Auto Schließ-Zeit Verzögerung</lang>
+                <lang xml:lang="en">Auto Latch Time Delay</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Parameter definiert nach wievielen Sekunden nach dem Öffnen das Schloss automatisch wieder schließt</lang>
+                <lang xml:lang="en">parameter defines amount of seconds after opening the door automatically locks again</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Inaktiv</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="3c" unit="s">
+                <description>
+                    <lang xml:lang="de">Verzögerung nach dem Öffnen in Sekunden</lang>
+                    <lang xml:lang="en">delay after opening in seconds</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Klang-Einstellungen</lang>
+                <lang xml:lang="en">Sound setup</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Parameter definiert, ob ein akustisches Signal das Öffnen/Schließen bestätigt</lang>
+                <lang xml:lang="en">parameter defines if an acoustic signal confirms latch/unlatch operations</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">akustisches Signal deaktiviert</lang>
+                    <lang xml:lang="en">Latch/unlatch Sound disabled </lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">akustisches Signal aktiviert</lang>
+                    <lang xml:lang="en">Latch/unlatch Sound enabled</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Batterie-Typ</lang>
+                <lang xml:lang="en">Battery Type</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Parameter definiert mit welchem Batterie-Typ (Spannung) das Gerät betrieben wird; Wert sollte nicht geändert werden!</lang>
+                <lang xml:lang="en">parameter defines the battery type (voltage) is used to power the device; value shouldn&#039;t be changed!</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">3.6 Volt Batterie-Typ</lang>
+                    <lang xml:lang="en">3.6 volt battery type</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">3.0 Volt Batterie-Typ</lang>
+                    <lang xml:lang="en">3.0 volt battery type</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="range" size="1" default="1e">
+            <name>
+                <lang xml:lang="de">Batterie Alarm Wert</lang>
+                <lang xml:lang="en">Battery Alarm Value Threshold</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Parameter definiert einen Batterie-Status Prozentwert, der beim Unterschreiten zu einem akustischen Signal nach dem Öffnen/Schließen führt</lang>
+                <lang xml:lang="en">parameter defines the percent battery status threshold underrun which leads to an acoustic signal after latch/unlatch operations</lang>
+              </description>
+      
+                  <value from="00" to="64" unit="%">
+                <description>
+                    <lang xml:lang="de">0-100%</lang>
+                    <lang xml:lang="en">0-100%</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/f27398fa27df5c74859210415932a7a9cb5cb231.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

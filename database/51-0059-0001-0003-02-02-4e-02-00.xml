@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0059"/>
+        <productType value="0001"/>
+    <productId value="0003"/>
+    <libType value="02"/>
+    <protoVersion value="02"/>
+    <protoSubVersion value="4e"/>
+    <appVersion value="02"/>
+    <appSubVersion value="00"/>
+        <basicClass value="01"/>
+            <genericClass value="08"/>
+            <specificClass value="00"/>
+        <optional value="false"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+            <certId>14051</certId>
+            <certNumber>ZC08-11010003</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Batteriebetriebener Wandsteuerthermostat</lang>
+            <lang xml:lang="en">Battery Powered Wall Thermostat</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de">Drehen des Rades, bis &quot;n&quot; im Display erscheint. Danach auf Rad drücken.</lang>
+            <lang xml:lang="en">Turn Wheel until  &quot;n&quot; appears in display, press Wheel </lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Drehen des Rades, bis &quot;L&quot; im Display erscheint. Danach auf Rad drücken.</lang>
+            <lang xml:lang="en">Turn Wheel until  &quot;L&quot; appears in display, press Wheel </lang>
+          </inclusionNote>
+            <productName>HRT4-ZW </productName>
+            <brandName>HRT4</brandName>
+            <productLine>HRT4</productLine>
+            <productCode>NU0690401000</productCode>
+            <productVersion>1</productVersion>
+            <batteryType>AAA</batteryType>
+            <batteryCount>2</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" version="0" inNIF="false"/>
+        <commandClass id="0040"/>
+        <commandClass id="0043"/>
+        <commandClass id="0084" version="2"/>
+        <commandClass id="0025"/>
+        <commandClass id="0086"/>
+        <commandClass id="0080"/>
+        <commandClass id="0070"/>
+        <commandClass id="0031"/>
+        <commandClass id="0072"/>
+        <commandClass id="0085"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="4">
+            <description>
+                <lang xml:lang="de">Geräte, die per Thermostat-Schaltkommando gesteuert werden</lang>
+                <lang xml:lang="en">Nodes controlled by Thermostat Node Set command</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="1">
+            <description>
+                <lang xml:lang="de">Geräte, die per Schalter-Schaltkommando (Binary Switch) gesteuert werden</lang>
+                <lang xml:lang="en">Nodes controlled by Binary Switch SET command</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="1">
+            <description>
+                <lang xml:lang="de">Geräte, die automatische Batteriestatusmeldungen erhalten</lang>
+                <lang xml:lang="en">Nodes to receive unsolicited Battery Level Reports</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="4" maxNodes="1">
+            <description>
+                <lang xml:lang="de">Geräte, die Temperatursteuerkommandos (Thermostats Set Point) erhalten</lang>
+                <lang xml:lang="en">Nodes to receive Thermostat Set Point Reports </lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="5" maxNodes="1">
+            <description>
+                <lang xml:lang="de">Geräte, die automatische Temperaturstatusmeldungen erhalten</lang>
+                <lang xml:lang="en">Nodes to receive unsolicited Sensor Multilevel Reports</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Aktiviert Temperatursensor</lang>
+                <lang xml:lang="en">Enables Temperature Sensor</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Steuert die Nutzung des Temperatursensors im Gerät</lang>
+                <lang xml:lang="en">controls the use of  the temperature sensor on the device</lang>
+              </description>
+      
+                  <value from="00" to="7f">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Disable</lang>
+                  </description>
+              </value>
+            <value from="ff" to="80">
+                <description>
+                    <lang xml:lang="de">Aktiviert</lang>
+                    <lang xml:lang="en">Enabled</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Temperaturskala</lang>
+                <lang xml:lang="en">Temperature Scale</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Sensor wird Temperaturwert in dieser Masseinheit angeben</lang>
+                <lang xml:lang="en">Sensor will report temperature in this scale</lang>
+              </description>
+      
+                  <value from="00" to="7f">
+                <description>
+                    <lang xml:lang="de">Celsius</lang>
+                    <lang xml:lang="en">Celsius</lang>
+                  </description>
+              </value>
+            <value from="ff" to="80">
+                <description>
+                    <lang xml:lang="de">Fahrenheit</lang>
+                    <lang xml:lang="en">Fahrenheit</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="range" size="1" default="0a">
+            <name>
+                <lang xml:lang="de">Temperaturschritte</lang>
+                <lang xml:lang="en">Delta T</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert die Granularität der Temperatursteuerung Wert entspricht 0.1 K</lang>
+                <lang xml:lang="en">defines the temperature steps of the heating control  value is 0.1 K</lang>
+              </description>
+      
+                  <value from="00" to="64" unit="0.1 K">
+                <description>
+                    <lang xml:lang="de">Kelvin</lang>
+                    <lang xml:lang="en">Kelvin</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/96ce652975765614c4decc76963a224ce8598ed5.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0059"/>
+        <productType value="0001"/>
+    <productId value="0004"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="67"/>
+    <appVersion value="03"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="08"/>
+            <specificClass value="06"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Room thermostat</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Please refer to the 3rd party manufacturers instructions of the Z-Wave controller or gateway that will be used in conjunction with the SRT323 to determine how to add the SRT323 to that controller /gateway.
+Set DIL switch 1 to &quot;ON&quot; on the back of the unit to enter installation mode. Scroll through the function menu by rotating the dial and select L by pressing the dial. Use Learn Mode 1 to include the device. The 3rd party unit has to be activated.</lang>
+          </inclusionNote>
+            <productName>SRT 323</productName>
+            <brandName>Secure</brandName>
+            <productLine>SRT</productLine>
+            <productCode>323</productCode>
+            <productVersion>3.0</productVersion>
+            <batteryType>3V AAA</batteryType>
+            <batteryCount>2</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0072"/>
+        <commandClass id="0086"/>
+        <commandClass id="0080"/>
+        <commandClass id="0084" version="2"/>
+        <commandClass id="0031"/>
+        <commandClass id="0043"/>
+        <commandClass id="0085"/>
+        <commandClass id="0070"/>
+        <commandClass id="0042"/>
+        <commandClass id="0040"/>
+        <commandClass id="0020"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="5" maxNodes="4">
+            <description>
+                <lang xml:lang="en">Nodes to receive unsolicited Multilevel Sensor reports.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="4" maxNodes="4">
+            <description>
+                <lang xml:lang="en">Nodes to receive unsolicited Thermostat Set Point reports.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="4">
+            <description>
+                <lang xml:lang="en">Nodes to receive unsolicited Low Battery warnings.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="4">
+            <description>
+                <lang xml:lang="en">Nodes to receive Thermostat Operating State reports.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="en">Lifeline: the node associated to this will receive messages from all other groups, whether or not that group has itself been associated. Only one mode may be associated to this group.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="rangemapped" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">Parameter Number 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Disables/enables temperature sensor</lang>
+              </description>
+      
+                  <value from="00" to="7f">
+                <description>
+                    <lang xml:lang="en">Disables the temperature sensor</lang>
+                  </description>
+              </value>
+            <value from="80" to="ff">
+                <description>
+                    <lang xml:lang="en">Enables the temperature sensor</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Parameter Number 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Choose Celsius or Fahrenheit scale.</lang>
+              </description>
+      
+                  <value from="00" to="7f">
+                <description>
+                    <lang xml:lang="en">Celsius</lang>
+                  </description>
+              </value>
+            <value from="80" to="ff">
+                <description>
+                    <lang xml:lang="en">Fahrenheit</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="range" size="1" default="0a">
+            <name>
+                <lang xml:lang="en">Parameter Number 3</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Changes temperature setting.</lang>
+              </description>
+      
+                  <value from="01" to="64" unit="°C">
+                <description>
+                    <lang xml:lang="en">Changes temperature in 0.1°C steps.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/93aca7ff064b2c5e66a0f4d8213998acd0b8845c.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

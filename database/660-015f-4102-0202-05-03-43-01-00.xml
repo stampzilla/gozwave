@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="015f"/>
+        <productType value="4102"/>
+    <productId value="0202"/>
+    <libType value="05"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="43"/>
+    <appVersion value="01"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Z-Wave Touch Panel mit 2 Kanälen</lang>
+            <lang xml:lang="en">Z-Wave touch panel switch with two channel</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Drücken und halten einer der Touch-flächen für 3 Sekunden</lang>
+            <lang xml:lang="en">Press and hold any key on the panel for 3 seconds.</lang>
+          </inclusionNote>
+            <productName>Touch Panel Switch</productName>
+            <brandName>MCOHome</brandName>
+            <productLine>Z-Wave Switch</productLine>
+            <productCode>MH-S412-EU</productCode>
+            <productVersion>1.0</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" controlled="true" inNIF="false"/>
+        <commandClass id="0025"/>
+        <commandClass id="0027"/>
+        <commandClass id="0060" version="3" controlled="true"/>
+        <commandClass id="0072"/>
+        <commandClass id="0085"/>
+        <commandClass id="0086"/>
+        <commandClass id="008e" version="2"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Schalten von Tastengruppe 1</lang>
+                <lang xml:lang="en">Switch Button Group 1</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Schalten von Tastengruppe 2</lang>
+                <lang xml:lang="en">Switch Button Group 2</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="1">
+            <description>
+                <lang xml:lang="de">alle Statusänderungen</lang>
+                <lang xml:lang="en">all Status Reports</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+  
+    
+  
+    
+  </ZWaveDevice>
+
+

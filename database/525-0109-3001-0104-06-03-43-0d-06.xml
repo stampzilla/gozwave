@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0109"/>
+        <productType value="3001"/>
+    <productId value="0104"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="43"/>
+    <appVersion value="0d"/>
+    <appSubVersion value="06"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="00"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>Russia</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">DC/AC Power Siren</lang>
+            <lang xml:lang="en">DC/AC Power Siren</lang>
+            <lang xml:lang="ru">Сирена с проводным питанием DC/AC</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+            <lang xml:lang="ru"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Einfach-Klick auf internen Schalter</lang>
+            <lang xml:lang="en">Open the bracket and press the tamper switch of ZM 1602 for 1 second at least and release to be included</lang>
+            <lang xml:lang="ru">Одиночное нажатие в течении 1 секунды кнопки под крышкой</lang>
+          </inclusionNote>
+            <productName>ZM 1602 Wireless Siren</productName>
+            <brandName>Vision Security</brandName>
+                <productCode>ZM1602EU</productCode>
+            <productVersion>13.6</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0070"/>
+        <commandClass id="0020" inNIF="false"/>
+        <commandClass id="0072"/>
+        <commandClass id="0025"/>
+        <commandClass id="0086"/>
+      </commandClasses>
+  
+  
+    <configParams>
+        <configParam number="0" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Siren/Strobe Mode</lang>
+                <lang xml:lang="en">Siren/Strobe Mode</lang>
+                <lang xml:lang="ru">Звуковое/Световое оповещение</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Siren and Strobe enable</lang>
+                    <lang xml:lang="en">Siren and Strobe enable</lang>
+                    <lang xml:lang="ru">Звуковое и световое оповещение</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Siren only</lang>
+                    <lang xml:lang="en">Siren only</lang>
+                    <lang xml:lang="ru">Только звуковое оповещение </lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Strobe only</lang>
+                    <lang xml:lang="en">Strobe only</lang>
+                    <lang xml:lang="ru">Только световое оповещение</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="1" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Alarm auto stop time command</lang>
+                <lang xml:lang="en">Alarm auto stop time command</lang>
+                <lang xml:lang="ru">Время отключения сирены</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">30 seconds</lang>
+                    <lang xml:lang="en">30 seconds</lang>
+                    <lang xml:lang="ru">30 секунд</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">60 seconds</lang>
+                    <lang xml:lang="en">60 seconds</lang>
+                    <lang xml:lang="ru">60 секунд</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">120 seconds</lang>
+                    <lang xml:lang="en">120 seconds</lang>
+                    <lang xml:lang="ru">120 секунд</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Siren will not automatically stop</lang>
+                    <lang xml:lang="en">Siren will not automatically stop</lang>
+                    <lang xml:lang="ru">Нет автоматического отключения</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/59c23aaf65d6622b015d06fff3882ef1cdc014ae.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

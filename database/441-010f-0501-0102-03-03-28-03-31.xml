@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="010f"/>
+        <productType value="0501"/>
+    <productId value="0102"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="28"/>
+    <appVersion value="03"/>
+    <appSubVersion value="31"/>
+        <basicClass value="04"/>
+            <genericClass value="20"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>Russia</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">The Universal Binary Sensor is a wireless module that makes it possible to improve the functionality of any sensor with a binary output by allowing it to communicate with the wireless network Z-WAVE</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Triple press B button</lang>
+          </inclusionNote>
+            <productName>Univeral Binary Sensor FGBS-001</productName>
+            <brandName>Fibaro</brandName>
+                <productCode>FGBS-001</productCode>
+            <productVersion>1.2</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0060" version="2"/>
+        <commandClass id="0020" inNIF="false"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0086"/>
+        <commandClass id="008e" version="2"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Group I is assigned to input IN1</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Group II is assigned to input IN2</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="1">
+            <description>
+                <lang xml:lang="en">Group III reports on the condition of the device, only one device may be assigned to the group.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Input I alarm cancellation delay</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Additional delay after an alarm from input IN1 has ceased. The parameter allows you to specify additional time, after which the input no. 1 alarm is cancelled once its violation has ceased.</lang>
+              </description>
+      
+                  <value from="0000" to="ffff">
+                <description>
+                    <lang xml:lang="en">seconds</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Input II alarm cancellation delay</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Additional delay after an alarm from input IN2 has ceased. The parameter allows you to specify additional time, after which the input no. 2 alarm is cancelled once its violation has ceased.</lang>
+              </description>
+      
+                  <value from="0000" to="ffff">
+                <description>
+                    <lang xml:lang="en">seconds</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Type of input no. 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">INPUT_NO (Normal Open)</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">INPUT_NC (Normal Close)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">INPUT_MONOSTABLE</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">INPUT_BISTABLE</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Type of input no. 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">INPUT_NO (Normal Open)</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">INPUT_NC (Normal Close)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">INPUT_MONOSTABLE</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">INPUT_BISTABLE</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="rangemapped" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">Type of transmitted control frame for association group 1, activated via input IN1.</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The parameter allows to specify the type of alarm frame or to force transmission of control commands (BASIC_SET)</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Frame ALARM GENERIC</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Frame ALARM SMOKE</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Frame ALARM CO</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">Frame ALARM CO2</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">Frame ALARM HEAT</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">Frame ALARM WATER</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Control frame BASIC_SET</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="rangemapped" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">Type of transmitted control frame for association group 2, activated via input IN2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The parameter allows to specify the type of alarm frame or to force transmission of control commands (BASIC_SET)</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Frame ALARM GENERIC</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Frame ALARM SMOKE</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Frame ALARM CO</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">Frame ALARM CO2</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">Frame ALARM HEAT</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">Frame ALARM WATER</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Control frame BASIC_SET</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="range" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">Value of the parameter specifying the forced level of dimming / opening sun blinds when comes “switch on” / ”open” command to devices from association group no. 1.</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">In the case of alarm frames the alarm priority is specified.
+Value of 255 makes it possible to activate the device when using the Dimmer module it means activating the device and setting it to the previous stored condition, e.g. when Dimmer is set to 30%, then deactivated, and then reactivated using command 255, it will automatically be set to the previous condition, i.e. 30%.</lang>
+              </description>
+      
+                  <value from="01" to="63">
+                <description>
+                    <lang xml:lang="en">Dimming level</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Turn On</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="range" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">Value of the parameter specifying the forced level of dimming / opening sun blinds when comes “switch on” / ”open” command to devices from association group no. 2.</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">In the case of alarm frames the alarm priority is specified.
+Value of 255 makes it possible to activate the device; when using of the Dimmer module it means activating the device and setting it to the previous stored condition, e.g. when Dimmer is set to 30%, then deactivated, and then reactivated using command 255, it will automatically be set to the previous condition, i.e. 30%.</lang>
+              </description>
+      
+                  <value from="01" to="63">
+                <description>
+                    <lang xml:lang="en">Dimming level</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Turn On</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Deactivating transmission of the frame cancelling the alarm or the control frame deactivating the device (Basic)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">It allows for disabling the deactivation function or the alarm cancellation function for devices associated with the appropriate input of the Fibaro Sensor. In the case of association group no. 1 and 2 the information is sent. sent. In the case of association group no. 2 the information is sent.
+NOTE: Information concerning alarm violation or activation commands for devices from association groups are always sent.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">in the case of association group no. 1 and 2 the information is sent</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">in the case of association group no. 1 the information is sent. In the case of association group no. 2 the information is not sent.</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">in the case of association group no. 1 the information is not sent. In the case of association group no. 2 the information is sent.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="range" size="1" default="14">
+            <name>
+                <lang xml:lang="en">Interval between successive readings of temperature from all sensors connected to the device</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Note: taking temperature readings from the sensor does not result in sending a temperature condition report to the central hub.</lang>
+              </description>
+      
+                  <value from="01" to="ff">
+                <description>
+                    <lang xml:lang="en">seconds</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="range" size="1" default="c8">
+            <name>
+                <lang xml:lang="en">Interval between forcing to send report concerning the temperature conditions</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The forced report is sent immediately after the next reading of temperature from the sensor, irrespective of the settings of parameter no. 12.
+Note: Frequent sending of temperature condition reports is reasonable when the sensor is located somewhere where can occure rapid changes of ambient temperature. In other cases it is recommended to leave the parameter set to the default value.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Off</lang>
+                  </description>
+              </value>
+            <value from="01" to="ff">
+                <description>
+                    <lang xml:lang="en">seconds</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="range" size="1" default="08">
+            <name>
+                <lang xml:lang="en">Insensitiveness to temperature changes</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This is the maximum acceptable difference between the last reported temperature and the current temperature taken from the sensor. If the temperatures differ by the set value or more, then a report with the current temperature value is sent to the device assigned to association group no. 3. Intervals between taking readings from sensors are specified by parameter no. 10.
+Default value: 8 [0.5oC]
+Possible parameter settings:0 – 255 [0oC to 16oC] [0 oF – 28.8oF]
+In order to set the appropriate value of the parameter, the following formula should be used:
+x = delta T x 16 - for Celsius
+x = delta T x 80 / 9 - for Fahrenheit
+x – parameter value
+delta T – maximum acceptable temperature gradient in Celsius or Fahrenheit
+If the value is set to 0, then information about the temperature will be sent every time, immediately once the readings have been taken from the sensor.</lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="en">oC</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Transmitting the alarm or control frame in “broadcast” mode (i.e. to all devices within range)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Information sent in this mode is not repeated by the mesh network. NOTE!
+If the “broadcast” mode of information transmission is activated for a given channel, then transmission of information in “singlecast” mode to devices assigned to the association group of this channel is deactivated.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">IN1 and IN2 Broadcast inactive</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">IN1 broadcast mode active, Sensor 2 broadcast mode inactive</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">IN1 broadcast mode inactive, Sensor 2 broadcast mode active</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">INI and IN2 broadcast mode active</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="14" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Scene activation functionality</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">NOTE!!! Inputs IN1 and IN2 are used to control the condition of the device. Each of them may force two conditions for corresponding device channels: on / alarm, off / no alarm. If monostable keys are used and the value of parameter no. 3 or no. 4 is set to 2, change of the state of corresponding channel will be able after a single click.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Scene functionality Off</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Scene functionality On</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    <endpoints>
+           <endpoint number="3">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="21"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0020"/>
+            <commandClass id="0031"/>
+          </endpoint>
+           <endpoint number="2">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="20"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0030"/>
+            <commandClass id="0020"/>
+            <commandClass id="009c"/>
+          </endpoint>
+           <endpoint number="1">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="20"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0030"/>
+            <commandClass id="0020"/>
+            <commandClass id="009c"/>
+          </endpoint>
+      </endpoints>
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/6ed47ccec9e990f7bdd5f24e03b185edd7f6fdef.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0002"/>
+        <productType value="8004"/>
+    <productId value="2000"/>
+    <libType value="01"/>
+    <protoVersion value="02"/>
+    <protoSubVersion value="43"/>
+    <appVersion value="05"/>
+    <appSubVersion value="05"/>
+        <basicClass value="02"/>
+            <genericClass value="10"/>
+            <specificClass value="00"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+            <certId>15031</certId>
+            <certNumber> ZC08-12080009</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">An 230V betriebener Static Controller mit Relais</lang>
+            <lang xml:lang="en">230VAC powered static controller with binary switch capability, containing 1 power relay.</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Betätigen Sie die Programmiertaste einmal (die  Programmier-LED leuchet rot), danach drücken und halten Sie die Kanal- und Programmiertaste für 3 Sekunden (die Programmier-LED blinkt rot)</lang>
+            <lang xml:lang="en">Press programm button once (the programm LED turns red) then press down programm button and channel button for 3 seconds (programm led starts to flash red)</lang>
+          </inclusionNote>
+            <productName>RXZ1 (RF relay switching unit)</productName>
+            <brandName>RXZ1</brandName>
+            <productLine>Z-wave products</productLine>
+            <productCode>087N743100</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0060" version="3"/>
+        <commandClass id="0020" inNIF="false"/>
+        <commandClass id="0043"/>
+        <commandClass id="0025"/>
+        <commandClass id="0086"/>
+        <commandClass id="008f" controlled="true"/>
+        <commandClass id="0091"/>
+        <commandClass id="0072"/>
+        <commandClass id="0085" controlled="true" inNIF="false"/>
+        <commandClass id="008e" version="2" controlled="true" inNIF="false"/>
+        <commandClass id="0084" version="2" controlled="true" inNIF="false"/>
+      </commandClasses>
+  
+  
+  
+    <endpoints>
+           <endpoint number="1">
+            <name>
+                <lang xml:lang="de">Relai Steuerung</lang>
+                <lang xml:lang="en">Relay Controlling</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Ein- oder Ausschalten durch ein anderes Gerät</lang>
+                <lang xml:lang="en">Switching on and off by another device</lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="00"/>
+                  <commandClass id="0060" version="3"/>
+            <commandClass id="0020"/>
+            <commandClass id="0043"/>
+            <commandClass id="0025"/>
+            <commandClass id="0086"/>
+            <commandClass id="008f"/>
+            <commandClass id="0091"/>
+            <commandClass id="0072"/>
+            <commandClass id="0085"/>
+            <commandClass id="008e" version="2"/>
+            <commandClass id="0084" version="2"/>
+          </endpoint>
+      </endpoints>
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/c27b87cc69318d8ce2cd84ddf67261f3a5b56ebe.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

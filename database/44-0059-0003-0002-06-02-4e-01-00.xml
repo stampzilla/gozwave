@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0059"/>
+        <productType value="0003"/>
+    <productId value="0002"/>
+    <libType value="06"/>
+    <protoVersion value="02"/>
+    <protoSubVersion value="4e"/>
+    <appVersion value="01"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="08"/>
+            <specificClass value="00"/>
+        <optional value="false"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+            <certId>14022</certId>
+            <certNumber>ZC08-11010002</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Zweifach-Schalter zur Steuerung einer Warmwasserheizung</lang>
+            <lang xml:lang="en">Two Channel Switch to control a boiler</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Gleichzeitiges Drücken von Zone 1 und Zone 2</lang>
+            <lang xml:lang="en">Press Zone1 + Zone2</lang>
+          </inclusionNote>
+            <productName>Thermoplus ASR2-RF</productName>
+            <brandName>ASR2-RF</brandName>
+            <productLine>Thermoplus</productLine>
+            <productCode>NU0790406000</productCode>
+            <productVersion>2</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0060" version="2"/>
+        <commandClass id="0040"/>
+        <commandClass id="0072"/>
+        <commandClass id="0025"/>
+        <commandClass id="0086"/>
+      </commandClasses>
+  
+  
+  
+    <endpoints>
+           <endpoint number="2">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="08"/>
+                  <specificClass value="00"/>
+                  <commandClass id="0020"/>
+            <commandClass id="0040"/>
+            <commandClass id="0025"/>
+          </endpoint>
+           <endpoint number="1">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="08"/>
+                  <specificClass value="00"/>
+                  <commandClass id="0020"/>
+            <commandClass id="0040"/>
+            <commandClass id="0025"/>
+          </endpoint>
+      </endpoints>
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/6dc773432f1516ba6222798f97da64fc0c4b5e99.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

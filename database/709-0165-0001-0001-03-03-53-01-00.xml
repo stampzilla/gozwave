@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0165"/>
+        <productType value="0001"/>
+    <productId value="0001"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="53"/>
+    <appVersion value="01"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Smart Plug ON/OFF and Power Failure Detection</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Press on the Smart Plug button during 2 seconds until
+the LED becomes red. Release the button, the LED will
+then glow in red. The Smart Plug is in “Learning mode”.
+Within 30 seconds put the Z-Wave® Controller in
+“Learning mode” (See the Controller user guide for its
+own Inclusion procedure).</lang>
+          </inclusionNote>
+            <productName>Z-Wave+ Smart Plug ON/OFF</productName>
+            <brandName>NodOn</brandName>
+            <productLine>Z-Wave+ Product Range</productLine>
+            <productCode>ASP-3-1-00</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0027"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0025"/>
+        <commandClass id="0070"/>
+        <commandClass id="005a"/>
+        <commandClass id="0087"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0071" version="4"/>
+        <commandClass id="0073"/>
+        <commandClass id="0075" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0020" controlled="true"/>
+        <commandClass id="0022" controlled="true"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="8" maxNodes="5">
+            <description>
+                <lang xml:lang="en">When the Smart Plug detects a Power Recover, it will
+switch OFF the associated devices</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="7" maxNodes="5">
+            <description>
+                <lang xml:lang="en">When the Smart Plug detects a Power Recover, it will
+switch ON the associated devices</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="6" maxNodes="5">
+            <description>
+                <lang xml:lang="en">When the Smart Plug detects a Power Failure, it will
+switch OFF the associated devices</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="5" maxNodes="5">
+            <description>
+                <lang xml:lang="en">When the Smart Plug detects a Power Failure, it will
+switch ON the associated devices</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="4" maxNodes="5">
+            <description>
+                <lang xml:lang="en">When the Smart Plug detects a power failure or
+recovers from a power failure, it sends the notification
+report to the associated devices.
+The sent Notification is “Notification Report: Power
+Management – AC Disconnected / Re-connected”</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="5">
+            <description>
+                <lang xml:lang="en">When the Smart Plug is switched ON (respectively OFF)
+- either locally or by wireless - it will send OFF
+(respectively ON) command to the associated devices</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="en">When the Smart Plug is switched ON (respectively OFF)
+- either locally or by wireless - it will send ON
+(respectively OFF) command to the associated devices</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">This group is generally used to report information of
+the Smart Plug to the Main Controller of the network.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="02">
+            <name>
+                <lang xml:lang="en">Default State</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter defines the status of the Smart Plug
+after a Power Failure or after being plugged.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">OFF</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">ON</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Status before Power Failure</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Power Failure</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter is to set-up the Power Failure / Recover
+notification and the associated group
+(Groups 4, 5, 6, 7, 8).</lang>
+              </description>
+      
+                  <value from="00" to="43">
+                <description>
+                    <lang xml:lang="en">The value may be the sum of available values.
+For example, if you want to activate Power Failure and
+enable group 4 &amp; 5, the parameter value is 1+2+4=7.
+
+1 = Power Failure detection disable
+2 = Power Failure enable (report to Lifeline only)
+3 = Enable group 4
+4 = Enable group 5
+8 = Enable group 6
+16 = Enable group 7
+32 = Enable group 8</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="range" size="1" default="03">
+            <name>
+                <lang xml:lang="en">Follow State</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter allows to enable or deactivate Group 2
+&amp; Group 3.</lang>
+              </description>
+      
+                  <value from="00" to="03">
+                <description>
+                    <lang xml:lang="en">This parameter allows to enable or deactivate Group 2
+&amp; Group 3.
+
+DESCRIPTION:
+0 = Group 2 &amp; Group 3 disable
+1 = Group 2 enable
+2 = Group 3 enable</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Always On</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter forces the Smart Plug status to be ON.
+While enable it is not possible to switch OFF the plug
+(local or wireless).</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Always ON disable</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Always ON enable</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Alarm Type 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The NodOn® Smart Plug embeds Smart Alarm
+management features, in order to react to different
+kinds of Notifications and Events (According to
+“Notification V1” command class)
+Up to 8 Alarms can be configured, through Configuration
+parameters #5 to #20.
+For each Alarm, the set-up is done through 2
+configuration parameters.
+This parameter is to set the Alarm Type.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="6" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">ALARM SPECIFICATIONS Type1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter is to set the Alarm Specifications.
+In order to configure properly each alarm, please use
+your Home Automation Gateway interface or our
+online form at :
+www.nodon.fr/support/asp3_alarm</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="7" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Alarm Type 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter is to set the Alarm Type.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="8" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">ALARM SPECIFICATIONS Type2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter is to set the Alarm Specifications.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="9" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Alarm Type 3</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter is to set the Alarm Type.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="10" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">ALARM SPECIFICATIONS Type3</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter is to set the Alarm Specifications.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="11" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Alarm Type 4</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter is to set the Alarm Type.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="12" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">ALARM SPECIFICATIONS Type4</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter is to set the Alarm Specifications.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="13" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Alarm Type 5</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter is to set the Alarm Type.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="14" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">ALARM SPECIFICATIONS Type5</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter is to set the Alarm Specifications.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="15" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Alarm Type 6</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter is to set the Alarm Type.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="16" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">ALARM SPECIFICATIONS Type6</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter is to set the Alarm Specifications.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="17" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Alarm Type 7</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter is to set the Alarm Type.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="18" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">ALARM SPECIFICATIONS Type7</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter is to set the Alarm Specifications.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="19" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Alarm Type 8</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter is to set the Alarm Type.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="20" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">ALARM SPECIFICATIONS Type8</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter is to set the Alarm Specifications.</lang>
+              </description>
+      
+          </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/54493577649b0d440d4dbaeffde4141c0635c93b.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

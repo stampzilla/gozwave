@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="013c"/>
+        <productType value="0001"/>
+    <productId value="0003"/>
+    <libType value="00"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="41"/>
+    <appVersion value="01"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+            <rfFrequency>US</rfFrequency>
+            <certId>15413</certId>
+            <certNumber>ZC08-13060013</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Wandeinsatz 2 *1500 W mit Messfunktion</lang>
+            <lang xml:lang="en">In-Wall Dual relay PAN04-2</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Dreifachklick auf Taste</lang>
+            <lang xml:lang="en">Tripple Click on Button</lang>
+          </inclusionNote>
+            <productName>In-Wall Dual relay(1 way) Switch Module</productName>
+            <brandName>Philio</brandName>
+            <productLine>Philio Z-Wave Products</productLine>
+            <productCode>PAN04-2</productCode>
+            <productVersion>V1.0</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020"/>
+        <commandClass id="0071"/>
+        <commandClass id="0085"/>
+        <commandClass id="0025"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+        <commandClass id="0032"/>
+        <commandClass id="0060"/>
+        <commandClass id="0027"/>
+        <commandClass id="0086"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="de">Relais 1 und 2 zusammen</lang>
+                <lang xml:lang="en">Relay 1 and 2 together</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="1">
+            <description>
+                <lang xml:lang="de">Relais 1  </lang>
+                <lang xml:lang="en">Relay 1</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="1">
+            <description>
+                <lang xml:lang="de">Relais  2</lang>
+                <lang xml:lang="en">Relay 2</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="2" default="02d0">
+            <name>
+                <lang xml:lang="de">Interval zum automatischen Senden eines Leistungsverbauches</lang>
+                <lang xml:lang="en">W meter report period</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Wird ein Wert von 720 eingestellt, so meldet das Gerät jede Stunde den momentan Stromverbrauch an den Z-Wave Controller. Einheit: 5 Sekunden</lang>
+                <lang xml:lang="en">If the setting is configured for 1hour (set value =720), the device will report its instant power consumption every 1 hour to Z-Wave Controller. Unit: 5 seconds</lang>
+              </description>
+      
+                  <value from="0001" to="7d00" unit="*5">
+                <description>
+                    <lang xml:lang="de">Sekunden</lang>
+                    <lang xml:lang="en">seconds</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="2" default="0006">
+            <name>
+                <lang xml:lang="de">Interval zum automatischen Senden eines Leistungsverbauches</lang>
+                <lang xml:lang="en">KWH meter report period</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Wird ein Wert von 720 eingestellt, so meldet das Gerät jede Stunde die verbrauchte elektrische Arbeit an den Z-Wave Controller. Einheit: 5 Sekunden</lang>
+                <lang xml:lang="en">If the setting is configured for 1hour (set value =720), the device will report its   power consumption in KWh every 1 hour to Z-Wave Controller. Unit: 5 seconds</lang>
+              </description>
+      
+                  <value from="0001" to="7d00" unit="*5 ">
+                <description>
+                    <lang xml:lang="de">Sekunden</lang>
+                    <lang xml:lang="en">seconds</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Ausgewählter Endpunkt </lang>
+                <lang xml:lang="en">Selected end point</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert das aus gewählte Relais</lang>
+                <lang xml:lang="en">defines the relays selected</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Relais 1 und Relais 2</lang>
+                    <lang xml:lang="en">Relay 1 and Relay 2</lang>
+                  </description>
+              </value>
+            <value from="02" to="03">
+                <description>
+                    <lang xml:lang="de">Relais 1  </lang>
+                    <lang xml:lang="en">Relay 1  </lang>
+                  </description>
+              </value>
+            <value from="03" to="04">
+                <description>
+                    <lang xml:lang="de">Relais 2</lang>
+                    <lang xml:lang="en">Relay 2</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Schalt oder Tastermodus</lang>
+                <lang xml:lang="en">Edge or Pulse mode or Edge-Togle mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert den Arbeitsmodus des extern angeschlossenen Schalters</lang>
+                <lang xml:lang="en">defines the operating mode of the externally connected switch</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Schaltermodus</lang>
+                    <lang xml:lang="en">Edge Mode</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Tastermodus</lang>
+                    <lang xml:lang="en">Toggle Mode</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Schalter/Tastermodus</lang>
+                    <lang xml:lang="en">Edge/Toggle Mode</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="range" size="2" default="05dc">
+            <name>
+                <lang xml:lang="de">Schwellwert zum Auslösen der Überlast in W</lang>
+                <lang xml:lang="en">Threshold of Watt for Load Caution</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"> </lang>
+              </description>
+      
+                  <value from="0001" to="05dc" unit="W">
+                <description>
+                    <lang xml:lang="de">W</lang>
+                    <lang xml:lang="en">W</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="range" size="2" default="2710">
+            <name>
+                <lang xml:lang="de">Schwellwert zum Auslösen der Überlast in kWh</lang>
+                <lang xml:lang="en">Threshold of KWH for Load Caution</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"> </lang>
+              </description>
+      
+                  <value from="0001" to="2710" unit="kWh">
+                <description>
+                    <lang xml:lang="de">kWh</lang>
+                    <lang xml:lang="en">kWh</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    <endpoints>
+           <endpoint number="1">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="00"/>
+                  <commandClass id="0020"/>
+            <commandClass id="0071"/>
+            <commandClass id="0085"/>
+            <commandClass id="0025"/>
+            <commandClass id="0070"/>
+            <commandClass id="0072"/>
+            <commandClass id="0032"/>
+            <commandClass id="0060"/>
+            <commandClass id="0027"/>
+            <commandClass id="0086"/>
+          </endpoint>
+           <endpoint number="2">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="00"/>
+                  <commandClass id="0020"/>
+            <commandClass id="0071"/>
+            <commandClass id="0085"/>
+            <commandClass id="0025"/>
+            <commandClass id="0070"/>
+            <commandClass id="0072"/>
+            <commandClass id="0032"/>
+            <commandClass id="0060"/>
+            <commandClass id="0027"/>
+            <commandClass id="0086"/>
+          </endpoint>
+           <endpoint number="3">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="00"/>
+                  <commandClass id="0020"/>
+            <commandClass id="0071"/>
+            <commandClass id="0085"/>
+            <commandClass id="0025"/>
+            <commandClass id="0070"/>
+            <commandClass id="0072"/>
+            <commandClass id="0032"/>
+            <commandClass id="0060"/>
+            <commandClass id="0027"/>
+            <commandClass id="0086"/>
+          </endpoint>
+      </endpoints>
+    
+  
+    
+  </ZWaveDevice>
+
+

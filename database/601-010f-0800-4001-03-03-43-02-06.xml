@@ -1,0 +1,820 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="010f"/>
+        <productType value="0800"/>
+    <productId value="4001"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="43"/>
+    <appVersion value="02"/>
+    <appSubVersion value="06"/>
+        <basicClass value="04"/>
+            <genericClass value="20"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+                    
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">batteriebetriebener Bewegungs-Sensor, Temperatur-Sensor, Helligkeits-Sensor, Beschleunigungs-Sensor</lang>
+            <lang xml:lang="en">battery powered Motion Sensor, Temperature Sensor, Light Sensor, Accelerometer</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de">dreifaches schnelles Drücken der B-Taste im Gehäuseinneren</lang>
+            <lang xml:lang="en">triple clicking the B-Button inside the case</lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">dreifaches schnelles Drücken der B-Taste im Gehäuseinneren</lang>
+            <lang xml:lang="en">triple clicking the B-Button inside the case</lang>
+          </inclusionNote>
+            <productName>Motion Sensor</productName>
+            <brandName>Fibaro</brandName>
+                <productCode>FIB_FGMS-001 V2.6</productCode>
+                <batteryType>CR2</batteryType>
+            <batteryCount>1</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0080"/>
+        <commandClass id="0020" inNIF="false"/>
+        <commandClass id="0084"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0030"/>
+        <commandClass id="008e" version="2"/>
+        <commandClass id="008f"/>
+        <commandClass id="0070"/>
+        <commandClass id="0031" version="5"/>
+        <commandClass id="0072"/>
+        <commandClass id="007a"/>
+        <commandClass id="009c"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="3" maxNodes="1">
+            <description>
+                <lang xml:lang="de">sendet den Geätestatus nur an ein Gerät (normalerweise der Primärcontroller). Gruppe sollte nicht modifiziert werden.</lang>
+                <lang xml:lang="en">reports the device status and allows for assigning a single device only (the main controller by default - the device reports its status to the main controller). It’s not recommended to modify this association group.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="de">ist dem Manipulationsschutz zugewiesen. Sendet Alarm Frame an die assoziierten Geräte, wenn Manipulation entdeckt wird.</lang>
+                <lang xml:lang="en">is assigned to the tamper alarm. Alarm frame will be sent to the associated devices once tampering is detected.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="de">ist dem Gerätestatus zugewiesen - sendet BASIC SET Kommandos zu den assoziierten Geräten bei festgestellter Bewegung</lang>
+                <lang xml:lang="en">is assigned to the device status - sending, the BASIC SET control frame to the associated devices having detected motion.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="2" default="000a">
+            <name>
+                <lang xml:lang="de">Empfindlichkeit des Bewegungssensors</lang>
+                <lang xml:lang="en">MOTION SENSOR’S SENSITIVITY</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Je niedriger Wert, desto empfindlicher ist der PIR Sensor.</lang>
+                <lang xml:lang="en">The lower the value, the more sensitive the PIR sensor.</lang>
+              </description>
+      
+                  <value from="0008" to="00ff">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Adjust the sensitivity.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="1" default="0f">
+            <name>
+                <lang xml:lang="de">Auszeit für Bewegungssensor</lang>
+                <lang xml:lang="en">MOTION SENSOR’S BLIND TIME (INSENSITIVITY)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Zeitperiode, in der der PIR Sensor &quot;blind&quot; ist für Bewegungen. Nach dieser Zeit ist Sensor wieder aktiv.</lang>
+                <lang xml:lang="en">Period of time through which the PIR sensor is “blind” (insensitive) to motion. After this time period the PIR sensor will be again able to detect motion.</lang>
+              </description>
+      
+                  <value from="00" to="0f">
+                <description>
+                    <lang xml:lang="de">standard 15 (= 8s); Zeit sollte kürzer eingestellt werden als Parameter 6.</lang>
+                    <lang xml:lang="en">default 15 (= 8sec); The time of insensitivity should be shorter
+that the time period set in parameter 6.
+Formula to calculate the time: time [s] = 0.5 x (value + 1)
+Available settings: 0 - 15 (0,5 - 8 seconds)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="de">PIR Sensor &quot;Bewegungsimpuls-Zähler&quot;</lang>
+                <lang xml:lang="en">PIR sensor’s “PULSE COUNTER”</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Legt die anzahl an Bewegungsimpulsen fest, die zum auslösen eines Motion Reports führen. Je niedriger der Wert, desto weniger empfindlich ist der PIR Sensor. Wert sollte nicht verändert werden.</lang>
+                <lang xml:lang="en">Sets the number of moves required for the PIR sensor to report motion. The lower the value, the less sensitive the PIR sensor. It’s not recommended to modify this parameter settings.</lang>
+              </description>
+      
+                  <value from="00" to="03" unit="pulses = (value + 1)">
+                <description>
+                    <lang xml:lang="de">standard 1 (= 2 Impulse)</lang>
+                    <lang xml:lang="en">default 1 (= 2 pulses)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="1" default="02">
+            <name>
+                <lang xml:lang="de">PIR Sensor &quot;Zeitfenster&quot;</lang>
+                <lang xml:lang="en">PIR sensor’s “WINDOW TIME”</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Zeitperiode in der die in Parameter 3 festgelegten Impulse stattfinden müssen, um einen Motion Report auszulösen. Je höher der Wert, desto empfindlicher der Sensor. Wert sollte nicht verändert werden.</lang>
+                <lang xml:lang="en">Period of time during which the number of moves set in parameter 3 must be detected in order for the PIR sensor to report motion. The higher the value, the more sensitive the PIR sensor. It’s not recommended to modify this parameter setting.</lang>
+              </description>
+      
+                  <value from="00" to="03">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Define a time interval.
+Formula to calculate the time: time [s] = 4 x (value + 1)
+Default setting: 2 (12 seconds)
+
+</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="range" size="2" default="001e">
+            <name>
+                <lang xml:lang="de">Bewegungsalarm Abschaltverzögerung</lang>
+                <lang xml:lang="en">MOTION ALARM CANCELLATION DELAY</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Zeitperiode, nach der der Bewegungsalarm beendet wird für Primärcontroller und assoziierte Geräte. Jede neue festgestellte Bewegung in der Zeit started die Zeitperiode neu. Bei sehr niedrigen Werten (unter 10s) muss Parameter 2 angepasst werden.</lang>
+                <lang xml:lang="en">Period of time, after the motion alarm will be cancelled in the main controller and the
+associated devices. Any motion detected during the cancellation delay time countdown will result in the countdown being restarted. In case of small values, below 10 seconds, the value of parameter 2 must be modified (PIR sensor’s “Blind Time”).</lang>
+              </description>
+      
+                  <value from="0001" to="7fff" unit="sec">
+                <description>
+                    <lang xml:lang="de">standard 30 (=30s)</lang>
+                    <lang xml:lang="en">default 30 (=30sec), Define a time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">PIR Sensor Betriebsmodus</lang>
+                <lang xml:lang="en">PIR SENSOR OPERATING MODE</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Parameter legt die Tageszeit fest, zu der der PIR Sensor aktiv ist. Parameter beeinflusst nur Bewegungssensor, nicht den Manipulationsschutz, Helligkeitssensor und Temperatursensor.</lang>
+                <lang xml:lang="en">determines the part of day in which the PIR sensor will be active. parameter influences only the motion reports and associations. Tamper, light intensity and temperature measurements will not be influenced.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">PIR Sensor immer aktiv</lang>
+                    <lang xml:lang="en">PIR sensor always active</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">PIR Sensor nur am Tag aktiv</lang>
+                    <lang xml:lang="en">PIR sensor active during the day only</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">PIR Sensor nur in der Nacht aktiv</lang>
+                    <lang xml:lang="en">PIR sensor active during the night only</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="range" size="2" default="00c8">
+            <name>
+                <lang xml:lang="de">Nacht / Tag (Helligkeit)</lang>
+                <lang xml:lang="en">NIGHT / DAY (light intensity)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Parameter definiert Tag und Nacht anhand der Helligkeit für Parameter 8.</lang>
+                <lang xml:lang="en">parameter defines the difference between night and day, in terms of light intensity, used in parameter 8.</lang>
+              </description>
+      
+                  <value from="0001" to="7fff" unit="lux">
+                <description>
+                    <lang xml:lang="de">standard 200 (200 lux)</lang>
+                    <lang xml:lang="en">default 200 (200 lux), Dafine a value for light intensity.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Basic Command Class Konfiguration</lang>
+                <lang xml:lang="en">BASIC COMMAND CLASS FRAMES CONFIGURATION</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Parameter definiert den Command Frame für die 1.Assoziationsgruppe des PIR Sensors.</lang>
+                <lang xml:lang="en">parameter determines the command frames sent in 1-st
+association group, assigned to PIR sensor.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">BASIC ON und BASIC OFF Command Frames wird in Basic
+Command Class gesendet.</lang>
+                    <lang xml:lang="en">BASIC ON and BASIC OFF command frames sent in Basic
+Command Class.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">nur der BASIC ON Command Frame wird in Basic Command
+Class gesendet.</lang>
+                    <lang xml:lang="en">only the BASIC ON command frame sent in Basic Command
+Class.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="14" type="rangemapped" size="1" default="ff">
+            <name>
+                <lang xml:lang="de">BASIC ON Command Frame wert</lang>
+                <lang xml:lang="en">BASIC ON command frame value</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Wert 255 schaltet Gerät an. Bei Dimmern schaltet Wert 255 den letzten Schaltzustand wieder an.</lang>
+                <lang xml:lang="en">value of 255 allows to turn ON a device. In case of the Dimmer, the value of 255 means turning ON at the last memorized state.</lang>
+              </description>
+      
+                  <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="de">ON</lang>
+                    <lang xml:lang="en">ON</lang>
+                  </description>
+              </value>
+            <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">OFF</lang>
+                    <lang xml:lang="en">OFF</lang>
+                  </description>
+              </value>
+            <value from="01" to="63">
+                <description>
+                    <lang xml:lang="de">%</lang>
+                    <lang xml:lang="en">%</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="16" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">BASIC OFF Command Frame wert</lang>
+                <lang xml:lang="en">BASIC OFF command frame value</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Command Frame, der nach Ablaufen der  Abschaltverzögerung (Parameter 6) gesendet wird.</lang>
+                <lang xml:lang="en">command frame sent at the moment of motion alarm cancellation, after the cancellation delay time, specified in parameter 6, has passed.</lang>
+              </description>
+      
+                  <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="de">ON</lang>
+                    <lang xml:lang="en">ON</lang>
+                  </description>
+              </value>
+            <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">OFF</lang>
+                    <lang xml:lang="en">OFF</lang>
+                  </description>
+              </value>
+            <value from="01" to="63">
+                <description>
+                    <lang xml:lang="de">%</lang>
+                    <lang xml:lang="en">%</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="20" type="range" size="1" default="0f">
+            <name>
+                <lang xml:lang="de">Manipulationsschutz Empfindlichkeit</lang>
+                <lang xml:lang="en">TAMPER SENSITIVITY</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Parameter definiert die Beschleunigung (G), bei der der Manipulationsschutz einen Alarm sendet.</lang>
+                <lang xml:lang="en">parameter determines the chages in forces acting on the 
+Motion Sensor resulting in tamper alarm beig reported - g-force acceleration.</lang>
+              </description>
+      
+                  <value from="00" to="79">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Define a treshold. Available settigs: 0 - 121 (0,08 - 2g; multiply by 0,016g;
+0 = tamper inactive)
+</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="22" type="range" size="2" default="001e">
+            <name>
+                <lang xml:lang="de">Manipulationsalarm Abschaltverzögerung</lang>
+                <lang xml:lang="en">TAMPER ALARM CANCELLATION DELAY</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Zeitperiode bis zum Beenden des Manipulationsalarms. Ein erneutes Feststellen von Beschleunigung führt NICHT zum erneuten Starten der Periode.</lang>
+                <lang xml:lang="en">Time period after which a tamper alarm will be cacelled. Another tampering detected durig the countdown will NOT
+extend the delay.</lang>
+              </description>
+      
+                  <value from="0001" to="7fff" unit="sec">
+                <description>
+                    <lang xml:lang="de">standard 30s</lang>
+                    <lang xml:lang="en">default: 30sec, Define a time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="24" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Manipulationsschutz-Modus</lang>
+                <lang xml:lang="en">TAMPER OPERATING MODES</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Parameter definiert das Verhalten des Manipulationsschutses und die Art des Reports.</lang>
+                <lang xml:lang="en">parameter determines the behaviour of tamper and how it
+reports.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Manipulationsalarm wird in Sensor Alarm Command class gemeldet. Abbruch wird nicht gemeldet.</lang>
+                    <lang xml:lang="en">Tamper alarm is reported in Sensor Alarm command class / Cancellation is not reported.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Manipulationsalarm wird in Sensor Alarm Command class gemeldet. Abbruch wird in Sensor Alarm Command class gemeldet nach Ablauf der Zeitperiode (Parameter 22) </lang>
+                    <lang xml:lang="en">Tamper alarm is reported in Sensor Alarm command class / Cancellation is reported in Sensor Alarm commad class after the time period set in parameter 22 (Tamper Alarm Cancellation Delay)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Manipulationsalarm wird in Sensor Alarm Command class gemeldet. Abbruch wird nicht gemeldet. Sensorlage im Raum wird in Fibar Commad Class gemeldet nach Ablauf der Zeitperiode (Parameter 22)</lang>
+                    <lang xml:lang="en">Tamper alarm is reported in Sensor Alarm command class /
+Cancellation is not reported.
+Sensor’s orientation in space is reported in Fibar Commad Class after the time period set in paramer 22.</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Manipulationsalarm wird in Sensor Alarm Command class gemeldet. Abbruch wird in Sensor Alarm Command class gemeldet nach Ablauf der Zeitperiode (Parameter 22). Sensorlage im Raum wird in Fibar Commad Class gemeldet nach Ablauf der Zeitperiode (Parameter 22)</lang>
+                    <lang xml:lang="en">Tamper alarm is reported in Sensor Alarm command class /
+Cancellation is reported in Sensor Alarm commad class after the time period set in parameter 22. Sensor’s orientation in space is
+reported in Fibar Commad Class after the time period set in paramer 22.</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Die Zahl der meisten gemessenen Vibrationen in der Zeitperiode (Parameter 22) wird gemeldet. Report wird beendet, wenn die Vibrationen stoppen. Reports werden  in Sensor Alarm Command class gemeldet. Wert wird in &quot;Werte&quot; Feld (0-100) angezeigt. Reporte an die Assoziationsgruppen werden als Sensor Alarm Command Class gesendet.</lang>
+                    <lang xml:lang="en">The maximum level of vibrations recorded in the time period set in parameter 22 is reported. Reports stop being sent when the vibrations cease. The reports are sent in Sensor Alarm command class. Value displayed in the “value” field (0 - 100) depends on the
+vibrations force. Reports to the association groups are sent using Sensor Alarm command class.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="26" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Manipulationsschutz Broadcast Modus</lang>
+                <lang xml:lang="en">TAMPER ALARM BROADCAST MODE</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Parameter definiert, ob Manipulationsalarm als Broadcast gesendet wird. Broadcast Reporte werden von allen Geräten innerhalb der Funkreichweite empfangen.</lang>
+                <lang xml:lang="en">parameter determines whether the tamper alarm frame will or will not be sent in broadcast mode. Alarm frames sent in broadcast mode may be received by all of the devices within communication range.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Manipulationsalarm wird nicht als Broadcast gesendet.</lang>
+                    <lang xml:lang="en">Tamper alarm is not sent in broadcast mode.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Manipulationsalarm wird als Broadcast gesendet.</lang>
+                    <lang xml:lang="en">Tamper alarm sent in broadcast mode.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="40" type="range" size="2" default="00c8">
+            <name>
+                <lang xml:lang="de">Helligkeitsreport Schwellenwert</lang>
+                <lang xml:lang="en">ILLUMINATION REPORT THRESHOLD</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Parameter definiert bei welcher Änderung der Helligkeit ein Helligkeitsreport an den Controller gesendet wird.</lang>
+                <lang xml:lang="en">parameter determines the change in light intensity level resulting in illumination report being sent to the main controller.</lang>
+              </description>
+      
+                  <value from="0000" to="7fff" unit="lux">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Define a treshold. Available settings: 0 - 32767 (1-32767 lux; 0=reports are not sent)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="42" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">Helligkeitsreport-Intervall</lang>
+                <lang xml:lang="en">ILLUMINATION REPORTS INTERVAL</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Zeitintervall zwischen zwei Helligkeitsreports.</lang>
+                <lang xml:lang="en">Time interval between consecutive illumination reports.</lang>
+              </description>
+      
+                  <value from="0000" to="7fff" unit="1s">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Define a time interval. Available settings: 0 - 32767 (1-32767 seconds; 0 = no reports)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="60" type="range" size="1" default="0a">
+            <name>
+                <lang xml:lang="de">Temperaturreport Schwellenwert</lang>
+                <lang xml:lang="en">TEMPERATURE REPORT THRESHOLD</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Parameter definiert, bei welcher Änderung der Temperatur ein Temperaturreport gesendet wird.</lang>
+                <lang xml:lang="en">parameter determines the change in level of temperature resulting in temperature report.</lang>
+              </description>
+      
+                  <value from="00" to="ff" unit="x 0,1°C">
+                <description>
+                    <lang xml:lang="de">(0.1 - 25.5°C; 0 = kein Report wird gesendet)</lang>
+                    <lang xml:lang="en">Define a treshold. 
+0 = reports are not sent</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="62" type="range" size="2" default="0384">
+            <name>
+                <lang xml:lang="de">Intervall für Temperaturmessung</lang>
+                <lang xml:lang="en">INTERVAL OF TEMPERATURE MEASURING</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Parameter definiert, in welchem Abstand die Temperatur gemessen wird.</lang>
+                <lang xml:lang="en">parameter determines how often the temperature will be measured.</lang>
+              </description>
+      
+                  <value from="0000" to="7fff" unit="sec">
+                <description>
+                    <lang xml:lang="de">1 - 65535 s; 0 = Temperatur wird nicht gemessen</lang>
+                    <lang xml:lang="en">Define a time interval. 0 = temperature will not be measured</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="64" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">Temperaturreport Intervall</lang>
+                <lang xml:lang="en">TEMPERATURE REPORTS INTERVAL</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Parameter definiert, in welchem Abstand der Temperaturreport gesendet wird.</lang>
+                <lang xml:lang="en">parameter determines how often the temperature reports will be sent.</lang>
+              </description>
+      
+                  <value from="0000" to="7fff" unit="sec">
+                <description>
+                    <lang xml:lang="de">1 - 65535 s; 0 = kein Report wird gesendet</lang>
+                    <lang xml:lang="en">Define a time interval. 0 = reports are not
+sent</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="66" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">Temperatur-Ausgleich</lang>
+                <lang xml:lang="en">TEMPERATURE OFFSET</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Wert, der zu der gemessenen Temperatur abgezogen oder addiert (Temperatur-Ausgleich).</lang>
+                <lang xml:lang="en">value to be added to the actual temperature, measured by the sensor (temperature compensation).</lang>
+              </description>
+      
+                  <value from="fc18" to="03e8">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Set a value for temperature compensation.
+Available settings: -1000 - 1000 (-100°C – 100°C)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="80" type="rangemapped" size="1" default="0a">
+            <name>
+                <lang xml:lang="de">LED Signal-Modus</lang>
+                <lang xml:lang="en">LED SIGNALING MODE</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Parameter definiert die Art, in dem die LED einen Bewegungsalarm anzeigt</lang>
+                <lang xml:lang="en">parameter determines the way in which LED diode behaves
+after motion has been detected</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">LED inaktiv.</lang>
+                    <lang xml:lang="en">LED inactive.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">LED Farbe abhängig von der Temperatur. Definiert in Parameter 86 und 87.</lang>
+                    <lang xml:lang="en">LED colour depends on the temperature. Set by parameters 86 and 87.</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Blitzlicht-Modus. LED leuchtet 10 Sekunden Weiß.</lang>
+                    <lang xml:lang="en">Flashlight mode - LED glows in white for 10 seconds.</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Weiß.</lang>
+                    <lang xml:lang="en">White.</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Rot</lang>
+                    <lang xml:lang="en">Red</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de">Grün</lang>
+                    <lang xml:lang="en">Green</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="de">Blau</lang>
+                    <lang xml:lang="en">Blue</lang>
+                  </description>
+              </value>
+            <value from="07" to="07">
+                <description>
+                    <lang xml:lang="de">Gelb</lang>
+                    <lang xml:lang="en">Yellow</lang>
+                  </description>
+              </value>
+            <value from="08" to="08">
+                <description>
+                    <lang xml:lang="de">Cyan</lang>
+                    <lang xml:lang="en">Cyan</lang>
+                  </description>
+              </value>
+            <value from="09" to="09">
+                <description>
+                    <lang xml:lang="de">Magenta</lang>
+                    <lang xml:lang="en">Magenta</lang>
+                  </description>
+              </value>
+            <value from="0a" to="0a">
+                <description>
+                    <lang xml:lang="de">LED Farbe abhängig von der Temperatur. Definiert in Parameter 86 und 87.</lang>
+                    <lang xml:lang="en">LED colour depends on the temperature. Set by parameters
+86 and 87.</lang>
+                  </description>
+              </value>
+            <value from="0b" to="0b">
+                <description>
+                    <lang xml:lang="de">Blitzlicht-Modus. LED leuchtet 10 Sekunden Weiß.</lang>
+                    <lang xml:lang="en">Flashlight mode - LED glows in white through 10 seconds.</lang>
+                  </description>
+              </value>
+            <value from="0c" to="0c">
+                <description>
+                    <lang xml:lang="de">Weiß</lang>
+                    <lang xml:lang="en">White</lang>
+                  </description>
+              </value>
+            <value from="0d" to="0d">
+                <description>
+                    <lang xml:lang="de">Rot</lang>
+                    <lang xml:lang="en">Red</lang>
+                  </description>
+              </value>
+            <value from="0e" to="0e">
+                <description>
+                    <lang xml:lang="de">Grün</lang>
+                    <lang xml:lang="en">Green</lang>
+                  </description>
+              </value>
+            <value from="0f" to="0f">
+                <description>
+                    <lang xml:lang="de">Blau</lang>
+                    <lang xml:lang="en">Blue</lang>
+                  </description>
+              </value>
+            <value from="10" to="10">
+                <description>
+                    <lang xml:lang="de">Gelb</lang>
+                    <lang xml:lang="en">Yellow</lang>
+                  </description>
+              </value>
+            <value from="11" to="11">
+                <description>
+                    <lang xml:lang="de">Cyan</lang>
+                    <lang xml:lang="en">Cyan</lang>
+                  </description>
+              </value>
+            <value from="12" to="12">
+                <description>
+                    <lang xml:lang="de">Magenta</lang>
+                    <lang xml:lang="en">Magenta</lang>
+                  </description>
+              </value>
+            <value from="13" to="13">
+                <description>
+                    <lang xml:lang="de">LED Farbe abhängig von der Temperatur. Definiert in Parameter 86 und 87.</lang>
+                    <lang xml:lang="en">LED colour depends on the temperature. Set by parameters
+86 and 87.</lang>
+                  </description>
+              </value>
+            <value from="14" to="14">
+                <description>
+                    <lang xml:lang="de">Weiß</lang>
+                    <lang xml:lang="en">White</lang>
+                  </description>
+              </value>
+            <value from="15" to="15">
+                <description>
+                    <lang xml:lang="de">Rot</lang>
+                    <lang xml:lang="en">Red</lang>
+                  </description>
+              </value>
+            <value from="16" to="16">
+                <description>
+                    <lang xml:lang="de">Grün</lang>
+                    <lang xml:lang="en">Green</lang>
+                  </description>
+              </value>
+            <value from="17" to="17">
+                <description>
+                    <lang xml:lang="de">Blau</lang>
+                    <lang xml:lang="en">Blue</lang>
+                  </description>
+              </value>
+            <value from="18" to="18">
+                <description>
+                    <lang xml:lang="de">Gelb</lang>
+                    <lang xml:lang="en">Yellow</lang>
+                  </description>
+              </value>
+            <value from="19" to="19">
+                <description>
+                    <lang xml:lang="de">Cyan</lang>
+                    <lang xml:lang="en">Cyan</lang>
+                  </description>
+              </value>
+            <value from="1a" to="1a">
+                <description>
+                    <lang xml:lang="de">Magenta</lang>
+                    <lang xml:lang="en">Magenta</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="81" type="range" size="1" default="32">
+            <name>
+                <lang xml:lang="de">LED Helligkeit</lang>
+                <lang xml:lang="en">LED BRIGHTNESS</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Parameter definiert die Helligkeit der LED bei Anzeige von Bewegung.</lang>
+                <lang xml:lang="en">parameter determines the brightness of LED when indicating
+motion.</lang>
+              </description>
+      
+                  <value from="00" to="64" unit="%">
+                <description>
+                    <lang xml:lang="de">1 - 100%; 0 = Helligkeit abhängig von der Umgebungshelligkeit - siehe Parameter 82 und 83</lang>
+                    <lang xml:lang="en">Define a brightness level.
+ 0 = brightness determined by the ambient lighting - see parameters 82 and 83</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="82" type="range" size="2" default="0064">
+            <name>
+                <lang xml:lang="de">untere Umgebungshelligkeitsgrenze</lang>
+                <lang xml:lang="en">LOW AMBIENT ILLUMINATION LEVEL</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Umgebungshelligkeit unterhalb derer die LED Helligkeit auf 1% gesetzt wird. Parameter ist nur relevant, wenn Parameter 81 auf 0 steht.</lang>
+                <lang xml:lang="en">ambient illumination level below which LED brightness is set to 1%. parameter is relevant only when the parameter 81 is set to 0.</lang>
+              </description>
+      
+                  <value from="0000" to="7ffe" unit="lux">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Available settings: 0 to parameter 83 value (0-32766 lux)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="83" type="range" size="2" default="03e8">
+            <name>
+                <lang xml:lang="de">obere Umgebungshelligkeitsgrenze</lang>
+                <lang xml:lang="en">upper AMBIENT ILLUMINATION LEVEL</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Umgebungshelligkeit oberhalb derer die LED Helligkeit auf 100% gesetzt wird. Parameter ist nur relevant, wenn Parameter 81 auf 0 steht.</lang>
+                <lang xml:lang="en">ambient illumination level above which LED brightness is set to 100%. parameter is relevant only when the parameter 81 is set to 0.</lang>
+              </description>
+      
+                  <value from="0001" to="7fff" unit="lux">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Available settings: parameter 82 value to 32767 (1-32767 lux)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="86" type="range" size="1" default="12">
+            <name>
+                <lang xml:lang="de">Minimaltemperatur für Blaues Licht</lang>
+                <lang xml:lang="en">MINIMUM TEMPERATURE for Blue Light</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Minimaltemperatur, bei der die LED blau leuchtet. Parameter ist nur relevant, wenn Parameter 80 ordentlich konfiguriert ist.</lang>
+                <lang xml:lang="en">Minimum temperatur resulting in blue LED illumination. parameter is relevant only when parameter 80 has been
+properly configured.</lang>
+              </description>
+      
+                  <value from="00" to="64" unit="°C">
+                <description>
+                    <lang xml:lang="de">o bis Wert von Parameter 87</lang>
+                    <lang xml:lang="en">0 to value of parameter 87</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="87" type="range" size="1" default="1c">
+            <name>
+                <lang xml:lang="de">Maximaltemperatur für Rotes Licht</lang>
+                <lang xml:lang="en">MAXIMUM TEMPERATURE for Red Light</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Maximaltemperatur, bei der die LED rot leuchtet. Parameter ist nur relevant, wenn Parameter 80 ordentlich konfiguriert ist.</lang>
+                <lang xml:lang="en">Maximum temperatur resulting in red LED illumination. parameter is relevant only when parameter 80 has been
+properly configured.</lang>
+              </description>
+      
+                  <value from="00" to="7f" unit="°C">
+                <description>
+                    <lang xml:lang="de">Wert von Parameter 86 bis 255</lang>
+                    <lang xml:lang="en">value of parameter 86 to 255</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="89" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="de">LED Anzeige des Manipulationsalarms</lang>
+                <lang xml:lang="en">LED INDICATING TAMPER ALARM</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Anzeige leuchtet in Polizei-Farben (Weiß, Rot, Blau).</lang>
+                <lang xml:lang="en">Indicating mode resembles a police car (white, red and blue).</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">LED zeigt Manipulationsalarm nicht an.</lang>
+                    <lang xml:lang="en">LED does not indicate tamper alarm.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">LED zeigt Manipulationsalarm an.</lang>
+                    <lang xml:lang="en">LED indicates tamper alarm.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/26ff8349151c58c587810f0dbc84f61e217a117f.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

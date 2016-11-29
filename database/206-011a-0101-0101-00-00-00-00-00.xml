@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="011a"/>
+        <productType value="0101"/>
+    <productId value="0101"/>
+    <libType value="00"/>
+    <protoVersion value="00"/>
+    <protoSubVersion value="00"/>
+    <appVersion value="00"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>US</rfFrequency>
+            <certId>14363</certId>
+            <certNumber>ZC08-11090009</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">On/Off Switch ZW15S</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Tap the top or bottom of the paddle.</lang>
+          </inclusionNote>
+            <productName>Z-Wave On/Off Switch</productName>
+            <brandName>ENERWAVE</brandName>
+            <productLine>Switch series</productLine>
+            <productCode>ZW15S</productCode>
+            <productVersion>Version 1</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0027"/>
+        <commandClass id="0025"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+        <commandClass id="0086"/>
+      </commandClasses>
+  
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Configure LED light state</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">LED state is contrary with relay state</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">LED state is as same as relay state</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Configure button toggle</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">The load connected to ZW15S will be
+turned on</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">The load connected to ZW15S can be turned off</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/ad241c9702c51f30c57f1461c529db16dd9a8dd1.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

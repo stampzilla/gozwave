@@ -1,0 +1,774 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="010f"/>
+        <productType value="0600"/>
+    <productId value="1000"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="34"/>
+    <appVersion value="16"/>
+    <appSubVersion value="16"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+                    
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Zwischenstecker mit Messfunktion und Multicolor-LED</lang>
+            <lang xml:lang="en">Wall Plug Switch with Metering and multicolor LED indicator</lang>
+            <lang xml:lang="ru">Модуль в розетку с измерением электропотребления и разноцветной LED подсветкой</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+            <lang xml:lang="ru"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Dreifach-Klick auf Taste</lang>
+            <lang xml:lang="en">Tripple Click on Button</lang>
+            <lang xml:lang="ru">Тройное нажатие на кнопку</lang>
+          </inclusionNote>
+            <productName>Wall Plug FGWPE-101</productName>
+            <brandName>Fibaro</brandName>
+                <productCode>FGWPE-101</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" inNIF="false"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0086"/>
+        <commandClass id="0071" version="0"/>
+        <commandClass id="0072"/>
+        <commandClass id="0070"/>
+        <commandClass id="0031" version="2"/>
+        <commandClass id="0032" version="2"/>
+        <commandClass id="0073"/>
+        <commandClass id="007a"/>
+        <commandClass id="009c" version="0"/>
+        <commandClass id="0025"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="3" maxNodes="1">
+            <description>
+                <lang xml:lang="de">Sendet Schaltzustand zu einem einzigen Gerät</lang>
+                <lang xml:lang="en">reports relais status to one device</lang>
+                <lang xml:lang="ru">Отправляет статус ВКЛ/ВЫКЛ контроллеру</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Sendet Kommando in Abhängigkeit der Last</lang>
+                <lang xml:lang="en">send commands depending on current load</lang>
+                <lang xml:lang="ru">Отправляет ВКЛ/ВЫКЛ в зависимости от потребляемой мощности</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Schaltstatus: Sendet ein Kommando bei jeder Änderung des Schaltstatus</lang>
+                <lang xml:lang="en">plug status. Will send BASIC command whenever the status of the plug changes</lang>
+                <lang xml:lang="ru">Включает/Выключает устройства командой BASIC при нажатии на кнопку B</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Immer AN</lang>
+                <lang xml:lang="en">Always On Function</lang>
+                <lang xml:lang="ru">Всегда включен</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Wenn aktiviert, bleibt der Schalter immer im Einschaltzustand</lang>
+                <lang xml:lang="en">Once activated, Wall Plug will keep a connected device constantly ON, will stop reacting to alarm frames and B-button push</lang>
+                <lang xml:lang="ru">Wall Plug всегда включен, его нельзя выключить ни кнопкой B, ни удаленно. В данном режиме Wall Plug работает как измеритель мощности и энергопотребление. Кроме того, Wall Plug не будет выключаться при получении сигнала тревоги с другого устройства Z-Wave (параметр 35 будет игнорироваться). Wall Plug может быть выключено только в случае превышения заданной пользователем мощности (параметр 70). В таком случае, Wall Plug может быть снова включено нажатием кнопки B либо удаленно. По умолчанию защита от перегрузки неактивна. </lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">aktiv</lang>
+                    <lang xml:lang="en">active</lang>
+                    <lang xml:lang="ru">Всегда включен, нельзя отключить</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">inaktiv</lang>
+                    <lang xml:lang="en">inactive</lang>
+                    <lang xml:lang="ru">Можно отключить</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="16" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Zurück zu altem Status nach Stromausfall</lang>
+                <lang xml:lang="en">Remember device status after power failure</lang>
+                <lang xml:lang="ru">Восстанавливать состояние реле после отключения питания</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert das Verhalten nach einem Stromausfall</lang>
+                <lang xml:lang="en">Define how will the Plug react after the power supply is back on</lang>
+                <lang xml:lang="ru">Определяет восстанавливать ли состояние реле на то, которое было до отключения питания устройства.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">nicht zurück zu altem Status</lang>
+                    <lang xml:lang="en">Wall Plug does not memorize its state after a power failure. Connected device will be off after the power supply is reconnected</lang>
+                    <lang xml:lang="ru">Не восстанавливать. После подачи питания устройство будет в состоянии &quot;Выключено&quot;</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">zurück zu altem Status</lang>
+                    <lang xml:lang="en">Wall Plug memorizes its state after a power failure</lang>
+                    <lang xml:lang="ru">Восстанавливать</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="34" type="range" size="1" default="3f">
+            <name>
+                <lang xml:lang="de">Reaktion auf Alarm</lang>
+                <lang xml:lang="en">Reaction to Alarm</lang>
+                <lang xml:lang="ru">На какие сигналы тревоги (Alarm) реагировать</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert die Alarmtypen, auf die der Schalter reagiert</lang>
+                <lang xml:lang="en">defines the alarm types the plug reacts to. Set value may be a sum of available values, e.g. set value = 5 means the Plug will respond to general alarm (1) and CO alarm (4).</lang>
+                <lang xml:lang="ru">Параметр позволяет выбрать на какие сигналы тревоги будет реагировать Wall Plug. Если нужно реагировать на несколько сигналов тревоги, то просуммируйте их значения. Например, для реагирования на Задымление (2) и Протечку (32), нужно задать значение 2 + 32 = 34.</lang>
+              </description>
+      
+                  <value from="00" to="3f">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Available settings: 0 - 63.
+1 - general alarm,
+2 - smoke alarm,
+4 - CO alarm,
+8 - CO2 alarm,
+16 - high temperature alarm,
+32 - flood alarm,
+63 - device responds to all types of alarm frames. Set value may be a sum of available values, e.g. set value = 5 means
+the Plug will respond to general alarm (1) and CO alarm (4).</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="35" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Antwort auf Alarmmeldung</lang>
+                <lang xml:lang="en">Response to Alarm Frames</lang>
+                <lang xml:lang="ru">Как реагировать на сигнал тревоги</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert die Aktion des Schalters bei Alarm. Im &quot;Immer An&quot; Modus wird diese Einstellung ignoriert.</lang>
+                <lang xml:lang="en">defines the response of the plug to an alarm. In &quot;always on&quot; mode this setting is ignored.</lang>
+                <lang xml:lang="ru">Параметр позволяет выбрать, как Wall Plug будет реагировать на сигнал тревоги. Если в параметре №1 выбран &quot;Всегда включен, нельзя отключить&quot;, то этот параметр игнорируется и Wall Plug никак не будет реагировать на сигнал тревоги.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Keine Reaktion</lang>
+                    <lang xml:lang="en">No Reaction</lang>
+                    <lang xml:lang="ru">Не реагировать</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Aktivieren Sie das angeschlossene Gerät.</lang>
+                    <lang xml:lang="en">Turn on connected device, LED ring signals alarm through time set in Parameter 39 or until alarm is turned off</lang>
+                    <lang xml:lang="ru">Включить подключенное устройство, LED кольцо будет моргать столько секунд, сколько указано в параметре 39 или пока не будет устранен сигнал тревоги.</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Schalten Sie das angeschlossene Gerät.</lang>
+                    <lang xml:lang="en">Turn off connected device, LED ring signals alarm through time set in Parameter 39 or until alarm is turned off</lang>
+                    <lang xml:lang="ru">Выключить подключенное устройство, LED кольцо будет моргать столько секунд, сколько указано в параметре 39 или пока не будет устранен сигнал тревоги.</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Ein-und ausschalten das Gerät mal in der Sekunde.</lang>
+                    <lang xml:lang="en">Change Device state every second. In alarm mode the plug does not report status changes, power changes and ignores alarm frames. After alarm time (Parameter 39) has passed or alarm was canceled device is set back to previous state</lang>
+                    <lang xml:lang="ru">Включать и выключать устройство раз в секунду. В режиме сигнала тревоги Wall Plug не посылает отчет о своем состоянии, изменении электропотребления и игнорирует другие сигналы тревоги. Устройство вернется к своему первоначальному состоянию  после того как время сигнала тревоги закончится (Параметр 39) или сигнал тревоги будет устранен.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="39" type="range" size="2" default="0258">
+            <name>
+                <lang xml:lang="de">Alarm Dauer</lang>
+                <lang xml:lang="en">Alarm duration</lang>
+                <lang xml:lang="ru">Время сигнала тревоги</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert die Aktion des Schalters bei Alarm. Im &quot;Immer An&quot; Modus wird diese Einstellung ignoriert.</lang>
+                <lang xml:lang="en">Wall Plug&#039;s alarm mode duration. If a device sending an alarm frame through the Z-Wave network sets alarm duration as well, this parameter&#039;s settings are ignored.</lang>
+                <lang xml:lang="ru">Время действия сигнала тревоги. Если устройство приславшее сигнал тревоги, прислало еще и время действия сигнала тревоги, то этот параметр игнорируется. Также этот параметр игнорируется если в параметре №1 выбран &quot;Всегда включен, нельзя отключить&quot;.</lang>
+              </description>
+      
+                  <value from="0000" to="ffff" unit="sec">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Set an alarm mode duration. </lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="40" type="range" size="1" default="50">
+            <name>
+                <lang xml:lang="de">Sofortiger Bericht über Stromverbrauch</lang>
+                <lang xml:lang="en">Immediate Power Report</lang>
+                <lang xml:lang="ru">Отчет при изменении мгновенной потребляемой мощности</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert die notwendige Änderung im Stromverbrauch, die zu einer sofortigen Absendung eines Reports führt. Achtung: Bei stark schwankenden Lasten kann dies zu einer Überlastung des Z-Wave-Netzes führen.</lang>
+                <lang xml:lang="en">Parameter defines by how much power load must change, in percents, to be reported to the main controller, with the highest priority in the Z-Wave network. By default, Fibaro Wall Plug immediately sends power report if the power load changes by 80%. NOTE: In extreme cases, reports may be sent every second if rapid and significant power load changes occur. Frequent reporting may overload the Z-Wave network so these parameter&#039;s settings should reflect significant changes in power load only.</lang>
+                <lang xml:lang="ru">На сколько процентов должно измениться мгновенное потребление мощности, чтобы отправить отчет контроллеру. По умолчанию Wall Plug отправляет отчет, если потребление мгновенной мощности изменилось на 85%. Если установить маленькое значение, то отчеты будут отправляться очень часто, что может привести к перегрузке Z-Wave сети, в таком случае отчеты будут отправляться раз в секунду. 100% означает отключение отправки отчетов.</lang>
+              </description>
+      
+                  <value from="01" to="64" unit="%">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Define a value.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="42" type="range" size="1" default="0f">
+            <name>
+                <lang xml:lang="de">Änderung der Leistung zum Generieren eines Reports</lang>
+                <lang xml:lang="en">Standard Power Load Reporting</lang>
+                <lang xml:lang="ru">Отчет при изменении электропотребления</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert die notwendige Änderung der Leistungsaufnahme, um einen entsprechenden automatischen Report zu generieren</lang>
+                <lang xml:lang="en">defines the change in power consumption to cause an unsolicided power report</lang>
+                <lang xml:lang="ru">На сколько процентов должно измениться электропотребление, чтобы отправить отчет контроллеру. По умолчанию Wall Plug отправляет отчет, если электропотребление изменилось на 15%. По умолчанию изменения электропотребления могут отправляться до 5 раз за 30 секунд. Wall Plug отправляет 5 отчетов за время указанное в параметре 43. 100% означает отключение отправки отчетов.</lang>
+              </description>
+      
+                  <value from="01" to="64">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Define a value. Value of 100 (%) means the reports are turned off.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="43" type="rangemapped" size="1" default="1e">
+            <name>
+                <lang xml:lang="de">Regelmäßiges Senden eines Reports über die Stromaufnahme</lang>
+                <lang xml:lang="en">Power Reporting Frequency</lang>
+                <lang xml:lang="ru">Как часто отправлять отчет о электропотреблении</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert den Interval, in dem ein automatischer Report über den Stromverbrauch ausgesandt wird.</lang>
+                <lang xml:lang="en">defines the frequency to send an unsolicided power report</lang>
+                <lang xml:lang="ru">Данный параметр определяет, как часто будут отправляться отчеты о электропотреблении (параметр 42). По умолчанию Wall Plug отправляет до 5 отчетов каждые 30 секунд, при условии изменения электропотребления на 15%.</lang>
+              </description>
+      
+                  <value from="01" to="fe" unit="sec">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Define a frequency to send reports.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="de">Reports will be sent only as a result of parameter 47 settings or in case of polling</lang>
+                    <lang xml:lang="en">Reports will be sent only as a result of parameter 47 settings or in case of polling</lang>
+                    <lang xml:lang="ru">Отчет не отправляется самостоятельно. Отчет может быть получен опросом Wall Plug и отправка отчета зависит от параметра 47. </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="45" type="rangemapped" size="1" default="10">
+            <name>
+                <lang xml:lang="de">Automatisches Senden eines Reportes über Stromverbrauch bei Verbrauchsänderung</lang>
+                <lang xml:lang="en">Reporting Changes in energy consumed by controlled devices</lang>
+                <lang xml:lang="ru">Обновление информации о энергопотреблении устройством</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert die Änderung im Stromverbrauch, bei der ein automatischer Report über den Stromverbrauch ausgesandt wird.</lang>
+                <lang xml:lang="en">defines needed change of power draw to generate an unsoliceded power report</lang>
+                <lang xml:lang="ru">Новое значение энергопотребления вычисляется суммированием с предыдущем значением. Доступные значения: 1-254 (0.01кВтч - 2.54кВтч)</lang>
+              </description>
+      
+                  <value from="01" to="fe">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Define a value. 
+Available settings: 1 - 254 (0,01kWh - 2,54kWh).</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="de">Changes in consumed energy will not be reported. Reports will be sent only in case of polling.</lang>
+                    <lang xml:lang="en">Changes in consumed energy will not be reported. Reports will be sent only in case of polling.</lang>
+                    <lang xml:lang="ru">Не отправлять отчет.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="47" type="rangemapped" size="2" default="0e10">
+            <name>
+                <lang xml:lang="de">Zeitinterval zum Senden eines Reportes ohne Änderung im Verbrauch</lang>
+                <lang xml:lang="en">Time Period between reports on power and energy consumption</lang>
+                <lang xml:lang="ru">Временной интервал отправки отчета о энергопотреблении и мощности</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert den Interval, in dem ein automatischer Report über den Stromverbrauch ausgesandt wird, wenn keine Änderung des Stromverbrauches erkannt wurde</lang>
+                <lang xml:lang="en">defines the time pweriod between reports sent when changes in power load have nit been reported.</lang>
+                <lang xml:lang="ru">Параметр определяет как часто отправлять отчет о энергопотреблении и мощности, когда изменения энергопотреблении не фиксируются. По умолчанию отчет отправляется раз в час. Если выбрано &quot;Не отправлять отчет периодически&quot;, тогда отчет будет отправляться только, если произошло изменение энергопотребления (параметры 40,42,43,45) или опрос с контроллера.</lang>
+              </description>
+      
+                  <value from="0001" to="fffe" unit="sec">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Define a time interval.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+            <value from="ffff" to="ffff">
+                <description>
+                    <lang xml:lang="de">No periodic reports. Reports will be sent only in case of power load / energy consumption changes (parameters 40,42,43,45) or in case of polling.</lang>
+                    <lang xml:lang="en">No periodic reports. Reports will be sent only in case of power load / energy consumption changes (parameters 40,42,43,45) or in case of polling.</lang>
+                    <lang xml:lang="ru">Не отправлять отчет периодически.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="49" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Messen des Eigenstromverbrauches</lang>
+                <lang xml:lang="en">Metering Energy consumed by Power Plug itself</lang>
+                <lang xml:lang="ru">Добавлять к измерениям энергию потребляемую самим Wall Plug</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert, ob der Eigenstromverbrauch berücksichtigt werden soll.</lang>
+                <lang xml:lang="en">defines whether or not the own power consumption shall be recorded.</lang>
+                <lang xml:lang="ru">Этот параметр определяет, следует ли включать в замер количество энергии, потребляемой самим Wall Plug.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">inaktiv</lang>
+                    <lang xml:lang="en">inactive</lang>
+                    <lang xml:lang="ru">Не добавлять</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">aktiv</lang>
+                    <lang xml:lang="en">active</lang>
+                    <lang xml:lang="ru">Добавлять</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="50" type="range" size="2" default="012c">
+            <name>
+                <lang xml:lang="de">unterer Leistungsschwellwert</lang>
+                <lang xml:lang="en">DOWN value</lang>
+                <lang xml:lang="ru">Нижний порог мощности</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert den Bereich des Stromverbrauches, der am Gerät signalisiert wird</lang>
+                <lang xml:lang="en">Lower power threshold, used in parameter 52 (value cannot be higher than a value specified in parameter 51)</lang>
+                <lang xml:lang="ru">Нижний порог мощности, используемый в параметре 52, не может превышать значение верхнего порога, указанное в параметре 51. Доступные значения: 0 - 25 000 (0,0Вт - 2 500Вт).</lang>
+              </description>
+      
+                  <value from="0000" to="61a8">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Define a lower treshold. Available settings: 0 - 25 000 (0,0W - 2500W)
+</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="51" type="range" size="2" default="01f4">
+            <name>
+                <lang xml:lang="de">oberer Leistungsschwellwert</lang>
+                <lang xml:lang="en">UP value</lang>
+                <lang xml:lang="ru">Верхний порог мощности</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert den Bereich des Stromverbrauches, der am Gerät signalisiert wird</lang>
+                <lang xml:lang="en">Upper power threshold, used in parameter 52 (value cannot be lower than a value specified in parameter 50)</lang>
+                <lang xml:lang="ru">Верхний порог мощности, используемый в параметре 52, не может быть меньше значения нижнего порога, указанного в параметре 51. Доступные значения: 0 - 25 000 (0,0Вт - 2 500Вт).</lang>
+              </description>
+      
+                  <value from="0010" to="61a8">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Define an upper treshold.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="52" type="constant" size="1" default="06">
+            <name>
+                <lang xml:lang="de">Aktion bei Erreichen des definierten Schwellwertes (Parameter 50/51)</lang>
+                <lang xml:lang="en">Action in case of exceeding defined power values (Parameter 50/51)</lang>
+                <lang xml:lang="ru">Действия в случае превышения верхнего и нижнего порогов мощности</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert, welche Aktion bei Geräten in Assoziationsgruppe 2 bei Erreichen des Schwellwertes des Stromverbrauches durchgeführt werden soll</lang>
+                <lang xml:lang="en">definies the action for devices in association group 2 when power trigger value is reached.</lang>
+                <lang xml:lang="ru">Устройствам из группы 2 будет отправлена команда, если мощность опустится ниже значения указанного в параметре 50 или поднимется выше значения указанного в параметре 51.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">inaktiv</lang>
+                    <lang xml:lang="en">inactive</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Schaltet Geräte der Assoziationsgruppe bei Erreichen des DOWN Wertes ein</lang>
+                    <lang xml:lang="en">turns associated devices ON when when power drops below DOWN value</lang>
+                    <lang xml:lang="ru">Включить устройства, когда мощность станет меньше НИЖНЕГО значения</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Schaltet Geräte der Assoziationsgruppe bei Erreichen des DOWN Wertes aus</lang>
+                    <lang xml:lang="en">turns associated devices OFF when when power drops below DOWN value</lang>
+                    <lang xml:lang="ru">Выключить устройства, когда мощность станет меньше НИЖНЕГО значения</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Schaltet Geräte der Assoziationsgruppe bei Erreichen des UP Wertes aus</lang>
+                    <lang xml:lang="en">turns associated devices ON when when power drops below UP value</lang>
+                    <lang xml:lang="ru">Включить устройства, когда мощность станет больше ВЕРХНЕГО значения</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Schaltet Geräte der Assoziationsgruppe bei Erreichen des UP Wertes ein</lang>
+                    <lang xml:lang="en">turns associated devices OFF when when power drops below UP value</lang>
+                    <lang xml:lang="ru">Выключить устройства, когда мощность станет больше ВЕРХНЕГО значения</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de">Kombination von Option 1 und Option 4</lang>
+                    <lang xml:lang="en">Option 1 and 4 combined</lang>
+                    <lang xml:lang="ru">Опции 1 и 4 месте. Включить устройства, когда мощность станет меньше НИЖНЕГО значения, Выключить устройства, когда мощность станет больше ВЕРХНЕГО значения.</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="de">Kombination von Option 2 und Option 3</lang>
+                    <lang xml:lang="en">Option 2 and 3 combined</lang>
+                    <lang xml:lang="ru">Опции 2 и 3 месте. Выключить устройства, когда мощность станет меньше НИЖНЕГО значения, Включить устройства, когда мощность станет больше ВЕРХНЕГО значения</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="60" type="range" size="2" default="61a8">
+            <name>
+                <lang xml:lang="de">Leistungsschwellwert für violettes Blinken</lang>
+                <lang xml:lang="en">Power Load Trigger</lang>
+                <lang xml:lang="ru">При превышении какой мощности LED кольцо замигает фиолетовым</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert den Schwellwert des Stromverbrauches, ab dem das Gerät violett blinkt</lang>
+                <lang xml:lang="en">defines the power load that will make the plug flash purple (only when parameter 61 is set to 0 or 1)</lang>
+                <lang xml:lang="ru">Функция работает, когда в параметре 61 установлено значение 0 или 1</lang>
+              </description>
+      
+                  <value from="03e8" to="7d00" unit="x 0,1W">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Define a treshold.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="61" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="de">LED Ring Farbe im Einschaltzustand</lang>
+                <lang xml:lang="en">LED Ring Color when device is on</lang>
+                <lang xml:lang="ru">Цвет LED кольца, когда устройство включено</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert die Farbe des LED Rings im eingeschalteten Zustand</lang>
+                <lang xml:lang="en">defines the color of the LED ring in ON state</lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Farbe wechselt entsprechend der Leistungsaufnahme des Verbrauchers</lang>
+                    <lang xml:lang="en">changes in predefined steps according to power load</lang>
+                    <lang xml:lang="ru">Цвет соответствует мощности</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Farbe wird kontinuierlich verändert entsprechend der Leistungsaufnahme des Verbrauchers</lang>
+                    <lang xml:lang="en">changes continously according to power load using full spectrum of LED color</lang>
+                    <lang xml:lang="ru">Плавное изменение всех цветов</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Weiss</lang>
+                    <lang xml:lang="en">White</lang>
+                    <lang xml:lang="ru">Белый</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Rot</lang>
+                    <lang xml:lang="en">Red</lang>
+                    <lang xml:lang="ru">Красный</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Grün</lang>
+                    <lang xml:lang="en">Green</lang>
+                    <lang xml:lang="ru">Зелёный</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de">Blau</lang>
+                    <lang xml:lang="en">Blue</lang>
+                    <lang xml:lang="ru">Синий</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="de">Geld</lang>
+                    <lang xml:lang="en">Yellow</lang>
+                    <lang xml:lang="ru">Жёлтый</lang>
+                  </description>
+              </value>
+            <value from="07" to="07">
+                <description>
+                    <lang xml:lang="de">Cyan</lang>
+                    <lang xml:lang="en">Cyan</lang>
+                    <lang xml:lang="ru">Голубой</lang>
+                  </description>
+              </value>
+            <value from="08" to="08">
+                <description>
+                    <lang xml:lang="de">Magenta</lang>
+                    <lang xml:lang="en">Magenta</lang>
+                    <lang xml:lang="ru">Пурпурный</lang>
+                  </description>
+              </value>
+            <value from="09" to="09">
+                <description>
+                    <lang xml:lang="de">Aus</lang>
+                    <lang xml:lang="en">Off</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="62" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="de">LED Ring Farbe im Ausschaltzustand</lang>
+                <lang xml:lang="en">LED Ring Color when device is off</lang>
+                <lang xml:lang="ru">Цвет LED кольца, когда устройство выключено</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert die Farbe des LED Rings im ausgeschaltet Zustand</lang>
+                <lang xml:lang="en">defines the color of the LED ring in OFF state</lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">LED ring is illuminated with a color corresponding to the last measured power, before the controlled device was turned off</lang>
+                    <lang xml:lang="en">LED ring is illuminated with a color corresponding to the last measured power, before the controlled device was turned off</lang>
+                    <lang xml:lang="ru">Цвет LED кольца показывает последнюю измеренную мощность, до выключения устройства</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Weiss</lang>
+                    <lang xml:lang="en">White</lang>
+                    <lang xml:lang="ru">Белый</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Rot</lang>
+                    <lang xml:lang="en">Red</lang>
+                    <lang xml:lang="ru">Красный</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Grün</lang>
+                    <lang xml:lang="en">Green</lang>
+                    <lang xml:lang="ru">Зеленый</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Blau</lang>
+                    <lang xml:lang="en">Blue</lang>
+                    <lang xml:lang="ru">Синий</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de">Geld</lang>
+                    <lang xml:lang="en">Yellow</lang>
+                    <lang xml:lang="ru">Жёлтый</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="de">Cyan</lang>
+                    <lang xml:lang="en">Cyan</lang>
+                    <lang xml:lang="ru">Голубой</lang>
+                  </description>
+              </value>
+            <value from="07" to="07">
+                <description>
+                    <lang xml:lang="de">Magenta</lang>
+                    <lang xml:lang="en">Magenta</lang>
+                    <lang xml:lang="ru">Пурпурный</lang>
+                  </description>
+              </value>
+            <value from="08" to="08">
+                <description>
+                    <lang xml:lang="de">Aus</lang>
+                    <lang xml:lang="en">Off</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="63" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="de">LED Ring Farbe bei Z-Wave Alarmmeldungen</lang>
+                <lang xml:lang="en">LED Ring Color on Z-Wave Alarms</lang>
+                <lang xml:lang="ru">Цвет LED кольца при сигнале тревоги (Alarm)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert die Farbe des LED Rings im Alarmfall</lang>
+                <lang xml:lang="en">defines the color of the LED ring on Alarm State</lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Keine Farbänderung</lang>
+                    <lang xml:lang="en">No Change of color</lang>
+                    <lang xml:lang="ru">Цвет не изменяется. Цвет определяется настройками параметров 61 или 62</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Blinked rot/blau/weiss</lang>
+                    <lang xml:lang="en">flashes red/blue/white</lang>
+                    <lang xml:lang="ru">Мигает красный/синий/красный</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Weiss</lang>
+                    <lang xml:lang="en">White</lang>
+                    <lang xml:lang="ru">Белый</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Rot</lang>
+                    <lang xml:lang="en">Red</lang>
+                    <lang xml:lang="ru">Красный</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Grün</lang>
+                    <lang xml:lang="en">Green</lang>
+                    <lang xml:lang="ru">Зелёный</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de">Blau</lang>
+                    <lang xml:lang="en">Blue</lang>
+                    <lang xml:lang="ru">Синий</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="de">Geld</lang>
+                    <lang xml:lang="en">Yellow</lang>
+                    <lang xml:lang="ru">Жёлтый</lang>
+                  </description>
+              </value>
+            <value from="07" to="07">
+                <description>
+                    <lang xml:lang="de">Cyan</lang>
+                    <lang xml:lang="en">Cyan</lang>
+                    <lang xml:lang="ru">Голубой</lang>
+                  </description>
+              </value>
+            <value from="08" to="08">
+                <description>
+                    <lang xml:lang="de">Magenta</lang>
+                    <lang xml:lang="en">Magenta</lang>
+                    <lang xml:lang="ru">Пурпурный</lang>
+                  </description>
+              </value>
+            <value from="09" to="09">
+                <description>
+                    <lang xml:lang="de">Aus</lang>
+                    <lang xml:lang="en">Off</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="70" type="range" size="2" default="ffff">
+            <name>
+                <lang xml:lang="de">Überlastabschaltung</lang>
+                <lang xml:lang="en">Overload Safety Switch</lang>
+                <lang xml:lang="ru">Отключение при перезагрузки</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert die Aktion des Schalters bei Alarm. Im &quot;Immer An&quot; Modus wird diese Einstellung ignoriert.</lang>
+                <lang xml:lang="en">Allows turning off a device in case of overloading. This will even happen in &quot;always on&quot; mode. Device can be turned back on using the button on the device or sending a ON command.</lang>
+                <lang xml:lang="ru">Эта функция позволяет выключить Wall Plug в случае превышения заданной мощности. Wall plug выключится даже если в параметре 1 задано &quot;Всегда включен&quot;. Wall Plug может быть заново включен кнопкой B или Z-Wave командой. При превышении 3200Вт Wall Plug отключится не зависимо от установленного значения. По умолчанию это функция отключена (значение больше 3200Вт).</lang>
+              </description>
+      
+                  <value from="0010" to="ffff" unit="x 0,1 W">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Define a value. Available settings: 10 - 65 535 (1W - 6 553,5W). Value higher than 32 000 (3 200W) turns the overload safety switch
+off, i.e. this functionality is turned off by default.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/e4a48654e56d3160d184e1bc5ba84928fee6bae5.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

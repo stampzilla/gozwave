@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0109"/>
+        <productType value="2009"/>
+    <productId value="0901"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="22"/>
+    <appVersion value="01"/>
+    <appSubVersion value="41"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="00"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>US</rfFrequency>
+            <certId>14599</certId>
+            <certNumber>ZC08-12010001</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Wireless Siren US</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Press the program switch for at least 1 secondand release.</lang>
+          </inclusionNote>
+            <productName>Wireless Siren &amp; Strobe Alarm, Backup battery type</productName>
+            <brandName>Vision</brandName>
+            <productLine>Home Security</productLine>
+            <productCode>09</productCode>
+            <productVersion>01</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+        <commandClass id="0025"/>
+        <commandClass id="0086"/>
+      </commandClasses>
+  
+  
+    <configParams>
+        <configParam number="0" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Siren/Strobe Mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Siren and strobe enable</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Siren only</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Strobe only</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="1" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Alarm auto stop time command</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">30 seconds</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">60 seconds</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">120 seconds</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">Siren will not stop automatically</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/88e6a12a58551b516c0b11095b3e8e3ae91ce63c.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

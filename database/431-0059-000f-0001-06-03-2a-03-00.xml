@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0059"/>
+        <productType value="000f"/>
+    <productId value="0001"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="2a"/>
+    <appVersion value="03"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="31"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+                    
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Wasserzählersensor</lang>
+            <lang xml:lang="en">Water Meter Sensor</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de">Einen Magneten für 3 Sekunden an die flache Stelle halten bis die rote LED aufleuchtet.</lang>
+            <lang xml:lang="en">Put a magnet on the flat side of the sensor for 3 seconds until the red LED blinks</lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Einen Magneten für 3 Sekunden an die flache Stelle halten bis die rote LED aufleuchtet.</lang>
+            <lang xml:lang="en">Put a magnet on the flat side of the sensor for 3 seconds until the red LED blinks</lang>
+          </inclusionNote>
+            <productName>SWM01</productName>
+            <brandName>SWM01</brandName>
+                        <batteryType>DC 3V</batteryType>
+            <batteryCount>1</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0080"/>
+        <commandClass id="0020" inNIF="false"/>
+        <commandClass id="0084" version="2"/>
+        <commandClass id="0085"/>
+        <commandClass id="0086"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0070"/>
+        <commandClass id="0031"/>
+        <commandClass id="0032"/>
+        <commandClass id="009c"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="3" maxNodes="2">
+            <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="2">
+            <description>
+                <lang xml:lang="de">Geräte, die automatische Batteriewarnung empfangen</lang>
+                <lang xml:lang="en">Nodes to receive unsolicited low battery warning report</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="2">
+            <description>
+                <lang xml:lang="de">Geräte, die automatischen Zählerstand empfangen</lang>
+                <lang xml:lang="en">Nodes to receive unsolicited water meter reading</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="4" default="00000000">
+            <name>
+                <lang xml:lang="de">Aufaddierter Zählerstand</lang>
+                <lang xml:lang="en">Accumulated Register Value</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Zeigt den aktuellen Zählerstand in Anzahl Impulsen</lang>
+                <lang xml:lang="en">shows the actual counter of the sensor</lang>
+              </description>
+      
+                  <value from="00000000" to="05f5e0ff">
+                <description>
+                    <lang xml:lang="de">qm/Stunde</lang>
+                    <lang xml:lang="en">m3/Hr</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="2" default="0e10">
+            <name>
+                <lang xml:lang="de">Interval der Zählerstandmeldung</lang>
+                <lang xml:lang="en">Reading Reporting Interval</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert, wie oft der Zählerstand gemeldet werden sll</lang>
+                <lang xml:lang="en">how often the meter reading is reported</lang>
+              </description>
+      
+                  <value from="0001" to="2710">
+                <description>
+                    <lang xml:lang="de">Minuten</lang>
+                    <lang xml:lang="en">minutes</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="constant" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">min. Änderung zum Melden des Zählerstandes</lang>
+                <lang xml:lang="en">Delta Configuration Reading</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert die minale Änderung des Zählerstandes, die eine automatische Zählerstandsmeldung erzeugt.</lang>
+                <lang xml:lang="en">defines the minimal change until a new meter value is reported</lang>
+              </description>
+      
+                  <value from="0000" to="2710">
+                <description>
+                    <lang xml:lang="de">qm/Stunde</lang>
+                    <lang xml:lang="en">m3/Hr</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="constant" size="4" default="00000000">
+            <name>
+                <lang xml:lang="de">Seriennummer des Wasserzählers</lang>
+                <lang xml:lang="en">Serial Number Water Meter</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+          </configParam>
+        <configParam number="5" type="constant" size="4" default="00000000">
+            <name>
+                <lang xml:lang="de">Seriennummer des Z-Wave Moduls</lang>
+                <lang xml:lang="en">Serial Number Z-Wave Module</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">im Format JJMMxxxx mit JJ als Jahr, MM als Monat und xxxx als laufende Nummer</lang>
+                <lang xml:lang="en">in Format YYMMxxxx with YYY as year, MM as month and xxx as id</lang>
+              </description>
+      
+          </configParam>
+      </configParams>
+  
+    
+  
+    
+  </ZWaveDevice>
+
+

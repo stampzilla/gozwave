@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0165"/>
+        <productType value="0001"/>
+    <productId value="0003"/>
+    <libType value="03"/>
+    <protoVersion value="04"/>
+    <protoSubVersion value="05"/>
+    <appVersion value="01"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Micro Smart Plug ON/OFF with energy metering</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">To include/add to the Z-Wave network, long press during 2 seconds to send several NIF during 30 seconds or a triple press to send a single NIF  </lang>
+          </inclusionNote>
+            <productName>Z-Wave Plus Micro Smart Plug ON/OFF</productName>
+            <brandName>NodOn</brandName>
+            <productLine>Z-Wave Plus Product Range</productLine>
+            <productCode>MSP-3-1-X1</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0027"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0025"/>
+        <commandClass id="0070"/>
+        <commandClass id="005a"/>
+        <commandClass id="0087"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0071" version="4"/>
+        <commandClass id="0073"/>
+        <commandClass id="0075" version="2"/>
+        <commandClass id="0032" version="4"/>
+        <commandClass id="007a" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0022" controlled="true" inNIF="false"/>
+        <commandClass id="0020" controlled="true" inNIF="false"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="6" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Metering - Report: All the meter reports and notifications triggered by Metering parameters will be
+reported to the devices present in this group.
+This group is configurable through the parameters 21, 22, 23 and 24.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="5" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Metering - Low Threshold - Set On/Off: When the Micro Smart Plug reaches below the low threshold of power defined by
+the configuration parameter, it will send OFF or ON command to the associated
+devices.
+This group is configurable through the parameters 26 and 27.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="4" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Metering - High Threshold - Set On/Off: When the Micro Smart Plug reaches over the high threshold of power defined by
+the configuration parameter, it will send OFF or ON command to the associated
+devices.
+This group is configurable through the parameter 25 and 27.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Follow Complementary State: When the Micro Smart Plug is switched ON (respectively OFF) using the local
+button, it will send OFF (respectively ON) command to the associated devices. No
+command is sent if the Micro Smart Plug is switched ON or OFF wirelessly.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Follow State: When the Micro Smart Plug is switched ON (respectively OFF) using the local
+button, it will send ON (respectively OFF) command to the associated devices. No
+command is sent if the Micro Smart Plug is switched ON or OFF wirelessly.
+This group is configurable through the parameter 3.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Lifeline: This group is generally used to report information of the Micro Smart Plug to the
+Main Controller of the network.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="02">
+            <name>
+                <lang xml:lang="en">Default State</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter defines the status of the Micro Smart Plug after a power outage
+or after being plugged.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">OFF</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">ON</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Status before power outage</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="rangemapped" size="1" default="03">
+            <name>
+                <lang xml:lang="en">Follow State</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter allows to enable or disable Group 2 &amp; Group 3.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Group 2 &amp; Group 3 disable</lang>
+                  </description>
+              </value>
+            <value from="01" to="03">
+                <description>
+                    <lang xml:lang="en">1=Group 2 enable; 2=Group 3 enable; The value may be the sum of available values.
+For example, if you want to enable Group 2 &amp; 3, the parameter value is 1+2=3. </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Always On</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter forces the Micro Smart Plug status to be ON. While enable it is
+not possible to switch OFF the plug (local or wireless).</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Always ON disable</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Always ON enable</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="21" type="rangemapped" size="1" default="0a">
+            <name>
+                <lang xml:lang="en">Power Auto-Sending Report</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter will send a power report automatically if the power value
+changes of x % W (Watt) compared to the last report.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Power Auto-Polling Report Disable</lang>
+                  </description>
+              </value>
+            <value from="01" to="64" unit="%">
+                <description>
+                    <lang xml:lang="en">Power Auto-Polling Report Enable with 1% (to100%)
+differential</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="22" type="rangemapped" size="2" default="07d0">
+            <name>
+                <lang xml:lang="en">Overload Report</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter will switch off the Micro Smart Plug in case the power is above x
+W (Watt) and send an alarm to the primary controller.
+This parameter has the highest execution priority between all the metering
+configurations for security reason.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Overload Report Disable (Not Recommended)</lang>
+                  </description>
+              </value>
+            <value from="0001" to="07d0" unit="W">
+                <description>
+                    <lang xml:lang="en">Overload Report enable with a upper limit of 1 W
+(to 2000 W)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="23" type="rangemapped" size="2" default="03e8">
+            <name>
+                <lang xml:lang="en">Energy Auto-Sending Report</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter will send a new energy report automatically if the energy value
+changes of x Wh (Watt-hour) compared to the last report.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Energy Auto-Polling Report Disable</lang>
+                  </description>
+              </value>
+            <value from="0001" to="ffff" unit="Wh">
+                <description>
+                    <lang xml:lang="en">Energy Auto-Polling Report enable with 1 Wh (to
+65535 Wh) diffential</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="24" type="rangemapped" size="2" default="0e10">
+            <name>
+                <lang xml:lang="en">Metering Pulse</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Whatever other metering reports, this parameter will send one power and
+one energy report to the lifeline every x s (Seconds).</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Metering Pulse disable</lang>
+                  </description>
+              </value>
+            <value from="0001" to="ffff" unit="sec">
+                <description>
+                    <lang xml:lang="en">Metering Pulse enable and send report every
+1 s (to 65535 s)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="25" type="rangemapped" size="2" default="0014">
+            <name>
+                <lang xml:lang="en">Power High Threshold</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter defines the High Threshold power value.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Power High Threshold disable</lang>
+                  </description>
+              </value>
+            <value from="0001" to="ffff" unit="W">
+                <description>
+                    <lang xml:lang="en">Power High Threshold enable
+with the value from 1 W (to 65535 W)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="26" type="rangemapped" size="1" default="05">
+            <name>
+                <lang xml:lang="en">Power Low Threshold</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter defines the Low Threshold power value.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Power Low Threshold disable</lang>
+                  </description>
+              </value>
+            <value from="01" to="ff">
+                <description>
+                    <lang xml:lang="en">Power Low Threshold enable
+with the value from 1 W (to 65535 W)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="27" type="rangemapped" size="1" default="07">
+            <name>
+                <lang xml:lang="en">Power Threshold Action</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter will define the Micro Smart Plug actions if the power Low and
+High Threshold are reached.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Power Threshold Action is disable.</lang>
+                  </description>
+              </value>
+            <value from="01" to="14">
+                <description>
+                    <lang xml:lang="en">1=Power High Threshold Action is enable
+and send the command OFF to Group 9; 3=Power High Threshold Action is enable
+and send the command ON to Group 9; 4=Power Low Threshold Action is enable
+and send the command OFF to Group 10; 12=Power Low Threshold Action is enable
+and send the command ON to Group 10; The value may be the sum of available values.
+For example, if you want:
+- Power High Threshold Action is enable and sent ON to Group 9(3)
+- Power Low Threshold Action is enable and sent OFF to Group 10 (4)
+the parameter value must be 3+4=7.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/4c36d45950ca19cb8fbe7f0090a4a949c85a025c.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

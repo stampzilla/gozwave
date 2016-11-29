@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="010f"/>
+        <productType value="0900"/>
+    <productId value="4000"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="34"/>
+    <appVersion value="16"/>
+    <appSubVersion value="16"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+                    
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">RGBW Modul mit PWM Ausgang zur Steuerung von LED, RGB, RGBW Streifen, Halogen Leuchten. Gesteurerte Geräte könne mit 12 oder 24 V DC betrieben werden. Zusätzlich unterstützt das Gerät den Betrieb von bis zu vier 0-10V Analog-Sensoren wie Temperatur-, Feuchtigkeits-, Wind-, Luftqualitäts- und Helligkeitssensoren.</lang>
+            <lang xml:lang="en">RGBW Controller uses PWM output signal, which enables it to control LED, RGB, RGBW strips, halogen lights and fans. Controlled devices may be powered by 12 or 24 VDC. In addition the device supports up to four, 0V - 10V analog sensors, such as temperature sensor, humidity sensors, wind sensors, air quality sensors, light sensors, etc.</lang>
+            <lang xml:lang="ru">RGBW контроллер с возможностью плавного регулирования света для управления LED, RGB, RGBW лентами, галогенными лампами и вентиляторами. Питается от 12В или 24В. Возможно подключение до 4 аналоговых датчиков 0В - 10В, таких как датчики: температуры, влажности, силы ветра, качество воздуха, освещенности и т.д.</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+            <lang xml:lang="ru"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Dreifaches Drücken der B Taste oder Auto-Inkludierung durch einfaches Anschließen der Spannungsversorgung.</lang>
+            <lang xml:lang="en">Tripple Click on Button B or autoinclude by simple connecting the voltage supply.</lang>
+            <lang xml:lang="ru">Тройное нажатие на кнопку B или автовключение, если просто подать питание.</lang>
+          </inclusionNote>
+            <productName>RGBW Controller FGRGBWM-441</productName>
+            <brandName>Fibaro</brandName>
+                <productCode>FGRGBWM-441</productCode>
+            <productVersion>22.22</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0060" version="3"/>
+        <commandClass id="0020" inNIF="false"/>
+        <commandClass id="0086"/>
+        <commandClass id="0026"/>
+        <commandClass id="0027"/>
+        <commandClass id="0072"/>
+        <commandClass id="0070"/>
+        <commandClass id="0031" version="2"/>
+        <commandClass id="0032" version="2"/>
+        <commandClass id="0073"/>
+        <commandClass id="007a"/>
+        <commandClass id="0085" version="2"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="5" maxNodes="1">
+            <description>
+                <lang xml:lang="de">sendet Gerätestatus. Nur ein Gerät sollte in diese Gruppe. Standardmäßig der Primärcontroller.</lang>
+                <lang xml:lang="en">reports device status. Only one device may be assigned to this group, main controller by default</lang>
+                <lang xml:lang="ru">Отправлять отчёт при изменение состояния устройства</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="4" maxNodes="5">
+            <description>
+                <lang xml:lang="de">verbunden mit IN4 Eingang - sendet Control Frame zu assoziiertem Gerät jedesmal wenn Gerätestatus sich ändert (An/Aus).</lang>
+                <lang xml:lang="en">assigned to IN4 input - sends control frame to associated devices each time the device state changes (ON/OFF)</lang>
+                <lang xml:lang="ru">Управляется кнопкой подключенной к IN4</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="5">
+            <description>
+                <lang xml:lang="de">verbunden mit IN3 Eingang - sendet Control Frame zu assoziiertem Gerät jedesmal wenn Gerätestatus sich ändert (An/Aus).</lang>
+                <lang xml:lang="en">assigned to IN3 input - sends control frame to associated devices each time the device state changes (ON/OFF)</lang>
+                <lang xml:lang="ru">Управляется кнопкой подключенной к IN3</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="de">verbunden mit IN2 Eingang - sendet Control Frame zu assoziiertem Gerät jedesmal wenn Gerätestatus sich ändert (An/Aus).</lang>
+                <lang xml:lang="en">assigned to IN2 input - sends control frame to associated devices each time the device state changes (ON/OFF)</lang>
+                <lang xml:lang="ru">Управляется кнопкой подключенной к IN2</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="de">verbunden mit IN1 Eingang - sendet Control Frame zu assoziiertem Gerät jedesmal wenn Gerätestatus sich ändert (An/Aus).</lang>
+                <lang xml:lang="en">assigned to IN1 input - sends control frame to associated devices each time the device state changes (ON/OFF)</lang>
+                <lang xml:lang="ru">Управляется кнопкой подключенной к IN1</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="rangemapped" size="1" default="ff">
+            <name>
+                <lang xml:lang="de">Alles An/ Alles Aus Funktion</lang>
+                <lang xml:lang="en">ALL ON / ALL OFF function activation</lang>
+                <lang xml:lang="ru">Включить всё/Выключить всё</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Aktivieren/Deaktivieren der Alles An/ Alles Aus Funktion</lang>
+                <lang xml:lang="en">Activation/deactivation of ALL ON/ALL OFF functions</lang>
+                <lang xml:lang="ru">Параметр позволяет настроить, будет ли модуль реагировать на широковещательные команды &quot;Включить всё&quot; и &quot;Выключить всё&quot;.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Alles An inaktiv, Alles Aus inaktiv</lang>
+                    <lang xml:lang="en">ALL ON inactive ALL OFF inactive</lang>
+                    <lang xml:lang="ru">Игнорировать команду Включить всё, Игнорировать команду Выключить всё</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Alles An inaktiv, Alles Aus aktiv</lang>
+                    <lang xml:lang="en">ALL ON inactive ALL OFF active</lang>
+                    <lang xml:lang="ru">Игнорировать команду Включить всё, Реагировать на команду Выключить всё</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Alles An aktiv, Alles Aus inaktiv</lang>
+                    <lang xml:lang="en">ALL ON active ALL OFF inactive</lang>
+                    <lang xml:lang="ru">Реагировать на команду Включить всё, Игнорировать команду Выключить всё</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="de">Alles An aktiv, Alles Aus aktiv</lang>
+                    <lang xml:lang="en">ALL ON active ALL OFF active</lang>
+                    <lang xml:lang="ru">Реагировать на команду Включить всё, Реагировать на команду Выключить всё</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Assoziations-Kommandoklasse festlegen</lang>
+                <lang xml:lang="en">Associations command class choice</lang>
+                <lang xml:lang="ru">Команды отправляемые ассоциированным устройствам</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Normal (Dimmer) - BASIC_SET/SWITCH_MULTILEVEL_START/STOP</lang>
+                    <lang xml:lang="en">Normal (Dimmer) - BASIC_SET/SWITCH_MULTILEVEL_START/STOP</lang>
+                    <lang xml:lang="ru">Стандартные (Диммер) - BASIC_SET/SWITCH_MULTILEVEL_START/STOP</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Normal (RGBW) - COLOR_CONTROL_SET/START/STOP_STATE_CHANGE</lang>
+                    <lang xml:lang="en">Normal (RGBW) - COLOR_CONTROL_SET/START/STOP_STATE_CHANGE</lang>
+                    <lang xml:lang="ru">Стандартные (RGBW) - COLOR_CONTROL_SET/START/STOP_STATE_CHANGE</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Normal (RGBW) - COLOR_CONTROL_SET</lang>
+                    <lang xml:lang="en">Normal (RGBW) - COLOR_CONTROL_SET</lang>
+                    <lang xml:lang="ru">Стандартные (RGBW) - COLOR_CONTROL_SET</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Helligkeit - BASIC_SET/SWITCH_MULTILEVEL_START/STOP</lang>
+                    <lang xml:lang="en">Brightness - BASIC_SET/SWITCH_MULTILEVEL_START/STOP</lang>
+                    <lang xml:lang="ru">Яркость - BASIC_SET/SWITCH_MULTILEVEL_START/STOP</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Regenbogen (RGBW) - COLOR_CONTROL_SET</lang>
+                    <lang xml:lang="en">Rainbow (RGBW) - COLOR_CONTROL_SET</lang>
+                    <lang xml:lang="ru">Радуга (RGBW) - COLOR_CONTROL_SET</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Ausgang Status-Modus ändern</lang>
+                <lang xml:lang="en">Outputs state change mode</lang>
+                <lang xml:lang="ru">Режим состояние выходов</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">MODE1, Bsp.: ändern der Sätigung von 0% zu 99%, Parameter 9: Stufe = 5, Parameter 10: Zeit zwischen Schritten: 10ms.</lang>
+                <lang xml:lang="en">MODE1, Example: change saturation level from 0% to 99%, Parameter 9: Step = 5, Parameter 10: Time between steps: 10ms.</lang>
+                <lang xml:lang="ru">Пример, если выбран Режим 1, то изменение яркости от 0% до 99% задается так: Параметр 9 - Шаг = 5, Параметр 10 - Время между шагами = 10мс.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">MODE1 (verbundene Parameter: 9-Schritt Wert, 10-Zeit zwischen Schritten)</lang>
+                    <lang xml:lang="en">MODE1 (related parameters: 9-step value, 10-time between steps)</lang>
+                    <lang xml:lang="ru">Режим 1 (связанные параметры: 9 - значение шага, 10 - время между шагами)</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">MODE2 (verbundene Parameter: 11-Zeit zur Änderung des Wertes, wichtig für RGB/RGBW)</lang>
+                    <lang xml:lang="en">MODE2 (related parameters: 11-time to change value, relevant for  RGB/RGBW)</lang>
+                    <lang xml:lang="ru">Режим 2 (связанные параметры: 11 - время для изменения значения, используется для RGB/RGBW)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Schritt-Wert (relevant für MODE1)</lang>
+                <lang xml:lang="en">Step value (relevant for MODE1)</lang>
+                <lang xml:lang="ru">Значение шага (используется для Режима 1)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="01" to="ff">
+                <description>
+                    <lang xml:lang="de">Schritt-Wert</lang>
+                    <lang xml:lang="en">step value</lang>
+                    <lang xml:lang="ru">значение шага</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="range" size="2" default="000a">
+            <name>
+                <lang xml:lang="de">Zeit zwischen Schritten (relevant für MODE1)</lang>
+                <lang xml:lang="en">Time between steps (relevant for MODE1)</lang>
+                <lang xml:lang="ru">Время между шагами (используется для Режима 1)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">MODE2, Bsp.: ändern der Sätigung von 0% zu 99%, Parameter 11: Zeit bis Änderung von Beginn bis Ende, Wert = 500sec.</lang>
+                <lang xml:lang="en">MODE2, Example: change saturation level from 0% to 99%, Parameter 11: time for changing from start to end value = 500sec.</lang>
+                <lang xml:lang="ru">Пример, если выбран Режим 1, то изменение яркости от 0% до 99% задается так: Параметр 11 -  = 500 секунд.</lang>
+              </description>
+      
+                  <value from="0001" to="ea60">
+                <description>
+                    <lang xml:lang="de">1 ms</lang>
+                    <lang xml:lang="en">1 ms</lang>
+                    <lang xml:lang="ru">1 мс</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="range" size="1" default="43">
+            <name>
+                <lang xml:lang="de">Zeit für Änderung von Beginn bis wnde</lang>
+                <lang xml:lang="en">Time for changing from start to end value</lang>
+                <lang xml:lang="ru">Время изменения от начального до конечного значения</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Standard Wert: 67 (3s) </lang>
+                <lang xml:lang="en">Default setting: 67 (3s)</lang>
+                <lang xml:lang="ru">Значение по умолчанию: 67 = 3 секунды</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">sofortiger Wechsel</lang>
+                    <lang xml:lang="en">immediate change</lang>
+                    <lang xml:lang="ru">мгновенно</lang>
+                  </description>
+              </value>
+            <value from="01" to="3f">
+                <description>
+                    <lang xml:lang="de">20-126 [ms] Wert*20ms</lang>
+                    <lang xml:lang="en">20-126 [ms] value*20ms</lang>
+                    <lang xml:lang="ru">20-126 [мс] значение*20мс</lang>
+                  </description>
+              </value>
+            <value from="41" to="7f">
+                <description>
+                    <lang xml:lang="de">1-63 [s] (Wert-64)*1s</lang>
+                    <lang xml:lang="en">1-63 [s] (value-64)*1s</lang>
+                    <lang xml:lang="ru">1-63 [сек] (значение-64)*1сек</lang>
+                  </description>
+              </value>
+            <value from="81" to="bf">
+                <description>
+                    <lang xml:lang="de">10-630 [s] (Wert-128)*10s</lang>
+                    <lang xml:lang="en">10-630 [s] (value-128)*10s</lang>
+                    <lang xml:lang="ru">10-630 [сек] (значение-128)*10сек</lang>
+                  </description>
+              </value>
+            <value from="c1" to="ff">
+                <description>
+                    <lang xml:lang="de">1-63 [min] (Wert-192)*1min</lang>
+                    <lang xml:lang="en">1-63 [min] (value-192)*1min</lang>
+                    <lang xml:lang="ru">1-63 [мин] (значение-192)*1мин</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="range" size="1" default="ff">
+            <name>
+                <lang xml:lang="de">Maximaler Beleuchtungswert</lang>
+                <lang xml:lang="en">Maximum lighting level</lang>
+                <lang xml:lang="ru">Максимальный уровень яркости</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="03" to="ff">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="range" size="1" default="02">
+            <name>
+                <lang xml:lang="de">Minimaler Beleuchtungswert</lang>
+                <lang xml:lang="en">Minimum lighting level</lang>
+                <lang xml:lang="ru">Минимальный уровень яркости</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Der Minimale Wert kann nicht höher sein, als der Maximalwert.</lang>
+                <lang xml:lang="en">The minimum level cannot be upper than maximum level.</lang>
+                <lang xml:lang="ru">Минимальный уровень не может быть больше максимального уровня.</lang>
+              </description>
+      
+                  <value from="01" to="ff">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="14" type="range" size="2" default="1111">
+            <name>
+                <lang xml:lang="de">Eingang/Ausgang Konfiguration</lang>
+                <lang xml:lang="en">Inputs/Outputs configuration</lang>
+                <lang xml:lang="ru">Настройка входов/выходов</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Standard Wert: 4369 gesteuertes Gerät: RGBW, Kippschalter Eingang (NORMAL MODE). Aller 4 Bit für entsprechendem IN/OUT Kanal.</lang>
+                <lang xml:lang="en">Default setting: 4369 Controlled device: RGBW, toggle switch inputs (NORMAL MODE). Each 4bit refer to given IN/OUT (channel) settings.</lang>
+                <lang xml:lang="ru">По умолчанию: 4369. Это означает что, управляемое устройство: RGBW, входы работают с выключателем (Нормальный режим). Каждый из 4 битов настраивает свой канал входа/выхода.</lang>
+              </description>
+      
+                  <value from="0000" to="ffff">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="16" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Wiederherstellung des alten Schalterwertes nach Aus-/Einschalten</lang>
+                <lang xml:lang="en">Restore switch state after power cycle</lang>
+                <lang xml:lang="ru">Восстанавливать состояние реле после отключения питания</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">legt fest, ob der alte Schalterwert nach Aus- und Einschalten wiederhergestellt wird.</lang>
+                <lang xml:lang="en">Defines if the switch should restore switch state to the last state prior to device power off (power cycle).</lang>
+                <lang xml:lang="ru">Определяет восстанавливать ли состояние реле на то, которое было до отключения питания устройства.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Nein, deaktiviert</lang>
+                    <lang xml:lang="en">No, turn off</lang>
+                    <lang xml:lang="ru">Не восстанавливать. После подачи питания устройство будет в состоянии &quot;Выключено&quot;</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Ja, aktiviert</lang>
+                    <lang xml:lang="en">Yes</lang>
+                    <lang xml:lang="ru">Восстанавливать</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="30" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Alarmtyp</lang>
+                <lang xml:lang="en">Alarm of any type</lang>
+                <lang xml:lang="ru">Реакция на сигнал тревоги</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Standard Alarm, Überflutungsalarm, Rauchalarm: CO, CO2, Temperaturalarm.</lang>
+                <lang xml:lang="en">General alarm, flood alarm, smoke alarm: CO, CO2, temperature alarm.</lang>
+                <lang xml:lang="ru">Стандартный сигнал тревоги, тревога при протечки, тревога при задымлении, тревога при повышении температуры. </lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">inaktiv - Gerät antwortet nicht auf Alarmzustand</lang>
+                    <lang xml:lang="en">INACTIVE - the device doesn&#039;t respond to alarm frames</lang>
+                    <lang xml:lang="ru">Не реагировать на сигнал тревоги</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Alarm An - Gerät schaltet an, wenn Alarm kommt (alle Kanäle auf 99%)</lang>
+                    <lang xml:lang="en">ALARM ON - the device turns on once alarm is detected (all channels set to 99%)</lang>
+                    <lang xml:lang="ru">Включить все каналы на 99%</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Alarm Aus - Gerät schaltet aus, wenn Alarm kommt (alle Kanäle auf 0%)</lang>
+                    <lang xml:lang="en">ALARM OFF - the device turns off once alarm is detected (all channels set to 0%)</lang>
+                    <lang xml:lang="ru">Выключить все каналы</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Alarm Programm - Alarmzustand schaltet Alarm Sequenz (Programm festgelegt in Parameter 38)</lang>
+                    <lang xml:lang="en">ALARM PROGRAM - alarm sequence turns on (program  selected  in parameter 38)</lang>
+                    <lang xml:lang="ru">Запустить специальную программу тревоги (выбор программы в параметре 38)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="38" type="range" size="1" default="0a">
+            <name>
+                <lang xml:lang="de">Alarm Sequenz Programm</lang>
+                <lang xml:lang="en">Alarm sequence program</lang>
+                <lang xml:lang="ru">Специальная программа тревоги</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">1-10 festgelegte Alarm Programm Nummer</lang>
+                <lang xml:lang="en">1-10 specifies alarm program number</lang>
+                <lang xml:lang="ru">1-10 номер специальной программы тревоги</lang>
+              </description>
+      
+                  <value from="01" to="0a">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="39" type="range" size="2" default="0258">
+            <name>
+                <lang xml:lang="de">Zeit für aktives Alarmprogramms</lang>
+                <lang xml:lang="en">Active PROGRAM alarm time</lang>
+                <lang xml:lang="ru">Время между запусками специальной программы тревоги</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="0001" to="fffe">
+                <description>
+                    <lang xml:lang="de">Sekunden</lang>
+                    <lang xml:lang="en">sec</lang>
+                    <lang xml:lang="ru">секунда</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="42" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Kommandoklasse bei Änderung des Ausgangsstatus</lang>
+                <lang xml:lang="en">Command class reporting Outputs status change</lang>
+                <lang xml:lang="ru">Команда отчета при изменении состояния Выходов</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Report als Folge von Aktionen des Eingangs und Controllers (SWITCH  MULTILEVEL)</lang>
+                    <lang xml:lang="en">Reporting as a result of inputs and controllers actions (SWITCH  MULTILEVEL)</lang>
+                    <lang xml:lang="ru">Отчет при срабатывании входов и контроллеров (SWITCH  MULTILEVEL)</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Report als Folge von Aktionen des Eingangs (SWITCH  MULTILEVEL)</lang>
+                    <lang xml:lang="en">Reporting as a result of inputs actions (SWITCH MULTILEVEL)</lang>
+                    <lang xml:lang="ru">Отчет при срабатывании входов (SWITCH  MULTILEVEL)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Report als Folge von Aktionen des Eingangs (COLOR CONTROL)</lang>
+                    <lang xml:lang="en">Reporting as a result of inputs actions (COLOR CONTROL)</lang>
+                    <lang xml:lang="ru">Отчет при срабатывании входов (COLOR CONTROL)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="43" type="range" size="1" default="05">
+            <name>
+                <lang xml:lang="de">Report durch Änderung des Schwellenwertes des 0-10V Analog-Eingangs</lang>
+                <lang xml:lang="en">Reporting 0-10v analog inputs change threshold</lang>
+                <lang xml:lang="ru">Отчет при изменении аналогового сигнала (0-10В) на входах</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Parameter legt Wert fest, bei welcher Änderung der Eingangsspannung an Primärcontroller gemeldet wird. Neuer Wert wird aufgrund des letzten gemeldeten Wertes berechnet. 1-100 - (0.1-10V).</lang>
+                <lang xml:lang="en">Parameter defines a value by which input voltage must change in order to be reported to the main controller. New value is calculated based on last reported value. 1-100 - (0.1-10V).</lang>
+                <lang xml:lang="ru">При каком изменении напряжения на входе нужно отправлять отчет контроллеру. Новое значение рассчитывается на основе предыдущего значения. 1-100 - (0.11В-10В)</lang>
+              </description>
+      
+                  <value from="01" to="64">
+                <description>
+                    <lang xml:lang="de">0.1V</lang>
+                    <lang xml:lang="en">0.1V</lang>
+                    <lang xml:lang="ru">0.1В</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="44" type="rangemapped" size="2" default="001e">
+            <name>
+                <lang xml:lang="de">Report Frequenz (Zeit) bei Änderung des Stromverbrauches</lang>
+                <lang xml:lang="en">Power load reporting frequency</lang>
+                <lang xml:lang="ru">Как часто отправлять отчет о потребляемой мощности</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Zeit zwischen Reports. Report wird gesendet, wenn der letzte gemeldete Wert vom aktuellen abweicht. Report wird ebenfalls beim Polling gesendet.</lang>
+                <lang xml:lang="en">Time between reports. The report will be sent if last reported value differs from the current value, else reports will also be sent in case of polling.</lang>
+                <lang xml:lang="ru">Время между отчетами. Отчет будет отправлен, если последнее значение отличается от предыдущего, иначе отчет будет отправлен при опросе устройства.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="de">Reports werden nicht gesendet. Reports werden nur beim Polling oder Ausschalten des Gerätes gesendet.</lang>
+                    <lang xml:lang="en">Reports are not sent. Reports will only be sent in case of polling or at turning OFF the device.</lang>
+                    <lang xml:lang="ru">Не отправлять отчет. Отчет будет отправлен только при опросе устройства или если устройство выключится</lang>
+                  </description>
+              </value>
+            <value from="0001" to="fffe">
+                <description>
+                    <lang xml:lang="de">Sekunde</lang>
+                    <lang xml:lang="en">sec</lang>
+                    <lang xml:lang="ru">секунды</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="45" type="rangemapped" size="1" default="0a">
+            <name>
+                <lang xml:lang="de">Report bei Änderung des Energieverbrauchs der gesteuerten Geräte.</lang>
+                <lang xml:lang="en">Reporting changes in energy consumed by controlled devices.</lang>
+                <lang xml:lang="ru">Обновление информации о энергопотреблении устройством</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Neuer gemeldeter Wert wird berechnet mit letztem Wert als Grundlage. 1 - 254 (0,01kWh - 2,54kWh), 10 = 0.1kWh.</lang>
+                <lang xml:lang="en">New reported energy value is calculated based on last reported value. 1 - 254 (0,01kWh - 2,54kWh), 10 = 0.1kWh.</lang>
+                <lang xml:lang="ru">Новое значение энергопотребления вычисляется суммированием с предыдущем значением. Доступные значения: 1-254 (0.01кВтч - 2.54кВтч)</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Änderungen des Energieverbrauches werden nicht gemeldet. Reports werden nur beim Polling gemeldet.</lang>
+                    <lang xml:lang="en">changes in consumed energy will not be reported. Reports will be sent only in case of polling.</lang>
+                    <lang xml:lang="ru">Не отправлять отчет. Отчет будет отправлен только при опросе устройства</lang>
+                  </description>
+              </value>
+            <value from="01" to="fe">
+                <description>
+                    <lang xml:lang="de">0.01kWh</lang>
+                    <lang xml:lang="en">0.01kWh</lang>
+                    <lang xml:lang="ru">0.01кВтч</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="71" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Antwort bei Änderung der Helligkeit auf 0%</lang>
+                <lang xml:lang="en">Response to BRIGHTNESS set to 0%</lang>
+                <lang xml:lang="ru">Какой цвет установить если яркости стала 0%</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Beleuchtungfarbe wird auf Weiß gesetzt (Alle Kanäle werden zusammen gesteuert)</lang>
+                    <lang xml:lang="en">illumination colour set to white (all channels controlled together)</lang>
+                    <lang xml:lang="ru">Белый</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">letzter eingestellter Farbwert wird gespeichert</lang>
+                    <lang xml:lang="en">last set colour is memorized</lang>
+                    <lang xml:lang="ru">Последний установленный цвет</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="72" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Starten des Animations-Programms</lang>
+                <lang xml:lang="en">Starting animation programm</lang>
+                <lang xml:lang="ru">Запуск световой программы</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">startet vordefiniertes Programm wenn Gerät im RGB/RGBW Mode aktiviert wird. (Parameter 14) - relevant wenn Primärcontroller nicht Home Center 2 ist.</lang>
+                <lang xml:lang="en">Starting predefined program when device set to work in RGB/RGBW mode (parameter 14) - relevant for main controllers other than Home Center 2 only.</lang>
+                <lang xml:lang="ru">Запустить предустановленную световую программу, если устройство работает в RGB/RGBW режиме (параметр 14)</lang>
+              </description>
+      
+                  <value from="01" to="0a">
+                <description>
+                    <lang xml:lang="de">Nummer des Animations-Programms</lang>
+                    <lang xml:lang="en">animation program number</lang>
+                    <lang xml:lang="ru">Номер световой программы</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="73" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Dreifach-Klick-Aktion</lang>
+                <lang xml:lang="en">Triple click action</lang>
+                <lang xml:lang="ru">Действие при тройном клике</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Node Information Frame wird gesendet</lang>
+                    <lang xml:lang="en">NODE INFO control frame is sent</lang>
+                    <lang xml:lang="ru">Отправить пакет NODE INFO</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">started eingestelltes Programm</lang>
+                    <lang xml:lang="en">starting favourite program</lang>
+                    <lang xml:lang="ru">Запуск избранной программы</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/bcffc1a0a20c24f10e8c86f9c300472d96ce4438.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

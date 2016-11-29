@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="5254"/>
+        <productType value="8200"/>
+    <productId value="8130"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="67"/>
+    <appVersion value="00"/>
+    <appSubVersion value="21"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>US</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Dimming Switch Mini Module (Dual mode)</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Triple click the PROG button within 1 second.</lang>
+          </inclusionNote>
+            <productName>ZDS-200US</productName>
+            <brandName>Remotec</brandName>
+            <productLine>Z-Wave Home Automation</productLine>
+            <productCode>BW8130US</productCode>
+            <productVersion>0.21</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" controlled="true"/>
+        <commandClass id="0027"/>
+        <commandClass id="0026" version="2"/>
+        <commandClass id="0070"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0072"/>
+        <commandClass id="002b"/>
+        <commandClass id="002c"/>
+        <commandClass id="0073"/>
+        <commandClass id="0086"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="2" maxNodes="4">
+            <description>
+                <lang xml:lang="en">Dimmer mode: ZDS-200 will send out related dimming level e.g. 50% by basic set
+command to its association group automatically when ZDS-200 received the dimming
+command by local switch or wireless command e.g. 50%.
+Switch mode: ZDS-200 will send out related basic set command On (0xFF) or Off (0x00)
+to its association group automatically when ZDS-200 received On (0xFF) or Off (0x00)
+command by local switch or wireless command respectively.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="en">Association group_1 is used to report status change such as AUTO report to gateway.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">All On/All Off</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Activate/Deactivate All On/All Off</lang>
+              </description>
+      
+                  <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">All On active,
+All Off active</lang>
+                  </description>
+              </value>
+            <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">All On is not active,
+All Off is not active</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">All On is not active,
+All Off active</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">All On active,
+All Off is not active</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Switch fail safe </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Switch returns to the last position
+saved before power failure</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Switch does not save
+the state after power failure, it
+returns to &quot;off&quot; position.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Switch saves its state
+before power failure.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Double click option</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Enable/disable bouble click option (set to max.
+brightness).</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Double click function
+disabled.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Double click function enabled.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="17" type="range" size="1" default="03">
+            <name>
+                <lang xml:lang="en">Dimmer Mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Time of moving the Dimmer from 0%
+to max. dimming values.</lang>
+              </description>
+      
+                  <value from="00" to="05" unit="sec">
+                <description>
+                    <lang xml:lang="en">Adjust time interval for dimmer to reach full dimming values. </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="18" type="range" size="1" default="63">
+            <name>
+                <lang xml:lang="en">Maximum Dimmer level control</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Define maximum dimming percentage. Higher values will lead to higher brightness level.</lang>
+              </description>
+      
+                  <value from="02" to="63" unit="%">
+                <description>
+                    <lang xml:lang="en">Define maximum dimmer level.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="19" type="range" size="1" default="0d">
+            <name>
+                <lang xml:lang="en">Minimum Dimmer level control</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Define minimum dimming percentage. Lower values will lead to lower brightness level.</lang>
+              </description>
+      
+                  <value from="01" to="62" unit="%">
+                <description>
+                    <lang xml:lang="en">Define minimum level.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    
+  </ZWaveDevice>
+
+

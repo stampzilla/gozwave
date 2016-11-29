@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0115"/>
+        <productType value="0201"/>
+    <productId value="0003"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="43"/>
+    <appVersion value="02"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="20"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+                    
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Temperatursensor, Digitalsensor und Thermostat</lang>
+            <lang xml:lang="en">Dry contacts binary sensor, temperature sensor and thermostat</lang>
+            <lang xml:lang="ru">Датчик типа &quot;сухой контакт&quot;, датчик температуры и термостат</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de">Einfach-Klick auf internen Schalter</lang>
+            <lang xml:lang="en">Single click tamper switch</lang>
+            <lang xml:lang="ru">Одиночное нажатие кнопки внутри корпуса. Интервалы пробуждения кратны 240 секундам. 240, 480, 720 сек.</lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Dreifach-Klick auf internen Schalter für normale Inclusion, Zweifach-Klick auf internen Schalter für netzwerkweite Inclusion</lang>
+            <lang xml:lang="en">Tripple click tamper switch for classical inclusion. Double click tamper switch for Network Wide Inclusion.</lang>
+            <lang xml:lang="ru">Тройное нажатие кнопки внутри корпуса</lang>
+          </inclusionNote>
+            <productName>Binary Sensor</productName>
+            <brandName>Z-Wave.Me</brandName>
+                <productCode>TSDCT_DC</productCode>
+                <batteryType>AAA</batteryType>
+            <batteryCount>2</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0080"/>
+        <commandClass id="0040" version="2"/>
+        <commandClass id="0043" version="2"/>
+        <commandClass id="0084" version="2"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0086"/>
+        <commandClass id="0020" controlled="true" inNIF="false"/>
+        <commandClass id="0070"/>
+        <commandClass id="0031" version="3"/>
+        <commandClass id="0072"/>
+        <commandClass id="0030"/>
+        <commandClass id="0077"/>
+        <commandClass id="008e" version="2"/>
+        <commandClass id="0060" version="2" controlled="true" inNIF="false"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="3" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Geräte, die über Änderungen der Thermostat-Zieltemperatur informiert werden</lang>
+                <lang xml:lang="en">Nodes to receive updates on thermostat set point change and binary reports</lang>
+                <lang xml:lang="ru">Отправлять отчёты при изменение температуры и состояния бинарного датчика</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Geräte, die vom Termostat gesteuert werden</lang>
+                <lang xml:lang="en">Nodes to be controlled by thermostat</lang>
+                <lang xml:lang="ru">Устройства управляемые термостатом</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Geräte, die durch den externen Binär-Schalteingang gesteuert werden</lang>
+                <lang xml:lang="en">Nodes to be switched on/off on dry contacts switch</lang>
+                <lang xml:lang="ru">Устройства управляемые сухим контактом </lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="rangemapped" size="1" default="ff">
+            <name>
+                <lang xml:lang="de">Status des Binärsensors</lang>
+                <lang xml:lang="en">Binary sensor active</lang>
+                <lang xml:lang="ru">Работает ли бинарный датчик</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">aktiviert oder deaktiviert den Binärsensor</lang>
+                <lang xml:lang="en">defines of the binary sensor is active</lang>
+                <lang xml:lang="ru">определяет работает ли бинарный датчик или не работает</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Inaktiv</lang>
+                    <lang xml:lang="en">Off</lang>
+                    <lang xml:lang="ru">Не работает</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="de">Aktiv</lang>
+                    <lang xml:lang="en">On</lang>
+                    <lang xml:lang="ru">Работает</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Binärsensormode</lang>
+                <lang xml:lang="en">Binary sensor mode</lang>
+                <lang xml:lang="ru">Режим бинарного датчика</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert, welches Kommando vom Binärsensor bei Zustandsänderungen gesendet wird</lang>
+                <lang xml:lang="en">defines the command sent when the binary sensor is triggered</lang>
+                <lang xml:lang="ru">определяет какую команду отправить при срабатывании бинарного датчика</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">BASIC ON wenn verbunden, BASIC OFF, wenn nicht verbunden</lang>
+                    <lang xml:lang="en">Basic On on connected, Basic Off on diconnected</lang>
+                    <lang xml:lang="ru">Включить (Basic On) при замыкании, Выключить (Basic Off) при размыкании</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="de">BASIC OFF wenn verbunden, BASIC ON, wenn nicht verbunden</lang>
+                    <lang xml:lang="en">Basic Off on connected, Basic On on diconnected</lang>
+                    <lang xml:lang="ru">Выключить (Basic Off) при замыкании, Включить (Basic On) при размыкании</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Schwellenwert für Temperatur</lang>
+                <lang xml:lang="en">Send Unsolicited temperature report</lang>
+                <lang xml:lang="ru">Отправка непрошеных отчетов о температуре</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Schwellenwert bei dem automatisch ein Temperaturreport gesendet wird. 10 = 1 °C</lang>
+                <lang xml:lang="en">Threshold temperature to send unsolicited report. 10 = 1 °C</lang>
+                <lang xml:lang="ru">На сколько должна измениться температура, чтобы датчик отправил температуру контроллеру. 10 = 1 °C</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="05" to="32" unit="0.1 C">
+                <description>
+                    <lang xml:lang="de">in 0.1 C Schritten</lang>
+                    <lang xml:lang="en">in 0.1 C units</lang>
+                    <lang xml:lang="ru">0.1 °C</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="1" default="0a">
+            <name>
+                <lang xml:lang="de">max. Abweichung vom Regeltemperaturwert</lang>
+                <lang xml:lang="en">Maximum deviation for thermostat</lang>
+                <lang xml:lang="ru">Максимальное отклонение температуры для термостата</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert die maximal erlaubte Abweichung von der gewünschten Regeltemperatur, bevor das Heiz- oder Kühlgerät geschaltet wird. 10 = 1 °C</lang>
+                <lang xml:lang="en">Maximum deviation (threshold) of temperature from set point before switching on/off cooling/heating for thermostat. 10 = 1 °C</lang>
+                <lang xml:lang="ru">Максимальное отклонение температуры от заданной точки после которой термостат сменит режим Вкл/Выкл Охлаждение/Нагрев. 10 = 1 °C</lang>
+              </description>
+      
+                  <value from="05" to="32" unit="0.1 C">
+                <description>
+                    <lang xml:lang="de">in 0.1 °C Schritten</lang>
+                    <lang xml:lang="en">in 0.1 °C units</lang>
+                    <lang xml:lang="ru">0.1 °C</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Repeat thermostat ON</lang>
+                <lang xml:lang="en">Repeat thermostat ON</lang>
+                <lang xml:lang="ru">Термостат повторно отправляет команду включения (Basic On) устройству из группы 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Wiederholung der Thermostat Events (nur für On Events)</lang>
+                <lang xml:lang="en">Repeat thermostat events (switch ON events only) periodically</lang>
+                <lang xml:lang="ru">Термостат повторно отправляет команду включения (Basic On) устройству из группы 2. Т.е. если в группе 2 находится реле, которое включает котел, и у этого реле установлено время автоотключения (для безопасности, чтобы не перегреть дом), например каждые 15 минут, то термостат будет проверять температуру и если нужно будет повторно включать реле.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Sende nur einmal</lang>
+                    <lang xml:lang="en">Send only once</lang>
+                    <lang xml:lang="ru">Отправить один раз</lang>
+                  </description>
+              </value>
+            <value from="01" to="ff" unit="4 min">
+                <description>
+                    <lang xml:lang="de">jedes N. Aufwachen</lang>
+                    <lang xml:lang="en">each Nth wakeup time</lang>
+                    <lang xml:lang="ru">каждые N пробуждений</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Periode für automatischen Temperatur Report</lang>
+                <lang xml:lang="en">Unsolicited temperature report period</lang>
+                <lang xml:lang="ru">Как часто отправлять температуру</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">automatisches Senden des Temperatur Reports. 0 = aus</lang>
+                <lang xml:lang="en">period for unsolicited send the temperature report. 0 = Off</lang>
+                <lang xml:lang="ru">Если установить &quot;каждые N пробуждений&quot; = 10, то температура будет отправляться при каждом 10 просыпании. По умолчанию температура не отправляется.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">aus</lang>
+                    <lang xml:lang="en">Off</lang>
+                    <lang xml:lang="ru">Никогда</lang>
+                  </description>
+              </value>
+            <value from="01" to="ff" unit="4 min">
+                <description>
+                    <lang xml:lang="de">jedes N. Aufwachen</lang>
+                    <lang xml:lang="en">each Nth wakeup time</lang>
+                    <lang xml:lang="ru">каждые N пробуждений</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="30" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Sende Batteriestatus automatisch</lang>
+                <lang xml:lang="en">Send unsolicited Battery Report on Wake Up</lang>
+                <lang xml:lang="ru">Отправлять непрошеный отчёт заряда батареек Battery Report при пробуждении</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Nein</lang>
+                    <lang xml:lang="en">No</lang>
+                    <lang xml:lang="ru">Не отправлять</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">an Gerät das Wakeup Info empfängt</lang>
+                    <lang xml:lang="en">To wakeup node</lang>
+                    <lang xml:lang="ru">Тому же узлу, что и оповещение о пробуждении</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">an alle Geräte</lang>
+                    <lang xml:lang="en">To broadcast</lang>
+                    <lang xml:lang="ru">Широковещательная рассылка соседним узлам</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Temperature shift</lang>
+                <lang xml:lang="en">Temperature shift</lang>
+                <lang xml:lang="ru">Коррекция температуры</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Threshold correction. For positive value 10 = 1 °C, for negative value x = 256 - (T°C * 10). Example, if need shift -2°C, value calculate: 256 - (2 * 10) = 236.</lang>
+                <lang xml:lang="en">Threshold correction. For positive value 10 = 1 °C, for negative value x = 256 - (T°C * 10). Example, if need shift -2°C, value calculate: 256 - (2 * 10) = 236.</lang>
+                <lang xml:lang="ru">На сколько градусов корректировать температуру. Для положительного 10 = 1 °C. Для отрицательного значение x = 256 - (T°C * 10). Например, если нужно присылаемую температуру уменьшать на 2°C, то значение вычисляется так: 256 - (2 * 10) = 236.</lang>
+              </description>
+      
+          </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/3870063c29abef57ceb8ef1a501091a1fe991be8.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0063"/>
+        <productType value="4450"/>
+    <productId value="3030"/>
+    <libType value="00"/>
+    <protoVersion value="02"/>
+    <protoSubVersion value="61"/>
+    <appVersion value="00"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="01"/>
+        <optional value="false"/>
+    <listening value="true"/>
+    <routing value="false"/>
+            <rfFrequency>US</rfFrequency>
+            <certId>13935</certId>
+            <certNumber>ZC08-10070006</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">RF controlled plug-in dimmer  3.0b</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Tap the button</lang>
+          </inclusionNote>
+            <productName>Lamp Module</productName>
+            <brandName>GE</brandName>
+            <productLine>Wireless Lighting Controls</productLine>
+            <productCode>ZW3101</productCode>
+            <productVersion>3.0b</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0027"/>
+        <commandClass id="0020"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+        <commandClass id="0026"/>
+        <commandClass id="0077"/>
+        <commandClass id="0073"/>
+        <commandClass id="0086"/>
+      </commandClasses>
+  
+  
+    <configParams>
+        <configParam number="29" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Load Sensing</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Load sensing is disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Load sensing is enabled</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Number of steps or levels when receiving a Dim Command</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="01" to="63" unit="10miliseconds">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="range" size="1" default="03">
+            <name>
+                <lang xml:lang="en">Timing of steps when receiving a Dim C</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="01" to="ff" unit="10miliseconds">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Number of steps or levels when dimming manually</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="01" to="63" unit="10miliseconds">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="range" size="1" default="03">
+            <name>
+                <lang xml:lang="en">Timing of steps when dimming manually</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="01" to="ff" unit="10miliseconds">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Number of steps or levels when receiving All-On/All-Off Command</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="01" to="63" unit="10miliseconds">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="range" size="1" default="03">
+            <name>
+                <lang xml:lang="en">Timing of steps when receiving All-On/All-Off Command</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="01" to="ff" unit="10miliseconds">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Ignore Start Level When Receiving Dim Commands</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Dim or brighten from the start level embedded in the command</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Ignore Start Level When Receiving Dim Commands</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/2f38940267093181a1f098b639fc1f2ce781f391.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

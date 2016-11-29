@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="010f"/>
+        <productType value="0701"/>
+    <productId value="2001"/>
+    <libType value="03"/>
+    <protoVersion value="04"/>
+    <protoSubVersion value="05"/>
+    <appVersion value="03"/>
+    <appSubVersion value="02"/>
+        <basicClass value="04"/>
+            <genericClass value="07"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>US</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">This device allows to notify the controller about door/window open/close events and turn on/off or alarm associations. It also provides a tamper function, as well as many other functionalities.</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Quickly, three times press the TMP button</lang>
+          </inclusionNote>
+            <productName>FIBARO Door/Window Sensor</productName>
+            <brandName>Fibar Group S. A.</brandName>
+            <productLine> Door/Window Sensor</productLine>
+            <productCode>FGK-10x</productCode>
+                <batteryType>EVE ER14250</batteryType>
+            <batteryCount>1</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0022"/>
+        <commandClass id="0080"/>
+        <commandClass id="0056"/>
+        <commandClass id="007a" version="3"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0073"/>
+        <commandClass id="0098"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0085" version="2" secure="true" nonSecure="false"/>
+        <commandClass id="0020" controlled="true" inNIF="false" secure="true" nonSecure="false"/>
+        <commandClass id="0070" secure="true" nonSecure="false"/>
+        <commandClass id="005a" secure="true" nonSecure="false"/>
+        <commandClass id="008e" version="3" secure="true" nonSecure="false"/>
+        <commandClass id="0071" version="5" secure="true" nonSecure="false"/>
+        <commandClass id="002b" controlled="true" inNIF="false" secure="true" nonSecure="false"/>
+        <commandClass id="009c" secure="true" nonSecure="false"/>
+        <commandClass id="0030" secure="true" nonSecure="false"/>
+        <commandClass id="0084" version="2" secure="true" nonSecure="false"/>
+        <commandClass id="0060" version="4" controlled="true" inNIF="false"/>
+        <commandClass id="0031" version="5"/>
+        <commandClass id="008b" version="2" controlled="true" inNIF="false"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="5" maxNodes="5">
+            <description>
+                <lang xml:lang="en">“Tamper ZW3” is assigned to the TMP
+switch - sending alarm frames to the associated devices in case a TMP
+button is released. This group provides backward compatibility with
+controllers not supporting Z-Wave+.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="4" maxNodes="5">
+            <description>
+                <lang xml:lang="en">“Sensor ZW3” is assigned to the device status
+(reed sensor and IN input) - sending BASIC SET control frames to
+the associated devices. This group provides backward compatibility
+with controllers not supporting Z-Wave+.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="5">
+            <description>
+                <lang xml:lang="en">“Alarm” is assigned to the device status
+- sending alarm frames to the associated devices. Its value may be
+modified via advanced parameters.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="en">“Control” is assigned to the device status
+(reed sensor and IN input) - sending BASIC SET control frames to the
+associated devices.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="en">Lifeline</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Operation mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Parameter defines device operation mode.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Door/Window Sensor or external alarm sensor</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">external button</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Door/Window or alarm status</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Parameter defines state of the sensor when the magnet is close. If the
+alarm sensor is connected, it determines the output type. Parameter
+inactive in external button mode (parameter 1 set to 1).</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">door/window closed</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">door/window opened</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="constant" size="1" default="06">
+            <name>
+                <lang xml:lang="en">Visual LED indications</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter defines events indicated by the visual LED indicator.
+Disabling events might extend battery life.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">no indications</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">indication of opening/closing status change
+(input IN)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">indication of wake up (1 x click or periodical)</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="en">indication of device tampering</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Range test after double click</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Allows to enable activation of Z-Wave range test with double click of
+a TMP button.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">enabled</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">2nd association group triggers</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Parameter defines events which result in sending on/off commands
+to devices added to the 2nd association group. These commands are
+sent alternately to switch the devices on and off. Commands represent
+the values of BASIC SET command frames. Parameter is inactive
+in external button mode (parameter 1 set to 1).</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">switch after opening and closing</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">switch after opening</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">switch after closing</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="constant" size="1" default="02">
+            <name>
+                <lang xml:lang="en">Commands sent to 2nd association group</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Command frames sent to devices added to the 2nd association group.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">ON </lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">OFF</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">ON &amp; OFF</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="rangemapped" size="2" default="00ff">
+            <name>
+                <lang xml:lang="en">Value of ON command frame sent to 2nd association group</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The value of 0 turns OFF the device, 255 turns it ON. In case of associating
+the Dimmer or Roller Shutter module, values 1-99 allow to set
+an associated device to a specified level.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Device is turned off.</lang>
+                  </description>
+              </value>
+            <value from="0001" to="0063">
+                <description>
+                    <lang xml:lang="en">Define a value.</lang>
+                  </description>
+              </value>
+            <value from="00ff" to="00ff">
+                <description>
+                    <lang xml:lang="en">Device is turned on.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="rangemapped" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Value of OFF command frame sent to 2nd association group</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The value of 0 turns OFF the device, 255 turns it ON. In case of associating
+the Dimmer or Roller Shutter module, values 1-99 allow to set
+an associated device to a specified level.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Device is turned off.</lang>
+                  </description>
+              </value>
+            <value from="0001" to="0063">
+                <description>
+                    <lang xml:lang="en">Define a value.</lang>
+                  </description>
+              </value>
+            <value from="00ff" to="00ff">
+                <description>
+                    <lang xml:lang="en">Device is turned on.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="14" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Time delay of ON command frame</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Time period after which ON command frame will be sent.</lang>
+              </description>
+      
+                  <value from="0000" to="7e90" unit="sec">
+                <description>
+                    <lang xml:lang="en">Define a time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="15" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Time delay of OFF command frame</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Time period after which OFF command frame will be sent.</lang>
+              </description>
+      
+                  <value from="0000" to="7e90" unit="sec">
+                <description>
+                    <lang xml:lang="en">Define a time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="20" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Type of sent alarm frames</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Type of control frames transmitted to the main controller and 3rd association
+group “Alarm”. If an external sensor is connected to IN input,
+it is possible to choose its functionality. Otherwise it is recommended
+to set this parameter to default value.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Door/Window Sensor (General Purpose Alarm)</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">smoke sensor (Smoke Alarm)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">CO detector (CO Alarm)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">CO2 detector (CO2 Alarm)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">high temperature sensor (Heat Alarm)</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">flood sensor (Water Alarm)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="30" type="range" size="2" default="0005">
+            <name>
+                <lang xml:lang="en">Delay of tamper alarm cancellation</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Time period after which a tamper alarm will be cancelled.</lang>
+              </description>
+      
+                  <value from="0000" to="7e90" unit="sec">
+                <description>
+                    <lang xml:lang="en">Define a time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="31" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Reporting tamper alarm cancellation</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Reporting cancellation of tamper alarm to the controller and 5th association
+group.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">do not send tamper cancellation report</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">send tamper cancellation report</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="50" type="rangemapped" size="2" default="012c">
+            <name>
+                <lang xml:lang="en">Interval of temperature measurements</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter defines how often the temperature will be measured.
+The shorter the time, the more frequently the temperature will be
+measured, but the battery life will shorten.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">temperature measurements disabled</lang>
+                  </description>
+              </value>
+            <value from="0005" to="7e90" unit="sec">
+                <description>
+                    <lang xml:lang="en">Define a time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="51" type="rangemapped" size="2" default="000a">
+            <name>
+                <lang xml:lang="en">Temperature reports threshold</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter defines the change of temperature in comparison with last
+reported, resulting in temperature report being sent to the main controller.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">temperature reports based on threshold disabled</lang>
+                  </description>
+              </value>
+            <value from="0001" to="012c">
+                <description>
+                    <lang xml:lang="en">temperature threshold (0.1-30°C, 0.1°C step)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="52" type="rangemapped" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Interval of temperature reports</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter determines how often the temperature reports will be
+sent to the main controller.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">periodic temperature reports disabled</lang>
+                  </description>
+              </value>
+            <value from="0005" to="7e90" unit="sec">
+                <description>
+                    <lang xml:lang="en">Define a time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="53" type="range" size="4" default="00000000">
+            <name>
+                <lang xml:lang="en">Temperature offset</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The value to be added to the actual temperature, measured by the sensor
+(temperature compensation). Available settings: -1000-1000 (-100-100°C, 0.1°C step)</lang>
+              </description>
+      
+                  <value from="fffffc18" to="000003e8">
+                <description>
+                    <lang xml:lang="en">Define a value for temperature compensation.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="54" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Temperature alarm reports</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Temperature alarms reported to the Z-Wave controller. Thresholds are
+set in parameters 55 and 56.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">temperature alarms disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">high temperature alarm</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">low temperature alarm</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">high and low temperature alarms enabled</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="55" type="range" size="2" default="021c">
+            <name>
+                <lang xml:lang="en">High temperature alarm threshold</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">If temperature is higher than set value, overheat notification will be
+sent and high temperature scene will be triggered (if activated). Available settings: 0-1000 (0-100°C, 0.1°C step)</lang>
+              </description>
+      
+                  <value from="0000" to="03e8">
+                <description>
+                    <lang xml:lang="en">Define an upper treshold.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="56" type="range" size="2" default="0028">
+            <name>
+                <lang xml:lang="en">Low temperature alarm threshold</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">If temperature is lower than the set value, underheat notification will
+be sent and low temperature scene will be triggered (if activated). Available settings: -300-700 (-30-70°C, 0.1°C step)</lang>
+              </description>
+      
+                  <value from="fed4" to="02bc">
+                <description>
+                    <lang xml:lang="en">Define a lower treshold.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="70" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Scene activation functionality</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The device can trigger scenes using scene IDs assigned to different
+events. To deactivate all scenes set the value to 0. To activate all scenes set
+the value to 3903. Available settings: 1 - [ID 10] opening door/window (single click); 2 - [ID 11] closing door/window (single click); 
+4 - [ID 12] holding; 8 - [ID 13] releasing; 16 - [ID 14] double click; 32 - [ID 15] triple click; 256 - [ID 50] high temperature - door/window
+opened; 512 - [ID 50] high temperature - door/window
+closed; 1024 - [ID 51] low temperature - door/window
+opened; 2048 - [ID 51] low temperature - door/window
+closed</lang>
+              </description>
+      
+                  <value from="0000" to="0f3f">
+                <description>
+                    <lang xml:lang="en">Sum up the scenes that are to be activated  and enter the specific value.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="71" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Alarm broadcast</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Settings for broadcasting ON/OFF commands, sensor alarm and tamper
+alarm. Value other than 0 means alarms are sent in Broadcast
+Mode, to all devices only within the range of the device. They are not
+repeated by the mesh network. Values of parameter
+71 may be combined,
+e.g. 1+2=3 means
+ON/OFF commands
+and sensor alarm
+are sent in Broadcast
+Mode. Available settings: 0 - broadcasts inactive; 1 - ON/OFF commands broadcast active; 2 - sensor alarm broadcast active; 4 - tamper alarm broadcast active</lang>
+              </description>
+      
+                  <value from="00" to="07">
+                <description>
+                    <lang xml:lang="en">Define a value depending on which alarms should be broadcasted.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="72" type="range" size="1" default="0f">
+            <name>
+                <lang xml:lang="en">Associations in Z-Wave network Security Mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter defines how commands are sent in specified association
+groups: as secure or non-secure. Parameter is active only in Z-Wave
+network security mode. It does not apply to 1st group “Lifeline”. Available settings: 0 - none of the groups sent as secure; 1 - 2nd group ”Control” sent as secure; 2 - 3rd group ”Alarm” sent as secure; 4 - 4th group “Sensor ZW3” sent as secure; 8 - 5th group “Tamper ZW3” sent as secure</lang>
+              </description>
+      
+                  <value from="00" to="0f">
+                <description>
+                    <lang xml:lang="en">Define a value depending on the desired security mode. Sum up the values of the different groups.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/1bea43ee6df9b9b62bfee2dae226a03991208989.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

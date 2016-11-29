@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0175"/>
+        <productType value="0100"/>
+    <productId value="0101"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="5c"/>
+    <appVersion value="01"/>
+    <appSubVersion value="01"/>
+        <basicClass value="04"/>
+            <genericClass value="18"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Z-Wave based battery operated Wall controller with 4 buttons</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Place your primary controller in inclusion mode by following the manufacturer&#039;s instructions, then activate inclusion on the wall controller by pressing any one of the four buttons for one second.  Inclusion mode is indicated by the red/green blinking of the LEDs until the timeout occurs after 10 seconds. </lang>
+          </inclusionNote>
+            <productName>4 button Wall Controller</productName>
+            <brandName>devolo</brandName>
+            <productLine>Home Control</productLine>
+            <productCode>MT2652</productCode>
+                <batteryType>CR2032</batteryType>
+            <batteryCount>1</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0020" controlled="true" inNIF="false"/>
+        <commandClass id="0080"/>
+        <commandClass id="005b" controlled="true"/>
+        <commandClass id="005a"/>
+        <commandClass id="0070"/>
+        <commandClass id="0062" controlled="true" inNIF="false"/>
+        <commandClass id="0072"/>
+        <commandClass id="0060" version="3" controlled="true" inNIF="false"/>
+        <commandClass id="008e" version="2"/>
+        <commandClass id="008f" controlled="true"/>
+        <commandClass id="0026" controlled="true" inNIF="false"/>
+        <commandClass id="0073"/>
+        <commandClass id="002d"/>
+        <commandClass id="0098" controlled="true"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0084" version="2" controlled="true"/>
+        <commandClass id="005e" version="2"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="10">
+            <description>
+                <lang xml:lang="en">Z-Wave Plus Lifeline</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="10">
+            <description>
+                <lang xml:lang="en">Control Group A, controlled by button 1 or single clicks of buttons 1 and 3</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="10">
+            <description>
+                <lang xml:lang="en">Control Group B, controlled by button 2 or single clicks of buttons 2 and 4</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="4" maxNodes="10">
+            <description>
+                <lang xml:lang="en">Control Group C, controlled by button 3 or double clicks of buttons 1 and 3</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="5" maxNodes="10">
+            <description>
+                <lang xml:lang="en">Control Group D, controlled by button 4 or double clicks of buttons 2 and 4</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Button 1 and 3 pair mode </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Button 1 and 3 pair mode (Parameter Number 1, Parameter Size 1) In separate mode button 1 works with group A, button 3 with groups C. Click is On, Hold is dimming Up, Double click is Off, Click-Hold is dimming Down. In pair button 1/3 are Up/Down correspondingly. Click is On/Off, Hold is dimming Up/Down. Single clicks works with group A, double click with group C.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Separately</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">In pair without double clicks </lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">In pair with double clicks</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Button 2 and 4 pair mode </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Button 2 and 4 pair mode (Parameter Number 2, Parameter Size 1) In separate mode button 2 works with control group B, button 4 with control group D. Click is On, Hold is dimming Up, Double click is Off, Click-Hold is dimming Down. In pair button B/D are Up/Down correspondingly. Click is On/Off, Hold is dimming Up/Down. Single clicks works with group B, double click with group D.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Separately</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">In pair without double clicks </lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">In pair with double clicks</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="constant" size="1" default="08">
+            <name>
+                <lang xml:lang="en">Command to Control Group A </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter defines the command to be sent to devices of control group A when the related button is pressed</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Switch On/Off and Dim (send Basic Set and Switch Multilevel)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Switch On/Off only (send Basic Set)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">Switch All</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">Send Scenes</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">Send Preconfigured Scenes</lang>
+                  </description>
+              </value>
+            <value from="07" to="07">
+                <description>
+                    <lang xml:lang="en">Control DoorLock</lang>
+                  </description>
+              </value>
+            <value from="08" to="08">
+                <description>
+                    <lang xml:lang="en">Central Scene to Gateway</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="constant" size="1" default="08">
+            <name>
+                <lang xml:lang="en">Command to Control Group B</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter defines the command to be sent to devices of control group B when the related button is pressed</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Switch On/Off and Dim (send Basic Set and Switch Multilevel)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Switch On/Off only (send Basic Set)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">Switch All</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">Send Scenes</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">Send Preconfigured Scenes</lang>
+                  </description>
+              </value>
+            <value from="07" to="07">
+                <description>
+                    <lang xml:lang="en">Control DoorLock</lang>
+                  </description>
+              </value>
+            <value from="08" to="08">
+                <description>
+                    <lang xml:lang="en">Central Scene to Gateway</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="constant" size="1" default="08">
+            <name>
+                <lang xml:lang="en">Command to Control Group C </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter defines the command to be sent to devices of control group C when the related button is pressed</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Switch On/Off and Dim (send Basic Set and Switch Multilevel)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Switch On/Off only (send Basic Set)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">Switch All</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">Send Scenes</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">Send Preconfigured Scenes</lang>
+                  </description>
+              </value>
+            <value from="07" to="07">
+                <description>
+                    <lang xml:lang="en">Control DoorLock</lang>
+                  </description>
+              </value>
+            <value from="08" to="08">
+                <description>
+                    <lang xml:lang="en">Central Scene to Gateway </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="14" type="constant" size="1" default="08">
+            <name>
+                <lang xml:lang="en">Command to Control Group D</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter defines the command to be sent to devices of control group D when the related button is pressed</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Switch On/Off and Dim (send Basic Set and Switch Multilevel)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Switch On/Off only (send Basic Set)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">Switch All</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">Send Scenes</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">Send Preconfigured Scenes</lang>
+                  </description>
+              </value>
+            <value from="07" to="07">
+                <description>
+                    <lang xml:lang="en">Control DoorLock</lang>
+                  </description>
+              </value>
+            <value from="08" to="08">
+                <description>
+                    <lang xml:lang="en">Central Scene to Gateway </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="21" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Switch All Commands</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Send the following Switch All commands </lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Switch off only </lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Switch on only </lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Switch all on and off</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="22" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Invert buttons </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">no</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">yes</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="25" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Blocks wakeup even when wakeup interval is set </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">If the device wakes up and there is no controller nearby, several unsuccessful communication attempts will drain battery.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Wakeup is blocked</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Wakeup is possible if configured accordingly.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="30" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Unsolicited Battery Report</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Send unsolicited Battery Report on Wake Up </lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">No</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">To same node as wake up notification </lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Broadcast to neighbours</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/d7ec0c2b2a1f4bc5444900eeace1768e7c6508d0.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

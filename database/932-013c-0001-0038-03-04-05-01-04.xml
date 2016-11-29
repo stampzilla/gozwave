@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="013c"/>
+        <productType value="0001"/>
+    <productId value="0038"/>
+    <libType value="03"/>
+    <protoVersion value="04"/>
+    <protoSubVersion value="05"/>
+    <appVersion value="01"/>
+    <appSubVersion value="04"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>US</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">This plug-in ON/OFF switch PAN15 is a wireless switch, based on Z-Wave Plus technology. The plug-in ON/Off switch is able to detect current wattage and overload wattage of connected light or appliances. When detecting overload state, the switch will be disabled and its On/Off button will be lockout of which LED will flash quickly. Each switch is designed to act as a repeater. Repeaters will re-transmit the RF signal to ensure that the signal is received by its intended destination by routing the signal around obstacles and radio dead spots.</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Pressing On/Off button three times
+within 2 seconds will enter inclusion
+mode.</lang>
+          </inclusionNote>
+            <productName>Smart Energy Plug In Switch</productName>
+            <brandName>Philio</brandName>
+            <productLine>Philio Z-wave Products</productLine>
+            <productCode>PAN15-1-NES</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="005a"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0073"/>
+        <commandClass id="0025"/>
+        <commandClass id="0027"/>
+        <commandClass id="0070"/>
+        <commandClass id="0071"/>
+        <commandClass id="007a" version="2"/>
+        <commandClass id="0075" version="2"/>
+        <commandClass id="0020" inNIF="false"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="en">Lifeline</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Switch Status Report mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Whenever the status of switches changes, it will send a Binary Switch report to the
+group1 node.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">disable</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">enable</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Restore switch state mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Whenever the AC power return from lost, PAN15 will restore the switch state which
+could be SWITCH OFF、LAST SWITCH STATE、SWITCH ON.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Switch off</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Last switch state</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Switch on</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Mode of Switch Off function</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">When the mode of switch On/Off is set to 0, any command of switch off will be
+disabled and the On/Off function of include button will be disabled.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">disable</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">enable</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="rangemapped" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Auto off timer</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Whenever PAN15 switches to on, the auto off timer begin to count down. After the
+timer decrease to zero, it will switch to off automatically. However if Auto off timer
+is set as 0, the auto off function will be disabled.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Disable auto off
+function</lang>
+                  </description>
+              </value>
+            <value from="0001" to="7fff" unit="sec">
+                <description>
+                    <lang xml:lang="en">Define a time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">RF off command mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Whenever a switch off command, BASIC_SET、BINARY_SWITCH_SET、
+SWITCH_ALL_OFF, is received, it could be interpreted as 4 variety of commands.
+Switch Off：It switches to OFF state. The default setting is Switch Off. 
+Ignore：The switch off command will be ignored. 
+Switch Toggle：It switches to the inverse of current state. 
+Switch On：It switches to ON state.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Switch off</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Ignore</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Switch toggle</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">Switch on</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/5685adcc8a9bd070dca711b90435aaa99bb85256.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0097"/>
+        <productType value="0024"/>
+    <productId value="0045"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="22"/>
+    <appVersion value="01"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="07"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>US</rfFrequency>
+            <certId>14782</certId>
+            <certNumber>ZC08-12030006</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Flush-Mountable Blind US</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Triple press Up or Down button</lang>
+          </inclusionNote>
+            <productName>iShutter</productName>
+            <brandName>Wintop</brandName>
+            <productLine>Inserts</productLine>
+            <productCode>iShutter</productCode>
+            <productVersion>1</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0026" version="3"/>
+        <commandClass id="0027"/>
+        <commandClass id="002b" controlled="true"/>
+        <commandClass id="002c"/>
+        <commandClass id="008e" version="2"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+        <commandClass id="0075"/>
+        <commandClass id="0077"/>
+        <commandClass id="0087"/>
+        <commandClass id="0086"/>
+        <commandClass id="0025"/>
+        <commandClass id="0060" version="2" controlled="true"/>
+        <commandClass id="0026" controlled="true"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="2" maxNodes="10">
+            <description>
+                <lang xml:lang="en">Reports on Shutter state change will reported to devices in group No 2</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="10">
+            <description>
+                <lang xml:lang="en">Click or hold down/up button controls devices in Association group No 1</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Buttons Mode </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">One button is used (chose any), press while moving up and down stops, while stopped moves to opposite direction to previous. // 
+Two buttons with neutral position: Up click moves up if stopped and stops if moving down, Down click moves down if stopped and stops if moving up, Hold Up/Down moves in up/down, Release stops. //
+Two toggle switch: Switch to Up/Down moves up/down. // 
+Two paddles with Power and Direction: Hold Up button to move blinds up. If Down button is pressed, blinds will move down. Release Up button to stop. //
+Two paddles with Power and Direction toggle: Hold Up button to move blinds up. Down button toggle between up and down motion.
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">One push button (default)</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Two paddles with Power and Direction</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Two toggle switch</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">Two buttons with neutral position</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">Two paddles with Power and Direction toggle</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Automatically close after </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">If not zero, automatically switch off / close blind after a user defined time</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Disabled (default)</lang>
+                  </description>
+              </value>
+            <value from="0001" to="ffff" unit="seconds">
+                <description>
+                    <lang xml:lang="en">Close after this time (in s)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">What to do on RF off command </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Defines how to interpret RF Off command. Can be used in conjunction with Auto Close function: Ignore - to open the door by motion detectors and close it back after some amount of time: in case of multiple motion detectors each would try to open that would break logics; Open - to open on both On and Off paddle press on the remote and close after some amount of time. Button close click will still work (if button operations are not disabled). Note that Dim Down command will still begin close motion.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Switch off (default)</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Ignore</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Switch on</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">Open if close, otherwise close</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="1" default="32">
+            <name>
+                <lang xml:lang="en">Typical click timeout </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Typical time used to differentiate click, hold, double and triple clicks</lang>
+              </description>
+      
+                  <value from="01" to="64" unit="10ms">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Invert buttons </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">No (default)</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Yes</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Action on button  press or hold </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Defines which command should be sent to Association group on button press or hold. Scene mode will send 1 for Up event, 2 for Stop, 3 for Down.</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Switch On, Off and dim using Multilevel start/stop (default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Send Scene</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">LED mode </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Set LED indication mode</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Show working state (default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">always on</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">show opened state</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">Indicator Command Class</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="range" size="1" default="3c">
+            <name>
+                <lang xml:lang="en">Full close time </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Time to go from opened to closed state. Used to estimate the current level. Note that in permanent motion mode the reported value would be closed or opened, while all Basic and Multilevel Set values (1…99, 255) would open except 0 value that would close.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">keep in permanent motion</lang>
+                  </description>
+              </value>
+            <value from="01" to="ff" unit="seconds">
+                <description>
+                    <lang xml:lang="en">in s</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="range" size="1" default="3c">
+            <name>
+                <lang xml:lang="en">Full open time </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Time to go from closed to opened state. Used to estimate the current level. Note that in permanent motion mode the reported value would be closed or opened, while all Basic and Multilevel Set values (1…99, 255) would open except 0 value that would close.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">keep in permanent motion</lang>
+                  </description>
+              </value>
+            <value from="01" to="ff" unit="seconds">
+                <description>
+                    <lang xml:lang="en">in s</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Node Id of the blocking device </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Id of the blocking device. Commands from this device would be interpreted not as Open/Close, but as block/unblock. Useful with door opening detector: if the door is open, block the blind not to break shades while they move.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">disabled (default)</lang>
+                  </description>
+              </value>
+            <value from="01" to="e8">
+                <description>
+                    <lang xml:lang="en">Node Id of the blocking device </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">On which command from blocking node to enable the protection </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Defines which command from blocking device to interpret as closed door and hence, unprotected. </lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">on “On” (default)</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">on “Off” </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="14" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Invert Open and Close relays </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Allow exchanging open and close relays if blind control is wired to the motor incorrectly</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">No (default)</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Yes</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="254" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Reset to factory Default </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Attention: This will delete all your configuration, but the device will remain in the network. Handle with care.</lang>
+              </description>
+      
+          </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/81f1303fa4b0a3c3bfc443fcfac1ca14167d625d.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

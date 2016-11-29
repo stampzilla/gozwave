@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0060"/>
+        <productType value="0003"/>
+    <productId value="0002"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="5f"/>
+    <appVersion value="01"/>
+    <appSubVersion value="01"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Installed inside wall box, connects between wall switch and lighting.
+
+Turns On/Off or dimming lighting by wall switch or RF 
+
+command.</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Press the link key three times within 1.5 seconds to put the unit into inclusion mode.</lang>
+          </inclusionNote>
+            <productName>In Wall Dimmer Module -500 Series</productName>
+            <brandName>Everspring</brandName>
+            <productLine>Everspring Z-Wave Plus Devices</productLine>
+            <productCode>AD146-0</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0027"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0020" controlled="true"/>
+        <commandClass id="0070"/>
+        <commandClass id="005a"/>
+        <commandClass id="007a" version="2"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0026"/>
+        <commandClass id="0071" version="4"/>
+        <commandClass id="0073"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="005e" version="2"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Lifeline</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="rangemapped" size="2" default="00ff">
+            <name>
+                <lang xml:lang="en">Basic Set Command Value</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="0000" to="0063">
+                <description>
+                    <lang xml:lang="en">ON</lang>
+                  </description>
+              </value>
+            <value from="00ff" to="00ff">
+                <description>
+                    <lang xml:lang="en">OFF</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="1" default="03">
+            <name>
+                <lang xml:lang="en">Time Delay</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The parameter defines the time delay to report to Group 1.</lang>
+              </description>
+      
+                  <value from="03" to="19" unit="sec">
+                <description>
+                    <lang xml:lang="en">Define the time delay.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Last Status</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The parameter defines if the last status is remembered or not.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">do not remember</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">remember</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Switch 1 Type</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en"> Single Pole Double Throw</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Toggle switch</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Output Mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Parameter defines if output is set to dimming or switch only. Note: When set to 1, the operation mode is not changed; only the light would be turned on with
+100% brightness immediately. </lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">diming</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">on/off</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/0e500b88d52b5f18cb779e4a0c4238af92ed1340.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

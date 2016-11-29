@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0159"/>
+        <productType value="0002"/>
+    <productId value="0002"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="1c"/>
+    <appVersion value="01"/>
+    <appSubVersion value="0c"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Der ZMNHAA2 wird zum Ein bzw. Ausschalten von elektrischen Geräten verwendet. </lang>
+            <lang xml:lang="en">This Z-Wave module is used for switching on or off the electrical device (e.g. light, fan, etc ...).</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Auto-inklusion (30 Minuten nach dem anschließen der Stromversorgung) oder drücken der S - Taste für mehr als 2 Sekunden</lang>
+            <lang xml:lang="en">auto-inclusion (30 minutes after connected to power supply) or press service button S for more than 2 second</lang>
+          </inclusionNote>
+            <productName>ZMNHAA2</productName>
+            <brandName>Qubino</brandName>
+                <productCode>ZMNHAA2</productCode>
+            <productVersion>1.12</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" controlled="true" inNIF="false"/>
+        <commandClass id="0025"/>
+        <commandClass id="0027"/>
+        <commandClass id="0031" version="3"/>
+        <commandClass id="0032" version="3"/>
+        <commandClass id="0060" version="2"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072" version="0"/>
+        <commandClass id="0073" version="0"/>
+        <commandClass id="0085" version="0"/>
+        <commandClass id="0086"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="16">
+            <description>
+                <lang xml:lang="de">Gruppe 1</lang>
+                <lang xml:lang="en">Group 1</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="16">
+            <description>
+                <lang xml:lang="de">Gruppe 2</lang>
+                <lang xml:lang="en">Group 2</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="16">
+            <description>
+                <lang xml:lang="de">Gruppe 3</lang>
+                <lang xml:lang="en">Group 3</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="4" maxNodes="1">
+            <description>
+                <lang xml:lang="de">Gruppe 4</lang>
+                <lang xml:lang="en">Group 4</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Schaltertyp - Input 1</lang>
+                <lang xml:lang="en">switch type - Input 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">bestimmt den Schaltertype (Mono/Bi-stable)</lang>
+                <lang xml:lang="en">defines the switch typ (mono/bi-stable)</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Mono-Stabil</lang>
+                    <lang xml:lang="en">mono-stable</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Bi-Stabil</lang>
+                    <lang xml:lang="en">Bi-stable</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Schaltertyp - Input 2</lang>
+                <lang xml:lang="en">switch type - Input 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">bestimmt den Schaltertype (Mono/Bi-stable)</lang>
+                <lang xml:lang="en">defines the switch typ (mono/bi-stable)</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Mono-Stabil</lang>
+                    <lang xml:lang="en">mono-stable</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Bi-Stabil</lang>
+                    <lang xml:lang="en">bi-stable</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Aktiviert/Deaktiviert alle Funktionen</lang>
+                <lang xml:lang="en">Activate / deactivate functions ALL ON/ALL OFF</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Alles An ist nicht aktiv - Alles aus ist nicht aktiv</lang>
+                    <lang xml:lang="en">All On is not active - All Off is not active</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Alles An ist nicht aktiv - Alles aus ist aktiv</lang>
+                    <lang xml:lang="en">All On is not active - All Off is active</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Alles An ist aktiv - Alles aus ist nicht aktiv</lang>
+                    <lang xml:lang="en">All On is active - All Off is not active</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="range" size="4" default="00000000">
+            <name>
+                <lang xml:lang="de">Automatisches Abschalten des Releay Q1 nach einer bestimmten Zeit</lang>
+                <lang xml:lang="en">Automatic turning Off relay Q2 after set time </lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Bestimmt die Zeit wenn das Relay Q1 abgeschaltet werden soll in ms.</lang>
+                <lang xml:lang="en">Defines the time after the relay turning off in ms</lang>
+              </description>
+      
+                  <value from="00000000" to="00000000">
+                <description>
+                    <lang xml:lang="de">Auto Aus ist deaktiviert</lang>
+                    <lang xml:lang="en">Auto Off disabled</lang>
+                  </description>
+              </value>
+            <value from="00000001" to="0000ffff" unit="ms">
+                <description>
+                    <lang xml:lang="de">Zeit in ms (Max: 65535)</lang>
+                    <lang xml:lang="en">Time in ms (Max: 65535)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="range" size="4" default="00000000">
+            <name>
+                <lang xml:lang="de">Automatisches Abschalten des Releay Q1 nach einer bestimmten Zeit</lang>
+                <lang xml:lang="en">Automatic turning Off relay Q2 after set time </lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Bestimmt die Zeit wenn das Relay Q2 abgeschaltet werden soll in ms.</lang>
+                <lang xml:lang="en">Defines the time after the relay turning off in ms</lang>
+              </description>
+      
+                  <value from="00000000" to="00000000">
+                <description>
+                    <lang xml:lang="de">Auto Aus ist deaktiviert</lang>
+                    <lang xml:lang="en">Auto Off disabled</lang>
+                  </description>
+              </value>
+            <value from="00000001" to="0000ffff" unit="ms">
+                <description>
+                    <lang xml:lang="de">Zeit in ms (Max: 65535)</lang>
+                    <lang xml:lang="en">Time in ms (Max: 65535)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="30" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Zustandssicherung nach Stromausfall für Q1 und Q2</lang>
+                <lang xml:lang="en">Saving the state of the relays Q1 and Q2 after a power failure</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Zustandsspeichern beider Relays ist aktiv und die Geräte kehren in den zuletzt bekannten Zustand zurück nachdem der Strom ausgefallen ist.</lang>
+                    <lang xml:lang="en">Flush 2 relays module saves its state before power failure (it returns to the last position saved before a power failure)</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Beide Relays gehen in den Zustand &quot;Aus&quot; nach einem Stromsausfall.</lang>
+                    <lang xml:lang="en">Flush 2 relays module does not save the state after a power failure, it returns to &quot;off&quot; position.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="40" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Bericht über den Stromverbrauch von Q1 in Watt</lang>
+                <lang xml:lang="en">Power reporting in Watts on power change for Q1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Berichtfunktion deaktiviert</lang>
+                    <lang xml:lang="en">Reporting disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="64" unit="%">
+                <description>
+                    <lang xml:lang="de">Verbrauchsbericht wird erstellt (push) wenn der Verbaucht in Watt mehr als der angeben Wert überschreitet. (in %)</lang>
+                    <lang xml:lang="en">Power report is send (push) only when actual power in Watts in real time changes for more than set percentage comparing to previous actual power in Watts, step is 1%.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="41" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Bericht über den Stromverbrauch von Q2 in Watt</lang>
+                <lang xml:lang="en">Power reporting in Watts on power change for Q2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Berichtfunktion deaktiviert</lang>
+                    <lang xml:lang="en">Reporting disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="64" unit="%">
+                <description>
+                    <lang xml:lang="de">Verbrauchsbericht wird erstellt (push) wenn der Verbaucht in Watt mehr als der angeben Wert überschreitet. (in %)</lang>
+                    <lang xml:lang="en">Power report is send (push) only when actual power in Watts in real time changes for more than set percentage comparing to previous actual power in Watts, step is 1%.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="42" type="range" size="4" default="00000000">
+            <name>
+                <lang xml:lang="de">Zeitlicher Intervall der Verbrauchsberichte von Q1</lang>
+                <lang xml:lang="en">Power reporting in Watts by time interval for Q1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00000000" to="00000000">
+                <description>
+                    <lang xml:lang="de">Verbrauchsbericht deaktiviert</lang>
+                    <lang xml:lang="en">Report disabled</lang>
+                  </description>
+              </value>
+            <value from="00000001" to="0000ffff" unit="ms">
+                <description>
+                    <lang xml:lang="de">Bericht ist aktiviert und wird entsprechenden der gesetzten Werte gesendet (Max: alle 65535ms)</lang>
+                    <lang xml:lang="en">Reporting enabled, Power report is send with time interval set by entered value. (Max: 65535ms)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="43" type="range" size="4" default="00000000">
+            <name>
+                <lang xml:lang="de">Zeitlicher Intervall der Verbrauchsberichte von Q2</lang>
+                <lang xml:lang="en">Power reporting in Watts by time interval for Q2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00000000" to="00000000">
+                <description>
+                    <lang xml:lang="de">Verbrauchsbericht deaktiviert</lang>
+                    <lang xml:lang="en">Report disabled</lang>
+                  </description>
+              </value>
+            <value from="00000001" to="0000ffff" unit="ms">
+                <description>
+                    <lang xml:lang="de">Bericht ist aktiviert und wird entsprechenden der gesetzten Werte gesendet (Max: alle 65535ms)</lang>
+                    <lang xml:lang="en">Reporting enabled, Power report is send with time interval set by entered value. (Max: 65535ms)</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    
+  </ZWaveDevice>
+
+

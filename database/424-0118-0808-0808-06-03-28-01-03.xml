@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0118"/>
+        <productType value="0808"/>
+    <productId value="0808"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="28"/>
+    <appVersion value="01"/>
+    <appSubVersion value="03"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+                    
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Single Paddle Wall Dimmer</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Hit the paddle</lang>
+          </inclusionNote>
+            <productName>TZ65S</productName>
+                                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" inNIF="false"/>
+        <commandClass id="0085"/>
+        <commandClass id="0086"/>
+        <commandClass id="0027"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+        <commandClass id="0026"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="de">jede Schaltaktion</lang>
+                <lang xml:lang="en">every switching command</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Start Level</lang>
+                <lang xml:lang="en">Start Level Bit</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">
+definiert, ob die Angabe über den Startpunkt beim Dimmen in der Funkanweisung ignoriert werden soll
+</lang>
+                <lang xml:lang="en">
+defines if the start level bit shall be ignores when transmitting a dim command to a dimmer
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Ignorieren</lang>
+                    <lang xml:lang="en">ignore</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Nicht ignorieren</lang>
+                    <lang xml:lang="en">dont ignore</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Nachtlicht</lang>
+                <lang xml:lang="en">Night Light</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">aktiviert die Nachtlichtfunktion</lang>
+                <lang xml:lang="en">Activates Night Light</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">LED blinkt bei Aktivität</lang>
+                    <lang xml:lang="en">LED blinks on activity</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Nachtlicht aktiv</lang>
+                    <lang xml:lang="en">Night Light active</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Schalter invertieren</lang>
+                <lang xml:lang="en">Invert Switch</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">invertiert die Belegung der Schaltwippe</lang>
+                <lang xml:lang="en">Inverts Switching (on is upper part)</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Nein</lang>
+                    <lang xml:lang="en">dont invert</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Ja</lang>
+                    <lang xml:lang="en">invert</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="19" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">LED Indikator</lang>
+                <lang xml:lang="en">LED Transmission Indication</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">
+definiert wie die LED eine Indikator für die Funkübertragung ist
+</lang>
+                <lang xml:lang="en">
+defines the behavior of the LED when transmitting data
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">kein Blinken</lang>
+                    <lang xml:lang="en">no flicker</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Binkt immer solange Funk aktiv ist</lang>
+                    <lang xml:lang="en">flicker all time of data transmission</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Blinkt nur für eine Sekunde</lang>
+                    <lang xml:lang="en">flicker for one second only</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    
+  </ZWaveDevice>
+
+

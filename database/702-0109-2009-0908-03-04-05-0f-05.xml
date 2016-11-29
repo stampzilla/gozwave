@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0109"/>
+        <productType value="2009"/>
+    <productId value="0908"/>
+    <libType value="03"/>
+    <protoVersion value="04"/>
+    <protoSubVersion value="05"/>
+    <appVersion value="0f"/>
+    <appSubVersion value="05"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="05"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Die Funksirene gibt einen lauten Warnton und ein blinkendes Warnlicht ab, sobald eine Alarmmeldung oder Warnung empfangen wird.</lang>
+            <lang xml:lang="en">Siren &amp; Strobe Alarm will sound a loud siren and flash a strobe light when an alarm message or alert is received. </lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Öffnen Sie die Halterung und drücken Sie den Programmschalter des ZM 1602 für mindestens 1 Sekunde, um das Gerät zu inkludieren. Nach der Einstellung sollte das LED Licht erlöschen, wenn nicht, versuchen Sie es erneut.</lang>
+            <lang xml:lang="en">Open the bracket and press the program switch of
+ZM 1602 for 1 second at least &amp; release to be included. After setting, the LED
+Setting Lighting should go off, if not, please try again.</lang>
+          </inclusionNote>
+            <productName>Siren with DC adapter</productName>
+            <brandName>Vision </brandName>
+            <productLine>Home Security  </productLine>
+            <productCode>ZM1602EU-5</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0098"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0085" version="2" secure="true" nonSecure="false"/>
+        <commandClass id="0059" secure="true" nonSecure="false"/>
+        <commandClass id="0070" secure="true" nonSecure="false"/>
+        <commandClass id="005a" secure="true" nonSecure="false"/>
+        <commandClass id="007a" version="2" secure="true" nonSecure="false"/>
+        <commandClass id="0071" version="4" secure="true" nonSecure="false"/>
+        <commandClass id="0073" secure="true" nonSecure="false"/>
+        <commandClass id="0025" secure="true" nonSecure="false"/>
+        <commandClass id="0020"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Lifeline</lang>
+                <lang xml:lang="en">Lifeline</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Sirenen- / Stroboskop Modus</lang>
+                <lang xml:lang="en">Siren/Strobe Mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Der Anwender kann den Wert von 0 bis 2 ändern, um entweder den Sirenenton, das Blinklicht oder beides für den Alarmfall einzustellen.</lang>
+                <lang xml:lang="en">User can change value from 0 to 2 to turn
+either Siren sound, Strobe light, or both when triggered.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Alles aktiviert</lang>
+                    <lang xml:lang="en">All Enable</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">nur Sirene</lang>
+                    <lang xml:lang="en">Siren Only</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">nur Blinklicht</lang>
+                    <lang xml:lang="en">Strobe Only</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Automatische Alarmabschaltung</lang>
+                <lang xml:lang="en">Alarm Auto Stop Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Der Anwender kann die Dauer des Sirenenalarms verändern.</lang>
+                <lang xml:lang="en">User can change the duration of siren time
+when triggered.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">The auto stop time is set to 30 sec.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">The auto stop time is set to 60 sec.</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">The auto stop time is set to 120 sec.</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Will Not Automatically Stop</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/4e84f8bf0731a5fc57a7bedd9c4c95c97e105b59.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

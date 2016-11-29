@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0001"/>
+        <productType value="5457"/>
+    <productId value="3033"/>
+    <libType value="00"/>
+    <protoVersion value="02"/>
+    <protoSubVersion value="61"/>
+    <appVersion value="00"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="12"/>
+            <specificClass value="00"/>
+        <optional value="false"/>
+    <listening value="true"/>
+    <routing value="false"/>
+            <rfFrequency>US</rfFrequency>
+            <certId>13958</certId>
+            <certNumber>ZC08-10060004</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Wall Switch Transmitter</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Tap the button</lang>
+          </inclusionNote>
+            <productName>ZTW103, LTM-5</productName>
+            <brandName>HomePro, Evolve</brandName>
+            <productLine>HomePro, Evolve</productLine>
+            <productCode>ZTW103, LTM-5</productCode>
+            <productVersion>V5.1</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0027"/>
+        <commandClass id="0085"/>
+        <commandClass id="0020" controlled="true"/>
+        <commandClass id="0025"/>
+        <commandClass id="0070"/>
+        <commandClass id="0087"/>
+        <commandClass id="0072"/>
+        <commandClass id="0026" controlled="true"/>
+        <commandClass id="0086"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Nodes in this group are turned ON by tapping the top of the paddle or OFF by tapping the bottom of the
+paddle.
+Nodes associated into this group are dimmed by pressing and holding the bottom of the paddle until the
+desired dim level is reached or brightened by pressing and holding the top of the paddle until the desire level
+is reached.
+The LED on the ZTW103 will indicate the status of this group.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Association Group 2</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Association Group 3</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="4" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Association Group 4</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Set Ignore Start Level Bit When Transmitting Dim Commands</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The ZTW103 can send Dim commands to Z-Wave enabled dimmers. The Dim command has a start level
+embedded in it. A dimmer receiving this command will start dimming from that start level. However, the command
+can be sent so that the dimmer ignores the start level and instead start dimming from its current level.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">A dimmer receiving this command will start dimming from thr start level.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">The dimmer will start dimming from its current dim level
+rather than the start level embedded in the command.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Night Light</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">The LED will turn ON when the status of Group 1 is ON.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">The LED will turn ON when the status of the devices in Group 1 is OFF.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Invert Switch</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Change back to original settings.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Change the top of the transmitter to OFF and the bottom of the transmitter to ON.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Ignore Start Level When Receiving Dim Commands</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The ZTW103 can send Dim commands to Z-Wave enabled dimmers. The Dim command has a start
+level embedded in it. A dimmer receiving this command will start dimming from that start level. However,
+the command can be sent so that the dimmer ignores the start level and instead start dimming from its
+current level. // Note that this only affects a level that is reported or possibly sent by the ZTW103 since the
+ZTW103 does not control a load.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Starts dimming from that start level</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">The ZTW103 sends the command so that the dimmer will start dimming from its
+current dim level rather then the start level embedded in the command.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="19" type="constant" size="1" default="02">
+            <name>
+                <lang xml:lang="en">LED Transmission Indication</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The ZTW103 will flicker its LED when it is transmitting to any of its 4 groups. This flickering can be changed. </lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Flickering can be set to
+not flicker at all.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Flicker the entire time it is transmitting.</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Flicker for only 1 second
+when it begins transmitting.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="20" type="range" size="1" default="02">
+            <name>
+                <lang xml:lang="en">Poll: Minutes</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="01" to="ff">
+                <description>
+                    <lang xml:lang="en">The ZTW103 will poll the first node in Group 1 in order to keep itself synchronized with the group if this
+configuration parameter is set to 1. How often it will poll is configured using this parameter.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="21" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Poll First Node in Group 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">No polling.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">The ZTW103 will poll the first node in Group 1 in order to keep itself synchronized with the group.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/54806c64d0bed46f28d4ec334441e2a9103045d6.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

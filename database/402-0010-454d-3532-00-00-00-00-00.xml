@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0010"/>
+        <productType value="454d"/>
+    <productId value="3532"/>
+    <libType value="00"/>
+    <protoVersion value="00"/>
+    <protoSubVersion value="00"/>
+    <appVersion value="00"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="31"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+            <rfFrequency>US</rfFrequency>
+            <certId>14424</certId>
+            
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Z-Wave Stromzähler</lang>
+            <lang xml:lang="en">Z-Wave Energy Meter</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Taster drücken und mindestens 3 Sekunden gedrückt halten</lang>
+            <lang xml:lang="en">Press and hold the 
+switch for 3 seconds</lang>
+          </inclusionNote>
+            <productName>EM52 Z-Wave Energy Meter</productName>
+            <brandName>EM52</brandName>
+                                </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0085"/>
+        <commandClass id="0020"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+        <commandClass id="0032" version="3"/>
+        <commandClass id="0073"/>
+        <commandClass id="0086"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Ziel für Meter Report Befehle</lang>
+                <lang xml:lang="en">Target for Meter Report commands</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="rangemapped" size="2" default="001e">
+            <name>
+                <lang xml:lang="de">Instant Energy Autosend Interval</lang>
+                <lang xml:lang="en">Instant Energy Autosend Interval</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">no autosend</lang>
+                  </description>
+              </value>
+            <value from="0005" to="7fff" unit="s">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="rangemapped" size="2" default="003d">
+            <name>
+                <lang xml:lang="de">Accumulated Energy Autosend Interval </lang>
+                <lang xml:lang="en">Accumulated Energy Autosend Interval </lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">no autosend</lang>
+                  </description>
+              </value>
+            <value from="0005" to="7fff" unit="s">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="rangemapped" size="2" default="003d">
+            <name>
+                <lang xml:lang="de">Voltage Autosend Interval</lang>
+                <lang xml:lang="en">Voltage Autosend Interval</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">no autosend</lang>
+                  </description>
+              </value>
+            <value from="0005" to="7fff" unit="s">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="rangemapped" size="2" default="003d">
+            <name>
+                <lang xml:lang="de">Current Autosend Interval</lang>
+                <lang xml:lang="en">Current Autosend Interval</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">no autosend</lang>
+                  </description>
+              </value>
+            <value from="0005" to="7fff" unit="s">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">Instant Energy Change (watts) Autosend threshold</lang>
+                <lang xml:lang="en">Instant Energy Change (watts) Autosend threshold</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+          </configParam>
+        <configParam number="6" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">Accumulated Energy Change Autosend threshold</lang>
+                <lang xml:lang="en">Accumulated Energy Change Autosend threshold</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Wattstunden in zehnerschritten</lang>
+                <lang xml:lang="en">In 10’s of watt- hours</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="7" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">Instant Voltage Change Autosend threshold </lang>
+                <lang xml:lang="en">Instant Voltage Change Autosend threshold </lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">in Volt / 100</lang>
+                <lang xml:lang="en">In Volts / 100</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="8" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">Instant Current Change Autosend threshold </lang>
+                <lang xml:lang="en">Instant Current Change Autosend threshold </lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">in Ampere / 100</lang>
+                <lang xml:lang="en">In Amps / 100</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="9" type="constant" size="2" default="0096">
+            <name>
+                <lang xml:lang="de">CT Size</lang>
+                <lang xml:lang="en">CT Size</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">in Ampere</lang>
+                <lang xml:lang="en">in Amps</lang>
+              </description>
+      
+                  <value from="0005" to="0005">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="000a" to="000a">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="0032" to="0032">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="004b" to="004b">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="0064" to="0064">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="0096" to="0096">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">CT_DOUBLED</lang>
+                <lang xml:lang="en">CT_DOUBLED</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Verdopplung der gelesenen Werte für Strom und Leistung bei der Verwendung in 2-Phasen Systemen</lang>
+                <lang xml:lang="en">doubles current and power 
+readings for use in 2-phase systems when using only one current transformer.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">doubled</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="20" type="range" size="2" default="003c">
+            <name>
+                <lang xml:lang="de">Line Frequency</lang>
+                <lang xml:lang="en">Line Frequency</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="0028" to="0046">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="22" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">Reboot Counter</lang>
+                <lang xml:lang="en">Reboot Counter</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">wird bei jedem Neustart erhöht</lang>
+                <lang xml:lang="en">increments on every bootup</lang>
+              </description>
+      
+                  <value from="0000" to="7fff">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

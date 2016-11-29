@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="013c"/>
+        <productType value="0002"/>
+    <productId value="000c"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="5f"/>
+    <appVersion value="01"/>
+    <appSubVersion value="0e"/>
+        <basicClass value="04"/>
+            <genericClass value="07"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">The slim multisensor PST02-1C has PIR, temperature and illumination, 3 sensors function in one,based on Z-Wave technology
+</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Pressing tamper key three times within 1.5 seconds to enter the inclusion mode.
+</lang>
+          </inclusionNote>
+            <productName>Slim Multisensor</productName>
+            <brandName>Philio</brandName>
+            <productLine>Philio Z-Wave Products</productLine>
+            <productCode>PST02-1C</productCode>
+                <batteryType>CR123A</batteryType>
+            <batteryCount>1</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0073"/>
+        <commandClass id="005a"/>
+        <commandClass id="008f"/>
+        <commandClass id="0098"/>
+        <commandClass id="007a" version="2"/>
+        <commandClass id="0080" secure="true" nonSecure="false"/>
+        <commandClass id="0071" version="4" secure="true" nonSecure="false"/>
+        <commandClass id="0085" version="2" secure="true" nonSecure="false"/>
+        <commandClass id="0070" secure="true" nonSecure="false"/>
+        <commandClass id="0030" version="2" secure="true" nonSecure="false"/>
+        <commandClass id="0031" version="5" secure="true" nonSecure="false"/>
+        <commandClass id="0084" version="2" secure="true" nonSecure="false"/>
+        <commandClass id="0020" controlled="true" inNIF="false"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="8">
+            <description>
+                <lang xml:lang="en">
+The group 1 is for receiving the report message, like triggered event, temperature, illumination etc.
+</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="8">
+            <description>
+                <lang xml:lang="en">
+The group 2 is for light control, the device will send the “Basic Set” command to this group.
+</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="2" type="rangemapped" size="1" default="ff">
+            <name>
+                <lang xml:lang="de">Basis Set Level</lang>
+                <lang xml:lang="en">Basic Set Level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Setzt das Basiskommando um das Licht ein zuschalten(-1) bzw. zu dimmen (1-100). Der Wert 0 schaltet das Licht aus.
+</lang>
+                <lang xml:lang="en">Setting the BASIC command value to turn on the light. The 0xFF(-1) means turn on the light. For dimmer equipment 1 to 100 means the light strength. 0 means turn off the light.
+</lang>
+              </description>
+      
+                  <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="de">Licht einschalten</lang>
+                    <lang xml:lang="en">Activate Light</lang>
+                  </description>
+              </value>
+            <value from="00" to="64">
+                <description>
+                    <lang xml:lang="de">Dimmen</lang>
+                    <lang xml:lang="en">Dimm</lang>
+                  </description>
+              </value>
+            <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Licht auschalten</lang>
+                    <lang xml:lang="en">Deactivate Light</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="rangemapped" size="1" default="50">
+            <name>
+                <lang xml:lang="de">PIR Empfindlichkeit</lang>
+                <lang xml:lang="en">PIR Sensitivity</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert die Empfindlichkeit des PIR Sensors. Eine Hohe Empfindlichkeit bedeutet das auch auf höhere Entfernungen noch ausgelöst werden kann. Dies ist jedoch von der jeweiligen Umgebung abhängig.
+</lang>
+                <lang xml:lang="en">PIR sensitivity settings. 0 means disable the PIR motion. 1 means the lowest sensitivity, 99 means the highest sensitivity. High sensitivity means can detected long distance, but if there is more noise signal in the environment, it will re-trigger too frequency.
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktivieren</lang>
+                    <lang xml:lang="en">Disable</lang>
+                  </description>
+              </value>
+            <value from="01" to="63">
+                <description>
+                    <lang xml:lang="de">Empfindlichkeit</lang>
+                    <lang xml:lang="en">sensitivity</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="rangemapped" size="1" default="63">
+            <name>
+                <lang xml:lang="de">Grenzwert des Helligkeitssensors</lang>
+                <lang xml:lang="en">Light Threshold</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Bestimmt den Grenzwert wann Licht eingeschaltet bzw. ein Event ausgelöst werden soll.
+</lang>
+                <lang xml:lang="en">Setting the illumination threshold to turn on the light. When the event triggered and the environment illumination lower then the threshold, the device will turn on the light. 0 means turn off illumination detected function. And never turn on the light. 1 means darkest. 99 means brightest. 100 means turn off illumination detected function. And always turn on the light. Notice: In none test mode, only the value in 1 to 99 will enable the illumination detected function and update the illumination value.
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktivieren</lang>
+                    <lang xml:lang="en">Deactivate</lang>
+                  </description>
+              </value>
+            <value from="01" to="63">
+                <description>
+                    <lang xml:lang="de">Grenzwert</lang>
+                    <lang xml:lang="en">Treshhold</lang>
+                  </description>
+              </value>
+            <value from="64" to="64">
+                <description>
+                    <lang xml:lang="de">Licht immer einschalten</lang>
+                    <lang xml:lang="en">Always turn on Lights</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="bitset" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Verwendungsmodus</lang>
+                <lang xml:lang="en">Operation Mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Verwenden Sie die bits um die Einstellungen festzulegen.
+</lang>
+                <lang xml:lang="en">Operation mode. Using bit to control.</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">
+1 =enable test mode 0 = disable normal mode Notice: This bit only effect by the DIP Switch setting to program mode.
+</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Disable the door/window function.</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">
+Setting the temperature scale. 0: Fahrenheit 1: Celsius
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">
+Disable the illumination report after event triggered.
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">
+Disable the temperature report after event triggered.
+</lang>
+                  </description>
+              </value>
+            <value from="06" to="06" reserved="true">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="07" to="07">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Disable the back key release into test mode.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="bitset" size="1" default="04">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Multi Sensor Function Switch</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Multisensor function switch. Using bit to control.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Disable magnetic integrate illumination.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Disable PIR integrate Illumination.</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">
+Disable magnetic integrate PIR (Default is Disable)
+</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">
+When Bit2 is 0 (Enable), Are the device and the lighting in the same room? 0: In the same room (Default) 1: In a different room. Notice: If this bit is 1, it is recommended also set the Bit1 to 1, cause the PIR triggered, doesn&#039;t mean the people in that room.
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">
+Disable delay 5 seconds to turn off the light, when door/window closed.
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">
+Disable auto turn off the light, after door/window opened to turn on the light. If bit2 is zero, this setting is useless. Notice: If the configuration No.9 is zero, this setting is useless.
+</lang>
+                  </description>
+              </value>
+            <value from="06" to="06" reserved="true">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="07" to="07" reserved="true">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="bitset" size="1" default="04">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Customer Function</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Customer function switch, using bit control.</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">
+Enable sending motion OFF report. Note: Depends on the Bit4 0: Report Notification CC, Type: 0x07, Event: 0xFE 1: Sensor Binary Report, Type: 0x0C, Value: 0x00
+</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Enable PIR super sensitivity mode.</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Enable don&#039;t send out BASIC OFF after door closed.</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">
+Notification Type 0: Using Notification Report. 1: Using Sensor Binary Report.
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Disable Multi CC in auto report.</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">
+Disable to report battery state when the device triggered.
+</lang>
+                  </description>
+              </value>
+            <value from="07" to="07" reserved="true">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="range" size="1" default="03">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">PIR Re- Detect Interval Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">In the normal mode, after the PIR motion detected, setting the re-detect time. 8 seconds per tick, default tick is 3 (24 seconds). Setting the suitable value to prevent received the trigger signal too frequency. Also can save the battery energy. Notice: If this value bigger than the configuration setting NO. 9. There is a period after the light turned off and the PIR not start detecting.
+</lang>
+              </description>
+      
+                  <value from="01" to="7f">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Define the time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="rangemapped" size="1" default="04">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Turn Off Light Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">After turn on the lighting, setting the delay time to turn off the lighting when the PIR motion is not detected. 8 seconds per tick, default tick is 4 (32 seconds). 0 means never send turn off light command.
+</lang>
+              </description>
+      
+                  <value from="01" to="7f">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Define the delay time.</lang>
+                  </description>
+              </value>
+            <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">The turn off light command is disabled.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="rangemapped" size="1" default="0c">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Auto Report Battery Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">The interval time for auto report the battery level. 0 means turn off auto report battery. The default value is 12. The tick time can setting by the configuration No.20.
+</lang>
+              </description>
+      
+                  <value from="01" to="7f">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">
+Define the time interval for a battery auto report.
+</lang>
+                  </description>
+              </value>
+            <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">The auto report is disabled.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="rangemapped" size="1" default="0c">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Auto Report Door/Windo w State Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">The interval time for auto report the door/window state. 0 means turn off auto report door/window state. The default value is 12. The tick time can setting by the configuration No.20.
+</lang>
+              </description>
+      
+                  <value from="01" to="7f">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Define the time interval.</lang>
+                  </description>
+              </value>
+            <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="rangemapped" size="1" default="0c">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Auto Report Illumination Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">The interval time for auto report the illumination. 0 means turn off auto report illumination. The default value is 12. The tick time can setting by the configuration No.20.
+</lang>
+              </description>
+      
+                  <value from="01" to="7f">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Define the time interval.</lang>
+                  </description>
+              </value>
+            <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="rangemapped" size="1" default="0c">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Auto Report Temperatur e Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">The interval time for auto report the temperature. 0 means turn off auto report temperature. The default value is 12. The tick time can setting by the configuration No.20.
+</lang>
+              </description>
+      
+                  <value from="01" to="7f">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Define the time interval.</lang>
+                  </description>
+              </value>
+            <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="20" type="rangemapped" size="1" default="1e">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Auto Report Tick Interval</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">The interval time for auto report each tick. Setting this configuration will effect configuration No.10, No.11, No.12 and No.13. Caution: Setting to 0 means turn off all auto report function.
+</lang>
+              </description>
+      
+                  <value from="01" to="ff">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Define the time interval.</lang>
+                  </description>
+              </value>
+            <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">All auto report functions are disabled.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="21" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Temperature Differential Report</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">The temperature differential to report. 0 means turn off this function. The unit is Fahrenheit. Enable this function the device will detect every minutes. And when the temperature is over 140 degree Fahrenheit, it will continue report. Enable this functionality will cause some issue please see the detail in the “Temperature Report” section.
+</lang>
+              </description>
+      
+                  <value from="01" to="7f" unit="°F">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Define the temperature differential to report.</lang>
+                  </description>
+              </value>
+            <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="22" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Illumination Differential Report</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">The illumination differential to report.q2121111 0 means turn off this function. The unit is percentage. Enable this function the device will detect every minutes. Enable this functionality will cause some issue please see the detail in the “Illumination Report” section.
+</lang>
+              </description>
+      
+                  <value from="01" to="63" unit="%">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Define the illumination differential to report.</lang>
+                  </description>
+              </value>
+            <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/0c22e8bc1cb721b06321049855181f6da2fd0d92.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

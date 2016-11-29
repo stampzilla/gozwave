@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0190"/>
+        <productType value="0003"/>
+    <productId value="0001"/>
+    <libType value="03"/>
+    <protoVersion value="04"/>
+    <protoSubVersion value="05"/>
+    <appVersion value="01"/>
+    <appSubVersion value="49"/>
+        <basicClass value="04"/>
+            <genericClass value="21"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>US</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Battery Powered Z-Wave Temperature Sensor</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Press the button on the Hub once to put the Hub in Add mode. The light on the Hub will start flashing Green.</lang>
+          </inclusionNote>
+            <productName>Building 36 Temperature Sensor</productName>
+            <brandName>Building 36 Temperature Sensor</brandName>
+            <productLine>Building 36</productLine>
+            <productCode>B36-S10</productCode>
+                <batteryType>CR123A</batteryType>
+            <batteryCount>1</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="005a"/>
+        <commandClass id="0073"/>
+        <commandClass id="0080"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0031" version="4"/>
+        <commandClass id="007a" version="2"/>
+        <commandClass id="0084" version="2"/>
+        <commandClass id="0020"/>
+        <commandClass id="0070" version="2"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Temperature Reporting</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Lifeline:  Battery Reports
+ Sensor Multilevel Reports (sensor type temperature)
+ Device Reset Locally Reports</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="2" default="0258">
+            <name>
+                <lang xml:lang="en">Wake up Period</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Number of seconds the sensor will stay in the Wake up state following a button press.</lang>
+              </description>
+      
+                  <value from="000a" to="ffff" unit="sec">
+                <description>
+                    <lang xml:lang="en">Define a wake up interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="2" default="06db">
+            <name>
+                <lang xml:lang="en">Low Battery Level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Low Battery Report threshold.</lang>
+              </description>
+      
+                  <value from="03e8" to="09c4">
+                <description>
+                    <lang xml:lang="en">Define a treshold.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="rangemapped" size="2" default="000a">
+            <name>
+                <lang xml:lang="en">Temperature Reporting Threshold</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The minimum temperature difference required to send a new ambient temperature report.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Disable reporting threshold, report temperature every time thermistor is read.</lang>
+                  </description>
+              </value>
+            <value from="0001" to="0064" unit="x0.1 °F">
+                <description>
+                    <lang xml:lang="en">Set up a treshold.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="bitset" size="2" default="0001">
+            <name>
+                <lang xml:lang="en">Configuration Bitmask</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Configuration bitmask for various device configuration settings.</lang>
+              </description>
+      
+                  <value from="0000" to="0000" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="0001" to="0001">
+                <description>
+                    <lang xml:lang="en">Temperature: If 1, Send unsolicited temperature reports, disable if 0</lang>
+                  </description>
+              </value>
+            <value from="0002" to="0002" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="0003" to="0003" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="rangemapped" size="2" default="0008">
+            <name>
+                <lang xml:lang="en">Battery Reporting Interval</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The number wakeup intervals between autonomous battery reports. Units : Wake Up Intervals (as defined by Wake Up Command Class)</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Disable autonomous battery reports.</lang>
+                  </description>
+              </value>
+            <value from="0001" to="00ff">
+                <description>
+                    <lang xml:lang="en">Define a reporting interval based upon the wake up intervals.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="range" size="2" default="003c">
+            <name>
+                <lang xml:lang="en">Temperature Checking Interval</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">How often the sensor will check the thermistor value.</lang>
+              </description>
+      
+                  <value from="000a" to="00ff" unit="sec">
+                <description>
+                    <lang xml:lang="en">Define an interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="rangemapped" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Temperature Reporting Interval</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The number wakeup intervals between autonomous temperature reports. These interval reports should be sent regardless of the setting of the temperature reporting threshold. Units : Wake Up Intervals (as defined by Wake Up Command Class)</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Disable autonomous temperature reports</lang>
+                  </description>
+              </value>
+            <value from="0001" to="00ff">
+                <description>
+                    <lang xml:lang="en">Define a reporting interval based upon the wake up intervals.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Temperature Calibration O</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Adjust reported temperature by +/- 10 degrees Fahrenheit for calibration. Units : 0.1 °F</lang>
+              </description>
+      
+                  <value from="ff9c" to="0064" unit="x0.1°F">
+                <description>
+                    <lang xml:lang="en">Adjust the reported temperature if needed.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="range" size="2" default="1c20">
+            <name>
+                <lang xml:lang="en">Mandatory Temperature Reporting Interval</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Temperature will be reported regardless of differential from threshold.</lang>
+              </description>
+      
+                  <value from="003c" to="fd21" unit="sec">
+                <description>
+                    <lang xml:lang="en">Define an interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/019266a5f230524a0f986060d231975a69740f1c.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="022e"/>
+        <productType value="0006"/>
+    <productId value="0006"/>
+    <libType value="03"/>
+    <protoVersion value="04"/>
+    <protoSubVersion value="05"/>
+    <appVersion value="01"/>
+    <appSubVersion value="01"/>
+        <basicClass value="04"/>
+            <genericClass value="07"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="false"/>
+        <beamSensor>1000</beamSensor>
+            <rfFrequency>South Korea</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Sensing a Tilt Change</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Press a Func_Button 1 time in SHP-SG100Z (Gradient Sensor).
+-	If Inclusion Process is successful, LED is Blinking 3 times in SHP-SG100Z.</lang>
+          </inclusionNote>
+            <productName>Tilt Sensor</productName>
+            <brandName>SAMSUNG SDS</brandName>
+            <productLine>Z-Wave Plus Devices</productLine>
+            <productCode>SHP-SG100Z</productCode>
+                <batteryType>CR2032</batteryType>
+            <batteryCount>2</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0050"/>
+        <commandClass id="0070"/>
+        <commandClass id="005a"/>
+        <commandClass id="007a" version="2"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0071" version="4"/>
+        <commandClass id="0073"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0084" version="2"/>
+        <commandClass id="005e" version="2"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Lifeline: Battery report, Notification report, and Device Reset Locally notification</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="1" default="02">
+            <name>
+                <lang xml:lang="en">SENSOR SENSITIVITY </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Parameter sets the sensitivity setting value.</lang>
+              </description>
+      
+                  <value from="01" to="04">
+                <description>
+                    <lang xml:lang="en">0x01(HIGH_SENSITIVITY) ~ 0x04(LOW_SENSITIVITY)</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/bcb1ba0be536b32f7131b22accf9712f8c72fba1.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0184"/>
+        <productType value="4447"/>
+    <productId value="3034"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="5f"/>
+    <appVersion value="05"/>
+    <appSubVersion value="07"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="false"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>US</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">RF Controlled, In Wall Dimmer</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Normally, the sequence is as follows: when the inclusion process is prompted by your primary controller, single click and release the rocker switch to ON or OFF position.  The controller should show that the action was successful.  If the controller shows it was a fail, repeat the procedure. </lang>
+          </inclusionNote>
+            <productName>In Wall Dimmer Switch</productName>
+            <brandName>domitech</brandName>
+            <productLine>Wireless Dimmer Control</productLine>
+            <productCode>WD100</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0027"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0020"/>
+        <commandClass id="0070"/>
+        <commandClass id="005a"/>
+        <commandClass id="007a" version="2"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0026"/>
+        <commandClass id="0073"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="005e" version="2"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Lifeline association only supports the &quot;manual reset&quot; event.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="4" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Orientation of ON/OFF rocker switch</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">The connected light will turn ON by pressing the top side of the rocker switch and turn OFF by pressing the bottom side.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">The connected light will turn OFF by pressing the top side of the rocker switch and turn ON by pressing the bottom side.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Dimming increments</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="01" to="63">
+                <description>
+                    <lang xml:lang="en">Indicates the number of increments brightness can be adjusted from low to high and from high to low.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="range" size="1" default="03">
+            <name>
+                <lang xml:lang="en">Time interval of brightness change</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The resolution is 10 milliseconds. For example, a default value of 3 means the timer runs out every 30 milliseconds. Using the combinations of these 2 parameters, you can create a dim rate adjustment range as short as 10 milliseconds to a very slow dim rate. </lang>
+              </description>
+      
+                  <value from="01" to="ff">
+                <description>
+                    <lang xml:lang="en">Select time out duration to move to the next brightness level. Larger the number, slower the response rate to adust dim levels.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/35a0ef0f2b13388b794ae5fed79d1d30b78233a7.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

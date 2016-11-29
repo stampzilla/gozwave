@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0063"/>
+        <productType value="4457"/>
+    <productId value="3230"/>
+    <libType value="00"/>
+    <protoVersion value="02"/>
+    <protoSubVersion value="61"/>
+    <appVersion value="00"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="01"/>
+        <optional value="false"/>
+    <listening value="true"/>
+    <routing value="false"/>
+            <rfFrequency>US</rfFrequency>
+            <certId>13895</certId>
+            <certNumber>ZC08-10040007</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">RF controlled, 3-way in-wall dimmer 3.0b</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Tap the button.</lang>
+          </inclusionNote>
+            <productName>In-Wall Dimmer</productName>
+            <brandName>GE</brandName>
+            <productLine>Wireless Lighting Controls</productLine>
+            <productCode>ZW3003 </productCode>
+            <productVersion>3.0b</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020"/>
+        <commandClass id="0026"/>
+        <commandClass id="0027"/>
+        <commandClass id="0072"/>
+        <commandClass id="0086"/>
+        <commandClass id="0070"/>
+      </commandClasses>
+  
+  
+    <configParams>
+        <configParam number="3" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">LED</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">The LED is set to turn ON when the connected light is turned OFF. This allows the LED to indicate the switch’s location in a dark room.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">To make the LED turn ON when the light is turned ON, change parameter 3’s value to “1”</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Invert Switch</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Normal rocker settings.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">If the switch is accidentally installed upside down with “On” at the bottom and “Off” at the top, the default On/Off rocker settings can be reversed by changing parameter 4’s value to “1”.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Dim Rate Adjustments when receiving a Z-Wave Dim Command/ Number of steps or levels</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences.</lang>
+              </description>
+      
+                  <value from="01" to="63" unit="10ms">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="range" size="1" default="03">
+            <name>
+                <lang xml:lang="en">Dim Rate Adjustments when receiving a Z-Wave Dim Command/ Timing of steps</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences.</lang>
+              </description>
+      
+                  <value from="01" to="ff" unit="10ms">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Manual Control Dimming/ Number of steps or levels</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences.</lang>
+              </description>
+      
+                  <value from="01" to="63" unit="10ms">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="range" size="1" default="03">
+            <name>
+                <lang xml:lang="en">Manual Control Dimming/ Timing of the steps</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences.</lang>
+              </description>
+      
+                  <value from="01" to="ff" unit="10ms">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Dim Rate Adjustments when receiving an All-On or All-Off Command/ Number of steps or levels</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"> 	Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences.</lang>
+              </description>
+      
+                  <value from="01" to="63" unit="10ms">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="range" size="1" default="03">
+            <name>
+                <lang xml:lang="en">Dim Rate Adjustments when receiving an All-On or All-Off Command/ Timing of steps</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"> 	Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences.</lang>
+              </description>
+      
+                  <value from="01" to="ff" unit="10ms">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Ignore start level when receiving dim commands</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Dim or brighten from the start level embedded in the command.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Ignore the start level.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/accc2c3f99a4061f26f30d76713949f0f243aa4a.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

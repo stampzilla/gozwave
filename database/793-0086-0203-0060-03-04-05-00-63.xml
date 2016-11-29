@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0086"/>
+        <productType value="0203"/>
+    <productId value="0060"/>
+    <libType value="03"/>
+    <protoVersion value="04"/>
+    <protoSubVersion value="05"/>
+    <appVersion value="00"/>
+    <appSubVersion value="63"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>Australia and New Zealand</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Z-Wave Smart Switch 6</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">1. Insert the Smart Switch to power socket. The purple LED will blink slowly. 2. Let the primary controller into inclusion mode (If you don’t know how to do this, refer to its manual). 3. Press the Action button. 4. If the inclusion success, Smart Switch LED will keep turning on. Otherwise, the LED will still blink slowly, in which you need to repeat the process from step 2.
+</lang>
+          </inclusionNote>
+            <productName>Smart Switch 6 ANZ</productName>
+            <brandName>Aeon Labs</brandName>
+            <productLine>Z-wave Product Line</productLine>
+            <productCode>ZW096-B09</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" controlled="true" inNIF="false"/>
+        <commandClass id="0025" controlled="true"/>
+        <commandClass id="0027"/>
+        <commandClass id="0032" version="3"/>
+        <commandClass id="0059"/>
+        <commandClass id="005e" version="2" secure="true"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072" version="2" secure="true"/>
+        <commandClass id="0073"/>
+        <commandClass id="007a" version="2"/>
+        <commandClass id="0081"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0086" version="2" secure="true"/>
+        <commandClass id="005a" controlled="true" secure="true"/>
+        <commandClass id="0082" controlled="true" secure="true"/>
+        <commandClass id="0098" secure="true"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Gruppe 1</lang>
+                <lang xml:lang="en">
+Group 1 is assigned to the Lifeline association group and every device has 5 nodes to associate. When the switch is turned on or off using the action button, the switch will send a basic report of its status to the nodes in association group 1. To change what kind of signal is sent to the nodes in group 1, please see the detailed description of configuration parameter 80.
+</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Gruppe 2</lang>
+                <lang xml:lang="en">
+When the product receives a controlling Basic Set CC/Switch Binary Set CC, which if cause the product’s load state to be changed, which will lead to send the Basic Set CC/Switch Binary Set CC to nodes in group 2.
+</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="3" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Überstromschutz</lang>
+                <lang xml:lang="en">Current Overload Protection</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Der Stromfluss wird unterbrochen, bei Überschreitung der Stromstärke (US: 15,5A, andere: 16,2A) und einer Dauer von über 2 Minuten.
+</lang>
+                <lang xml:lang="en">Load will be closed when the Current overrun (US: 15.5A, other country: 16.2A) and the time more than 2 minutes.
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">deaktiviert</lang>
+                    <lang xml:lang="en">disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">aktiviert</lang>
+                    <lang xml:lang="en">enabled</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="20" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Status der Ausgangsbelastung</lang>
+                <lang xml:lang="en">Output Load Status</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Konfigurieren des Ausgangsbelastungsstatus nach dem Wiedereinschalten
+</lang>
+                <lang xml:lang="en">Configure the output load status after re-power on</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Lastzustand</lang>
+                    <lang xml:lang="en">last status</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">immer an</lang>
+                    <lang xml:lang="en">always on</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">immer aus</lang>
+                    <lang xml:lang="en">always off</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="33" type="rangemapped" size="4" default="00000000">
+            <name>
+                <lang xml:lang="de">Testeinstellung des RGB LED Farbwertes</lang>
+                <lang xml:lang="en">Set the RGB LED color value for testing</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00000000" to="000000ff" reserved="true">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="00000100" to="0000ffff">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Range of red color value.</lang>
+                  </description>
+              </value>
+            <value from="00010000" to="00ffffff">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Range of green color value.</lang>
+                  </description>
+              </value>
+            <value from="00ffffff" to="7fffffff">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Range of blue color value.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="80" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Meldungen an zugehörige Geräte</lang>
+                <lang xml:lang="en">notifications to associated devices</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Das Senden von Mitteilungen an zugehörige Geräte (Gruppe 1) wird aktiviert, sobald sich der Ladungsstatus der Mikroschaltung ändert.
+</lang>
+                <lang xml:lang="en">Enable to send notifications to associated devices (Group 1) when the state of Micro Switch’s load changed
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">nichts</lang>
+                    <lang xml:lang="en">nothing</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Signal gebend CC</lang>
+                    <lang xml:lang="en">hail CC</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Basis CC Bericht</lang>
+                    <lang xml:lang="en">basic CC report</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="81" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Konfiguration des LED Status</lang>
+                <lang xml:lang="en">Configure the state of LED</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Konfiguriert den Zustand der LED in den unten folgenden 3 Modi
+</lang>
+                <lang xml:lang="en">Configure the state of LED when it is in 3 modes</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Die LED folgt dem Ladungsstatus (Energie Modus)</lang>
+                    <lang xml:lang="en">
+The LED will follow the status (on/off) of its load (Energy mode).
+</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">
+Wenn der Status der Schalterlast geändert wird, folgt die LED dem Ladungsstatus (an/aus), die rote LED allerdings schaltet nach 5 Sekunden ab, sollte keine weitere Schaltaktion erfolgen (momentaner Anzeigemodus).
+</lang>
+                    <lang xml:lang="en">
+When the state of Switch’s load changed, The LED will follow the status (on/off) of its load, but the red LED will turn off after 5 seconds if there is no any switch action (momentary indicate mode)
+</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Nachtlicht Modus</lang>
+                    <lang xml:lang="en">Night light mode</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="83" type="rangemapped" size="4" default="00000000">
+            <name>
+                <lang xml:lang="de">Konfiguration des RGB Wertes</lang>
+                <lang xml:lang="en">RGB value</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Konfigurieren Sie den RGB Wert im Nachtlicht Modus.
+</lang>
+                <lang xml:lang="en">Configure the RGB value when it is in Night light mode.
+</lang>
+              </description>
+      
+                  <value from="00000000" to="000000ff">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Set the indication value of red Led.</lang>
+                  </description>
+              </value>
+            <value from="00000100" to="0000ffff">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Set the indication value of green Led.</lang>
+                  </description>
+              </value>
+            <value from="00010000" to="00ffffff">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Set the indication value of blue Led.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="84" type="range" size="1" default="32">
+            <name>
+                <lang xml:lang="de">Konfigurieren des Helligkeitslevels der RGB LED</lang>
+                <lang xml:lang="en">Configure the brightness level of RGB LED</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Konfiguration des Helligkeitslevels der RGB LED (0%-100%) im Energie Modus/ Momentan Anzeigemodus
+</lang>
+                <lang xml:lang="en">Configure the brightness level of RGB LED (0%-100%) when it is in Energy Mode/momentary indicate mode.
+</lang>
+              </description>
+      
+                  <value from="00" to="64" unit="%">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Define a brightness level.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="90" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Aktiviert/ Deaktiviert Parameter 91/92</lang>
+                <lang xml:lang="en">Enables/disables parameter 91/92</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Aktiviert/ Deaktiviert die nachfolgenden Parameter 91 und 92.
+</lang>
+                <lang xml:lang="en">Enables/disables parameter 91 and 92 below</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">deaktiviert</lang>
+                    <lang xml:lang="en">disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">aktiviert</lang>
+                    <lang xml:lang="en">enabled</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="91" type="range" size="4" default="00000019">
+            <name>
+                <lang xml:lang="de">Meldung über minimale Änderungen im Stromverbrauch</lang>
+                <lang xml:lang="en">Report of minimum change in wattage</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Der hier angegebene Wert stellt die Mindeständerung der Wattzahl (in Bezug auf die Leistung) dar, für welche ein Bericht zu senden ist.
+</lang>
+                <lang xml:lang="en">The value here represents minimum change in wattage (in terms of wattage) for a REPORT to be sent
+</lang>
+              </description>
+      
+                  <value from="00000000" to="0000ea60" unit="W">
+                <description>
+                    <lang xml:lang="de">minimale Änderung in Watt</lang>
+                    <lang xml:lang="en">minimum change in wattage</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="92" type="range" size="1" default="05">
+            <name>
+                <lang xml:lang="de">Minimale Änderungen der Wattleistung in Prozent</lang>
+                <lang xml:lang="en">Minimum change in wattage in percent</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Der hier angegebene Wert stellt die Mindeständerung der Wattzahl in Prozent dar, für welche ein Bericht zu senden ist.
+</lang>
+                <lang xml:lang="en">The value here represents minimum change in wattage percent (in terms of percentage) for a REPORT to be sent.
+</lang>
+              </description>
+      
+                  <value from="00" to="64" unit="%">
+                <description>
+                    <lang xml:lang="de">Mindeständerung der Wattleistung in Prozent</lang>
+                    <lang xml:lang="en">minimum change in wattage percent</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="100" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Setzt Parameter 101-103 als Standard</lang>
+                <lang xml:lang="en">Set 101-103 to default</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Standardwert nicht verfügbar</lang>
+                    <lang xml:lang="en">default value not available</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="101" type="bitset" size="4" default="00000000">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Welche Meldungen müssen an Berichtsgruppe 1 gesendet werden
+</lang>
+                <lang xml:lang="en">Which reports need to send in Report group 1</lang>
+              </description>
+      
+                  <value from="00000000" to="00000000">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">
+Auto send Meter REPOR T (for voltage at the group time interval
+</lang>
+                  </description>
+              </value>
+            <value from="00000001" to="00000001">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">
+Auto send Meter REPORT (for current) at the group time interval
+</lang>
+                  </description>
+              </value>
+            <value from="00000002" to="00000002">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">
+Auto send Meter REPOR T (for watt) at the group time interval
+</lang>
+                  </description>
+              </value>
+            <value from="00000003" to="00000003">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">
+Auto send Meter REPORT (for kWh) at the group time interval
+</lang>
+                  </description>
+              </value>
+            <value from="00000004" to="0000001f" reserved="true">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="102" type="bitset" size="4" default="00000000">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Welche Meldungen müssen an Berichtsgruppe 2 gesendet werden
+</lang>
+                <lang xml:lang="en">Which reports need to send in Report group 2</lang>
+              </description>
+      
+                  <value from="00000000" to="00000000">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">
+Auto send Meter REPOR T (for voltage at the group time interval
+</lang>
+                  </description>
+              </value>
+            <value from="00000001" to="00000001">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">
+Auto send Meter REPORT (for current) at the group time interval
+</lang>
+                  </description>
+              </value>
+            <value from="00000002" to="00000002">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">
+Auto send Meter REPOR T (for watt) at the group time interval
+</lang>
+                  </description>
+              </value>
+            <value from="00000003" to="00000003">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">
+Auto send Meter REPORT (for kWh) at the group time interval
+</lang>
+                  </description>
+              </value>
+            <value from="00000004" to="0000001f" reserved="true">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="103" type="bitset" size="4" default="00000000">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Welche Meldungen müssen an Berichtsgruppe 3 gesendet werden
+</lang>
+                <lang xml:lang="en">Which reports need to send in Report group 3</lang>
+              </description>
+      
+                  <value from="00000000" to="00000000">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">
+Auto send Meter REPOR T (for voltage at the group time interval
+</lang>
+                  </description>
+              </value>
+            <value from="00000001" to="00000001">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">
+Auto send Meter REPORT (for current) at the group time interval
+</lang>
+                  </description>
+              </value>
+            <value from="00000002" to="00000002">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">
+Auto send Meter REPOR T (for watt) at the group time interval
+</lang>
+                  </description>
+              </value>
+            <value from="00000003" to="00000003">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">
+Auto send Meter REPORT (for kWh) at the group time interval
+</lang>
+                  </description>
+              </value>
+            <value from="00000004" to="0000001f" reserved="true">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="110" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Setzt Parameter 111-113 als Standard</lang>
+                <lang xml:lang="en">Set 111-113 to default.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="111" type="range" size="4" default="00000258">
+            <name>
+                <lang xml:lang="de">Zeitintervall 1</lang>
+                <lang xml:lang="en">time interval 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Das Zeitintervall der Berichtssendung an Gruppe 1</lang>
+                <lang xml:lang="en">The time interval of sending Report group 1</lang>
+              </description>
+      
+                  <value from="00000000" to="10000000" unit="s">
+                <description>
+                    <lang xml:lang="de">Zeitintervall 1</lang>
+                    <lang xml:lang="en">Define a time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="112" type="range" size="4" default="00000258">
+            <name>
+                <lang xml:lang="de">Zeitintervall 2</lang>
+                <lang xml:lang="en">time interval 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Das Zeitintervall der Berichtssendung an Gruppe 2</lang>
+                <lang xml:lang="en">The time interval of sending Report group 2</lang>
+              </description>
+      
+                  <value from="00000000" to="10000000" unit="s">
+                <description>
+                    <lang xml:lang="de">Zeitintervall 2</lang>
+                    <lang xml:lang="en">Define a time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="113" type="range" size="4" default="00000258">
+            <name>
+                <lang xml:lang="de">Zeitintervall 3</lang>
+                <lang xml:lang="en">time interval 3</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Das Zeitintervall der Berichtssendung an Gruppe 3</lang>
+                <lang xml:lang="en">The time interval of sending Report group 3</lang>
+              </description>
+      
+                  <value from="00000000" to="10000000" unit="s">
+                <description>
+                    <lang xml:lang="de">Zeitintervall 3</lang>
+                    <lang xml:lang="en">Define a time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="200" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Partner ID</lang>
+                <lang xml:lang="en">Partner ID</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Aeon Labs Standardprodukt</lang>
+                    <lang xml:lang="en">Aeon Labs Standard Product</lang>
+                  </description>
+              </value>
+            <value from="01" to="ff">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Partner ID of Partner Product</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="252" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">aktivierte/deaktivierte Konfiguration gesperrt</lang>
+                <lang xml:lang="en">Enable/disable Configuration Locked</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">deaktiviert</lang>
+                    <lang xml:lang="en">disable</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">aktiviert</lang>
+                    <lang xml:lang="en">enable</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="254" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">Gerätekennung</lang>
+                <lang xml:lang="en">Device Tag</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+          </configParam>
+        <configParam number="255" type="constant" size="4" default="00000000">
+            <name>
+                <lang xml:lang="de">Werksrückstellung</lang>
+                <lang xml:lang="en">Reset configuration</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Zurücksetzen Konfiguration auf Werkseinstellung</lang>
+                <lang xml:lang="en">Reset configuration set up to default setting.</lang>
+              </description>
+      
+                  <value from="00000001" to="00000001">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">
+Resets all configuration parameters to default setting.
+</lang>
+                  </description>
+              </value>
+            <value from="55555555" to="55555555">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">
+Reset the product to default factory setting and be excluded from the Z-wave network.
+</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/f9023b4c3ff2ff438863041b14fa8ead298eecf7.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0109"/>
+        <productType value="2001"/>
+    <productId value="0102"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="28"/>
+    <appVersion value="04"/>
+    <appSubVersion value="54"/>
+        <basicClass value="04"/>
+            <genericClass value="20"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>Indien</rfFrequency>
+            <certId>15277</certId>
+            <certNumber>ZC08-13030001</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Tür- und Fenstersensor mit externem Digitaleingang</lang>
+            <lang xml:lang="en">Door Window Sensor with external digital input</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de">Entfernen Sie die Abdeckung</lang>
+            <lang xml:lang="en">Remove the cover</lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Drücken Sie die Programmiertaste des ZD2102 für mindestens eine Sekunde</lang>
+            <lang xml:lang="en">Press the program switch of ZD2102 for 1 second at least</lang>
+          </inclusionNote>
+            <productName>ZD2102IN </productName>
+            <brandName>Vision</brandName>
+            <productLine>Home Security</productLine>
+            <productCode>01</productCode>
+            <productVersion>02</productVersion>
+            <batteryType>CR123A</batteryType>
+            <batteryCount>1</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0080"/>
+        <commandClass id="0020" controlled="true" inNIF="false"/>
+        <commandClass id="0084" version="2"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0086"/>
+        <commandClass id="0030"/>
+        <commandClass id="0071" version="2"/>
+        <commandClass id="0072"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Wird die Abdeckung des Tür- und Fenstersensors entfernt, so sendet der Sensor einen Alarm Report (type: 01, level: 11) und die LED leuchtet dauerhaft. Wird der Tür- und Fenstersensor ausgelöst, so sendet er ein Basic Set.</lang>
+                <lang xml:lang="en">If the cover of sensor is removed, the door sensor will send an Alarm Report (type:01, level:11), and the LED will go solid. When the door/window sensor is tripped Basic Set commands are send</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/b889c84581154cce78c7a074f09a9806fe688f36.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

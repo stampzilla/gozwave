@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="013c"/>
+        <productType value="0002"/>
+    <productId value="0002"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="5c"/>
+    <appVersion value="01"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="20"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>Russia</rfFrequency>
+            <certId>15397</certId>
+            <certNumber>ZC08-13050003</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">PIR-, Tür/Fenster-, Temperatur- und Helligkeitssensor</lang>
+            <lang xml:lang="en">PIR, door/window, temperature and illumination Sensor</lang>
+            <lang xml:lang="ru">Датчик движения, освещенности, температуры, открытия двери/окна</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de">einmaliges Drücken des Manipulationsschutzschalters</lang>
+            <lang xml:lang="en">Single press tamper button</lang>
+            <lang xml:lang="ru">Один раз нажать тампер</lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">dreimaliges Drücken des Manipulationsschutzschalters</lang>
+            <lang xml:lang="en">Tripple press tamper button</lang>
+            <lang xml:lang="ru">Три раза нажать тампер</lang>
+          </inclusionNote>
+            <productName>Slim Multi-Sensor PST02-A</productName>
+            <brandName>Philio</brandName>
+            <productLine>Philio Z-Wave Product</productLine>
+            <productCode>PST02-A</productCode>
+            <productVersion>1.0</productVersion>
+            <batteryType>CR123A</batteryType>
+            <batteryCount>1</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0030" version="2"/>
+        <commandClass id="0031" version="5"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0080"/>
+        <commandClass id="0084" version="2"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0086"/>
+        <commandClass id="0020" controlled="true"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="7">
+            <description>
+                <lang xml:lang="de">Gruppe 1 ist für empfang der Reports wie ausgelöster Event, Temperatur, Helligkeit usw.</lang>
+                <lang xml:lang="en">group 1 is for receiving the report message, like triggered event, temperature, illumination etc.</lang>
+                <lang xml:lang="ru">Для контроллера, которому отправляется информация о температуре, освещенности и срабатывании тампера</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="7">
+            <description>
+                <lang xml:lang="de">Gruppe 2 ist für Lichtsteuerung, das Gerät sendet “Basic Set” Kommandos zu dieser Gruppe</lang>
+                <lang xml:lang="en">group 2 is for light control, the device will send the “Basic Set” command to this group.</lang>
+                <lang xml:lang="ru">Устройству отправляется BASIC SET при сработке датчика движения или датчика открытия</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="2" type="range" size="1" default="ff">
+            <name>
+                <lang xml:lang="de">Basic Set Level</lang>
+                <lang xml:lang="en">Basic Set Level</lang>
+                <lang xml:lang="ru">Уровень диммирования, отправляемый устройствам из группы 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Setzt des Basic Command Wertes um Licht zu schalten</lang>
+                <lang xml:lang="en">Setting the BASIC command value to turn on the light</lang>
+                <lang xml:lang="ru">Отправлять устройствам из группы 2 заданный уровень диммирования. Так можно при срабатывании датчика открытия или движения включить свет на 50% или открыть жалюзи на 30%.</lang>
+              </description>
+      
+                  <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="de">Aus</lang>
+                    <lang xml:lang="en">Turn On</lang>
+                    <lang xml:lang="ru">Включить</lang>
+                  </description>
+              </value>
+            <value from="01" to="63">
+                <description>
+                    <lang xml:lang="de">Dimmerniveau</lang>
+                    <lang xml:lang="en">Dimming level</lang>
+                    <lang xml:lang="ru">Уровень диммирования</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="range" size="1" default="46">
+            <name>
+                <lang xml:lang="de">PIR Empfindlichkeit</lang>
+                <lang xml:lang="en">PIR Sensitivity</lang>
+                <lang xml:lang="ru">Датчик движения</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Setting the BASIC command value to turn on the light</lang>
+                <lang xml:lang="en">parameter to set the Sensitivity for the PIR (Passiv Infrared Sensor)</lang>
+                <lang xml:lang="ru">Настройка чувствительности датчика движения.1 - минимальная чувствительность, 99% - максимальная чувствительность</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Disable PIR motion</lang>
+                    <lang xml:lang="en">Disable PIR motion</lang>
+                    <lang xml:lang="ru">Отключен</lang>
+                  </description>
+              </value>
+            <value from="01" to="63">
+                <description>
+                    <lang xml:lang="de">1 geringste Empfindlichkeit; 99 höchste Empfindlichkeit</lang>
+                    <lang xml:lang="en">1 means the lowest sensitivity, 99 means the highest sensitivity</lang>
+                    <lang xml:lang="ru">Чувствительность</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="1" default="63">
+            <name>
+                <lang xml:lang="de">Licht Grenzwert</lang>
+                <lang xml:lang="en">Light Threshold</lang>
+                <lang xml:lang="ru">Освещенность</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Grenzwert, bei dem das Licht bei ausgelöstem Event in Abhängigkeit von der Umgebungshelligkeit geschaltet wird</lang>
+                <lang xml:lang="en">Setting the illumination threshold to turn on the light. When the event triggered and the environment illumination lower then the threshold, the device will turn on the light</lang>
+                <lang xml:lang="ru">При обнаружении движения проверяется уровень освещенности окружающей среды и если освещенность меньше заданной (т.е. темно), то свет включится. 1 - темно, 99 - ярко</lang>
+              </description>
+      
+                  <value from="01" to="63">
+                <description>
+                    <lang xml:lang="de">1 dunkelste Stufe. 99 hellste Stufe</lang>
+                    <lang xml:lang="en">1 means darkest. 99 means brightest</lang>
+                    <lang xml:lang="ru">Освещенность</lang>
+                  </description>
+              </value>
+            <value from="64" to="64">
+                <description>
+                    <lang xml:lang="de">Helligkeitsabhängiges Einschalten deaktiviert</lang>
+                    <lang xml:lang="en">Turn off illumination detected</lang>
+                    <lang xml:lang="ru">Отключить проверку освещенности</lang>
+                  </description>
+              </value>
+            <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">0 bedeutet Helligkeitsabhängiges Einschalten deaktiviert;  Licht nie einschalten. </lang>
+                    <lang xml:lang="en">0 means turn off illumination detected function And never turn on the light.</lang>
+                    <lang xml:lang="ru">Отключить датчик движения, датчик открытия и проверку освещенность</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="bitset" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Operations Modus</lang>
+                <lang xml:lang="en">Operation Mode</lang>
+                <lang xml:lang="ru">Режим работы</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Bit 0 und Bit 1 werden beeinflusst, wenn DIP-Schalter auf Programmier Modus steht. Wenn Bit 1 aktiviert, ist Bit 0 ohne Funktion </lang>
+                <lang xml:lang="en">Bit0 and Bit1 will effect when the DIP Switch setting to program mode.If Bit1 is enabled, the Bit0 is useless. </lang>
+                <lang xml:lang="ru">Bit0 и Bit1 работают только если DIP переключатель установлен в режим программирования. Если Bit1 установлен, то Bit0 не используется</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Bit0. 0 - Home Automation Modus;
+1 - Security Modus</lang>
+                    <lang xml:lang="en">Bit0. 0 - Home Automation mode
+1 - Security Mode</lang>
+                    <lang xml:lang="ru">Bit0. 0 - Режим Домашней автоматизации; 1 - Режим Охраны</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Bit1. Test Modus</lang>
+                    <lang xml:lang="en">Bit1. Test Mode</lang>
+                    <lang xml:lang="ru">Bit1. Тестовый режим</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Bit2. Deaktivieren der Tür/Fenster Sensor</lang>
+                    <lang xml:lang="en">Bit2. Disable Door/Window Sensor</lang>
+                    <lang xml:lang="ru">Bit2. Отключить Датчик открытия</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Bit3. 0 - Temperatur in Fahrenheit;
+1 - Temperatur in Celsius</lang>
+                    <lang xml:lang="en">Bit3. 0 - Temperature in Fahrenheit;
+1 - Temperature in Celsius</lang>
+                    <lang xml:lang="ru">Bit3. 0 - Температура в Фаренгейтах;
+1 - Температура в Цельсиях</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Bit4. Deaktivieren des Beleuchtungs-Reports nach einem ausgelösten Event</lang>
+                    <lang xml:lang="en">Bit4. Disable illumination report after event triggered</lang>
+                    <lang xml:lang="ru">Bit4. Отключить отчеты о освещенности при срабатывании датчика открытия или движения</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de">Bit5. Deaktivieren des Temperatur-Reports nach einem ausgelösten Event</lang>
+                    <lang xml:lang="en">Bit5. Disable temperature report after event triggered</lang>
+                    <lang xml:lang="ru">Bit5. Отключить отчеты о температуре при срабатывании датчика открытия или движения</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="bitset" size="1" default="04">
+            <name>
+                <lang xml:lang="de">Multi-Sensor Funktionsschalter</lang>
+                <lang xml:lang="en">Multi-Sensor Function Switch</lang>
+                <lang xml:lang="ru">Функция выключателя</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Bit0. Deaktiviert Magnetisch integrierte Beleuchtung</lang>
+                    <lang xml:lang="en">Bit0. Disable magnetic integrate illumination</lang>
+                    <lang xml:lang="ru">Bit0. Не включать светодиод при сработке датчика открытия</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Bit1. Deaktiviert PIR integrierte Beleuchtung</lang>
+                    <lang xml:lang="en">Bit1. Disable PIR integrate Illumination</lang>
+                    <lang xml:lang="ru">Bit1. Не включать светодиод при сработке датчика движения</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Bit2. Deaktiviert magnetisch integrierte PIR</lang>
+                    <lang xml:lang="en">Bit2. Disable magnetic integrate PIR</lang>
+                    <lang xml:lang="ru">Bit2. Отключить магнит установленный в самом датчике</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Bit3. Wenn Bit 2 is 0 (aktiviert), Gerät im gleichen Raum wie das zu schaltende Licht? 0: Im gleichen Raum (standard), 1: in anderem Raum</lang>
+                    <lang xml:lang="en">Bit3. When Bit2 is 0 (Enable), the device is install in the same room with the light? 0: In the same room(Default), 1: In the different room</lang>
+                    <lang xml:lang="ru">Bit3. 0 - Датчик установлен в той же комнате, что и свет; 
+1 - Датчик установлен не в той комнате, что и свет. Если Bit2 = 1, эта функция не используется</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Bit4. Deaktiviert die 5 sek Verzögerung zum Ausschalten des Lichts, wenn Tür/Fenster geschlossen</lang>
+                    <lang xml:lang="en">Bit4. Disable delay 5 seconds to turn off the light, when door/window closed</lang>
+                    <lang xml:lang="ru">Bit4. Отключить задержку в 5 секунд при выключении света, когда дверь закрылась</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de">Bit5. Deaktiviert automat. Abschaltung des Lichts, nachdem Tür/Fenster geöffnet und Licht angeschaltet wurde. Wenn Bit 2 auf 0, dann ist diese Einstellung ohne Funktion</lang>
+                    <lang xml:lang="en">Bit5. Disable auto turn off the light, after door/window opened to turn on the light. If Bit2 = 0, this setting is useless</lang>
+                    <lang xml:lang="ru">Bit5. Не выключать свет после того, когда сработал датчик открытия и включил свет. Если Bit2 = 0, эта функция не используется</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="de">Bit6. Aktiviert Temperatur Messung. Wenn aktiviert wird bei Temperaturänderung von 3° ein Temperatur-Report gesendet. Ebenfalls wird ein Temperatur-Report (aller 64 Sekunden) gesendet, wenn diese über 140° Fahrenheit steigt</lang>
+                    <lang xml:lang="en">Bit6. Enable temperature monitoring. When this bit enable, the temperature changed 3 degree Fahrenheit, it will report. And also the temperature over 140 degree Fahrenheit, it will report every 64 seconds</lang>
+                    <lang xml:lang="ru">Bit6. При изменении температуры на 3 ° присылать отчет. При температуре больше 60 °C отчет присылается каждые 64 секунды</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="range" size="1" default="03">
+            <name>
+                <lang xml:lang="de">PIR Intervall Zeit für erneutes Erkennen</lang>
+                <lang xml:lang="en">PIR Re-Detect Interval Time</lang>
+                <lang xml:lang="ru">Время бездействия датчика после обнаружения движения</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Im Security Modus, nach Erkennung des Bewegungssensors, festlegen der Zeit zum erneuten Erkennen</lang>
+                <lang xml:lang="en">In the security mode, after the PIR motion detected, setting the re-detect time</lang>
+                <lang xml:lang="ru">После обнаружения движения датчик отключается на время указанное в этом параметре. Время бездействия датчика задается с шагом 8 секунд, т.е. 1 = 8 секунд, 3 = 24 секунд. Если значение времени бездействия больше чем в параметре 9, тогда это время на которое будет отключен датчик движения после выключения света</lang>
+              </description>
+      
+                  <value from="03" to="7f" unit="8 sec">
+                <description>
+                    <lang xml:lang="de">8 Sekunden pro Tick, minimale Verzögerung 24 Sekunden (3 Ticks = 24 Sekunden).</lang>
+                    <lang xml:lang="en">8 seconds per tick, and minimum time is 24 seconds, default tick is 3 (24 seconds).</lang>
+                    <lang xml:lang="ru">секунды / 8</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="range" size="1" default="04">
+            <name>
+                <lang xml:lang="de">Ausschaltzeit Beleuchtung</lang>
+                <lang xml:lang="en">Turn Off Light Time</lang>
+                <lang xml:lang="ru">Время выключения</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Nach Aktivieren der Beleuchtung, Verzögerung bis Beleuchtung wieder deaktiviert wird</lang>
+                <lang xml:lang="en">After turn on the light, setting the delay time to turn off the light when the PIR motion is not detected</lang>
+                <lang xml:lang="ru">Время через которое датчик движения отправит команду выключения (после того как датчик отправил команду включения и не было движения). Каждое движение сбрасывает время на начало. Время выключения задается с шагом 8 секунд, т.е. 1 = 8 секунд, 4 = 32 секунд</lang>
+              </description>
+      
+                  <value from="04" to="7f" unit="8 sec">
+                <description>
+                    <lang xml:lang="de">8 Sekunden pro Tick, minimal 32 Sekunden, Standard 4 Ticks = 32 Sekunden</lang>
+                    <lang xml:lang="en">8 seconds per tick, and minimum time is 32 seconds, default tick is 4 (32 seconds)</lang>
+                    <lang xml:lang="ru">секунды / 8</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="range" size="1" default="0c">
+            <name>
+                <lang xml:lang="de">Auto Report Batterie Zeit</lang>
+                <lang xml:lang="en">Auto Report Battery Time</lang>
+                <lang xml:lang="ru">Время автоматического отчета о батареи</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Intervall-Zeit für automatischen Report des Batterie-Status</lang>
+                <lang xml:lang="en">interval time for auto report the battery level</lang>
+                <lang xml:lang="ru">Время задается с шагом 30 минут, т.е. 1 = 30 минут, 12 = 6 часов</lang>
+              </description>
+      
+                  <value from="01" to="7f" unit="30 min">
+                <description>
+                    <lang xml:lang="de">30 Minuten pro Tick, minimal 30 Minuten, Standard sind 12 Ticks = 6 Stunden</lang>
+                    <lang xml:lang="en">30 minutes per tick and minimum time is 30 minutes, default tick is 12 (6 hours)</lang>
+                    <lang xml:lang="ru">минуты / 30</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="range" size="1" default="0c">
+            <name>
+                <lang xml:lang="de">Auto Report Tür/Fenster Zeit</lang>
+                <lang xml:lang="en">Auto Report Door/Window State Time</lang>
+                <lang xml:lang="ru">Время автоматического отчета о состоянии датчика двери/окна</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Intervall-Zeit für automatischen Report des Tür/Fenster-Status</lang>
+                <lang xml:lang="en">interval time for auto report the door/window state</lang>
+                <lang xml:lang="ru">Время задается с шагом 30 минут, т.е. 1 = 30 минут, 12 = 6 часов</lang>
+              </description>
+      
+                  <value from="01" to="7f" unit="30 min">
+                <description>
+                    <lang xml:lang="de">30 Minuten pro Tick, minmal 30 Minuten, Standard sind 12 Ticks = 6 Stunden</lang>
+                    <lang xml:lang="en">30 minutes per tick and minimum time is 30 minutes, default tick is 12 (6 hours)</lang>
+                    <lang xml:lang="ru">минуты / 30</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="range" size="1" default="0c">
+            <name>
+                <lang xml:lang="de">Auto Report Helligkeit Zeit</lang>
+                <lang xml:lang="en">Auto Report Illumination Time</lang>
+                <lang xml:lang="ru">Время автоматического отчета о освещенности</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Intervall-Zeit für automatischen Report des Temperatur-Status</lang>
+                <lang xml:lang="en">interval time for auto report the temperature</lang>
+                <lang xml:lang="ru">Время задается с шагом 30 минут, т.е. 1 = 30 минут, 12 = 6 часов</lang>
+              </description>
+      
+                  <value from="01" to="7f" unit="30 min">
+                <description>
+                    <lang xml:lang="de">30 Minuten pro Tick, minimal 30 Minuten, Standard 12 Ticks = 6 Stunden</lang>
+                    <lang xml:lang="en">30 minutes per tick and minimum time is 30 minutes, default tick is 12 (6 hours)</lang>
+                    <lang xml:lang="ru">минуты / 30</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="range" size="1" default="0c">
+            <name>
+                <lang xml:lang="de">Auto Report Temperatur Zeit</lang>
+                <lang xml:lang="en">Auto Report Temperature Time</lang>
+                <lang xml:lang="ru">Время автоматического отчета о температуре</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Intervall-Zeit für automatischen Report des Temperatur-Status</lang>
+                <lang xml:lang="en">interval time for auto report the temperature</lang>
+                <lang xml:lang="ru">Время задается с шагом 30 минут, т.е. 1 = 30 минут, 12 = 6 часов</lang>
+              </description>
+      
+                  <value from="01" to="7f" unit="30 min">
+                <description>
+                    <lang xml:lang="de">30 Minuten pro Tick, minimal 30 Minuten, Standard 12 Ticks = 6 Stunden</lang>
+                    <lang xml:lang="en">30 minutes per tick and minimum time is 30 minutes, default tick is 12 (6 hours)</lang>
+                    <lang xml:lang="ru">минуты / 30</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/388753ce8c30967f9919ade356622f9e8a985d32.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

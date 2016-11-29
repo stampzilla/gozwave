@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="5254"/>
+        <productType value="0101"/>
+    <productId value="8371"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="67"/>
+    <appVersion value="01"/>
+    <appSubVersion value="04"/>
+        <basicClass value="04"/>
+            <genericClass value="03"/>
+            <specificClass value="00"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+                    
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Z-Extender</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en"></lang>
+          </inclusionNote>
+            <productName>ZXT-310EU</productName>
+            <brandName>Remotec</brandName>
+            <productLine>Z-Wave Home Automation</productLine>
+            <productCode>BW8371EU</productCode>
+            <productVersion>1.2</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020"/>
+        <commandClass id="0070" version="2"/>
+        <commandClass id="0072"/>
+        <commandClass id="0086"/>
+        <commandClass id="0094" version="4"/>
+        <commandClass id="0060" version="3"/>
+      </commandClasses>
+  
+  
+    <configParams>
+        <configParam number="1" type="constant" size="4" default="00000000">
+            <name>
+                <lang xml:lang="en">Parameter 1 to 20</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Each individual IR control code can be encoded into an 80-bytes URID format.
+ZXT-310 utilizes 20 parameter numbers with 4 data bytes in each parameter to
+hold this 80 bytes UIRD data. Gateway or controller can use these Parameter
+Numbers to download UIRD data to ZXT-310.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="21" type="constant" size="2" default="0000">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">These two bytes represent the Simple AV Command Number associated with
+the 80-bytes UIRD data going to be downloaded to ZXT-310.
+For example, user wants to set up an IR code for “Volume Down” and he has
+the IR control code in UIRD format. He would send the Simple AV Command
+Number, “0x0002”, using Parameter Number 21 to ZXT-310. Afterward, he
+would use Parameter Number 1 to 20 to transfer the corresponding URID data.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="22" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Download status register (Read only)
+0000 0000: Idle - this IR channel is idle
+0000 0001: OK - previous download is processed correctly
+0000 0010: Downloading - ZXT-310 is busy processing previous download
+command
+0000 0011: Full - UIRD data area of this IR channel is full. Each IR channel
+supports up to 64 learned or downloaded Simple AV command numbers or
+keys. It means that all locations are being used
+0000 0100 : Failed - latest download process failed</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="25" type="constant" size="2" default="0000">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">These two bytes represent the Simple AV Command Number or key going to
+be learned. For example, user wants to learn the IR code for “Volume Down” of his TV set.
+He would send the Simple AV Command Number, “0x0002”, to ZXT-310 using
+Parameter Number 25. The status LED on ZXT-310 will turn on and stay on
+indicating it is in IR-learning mode. Gateway and Controller developers should
+poll the “Learning status register” (Parameter Number 26), and instruct end
+user to press and hold the “Volume Down” button of his original remote control
+for a few seconds. ZXT-310 will flash the status LED twice if the operation is
+successful. It will flash the status LED six times if it fails to learn the IR code or
+it doesn’t receive any IR signal for 15 seconds.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="26" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Learning status register (Read only)
+0000 0000: Idle - this IR channel is idle
+0000 0001: OK - latest learning process completed correctly
+0000 0010: Learning - ZXT-310 is busy processing previous learning request.
+0000 0011: Full - UIRD data area of this IR channel is full. Each IR channel
+can supports up to 64 learned or downloaded Simple AV command numbers or
+keys. It means that all locations are being used
+0000 0100: Failed - latest learning request failed</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="27" type="constant" size="2" default="0000">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">IR code number of the built-in code library to be loaded to the “Simple AV
+Command Number to IR control code” mapping table</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="28" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">IR transmission power level
+0x00: normal power mode
+0xFF: high power mode (default)
+If IR output port routing is set to 1, IR transmission power level cannot be changed</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="29" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">IR output port routing
+0x06: Route IR output from this Z-Wave-to-IR channel to IR Port 6
+0x05: Route IR output from this Z-Wave-to-IR channel to IR Port 5
+0x04: Route IR output from this Z-Wave-to-IR channel to IR Port 4 0x03: Route IR output from this Z-Wave-to-IR channel to IR Port 3
+0x02: Route IR output from this Z-Wave-to-IR channel to IR Port 2
+0x01: Route IR output from this Z-Wave-to-IR channel to IR Port 1 (default)</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="31" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">IR transmission mode
+0x00: Continuous IR transmission mode (default)
+0xFF: Single shot IR transmission mode</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="36" type="constant" size="4" default="00000000">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Check Library Version (Read Only)
+Byte 1 &amp; 2 : Firmware Version
+Byte 3 &amp; 4 : Library Version</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="38" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">End point selection control
+0x01: end point 1 (default)
+0x02: end point 2
+0x03: end point 3
+0x04: end point 4
+0x05: end point 5
+0x06: end point 6
+Note: For controllers that do not support “multi-channel command class”, ZXT-310 will
+direct all received Z-Wave commands to Z-Wave-to-IR channel 1 or EP1 (the default
+channel). If controller developers want to support multiple AV equipment without
+“multi-channel command class” support, they can use this configuration command to
+select another active Z-Wave-to-IR channel. For example, controller would like to send
+command to Z-Wave-to-IR channel 3. It should send a configuration command with
+parameter 38 and data 0x03h making channel 3 as the active channel first, and then,
+send the desired command.</lang>
+              </description>
+      
+          </configParam>
+      </configParams>
+  
+    <endpoints>
+           <endpoint number="6">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="03"/>
+                  <specificClass value="00"/>
+                  <commandClass id="0094"/>
+            <commandClass id="0070"/>
+            <commandClass id="0020"/>
+          </endpoint>
+           <endpoint number="5">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="03"/>
+                  <specificClass value="00"/>
+                  <commandClass id="0094"/>
+            <commandClass id="0070"/>
+            <commandClass id="0020"/>
+          </endpoint>
+           <endpoint number="4">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="03"/>
+                  <specificClass value="00"/>
+                  <commandClass id="0094"/>
+            <commandClass id="0070"/>
+            <commandClass id="0020"/>
+          </endpoint>
+           <endpoint number="3">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="03"/>
+                  <specificClass value="00"/>
+                  <commandClass id="0094"/>
+            <commandClass id="0070"/>
+            <commandClass id="0020"/>
+          </endpoint>
+           <endpoint number="2">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="03"/>
+                  <specificClass value="00"/>
+                  <commandClass id="0094"/>
+            <commandClass id="0070"/>
+            <commandClass id="0020"/>
+          </endpoint>
+           <endpoint number="1">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="03"/>
+                  <specificClass value="00"/>
+                  <commandClass id="0094"/>
+            <commandClass id="0070"/>
+            <commandClass id="0020"/>
+          </endpoint>
+      </endpoints>
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/edcbaf8c6a06946daeb65645213757e2dc31287a.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

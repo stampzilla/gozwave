@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0118"/>
+        <productType value="0004"/>
+    <productId value="0002"/>
+    <libType value="03"/>
+    <protoVersion value="04"/>
+    <protoSubVersion value="05"/>
+    <appVersion value="02"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Socket Style Switch with Meter</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Press the ON/OFF buttom three times within 1.5 seconds to enter inclusion mode.</lang>
+          </inclusionNote>
+            <productName>Meter Switch </productName>
+            <brandName>TKBHOME</brandName>
+            <productLine>Z_Wave Plus Devices</productLine>
+            <productCode>TZ69G</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0070"/>
+        <commandClass id="005a"/>
+        <commandClass id="007a" version="2"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0073"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0027"/>
+        <commandClass id="0020"/>
+        <commandClass id="0025"/>
+        <commandClass id="0032" version="3"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Lifeline</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Indicator Light</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The Parameter defines the state of LED indicator.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">The socket LED indicator will be ON when the light status is &quot;ON&quot;.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">The socket LED indicator will be OFF when the light status is &quot;ON&quot;.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Memory Function</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">function disabled </lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">function enabled</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="range" size="2" default="02d0">
+            <name>
+                <lang xml:lang="en">Watt Meter Report Period</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Settings are as follows: 5*720s=3600s=1 hour</lang>
+              </description>
+      
+                  <value from="0001" to="7fff" unit="sec">
+                <description>
+                    <lang xml:lang="en">Define a time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="2" default="0006">
+            <name>
+                <lang xml:lang="en">KWH Meter Report Period</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Settings are as follows: 6*10min= 1 hour</lang>
+              </description>
+      
+                  <value from="0001" to="7fff" unit="x10min">
+                <description>
+                    <lang xml:lang="en">Define a time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="range" size="2" default="0bb8">
+            <name>
+                <lang xml:lang="en">Treshold of Watt for Load Caution</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">A report will be send to Group 1 if the treshold is exceeded.</lang>
+              </description>
+      
+                  <value from="000a" to="0bb8" unit="W">
+                <description>
+                    <lang xml:lang="en">Define a treshold.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="range" size="2" default="2710">
+            <name>
+                <lang xml:lang="en">Treshold of KWH for Load Caution</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">A report will be send to Group 1 if the accumulated consumed power exceeds the treshold.</lang>
+              </description>
+      
+                  <value from="0001" to="2710" unit="kWh">
+                <description>
+                    <lang xml:lang="en">Define a treshold.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/159ec081fa583d4385f815f996c4bd3f23385289.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

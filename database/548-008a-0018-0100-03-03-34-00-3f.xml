@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="008a"/>
+        <productType value="0018"/>
+    <productId value="0100"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="34"/>
+    <appVersion value="00"/>
+    <appSubVersion value="3f"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="00"/>
+        <optional value="false"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Zwischenstecker Dimmer max. 125W</lang>
+            <lang xml:lang="en">Plug-In Dimmer max. 125W</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Bestätigen mit Taster (LED geht dabei aus), Drücken und Halten des Tasters bis LED zweimal blinkt.</lang>
+            <lang xml:lang="en">Turn off using button (LED should turn off), hold button untill LED blinks two times.</lang>
+          </inclusionNote>
+            <productName>Plug-in Dimmer</productName>
+            <brandName>BeNext</brandName>
+                    <productVersion>0.63</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0026"/>
+        <commandClass id="0027"/>
+        <commandClass id="0031" version="5"/>
+        <commandClass id="0032" version="2"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0073"/>
+        <commandClass id="0085"/>
+        <commandClass id="0086"/>
+        <commandClass id="0020" controlled="true"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="8">
+            <description>
+                <lang xml:lang="de">Gruppe 1</lang>
+                <lang xml:lang="en">Group 1</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="1">
+            <description>
+                <lang xml:lang="de">Gruppe 2</lang>
+                <lang xml:lang="en">Group 2</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="1">
+            <description>
+                <lang xml:lang="de">Gruppe 3</lang>
+                <lang xml:lang="en">Group 3</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/a78030638f341b2ebd2d325df2b5a8d72bd28d23.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

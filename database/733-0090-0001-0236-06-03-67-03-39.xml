@@ -1,0 +1,1519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0090"/>
+        <productType value="0001"/>
+    <productId value="0236"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="67"/>
+    <appVersion value="03"/>
+    <appSubVersion value="39"/>
+        <basicClass value="04"/>
+            <genericClass value="40"/>
+            <specificClass value="03"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="false"/>
+        <beamSensor>1000</beamSensor>
+            <rfFrequency>US</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">A security enabled doorlock with a keypad</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Press button A on the Lock once</lang>
+          </inclusionNote>
+            <productName>Smart Code with Home Connect Technology</productName>
+            <brandName>Kwikset</brandName>
+            <productLine>Residential Access Solutions</productLine>
+            <productCode>910</productCode>
+            <productVersion>3.39</productVersion>
+            <batteryType>AA</batteryType>
+            <batteryCount>4</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0072"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0098"/>
+        <commandClass id="0080" secure="true" nonSecure="false"/>
+        <commandClass id="0085" secure="true" nonSecure="false"/>
+        <commandClass id="0070" secure="true" nonSecure="false"/>
+        <commandClass id="0075" secure="true" nonSecure="false"/>
+        <commandClass id="0062" secure="true" nonSecure="false"/>
+        <commandClass id="0063" secure="true" nonSecure="false"/>
+        <commandClass id="004e" version="2" secure="true" nonSecure="false"/>
+        <commandClass id="004c" secure="true" nonSecure="false"/>
+        <commandClass id="0071" secure="true" nonSecure="false"/>
+        <commandClass id="008b" secure="true" nonSecure="false"/>
+        <commandClass id="0020" secure="true" nonSecure="false"/>
+        <commandClass id="005d" version="2" secure="true" nonSecure="false"/>
+        <commandClass id="005a" secure="true" nonSecure="false"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Lifeline</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter is used to set the User Code Type for their corresponding user codes. The door lock will only retain valid user code types (0x01, 0x03, and 0x04), all other values will be ignored. If a user code does not exist for the corresponding configuration parameter the lock will report a configuration value of 0xFF, attempts to change the user code type will be ignored.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Guest (Required for Year Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Worker (Required for Week Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter is used to set the User Code Type for their corresponding user codes. The door lock will only retain valid user code types (0x01, 0x03, and 0x04), all other values will be ignored. If a user code does not exist for the corresponding configuration parameter the lock will report a configuration value of 0xFF, attempts to change the user code type will be ignored.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Guest (Required for Year Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Worker (Required for Week Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter is used to set the User Code Type for their corresponding user codes. The door lock will only retain valid user code types (0x01, 0x03, and 0x04), all other values will be ignored. If a user code does not exist for the corresponding configuration parameter the lock will report a configuration value of 0xFF, attempts to change the user code type will be ignored.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Guest (Required for Year Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Worker (Required for Week Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter is used to set the User Code Type for their corresponding user codes. The door lock will only retain valid user code types (0x01, 0x03, and 0x04), all other values will be ignored. If a user code does not exist for the corresponding configuration parameter the lock will report a configuration value of 0xFF, attempts to change the user code type will be ignored.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Guest (Required for Year Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Worker (Required for Week Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter is used to set the User Code Type for their corresponding user codes. The door lock will only retain valid user code types (0x01, 0x03, and 0x04), all other values will be ignored. If a user code does not exist for the corresponding configuration parameter the lock will report a configuration value of 0xFF, attempts to change the user code type will be ignored.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Guest (Required for Year Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Worker (Required for Week Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter is used to set the User Code Type for their corresponding user codes. The door lock will only retain valid user code types (0x01, 0x03, and 0x04), all other values will be ignored. If a user code does not exist for the corresponding configuration parameter the lock will report a configuration value of 0xFF, attempts to change the user code type will be ignored.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Guest (Required for Year Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Worker (Required for Week Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter is used to set the User Code Type for their corresponding user codes. The door lock will only retain valid user code types (0x01, 0x03, and 0x04), all other values will be ignored. If a user code does not exist for the corresponding configuration parameter the lock will report a configuration value of 0xFF, attempts to change the user code type will be ignored.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Guest (Required for Year Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Worker (Required for Week Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter is used to set the User Code Type for their corresponding user codes. The door lock will only retain valid user code types (0x01, 0x03, and 0x04), all other values will be ignored. If a user code does not exist for the corresponding configuration parameter the lock will report a configuration value of 0xFF, attempts to change the user code type will be ignored.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Guest (Required for Year Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Worker (Required for Week Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter is used to set the User Code Type for their corresponding user codes. The door lock will only retain valid user code types (0x01, 0x03, and 0x04), all other values will be ignored. If a user code does not exist for the corresponding configuration parameter the lock will report a configuration value of 0xFF, attempts to change the user code type will be ignored.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Guest (Required for Year Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Worker (Required for Week Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter is used to set the User Code Type for their corresponding user codes. The door lock will only retain valid user code types (0x01, 0x03, and 0x04), all other values will be ignored. If a user code does not exist for the corresponding configuration parameter the lock will report a configuration value of 0xFF, attempts to change the user code type will be ignored.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Guest (Required for Year Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Worker (Required for Week Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter is used to set the User Code Type for their corresponding user codes. The door lock will only retain valid user code types (0x01, 0x03, and 0x04), all other values will be ignored. If a user code does not exist for the corresponding configuration parameter the lock will report a configuration value of 0xFF, attempts to change the user code type will be ignored.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Guest (Required for Year Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Worker (Required for Week Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter is used to set the User Code Type for their corresponding user codes. The door lock will only retain valid user code types (0x01, 0x03, and 0x04), all other values will be ignored. If a user code does not exist for the corresponding configuration parameter the lock will report a configuration value of 0xFF, attempts to change the user code type will be ignored.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Guest (Required for Year Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Worker (Required for Week Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter is used to set the User Code Type for their corresponding user codes. The door lock will only retain valid user code types (0x01, 0x03, and 0x04), all other values will be ignored. If a user code does not exist for the corresponding configuration parameter the lock will report a configuration value of 0xFF, attempts to change the user code type will be ignored.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Guest (Required for Year Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Worker (Required for Week Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="14" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter is used to set the User Code Type for their corresponding user codes. The door lock will only retain valid user code types (0x01, 0x03, and 0x04), all other values will be ignored. If a user code does not exist for the corresponding configuration parameter the lock will report a configuration value of 0xFF, attempts to change the user code type will be ignored.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Guest (Required for Year Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Worker (Required for Week Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="15" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter is used to set the User Code Type for their corresponding user codes. The door lock will only retain valid user code types (0x01, 0x03, and 0x04), all other values will be ignored. If a user code does not exist for the corresponding configuration parameter the lock will report a configuration value of 0xFF, attempts to change the user code type will be ignored.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Guest (Required for Year Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Worker (Required for Week Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="16" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter is used to set the User Code Type for their corresponding user codes. The door lock will only retain valid user code types (0x01, 0x03, and 0x04), all other values will be ignored. If a user code does not exist for the corresponding configuration parameter the lock will report a configuration value of 0xFF, attempts to change the user code type will be ignored.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Guest (Required for Year Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Worker (Required for Week Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="17" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter is used to set the User Code Type for their corresponding user codes. The door lock will only retain valid user code types (0x01, 0x03, and 0x04), all other values will be ignored. If a user code does not exist for the corresponding configuration parameter the lock will report a configuration value of 0xFF, attempts to change the user code type will be ignored.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Guest (Required for Year Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Worker (Required for Week Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="18" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter is used to set the User Code Type for their corresponding user codes. The door lock will only retain valid user code types (0x01, 0x03, and 0x04), all other values will be ignored. If a user code does not exist for the corresponding configuration parameter the lock will report a configuration value of 0xFF, attempts to change the user code type will be ignored.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Guest (Required for Year Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Worker (Required for Week Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="19" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter is used to set the User Code Type for their corresponding user codes. The door lock will only retain valid user code types (0x01, 0x03, and 0x04), all other values will be ignored. If a user code does not exist for the corresponding configuration parameter the lock will report a configuration value of 0xFF, attempts to change the user code type will be ignored.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Guest (Required for Year Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Worker (Required for Week Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="20" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter is used to set the User Code Type for their corresponding user codes. The door lock will only retain valid user code types (0x01, 0x03, and 0x04), all other values will be ignored. If a user code does not exist for the corresponding configuration parameter the lock will report a configuration value of 0xFF, attempts to change the user code type will be ignored.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Guest (Required for Year Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Worker (Required for Week Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="21" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter is used to set the User Code Type for their corresponding user codes. The door lock will only retain valid user code types (0x01, 0x03, and 0x04), all other values will be ignored. If a user code does not exist for the corresponding configuration parameter the lock will report a configuration value of 0xFF, attempts to change the user code type will be ignored.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Guest (Required for Year Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Worker (Required for Week Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="22" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter is used to set the User Code Type for their corresponding user codes. The door lock will only retain valid user code types (0x01, 0x03, and 0x04), all other values will be ignored. If a user code does not exist for the corresponding configuration parameter the lock will report a configuration value of 0xFF, attempts to change the user code type will be ignored.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Guest (Required for Year Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Worker (Required for Week Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="23" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter is used to set the User Code Type for their corresponding user codes. The door lock will only retain valid user code types (0x01, 0x03, and 0x04), all other values will be ignored. If a user code does not exist for the corresponding configuration parameter the lock will report a configuration value of 0xFF, attempts to change the user code type will be ignored.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Guest (Required for Year Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Worker (Required for Week Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="24" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter is used to set the User Code Type for their corresponding user codes. The door lock will only retain valid user code types (0x01, 0x03, and 0x04), all other values will be ignored. If a user code does not exist for the corresponding configuration parameter the lock will report a configuration value of 0xFF, attempts to change the user code type will be ignored.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Guest (Required for Year Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Worker (Required for Week Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="25" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter is used to set the User Code Type for their corresponding user codes. The door lock will only retain valid user code types (0x01, 0x03, and 0x04), all other values will be ignored. If a user code does not exist for the corresponding configuration parameter the lock will report a configuration value of 0xFF, attempts to change the user code type will be ignored.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Guest (Required for Year Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Worker (Required for Week Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="26" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter is used to set the User Code Type for their corresponding user codes. The door lock will only retain valid user code types (0x01, 0x03, and 0x04), all other values will be ignored. If a user code does not exist for the corresponding configuration parameter the lock will report a configuration value of 0xFF, attempts to change the user code type will be ignored.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Guest (Required for Year Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Worker (Required for Week Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="27" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter is used to set the User Code Type for their corresponding user codes. The door lock will only retain valid user code types (0x01, 0x03, and 0x04), all other values will be ignored. If a user code does not exist for the corresponding configuration parameter the lock will report a configuration value of 0xFF, attempts to change the user code type will be ignored.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Guest (Required for Year Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Worker (Required for Week Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="28" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter is used to set the User Code Type for their corresponding user codes. The door lock will only retain valid user code types (0x01, 0x03, and 0x04), all other values will be ignored. If a user code does not exist for the corresponding configuration parameter the lock will report a configuration value of 0xFF, attempts to change the user code type will be ignored.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Guest (Required for Year Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Worker (Required for Week Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="29" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter is used to set the User Code Type for their corresponding user codes. The door lock will only retain valid user code types (0x01, 0x03, and 0x04), all other values will be ignored. If a user code does not exist for the corresponding configuration parameter the lock will report a configuration value of 0xFF, attempts to change the user code type will be ignored.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Guest (Required for Year Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Worker (Required for Week Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="30" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">User Code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter is used to set the User Code Type for their corresponding user codes. The door lock will only retain valid user code types (0x01, 0x03, and 0x04), all other values will be ignored. If a user code does not exist for the corresponding configuration parameter the lock will report a configuration value of 0xFF, attempts to change the user code type will be ignored.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">User Code Type: Owner (Default)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Guest (Required for Year Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">
+User Code Type: Worker (Required for Week Day Schedules)
+</lang>
+                  </description>
+              </value>
+            <value from="05" to="fe" reserved="true">
+                <description>
+                    <lang xml:lang="en">User Code Type: Reserved</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="31" type="bitset" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Dip Switches</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Configuration parameter 31 is one byte read only bit mask field that returns the state of the user accessible Dip-switches on the door look. READ ONLY
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Lock Led Status (1: enable)</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Auto lock (1:enable)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Auto Buzzer (1: enable)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">Secure Screen (1: enable)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="33" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">SKU Part Numbers</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+The Configuration Parameter 33 and 34 are used to set the SKU part numbers to the Kwikset locks. Configuration parameter 33 is the first four most significant bytes (MSB).
+</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="34" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">SKU Part Numbers</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+The Configuration Parameter 33 and 34 are used to set the SKU part numbers to the Kwikset locks. Configuration parameter 34 is the least four significant bytes (LSB).
+</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="35" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Unique ID</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+The configuration Parameter 35 is used as read-only to report the Unique ID of the lock type. Released Board ID Unique ID Deadbolt_0034: 0x00 0x00 Lever_0032: 0x00 0x00 Refresh_Deadbolt: 0x02 0x36 Refresh DB IC 0x02 0x38 Refresh_Lever 0x03 0x36 Refresh Lever IC 0x03 0x39 Barron 0x04 0x36 Barron IC 0x04 0x40 Barron Touch 0x06 0x42
+</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="40" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Default Factory Set</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+The configuration Parameter 40 is used to set the lock to its default factory, except for the anti-theft setting.
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">read only</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">perform factory reset.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/d9f190062dc303984adc43d4524314a70645fe8a.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

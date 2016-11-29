@@ -1,0 +1,1290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0149"/>
+        <productType value="0012"/>
+    <productId value="0104"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="67"/>
+    <appVersion value="01"/>
+    <appSubVersion value="07"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+            <certId>CEF15975</certId>
+            <certNumber>ZC08-14040009</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">WiDom Universal Relay Switch is designed for being installed in junction boxes, flush mount boxes and near lights. WiDom Universal Relay Switch is an ON\OFF device and can be used as both a local and remote switch. It supports two wire connections, which allows it to be installed into any existing system without the need to change the wiring.</lang>
+            <lang xml:lang="it">WiDom Universal Relay Switch è progettato per poter essere installato all’interno di scatole di derivazione nelle scatole porta frutti e in prossimità dei punti luce. WiDom Universal Relay Switch è un dispositivo di controllo ON\OFF e può essere utilizzato sia come interruttore locale che come interruttore remoto. Supporta la connessione a due fili AC Sensing, che consente la sua integrazione in qualunque impianto esistente senza alcuna necessità di eseguire modifiche dei cablaggi.</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+            <lang xml:lang="it"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Pressing the (B) button once or three times or alternatively by pressing the external switch once.</lang>
+            <lang xml:lang="it">Premendo 1 o 3 volte il pulsante (B) oppure premendo una singola volta lo switch esterno.</lang>
+          </inclusionNote>
+            <productName>Universal Relay Switch</productName>
+            <brandName>WiDom</brandName>
+            <productLine>Z-Wave</productLine>
+            <productCode>UBS104</productCode>
+            <productVersion>1.07</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0026"/>
+        <commandClass id="0025"/>
+        <commandClass id="0027"/>
+        <commandClass id="0086"/>
+        <commandClass id="0072"/>
+        <commandClass id="0070"/>
+        <commandClass id="0077"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="005a" controlled="true"/>
+        <commandClass id="0020" controlled="true"/>
+        <commandClass id="0071" version="3" controlled="true"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="5" maxNodes="16">
+            <description>
+                <lang xml:lang="en">devices that will be controlled by hold on the external switch</lang>
+                <lang xml:lang="it">dispositivi che saranno controllati nel caso di pressione prolungata sullo switch esterno</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="4" maxNodes="16">
+            <description>
+                <lang xml:lang="en">devices that will be controlled by a triple click on the external switch</lang>
+                <lang xml:lang="it">dispositivi che saranno controllati nel caso di triplo click sullo switch esterno</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="16">
+            <description>
+                <lang xml:lang="en">devices that will be controlled by a double click on the external switch</lang>
+                <lang xml:lang="it">dispositivi che saranno controllati nel caso di doppio click sullo switch esterno</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="16">
+            <description>
+                <lang xml:lang="en">devices that will be controlled by a single click on the external switch</lang>
+                <lang xml:lang="it">dispositivi che saranno controllati nel caso di singolo click sullo switch esterno</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="16">
+            <description>
+                <lang xml:lang="en">devices that will be notified of changes in its status</lang>
+                <lang xml:lang="it">dispositivi che saranno notificati dei suoi cambi di stato</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Device status when the external switch receives 1 click   (1 byte)            </lang>
+                <lang xml:lang="it">Stato del dispositivo quando l&#039;interruttore esterno riceve 1 click   (1 byte) </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"> </lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">TOGGLE (1) </lang>
+                    <lang xml:lang="it">COMMUTA (1) </lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">ON (2) </lang>
+                    <lang xml:lang="it">ON (2) </lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">OFF (3) </lang>
+                    <lang xml:lang="it">OFF (3) </lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">IGNORE (4) </lang>
+                    <lang xml:lang="it">IGNORA (4) </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Device status when the external switch receives 2 clicks   (1 byte) </lang>
+                <lang xml:lang="it">Stato del dispositivo quando l&#039;interruttore esterno riceve 2 click   (1 byte) </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"> </lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">TOGGLE (1) </lang>
+                    <lang xml:lang="it">COMMUTA (1) </lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">ON (2) </lang>
+                    <lang xml:lang="it">ON (2)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">OFF (3) </lang>
+                    <lang xml:lang="it">OFF (3)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">IGNORE (4) </lang>
+                    <lang xml:lang="it">IGNORA (4)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Device status when the external switch receives 3 clicks   (1 byte) </lang>
+                <lang xml:lang="it">Stato del dispositivo quando l&#039;interruttore esterno riceve 3 click          (1 byte) </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">TOGGLE (1) </lang>
+                    <lang xml:lang="it">COMMUTA (1) </lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">ON (2) </lang>
+                    <lang xml:lang="it">ON (2)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">OFF (3) </lang>
+                    <lang xml:lang="it">OFF (3)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">IGNORE (4) </lang>
+                    <lang xml:lang="it">IGNORA (4)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Device status when the external switch is held down   (1 byte) </lang>
+                <lang xml:lang="it">Stato del dispositivo quando l&#039;interruttore esterno rimane premuto (1 byte) </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">TOGGLE (1) </lang>
+                    <lang xml:lang="it">COMMUTA (1) </lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">ON (2) </lang>
+                    <lang xml:lang="it">ON (2)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">OFF (3) </lang>
+                    <lang xml:lang="it">OFF (3)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">IGNORE (4) </lang>
+                    <lang xml:lang="it">IGNORA (4)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en"> Action on the associated devices when the external switch receives 1 click (1 byte)</lang>
+                <lang xml:lang="it"> Azione svolta sui dispositivi associati quando l&#039;interruttore esterno riceve 1 click (1 byte) </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">TOGGLE (1) </lang>
+                    <lang xml:lang="it">COMMUTA (1) </lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">IGNORE IF ON (2)</lang>
+                    <lang xml:lang="it">IGNORA SE ON (2)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">IGNORE IF OFF (3)</lang>
+                    <lang xml:lang="it">IGNORA SE OFF (3)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">TOGGLE ASSOCIATED (4)</lang>
+                    <lang xml:lang="it">COMMUTA ASSOCIATI (4)</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">SET AS INITIAL STATUS VALUE (5)</lang>
+                    <lang xml:lang="it">SETTA COME STATO INIZIALE (5)</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="en">IGNORE (6)</lang>
+                    <lang xml:lang="it">IGNORA (6)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en"> Action on the associated devices when the external switch receives 2 clicks (1 byte)</lang>
+                <lang xml:lang="it"> Azione svolta sui dispositivi associati quando l&#039;interruttore esterno riceve 2 click (1 byte) </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">TOGGLE (1) </lang>
+                    <lang xml:lang="it">COMMUTA (1) </lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">IGNORE IF ON (2)</lang>
+                    <lang xml:lang="it">IGNORA SE ON (2)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">IGNORE IF OFF (3)</lang>
+                    <lang xml:lang="it">IGNORA SE OFF (3)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">TOGGLE ASSOCIATED (4)</lang>
+                    <lang xml:lang="it">COMMUTA ASSOCIATI (4)</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">SET AS INITIAL STATUS VALUE (5)</lang>
+                    <lang xml:lang="it">SETTA COME STATO INIZIALE (5)</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="en">IGNORE (6)</lang>
+                    <lang xml:lang="it">IGNORA (6)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en"> Action on the associated devices when the external switch is held down (1 byte) </lang>
+                <lang xml:lang="it"> Azione svolta sui dispositivi associati quando l&#039;interruttore esterno rimane premuto (1 byte) </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">TOGGLE (1) </lang>
+                    <lang xml:lang="it">COMMUTA (1) </lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">IGNORE IF ON (2)</lang>
+                    <lang xml:lang="it">IGNORA SE ON (2)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">IGNORE IF OFF (3)</lang>
+                    <lang xml:lang="it">IGNORA SE OFF (3)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">TOGGLE ASSOCIATED (4)</lang>
+                    <lang xml:lang="it">COMMUTA ASSOCIATI (4)</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">SET AS INITIAL STATUS VALUE (5)</lang>
+                    <lang xml:lang="it">SETTA COME STATO INIZIALE (5)</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="en">IGNORE (6)</lang>
+                    <lang xml:lang="it">IGNORA (6)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="rangemapped" size="1" default="05">
+            <name>
+                <lang xml:lang="en"> Action performed on all network devices when the external switch receives 1 click (1 byte) </lang>
+                <lang xml:lang="it"> Azione trasmessa su tutti i dispositivi della rete quando l&#039;interruttore esterno riceve 1 click (1 byte) </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">TOGGLE (1) </lang>
+                    <lang xml:lang="it">COMMUTA (1) </lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">IGNORE IF ON (2)</lang>
+                    <lang xml:lang="it">IGNORA SE ON (2)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">IGNORE IF OFF (3)</lang>
+                    <lang xml:lang="it">IGNORA SE OFF (3)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">SET AS INITIAL STATUS VALUE (4)</lang>
+                    <lang xml:lang="it">SETTA COME STATO INIZIALE (4)</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">IGNORE (5)</lang>
+                    <lang xml:lang="it">IGNORA (5)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="rangemapped" size="1" default="05">
+            <name>
+                <lang xml:lang="en"> Action performed on all network devices when the external switch receives 2 clicks (1 byte) </lang>
+                <lang xml:lang="it"> Azione trasmessa a tutti i dispositivi dopo due click sull&#039;interruttore esterno </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">TOGGLE (1) </lang>
+                    <lang xml:lang="it">COMMUTA (1) </lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">IGNORE IF ON (2)</lang>
+                    <lang xml:lang="it">IGNORA SE ON (2)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">IGNORE IF OFF (3)</lang>
+                    <lang xml:lang="it">IGNORA SE OFF (3)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">SET AS INITIAL STATUS VALUE (4)</lang>
+                    <lang xml:lang="it">SETTA COME STATO INIZIALE (4)</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">IGNORE (5)</lang>
+                    <lang xml:lang="it">IGNORA (5)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="rangemapped" size="1" default="05">
+            <name>
+                <lang xml:lang="en"> Action performed on all network devices when the external switch receives 3 clicks (1 byte) </lang>
+                <lang xml:lang="it"> Azione trasmessa a tutti i dispositivi dopo tre click sull&#039;interruttore esterno </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">TOGGLE (1) </lang>
+                    <lang xml:lang="it">COMMUTA (1) </lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">IGNORE IF ON (2) </lang>
+                    <lang xml:lang="it">IGNORA SE ON (2)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">IGNORE IF OFF (3) </lang>
+                    <lang xml:lang="it">IGNORA SE OFF (3)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">SET AS INITIAL STATUS VALUE (4) </lang>
+                    <lang xml:lang="it">SETTA COME STATO INIZIALE (4)</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">IGNORE (5) </lang>
+                    <lang xml:lang="it">IGNORA (5)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="rangemapped" size="1" default="05">
+            <name>
+                <lang xml:lang="en"> Action performed on all network devices when the external switch is held down (1 byte) </lang>
+                <lang xml:lang="it"> Azione trasmessa a tutti i dispositivi dopo pressione prolungata sull&#039;interruttore esterno </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">TOGGLE (1) </lang>
+                    <lang xml:lang="it">COMMUTA (1) </lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">IGNORE IF ON (2)</lang>
+                    <lang xml:lang="it">IGNORA SE ON (2)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">IGNORE IF OFF (3)</lang>
+                    <lang xml:lang="it">IGNORA SE OFF (3)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">SET AS INITIAL STATUS VALUE (4)</lang>
+                    <lang xml:lang="it">SETTA COME STATO INIZIALE (4)</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">IGNORE (5)</lang>
+                    <lang xml:lang="it">IGNORA (5)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="20" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en"> Device status upon receipt of a Basic Set (1 byte) </lang>
+                <lang xml:lang="it"> Stato del dispositivo al ricevimento di un BASIC SET (1 byte)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">HOW RECEIVED (1) </lang>
+                    <lang xml:lang="it">COME RICEVUTO (1) </lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">IGNORE IF ON (2)</lang>
+                    <lang xml:lang="it">IGNORA SE ON (2)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">IGNORE IF OFF (3)</lang>
+                    <lang xml:lang="it">IGNORA SE OFF (3)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">IGNORE (4)</lang>
+                    <lang xml:lang="it">IGNORA (4)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="30" type="range" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">ON_LEVEL value used for devices belonging to Group 2 (1 Click association group) (1 byte)</lang>
+                <lang xml:lang="it">Valore di ON_LEVEL usato per i dispositivi appartenenti al Gruppo 2 (1 Click association group) (1 byte)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="en"></lang>
+                    <lang xml:lang="it"> </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="31" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">OFF_LEVEL value used for devices belonging to Group 2 (1 Click association group) (1 byte) </lang>
+                <lang xml:lang="it">Valore di OFF_LEVEL usato per i dispositivi appartenenti al Gruppo 2 (1 Click association group) (1 byte)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="en"> </lang>
+                    <lang xml:lang="it"> </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="32" type="range" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">ON_LEVEL value used for devices belonging to Group 3 (2 Click association group) (1 byte)</lang>
+                <lang xml:lang="it">Valore di ON_LEVEL usato per i dispositivi appartenenti al Gruppo 3 (2 Click association group) (1 byte)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="en"> </lang>
+                    <lang xml:lang="it"> </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="33" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">OFF_LEVEL value used for devices belonging to Group 3 (2 Click association group) (1 byte)</lang>
+                <lang xml:lang="it">Valore di OFF_LEVEL usato per i dispositivi appartenenti al Gruppo 3 (2 Click association group) (1 byte)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="en"> </lang>
+                    <lang xml:lang="it"> </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="34" type="range" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">ON_LEVEL value used for devices belonging to Group 4 (3 Click association group) (1 byte)</lang>
+                <lang xml:lang="it">Valore di ON_LEVEL usato per i dispositivi appartenenti al Gruppo 4 (3 Click association group) (1 byte)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="en"> </lang>
+                    <lang xml:lang="it">  </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="35" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">OFF_LEVEL value used for devices belonging to Group 4 (3 Click association group) (1 byte)</lang>
+                <lang xml:lang="it">Valore di OFF_LEVEL usato per i dispositivi appartenenti al Gruppo 4 (3 Click association group) (1 byte)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="en"> </lang>
+                    <lang xml:lang="it">  </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="36" type="range" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">ON_LEVEL value used for devices belonging to Group 5 (Hold association group) (1 byte)</lang>
+                <lang xml:lang="it">Valore di ON_LEVEL usato per i dispositivi appartenenti al Gruppo 5 (Hold association group) (1 byte)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="en"> </lang>
+                    <lang xml:lang="it">  </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="37" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">OFF_LEVEL value used for devices belonging to Group 5 (Hold association group) (1 byte)</lang>
+                <lang xml:lang="it">Valore di OFF_LEVEL usato per i dispositivi appartenenti al Gruppo 5 (Hold association group) (1 byte)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="en"></lang>
+                    <lang xml:lang="it">  </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="40" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="en"> Timer associated with the 1 click event on the external switch (1 byte) </lang>
+                <lang xml:lang="it"> Timer associato all&#039;evento di 1 click sull&#039;interruttore esterno (1 byte) </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en"> TIMER DISABLED (0) </lang>
+                    <lang xml:lang="it"> TIMER DISABILITATO (0)</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en"> TIMER ENABLED (1)  </lang>
+                    <lang xml:lang="it"> TIMER ABILITATO (1)  </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="41" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="en"> Timer associated with the 2 click event on the external switch (1 byte) </lang>
+                <lang xml:lang="it"> Timer associato all&#039;evento di 2 click sull&#039;interruttore esterno (1 byte) </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en"> TIMER DISABLED (0) </lang>
+                    <lang xml:lang="it"> TIMER DISABILITATO (0)</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en"> TIMER ENABLED (1)  </lang>
+                    <lang xml:lang="it"> TIMER ABILITATO (1)  </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="42" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="en"> Timer associated with the 3 click event on the external switch (1 byte) </lang>
+                <lang xml:lang="it"> Timer associato all&#039;evento di 3 click sull&#039;interruttore esterno (1 byte) </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en"> TIMER DISABLED (0) </lang>
+                    <lang xml:lang="it"> TIMER DISABILITATO (0)</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en"> TIMER ENABLED (1)  </lang>
+                    <lang xml:lang="it"> TIMER ABILITATO (1)  </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="43" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="en"> Timer associated with the hold event on the external switch (1 byte) </lang>
+                <lang xml:lang="it"> Timer associato all&#039;evento di pressione prolungata sul pulsante esterno (1 byte) </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en"> TIMER DISABLED (0) </lang>
+                    <lang xml:lang="it"> TIMER DISABILITATO (0)</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en"> TIMER ENABLED (1)  </lang>
+                    <lang xml:lang="it"> TIMER ABILITATO (1)  </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="44" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="en"> Timer associated with the reception of a Basic Set command (1 byte) </lang>
+                <lang xml:lang="it"> Timer associato all&#039;evento ricezione di un comando Basic Set (1 byte) </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en"> TIMER DISABLED (0) </lang>
+                    <lang xml:lang="it"> TIMER DISABILITATO (0)</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en"> TIMER ENABLED (1)  </lang>
+                    <lang xml:lang="it"> TIMER ABILITATO (1)  </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="45" type="range" size="2" default="0258">
+            <name>
+                <lang xml:lang="en">Switch-off timer (2 bytes) </lang>
+                <lang xml:lang="it">Tempo di spegnimento (2 bytes) </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it">  </lang>
+              </description>
+      
+                  <value from="0000" to="0e10">
+                <description>
+                    <lang xml:lang="en">Time in seconds (1 – 3600). Default value  600 (10 minutes) </lang>
+                    <lang xml:lang="it">Tempo in secondi (1 - 3600). Valore di default  600 (10 minuti) </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="46" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Switch-off timer validity (1 byte) </lang>
+                <lang xml:lang="it">Validità dello spegnimento programmato (1 byte) </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it">  </lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en"> CANCEL (0) </lang>
+                    <lang xml:lang="it"> ANNULLA (0)</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en"> MAINTAIN (1)  </lang>
+                    <lang xml:lang="it"> MANTIENI (1)  </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="50" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en"> Smoke Alarm, CO, CO2 Action (1 byte) </lang>
+                <lang xml:lang="it"> Smoke Alarm, CO, CO2 Action (1 byte) </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en"> ON (1)  </lang>
+                    <lang xml:lang="it"> ON (1)  </lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en"> OFF (2)  </lang>
+                    <lang xml:lang="it"> OFF (2) </lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en"> FLASH (3)  </lang>
+                    <lang xml:lang="it"> LAMPEGGIARE (3)  </lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en"> IGNORE (4)  </lang>
+                    <lang xml:lang="it"> IGNORA (4) </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="51" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en"> Heat Allarm (1 byte)  </lang>
+                <lang xml:lang="it"> Heat Allarm (1 byte)  </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en"> ON (1)  </lang>
+                    <lang xml:lang="it"> ON (1)  </lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en"> OFF (2)  </lang>
+                    <lang xml:lang="it"> OFF (2) </lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en"> FLASH (3)  </lang>
+                    <lang xml:lang="it"> LAMPEGGIARE (3)  </lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en"> IGNORE (4)  </lang>
+                    <lang xml:lang="it"> IGNORA (4) </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="52" type="rangemapped" size="1" default="02">
+            <name>
+                <lang xml:lang="en"> Water Allarm (1 byte) </lang>
+                <lang xml:lang="it"> Water Allarm (1 byte) </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en"> ON (1)  </lang>
+                    <lang xml:lang="it"> ON (1)  </lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en"> OFF (2)  </lang>
+                    <lang xml:lang="it"> OFF (2) </lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en"> FLASH (3)  </lang>
+                    <lang xml:lang="it"> LAMPEGGIARE (3)  </lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en"> IGNORE (4)  </lang>
+                    <lang xml:lang="it"> IGNORA (4) </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="53" type="rangemapped" size="1" default="03">
+            <name>
+                <lang xml:lang="en"> Home Security (1 byte) </lang>
+                <lang xml:lang="it"> Home Security (1 byte) </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en"> ON (1)  </lang>
+                    <lang xml:lang="it"> ON (1)  </lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en"> OFF (2)  </lang>
+                    <lang xml:lang="it"> OFF (2) </lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en"> FLASH (3)  </lang>
+                    <lang xml:lang="it"> LAMPEGGIARE (3)  </lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en"> IGNORE (4)  </lang>
+                    <lang xml:lang="it"> IGNORA (4) </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="60" type="rangemapped" size="1" default="03">
+            <name>
+                <lang xml:lang="en"> Startup status (1 byte) </lang>
+                <lang xml:lang="it"> Stato di avvio (1 byte) </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en"> ON (1) </lang>
+                    <lang xml:lang="it"> ON (1) </lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en"> OFF (2) </lang>
+                    <lang xml:lang="it"> OFF (2) </lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en"> PREVIOUS STATUS (3) </lang>
+                    <lang xml:lang="it"> STATO PRECEDENTE (3) </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="61" type="rangemapped" size="1" default="04">
+            <name>
+                <lang xml:lang="en"> Configuration reset (1 byte) </lang>
+                <lang xml:lang="it"> Reset della configurazione (1 byte) </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en"> FACTORY RESET (0) </lang>
+                    <lang xml:lang="it"> RESET DI FABBRICA (0) </lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en"> RESET ASSOCIATIONS (1) </lang>
+                    <lang xml:lang="it"> RESET ASSOCIAZIONI (1) </lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en"> RESET CONFIGURATIONS (2) </lang>
+                    <lang xml:lang="it"> RESET CONFIGURAZIONI (2) </lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en"> IGNORE (4) </lang>
+                    <lang xml:lang="it"> IGNORA (4) </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="62" type="rangemapped" size="1" default="04">
+            <name>
+                <lang xml:lang="en"> Type of external switch (1 byte) </lang>
+                <lang xml:lang="it"> Tipo di switch esterno (1 byte) </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en"> IGNORE (0) </lang>
+                    <lang xml:lang="it"> IGNORA (0) </lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en"> BUTTON (1) </lang>
+                    <lang xml:lang="it"> PULSANTE (1) </lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en"> BISTABLE SWITCH (2) </lang>
+                    <lang xml:lang="it"> INTERRUTTORE (2) </lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en"> AC SENSING (3) </lang>
+                    <lang xml:lang="it"> AC SENSING (3) </lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en"> AUTOMATIC RECOGNITION (4) </lang>
+                    <lang xml:lang="it"> RICONOSCIMENTO AUTOMATICO (4) </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="64" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Load protection (2 bytes) </lang>
+                <lang xml:lang="it">Protezione del carico (2 byte) </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it">  </lang>
+              </description>
+      
+                  <value from="0000" to="0e10">
+                <description>
+                    <lang xml:lang="en">Time in seconds (1 – 3600). Default value: 0 </lang>
+                    <lang xml:lang="it">Tempo in secondi (1 - 3600). Valore di default 0 </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="65" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="en"> Learn Mode (1 byte) </lang>
+                <lang xml:lang="it"> Learn Mode (1 byte) </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en"> IGNORE (0) </lang>
+                    <lang xml:lang="it"> IGNORA (0) </lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en"> 1 CLICK (1) </lang>
+                    <lang xml:lang="it"> 1 CLICK (1) </lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en"> 2 CLICKS (2) </lang>
+                    <lang xml:lang="it"> 2 CLICK (2) </lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en"> 3 CLICKS (3) </lang>
+                    <lang xml:lang="it"> 3 CLICK (3) </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="63" type="range" size="1" default="09">
+            <name>
+                <lang xml:lang="en"> Sensitivity (1 byte) </lang>
+                <lang xml:lang="it"> Sensitivity (1 byte) </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="en"></lang>
+                    <lang xml:lang="it">  </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="56" type="range" size="1" default="0a">
+            <name>
+                <lang xml:lang="en">Duration of flashing phase (1 byte) </lang>
+                <lang xml:lang="it">Durata della fase di lampeggiamento (1 byte) </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"> </lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="en"></lang>
+                    <lang xml:lang="it"> </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="55" type="range" size="1" default="05">
+            <name>
+                <lang xml:lang="en">OFF time during flashing (1 byte) </lang>
+                <lang xml:lang="it">Tempo di OFF durante il lampeggiamento (1 byte) </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="en"></lang>
+                    <lang xml:lang="it"> </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="54" type="range" size="1" default="05">
+            <name>
+                <lang xml:lang="en">ON time during flashing (1 byte) </lang>
+                <lang xml:lang="it">Tempo di ON durante il lampeggiamento (1 byte) </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"> </lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="en"></lang>
+                    <lang xml:lang="it"> </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="rangemapped" size="1" default="06">
+            <name>
+                <lang xml:lang="en"> Action on the associated devices when the external switch receives 3 clicks (1 byte) </lang>
+                <lang xml:lang="it"> Azione svolta sui dispositivi associati quando l&#039;interruttore esterno riceve 3 click (1 byte) </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="it"></lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">TOGGLE (1) </lang>
+                    <lang xml:lang="it">COMMUTA (1) </lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">IGNORE IF ON (2)</lang>
+                    <lang xml:lang="it">IGNORA SE ON (2)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">IGNORE IF OFF (3)</lang>
+                    <lang xml:lang="it">IGNORA SE OFF (3)</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">SET AS INITIAL STATUS VALUE (5)</lang>
+                    <lang xml:lang="it">SETTA COME STATO INIZIALE (5)</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="en">IGNORE (6)</lang>
+                    <lang xml:lang="it">IGNORA (6)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en"></lang>
+                    <lang xml:lang="it">COMMUTA ASSOCIATI (4)</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/8f363a720d71bfbf98972079b924c831b0f45ef0.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

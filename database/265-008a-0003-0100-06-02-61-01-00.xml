@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="008a"/>
+        <productType value="0003"/>
+    <productId value="0100"/>
+    <libType value="06"/>
+    <protoVersion value="02"/>
+    <protoSubVersion value="61"/>
+    <appVersion value="01"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="20"/>
+            <specificClass value="00"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+            <certId>14184</certId>
+            <certNumber>ZC08-11050002</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Movement Sensor with a in-built temperature sensor and light sensor</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en">Press and hold the tamper switch for 8 seconds.</lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Remove the cover, press and hold the tamper switch for 4 seconds. </lang>
+          </inclusionNote>
+            <productName>MoLiTe Sensor</productName>
+            <brandName>MoLiTe Sensor</brandName>
+            <productLine>Security</productLine>
+            <productCode>3</productCode>
+            <productVersion>1.0</productVersion>
+            <batteryType>AA</batteryType>
+            <batteryCount>2</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" controlled="true"/>
+        <commandClass id="0080"/>
+        <commandClass id="0084"/>
+        <commandClass id="0085"/>
+        <commandClass id="0086"/>
+        <commandClass id="0030"/>
+        <commandClass id="0060" version="2"/>
+        <commandClass id="0070"/>
+        <commandClass id="0031"/>
+        <commandClass id="0072"/>
+        <commandClass id="0071"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">The devices that are
+associated can be controlled on application level.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Set to default</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Set all config values to default values (factory settings). Read more in
+chapter configuration Reset.</lang>
+              </description>
+      
+                  <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">set to default</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="2" default="0384">
+            <name>
+                <lang xml:lang="en">Mode timeout</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The time used in mode 2 to turn the sensor off. This
+Time will start running as soon as detection is seen.</lang>
+              </description>
+      
+                  <value from="0001" to="7fff" unit="seconds">
+                <description>
+                    <lang xml:lang="en">time until the sensor turns off</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="range" size="2" default="0a8c">
+            <name>
+                <lang xml:lang="en">Switch off time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The switch off time will start running as soon as mode timeout is done.
+Motion sensor is turned on and when movement is
+detected again the mode timeout (cfg param 1) will start running all
+over again.
+When switch off time is done a basic off message is sent to the
+associated node.</lang>
+              </description>
+      
+                  <value from="0001" to="7fff">
+                <description>
+                    <lang xml:lang="en">time until the switch turns off</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="1" default="50">
+            <name>
+                <lang xml:lang="en">Sensitivity</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Sensitivity value between 0 and 127 (values above 127 will be reported
+as the set value but will be handled in SW as 127).</lang>
+              </description>
+      
+                  <value from="00" to="7f">
+                <description>
+                    <lang xml:lang="en">sensitivity value</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="constant" size="1" default="02">
+            <name>
+                <lang xml:lang="en">The mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The mode that is entered after detection. If mode is 0 or higher then 3, that value will be reported after a get but
+will be handled in SW as mode 2.</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">no detection possible. Battery save mode</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">normal operation mode: send on after detection and off after
+given time no detection</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">Z-Wave chip is always on to request e.g. version or
+manufacturer id</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">The temperature offset</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">A offset for the temperature</lang>
+              </description>
+      
+                  <value from="0001" to="7fff">
+                <description>
+                    <lang xml:lang="en">A signed integer to determine the offset off the temperature</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    <endpoints>
+           <endpoint number="2">
+            <name>
+                <lang xml:lang="en">Request light/lux</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The returned value is the measured LDR resistance in %.</lang>
+              </description>
+                  <genericClass value="21"/>
+                  <specificClass value="00"/>
+                  <commandClass id="0020"/>
+            <commandClass id="0031"/>
+          </endpoint>
+           <endpoint number="1">
+            <name>
+                <lang xml:lang="en">Request temperature</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The returned value is the measured temperature (+/- offset) inside the housing with 2 decimals.</lang>
+              </description>
+                  <genericClass value="21"/>
+                  <specificClass value="00"/>
+                  <commandClass id="0020"/>
+            <commandClass id="0031"/>
+          </endpoint>
+      </endpoints>
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/bea22cdd4b7fa9221cc577a578f4251210ecdf27.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

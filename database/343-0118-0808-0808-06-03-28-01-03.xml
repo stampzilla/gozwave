@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0118"/>
+        <productType value="0808"/>
+    <productId value="0808"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="28"/>
+    <appVersion value="01"/>
+    <appSubVersion value="03"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+            <certId>14980</certId>
+            <certNumber>ZC08-12110001</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Z-Wave 300 W Europ. Wanddimmer für 3 Draht-System mit Doppelschaltwippe</lang>
+            <lang xml:lang="en">Z-Wave 300 W European Wall Mounted 3-Wire Dimmer with Dual Paddle</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en">Tap either the top or the buttom of the switch once</lang>
+          </inclusionNote>
+            <productName>TZ65D</productName>
+            <brandName>TKBHOME</brandName>
+            <productLine>2</productLine>
+            <productCode>TZ65D</productCode>
+            <productVersion>V1.0</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" inNIF="false"/>
+        <commandClass id="0085"/>
+        <commandClass id="0086"/>
+        <commandClass id="0027"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+        <commandClass id="0026"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="4" maxNodes="5">
+            <description>
+                <lang xml:lang="de">jede Schaltaktion</lang>
+                <lang xml:lang="en">every switching command</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Rechte Schaltwippe Doppelklick</lang>
+                <lang xml:lang="en">Tap right paddle twice</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Rechte Schaltwippe Einfachklick</lang>
+                <lang xml:lang="en">Tap right paddle once</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Linke Schaltwippe Einfachklick</lang>
+                <lang xml:lang="en">Tap left paddle once</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Start Level</lang>
+                <lang xml:lang="en">Start Level Bit</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert, ob die Angabe über den Startpunkt beim Dimmen in der Funkanweisung ignoriert werden soll</lang>
+                <lang xml:lang="en">defines if the start level bit shall be ignores when transmitting a dim command to a dimmer</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Ignorieren</lang>
+                    <lang xml:lang="en">ignore</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Nicht ignorieren</lang>
+                    <lang xml:lang="en">dont ignore</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Assoziationsgruppe 4 deaktiveren</lang>
+                <lang xml:lang="en">Suspend Group 4</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert, ob die Assoziationsgruppe 4 aktiv ist oder nicht</lang>
+                <lang xml:lang="en">defines if the Association group 4 shall be active or not</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">ja</lang>
+                    <lang xml:lang="en">yes</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">nein</lang>
+                    <lang xml:lang="en">no</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Nachtlicht</lang>
+                <lang xml:lang="en">Night Light</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">aktiviert die Nachtlichtfunktion</lang>
+                <lang xml:lang="en">Activates Night Light</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">LED blinkt bei Aktivität</lang>
+                    <lang xml:lang="en">LED blinks on activity</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Nachtlicht aktiv</lang>
+                    <lang xml:lang="en">Night Light active</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Schalter invertieren </lang>
+                <lang xml:lang="en">Invert Switch</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">invertiert die Belegung der Schaltwippe</lang>
+                <lang xml:lang="en">Inverts Switching (on is upper part)</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Nein</lang>
+                    <lang xml:lang="en">dont invert</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Ja</lang>
+                    <lang xml:lang="en">invert</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="19" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">LED Indikator</lang>
+                <lang xml:lang="en">LED Transmission Indication</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert wie die LED eine Indikator für die Funkübertragung ist</lang>
+                <lang xml:lang="en">defines the behavior of the LED when transmitting data</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">kein Blinken</lang>
+                    <lang xml:lang="en">no flicker</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Binkt immer solange Funk aktiv ist</lang>
+                    <lang xml:lang="en">flicker all time of data transmission</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Blinkt nur für eine Sekunde</lang>
+                    <lang xml:lang="en">flicker for one second only</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="15" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Motorsteuerung für Assoziationsgruppe 3</lang>
+                <lang xml:lang="en">Enable Shade Control Group 3</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert, ob Geräte in der Assoziationsgruppe 3 als Motoren gesteuert werden (z.B. Jalousiecontroller)</lang>
+                <lang xml:lang="en">The device can operate shade control devices via Group 3 if this parameter is activated</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Nein</lang>
+                    <lang xml:lang="en">inactive</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Ja</lang>
+                    <lang xml:lang="en">active</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="14" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Motorsteuerung für Assoziationsgruppe 2</lang>
+                <lang xml:lang="en">Enable Shade Control Group 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert, ob Geräte in der Assoziationsgruppe 2 als Motoren gesteuert werden (z.B. Jalousiecontroller)</lang>
+                <lang xml:lang="en">The device can operate shade control devices via Group 2  if this parameter is activated</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Nein</lang>
+                    <lang xml:lang="en">inactive</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Ja</lang>
+                    <lang xml:lang="en">active</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="20" type="range" size="1" default="02">
+            <name>
+                <lang xml:lang="de">Pollen der Gruppe 2 Interval</lang>
+                <lang xml:lang="en">Poll Group 2 Interval</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert das Poll interval für Assoziationsgruppe 2 </lang>
+                <lang xml:lang="en">defines the poll interfal for group 2 if polling is activated </lang>
+              </description>
+      
+                  <value from="01" to="ff" unit="2">
+                <description>
+                    <lang xml:lang="de"> Interval</lang>
+                    <lang xml:lang="en"> Interval</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="22" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Poll-Gruppe 2</lang>
+                <lang xml:lang="en">Poll Group 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert, of das Pollen in Gruppe 2 aktiv ist.</lang>
+                <lang xml:lang="en">defines if Group 2 shall be polled or not</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Nein</lang>
+                    <lang xml:lang="en">dont poll</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Ja</lang>
+                    <lang xml:lang="en">poll</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    
+  </ZWaveDevice>
+
+

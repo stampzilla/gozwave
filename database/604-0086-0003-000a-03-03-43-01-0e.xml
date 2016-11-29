@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0086"/>
+        <productType value="0003"/>
+    <productId value="000a"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="43"/>
+    <appVersion value="01"/>
+    <appSubVersion value="0e"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Schalter für hohe Lasten mit Messfunktion</lang>
+            <lang xml:lang="en">Binary Power Switch for Heavy Loads with Meetering</lang>
+            <lang xml:lang="ru">Силовое реле с измерением энергопотребления</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+            <lang xml:lang="ru"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Einmaliges Drücken der Aktionstaste startet die Inklusion bzw. Exklusion</lang>
+            <lang xml:lang="en">To start the inclusion or exclusion push the Action Button once.</lang>
+            <lang xml:lang="ru">Одинарное нажатие на кнопку</lang>
+          </inclusionNote>
+            <productName>HDS</productName>
+            <brandName>Binary Power Switch</brandName>
+                    <productVersion>1.14</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" inNIF="false"/>
+        <commandClass id="0025"/>
+        <commandClass id="0027"/>
+        <commandClass id="002b"/>
+        <commandClass id="002c"/>
+        <commandClass id="0031" version="5"/>
+        <commandClass id="0032" version="3"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0085"/>
+        <commandClass id="0086"/>
+        <commandClass id="0082" controlled="true"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Lifeline</lang>
+                <lang xml:lang="en">Lifeline</lang>
+                <lang xml:lang="ru">Lifeline</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Weiterleiten Schaltkommando</lang>
+                <lang xml:lang="en">Retransmit Switch Command</lang>
+                <lang xml:lang="ru">Устройства управляемые кнопкой</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="3" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Überspannungsschutz</lang>
+                <lang xml:lang="en">Current Overload Protection</lang>
+                <lang xml:lang="ru">Защита от перегрузки</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Die Spannung wird geschlossen wenn diese die Grenzwerte von 39,5A für mehr als Sekunden überschritten wird.</lang>
+                <lang xml:lang="en">Load will be closed when the Current more than 39,5A and the time more than 5 seconds.</lang>
+                <lang xml:lang="ru">Если ток будет больше 39,5 А в течении 5 секунд, то модуль выключится.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Aktivier Überspannungsschutz</lang>
+                    <lang xml:lang="en">Activate Overload Protection</lang>
+                    <lang xml:lang="ru">Защита от перегрузки включена</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Deaktiviert Überspannungsschutz</lang>
+                    <lang xml:lang="en">Deactivate Overload Protection</lang>
+                    <lang xml:lang="ru">Защита от перегрузки выключена</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="20" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Ausgabe des Laststatus</lang>
+                <lang xml:lang="en">Output Load Status</lang>
+                <lang xml:lang="ru">Восстанавливать состояние после отключения питания</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert die Ausgabe der Statusmeldung zur anliegenden Last nach dem anschliesen.</lang>
+                <lang xml:lang="en">Configure the output load status after re‐power on.</lang>
+                <lang xml:lang="ru">Определяет восстанавливать ли состояние модуля (включено/выключено) на то, которое было до отключения питания модуля.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">letzter Status</lang>
+                    <lang xml:lang="en">last status</lang>
+                    <lang xml:lang="ru">Восстанавливать состояние</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">immer aktiv</lang>
+                    <lang xml:lang="en">always on</lang>
+                    <lang xml:lang="ru">Всегда включено</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">immer inaktive</lang>
+                    <lang xml:lang="en">always off</lang>
+                    <lang xml:lang="ru">Всегда выключено</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="80" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Benachrichtigung bei Statusänderungen</lang>
+                <lang xml:lang="en">Notification on Status Change</lang>
+                <lang xml:lang="ru">Отчет о включении/выключении</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert die automatische Benachrichtigung eines assoziierten Gerätes bei Statusänderungen.</lang>
+                <lang xml:lang="en">Defines the automated status notification of an associated device when status changes.</lang>
+                <lang xml:lang="ru">Каким классом команд отправлять отчет о включении/выключении</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">nichts</lang>
+                    <lang xml:lang="en">nothing</lang>
+                    <lang xml:lang="ru">Не отправлять отчет</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">hail</lang>
+                    <lang xml:lang="en">hail</lang>
+                    <lang xml:lang="ru">Hail (Сказать контроллеру Привет!)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">basic CC report</lang>
+                    <lang xml:lang="en">basic CC report</lang>
+                    <lang xml:lang="ru">Basic Report</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="90" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Aktiviert/Deaktivert Parameter 91/92</lang>
+                <lang xml:lang="en">Enables/disables parameter 91/92</lang>
+                <lang xml:lang="ru">Управление параметрами 91/92</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Aktiviert Parameter 91/92</lang>
+                    <lang xml:lang="en">Enabled parameter 91/92</lang>
+                    <lang xml:lang="ru">Параметры 91/92 включены</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Deaktiviert Parameter 91/92</lang>
+                    <lang xml:lang="en">Disabled parameter 91/92</lang>
+                    <lang xml:lang="ru">Параметры 91/92 выключены</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="91" type="range" size="2" default="0032">
+            <name>
+                <lang xml:lang="de">Änderungsschwellwert für Leistungs-Report (Watt)</lang>
+                <lang xml:lang="en">Minimum Change to send Report (Watt)</lang>
+                <lang xml:lang="ru">Отчет о изменении энергопотребления</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert die minimale Änderung der Leistungsaufnahme des angeschlossenen Verbrauchers in Watt, die zu einem automatischen Senden von Leistungsdaten führt.</lang>
+                <lang xml:lang="en">The value represents the minimum change in wattage for a Report to be sent .</lang>
+                <lang xml:lang="ru">Минимальное значение на которое должно измениться энергопотребление, чтобы отправился отчет</lang>
+              </description>
+      
+                  <value from="0000" to="7d00">
+                <description>
+                    <lang xml:lang="de">Definiert die minimale Änderung der Leistungsaufnahme des angeschlossenen Verbrauchers in Watt</lang>
+                    <lang xml:lang="en">The value represents the minimum change in wattage.</lang>
+                    <lang xml:lang="ru">Ватт</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="92" type="range" size="1" default="0a">
+            <name>
+                <lang xml:lang="de">Änderungsschwellwert für Leistungs-Report (%)</lang>
+                <lang xml:lang="en">Minimum Change to send Report (%)</lang>
+                <lang xml:lang="ru">Отчет о изменении энергопотребления (%)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert die minimale Änderung der Leistungsaufnahme des angeschlossenen Verbrauchers in Prozent, die zu einem automatischen Senden von Leistungsdaten führt.</lang>
+                <lang xml:lang="en">The value represents the minimum change in wattage Percent for a report to be sent.
+(Valid values 0‐100) </lang>
+                <lang xml:lang="ru">Минимальное значение на которое должно измениться энергопотребление в процентах, чтобы отправился отчет</lang>
+              </description>
+      
+                  <value from="00" to="64">
+                <description>
+                    <lang xml:lang="de">Definiert die minimale Änderung der Leistungsaufnahme des angeschlossenen Verbrauchers in Prozent.</lang>
+                    <lang xml:lang="en">The value represents the minimum change in wattage Percent.</lang>
+                    <lang xml:lang="ru">%</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="200" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Partner ID</lang>
+                <lang xml:lang="en">Partner ID</lang>
+                <lang xml:lang="ru">Partner ID</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Aeon Labs Standard </lang>
+                    <lang xml:lang="en">Aeon Labs Standard </lang>
+                    <lang xml:lang="ru">Aeon Labs Standard </lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">andere</lang>
+                    <lang xml:lang="en">others</lang>
+                    <lang xml:lang="ru">AT&amp;T</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="252" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Aktivieren/Deaktivieren der Konfigurationssperre</lang>
+                <lang xml:lang="en">Enable/disable Configuration Locking</lang>
+                <lang xml:lang="ru">Блокировка настроек</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert  </lang>
+                    <lang xml:lang="en">Deactivate </lang>
+                    <lang xml:lang="ru">Настройка параметров заблокирована</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Aktiviert  </lang>
+                    <lang xml:lang="en">Activate  </lang>
+                    <lang xml:lang="ru">Настройка параметров разблокирована</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/b8d456d9b78f5e222659db98b92bd96d706d6894.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

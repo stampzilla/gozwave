@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="5254"/>
+        <productType value="8001"/>
+    <productId value="8020"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="67"/>
+    <appVersion value="02"/>
+    <appSubVersion value="20"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="03"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Z-Wave Switch Module</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Triple click the PROG button within 1 second.</lang>
+          </inclusionNote>
+            <productName>ZRM-80SA </productName>
+            <brandName>Remotec</brandName>
+            <productLine>Z-Wave Home Automation </productLine>
+            <productCode>BW8020SA</productCode>
+            <productVersion>2.20</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" controlled="true"/>
+        <commandClass id="0025"/>
+        <commandClass id="0027"/>
+        <commandClass id="0072"/>
+        <commandClass id="0086"/>
+        <commandClass id="002b"/>
+        <commandClass id="002c"/>
+        <commandClass id="0070"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0073"/>
+        <commandClass id="008e" version="2"/>
+        <commandClass id="005a"/>
+        <commandClass id="0060" version="3" controlled="true"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="2" maxNodes="4">
+            <description>
+                <lang xml:lang="en">ZRM-80SA will send out related basic set command On (0xFF) or Off (0x00) to its
+association group automatically when ZRM-80SA received On (0xFF) or Off (0x00)
+command by local switch or wireless command respectively.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="en">Association group_1 is used to report status change such as AUTO report to gateway.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">All On/All Off</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Choose if All On/All Off mode should be activated or deactivated.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">All On is not active,
+All Off is not active</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">All On is not active,
+All Off active</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">All On active,
+All Off is not active</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">All On active,
+All Off active</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Switch state after power failure</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Switch returns to the last position saved before power failure.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Switch does not save the
+state after power failure, it returns to
+&quot;off&quot; position.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Switch saves its state
+before power failure.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/584600ad5a74c3e710aaf41f3edc3da366ac793a.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

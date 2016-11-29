@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="020e"/>
+        <productType value="4754"/>
+    <productId value="3038"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="5f"/>
+    <appVersion value="05"/>
+    <appSubVersion value="09"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+                    
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Dimmbare Z-Wave LED-Leuchte</lang>
+            <lang xml:lang="en">Z-Wave dimmable E27 Light bulb</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">einfach Strom einschalten</lang>
+            <lang xml:lang="en">Simple turn on/off the light</lang>
+          </inclusionNote>
+            <productName>ZBULB</productName>
+            <brandName>Domitech</brandName>
+            <productLine>ZBULB</productLine>
+            <productCode>DOMEZBULB</productCode>
+            <productVersion>5.9</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" inNIF="false"/>
+        <commandClass id="0026"/>
+        <commandClass id="0027"/>
+        <commandClass id="0059"/>
+        <commandClass id="005a"/>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0073"/>
+        <commandClass id="007a" version="2"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0086" version="2"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Lifeline</lang>
+                <lang xml:lang="en">Lifeline</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Status beim Wiedereinschalten der Leuchte</lang>
+                <lang xml:lang="en">Status on turn on the bulb after turning off</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Die Leuchte kann per Funk ausgeschaltet werden, auch wenn der Wandschalter in der An-Position bleibt Durch kurzes Ausschalten und Wieder-Einschalten kann die Leuchte dann auch vom Wandschalter aus eingeschaltet werden. Dieser Parameter definiert, wie die Lampe in diesem Falle leuchten soll</lang>
+                <lang xml:lang="en">The Bulb can be turned off wirelessly while the powerswitch on the wall remains in on-position. The bulb can be turned back on from the wall switch by shortly turning of and then turning on again This parameter defines the status of the bulb after such an operation</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">zurück zu 100 % Leuchstärke</lang>
+                    <lang xml:lang="en">back to 100 %</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">zurück zum letzten Dimmer-Niveau</lang>
+                    <lang xml:lang="en">back to last dimming level</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/07b7bd4f01e6bb5d774e0187ba19d0c2073a7c6c.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="018e"/>
+        <productType value="0004"/>
+    <productId value="0002"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="5f"/>
+    <appVersion value="01"/>
+    <appSubVersion value="02"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Power Meter Switch</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Plug the Power Switch into a power outlet.
+Put the Z-wave gateway or control panel into Inclusion or Learning mode
+(please refer to the Z-wave gateway or control panel manual),
+within 1.5 seconds, press the Switch Button 3 times.</lang>
+          </inclusionNote>
+            <productName>Power Meter Switch</productName>
+            <brandName>CLIMAX TECHNOLOGY</brandName>
+            <productLine>Z-Wave Accessories</productLine>
+            <productCode>PSM-29 ZW</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="005a"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0073"/>
+        <commandClass id="0025"/>
+        <commandClass id="0032" version="2"/>
+        <commandClass id="007a" version="2"/>
+        <commandClass id="0020"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Auto report to Grouping 1 (Maximum Node 5).
+On/Off Event Report: 
+When toggling between On/Off, it will send Binary Switch Report to the nodes of Grouping 1.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/69c0ec7f9d6f2047df6fb47c12a64e31f006866f.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

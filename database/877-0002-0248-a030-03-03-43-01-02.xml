@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0002"/>
+        <productType value="0248"/>
+    <productId value="a030"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="43"/>
+    <appVersion value="01"/>
+    <appSubVersion value="02"/>
+        <basicClass value="04"/>
+            <genericClass value="08"/>
+            <specificClass value="06"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Hydronic Floor Heating Controller</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Activate “Inclusion” on the Z-Wave controller.
+Press the button on the Hydronic Controller.</lang>
+          </inclusionNote>
+            <productName>Fußbodenheizcontroller 10 Kanal</productName>
+            <brandName>COQON</brandName>
+            <productLine>COQON</productLine>
+            <productCode>DFBH10Z1 / 088N7110</productCode>
+            <productVersion>1.00</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0070"/>
+        <commandClass id="005a"/>
+        <commandClass id="0087"/>
+        <commandClass id="0072"/>
+        <commandClass id="0060" version="3"/>
+        <commandClass id="008e" version="2"/>
+        <commandClass id="0071" version="7"/>
+        <commandClass id="0025"/>
+        <commandClass id="0043"/>
+        <commandClass id="0040" version="3"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0020"/>
+        <commandClass id="0031" version="2" controlled="true" inNIF="false"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="en">Lifeline</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Valve Type</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Normally closed</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Normally open</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Heat Load Strategy</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Stacking</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Spreading</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="constant" size="1" default="02">
+            <name>
+                <lang xml:lang="en">PWM Period</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">short (15min)</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">medium (30min)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">long (60min)</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    <endpoints>
+           <endpoint number="12">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0020"/>
+            <commandClass id="0025"/>
+          </endpoint>
+           <endpoint number="11">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0020"/>
+            <commandClass id="0025"/>
+          </endpoint>
+           <endpoint number="10">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="08"/>
+                  <specificClass value="06"/>
+                  <commandClass id="0085"/>
+            <commandClass id="0059"/>
+            <commandClass id="0020"/>
+            <commandClass id="0070"/>
+            <commandClass id="0087"/>
+            <commandClass id="008e"/>
+            <commandClass id="0071"/>
+            <commandClass id="0040"/>
+            <commandClass id="0043"/>
+            <commandClass id="00ef"/>
+            <commandClass id="0031"/>
+          </endpoint>
+           <endpoint number="9">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="08"/>
+                  <specificClass value="06"/>
+                  <commandClass id="0085"/>
+            <commandClass id="0059"/>
+            <commandClass id="0020"/>
+            <commandClass id="0070"/>
+            <commandClass id="0087"/>
+            <commandClass id="008e"/>
+            <commandClass id="0071"/>
+            <commandClass id="0040"/>
+            <commandClass id="0043"/>
+            <commandClass id="00ef"/>
+            <commandClass id="0031"/>
+          </endpoint>
+           <endpoint number="8">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="08"/>
+                  <specificClass value="06"/>
+                  <commandClass id="0085"/>
+            <commandClass id="0059"/>
+            <commandClass id="0020"/>
+            <commandClass id="0070"/>
+            <commandClass id="0087"/>
+            <commandClass id="008e"/>
+            <commandClass id="0071"/>
+            <commandClass id="0040"/>
+            <commandClass id="0043"/>
+            <commandClass id="00ef"/>
+            <commandClass id="0031"/>
+          </endpoint>
+           <endpoint number="7">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="08"/>
+                  <specificClass value="06"/>
+                  <commandClass id="0085"/>
+            <commandClass id="0059"/>
+            <commandClass id="0020"/>
+            <commandClass id="0070"/>
+            <commandClass id="0087"/>
+            <commandClass id="008e"/>
+            <commandClass id="0071"/>
+            <commandClass id="0040"/>
+            <commandClass id="0043"/>
+            <commandClass id="00ef"/>
+            <commandClass id="0031"/>
+          </endpoint>
+           <endpoint number="6">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="08"/>
+                  <specificClass value="06"/>
+                  <commandClass id="0085"/>
+            <commandClass id="0059"/>
+            <commandClass id="0020"/>
+            <commandClass id="0070"/>
+            <commandClass id="0087"/>
+            <commandClass id="008e"/>
+            <commandClass id="0071"/>
+            <commandClass id="0040"/>
+            <commandClass id="0043"/>
+            <commandClass id="00ef"/>
+            <commandClass id="0031"/>
+          </endpoint>
+           <endpoint number="5">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="08"/>
+                  <specificClass value="06"/>
+                  <commandClass id="0085"/>
+            <commandClass id="0059"/>
+            <commandClass id="0020"/>
+            <commandClass id="0070"/>
+            <commandClass id="0087"/>
+            <commandClass id="008e"/>
+            <commandClass id="0071"/>
+            <commandClass id="0040"/>
+            <commandClass id="0043"/>
+            <commandClass id="00ef"/>
+            <commandClass id="0031"/>
+          </endpoint>
+           <endpoint number="4">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="08"/>
+                  <specificClass value="06"/>
+                  <commandClass id="0085"/>
+            <commandClass id="0059"/>
+            <commandClass id="0020"/>
+            <commandClass id="0070"/>
+            <commandClass id="0087"/>
+            <commandClass id="008e"/>
+            <commandClass id="0071"/>
+            <commandClass id="0040"/>
+            <commandClass id="0043"/>
+            <commandClass id="00ef"/>
+            <commandClass id="0031"/>
+          </endpoint>
+           <endpoint number="3">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="08"/>
+                  <specificClass value="06"/>
+                  <commandClass id="0085"/>
+            <commandClass id="0059"/>
+            <commandClass id="0020"/>
+            <commandClass id="0070"/>
+            <commandClass id="0087"/>
+            <commandClass id="008e"/>
+            <commandClass id="0071"/>
+            <commandClass id="0040"/>
+            <commandClass id="0043"/>
+            <commandClass id="00ef"/>
+            <commandClass id="0031"/>
+          </endpoint>
+           <endpoint number="2">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="08"/>
+                  <specificClass value="06"/>
+                  <commandClass id="0085"/>
+            <commandClass id="0059"/>
+            <commandClass id="0020"/>
+            <commandClass id="0070"/>
+            <commandClass id="0087"/>
+            <commandClass id="008e"/>
+            <commandClass id="0071"/>
+            <commandClass id="0040"/>
+            <commandClass id="0043"/>
+            <commandClass id="00ef"/>
+            <commandClass id="0031"/>
+          </endpoint>
+           <endpoint number="1">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="08"/>
+                  <specificClass value="06"/>
+                  <commandClass id="0085"/>
+            <commandClass id="0059"/>
+            <commandClass id="0020"/>
+            <commandClass id="0070"/>
+            <commandClass id="0087"/>
+            <commandClass id="008e"/>
+            <commandClass id="0071"/>
+            <commandClass id="0040"/>
+            <commandClass id="0043"/>
+            <commandClass id="00ef"/>
+            <commandClass id="0031"/>
+          </endpoint>
+      </endpoints>
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/67a3a9043f1338c959975a7203dd5c9d4795a1f0.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

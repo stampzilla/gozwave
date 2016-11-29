@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0086"/>
+        <productType value="0101"/>
+    <productId value="0058"/>
+    <libType value="02"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="53"/>
+    <appVersion value="01"/>
+    <appSubVersion value="01"/>
+        <basicClass value="01"/>
+            <genericClass value="01"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="false"/>
+            <rfFrequency>US</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Key Fob Gen5 is a fully functional Z-wave remote controller, which can include, exclude and control the other Z-Wave certified devices. It also can be acted a secondary controller in a network. </lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Short press the “Include” button on the Key Fob, it will go into inclusion state and its blue LED will blink slowly to wait including other slave Z-Wave devices. </lang>
+          </inclusionNote>
+            <productName>Key Fob Gen5 US</productName>
+            <brandName>Aeotec</brandName>
+            <productLine>Z-wave Product Line</productLine>
+            <productCode>ZW088-A</productCode>
+                <batteryType>CR2450</batteryType>
+            <batteryCount>1</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0084" version="2" controlled="true"/>
+        <commandClass id="002b" controlled="true"/>
+        <commandClass id="0070"/>
+        <commandClass id="0080"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0073"/>
+        <commandClass id="005a"/>
+        <commandClass id="0026" controlled="true"/>
+        <commandClass id="0020" controlled="true" inNIF="false"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Group 1 is assigned to the Lifeline association group and every device has 5 nodes to associate. When the Key Fob is in Scene Mode, pressing the control button, which will send the corresponding Scene id to the associated nodes.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="250" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Group/Scene Mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Enable selective Group Mode or Scene Mode when the
+Key Fob is in Use mode.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Group mode</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Scene mode</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="255" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Reset to Default Settings</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Resets the configuration parameter to default factory setting</lang>
+              </description>
+      
+          </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/361b7d73562fb267a0279fb57ac8746e12b31556.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

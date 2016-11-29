@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0060"/>
+        <productType value="0001"/>
+    <productId value="0001"/>
+    <libType value="00"/>
+    <protoVersion value="02"/>
+    <protoSubVersion value="4e"/>
+    <appVersion value="00"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="20"/>
+            <specificClass value="01"/>
+        <optional value="false"/>
+    <listening value="false"/>
+    <routing value="false"/>
+            <rfFrequency>Hong Kong</rfFrequency>
+            <certId>14275</certId>
+            <certNumber>ZC08-11080009</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">PIR Movement Sensor (EU) - 300 series - Hong Kong</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en">The Motion Detector will stay “awake” for ten minutes when changing the status of tamper switch from being pressed to be released or from being released to be pressed to allow time for configuration.</lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Press the tamper switch.</lang>
+          </inclusionNote>
+            <productName>Z-Wave PIR Movement Sensor(EU) - 300 Series</productName>
+            <brandName>MK</brandName>
+                <productCode>LPIR1H</productCode>
+            <productVersion>1.0</productVersion>
+            <batteryType>AAA</batteryType>
+            <batteryCount>3</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" controlled="true"/>
+        <commandClass id="0030"/>
+        <commandClass id="0084"/>
+        <commandClass id="0085"/>
+        <commandClass id="0080"/>
+        <commandClass id="0072"/>
+        <commandClass id="0086"/>
+        <commandClass id="0070"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">When the detector triggers, all devices associated with will be operated. </lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="3" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Enabling/Disabling Power Saving Function</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">When no movement has been detected for 10 seconds, the SP103 will enter the power saving mode. It can be disabled or enabled power saving function by setting this parameter. Note: As long as the batteries have been refitted, the Detector will enable the power saving function automatically.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Power saving enabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="7f">
+                <description>
+                    <lang xml:lang="en">Power saving disabled</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="1" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Configuring the Phase Level of ON Command</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Can be used to adjust that the phase level of ON command is transmitted.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Device Off</lang>
+                  </description>
+              </value>
+            <value from="01" to="63">
+                <description>
+                    <lang xml:lang="en">Device On</lang>
+                  </description>
+              </value>
+            <value from="64" to="7f">
+                <description>
+                    <lang xml:lang="en">Device On to the last phase (before the device was turned off)</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/43d2b7af3ee72753ea5f33b4c94cb0f2246cc7c2.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

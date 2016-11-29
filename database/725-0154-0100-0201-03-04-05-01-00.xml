@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0154"/>
+        <productType value="0100"/>
+    <productId value="0201"/>
+    <libType value="03"/>
+    <protoVersion value="04"/>
+    <protoSubVersion value="05"/>
+    <appVersion value="01"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="07"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="true"/>
+        <beamSensor>1000</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Z-Wave Rauchwarnmelder mit integrierter Innensirene</lang>
+            <lang xml:lang="en">Z-Wave Smoke Detector and Siren</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Durch Drücken des Innentasters für 1 Sekunde wird das Gerät
+ins Z-Wave Netz eingebunden (inkludiert) oder getrennt (exkludiert).</lang>
+            <lang xml:lang="en"> Pushing the internal button for 1 sec. includes and excludes the device. </lang>
+          </inclusionNote>
+            <productName>Popp Smoke Detector</productName>
+            <brandName>Popp &amp; Co.</brandName>
+                <productCode>POPE004001</productCode>
+            <productVersion>1.0</productVersion>
+            <batteryType>9-V-Block</batteryType>
+            <batteryCount>1</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" controlled="true"/>
+        <commandClass id="0025"/>
+        <commandClass id="0030" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="005a"/>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0070"/>
+        <commandClass id="0071" version="5"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0073"/>
+        <commandClass id="007a" version="3"/>
+        <commandClass id="0080"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0086" version="2"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="4">
+            <description>
+                <lang xml:lang="de">Lifeline</lang>
+                <lang xml:lang="en">Lifeline</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="4">
+            <description>
+                <lang xml:lang="de">Alarmmeldung</lang>
+                <lang xml:lang="en">Alarm Reports</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="4">
+            <description>
+                <lang xml:lang="de">Schaltkommando bei Rauchalarn</lang>
+                <lang xml:lang="en">Switching Command when Alarm</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="2" default="000a">
+            <name>
+                <lang xml:lang="de">Sirenenalarm- Sequenzintervall</lang>
+                <lang xml:lang="en">Siren alarm sequence interval </lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Die zusätzliche Sirene lässt ein anderes akustisches Signal ertönen, das sich von 
+der Signalisierung eines Rauchalarms unterscheidet. Dieser Ton geht an und aus. 
+Der Parameter definiert die Gesamtlänge des Intervalls in Sekunden.</lang>
+                <lang xml:lang="en">The  additional  siren  is  creating  a  different  acoustic  signal  differentiate  from  the 
+smoke alarm. This sound is partly on and partly off. This parameter defines the total 
+length of the interval in seconds.</lang>
+              </description>
+      
+                  <value from="0003" to="0081" unit="seconds">
+                <description>
+                    <lang xml:lang="de">Sekunden (Standard 10)</lang>
+                    <lang xml:lang="en">seconds (default 10)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="1" default="08">
+            <name>
+                <lang xml:lang="de">Sirenenalarm-Tonlänge </lang>
+                <lang xml:lang="en">Siren alarm tone length</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Die zusätzliche Sirene lässt ein anderes akustisches Signal ertönen, das sich von 
+der Signalisierung eines Rauchalarms unterscheidet. Dieser Ton geht an und aus. 
+Der Parameter definiert die Gesamtlänge des Tones im Zusammenhang mit der 
+Stille zwischen diesem Intervall.</lang>
+                <lang xml:lang="en">The  additional  siren  is  creating  a  different  acoustic  signal  differentiate  from  the 
+smoke alarm. This sound is partly on and partly off. This parameter defines the total 
+length of the sound versus silence within this interval.</lang>
+              </description>
+      
+                  <value from="01" to="63" unit="seconds">
+                <description>
+                    <lang xml:lang="de">Sekunden (Standard 8)</lang>
+                    <lang xml:lang="en">seconds (default 8)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="range" size="1" default="63">
+            <name>
+                <lang xml:lang="de">Wert des Ein-Befehls</lang>
+                <lang xml:lang="en">Value of On-Command </lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="63" unit="seconds">
+                <description>
+                    <lang xml:lang="de">(Standard 99)</lang>
+                    <lang xml:lang="en">(default 99)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="1" default="63">
+            <name>
+                <lang xml:lang="de">Wert des Aus-Befehls</lang>
+                <lang xml:lang="en">Value of Off-Command</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="63" unit="seconds">
+                <description>
+                    <lang xml:lang="de">(Standard 99)</lang>
+                    <lang xml:lang="en">(default 99)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Status automatischer Vernetzung von Rauchalarmen </lang>
+                <lang xml:lang="en">Status of automated meshing of smoke alarms</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Dieser  Rauchmelder  kann  automatisch  andere  Rauchdetektoren  des  gleichen 
+Typs über die Raucherkennung informieren. Diese werden wiederum Alarm geben. 
+Diese Funktion ist eine Voraussetzung von drahtlos vernetzten Rauchmeldern.</lang>
+                <lang xml:lang="en">This  smoke  detector  can  automatically  inform  other  smoke  detectors  of  same 
+type about smoke alarms. They will then also turn on the siren. This function is a  
+requirement of wireless networked smoke detectors</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">inaktiv</lang>
+                    <lang xml:lang="en">inactive</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">aktiv (Standard)</lang>
+                    <lang xml:lang="en">active (default)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Status automatischer Vernetzung von Batterie-Alarmen </lang>
+                <lang xml:lang="en">Status of automated meshing of battery alarms </lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Dieser  Rauchmelder  kann  automatisch  andere  Rauchmelder  des  gleichen Typs 
+über  einen  niedrigen  Batteriestand  informieren.  Diese  werden  wiederum  bei  
+eigenem  niedrigen  Batteriestand  selbst  Alarm  geben.  Diese  Funktion  ist  eine  
+Voraussetzung von drahtlos vernetzten Rauchmeldern.</lang>
+                <lang xml:lang="en">This  smoke  detector  can  automatically  inform  other  smoke  detectors  of  same 
+type about battery alarms. They will then also turn on the siren. This function is a  
+requirement of wireless networked smoke detectors.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">inaktiv</lang>
+                    <lang xml:lang="en">inactive</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">aktiv (Standard)</lang>
+                    <lang xml:lang="en">active (default)</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    
+  </ZWaveDevice>
+
+

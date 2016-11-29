@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="015f"/>
+        <productType value="0000"/>
+    <productId value="0000"/>
+    <libType value="05"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="67"/>
+    <appVersion value="01"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Z-Wave Touch panel mit 2 Kanälen</lang>
+            <lang xml:lang="en">Z-Wave touch panel switch with four channel    </lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Drücken und halten einer der Touch-flächen für 3 Sekunden</lang>
+            <lang xml:lang="en">Press and hold any key on the panel for 3 seconds. </lang>
+          </inclusionNote>
+            <productName>Touch Panel Switch </productName>
+            <brandName>MCOHome </brandName>
+            <productLine>Z-Wave Switch </productLine>
+            <productCode>MH-S314-EU</productCode>
+            <productVersion>V1.00</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0025"/>
+        <commandClass id="0027"/>
+        <commandClass id="0085"/>
+        <commandClass id="0060" version="3" controlled="true"/>
+        <commandClass id="008e" version="2"/>
+        <commandClass id="0072"/>
+        <commandClass id="0086"/>
+        <commandClass id="0020" controlled="true" inNIF="false"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="5" maxNodes="1">
+            <description>
+                <lang xml:lang="de">Die fünfte Gruppe wird für Reports verwendet</lang>
+                <lang xml:lang="en">The 5th association group is used for reporting devices’ state to the controller if any changes happen. This group supports one node, which defaults to controller node. </lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="4" maxNodes="5">
+            <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="5">
+            <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Die ersten 4 gruppen werden für das Schalten verwendet</lang>
+                <lang xml:lang="en">The first four groups are used for switching associated devices（switch N controlling group N），and each group can support up to 5 nodes or terminals. </lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+  
+    <endpoints>
+           <endpoint number="4">
+            <name>
+                <lang xml:lang="de">Schalter 4</lang>
+                <lang xml:lang="en">Switch 4</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0025"/>
+          </endpoint>
+           <endpoint number="3">
+            <name>
+                <lang xml:lang="de">Schalter 3</lang>
+                <lang xml:lang="en">Switch 3</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0025"/>
+          </endpoint>
+           <endpoint number="2">
+            <name>
+                <lang xml:lang="de">Schalter 2</lang>
+                <lang xml:lang="en">Switch 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0025"/>
+          </endpoint>
+           <endpoint number="1">
+            <name>
+                <lang xml:lang="de">Schalter 1</lang>
+                <lang xml:lang="en">Switch 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0025"/>
+          </endpoint>
+      </endpoints>
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/3db58abec40ed0a29ec5fda9bd1a149b3592e794.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

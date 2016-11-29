@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0063"/>
+        <productType value="5252"/>
+    <productId value="3530"/>
+    <libType value="00"/>
+    <protoVersion value="02"/>
+    <protoSubVersion value="61"/>
+    <appVersion value="00"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="false"/>
+    <listening value="true"/>
+    <routing value="false"/>
+            <rfFrequency>US</rfFrequency>
+            <certId>13934</certId>
+            <certNumber>ZC08-09060007</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">RF controlled duplex receptacle </lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en"></lang>
+          </inclusionNote>
+            <productName>Duplex Receptacle 3.0b</productName>
+            <brandName>GE</brandName>
+            <productLine>Wireless Lighting Controls</productLine>
+            <productCode>ZW1001</productCode>
+            <productVersion>3.0b</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0027"/>
+        <commandClass id="0020"/>
+        <commandClass id="0025"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+        <commandClass id="0077"/>
+        <commandClass id="0073"/>
+        <commandClass id="0075"/>
+        <commandClass id="0086"/>
+      </commandClasses>
+  
+  
+    <configParams>
+        <configParam number="3" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">LED light</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">The LED on the 45605 is
+set to turn ON when the connected outlet is turned OFF</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">The LED turns ON when the light is turned ON</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

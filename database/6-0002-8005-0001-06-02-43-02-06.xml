@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0002"/>
+        <productType value="8005"/>
+    <productId value="0001"/>
+    <libType value="06"/>
+    <protoVersion value="02"/>
+    <protoSubVersion value="43"/>
+    <appVersion value="02"/>
+    <appSubVersion value="06"/>
+        <basicClass value="04"/>
+            <genericClass value="08"/>
+            <specificClass value="04"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">steuerbarer Heizungsthermostat</lang>
+            <lang xml:lang="en">Radiator Thermostat</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de">Kurzer Druck Mitteltaste</lang>
+            <lang xml:lang="en">Short push middle button</lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Kurzer Druck Mitteltaste</lang>
+            <lang xml:lang="en">Short push middle button</lang>
+          </inclusionNote>
+            <productName>living connect</productName>
+            <brandName>Danfoss</brandName>
+            <productLine>Radiator Thermostat</productLine>
+                    <batteryType>AA</batteryType>
+            <batteryCount>2</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0080"/>
+        <commandClass id="0081"/>
+        <commandClass id="0043" version="2"/>
+        <commandClass id="0084" version="2"/>
+        <commandClass id="0086"/>
+        <commandClass id="0046"/>
+        <commandClass id="008f"/>
+        <commandClass id="0091"/>
+        <commandClass id="0072"/>
+        <commandClass id="0075" version="2"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="de">Ziel für alle Nachrichten des Gerätes</lang>
+                <lang xml:lang="en">Target for Wakeup and Override Notifications</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/589a0b04e3efa72e45846296793e1e8ab50f2e3f.gif" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

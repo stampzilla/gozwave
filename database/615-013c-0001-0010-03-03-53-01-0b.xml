@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="013c"/>
+        <productType value="0001"/>
+    <productId value="0010"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="53"/>
+    <appVersion value="01"/>
+    <appSubVersion value="0b"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">This in-wall switch module is a transceiver which is a security enabled device which based on Z-Wave Plus technology.</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Pressing Include button of PAN05
+three times within 2 seconds will
+enter exclusion mode.</lang>
+          </inclusionNote>
+            <productName>In Wall Single relay(1 way) switch module </productName>
+            <brandName>Philio</brandName>
+            <productLine>Philio Z-Wave Products</productLine>
+            <productCode>PAN05-1A </productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e"/>
+        <commandClass id="0072"/>
+        <commandClass id="0098"/>
+        <commandClass id="005a"/>
+        <commandClass id="007a"/>
+        <commandClass id="0073"/>
+        <commandClass id="0086" version="2" secure="true" nonSecure="false"/>
+        <commandClass id="0085" version="2" secure="true" nonSecure="false"/>
+        <commandClass id="0059" secure="true" nonSecure="false"/>
+        <commandClass id="0025" secure="true" nonSecure="false"/>
+        <commandClass id="0020" secure="true" nonSecure="false"/>
+        <commandClass id="0027" secure="true" nonSecure="false"/>
+        <commandClass id="0070" secure="true" nonSecure="false"/>
+        <commandClass id="0071" secure="true" nonSecure="false"/>
+        <commandClass id="0075" version="2" secure="true" nonSecure="false"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="en">SWITCH_BINARY_REPORT</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Edge or Pulse mode or Edge-Toggle mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Select Edge or
+Pulse
+mode or
+Edge-Tog
+gle mode.</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">1：Edge mode</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">2：Pulse mode</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">3：Edge-Toggle
+mode</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Switch state mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Select switch state mode.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">0 : Switch Off</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">1 : Last Switch
+State</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">2 : Switch On</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Manual On/Off mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Enable/disable Manual On/Off mode.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">0：Disable
+manual On/Off</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">1：Enable
+manual On/Off</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">LED indication mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Select LED indication mode.</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">1：Show switch
+state</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">2：Show night
+mode</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">3 : One flash
+mode</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Auto off timer</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Set Auto off timer.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">0：Disable auto
+off function</lang>
+                  </description>
+              </value>
+            <value from="0001" to="7fff" unit="sec">
+                <description>
+                    <lang xml:lang="en">Select time interval for auto off function.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">RF Off command mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Select RF Off command mode.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">0：Switch off</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">1：Ignore</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">2：Switch toggle</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">3：Switch on</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/597e2c0773c09338fedf6a5731cd5cda5c757c83.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

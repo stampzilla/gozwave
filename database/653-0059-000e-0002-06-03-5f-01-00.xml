@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0059"/>
+        <productType value="000e"/>
+    <productId value="0002"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="5f"/>
+    <appVersion value="01"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>Australia and New Zealand</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">SSP 301 is a switch and repeater mains powered device with ANZ Plug,that forms part of a Z Wave Plus™ home automation network. that will switch On/Off of a connected appliance either by the Z-Wave network or manually by pressing its integrated button.</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Press and hold the
+button on SSP 301 for 4
+to 7 seconds then
+release. The network
+status LED will start
+flashing (twice per
+second) on successful
+start of inclusion
+process.</lang>
+          </inclusionNote>
+            <productName>SSP 301</productName>
+            <brandName>Secure</brandName>
+            <productLine>SSP</productLine>
+            <productCode>PMR000-Z23 </productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0073"/>
+        <commandClass id="0059"/>
+        <commandClass id="0025"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0070"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="005a"/>
+        <commandClass id="0020"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="4">
+            <description>
+                <lang xml:lang="en">Lifeline</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Delta based switch Status reporting</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Sends a report if switch was used.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Switch status report is disabled.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Switch status report is enabled.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Time interval based Switch Status Reporting</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Sets time interval.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+            <value from="8000" to="7fff" unit="sec">
+                <description>
+                    <lang xml:lang="en">Define time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Relay &amp; LED configuration</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Configure relay status after power cycle.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Relay status after power cycle = off; LED status is ON for relay close and OFF for relay open.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Retain last status over the power cycle; LED status is ON for relay close and OFF for relay open.</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Relay status after power cycle = off; LED status is ON for relay open and OFF for relay close.</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">	Retain last status over the power cycle; LED status is ON for relay open and OFF for relay close.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/de2854fd66c6a0710f48c34484e60902df6b44e1.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0258"/>
+        <productType value="0003"/>
+    <productId value="1087"/>
+    <libType value="03"/>
+    <protoVersion value="04"/>
+    <protoSubVersion value="05"/>
+    <appVersion value="03"/>
+    <appSubVersion value="46"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">AC Powered On/Off Switch Plug with Energy consuption Measuring</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Press the button three times within 1.5 second, the device will enter inclusion mode. And the
+LED will flash on and off with green alternately five times within 2 seconds.</lang>
+          </inclusionNote>
+            <productName>Wall Plug</productName>
+            <brandName> CoolCam</brandName>
+            <productLine>Z-Wave Plus Device</productLine>
+            <productCode>NAS_WR01Z</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="005a"/>
+        <commandClass id="0073"/>
+        <commandClass id="0070"/>
+        <commandClass id="0025"/>
+        <commandClass id="0027"/>
+        <commandClass id="0071" version="4"/>
+        <commandClass id="0032" version="4"/>
+        <commandClass id="0020"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="3" maxNodes="5">
+            <description>
+                <lang xml:lang="en">GROUP 3 allows for Send Notification to associated devices in this group. This Group Support: 
+NOTIFICATION_REPORT_V4</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="en">GROUP 2 allows for sending control commands to associated devices such as Siren, relay module,
+lighting, etc. If current load is over the max current defined in parameter #3, the Plug will send a
+BASIC_SET (0xFF) to associated devices. When current load is normal, plug will send a BASIC_SET
+(0x00) to associated devices. This Group Support: 
+BASIC_SET.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">GROUP 1 is lifeline service that assigned to plug status – ON/OFF. It enables the Plug to send
+reports and readings to Z‐Wave Controller or Z‐Wave Gateway. This Group Support:
+NOTIFICATION_REPORT_V4, 
+METER_REPORT_V4, 
+SWITCH_BINARY_REPORT, 
+DEVICE_RESET_LOCALLY_NOTIFICATION.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Send Meter Report Enable</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter defines Disable/Enable meter report measure data to controller.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">disable report</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">enable report</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="2" default="012c">
+            <name>
+                <lang xml:lang="en">Meter Report Interval</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter defines interval time (in seconds) that Meter report data to main controller.</lang>
+              </description>
+      
+                  <value from="0001" to="ffff" unit="sec">
+                <description>
+                    <lang xml:lang="en">Define a time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="range" size="1" default="0d">
+            <name>
+                <lang xml:lang="en">Configure maximum over‐load current.</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter defines maximum current the plug can provide to load that be connected to plug.
+If the current consumed by load is greater than maximum current, the plug will cut off power,
+and send NOTIFICATION_EVENT_POWER_MANAGEMENT_OVER_LOAD_DETECTED to associated
+devices in lifeline. Red Led will blink every seconds until current is normal (less than Parameter
+#3). You must remove the loader and turn on the Plug (press the button once) to enable current
+monitor and clear NOTIFICATION ALARM.
+This parameter value must be great than #4. If user set this parameter to default by Configure CC,
+the parameter #4 will be set to default value.</lang>
+              </description>
+      
+                  <value from="01" to="10" unit="A">
+                <description>
+                    <lang xml:lang="en">Set the upper current threshold.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="1" default="0c">
+            <name>
+                <lang xml:lang="en">Configure maximum Alarm current.</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter defines maximum current, if the current plug provide to load is great than this
+parameter, the plug will light yellow LED, but plug cannot cut‐off power.
+This parameter value must be less than parameter #3. If user set this parameter to default by
+Configure CC, the parameter #3 will be set to default value.</lang>
+              </description>
+      
+                  <value from="01" to="0f" unit="A">
+                <description>
+                    <lang xml:lang="en">Set Alarm upper current threshold.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Led Display Enable</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter defines the LED indication Function ON/OFF. This parameter can be configured
+with 0 or 1, where 0 means disable LED indication Function and will always be turn‐off, and 1
+means enable LED Function.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Function disabled.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Function enabled.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="range" size="1" default="05">
+            <name>
+                <lang xml:lang="en">Configure report by Current Changed</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter defines by how much current changed must change to be reported to the Z‐Wave
+Controller or Z‐Wave Gateway, in percents. If the rate of current change ratio is greater than this
+parameter, the plug will report the results, voltage, current, power and energy, that plug measure
+to Z‐Wave Controller or Z‐Wave Gateway.</lang>
+              </description>
+      
+                  <value from="01" to="64" unit="%">
+                <description>
+                    <lang xml:lang="en">Define a treshold.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Remember Relay ON/OFF status</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter defined the relay status if remember or not. If remembered, the plug will restore
+the relay status last power off when the plug supply power next time.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Don’t Remember, the relay will keep OFF when Plug Supply Power.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Remember the Relay Status.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Configure Plug Time switch Function</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter defines the timer function Enable/Disable. This parameter can be configured with
+0 or 1, where 0 means disable time switch function and 1 enable. The time period will be defined
+in parameter #9.
+If this parameter is Set to 1, and when turn the plug relay on, the timer in plug start run with time
+period defined in parameter #9 and the plug will turn the relay off.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Time switch disable.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Time switch enable.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="range" size="2" default="0096">
+            <name>
+                <lang xml:lang="en">Configure Time switch Period</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter defines the time period that plug time switch off. This parameter can be
+configured 1 ~ 65535(in minutes). If Parameter #9 is set to ‘1’, and relay is turn‐on, the relay will
+be turn‐off after delay this parameter.</lang>
+              </description>
+      
+                  <value from="0001" to="ffff" unit="min">
+                <description>
+                    <lang xml:lang="en">Define a time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Button On/Off Enable</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter defines the button on/off function is enabled or not on the top of the wall plug.
+This parameter can be configured 0 and 1. If this parameter is set to ‘1’, users can turn on and off
+the wall plug by pressing the button on the top of the wall plug. If this parameter is set to ‘0’, the
+wall plug cannot be turned on and off by pressing the button.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Function is enabled.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/b7acc9dfebf7536c573580c1161891660f0ccd42.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

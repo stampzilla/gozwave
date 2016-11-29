@@ -1,0 +1,908 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0086"/>
+        <productType value="0102"/>
+    <productId value="005f"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="5f"/>
+    <appVersion value="01"/>
+    <appSubVersion value="1e"/>
+        <basicClass value="04"/>
+            <genericClass value="31"/>
+            <specificClass value="03"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+            <rfFrequency>US</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Aeon Labs Home Energy Meter Gen5 is a Z-Wave device that can monitor the total amount of electricity of your home. 
+It can report the wattage energy usage and KWH usage to a Z-Wave Controller (especially a gateway). </lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Turn the primary controller of Z-Wave network into inclusion mode, short press the product’s Action button that you can find on the product&#039;s housing. </lang>
+          </inclusionNote>
+            <productName>Home Energy Meter Gen5</productName>
+            <brandName>Aeotec</brandName>
+            <productLine>Z-wave Product Line</productLine>
+            <productCode>ZW095-A</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2" secure="true"/>
+        <commandClass id="0086" version="2" secure="true"/>
+        <commandClass id="0072" version="2" secure="true"/>
+        <commandClass id="0032" version="3"/>
+        <commandClass id="0056" secure="true"/>
+        <commandClass id="0060" version="3"/>
+        <commandClass id="0070"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="007a" version="2"/>
+        <commandClass id="0073"/>
+        <commandClass id="0098" secure="true"/>
+        <commandClass id="005a" secure="true"/>
+        <commandClass id="008e" version="3"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Lifeline</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="2" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Energy Detection Mode Configuration</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter is used to configure the energy detection
+mode when the parameter 101~103 have been configured.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">report Wattage and the absolute KWH value</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">report positive/negative Wattage and the algebraic sum KWH value</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">report positive/negative Wattage and the positive KWH value (consuming electricity)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">report positive/negative Wattage and the negative KWH value (generating electricity)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Enable/Disable the Function of Parameters 4 to 10.</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Enable selective reporting only when power change reaches
+a certain threshold or percentage set in 4‐10 below.  This is
+used to reduce network traffic.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">disable </lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">enable</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="2" default="0032">
+            <name>
+                <lang xml:lang="en">Induce an automatic report of whole HEM.</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Threshold change in wattage to induce an automatic report
+(Whole HEM).</lang>
+              </description>
+      
+                  <value from="0001" to="7fff" unit="W">
+                <description>
+                    <lang xml:lang="en">Define a value.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="range" size="2" default="0032">
+            <name>
+                <lang xml:lang="en">Induce an automatic report for Clamp 1.</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Threshold change in wattage to induce an automatic report
+(Whole HEM).</lang>
+              </description>
+      
+                  <value from="0001" to="7fff" unit="W">
+                <description>
+                    <lang xml:lang="en">Define a value.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="range" size="2" default="0032">
+            <name>
+                <lang xml:lang="en">Induce an automatic report for Clamp 2.</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Threshold change in wattage to induce an automatic report
+(Whole HEM).</lang>
+              </description>
+      
+                  <value from="0001" to="7fff" unit="W">
+                <description>
+                    <lang xml:lang="en">Define a value.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="range" size="1" default="0a">
+            <name>
+                <lang xml:lang="en">Induce an automatic report of whole HEM(%)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Percentage change in wattage to induce an automatic report.
+(Whole HEM).</lang>
+              </description>
+      
+                  <value from="00" to="64" unit="%">
+                <description>
+                    <lang xml:lang="en">Define a treshold.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="range" size="1" default="0a">
+            <name>
+                <lang xml:lang="en">Induce an automatic report for Clamp 1(%)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Percentage change in wattage to induce an automatic report.
+(Whole HEM).</lang>
+              </description>
+      
+                  <value from="00" to="64" unit="%">
+                <description>
+                    <lang xml:lang="en">Define a treshold.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="range" size="1" default="0a">
+            <name>
+                <lang xml:lang="en">Induce an automatic report for Clamp 2(%)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Percentage change in wattage to induce an automatic report.
+(Whole HEM).</lang>
+              </description>
+      
+                  <value from="00" to="64" unit="%">
+                <description>
+                    <lang xml:lang="en">Define a treshold.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Enable /Disable CRC-16 Encapsulation</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">disable</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">enable</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="101" type="bitset" size="4" default="00000002">
+            <name>
+                <lang xml:lang="en">Reports Group 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Which reports need to send in Report group 1</lang>
+              </description>
+      
+                  <value from="00000000" to="00000000">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for KWH)
+at the
+group time
+interval
+(Whole
+HEM)</lang>
+                  </description>
+              </value>
+            <value from="00000001" to="00000001">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for
+wattage)
+at the
+group time
+interval
+(Whole
+HEM)</lang>
+                  </description>
+              </value>
+            <value from="00000002" to="00000002">
+                <description>
+                    <lang xml:lang="en">Auto
+send
+Meter
+REPORT
+(for V) at
+the
+group
+time
+interval
+(Whole
+HEM)</lang>
+                  </description>
+              </value>
+            <value from="00000003" to="00000003">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for A) at
+the group
+time
+interval
+(Whole
+HEM)</lang>
+                  </description>
+              </value>
+            <value from="00000004" to="00000007" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="00000008" to="00000008">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for Watt)
+at the
+group time
+interval
+(Clamp 1)</lang>
+                  </description>
+              </value>
+            <value from="00000009" to="00000009">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for Watt)
+at the
+group time
+interval
+(Clamp 2)</lang>
+                  </description>
+              </value>
+            <value from="0000000a" to="0000000a" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="0000000b" to="0000000b">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for kWh)
+at the
+group time
+interval
+(Clamp 1)</lang>
+                  </description>
+              </value>
+            <value from="0000000c" to="0000000c">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for kWh)
+at the
+group time
+interval
+(Clamp 2)</lang>
+                  </description>
+              </value>
+            <value from="0000000d" to="0000000f" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="00000010" to="00000010">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for V) at
+the group
+time
+interval
+(Clamp 1)</lang>
+                  </description>
+              </value>
+            <value from="00000011" to="00000011">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for V) at
+the group
+time
+interval
+(Clamp 2)</lang>
+                  </description>
+              </value>
+            <value from="00000012" to="00000012" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="00000013" to="00000013">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for A) at
+the group
+time
+interval
+(Clamp 1)</lang>
+                  </description>
+              </value>
+            <value from="00000014" to="00000014">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for A) at
+the group
+time
+interval
+(Clamp 2)</lang>
+                  </description>
+              </value>
+            <value from="00000015" to="00000017" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="00000018" to="0000001f" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="102" type="bitset" size="4" default="00000001">
+            <name>
+                <lang xml:lang="en">Reports Group 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Which reports need to send in Report group 2</lang>
+              </description>
+      
+                  <value from="00000000" to="00000000">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for KWH)
+at the
+group time
+interval
+(Whole
+HEM)</lang>
+                  </description>
+              </value>
+            <value from="00000001" to="00000001">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for
+wattage)
+at the
+group time
+interval
+(Whole
+HEM)</lang>
+                  </description>
+              </value>
+            <value from="00000002" to="00000002">
+                <description>
+                    <lang xml:lang="en">Auto
+send
+Meter
+REPORT
+(for V) at
+the
+group
+time
+interval
+(Whole
+HEM)</lang>
+                  </description>
+              </value>
+            <value from="00000003" to="00000003">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for A) at
+the group
+time
+interval
+(Whole
+HEM)</lang>
+                  </description>
+              </value>
+            <value from="00000004" to="00000007" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="00000008" to="00000008">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for Watt)
+at the
+group time
+interval
+(Clamp 1)</lang>
+                  </description>
+              </value>
+            <value from="00000009" to="00000009">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for Watt)
+at the
+group time
+interval
+(Clamp 2)</lang>
+                  </description>
+              </value>
+            <value from="0000000a" to="0000000a" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="0000000b" to="0000000b">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for kWh)
+at the
+group time
+interval
+(Clamp 1)</lang>
+                  </description>
+              </value>
+            <value from="0000000c" to="0000000c">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for kWh)
+at the
+group time
+interval
+(Clamp 2)</lang>
+                  </description>
+              </value>
+            <value from="0000000d" to="0000000f" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="00000010" to="00000010">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for V) at
+the group
+time
+interval
+(Clamp 1)</lang>
+                  </description>
+              </value>
+            <value from="00000011" to="00000011">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for V) at
+the group
+time
+interval
+(Clamp 2)</lang>
+                  </description>
+              </value>
+            <value from="00000012" to="00000012" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="00000013" to="00000013">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for A) at
+the group
+time
+interval
+(Clamp 1)</lang>
+                  </description>
+              </value>
+            <value from="00000014" to="00000014">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for A) at
+the group
+time
+interval
+(Clamp 2)</lang>
+                  </description>
+              </value>
+            <value from="00000015" to="00000017" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="00000018" to="0000001f" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="103" type="bitset" size="4" default="00000000">
+            <name>
+                <lang xml:lang="en">Reports Group 3</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Which reports need to send in Report group 3</lang>
+              </description>
+      
+                  <value from="00000000" to="00000000">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for KWH)
+at the
+group time
+interval
+(Whole
+HEM)</lang>
+                  </description>
+              </value>
+            <value from="00000001" to="00000001">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for
+wattage)
+at the
+group time
+interval
+(Whole
+HEM)</lang>
+                  </description>
+              </value>
+            <value from="00000002" to="00000002">
+                <description>
+                    <lang xml:lang="en">Auto
+send
+Meter
+REPORT
+(for V) at
+the
+group
+time
+interval
+(Whole
+HEM)</lang>
+                  </description>
+              </value>
+            <value from="00000003" to="00000003">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for A) at
+the group
+time
+interval
+(Whole
+HEM)</lang>
+                  </description>
+              </value>
+            <value from="00000004" to="00000007" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="00000008" to="00000008">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for Watt)
+at the
+group time
+interval
+(Clamp 1)</lang>
+                  </description>
+              </value>
+            <value from="00000009" to="00000009">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for Watt)
+at the
+group time
+interval
+(Clamp 2)</lang>
+                  </description>
+              </value>
+            <value from="0000000a" to="0000000a" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="0000000b" to="0000000b">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for kWh)
+at the
+group time
+interval
+(Clamp 1)</lang>
+                  </description>
+              </value>
+            <value from="0000000c" to="0000000c">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for kWh)
+at the
+group time
+interval
+(Clamp 2)</lang>
+                  </description>
+              </value>
+            <value from="0000000d" to="0000000f" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="00000010" to="00000010">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for V) at
+the group
+time
+interval
+(Clamp 1)</lang>
+                  </description>
+              </value>
+            <value from="00000011" to="00000011">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for V) at
+the group
+time
+interval
+(Clamp 2)</lang>
+                  </description>
+              </value>
+            <value from="00000012" to="00000012" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="00000013" to="00000013">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for A) at
+the group
+time
+interval
+(Clamp 1)</lang>
+                  </description>
+              </value>
+            <value from="00000014" to="00000014">
+                <description>
+                    <lang xml:lang="en">Auto send
+Meter
+REPORT
+(for A) at
+the group
+time
+interval
+(Clamp 2)</lang>
+                  </description>
+              </value>
+            <value from="00000015" to="00000017" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="00000018" to="0000001f" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="111" type="range" size="4" default="0000003c">
+            <name>
+                <lang xml:lang="en">Time Interval Report Group 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The time interval of sending Report group 1</lang>
+              </description>
+      
+                  <value from="00000001" to="7fffffff" unit="sec">
+                <description>
+                    <lang xml:lang="en">Define a time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="112" type="range" size="4" default="00000078">
+            <name>
+                <lang xml:lang="en">Time Interval Report Group 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The time interval of sending Report group 2</lang>
+              </description>
+      
+                  <value from="00000001" to="7fffffff" unit="sec">
+                <description>
+                    <lang xml:lang="en">Define a time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="113" type="range" size="4" default="00000078">
+            <name>
+                <lang xml:lang="en">Time Interval Report Group 3</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The time interval of sending Report group 3</lang>
+              </description>
+      
+                  <value from="00000001" to="7fffffff" unit="sec">
+                <description>
+                    <lang xml:lang="en">Define a time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="200" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Partner ID</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Aeon Labs Standard Product</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Others</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="252" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Lock Configuration</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Enable/Disable Lock Configuration</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">All configuration parameters are configurable.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">All configuration parameters are not configurable (Locked).</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="255" type="constant" size="4" default="00000000">
+            <name>
+                <lang xml:lang="en">Reset to Default Factory Setting</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00000001" to="00000001">
+                <description>
+                    <lang xml:lang="en">Resets all configuration parameters to default setting.</lang>
+                  </description>
+              </value>
+            <value from="55555555" to="55555555">
+                <description>
+                    <lang xml:lang="en">Reset the product to default factory setting and be excluded from the Z-wave network.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/6eba437d02ab555e4ac5c2b4437bb990a480dba1.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

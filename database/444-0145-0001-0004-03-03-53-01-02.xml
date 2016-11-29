@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0145"/>
+        <productType value="0001"/>
+    <productId value="0004"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="53"/>
+    <appVersion value="01"/>
+    <appSubVersion value="02"/>
+        <basicClass value="04"/>
+            <genericClass value="31"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>Japan (922-926 MHz)</rfFrequency>
+            <certId>15364</certId>
+            <certNumber>ZC08-13040022</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">measure &amp; monitor power</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en"></lang>
+          </inclusionNote>
+            <productName>Smat Tap 100V/15A</productName>
+            <brandName>BUFFALO</brandName>
+            <productLine>Z-Wave Meter</productLine>
+            <productCode>HW-100V15A-ZW</productCode>
+            <productVersion>v1.0</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0086"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0098"/>
+        <commandClass id="0032" version="3" secure="true" nonSecure="false"/>
+        <commandClass id="0087" secure="true" nonSecure="false"/>
+        <commandClass id="0077" secure="true" nonSecure="false"/>
+        <commandClass id="0070" secure="true" nonSecure="false"/>
+        <commandClass id="0020"/>
+      </commandClasses>
+  
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="0a">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Store in EEPROM</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="2" type="constant" size="1" default="03">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Store as Treshold</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="3" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Store send Options in EEPROM</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="4" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Store Value as Destination Node ID</lang>
+              </description>
+      
+          </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/20c21f84fbefcf96482ae95ab4769ba8736e102a.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

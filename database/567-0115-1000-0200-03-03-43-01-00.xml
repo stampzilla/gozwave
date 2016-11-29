@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0115"/>
+        <productType value="1000"/>
+    <productId value="0200"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="43"/>
+    <appVersion value="01"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+                    
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en">Wall Plug Switch</lang>
+            <lang xml:lang="ru">Выключатель в розетку</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+            <lang xml:lang="ru"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Dreifach auf Schaltfläche</lang>
+            <lang xml:lang="en">Button triple press</lang>
+            <lang xml:lang="ru">Тройное нажатие на кнопоку</lang>
+          </inclusionNote>
+            <productName>Wall Plug Switch</productName>
+            <brandName>Z-Wave.Me</brandName>
+            <productLine>Düwi modification</productLine>
+                <productVersion>1.0</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" controlled="true"/>
+        <commandClass id="0025"/>
+        <commandClass id="0027"/>
+        <commandClass id="0032" version="4"/>
+        <commandClass id="0059"/>
+        <commandClass id="005a"/>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+        <commandClass id="0075"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0086"/>
+        <commandClass id="008e" version="2"/>
+        <commandClass id="0060" controlled="true"/>
+        <commandClass id="0087"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Reports über alle Änderungen des Schaltzustandes</lang>
+                <lang xml:lang="en">Send Reports on switch state change</lang>
+                <lang xml:lang="ru">Отправлять отчёты при изменении состояния выключателя</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Tastendruck</lang>
+                <lang xml:lang="en">Controlled by buttons</lang>
+                <lang xml:lang="ru">Управляемые с кнопки</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">LED Modus</lang>
+                <lang xml:lang="en">LED mode</lang>
+                <lang xml:lang="ru">Режим световой индикации</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Bestimmt das Verhalten der LED am Gerät</lang>
+                <lang xml:lang="en">Set LED indication mode</lang>
+                <lang xml:lang="ru">Режим работы светодиода</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="ru">Отключен</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Zeigt Schaltzustand</lang>
+                    <lang xml:lang="en">Show switch state</lang>
+                    <lang xml:lang="ru">Индикация состояния реле</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">von Indikator-Kommandoklasse gesteuert</lang>
+                    <lang xml:lang="en">Operated by Indicator Command Class</lang>
+                    <lang xml:lang="ru">Управляется классом комманд Indicator</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">Automatisches Auschalten nach</lang>
+                <lang xml:lang="en">Automatically switch off after</lang>
+                <lang xml:lang="ru">Авто отключение первого канала через</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Wenn nicht 0, dann schaltet das Gerät nach festgelegten Sekunden automatisch wieder ab</lang>
+                <lang xml:lang="en">If not zero, automatically switch device off after a user defined time</lang>
+                <lang xml:lang="ru">Если не 0, автоматически отключает реле первого канала после определённого пользователем времени</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="0001" to="ffff">
+                <description>
+                    <lang xml:lang="de">Sekunden</lang>
+                    <lang xml:lang="en">sec</lang>
+                    <lang xml:lang="ru">секунд</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Reaktion auf Funkkommando AUS</lang>
+                <lang xml:lang="en">What to do on RF off command</lang>
+                <lang xml:lang="ru">Действие при получении радиокоманды выключения первого канала</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert, wie das Funkkommando AUS interpretiert werden soll.</lang>
+                <lang xml:lang="en">Defines how to interpret RF Off command. Can be used in conjunction with Auto Off function: Ignore - to switch on the light by motion detectors and switch it off after some amount of time: in case of multiple motion detectors each would try to switch the light off that would break logics; Switch on - to switch on the light on both On and Off paddle press on the remote and switch it off after some amount of time. Button off click will still work (if button operations are not disabled).</lang>
+                <lang xml:lang="ru">Определяет поведение при получении радио команды выключения первого канал. Может использоваться совместно с функцией авто отключения: Игнорирование - для включения света по датчику движения и отключения по прошествии определённого времени: в случае использования нескольких датчиков движения каждый будет пытаться выключить свет сам, что приведёт к неправильной логике работы; Включить нагрузку - для включения света при нажатии на кнопки Вкл и Выкл на пульте управления и отключения по прошествии определённого времени. Выключение по кнопке будет продолжать работать (если не отключено).</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Ausschalten</lang>
+                    <lang xml:lang="en">Switch off</lang>
+                    <lang xml:lang="ru">Выключить нагрузку</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Ignorieren</lang>
+                    <lang xml:lang="en">Ignore</lang>
+                    <lang xml:lang="ru">Игнорировать</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Anschalten</lang>
+                    <lang xml:lang="en">Switch on</lang>
+                    <lang xml:lang="ru">Включить нагрузку</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Schalte ein, wenn vorher ausgeschaltet und umgekehrt.</lang>
+                    <lang xml:lang="en">Switch on if load is off else switch off</lang>
+                    <lang xml:lang="ru">Включить, если нагрузка выключена, иначе выключить</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Automatische Rückkehr zu letztem Schaltzustand nach Stromausfall</lang>
+                <lang xml:lang="en">Restore switch state after power cycle</lang>
+                <lang xml:lang="ru">Восстанавливать состояние реле после отключения питания</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert das Verhalten des Gerätes nach Stromausfall</lang>
+                <lang xml:lang="en">Defines if the switch should restore switch state to the last state prior to device power off (power cycle).</lang>
+                <lang xml:lang="ru">Определяет восстанавливать ли состояние реле на то, которое было до отключения питания устройства.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Nein, ausschalten</lang>
+                    <lang xml:lang="en">No, turn off</lang>
+                    <lang xml:lang="ru">Нет, выключится</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Ja</lang>
+                    <lang xml:lang="en">Yes</lang>
+                    <lang xml:lang="ru">Да</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="20" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">Energieverbrauch</lang>
+                <lang xml:lang="en">Energy consumption</lang>
+                <lang xml:lang="ru">Энергопотребление первого канала</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Last in Watt, um Energieverbrauch zu berechnen. Max 1800 W.</lang>
+                <lang xml:lang="en">Specify the consumption of the load in watts, for the calculation of power consumption. Max load 1800 W.</lang>
+                <lang xml:lang="ru">Укажите потребление нагрузки в ваттах, для подсчета энергопотребления. Максимальная нагрузка 1800 Ватт.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="0001" to="0dac">
+                <description>
+                    <lang xml:lang="de">Watts</lang>
+                    <lang xml:lang="en">Watts</lang>
+                    <lang xml:lang="ru">Ватт</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="21" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Aus Farb</lang>
+                <lang xml:lang="en">Off color</lang>
+                <lang xml:lang="ru">Цвет Выкл</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Color for Off state</lang>
+                <lang xml:lang="ru">Цвет выключенного состояния</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Aus</lang>
+                    <lang xml:lang="en">Off</lang>
+                    <lang xml:lang="ru">Выключен</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Rot</lang>
+                    <lang xml:lang="en">Red</lang>
+                    <lang xml:lang="ru">Красный</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Grün</lang>
+                    <lang xml:lang="en">Green</lang>
+                    <lang xml:lang="ru">Зелёный</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Blau</lang>
+                    <lang xml:lang="en">Blue</lang>
+                    <lang xml:lang="ru">Синий</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Gelb</lang>
+                    <lang xml:lang="en">Yellow</lang>
+                    <lang xml:lang="ru">Желтый</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="22" type="rangemapped" size="1" default="03">
+            <name>
+                <lang xml:lang="de">Auf Farb</lang>
+                <lang xml:lang="en">On color</lang>
+                <lang xml:lang="ru">Цвет Вкл</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Color for On state</lang>
+                <lang xml:lang="ru">Цвет включенного состояния</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Aus</lang>
+                    <lang xml:lang="en">Off</lang>
+                    <lang xml:lang="ru">Выключен</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Rot</lang>
+                    <lang xml:lang="en">Red</lang>
+                    <lang xml:lang="ru">Красный</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Grün</lang>
+                    <lang xml:lang="en">Green</lang>
+                    <lang xml:lang="ru">Зелёный</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Blau</lang>
+                    <lang xml:lang="en">Blue</lang>
+                    <lang xml:lang="ru">Синий</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Gelb</lang>
+                    <lang xml:lang="en">Yellow</lang>
+                    <lang xml:lang="ru">Желтый</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/3e1ffb02bbb4e3bd8824e685323c7918da2ebf84.gif" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

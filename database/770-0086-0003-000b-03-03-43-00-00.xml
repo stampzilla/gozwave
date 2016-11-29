@@ -1,0 +1,1205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0086"/>
+        <productType value="0003"/>
+    <productId value="000b"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="43"/>
+    <appVersion value="00"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+            <rfFrequency>US</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Aeotec by Aeon Labs Smart Strip is a power board with 6 power points of which 4 can
+be wireless controlled. Customer can turn on/off their electrics when needed with
+manually operation or Z‐wave wireless control. </lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en"></lang>
+          </inclusionNote>
+            <productName>Aeon Labs Smart Strip</productName>
+            <brandName>Aeon Labs</brandName>
+                    <productVersion>1</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0025"/>
+        <commandClass id="0032" version="3"/>
+        <commandClass id="0027"/>
+        <commandClass id="0020"/>
+        <commandClass id="0060" version="2"/>
+        <commandClass id="0070"/>
+        <commandClass id="0085"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0086"/>
+        <commandClass id="00ef"/>
+        <commandClass id="0082"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Hail Command, Basic Report</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="4" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Wattage Report</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Enable selective reporting only when
+power change reaches a certain
+threshold or percentage set in parameterrs 4‐11.
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">disable</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">enable</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="range" size="2" default="0019">
+            <name>
+                <lang xml:lang="en">Automatic Report Whole Smart Strip</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Threshold change in wattage to induce an
+automatic report.</lang>
+              </description>
+      
+                  <value from="0000" to="959f" unit="W">
+                <description>
+                    <lang xml:lang="en">Define a change in wattage to induce a report.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="range" size="2" default="0019">
+            <name>
+                <lang xml:lang="en">Automatic Report Socket 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Threshold change in wattage to induce an
+automatic report.</lang>
+              </description>
+      
+                  <value from="0000" to="959f" unit="W">
+                <description>
+                    <lang xml:lang="en">Define a change in wattage to induce a report.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="range" size="2" default="0019">
+            <name>
+                <lang xml:lang="en">Automatic Report Socket 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Threshold change in wattage to induce an
+automatic report.</lang>
+              </description>
+      
+                  <value from="0000" to="959f" unit="W">
+                <description>
+                    <lang xml:lang="en">Define a change in wattage to induce a report.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="range" size="2" default="0019">
+            <name>
+                <lang xml:lang="en">Automatic Report Socket 3</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Threshold change in wattage to induce an
+automatic report.</lang>
+              </description>
+      
+                  <value from="0000" to="959f" unit="W">
+                <description>
+                    <lang xml:lang="en">Define a change in wattage to induce a report.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="range" size="2" default="0019">
+            <name>
+                <lang xml:lang="en">Automatic Report Socket 4</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Threshold change in wattage to induce an
+automatic report.</lang>
+              </description>
+      
+                  <value from="0000" to="959f" unit="W">
+                <description>
+                    <lang xml:lang="en">Define a change in wattage to induce a report.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="range" size="2" default="0019">
+            <name>
+                <lang xml:lang="en">Automatic Report Socket 5</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Threshold change in wattage to induce an automatic report.</lang>
+              </description>
+      
+                  <value from="0000" to="959f" unit="W">
+                <description>
+                    <lang xml:lang="en">Define a change in wattage to induce a report.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="range" size="2" default="0019">
+            <name>
+                <lang xml:lang="en">Automatic Report Socket 6</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Threshold change in wattage to induce an
+automatic report.</lang>
+              </description>
+      
+                  <value from="0000" to="959f" unit="W">
+                <description>
+                    <lang xml:lang="en">Define a change in wattage to induce a report.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="range" size="1" default="05">
+            <name>
+                <lang xml:lang="en">Automatic Report Whole Smart Strip</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Percentage change in wattage to induce an
+automatic report.</lang>
+              </description>
+      
+                  <value from="00" to="64" unit="%">
+                <description>
+                    <lang xml:lang="en">Define a change in wattage to induce a report.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="range" size="1" default="05">
+            <name>
+                <lang xml:lang="en">Automatic Report Socket 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Percentage change in wattage to induce an
+automatic report.</lang>
+              </description>
+      
+                  <value from="00" to="64" unit="%">
+                <description>
+                    <lang xml:lang="en">Define a change in wattage to induce a report.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="14" type="range" size="1" default="05">
+            <name>
+                <lang xml:lang="en">Automatic Report Socket 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Percentage change in wattage to induce an
+automatic report.</lang>
+              </description>
+      
+                  <value from="00" to="64" unit="%">
+                <description>
+                    <lang xml:lang="en">Define a change in wattage to induce a report.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="15" type="range" size="1" default="05">
+            <name>
+                <lang xml:lang="en">Automatic Report Socket 3</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Percentage change in wattage to induce an
+automatic report.</lang>
+              </description>
+      
+                  <value from="00" to="64" unit="%">
+                <description>
+                    <lang xml:lang="en">Define a change in wattage to induce a report.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="16" type="range" size="1" default="05">
+            <name>
+                <lang xml:lang="en">Automatic Report Socket 4</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Percentage change in wattage to induce an
+automatic report.</lang>
+              </description>
+      
+                  <value from="00" to="64" unit="%">
+                <description>
+                    <lang xml:lang="en">Define a change in wattage to induce a report.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="17" type="range" size="1" default="05">
+            <name>
+                <lang xml:lang="en">Automatic Report Socket 5</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Percentage change in wattage to induce an
+automatic report.</lang>
+              </description>
+      
+                  <value from="00" to="64" unit="%">
+                <description>
+                    <lang xml:lang="en">Define a change in wattage to induce a report.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="18" type="range" size="1" default="05">
+            <name>
+                <lang xml:lang="en">Automatic Report Socket 6</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Percentage change in wattage to induce an
+automatic report.</lang>
+              </description>
+      
+                  <value from="00" to="64" unit="%">
+                <description>
+                    <lang xml:lang="en">Define a change in wattage to induce a report.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="80" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Status of Load</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Status of load changed，send group 1
+associate nodes Hail CC or Basic report
+CC.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">No send.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Send Hail CC.</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Send Basic report.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="90" type="bitset" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Get Temperature</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Get temperature of Smart Strip（Only GET
+is valid).</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">2^-8</lang>
+                  </description>
+              </value>
+            <value from="0001" to="0001">
+                <description>
+                    <lang xml:lang="en">2^-7</lang>
+                  </description>
+              </value>
+            <value from="0002" to="0002">
+                <description>
+                    <lang xml:lang="en">2^-6</lang>
+                  </description>
+              </value>
+            <value from="0003" to="0003">
+                <description>
+                    <lang xml:lang="en">2^-5</lang>
+                  </description>
+              </value>
+            <value from="0004" to="0004">
+                <description>
+                    <lang xml:lang="en">2^-4</lang>
+                  </description>
+              </value>
+            <value from="0005" to="0005">
+                <description>
+                    <lang xml:lang="en">2^-3</lang>
+                  </description>
+              </value>
+            <value from="0006" to="0006">
+                <description>
+                    <lang xml:lang="en">2^-2</lang>
+                  </description>
+              </value>
+            <value from="0007" to="0007">
+                <description>
+                    <lang xml:lang="en">2^-1</lang>
+                  </description>
+              </value>
+            <value from="0008" to="0008">
+                <description>
+                    <lang xml:lang="en">2^0</lang>
+                  </description>
+              </value>
+            <value from="0009" to="0009">
+                <description>
+                    <lang xml:lang="en">2^1</lang>
+                  </description>
+              </value>
+            <value from="000a" to="000a">
+                <description>
+                    <lang xml:lang="en">2^2</lang>
+                  </description>
+              </value>
+            <value from="000b" to="000b">
+                <description>
+                    <lang xml:lang="en">2^3</lang>
+                  </description>
+              </value>
+            <value from="000c" to="000c">
+                <description>
+                    <lang xml:lang="en">2^4</lang>
+                  </description>
+              </value>
+            <value from="000d" to="000d">
+                <description>
+                    <lang xml:lang="en">2^5</lang>
+                  </description>
+              </value>
+            <value from="000e" to="000e">
+                <description>
+                    <lang xml:lang="en">2^6</lang>
+                  </description>
+              </value>
+            <value from="000f" to="000f">
+                <description>
+                    <lang xml:lang="en">-(2^7)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="100" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Reset Parameters 0x65~0x67</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Reset 0x65~0x67 to default value</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="101" type="bitset" size="4" default="00000000">
+            <name>
+                <lang xml:lang="en">Auto Report Item 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Configure auto report which information
+as item 1</lang>
+              </description>
+      
+                  <value from="00000000" to="00000000">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+the total
+power
+consum
+ption of
+all
+channels
+with
+specified
+time
+interval</lang>
+                  </description>
+              </value>
+            <value from="00000001" to="00000001">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+consum
+ption
+with
+specified
+time
+interval
+(channel
+1)</lang>
+                  </description>
+              </value>
+            <value from="00000002" to="00000002">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+consump
+tion with
+specified
+time
+interval
+(channel
+2)</lang>
+                  </description>
+              </value>
+            <value from="00000003" to="00000003">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+consump
+tion with
+specified
+time
+interval
+(channel
+3)</lang>
+                  </description>
+              </value>
+            <value from="00000004" to="00000004">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+consump
+tion with
+specified
+time
+interval
+(channel
+4)</lang>
+                  </description>
+              </value>
+            <value from="00000005" to="00000005">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+consump
+tion with
+specified
+time
+interval
+(channel
+5)</lang>
+                  </description>
+              </value>
+            <value from="00000006" to="00000006">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+consump
+tion with
+specified
+time
+interval
+(channel
+6)</lang>
+                  </description>
+              </value>
+            <value from="00000007" to="00000007" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="00000008" to="00000008">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+the total
+power
+level of
+all
+channels
+With
+specified
+time
+interval</lang>
+                  </description>
+              </value>
+            <value from="00000009" to="00000009">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+level
+with
+specified
+time
+interval
+(channel
+1)</lang>
+                  </description>
+              </value>
+            <value from="0000000a" to="0000000a">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+level
+with
+specified
+time
+interval
+(channel
+2)</lang>
+                  </description>
+              </value>
+            <value from="0000000b" to="0000000b">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+level
+with
+specified
+time
+interval
+(channel
+3)</lang>
+                  </description>
+              </value>
+            <value from="0000000c" to="0000000c">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+level
+with
+specified
+time
+interval
+(channel
+4)</lang>
+                  </description>
+              </value>
+            <value from="0000000d" to="0000000d">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+level
+with
+specified
+time
+interval
+(channel
+5)</lang>
+                  </description>
+              </value>
+            <value from="0000000e" to="0000000e">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+level
+with
+specified
+time
+interval
+(channel
+6)</lang>
+                  </description>
+              </value>
+            <value from="0000000f" to="0000000f" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="00000010" to="0000001f" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="102" type="bitset" size="4" default="00000000">
+            <name>
+                <lang xml:lang="en">Auto Report Item 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Configure auto report which information
+as item 2, equivalent to parameter 101</lang>
+              </description>
+      
+                  <value from="00000000" to="00000000">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+the total
+power
+consum
+ption of
+all
+channels
+with
+specified
+time
+interval</lang>
+                  </description>
+              </value>
+            <value from="00000001" to="00000001">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+consum
+ption
+with
+specified
+time
+interval
+(channel
+1)</lang>
+                  </description>
+              </value>
+            <value from="00000002" to="00000002">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+consum
+ption
+with
+specified
+time
+interval
+(channel
+2)</lang>
+                  </description>
+              </value>
+            <value from="00000003" to="00000003">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+consum
+ption
+with
+specified
+time
+interval
+(channel
+3)</lang>
+                  </description>
+              </value>
+            <value from="00000004" to="00000004">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+consum
+ption
+with
+specified
+time
+interval
+(channel
+4)</lang>
+                  </description>
+              </value>
+            <value from="00000005" to="00000005">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+consum
+ption
+with
+specified
+time
+interval
+(channel
+5)</lang>
+                  </description>
+              </value>
+            <value from="00000006" to="00000006">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+consum
+ption
+with
+specified
+time
+interval
+(channel
+6)</lang>
+                  </description>
+              </value>
+            <value from="00000007" to="00000007" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="00000008" to="00000008">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+the total
+power
+level of
+all
+channels
+With
+specified
+time
+interval</lang>
+                  </description>
+              </value>
+            <value from="00000009" to="00000009">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+level
+with
+specified
+time
+interval
+(channel
+1)</lang>
+                  </description>
+              </value>
+            <value from="0000000a" to="0000000a">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+level
+with
+specified
+time
+interval
+(channel
+2)</lang>
+                  </description>
+              </value>
+            <value from="0000000b" to="0000000b">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+level
+with
+specified
+time
+interval
+(channel
+3)</lang>
+                  </description>
+              </value>
+            <value from="0000000c" to="0000000c">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+level
+with
+specified
+time
+interval
+(channel
+4)</lang>
+                  </description>
+              </value>
+            <value from="0000000d" to="0000000d">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+level
+with
+specified
+time
+interval
+(channel
+5)</lang>
+                  </description>
+              </value>
+            <value from="0000000e" to="0000000e">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+level
+with
+specified
+time
+interval
+(channel
+6)</lang>
+                  </description>
+              </value>
+            <value from="0000000f" to="0000000f" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="00000010" to="0000001f" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="103" type="bitset" size="4" default="00000000">
+            <name>
+                <lang xml:lang="en">Auto Report Item 3</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Configure auto report which information
+as item 3, equivalent to parameter 101</lang>
+              </description>
+      
+                  <value from="00000000" to="00000000">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+the total
+power
+consum
+ption of
+all
+channels
+with
+specified
+time
+interval</lang>
+                  </description>
+              </value>
+            <value from="00000001" to="00000001">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+consum
+ption
+with
+specified
+time
+interval
+(channel
+1)</lang>
+                  </description>
+              </value>
+            <value from="00000002" to="00000002">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+consum
+ption
+with
+specified
+time
+interval
+(channel
+2)</lang>
+                  </description>
+              </value>
+            <value from="00000003" to="00000003">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+consum
+ption
+with
+specified
+time
+interval
+(channel
+3)</lang>
+                  </description>
+              </value>
+            <value from="00000004" to="00000004">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+consum
+ption
+with
+specified
+time
+interval
+(channel
+4)</lang>
+                  </description>
+              </value>
+            <value from="00000005" to="00000005">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+consum
+ption
+with
+specified
+time
+interval
+(channel
+5)</lang>
+                  </description>
+              </value>
+            <value from="00000006" to="00000006">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+consum
+ption
+with
+specified
+time
+interval
+(channel
+6)</lang>
+                  </description>
+              </value>
+            <value from="00000007" to="00000007" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="00000008" to="00000008">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+the total
+power
+level of
+all
+channels
+With
+specified
+time
+interval</lang>
+                  </description>
+              </value>
+            <value from="00000009" to="00000009">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+level
+with
+specified
+time
+interval
+(channel
+1)</lang>
+                  </description>
+              </value>
+            <value from="0000000a" to="0000000a">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+level
+with
+specified
+time
+interval
+(channel
+2)</lang>
+                  </description>
+              </value>
+            <value from="0000000b" to="0000000b">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+level
+with
+specified
+time
+interval
+(channel
+3)</lang>
+                  </description>
+              </value>
+            <value from="0000000c" to="0000000c">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+level
+with
+specified
+time
+interval
+(channel
+4)</lang>
+                  </description>
+              </value>
+            <value from="0000000d" to="0000000d">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+level
+with
+specified
+time
+interval
+(channel
+5)</lang>
+                  </description>
+              </value>
+            <value from="0000000e" to="0000000e">
+                <description>
+                    <lang xml:lang="en">Auto
+report
+power
+level
+with
+specified
+time
+interval
+(channel
+6)</lang>
+                  </description>
+              </value>
+            <value from="0000000f" to="0000000f" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="00000010" to="0000001f" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="110" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Reset Parameters 0x6F~0x71</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Reset parameter 0x6F~0x71 to
+factory default</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="111" type="range" size="4" default="00000258">
+            <name>
+                <lang xml:lang="en">Auto Report Time Interval Item 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Configure auto report time interval of
+item 1</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="112" type="range" size="4" default="00000258">
+            <name>
+                <lang xml:lang="en">Auto Report Time Interval Item 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Configure auto report time interval of
+item 2</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="113" type="range" size="4" default="00000258">
+            <name>
+                <lang xml:lang="en">Auto Report Time Interval Item 3</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Configure auto report time interval of
+item 3</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="252" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Lock Parameter</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">unlock</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Lock</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="253" type="constant" size="4" default="00000000">
+            <name>
+                <lang xml:lang="en">Enter Meter Calibration Mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+          </configParam>
+        <configParam number="254" type="constant" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Device Tag</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Device tag，inclusion and/or reset will
+not change the value.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="255" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Restore All</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Restore Configuration parameters to
+factory default, except parameter 254.</lang>
+              </description>
+      
+          </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/6d20251cce2863179d8df24f1e4d6511c8021618.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

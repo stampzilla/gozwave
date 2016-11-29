@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="013c"/>
+        <productType value="0001"/>
+    <productId value="0028"/>
+    <libType value="03"/>
+    <protoVersion value="04"/>
+    <protoSubVersion value="05"/>
+    <appVersion value="01"/>
+    <appSubVersion value="03"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>US</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">This plug-in ON/OFF switch PAN15 is a security enabled wireless switch, based on Z-Wave Plus technology. The plug-in ON/Off switch is able to detect current wattege and overload wattage of connected light or appliances. When detecting overload state, the switch will be disabled and its On/Off button will be lockout of which LED will falsh quickly. Each switch is designed to act as a repeater. Repeaters will re-transmit the RF signal to ensure that the signal is received by its intended destination by routing the signal around obstacles and radio dead spots.</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Pressing On/Off button three times
+within 2 seconds will enter inclusion
+mode.</lang>
+          </inclusionNote>
+            <productName>Smart Energy Plug In Switch</productName>
+            <brandName>Philio</brandName>
+            <productLine>Philio Z-Wave Products</productLine>
+            <productCode>PAN15-1</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0098"/>
+        <commandClass id="005a"/>
+        <commandClass id="007a" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0073"/>
+        <commandClass id="0085" version="2" secure="true" nonSecure="false"/>
+        <commandClass id="0059" secure="true" nonSecure="false"/>
+        <commandClass id="0025" secure="true" nonSecure="false"/>
+        <commandClass id="0020" secure="true" nonSecure="false"/>
+        <commandClass id="0027" secure="true" nonSecure="false"/>
+        <commandClass id="0032" version="3" secure="true" nonSecure="false"/>
+        <commandClass id="0070" secure="true" nonSecure="false"/>
+        <commandClass id="0071" secure="true" nonSecure="false"/>
+        <commandClass id="0075" version="2" secure="true" nonSecure="false"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="en">Lifeline: SWITCH_BINARY_REPORT, METER_REPORT,
+ALARM_REPORT</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="2" default="02d0">
+            <name>
+                <lang xml:lang="en">Watt Meter Report Period</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">720*5s=3600s=1 hour</lang>
+              </description>
+      
+                  <value from="0001" to="7fff" unit="x5sec">
+                <description>
+                    <lang xml:lang="en">Define a time interval. </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="2" default="0006">
+            <name>
+                <lang xml:lang="en">KWH Meter Report Period</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">6*10min=1 hour</lang>
+              </description>
+      
+                  <value from="0001" to="7fff" unit="x10min">
+                <description>
+                    <lang xml:lang="en">Define a time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="range" size="2" default="0514">
+            <name>
+                <lang xml:lang="en">Threshold of current for Load caution</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">1300*0.01A = 13A</lang>
+              </description>
+      
+                  <value from="000a" to="0514" unit="x0,01A">
+                <description>
+                    <lang xml:lang="en">Define a treshold.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="2" default="2710">
+            <name>
+                <lang xml:lang="en">Threshold of KWh for Load caution</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="0001" to="2710" unit="KWh">
+                <description>
+                    <lang xml:lang="en">Define a treshold.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Restore switch state mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Switch off</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Last switch state</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Switch on</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Mode of Switch Off function</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Disable</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Enable</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">LED indication mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Show switch state</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Show night mode</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="rangemapped" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Auto off timer</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Disable auto off function</lang>
+                  </description>
+              </value>
+            <value from="0001" to="7fff" unit="sec">
+                <description>
+                    <lang xml:lang="en">Define an auto off interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">RF off command mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Switch off</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Ignore</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Switch toggle</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">Switch on</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Switch Status Report mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Disable</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Enable</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/b0f83226a991dc8072db16492cf42fe7859cb5af.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

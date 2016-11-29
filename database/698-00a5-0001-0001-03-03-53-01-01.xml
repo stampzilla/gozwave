@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="00a5"/>
+        <productType value="0001"/>
+    <productId value="0001"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="53"/>
+    <appVersion value="01"/>
+    <appSubVersion value="01"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Der NodOn ® SmartPlug ermöglicht Ihnen die Steuerung (Ein- bzw. Ausschalten) eines elektrischen Geräts, das daran angeschlossen ist: Nachttischlampen, elektrische Heizungen, Kaffeemaschinen etc. </lang>
+            <lang xml:lang="en">The NodOn ® Smart Plug allows to control (Power ON or Power OFF) an electrical appliance plugged on it: bedside lamp, electrical heater, coffee machine, etc.</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">1. Schließen Sie den SmartPlug an. 2. Stellen Sie den SmartPlug in den “Lernmodus”. 3. Stellen Sie dann den Z-Wave ® -Controller innerhalb von 30 Sekunden in den “Lernmodus” (Siehe Bedienungsanleitung des Controllers für dessen Bedienung). 4. Der SmartPlug bestätigt die Einfügung, indem seine LED grün aufblinkt.</lang>
+            <lang xml:lang="en">1. Plug the Smart Plug. 2. Put the Smart Plug in “Learning mode”. 3. Within 30 seconds put the Z-Wave ® Controller in “Learning mode” (See the Controller user guide for its own Inclusion procedure). 4. The Smart Plug will conﬁrm the Inclusion procedure by blinking its LED in Green.</lang>
+          </inclusionNote>
+            <productName>Smart Plug</productName>
+            <brandName>nodon</brandName>
+            <productLine>Z-Wave Plus</productLine>
+            <productCode>NODEASP3100</productCode>
+            <productVersion>1.1</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" inNIF="false"/>
+        <commandClass id="0025"/>
+        <commandClass id="0027"/>
+        <commandClass id="0059"/>
+        <commandClass id="005a"/>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0070"/>
+        <commandClass id="0071" version="4"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0073"/>
+        <commandClass id="0075" version="2"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0087"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Gruppe 1</lang>
+                <lang xml:lang="en">Group 1</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Gruppe 2</lang>
+                <lang xml:lang="en">Group 2</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Gruppe 3</lang>
+                <lang xml:lang="en">Group 3</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="4" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Gruppe 4</lang>
+                <lang xml:lang="en">Group 4</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="5" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Gruppe 5</lang>
+                <lang xml:lang="en">Group 5</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="6" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Gruppe 6</lang>
+                <lang xml:lang="en">Group 6</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="7" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Gruppe 7</lang>
+                <lang xml:lang="en">Group 7</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="8" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Gruppe 8</lang>
+                <lang xml:lang="en">Group 8</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="rangemapped" size="1" default="02">
+            <name>
+                <lang xml:lang="de">Standardzustand</lang>
+                <lang xml:lang="en"> 	Default State</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"> 	Diese Option bestimmt den Zustand des SmartPlug nach einem Stromausfall oder nach dem Anschluss.</lang>
+                <lang xml:lang="en">This parameter deﬁnes the status of the Smart Plug after a Power Failure or after being plugged.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">0=AUS</lang>
+                    <lang xml:lang="en">0=Off</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">1=AN</lang>
+                    <lang xml:lang="en">1=ON</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">2=Status vor Stromausfall</lang>
+                    <lang xml:lang="en">2=Status before Power Failure</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Stromausfall</lang>
+                <lang xml:lang="en">Power Failure</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Dieser Parameter dient der Einstellung von Benachrichtigungen nach einem Stromausfall/ Wiederherstellen und der assoziierten Gruppen (Gruppen 4, 5, 6, 7, 8). Der Wert kann die Summe der verfügbaren Werte sein. Beispiel: Sie wollen die Stromausfallerkennung aktivieren und den Gruppen 4 &amp; 5 zuweisen. Der Parameterwert ist 1+2+4=7.</lang>
+                <lang xml:lang="en">This parameter is to set-up the Power Failure / Recover notiﬁcation and the associated group (Groups 4, 5, 6, 7, 8). The value may be the sum of available values. For example, if you want to activate Power Failure and enable group 4 &amp; 5, the parameter value is 1+2+4=7.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">0=Stromausfallerkennung deaktivieren </lang>
+                    <lang xml:lang="en">0=Power Failure detection disable </lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">1=Stromausfallerkennung aktivieren </lang>
+                    <lang xml:lang="en">1=Power Failure enable (report to Lifeline only)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de"> 2=Gruppe 4 aktivieren</lang>
+                    <lang xml:lang="en"> 2=Enable group 4</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de"> 4=Gruppe 5 aktivieren</lang>
+                    <lang xml:lang="en"> 4=Enable group 5</lang>
+                  </description>
+              </value>
+            <value from="08" to="08">
+                <description>
+                    <lang xml:lang="de">8=Gruppe 6 aktivieren</lang>
+                    <lang xml:lang="en">8=Enable group 6</lang>
+                  </description>
+              </value>
+            <value from="10" to="10">
+                <description>
+                    <lang xml:lang="de">16=Gruppe 7 aktivieren</lang>
+                    <lang xml:lang="en">16=Enable group 7</lang>
+                  </description>
+              </value>
+            <value from="20" to="20">
+                <description>
+                    <lang xml:lang="de">32=Gruppe 8 aktivieren</lang>
+                    <lang xml:lang="en">32=Enable group 8</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="rangemapped" size="1" default="03">
+            <name>
+                <lang xml:lang="de">Folgezustand</lang>
+                <lang xml:lang="en">Follow State</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Dieser Parameter ermöglicht es die Gruppen 2 &amp; 3 zu aktivieren bzw. deaktivieren. Der Wert kann die Summe der verfügbaren Werte sein. Beispiel: Sie wollen die Gruppen 2 &amp; 3 aktivieren. Der Parameterwert ist 1+2=3. </lang>
+                <lang xml:lang="en">This parameter allows to enable or disable Group 2 &amp; Group 3. The value may be the sum of available values. For example, if you want to enable Group 2 &amp; 3, the parameter value is 1+2=3.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">0= Gruppe 2 &amp; Gruppe 3 deaktiviert</lang>
+                    <lang xml:lang="en">0= Group 2 &amp; Group 3 disable</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">1= Gruppe 2 aktiviert</lang>
+                    <lang xml:lang="en">1= Group 2 enable</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">2= Gruppe 3 aktiviert</lang>
+                    <lang xml:lang="en">2= Group 3 enable</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Immer EIN</lang>
+                <lang xml:lang="en">Always On</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Dieser Parameter stellt den SmartPlug-Status auf EIN. Wenn diese Option aktiviert ist, ist es nicht möglich den Schalter des Geräts auf AUS zu stellen (lokal oder drahtlos).</lang>
+                <lang xml:lang="en">This parameter forces the Smart Plug status to be ON. While enable it is not possible to switch OFF the plug (local or wireless).</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"> 0= Immer EIN deaktiviert</lang>
+                    <lang xml:lang="en"> 0= Always ON disable</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">1= Immer EIN aktiviert</lang>
+                    <lang xml:lang="en"> 1= Always ON enable</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    
+  </ZWaveDevice>
+
+

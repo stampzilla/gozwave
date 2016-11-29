@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="024d"/>
+        <productType value="4761"/>
+    <productId value="0001"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="63"/>
+    <appVersion value="01"/>
+    <appSubVersion value="50"/>
+        <basicClass value="04"/>
+            <genericClass value="07"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>Japan (922-926 MHz)</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">This product is a sensor designed to detect thumb turn open/close per 1 minute (default).
+</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Push switch over 3 seconds by using fine thing. </lang>
+          </inclusionNote>
+            <productName>施錠センサー</productName>
+            <brandName>Z-Works Inc.</brandName>
+            <productLine>Z-Wave Plus Devices</productLine>
+            <productCode>DN3G6JA062</productCode>
+                <batteryType>CR123A</batteryType>
+            <batteryCount>1</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0080"/>
+        <commandClass id="0070"/>
+        <commandClass id="005a"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0073"/>
+        <commandClass id="0098"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0084" version="2"/>
+        <commandClass id="0085" version="2" secure="true" nonSecure="false"/>
+        <commandClass id="0059" secure="true" nonSecure="false"/>
+        <commandClass id="0071" version="3" secure="true" nonSecure="false"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">This product sends information as follows to the devices in group 1: Thumb turn status, battery status, and reset information.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="1" default="3c">
+            <name>
+                <lang xml:lang="en">Checking thumb turn status interval</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="1e" to="7f" unit="sec">
+                <description>
+                    <lang xml:lang="en">Define a time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">LED indicator for data transmission</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">LED indicator is always off</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">LED indicator lights 1 second after thumb turn status close to open</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">LED indicator lights 1 second after thumb turn status open to close</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">LED indicator lights 1 second after changed thumb turn status</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/df527aa07d5e979be82b0252d3570ef4b5a1ecdf.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

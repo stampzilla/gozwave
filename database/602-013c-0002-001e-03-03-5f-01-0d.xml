@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="013c"/>
+        <productType value="0002"/>
+    <productId value="001e"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="5f"/>
+    <appVersion value="01"/>
+    <appSubVersion value="0d"/>
+        <basicClass value="04"/>
+            <genericClass value="07"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">The Smoke Sensor PSG01 is designed to give early warning of developing fires by giving off the alarm sounds from its build-in alarm horn, based on Z-Wave technology.</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en">Press the button once. The device will wake-up 10 seconds.</lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Pressing button three times within 1.5 seconds to
+enter the inclusion mode.</lang>
+          </inclusionNote>
+            <productName>Smoke Sensor</productName>
+            <brandName>Philio</brandName>
+            <productLine>Philio Z-Wave Products</productLine>
+            <productCode>PSG01</productCode>
+                <batteryType>CR123A</batteryType>
+            <batteryCount>1</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0073"/>
+        <commandClass id="005a"/>
+        <commandClass id="0098"/>
+        <commandClass id="007a" version="2"/>
+        <commandClass id="0080" secure="true" nonSecure="false"/>
+        <commandClass id="0071" version="4" secure="true" nonSecure="false"/>
+        <commandClass id="0085" version="2" secure="true" nonSecure="false"/>
+        <commandClass id="0070" secure="true" nonSecure="false"/>
+        <commandClass id="0030" version="2" secure="true" nonSecure="false"/>
+        <commandClass id="0084" version="2" secure="true" nonSecure="false"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="8">
+            <description>
+                <lang xml:lang="en">This group is for
+receiving the report message, like triggered event etc.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="7" type="bitset" size="1" default="04">
+            <name>
+                <lang xml:lang="en">Customer Function</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Customer function switch, using bit
+control.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="01" to="01" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="02" to="02" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="03" to="03" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">Notification Type,
+0: Using Notification Report.
+1: Using Sensor Binary Report.</lang>
+                  </description>
+              </value>
+            <value from="05" to="05" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="06" to="06" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="07" to="07" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="range" size="1" default="0c">
+            <name>
+                <lang xml:lang="en">Auto Report Battery Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Defines the interval time for auto reporting the
+battery level.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+            <value from="01" to="7f">
+                <description>
+                    <lang xml:lang="en">Define time interval for auto report.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/0d2361d08fc6e591732a6341a0a465ee68424e95.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

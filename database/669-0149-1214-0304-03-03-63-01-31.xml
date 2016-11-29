@@ -1,0 +1,891 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0149"/>
+        <productType value="1214"/>
+    <productId value="0304"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="63"/>
+    <appVersion value="01"/>
+    <appSubVersion value="31"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Einsatzmodul erweiterten Strommessfunktionen. Kann alle Energieparameter wie Spannung, Stromstärke, Sromverbrauch, Energie und Leistungsfaktor melden.
+Definierbarer Grenzwert für Stromverbrauch und Energie zur Kontrolle von vernetzten Geräten je nach der jeweilige Energiepolitik des Nutzers</lang>
+            <lang xml:lang="en">Insert Module with advance meter capabilities for active energy management. Can report all the energy parameters as Voltage, Current, Wattage, Energy and power factor. Definable threshold for wattage and energy in order to control associate device based on energy policy defined by the user.</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Einzelklick-Taste auf dem Schalter</lang>
+            <lang xml:lang="en">Single click button on the switch.</lang>
+          </inclusionNote>
+            <productName>Energy Driven Switch</productName>
+            <brandName>WiDom</brandName>
+            <productLine>Z-WavePlus</productLine>
+            <productCode>WPS1.04C</productCode>
+            <productVersion>C</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0025"/>
+        <commandClass id="0027"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0072"/>
+        <commandClass id="0070"/>
+        <commandClass id="007a" version="2"/>
+        <commandClass id="0031" version="3"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="005a" controlled="true"/>
+        <commandClass id="0032" version="3"/>
+        <commandClass id="0059"/>
+        <commandClass id="0073"/>
+        <commandClass id="0020" controlled="true" inNIF="false"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="3" maxNodes="8">
+            <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Down Power Level Group - Devices controlled by the Down Power event</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="8">
+            <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Up Power Level Group - Devices controlled by the Up Power event</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="8">
+            <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Lifeline - Devices to receive notifications on: status changes; energy and power levels; device local reset</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Gerätestatus</lang>
+                <lang xml:lang="en">Device Status</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Gerätesteuerung per Einzelklick des externen Schalters oder der integrierten Taste</lang>
+                <lang xml:lang="en">Controlling the relay by means of a single click on the external switch or on the integrated button.</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Endstatus = AUS  Wenn vorheriger Status bereits AUS, Endstatus = AN.</lang>
+                    <lang xml:lang="en">TOGGLE: If initial status is ON, then final status is OFF.  If initial status is OFF, then final status is ON.</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">ON: Wenn der Ausgangszustand auf OFF festgelegt ist, schaltet das Gerät auf ON; im Gegensatz dazu behält es seinen Status (ON).</lang>
+                    <lang xml:lang="en">ON: If the initial status is OFF the system switches to ON; conversely, it maintains its status (ON).</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">OFF: Ist der Anfangsstatus aktiviert, schaltet das Gerät auf OFF; andernfalls behält es seinen Status (OFF).</lang>
+                    <lang xml:lang="en">OFF: If the initial status is ON the system switches to OFF; conversely, it maintains its status (OFF).</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">IGNORIEREN: Das Gerät bleibt im Anfangsstatus.</lang>
+                    <lang xml:lang="en">IGNORE: The device maintains the initial status.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="20" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Gerätezustand nach Empfang eines Basis-Set-Befehls</lang>
+                <lang xml:lang="en">Device status</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Geräte Endstatus nach erhaltenem Basic-Set-Befehl durch das Z-Wave-Netzwerk</lang>
+                <lang xml:lang="en">The final status achieved by the device when it receives a Basic Set command through the Z-Wave network.</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Befehl empfangen = ON, dann Endstatus = ON; Befehl empfangen = OFF, dann Endstatus = OFF.</lang>
+                    <lang xml:lang="en">AS RECEIVED: If received command is ON, then final status is ON. If received command is OFF, then final status is OFF.</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">IGNORIEREN bei ON:
+Empfangener Befehl wird ignoriert, ursprünglicher Status bleibt.  Bei empfangenem Befehl = OFF, dann Endstatus = OFF.</lang>
+                    <lang xml:lang="en">IGNORE IF ON: If received command is ON, then the initial status is maintained.  If received command is OFF, then final status is OFF.</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">IGNORIEREN bei OFF: Empfangener Befehl = ON, dann Endstatus = ON. Trotz empfangenem Befehl = OFF, wird der ursprünglicher Zustand beibehalten.</lang>
+                    <lang xml:lang="en">IGNORE IF OFF: If received command is ON, then final status is ON. If received command is OFF, then the initial status is maintained.</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">= IGNORIEREN: Anfangsstatus wird beibehalten.</lang>
+                    <lang xml:lang="en">IGNORE: Initial status is maintained.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="30" type="range" size="2" default="1194">
+            <name>
+                <lang xml:lang="de">Überspannungsgrenzwert</lang>
+                <lang xml:lang="en">Overcurrent level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Setzt den Grenzwert der Überspannung während einer festgesetzten Zeitdauer.</lang>
+                <lang xml:lang="en">Sets the current level above which the time spent above that level is measured.
+Defined value is divided by 100.</lang>
+              </description>
+      
+                  <value from="0000" to="1194" unit="A">
+                <description>
+                    <lang xml:lang="de">Definiert Stromschwelle</lang>
+                    <lang xml:lang="en">Define current  treshold.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="31" type="range" size="2" default="000a">
+            <name>
+                <lang xml:lang="de">Überspannungszeit</lang>
+                <lang xml:lang="en">Overcurrent time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Einstellung einer bestimmten Zeitdauer, während dieser der Strompegel über den in Parameter 30 vorgeschriebenen Grenzwert verbleibt.</lang>
+                <lang xml:lang="en">Sets the time beyond which, in the case of overcurrent at a level higher than that established in parameter 30, an OverCurrent event occurs.</lang>
+              </description>
+      
+                  <value from="0000" to="2a30" unit="seconds">
+                <description>
+                    <lang xml:lang="de">Schwelle der Überstromzeit definieren</lang>
+                    <lang xml:lang="en">Define treshold of overcurrent time.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="32" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Nächster Zustand nach Erreichen des Überspannungsgrenzwertes</lang>
+                <lang xml:lang="en">Next State</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert den nächsten Zustand in welchen das Gerät übergeht, wenn ein Überspannungsgrenzwert erreicht wurde.</lang>
+                <lang xml:lang="en">Defines the next state of the device if an overcurrent event has occurred.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">IGNORIEREN: Das Gerät hält den anfänglichen Status.</lang>
+                    <lang xml:lang="en">IGNORE: The device maintains the initial status.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">ON: Wenn der Ausgangszustand auf OFF festgelegt ist, schaltet das Gerät auf ON; andernfalls behält es seinen Status (ON).</lang>
+                    <lang xml:lang="en">ON: If the initial status is OFF the system switches to ON; conversely, it maintains its status (ON).</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">OFF: Wenn der Ausgangszustand auf ON festgelegt ist, schaltet das Gerät auf OFF; andernfalls behält es seinen Status (OFF).</lang>
+                    <lang xml:lang="en">OFF: If the initial status is ON the system switches to OFF: conversely, it maintains its status (OFF).</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Wechsel: Ist der ursprüngliche Status ON/OFF schaltet der Kippschalter das System auf OFF/ON.</lang>
+                    <lang xml:lang="en">TOGGLE: If the initial status is ON/OFF the system switches to OFF/ON.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="33" type="range" size="4" default="00000000">
+            <name>
+                <lang xml:lang="de">Zurücksetzen der Messwerte</lang>
+                <lang xml:lang="en">Meter Reset</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Zeigt die gesamte Betriebsdauer seit der letzten Messrückstellung. Bei Einstellung auf 0 setzt er die kumulierten Werde der Energie- und Gesamtbetriebszeit zurück.</lang>
+                <lang xml:lang="en">Provides total operating time from last meter reset. When set to 0 it resets the cumulated values of energy and total operating time.</lang>
+              </description>
+      
+                  <value from="00000000" to="00000000">
+                <description>
+                    <lang xml:lang="de">Rücksetzung der Mess-Parameter, einschließlich der gesamten Betriebszeit </lang>
+                    <lang xml:lang="en">Meter parameters, including total operating time, will be reset</lang>
+                  </description>
+              </value>
+            <value from="00000001" to="00000001">
+                <description>
+                    <lang xml:lang="de">größer 0 = ignorieren
+Messungen werden nicht zurückgesetzt</lang>
+                    <lang xml:lang="en">Greater than 0 – IGNORE
+(The meter will not be reset.)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="34" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Energiefluss</lang>
+                <lang xml:lang="en">Energy flow</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert Energieereignisse in Bezug auf Energieverbrauch oder Energieversorgung</lang>
+                <lang xml:lang="en">Determines whether energy events are related to energy consumed or energy produced.</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Energieverbrauch: Aktivierung bei positiven Energieverbrauchszahlen  </lang>
+                    <lang xml:lang="en">CONSUMED: Events will be active for Consumed energy flows to which the positive sign will be attributed.</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Energieerzeugung: Aktivierung  bei negativen Kennzahlen</lang>
+                    <lang xml:lang="en">PRODUCED: Events will be active for Produced energy flows to which the negative sign will be attributed.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="35" type="range" size="2" default="2bf2">
+            <name>
+                <lang xml:lang="de">Obergrenzwert</lang>
+                <lang xml:lang="en">UP Power Level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert die Höhe der Momentanleistung in Watt, sollte diese während einer bestimmten Messdauer den berechneten Wert übersteigen</lang>
+                <lang xml:lang="en">Sets the level of instantaneous power in Watts beyond which time of permanence above this level is calculated.</lang>
+              </description>
+      
+                  <value from="0000" to="2bf2" unit="W">
+                <description>
+                    <lang xml:lang="de">Definiert momentanes Leistungsniveau</lang>
+                    <lang xml:lang="en">Define level of instantaneous power.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="36" type="range" size="2" default="000a">
+            <name>
+                <lang xml:lang="de">Zeitliche Obergrenze</lang>
+                <lang xml:lang="en">UP Power Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Legt die Zeitdauer in Sekunden fest, während derer die Momentanleistung ständig über einem Niveau jenseits des in Parameter 35 definierten Levels bleibt </lang>
+                <lang xml:lang="en">Sets the time in seconds beyond which, if instantaneous power remains at levels exceeding threshold defined by parameter 35, a UP Power event occurs.</lang>
+              </description>
+      
+                  <value from="0000" to="2a30" unit="sec">
+                <description>
+                    <lang xml:lang="de">Definition Zeitparameter</lang>
+                    <lang xml:lang="en">Define time parameter.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="37" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Obergrenzstatus</lang>
+                <lang xml:lang="en">UP Power State</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert den nächsten Status des Geräts falls ein Überspannungsereignis eintritt.</lang>
+                <lang xml:lang="en">Defines the next status of the device in the case of a UP Power event occurring.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">= IGNORIEREN: Gerät bleibt im Ausgangsstatus</lang>
+                    <lang xml:lang="en">IGNORE: The device maintains initial status.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">= AN
+= AN:
+Wenn Ausgangszustand = OFF, Gerät schaltet auf ON; andernfalls bleibt Status ON.</lang>
+                    <lang xml:lang="en">ON: If the initial status is OFF the system switches to ON; conversely it maintains its status (ON).</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">= AUS:
+Wenn Ausgangszustand = ON, Gerät schaltet auf OFF; andernfalls bleibt Status OFF</lang>
+                    <lang xml:lang="en">OFF: If the initial status is ON the system switches to OFF, conversely it maintains its status (OFF).</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">= Wechsel:
+Wenn Ausgangszustand = ON/ OFF, Gerät schaltet auf OFF/ ON</lang>
+                    <lang xml:lang="en">TOGGLE: If the initial status is ON/OFF the system switches to OFF/ON.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="38" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Obergrenze für Verbindungen</lang>
+                <lang xml:lang="en">UP Power Associated</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert den Status vernetzter Geräte während eines Überspannungsereignis</lang>
+                <lang xml:lang="en">Defines the status of associated devices in the presence of a UP Power event.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Angeschlossene Geräte werden auf OFF geschalten</lang>
+                    <lang xml:lang="en">Associated devices are switched OFF.</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="de">Angeschlossene Geräte werden auf ON geschalten</lang>
+                    <lang xml:lang="en">Associated devices are switched ON.</lang>
+                  </description>
+              </value>
+            <value from="01" to="63">
+                <description>
+                    <lang xml:lang="de">Setzt Parameter zum Dimmen</lang>
+                    <lang xml:lang="en">Set parameter for dimming purposes.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="39" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">Untergrenzwert</lang>
+                <lang xml:lang="en">DOWN Power Level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert die Höhe der Momentanleistung sollte diese während einer bestimmten Messdauer dem berechneten Wert unterliegen</lang>
+                <lang xml:lang="en">Sets the level of instantaneous power beyond which the time of permanence below this level is calculated.</lang>
+              </description>
+      
+                  <value from="0000" to="2bf2" unit="W">
+                <description>
+                    <lang xml:lang="de">Definition des momentanen Leistungsstandes</lang>
+                    <lang xml:lang="en">Define level of instantaneous power.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="40" type="range" size="2" default="000a">
+            <name>
+                <lang xml:lang="de">Zeitliche Untergrenze </lang>
+                <lang xml:lang="en">DOWN Power Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Legt die Zeitdauer fest, während derer die Momentanleistung ständig unter einem Niveau unter dem in Parameter 39 definierten Levels bleibt </lang>
+                <lang xml:lang="en">Sets the time beyond which, if instantaneous power remains at levels below threshold defined by parameter 39, a DOWN Power event occurs.</lang>
+              </description>
+      
+                  <value from="0000" to="2a30" unit="sec">
+                <description>
+                    <lang xml:lang="de">Definition des Zeitparameters</lang>
+                    <lang xml:lang="en">Define time parameter.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="41" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Untergrenzstatus</lang>
+                <lang xml:lang="en">DOWN Power State</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert den nächsten Status des Geräts falls ein Unterstromereignis eintritt.</lang>
+                <lang xml:lang="en">Defines the next state of the device in the case of a DOWN Power event occurring.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">= IGNORIEREN:
+Das Gerät bleibt im Ausgangszustand</lang>
+                    <lang xml:lang="en">IGNORE: The device maintains the initial status.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">= AN:
+Wenn Ausgangszustand = OFF, Gerät schaltet auf ON; andernfalls bleibt Status ON.</lang>
+                    <lang xml:lang="en">ON: If the initial status is OFF the system switches to ON; conversely, it maintains its status (ON).</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">= AUS:
+Wenn Ausgangszustand = ON, Gerät schaltet auf OFF; andernfalls bleibt Status OFF</lang>
+                    <lang xml:lang="en">OFF: If the initial status is ON the system switches to OFF, conversely, it maintains its status (OFF).</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">= Wechsel:
+Wenn Ausgangszustand = ON/ OFF, Gerät schaltet auf OFF/ ON</lang>
+                    <lang xml:lang="en">TOGGLE: If the initial status is ON/OFF the system switches to OFF/ON.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="42" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Untergrenze für assoziierte Geräte</lang>
+                <lang xml:lang="en">DOWN Power Associated</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert den Status vernetzter Geräte während eines Unterstromereignisses</lang>
+                <lang xml:lang="en">Defines the status of associated devices in the presence of a DOWN Power event.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Angeschlossene Geräte werden auf OFF geschalten</lang>
+                    <lang xml:lang="en">Associated devices are switched OFF.</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="de">Angeschlossene Geräte werden auf ON geschalten</lang>
+                    <lang xml:lang="en">Associated devices are switched ON.</lang>
+                  </description>
+              </value>
+            <value from="01" to="63">
+                <description>
+                    <lang xml:lang="de">Setzt Parameter zum Dimmen</lang>
+                    <lang xml:lang="en">Set parameter for dimming purposes.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="43" type="range" size="4" default="001e8480">
+            <name>
+                <lang xml:lang="de">Energieniveau</lang>
+                <lang xml:lang="en">Energy Level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Legt das Energieniveau fest, das bei dem Erreichen des Energielimits eintritt  </lang>
+                <lang xml:lang="en">Sets the energy level that once exceeded an Energy Limit event occurs.</lang>
+              </description>
+      
+                  <value from="00000000" to="001e8480" unit="KWh">
+                <description>
+                    <lang xml:lang="de">Setzt Energieniveau</lang>
+                    <lang xml:lang="en">Set energy level.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="44" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Energiegrenzstatus</lang>
+                <lang xml:lang="en">Energy Limit State</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert den nächsten Gerätestatus bei Eintritt eines erhöhtem Energieniveaus</lang>
+                <lang xml:lang="en">Defines the next state of the device in the case of an Energy Limit event occurring.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">= IGNORIEREN:
+Das Gerät bleibt im Ausgangsstatus</lang>
+                    <lang xml:lang="en">IGNORE: The device maintains the initial status.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">= AN:
+Wenn Ausgangszustand = OFF, System schaltet auf ON; andernfalls bleibt Status ON.</lang>
+                    <lang xml:lang="en">ON: If the initial status is OFF the system switches to ON; conversely, it maintains its status (ON).</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">= AUS:
+Wenn Ausgangszustand = ON, Gerät schaltet auf OFF; andernfalls bleibt Status OFF</lang>
+                    <lang xml:lang="en">OFF: If the initial status is ON the system switches to OFF; conversely, it maintains its status (OFF).</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">= Wechsel:
+Wenn Ausgangszustand = ON/ OFF, Status wechselt zu OFF/ ON</lang>
+                    <lang xml:lang="en">TOGGLE: If the initial status is ON/OFF, in the next state it will be OFF/ON.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="45" type="range" size="1" default="0a">
+            <name>
+                <lang xml:lang="de">Momentanleistungsschwankungen</lang>
+                <lang xml:lang="en">Variation Instantaneous Power</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert die prozentuale Abweichung der Momentanleistung, die zur Reportsendung führt</lang>
+                <lang xml:lang="en">Defines the percentage variation of instantaneous power determining the sending of the report.</lang>
+              </description>
+      
+                  <value from="01" to="64" unit="%">
+                <description>
+                    <lang xml:lang="de">Definiert prozentualen Schwankungsgrad</lang>
+                    <lang xml:lang="en">Define percentage of variation.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="46" type="range" size="1" default="0a">
+            <name>
+                <lang xml:lang="de">Häufigkeit der Berichtszeit</lang>
+                <lang xml:lang="en">Report Time Frequency</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert die maximale Zeit in Minuten, über welche nach dem letzten Bericht hinaus ein Momentanleistungsreport gesendet wird </lang>
+                <lang xml:lang="en">Defines the maximum time in minutes since the previous report beyond which an Instantaneous Power Report will still be sent.</lang>
+              </description>
+      
+                  <value from="01" to="64" unit="min">
+                <description>
+                    <lang xml:lang="de">Definiert Zeitparameter</lang>
+                    <lang xml:lang="en">Define time parameter.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="47" type="rangemapped" size="1" default="03">
+            <name>
+                <lang xml:lang="de">Abweichung von der Gesamtenergie</lang>
+                <lang xml:lang="en">Variation Total Energy</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert den Gesamtenergieanstieg der zur Meldung mit Auflistung des gesamten Energieniveaus aller angebundenen Geräte erforderlich ist </lang>
+                <lang xml:lang="en">Defines the increase of total energy required to generate a report listing the level of total energy to the devices associated to the Energy Notification Group.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">= IGNORIEREN.
+Keine Berichterstellung</lang>
+                    <lang xml:lang="en">IGNORE: No report provided</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Energieschwankung führt zu Berichterstattung, Wert in Tausendstel kWh</lang>
+                    <lang xml:lang="en">Energy variation generating the issuing of a report at 1 thousandth of KWh.</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Energieschwankung führt zu Berichterstattung, Wert in Hundertstel kWh</lang>
+                    <lang xml:lang="en">Energy variation generating the issuing of a report at 1 hundredth of KWh.</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Energieschwankung führt zu Berichterstattung, Wert in Zehntel kWh</lang>
+                    <lang xml:lang="en">Energy variation generating the issuing of a report at 1 tenth of KWh.</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Energieschwankung führt zu Berichterstattung, Wert in kWh</lang>
+                    <lang xml:lang="en">Energy variation generating the issuing of a report at 1 KWh.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="48" type="range" size="2" default="08fc">
+            <name>
+                <lang xml:lang="de">Nennspannung</lang>
+                <lang xml:lang="en">Nominal Voltage</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert den Nennspannungswert in Zehntel Volt. Zusammen mit Parameter 49 wird dieser durch das automatische Benachrichtigungssystem verwendet, um Berichte über Veränderungen der Spannung zu senden</lang>
+                <lang xml:lang="en">Defines the nominal voltage value in tenths of volts. Together with parameter No. 49 this is used by the automatic notification system to send reports on variations of voltage.</lang>
+              </description>
+      
+                  <value from="044c" to="09c4" unit="V">
+                <description>
+                    <lang xml:lang="de">Parameterdefinition in Zehntel Volt</lang>
+                    <lang xml:lang="en">Define parameter in tenths of volts.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="49" type="range" size="1" default="0a">
+            <name>
+                <lang xml:lang="de">maximaler Spannungsabfall</lang>
+                <lang xml:lang="en">Fall in maximum voltage</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert den Sollwert in Prozent für den maximal zulässigen Spannungsabfall</lang>
+                <lang xml:lang="en">Defines, as a percentage, the nominal value for permitted fall in maximum voltage.</lang>
+              </description>
+      
+                  <value from="01" to="64" unit="%">
+                <description>
+                    <lang xml:lang="de">Definiert prozentualen Nennwert für zulässige Rückgang der Maximalspannung</lang>
+                    <lang xml:lang="en">Define parameter.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="50" type="range" size="1" default="1e">
+            <name>
+                <lang xml:lang="de">Zur automatischen Anzeige beanspruchte Parameter</lang>
+                <lang xml:lang="en">Electric parameters subjected to automatic notification</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert, welche elektrischen Parameter, Leistung ausgenommen, einer automatischen Anzeige unterzogen werden. Der für diesen Parameter gesetzte Wert muss aus der Summe der mit den indivdiuellen elektrischen Parametern eng verbundenen Werten berechnet werden. 
+Leistung = 0
+Energie = 2
+Spannung = 4
+Stromstärke = 8
+Leistungsfaktor = 16
+Mulitlevel Sensor: Leistungsreport = 32
+Für einen Leistungsbericht setzen Sie bitte den Wert auf 0
+Standardmäßig wird der Bericht für (Leistung, Energie, Spannung, Strom, Leistungsfaktor) 0+2+4+8+16= 30 gesandt.</lang>
+                <lang xml:lang="en">Defines which electric parameters, other than power, will be subjected to automatic notification.
+The value to be set for this parameter must be calculated as the sum of values associated to the individual electric parameter:
+Power=0,
+Energy=2,
+Voltage=4,
+Current=8,
+Power factor=16,
+Multilevel Sensor: Power Report=32
+To send report only for Power please set the value to 0.
+By default the report are sent for (Power, Energy, Voltage, Current, Power Factor) 0+2+4+8+16=30</lang>
+              </description>
+      
+                  <value from="00" to="3e">
+                <description>
+                    <lang xml:lang="de">Bestimmt kalkulierten Wert</lang>
+                    <lang xml:lang="en">Specify the calculated value.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="51" type="rangemapped" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">Spannungseffektivwert</lang>
+                <lang xml:lang="en">Voltage RMS value</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Die Ablesung dieses Parameters gibt den Wert der Spannung RMS zum Zeitpunkt des Lesens in Zehntel volt ausgedrückt wieder.
+</lang>
+                <lang xml:lang="en">Reading of this parameter returns the value of voltage RMS at the time of the reading expressed in tenths of Volts.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="52" type="rangemapped" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">Effektivstromwert</lang>
+                <lang xml:lang="en">Current RMS value</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Stellt den Wert des aktuellen RMS in Hundertstel Ampere dar.</lang>
+                <lang xml:lang="en">Returns the value of current RMS expressed in hundredths of Amperes.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="53" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Leistungsfaktor</lang>
+                <lang xml:lang="en">Power Factor</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Stellt den Wert des Leistungsfaktors in Prozent dar</lang>
+                <lang xml:lang="en">Returns the value of power factor as a percentage</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="54" type="rangemapped" size="4" default="00000000">
+            <name>
+                <lang xml:lang="de">Gesamter Energieverbrauch</lang>
+                <lang xml:lang="en">Total energy consumed</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Stellt den Wert des gesamten Energieverbrauchs in Tausendstel KWh dar</lang>
+                <lang xml:lang="en">Returns the value of total energy consumed expressed in Wh (thousandths of KWh).</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="55" type="rangemapped" size="4" default="00000000">
+            <name>
+                <lang xml:lang="de">Gesamte Energieerzeugung</lang>
+                <lang xml:lang="en">Total energy produced</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Gibt den Wert der gesamten Energieerzeugung in Tausendstel KWh wieder</lang>
+                <lang xml:lang="en">Returns the value of total energy produced expressed in Wh (thousandths of KWh).</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="60" type="rangemapped" size="1" default="03">
+            <name>
+                <lang xml:lang="de">Start-up Status</lang>
+                <lang xml:lang="en">Start-up status</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert den Status des Geräts nach einem Neustart.</lang>
+                <lang xml:lang="en">Defines the status of the device following a restart.</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">AN:
+Gerät ist eingeschalten</lang>
+                    <lang xml:lang="en">ON: Device on</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">AUS:
+Gerät ist ausgeschalten</lang>
+                    <lang xml:lang="en">OFF: Device off</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Vorheriger Status:
+Status vor dem Neustart</lang>
+                    <lang xml:lang="en">PREVIOUS STATUS: Status prior to restart</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="61" type="rangemapped" size="1" default="04">
+            <name>
+                <lang xml:lang="de">Konfigurationsreset</lang>
+                <lang xml:lang="en">Configuration reset</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert, welche Parameter auf die Standardwerte zurückgesetzt werden sollen.</lang>
+                <lang xml:lang="en">Defines which parameters should be reset to default values.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Werkseinstellung-RESET: Das Gerät wird auf die ursprünglichen Werkseinstellungen zurückgesetzt.</lang>
+                    <lang xml:lang="en">FACTORY RESET: The device is reset to the original factory settings.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Verbindungsrückstellung:
+Ausschließliche Rückstellung aller Verbindungen</lang>
+                    <lang xml:lang="en">ASSOCIATIONS RESET: All associations and only the associations are reset.</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Konfigurationsrückstellung:
+Die Verbindungen werden beibehalten, während alle anderen Konfigurationsparameter auf die ursprünglichen Werkseinstellungen (außer spezifische Konfigurationen) zurückgesetzt werden.</lang>
+                    <lang xml:lang="en">CONFIGURATIONS RESET: The associations are maintained while all other configuration parameters are reset to the original factory settings, except for the specific configuration.</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">IGNORIEREN.
+Es wird keine Aktion durchgeführt.</lang>
+                    <lang xml:lang="en">IGNORE: No action is performed.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="62" type="rangemapped" size="1" default="04">
+            <name>
+                <lang xml:lang="de">Externer Schaltertyp</lang>
+                <lang xml:lang="en">Type of external switch</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert den Typ des externen Schalter, der an das Gerät angeschlossen ist.</lang>
+                <lang xml:lang="en">Defines the type of external switch connected to the device.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">IGNORIEREN:
+Der externe Schalter ist nicht angeschlossen oder nicht vorhanden.</lang>
+                    <lang xml:lang="en">IGNORE: The external switch is not connected or not present.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">DRUCKKNOPF:
+Der externe Schalter ist ein gewöhnlicher Druckknopf zum Öffnen.</lang>
+                    <lang xml:lang="en">BUTTON: The external switch is a normally open button.</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">TASTER:
+Der externe Schalter ist ein traditioneller Taster.</lang>
+                    <lang xml:lang="en">SWITCH: The external switch is a traditional switch.</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">AUTOMATISCHE ERKENNUNG: Nachdem dem ersten Einzelklick auf dem externen Schalter ermittelt das System automatisch den Typ des verwendeten externen Schalters und setzt den Parameter mit dem neuen entsprechenden Wert.</lang>
+                    <lang xml:lang="en">AUTOMATIC RECOGNITION: After the first single click on the external switch, the system automatically determines the type of external switch used and sets the parameter with the new value accordingly.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="63" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Laststeuerung</lang>
+                <lang xml:lang="en">Load control</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert den Laststeuerungsmodus.</lang>
+                <lang xml:lang="en">Defines the load control mode.</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">DIREKTSTEUERUNG: Die externe Last wird direkt durch das Relais gesteuert. Graphische Darstellung lokaler Laststeuerung.</lang>
+                    <lang xml:lang="en">DIRECT CONTROL: The external load is controlled directly by the relay. Reference diagram local load control.</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Ansteuerung über Schütz mit normalem Öffnen-Befehl: Externe Last wird durch ein Schütz gesteuert, das im Ruhezustand die Kontakte geöffnet hat (Laststeuerung durch externes Schütz).</lang>
+                    <lang xml:lang="en">CONTROL BY MEANS OF A CONTACTOR WITH NORMALLY OPEN COMMAND: The external load is controlled by a contactor that in a resting state has open contacts (load control by means of external contactor).</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Ansteuerung über Schütz mit normalem Schließ-Befehl: Externe Last wird durch ein Schütz gesteuert, das im Ruhezustand die Kontakte geschlossen hat (Laststeuerung durch externes Schütz).</lang>
+                    <lang xml:lang="en">CONTROL BY MEANS OF A CONTACTOR WITH NORMALLY CLOSED COMMAND: The external load is controlled by a contactor that in a resting state has closed contacts (load control by means of external contactor).</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">
+ALS externe Anzeige: Das Relais wird nur zur Zündung eines externen Warnlichts verwendet, wie z. B. zur Bekanntgabe von Überlasten und Überspannungen (Fern-Laststeuerung).</lang>
+                    <lang xml:lang="en">AS AN EXTERNAL INDICATOR: The relay is only used to control the ignition of an external warning light, as, for example, in the case of notification of excess loads and surges
+(remote load control).</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/335673a0478a96d5f71c96137bbf66f629cacffb.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

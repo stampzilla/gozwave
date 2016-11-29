@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0089"/>
+        <productType value="0001"/>
+    <productId value="0101"/>
+    <libType value="04"/>
+    <protoVersion value="02"/>
+    <protoSubVersion value="33"/>
+    <appVersion value="01"/>
+    <appSubVersion value="02"/>
+        <basicClass value="03"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+            <certId>13835</certId>
+            <certNumber>ZC08-10040001</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Lighting Switch Module</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">When prompted by your primary controller, press the
+button</lang>
+          </inclusionNote>
+            <productName>Switch Link</productName>
+            <brandName>Easy Light</brandName>
+            <productLine>End Device</productLine>
+            <productCode>ZSL301EU</productCode>
+            <productVersion>1.00</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" inNIF="false"/>
+        <commandClass id="0025"/>
+        <commandClass id="0086"/>
+        <commandClass id="0027"/>
+        <commandClass id="002b"/>
+        <commandClass id="002c"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+        <commandClass id="0075"/>
+      </commandClasses>
+  
+  
+    <configParams>
+        <configParam number="0" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Last Status</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">To enable the module to resume the last status
+before the AC power goes down.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">To enable the module to always turn the lights
+ON when the AC power goes up.</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">To enable the module to always turn the light
+OFF when AC power line goes up.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="1" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Night Light</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">When the light is turn ON, LED on the module is
+turn ON and vice versa.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">When the light is turn ON, LED on the module is
+turn OFF and vice versa.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Enable LED</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Disable LED.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Enable LED to operate according to night light
+parameter.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="constant" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">Enable All ON/All OFF</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Disable both All ON and All OFF command.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Enable only All OFF command.</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Enable only All ON command.</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Enable both All ON and All OFF command.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Button Protection</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">User can use button for ON/OFF manual control.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">This setting value is used to protect a module
+against unintentional control. To operate a
+manual control requires pressing button 3 times
+within 1.5 seconds, the light will toggle to the
+next stage. The light will turn off instantly if it is
+being on before setting.</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Disable button from manual control. The light
+will turn off instantly if it is being on before
+setting.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Delay In Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">The light will be ON instantaneously once ON
+command is received.</lang>
+                  </description>
+              </value>
+            <value from="01" to="05">
+                <description>
+                    <lang xml:lang="en">The module will detain the ON process for 1-5
+seconds up to user preferences.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Delay Out Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">The light will be OFF instantaneously once OFF
+command is received.</lang>
+                  </description>
+              </value>
+            <value from="01" to="05">
+                <description>
+                    <lang xml:lang="en">The module will detain the OFF process for 1-5
+seconds up to user preferences.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="255" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">FACTORY DEFAULT</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Valid Values = Ignore configuration value
+This command will reset the whole above command values to the
+default factory values</lang>
+              </description>
+      
+          </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/e65471eeca177c215cf0acf10b1457042cf9cd1e.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

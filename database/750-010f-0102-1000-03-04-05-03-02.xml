@@ -1,0 +1,1469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="010f"/>
+        <productType value="0102"/>
+    <productId value="1000"/>
+    <libType value="03"/>
+    <protoVersion value="04"/>
+    <protoSubVersion value="05"/>
+    <appVersion value="03"/>
+    <appSubVersion value="02"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Dimmer</lang>
+            <lang xml:lang="en">Dimmer</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Der Dimmer wechselt in den Inklusion/ Exklusionmodus nach einem kurzen dreimaligen Drücken des Schalters, der mit dem S1 Terminal oder dem B-Button auf dem Gehäuse verbunden ist. Für Kippschalter gibt es 3 Positonswechsel.</lang>
+            <lang xml:lang="en">The Dimmer enters the inclusion/exclusion mode after a quick
+pressing three times the switch connected to S1 terminal or the
+B-button located on the housing. For toggle switch perform 3
+position changes.</lang>
+          </inclusionNote>
+            <productName>FGD-212</productName>
+            <brandName>Fibaro</brandName>
+            <productLine>Fibaro</productLine>
+            <productCode>002</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0073"/>
+        <commandClass id="0022"/>
+        <commandClass id="0031" version="4"/>
+        <commandClass id="0032" version="3"/>
+        <commandClass id="0071" version="5"/>
+        <commandClass id="0056"/>
+        <commandClass id="0098"/>
+        <commandClass id="007a" version="3"/>
+        <commandClass id="0020" controlled="true" secure="true" nonSecure="false"/>
+        <commandClass id="0026" version="3" controlled="true" secure="true" nonSecure="false"/>
+        <commandClass id="005a" secure="true" nonSecure="false"/>
+        <commandClass id="0085" version="2" secure="true" nonSecure="false"/>
+        <commandClass id="0070" secure="true" nonSecure="false"/>
+        <commandClass id="008e" version="3" secure="true" nonSecure="false"/>
+        <commandClass id="0060" version="4" secure="true" nonSecure="false"/>
+        <commandClass id="0075" version="2" secure="true" nonSecure="false"/>
+        <commandClass id="0027" secure="true" nonSecure="false"/>
+        <commandClass id="002b" controlled="true"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="5" maxNodes="5">
+            <description>
+                <lang xml:lang="de">&quot;Dimmer (S2)&quot; ist dem Schalter Nr. 2 zugeordnet
+Sendet MULITILEVEL SWITCH Befehlsklassen-Frame. Erlaubt Dimm-/ Aufhellungs-Befehl an das zugehörige Gerät zu senden</lang>
+                <lang xml:lang="en">„Dimmer (S2)” is assigned to switch no. 2.
+Sends MULTILEVEL SWITCH command class frame. Allows
+sending dim/brighten command to associated devices.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="4" maxNodes="5">
+            <description>
+                <lang xml:lang="de">&quot;On/Off (S2)&quot; ist dem Schalter Nr. 2 zugeordnet
+Sendet BASIC Befehlsklassen-Frame entsprechend des Gerätestatus</lang>
+                <lang xml:lang="en">„On/Off (S2)” is assigned to switch no. 2.
+Sends BASIC command class frame according to the state of the
+device.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="5">
+            <description>
+                <lang xml:lang="de">&quot;Dimmer (S1)&quot; ist dem Schalter Nr. 1 zugeordnet
+Sendet MULITILEVEL SWITCH Befehlsklassen-Frame. Erlaubt Dimm-/ Aufhellungs-Befehl an das zugehörige Gerät zu senden</lang>
+                <lang xml:lang="en">„Dimmer (S1)” is assigned to switch no. 1.
+Sends MULTILEVEL SWITCH command class frame. Allows
+sending dim/brighten command to associated devices.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="de">&quot;On/Off (S1)&quot; ist dem Schalter Nr. 1 zugeordnet
+Sendet BASIC Befehlsklassen-Frame entsprechend des Gerätestatus</lang>
+                <lang xml:lang="en">„On/Off (S1)” is assigned to switch no. 1.
+Sends BASIC command class frame according to the state of the
+device.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Z-Wave Plus Lifeline. Type of frame sent by the device when the association group is activated: SWITCH_MULTILEVEL_REPORT; DEVICE_RESET_LOCALLY_NOTIFICATION; SCENE_ACTIVATION_SET; METER_REPORT; SENSOR_MULTILEVEL_REPORT; NOTIFICATION REPORT.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Mindesthelligkeit</lang>
+                <lang xml:lang="en">Minimum brightness level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Zur Verfügung stehende Einstellungen: 1-98 - prozentuale Helligkeit</lang>
+                <lang xml:lang="en">Available settings: 1-98 - percentage level of brightness</lang>
+              </description>
+      
+                  <value from="01" to="62" unit="%">
+                <description>
+                    <lang xml:lang="de">definiert die Helligkeitsstufe</lang>
+                    <lang xml:lang="en">Define the level of brightness.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="1" default="63">
+            <name>
+                <lang xml:lang="de">Maximale Helligkeit</lang>
+                <lang xml:lang="en">Maximum brightness level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Zur Verfügung stehende Einstellungen: 2-99 - prozentuale Helligkeit</lang>
+                <lang xml:lang="en">Available settings: 2-99 - percentage level of brightness</lang>
+              </description>
+      
+                  <value from="02" to="63" unit="%">
+                <description>
+                    <lang xml:lang="de">Definiert die Helligkeitsstufe</lang>
+                    <lang xml:lang="en">Define the level of brightness.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Leuchtniveau dimmbarer Kompaktleuchststofflampen</lang>
+                <lang xml:lang="en">Incandescence level of dimmable compact fluorescent lamps</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Virtuelle Werte, gesetzt als ein Prozentsatz zwischen den Parametern MIN (1%) und MAX. (99%). Der Dimmer wird nach der ersten Einschalten auf diesen Wert eingestellt. Dies ist erforderlich für das Aufwärmen und Schalten dimmbarer Kompaktleuchtstofflampen und bestimmter Arten von Lichtquellen.
+Verfügbare Einstellungen: 1-99 - prozentuale Helligkeit</lang>
+                <lang xml:lang="en">Virtual value set as a percentage level between parameters MIN
+(1%) and MAX. (99%). The Dimmer will set to this value after first
+switch on. It is required for warming up and switching dimmable
+compact fluorescent lamps and certain types of light sources.
+Available settings: 1-99 - percentage level of brightness</lang>
+              </description>
+      
+                  <value from="01" to="63" unit="%">
+                <description>
+                    <lang xml:lang="de">Definiert die Leuchtstufe</lang>
+                    <lang xml:lang="en">Define the level of incandescence.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">Leuchtzeit dimmbarer Kompaktleuchststofflampen</lang>
+                <lang xml:lang="en">Incandescence time of dimmable compact fluorescent lamps</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Leuchtstofflampen und speziell Typen von Lichtquellen
+Wird dieser Parameter auf 0 gesetzt, wird die Leuchtfunktion deaktiviert. 
+Verfügbare Einstellungen: 0-255 (0s - 25,5s)</lang>
+                <lang xml:lang="en">fluorescent lamps and certain types of light sources. Setting this
+parameter to 0 will disable the incandescence functionality.
+Available settings: 0-255 (0s - 25,5s)</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="de">Leuchtfunkltionalität ist deaktivert</lang>
+                    <lang xml:lang="en">Incandescence functionality is disabled</lang>
+                  </description>
+              </value>
+            <value from="0001" to="00ff" unit="x 0.1 sec">
+                <description>
+                    <lang xml:lang="de">Definiert die Leuchtzeit</lang>
+                    <lang xml:lang="en">Define the incandescence time.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Der Prozentsatz einer Dimmstufe bei Automatiksteuerung</lang>
+                <lang xml:lang="en">The percentage of a dimming step at automatic control</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Verfügbare Einstellungen: 1-99</lang>
+                <lang xml:lang="en">Available settings: 1-99</lang>
+              </description>
+      
+                  <value from="01" to="63" unit="%">
+                <description>
+                    <lang xml:lang="de">Festlegung des Prozentsatzes einer Dimmstufe</lang>
+                    <lang xml:lang="en">Define the percentage of a dimming step.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="range" size="2" default="0005">
+            <name>
+                <lang xml:lang="de">Zeit für eine Dimmstufe bei automatischer Steuerung</lang>
+                <lang xml:lang="en">Time of a dimming step at automatic control</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Verfügbare Einstellungen: 0-255 (0s - 2,55s)</lang>
+                <lang xml:lang="en">Available settings: 0-255 (0s - 2,55s)</lang>
+              </description>
+      
+                  <value from="0000" to="00ff" unit="x 0,01 sec">
+                <description>
+                    <lang xml:lang="de">Zeitbestimmung einer Dimmstufe</lang>
+                    <lang xml:lang="en">Define the time of a dimming step.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Der Prozentsatz einer Dimmstufe bei manueller Steuerung</lang>
+                <lang xml:lang="en">The percentage of a dimming step at manual control</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Verfügbare Einstellungen: 1-99</lang>
+                <lang xml:lang="en">Available settings: 1-99</lang>
+              </description>
+      
+                  <value from="01" to="63" unit="%">
+                <description>
+                    <lang xml:lang="de">Festlegung des Prozentsatzes einer Dimmstufe</lang>
+                    <lang xml:lang="en">Define the percentage of a dimming step.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="range" size="2" default="0005">
+            <name>
+                <lang xml:lang="de">Zeit für eine Dimmstufe bei manueller Steuerung</lang>
+                <lang xml:lang="en">Time of a dimming step at manual control</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Verfügbare Einstellungen: 0-255 (0s - 2,55s)</lang>
+                <lang xml:lang="en">Available settings: 0-255 (0s - 2,55s)</lang>
+              </description>
+      
+                  <value from="0000" to="00ff" unit="x 0,01 sec">
+                <description>
+                    <lang xml:lang="de">Zeitbestimmung einer Dimmstufe</lang>
+                    <lang xml:lang="en">Define the time of a dimming step.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Gerätestatus nach einem Stromausfall</lang>
+                <lang xml:lang="en">State of the device after a power failure</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Der Dimmer kehrt in den letzten Zustand vor dem Stromausfall zurück.</lang>
+                <lang xml:lang="en">The Dimmer will return to the last state before power failure.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Der Dimmer behält nicht den Status vor einem Stromausfall. Er kehrt zurück auf Position &quot;Aus&quot;.</lang>
+                    <lang xml:lang="en">The Dimmer does not save the state before a power failure, it
+returns to &quot;off&quot; position</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Der Dimmer kehrt in den gleichen  Status wie dem Stromausfall zurück.</lang>
+                    <lang xml:lang="en">The Dimmer restores it&#039;s state before power failure</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="rangemapped" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">Timer Funktion (Auto - off)</lang>
+                <lang xml:lang="en">Timer functionality (auto - off)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="0000" to="0000" unit="Sek">
+                <description>
+                    <lang xml:lang="de">Funktion ist deaktivert.</lang>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+            <value from="0001" to="7fff" unit="sec">
+                <description>
+                    <lang xml:lang="de">Ausschaltzeit gemessen in Sekunden (1s - 9,1h)</lang>
+                    <lang xml:lang="en">time to turn off measured in seconds (1s - 9,1h)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="constant" size="2" default="00ff">
+            <name>
+                <lang xml:lang="de">ALLES AN/ALLES AUS Funktion</lang>
+                <lang xml:lang="en">ALL ON/ALL OFF function</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="de">ALLES AN ist nicht aktiviert, 
+ALLES AUS ist nicht aktiviert</lang>
+                    <lang xml:lang="en">ALL ON not active, ALL OFF not active</lang>
+                  </description>
+              </value>
+            <value from="0001" to="0001">
+                <description>
+                    <lang xml:lang="de">ALLES AN ist nicht aktiviert, 
+ALLES AUS ist aktiviert</lang>
+                    <lang xml:lang="en">ALL ON not active, ALL OFF active</lang>
+                  </description>
+              </value>
+            <value from="0002" to="0002">
+                <description>
+                    <lang xml:lang="de">ALLES AN ist aktiviert, 
+ALLES AUS ist nicht aktiviert</lang>
+                    <lang xml:lang="en">ALL ON active, ALL OFF not active</lang>
+                  </description>
+              </value>
+            <value from="00ff" to="00ff">
+                <description>
+                    <lang xml:lang="de">ALLES AN ist aktiviert, 
+ALLES AUS ist aktiviert</lang>
+                    <lang xml:lang="en">ALL ON active, ALL OFF active</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Erzwungene Auto-Kalibrierung</lang>
+                <lang xml:lang="en">Force auto-calibration</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Ändert sich der Wert dieses Parameters wird die Kalibrierung erzwungen.
+Während der Kalibrierung wird der Parameter auf 1 oder 2 gesetzt und auf 0 nach Fertigstellung geschaltet .</lang>
+                <lang xml:lang="en">Changing value of this parameter will force the calibration process.
+During the calibration parameter is set to 1 or 2 and switched to 0
+upon completion.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Anzeige</lang>
+                    <lang xml:lang="en">readout</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Erzwingt Auto-Kalibrierung der Last ohne Fibaro Bypass </lang>
+                    <lang xml:lang="en">force auto-calibration of the load without Fibaro Bypass</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Erzwingt Auto-Kalibrierung der Last mit Fibaro Bypass</lang>
+                    <lang xml:lang="en">force auto-calibration of the load with Fibaro Bypass</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="14" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Auto-Kalibrierungsstatus (schreibgeschützt)</lang>
+                <lang xml:lang="en">Auto-calibration status (read-only parameter)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Dieser Parameter bestimmt die Betriebsart des Dimmers
+(automatische / manuelle Einstellungen).</lang>
+                <lang xml:lang="en">This parameter determines operating mode of the Dimmer
+(automatic/manual settings).</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Kalibrationsverfahren wird nicht ausgeführt oder Dimmer arbeitet nach manuellen Einstellungen</lang>
+                    <lang xml:lang="en">calibration procedure not performed or Dimmer operates on
+manual settings</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Dimmer arbeitet nach Auto-Kalibrationseinstellungen</lang>
+                    <lang xml:lang="en">Dimmer operates on auto-calibration settings</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="15" type="rangemapped" size="1" default="1e">
+            <name>
+                <lang xml:lang="de">Erkennung durchgebrannter Glühbirnen</lang>
+                <lang xml:lang="en">Burnt out bulb detection</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Die Funktion basiert auf der plötzlichen Leistungsänderung eines bestimmten Wertes, welche als LOAD ERROR interpretiert wird.</lang>
+                <lang xml:lang="en">Function based on the sudden power variation of a specific value,
+interpreted as a LOAD ERROR.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Funktion ist deaktiviert</lang>
+                    <lang xml:lang="en">function disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="63" unit="%">
+                <description>
+                    <lang xml:lang="de">Prozentwert der Leistungsänderung, im Vergleich zum Standard-
+Stromverbrauch, während der Kalibrierung gemessen (als Lastfehler / ausgebrannte Glühbirne interpretiert)</lang>
+                    <lang xml:lang="en">percentage value of power variation, compared to standard
+power consumption, measured during the calibration procedure (to be interpreted as load error/burnt out bulb)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="16" type="rangemapped" size="2" default="0005">
+            <name>
+                <lang xml:lang="de">Zeitverzögerung einer ausgebrannten Glühbirne (Parameter 15) oder Überlasterkennung (Parameter 39) </lang>
+                <lang xml:lang="en">Time delay of a burnt out bulb (parameter 15) or overload (parameter 39) detection.</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Verzögerungszeit (in Sekunden) bei Erkennung der Stromschwankung, interpretiert
+als Lastfehler oder Überlasterkennung (zu viel Strom auf dem angeschlossenen Dimmer).</lang>
+                <lang xml:lang="en">Time of delay (in seconds) for power variation detection, interpreted
+as a LOAD ERROR or OVERLOAD detection (too much power
+connected to the Dimmer).</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="de">Erkennung einer ausgebrannten Glühbirne ist deaktiviert</lang>
+                    <lang xml:lang="en">detection of a burnt out bulb disabled</lang>
+                  </description>
+              </value>
+            <value from="0001" to="00ff" unit="sec">
+                <description>
+                    <lang xml:lang="de">Zeitverzögerung in Sekunden</lang>
+                    <lang xml:lang="en">delay time in seconds</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="19" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Zwangseinschaltung auf Helligkeitsstufe</lang>
+                <lang xml:lang="en">Forced switch on brightness level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Ist der Parameter aktiviert, wird der Dimmer beim Einschalten (S1 Einzelklick) immer auf diese Helligkeitsstufe eingestellt.</lang>
+                <lang xml:lang="en">If the parameter is active, switching on the Dimmer (S1 single click)
+will always set this brightness level.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Funktion ist deaktiviert</lang>
+                    <lang xml:lang="en">function disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="63" unit="%">
+                <description>
+                    <lang xml:lang="de">prozentuale Helligkeit</lang>
+                    <lang xml:lang="en">percentage level of brightness</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="20" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Schaltertyp</lang>
+                <lang xml:lang="en">Switch type</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Wählen Sie zwischen Taster, Kippschalter und Rolladenschalter.</lang>
+                <lang xml:lang="en">Choose between momentary switch, toggle switch and roller blind
+switch.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Tastschalter</lang>
+                    <lang xml:lang="en">momentary switch</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Kippschalter</lang>
+                    <lang xml:lang="en">toggle switch</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Rollladenschalter - zwei Schaltungen bedienen den Dimmer (S1 zum Aufhellen, S2 zum Verdunkeln)</lang>
+                    <lang xml:lang="en">Roller blind switch - two switches operate the Dimmer (S1 to
+brighten, S2 to dim)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="21" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Auf Klick gesendeter Wert an zugehörige Geräte </lang>
+                <lang xml:lang="en">The value sent to associated devices on single click</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">0xFF Wert wird gesendet, der die verknüpften Geräte in deren zuletzt abgespeicherten Status versetzt.</lang>
+                    <lang xml:lang="en">0xFF value is sent, which will set associated devices to their last
+saved state.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Gegenwärtiger Dimmerstatus wird gesendet, der die Helligkeitsstufe der verknüpften Geräte angleicht (z. B. andere Dimmer)</lang>
+                    <lang xml:lang="en">Current Dimmer state is sent, which will synchronize brightness
+level of associated devices (other Dimmers for example).</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="22" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Kippschalter Status an Gerätestatus zuweisen</lang>
+                <lang xml:lang="en">Assign toggle switch status to the device status</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Gerät wechselt Status bei Änderung des Schaltstatus</lang>
+                    <lang xml:lang="en">Device changes status on switch status change.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Gerätestatus wird mit Schaltstatus abgeglichen.</lang>
+                    <lang xml:lang="en">Device status is synchronized with switch status.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="23" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Doppelklickfunktion</lang>
+                <lang xml:lang="en">Double click option</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Setzt Helligkeitsstufe auf Maximum</lang>
+                <lang xml:lang="en">Set the brightness level to MAX</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Doppelklick ist deaktiviert</lang>
+                    <lang xml:lang="en">double click disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Doppelklick ist aktiviert</lang>
+                    <lang xml:lang="en">double click enabled</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="24" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Befehl Frames an 2. und 3. Assoziationsgruppen (S1 Assoziationen) zu senden</lang>
+                <lang xml:lang="en">Command frames sent in 2-nd and 3-rd association groups (S1 associations)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Der Parameter legt fest, welche Aktionen zu keiner Aussendung von Frames an assoziierte Gruppen führt.
+Parameterwerte können kombiniert werden, z.B. 1 + 2 = 3 bedeutet, dass  beim  Ein- oder Ausschalten des
+Dimmers (Klick) Assoziationen nicht gesendet werden.
+
+</lang>
+                <lang xml:lang="en">Parameter determines, which actions will not result in sending
+frames to association groups. Parameter values may be combined,
+e.g. 1+2=3 means that associations on switching on or off the
+Dimmer (single click) will not be sent.</lang>
+              </description>
+      
+                  <value from="00" to="1f">
+                <description>
+                    <lang xml:lang="de">0 - alle Aktionen senden an Assoziationsgruppen;
+1 - nicht senden bei Einschalten des Dimmers (Einzelklick)
+2 - nicht senden bei Ausschalten des Dimmers (Einzelklick)
+4 - nicht senden bei Wechsel der Dimmstufe (halten und loslassen)
+8 - nicht senden bei Doppelklick
+16 - sendet 0xFF Wert auf Doppelklick</lang>
+                    <lang xml:lang="en">0 - all actions send to association groups; 
+1 - do not send when switching on the Dimmer (single click); 
+2 - do not send when switching off the Dimmer (single click); 
+4 - do not send when changing dimming level (holding and releasing); 
+8 - do not send on double click; 
+16 - send 0xFF value on double click; </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="25" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Befehl zur Sendung von Frames an 4. und 5. Assoziationsgruppe (S2 Assoziationen)</lang>
+                <lang xml:lang="en">Command frames sent in 4-th and 5-th association groups (S2 associations)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Der Parameter legt fest, welche Aktionen zu keiner Aussendung von Frames an assoziierte Gruppen führt. Parameterwerte können kombiniert werden, z.B. 1 + 2 = 3 bedeutet, dass  beim  Ein- oder Ausschalten des
+Dimmers (Klick) Assoziationen nicht gesendet werden.
+</lang>
+                <lang xml:lang="en">Parameter determines, which actions will not result in sending
+frames to association groups. Parameter values may be combined,
+e.g. 1+2=3 means that associations on switching on or off the
+Dimmer (single click) will not be sent.</lang>
+              </description>
+      
+                  <value from="00" to="1f">
+                <description>
+                    <lang xml:lang="de">0 - alle Aktionen senden an Assoziationsgruppen;
+1 - nicht senden bei Einschalten des Dimmers (Einzelklick)
+2 - nicht senden bei Ausschalten des Dimmers (Einzelklick)
+4 - nicht senden bei Wechsel der Dimmstufe (halten und loslassen)
+8 - nicht senden bei Doppelklick
+16 - sendet 0xFF Wert auf Doppelklick</lang>
+                    <lang xml:lang="en">0 - all actions send to association groups; 
+1 - do not send when switching on the Dimmer (single click); 
+2 - do not send when switching off the Dimmer (single click); 
+4 - do not send when changing dimming level (holding and releasing); 
+8 - do not send on double click; 
+16 - send 0xFF value on double click; </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="26" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Funktion der 3-Wege-Schaltung</lang>
+                <lang xml:lang="en">The function of 3-way switch</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Schlüssel Nr. 2 steuert den Dimmer zusätzlich im 3-Wege-Modus. Die Funktion ist gesperrt für Einstellung von Parameter 20 auf 2 (Rolloschalter).</lang>
+                <lang xml:lang="en">Switch no. 2 controls the Dimmer additionally (in 3-way switch
+mode). Function disabled for parameter 20 set to 2 (roller blind
+switch).</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">3-Wege-Schaltfunktion für S2 deaktiviert</lang>
+                    <lang xml:lang="en">3-way switch function for S2 disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">3-Wege-Schaltfunktion für S2 aktiviert</lang>
+                    <lang xml:lang="en">3-way switch function for S2 enabled</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="27" type="range" size="1" default="0f">
+            <name>
+                <lang xml:lang="de">Assoziationen im abgesicherten Modus des Z-Wave Netzwerks</lang>
+                <lang xml:lang="en">Associations in Z-Wave network security mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Dieser Parameter definiert, wie Steuerbefehle an bestimmte Assoziationsgruppen gesendet werden: ob gesichert oder ungesichert. Der Parameter ist nur im abgesicherten Modus des Z-Wave Netzwerkes aktiv und nicht für die erste Lifeline Gruppe anwendbar. Parameterwerte können kombiniert werden, z. B. 1+2=3 bedeutet, dass die 2. und 3. Gruppe als gesichert gesendet werden.</lang>
+                <lang xml:lang="en">This parameter defines how commands are sent in specified
+association groups: as secure or non-secure. Parameter is active
+only in Z-Wave network security mode. It does not apply to 1st
+Lifeline group. Parameter values may be combined, e.g. 1+2=3
+means that 2nd &amp; 3rd group are sent as secure.</lang>
+              </description>
+      
+                  <value from="00" to="0f">
+                <description>
+                    <lang xml:lang="de">0 - alle Gruppen (II-V) als ungesichert senden
+1 - 2. Gruppe als gesichert senden
+2 - 3. Gruppe als gesichert senden
+4 - 4. Gruppe als gesichert senden
+8 - 5. Gruppe als gesichert senden
+15 - alle Gruppen (II-V) als gesichert senden</lang>
+                    <lang xml:lang="en">0 - all groups (II-V) sent as non-secure; 
+1 - 2nd group sent as secure; 
+2 - 3rd group sent as secure; 
+4 - 4th group sent as secure; 
+8 - 5th group sent as secure; 
+15 - all groups (II-V) sent as secure</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="28" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Funktion der Szenenaktivierung</lang>
+                <lang xml:lang="en">Scene activation functionality</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Szenen ID ist abhängig von Schalttypkonfiguration</lang>
+                <lang xml:lang="en">SCENE ID depends on the switch type configurations.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Funktionalität deaktiviert</lang>
+                    <lang xml:lang="en">functionality deactivated</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Funktionalität aktiviert</lang>
+                    <lang xml:lang="en">functionality activated</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="29" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Schaltfunkionalität von S1 und S2</lang>
+                <lang xml:lang="en">Switch functionality of S1 and S2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Standardmodus</lang>
+                    <lang xml:lang="en">standard mode</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">S1 arbeitet als S2, S2 arbeitet als S1</lang>
+                    <lang xml:lang="en">S1 operates as S2, S2 operates as S1</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="30" type="constant" size="1" default="02">
+            <name>
+                <lang xml:lang="de">Laststeuerungsmodus</lang>
+                <lang xml:lang="en">Load control mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Erzwungende Auto-Kalibrierung senden diesen Parameterwert an 2.</lang>
+                <lang xml:lang="en">Forced auto-calibration will set this parameter’s value to 2.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">erzwungene Phasenanschnittsteuerung</lang>
+                    <lang xml:lang="en">forced leading edge control</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">erzwungene Phasenabschnittsteuerung</lang>
+                    <lang xml:lang="en">forced trailing edge control</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">automatisch gewählter Steuerungsmodus (Basis der Auto-Kalibration)</lang>
+                    <lang xml:lang="en">control mode selected automatically (based on auto-calibration)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="31" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Während Autokalibrierung erkannter Laststeuerungsmodus (schreibgeschützt)</lang>
+                <lang xml:lang="en">Load control mode recognized during auto-calibration (read only).</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Phasenanschnitt</lang>
+                    <lang xml:lang="en">leading edge</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Phasenabschnitt</lang>
+                    <lang xml:lang="en">trailing edge</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="32" type="constant" size="1" default="02">
+            <name>
+                <lang xml:lang="de">An/ Aus Modus</lang>
+                <lang xml:lang="en">On/Off mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Dieser Modus wird zur Verbindung mit nichtdimmbaren Lichtquellen benötigt.  Wird dieser Parameter auf 1 gesetzt, werden automatisch Auf- und Abdimmzeiteinstellungen ignoriert. Erzwungene Auto-Kalibrierung setzt diesen Parameterwert auf 2.</lang>
+                <lang xml:lang="en">This mode is necessary while connecting non-dimmable light
+sources. Setting this parameter to 1 automatically ignores
+brightening/dimming time settings. Forced auto-calibration will set
+this parameter’s value to 2.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">An/ Aus Modus deaktiviert (Dimmen ist möglich)</lang>
+                    <lang xml:lang="en">on/off mode disabled (dimming is possible)</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">An/ Aus Modus deaktiviert (Dimmen ist nicht möglich)</lang>
+                    <lang xml:lang="en">on/off mode enabled (dimming is not possible)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">automatisch gewählter Modus</lang>
+                    <lang xml:lang="en">mode selected automatically</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="33" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Dimmbarkeit des Verbrauchers (schreibgeschützt)</lang>
+                <lang xml:lang="en">Dimmability of the load (read only)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Verbraucher als dimmbar erkannt</lang>
+                    <lang xml:lang="en">Load recognized as dimmable</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Verbraucher als nicht-dimmbar erkannt</lang>
+                    <lang xml:lang="en">Load recognized as non-dimmable</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="34" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Soft-Start Funktionalität</lang>
+                <lang xml:lang="en">Soft-Start functionality</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Erforderliche Zeit zur Erwärmung des Glühfadens der Halogenbirne </lang>
+                <lang xml:lang="en">Time required to warm up the filament of halogen bulb.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">kein Soft-Start</lang>
+                    <lang xml:lang="en">no soft-start</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">kurzer Soft-Start (0,1s)</lang>
+                    <lang xml:lang="en">short soft-start (0,1s)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">langer Soft-Start (0,5s)</lang>
+                    <lang xml:lang="en">long soft-start (0,5s)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="35" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Auto-Kalibrierung nach dem Einschalten</lang>
+                <lang xml:lang="en">Auto-calibration after power on</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Dieser Parameter bestimmt das Auslösen von Auto-Kalibrierungsvorgängen, z. B. Einschalten, Ladungsfehler etc. </lang>
+                <lang xml:lang="en">This parameter determines the trigger of auto-calibration procedure,
+e.g. power on, load error, etc.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Keine Auto-Kalibrierung des Verbrauchers nach dem Einschalten </lang>
+                    <lang xml:lang="en">No auto-calibration of the load after power on</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Auto-Kalibrierung wird nach dem ersten Einschalten ausgeführt</lang>
+                    <lang xml:lang="en">Auto-calibration performed after first power on</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Auto-Kalibrierung wird nach jedem Einschalten ausgeführt.</lang>
+                    <lang xml:lang="en">Auto-calibration performed after each power on</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Auto-Kalibrierung wird nach dem ersten Einschalten oder nach jedem LOAD ERROR Alarm (keine Ladung, Ladungsfehler, durchgebrannte Glühbirne) ausgeführt, wenn Parameter 37 auf 1 gesetzt wird auch nach Alarmen: SURGE Alarm (Ausgangsüberspannung des Dimmers), OVERLOAD Alarm (zu hoher Energieverbrauch) </lang>
+                    <lang xml:lang="en">Auto-calibration performed after first power on or after each
+LOAD ERROR alarm (no load, load failure, burnt out bulb), if
+parameter 37 is set to 1 also after alarms: SURGE (Dimmer output
+overvoltage) and OVERCURRENT (Dimmer output overcurrent)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Auto-Kalibrierung wird nach jedem Einschalten oder nach jedem LOAD ERROR Alarm (keine Ladung, Ladungsfehler, durchgebrannte Glühbirne) ausgeführt, wenn Parameter 37  auf 1 gesetzt wird auch nach Alarmen: SURGE Alarm (Ausgangsüberspannung des Dimmers), OVERLOAD Alarm (zu hoher Energieverbrauch) </lang>
+                    <lang xml:lang="en">Auto-calibration performed after each power on or after each
+LOAD ERROR alarm (no load, load failure, burnt out bulb), if
+parameter 37 is set to 1 also after alarms: SURGE (Dimmer output
+overvoltage) and OVERCURRENT (Dimmer output overcurrent)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="37" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Verhalten des Dimmers nach Überspannung oder Stromstoß</lang>
+                <lang xml:lang="en">Behaviour of the Dimmer after OVERCURRENT or SURGE</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">device permanently disabled until re-enabling by comand or
+external switch</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">three atempts to turn on the load</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="39" type="rangemapped" size="2" default="00fa">
+            <name>
+                <lang xml:lang="de">Power Limit - Übersteuerung</lang>
+                <lang xml:lang="en">Power limit - OVERLOAD</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Bei Erreichen des festgelegten Wertes wird der Verbraucher ausgeschalten. Außerdem ist das Limit der Scheinleistung auf 350 VA standartmäßig aktiviert.   </lang>
+                <lang xml:lang="en">Reaching the defined value will result in turning off the load.
+Additional apparent power limit of 350VA is active by default.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="de">Funktion ist deaktiviert</lang>
+                    <lang xml:lang="en">function is disabled</lang>
+                  </description>
+              </value>
+            <value from="0001" to="015e" unit="W">
+                <description>
+                    <lang xml:lang="de">definiert eine Leistungsgrenze</lang>
+                    <lang xml:lang="en">Define a power limit.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="40" type="constant" size="1" default="03">
+            <name>
+                <lang xml:lang="de">Antwort auf Universalalarm</lang>
+                <lang xml:lang="en">Response to General Purpose Alarm</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Keine Reaktion</lang>
+                    <lang xml:lang="en">No reaction</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">schaltet Verbraucher ein</lang>
+                    <lang xml:lang="en">Turn on the load</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">schaltet Verbraucher aus</lang>
+                    <lang xml:lang="en">Turn off the load</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Verbraucher blinkt</lang>
+                    <lang xml:lang="en">Load blinking</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="41" type="constant" size="1" default="02">
+            <name>
+                <lang xml:lang="de">Antwort auf Überflutungsalarm</lang>
+                <lang xml:lang="en">Response to Water Flooding Alarm</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Keine Reaktion</lang>
+                    <lang xml:lang="en">no reaction</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">schaltet den Verbraucher ein</lang>
+                    <lang xml:lang="en">turn on the load</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">schaltet den Verbraucher aus</lang>
+                    <lang xml:lang="en">turn off the load</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Verbraucher blinkt</lang>
+                    <lang xml:lang="en">load blinking</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="42" type="constant" size="1" default="03">
+            <name>
+                <lang xml:lang="de">Antwort auf Rauch, CO oder CO2 Alarm</lang>
+                <lang xml:lang="en">Response to Smoke, CO or CO2 Alarm</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Keine Reaktion</lang>
+                    <lang xml:lang="en">no reaction</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Verbraucher einschalten</lang>
+                    <lang xml:lang="en">turn on the load</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Verbraucher ausschalten</lang>
+                    <lang xml:lang="en">turn off the load</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Verbraucher blinkt</lang>
+                    <lang xml:lang="en">load blinking</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="43" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Antwort auf Temperatur Alarm</lang>
+                <lang xml:lang="en">Response to Temperature Alarm</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Keine Reaktion</lang>
+                    <lang xml:lang="en">no reaction </lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Verbraucher einschalten</lang>
+                    <lang xml:lang="en">turn on the load</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Verbraucher ausschalten</lang>
+                    <lang xml:lang="en">turn off the load</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Verbraucher blinkt</lang>
+                    <lang xml:lang="en">load blinking</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="44" type="range" size="2" default="0258">
+            <name>
+                <lang xml:lang="de">Dauer des Alarmzustands</lang>
+                <lang xml:lang="en">Time of alarm state</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Alarmzustand kann auf Knopfdruck oder durch Senden des Z-Wave-Befehlsrahmen vorzeitig abgebrochen werden. </lang>
+                <lang xml:lang="en">Alarm state may be cancelled earlier, as a result of pressing the
+switches or sending the Z-Wave command frame.</lang>
+              </description>
+      
+                  <value from="0001" to="7fff" unit="sec">
+                <description>
+                    <lang xml:lang="de">definiert den Zeitraum eines Alarmzustands</lang>
+                    <lang xml:lang="en">Define the time period of an alarm state.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="45" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Alarmreport bei Überlastung</lang>
+                <lang xml:lang="en">OVERLOAD alarm report</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">zu hoher Energieverbrauch</lang>
+                <lang xml:lang="en">load power consumption too high</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Keine Reaktion</lang>
+                    <lang xml:lang="en">no reaction</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">sendet einen Alarm- Frame</lang>
+                    <lang xml:lang="en">send an alarm frame</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="46" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="de">LOAD ERROR Alarmreport</lang>
+                <lang xml:lang="en">LOAD ERROR alarm report</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">keine Ladung, Ladungsfehler, durchgebrannte Glühbirne</lang>
+                <lang xml:lang="en">no load, load failure, burnt out bulb</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Keine Reaktion</lang>
+                    <lang xml:lang="en">no reaction</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">sendet einen Alarm-Frame</lang>
+                    <lang xml:lang="en">send an alarm frame</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="47" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Überstromalarmreport</lang>
+                <lang xml:lang="en">OVERCURRENT alarm report</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Durch Kurzschluss, durchgebrannte Glühbirne verursachte Überstrom</lang>
+                <lang xml:lang="en">short circuit, burnt out bulb
+causing overcurrent</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Keine Reaktion</lang>
+                    <lang xml:lang="en">no reaction</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">sendet einen Alarm-Frame</lang>
+                    <lang xml:lang="en">send an alarm frame</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="48" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Überspannungsalarmreport</lang>
+                <lang xml:lang="en">SURGE alarm report</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Dimmer-Ausgangsüberspannung</lang>
+                <lang xml:lang="en">Dimmer output overvoltage</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Keine Reaktion</lang>
+                    <lang xml:lang="en">no reaction</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">sendet einen Alarm-Frame</lang>
+                    <lang xml:lang="en">send an alarm frame</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="49" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Alarmreport bei Überhitzung (kritische Temperatur) und Spannungsabfall (Niedrigspannung)</lang>
+                <lang xml:lang="en">OVERHEAT (critical temperature) and VOLTAGE DROP (low voltage) alarm report</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Keine Reaktion</lang>
+                    <lang xml:lang="en">no reaction</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">sendet einen Alarm-Frame</lang>
+                    <lang xml:lang="en">send an alarm frame</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="50" type="rangemapped" size="1" default="0a">
+            <name>
+                <lang xml:lang="de">Aktiver Powerbericht</lang>
+                <lang xml:lang="en">Active power reports</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Der Parameter definiert die Leistungspegeländerung, die zur Sendung eines neuen Powerreports führt. Der Wert ist dabei ein Prozentsatz zum vorhergehendem Bericht.</lang>
+                <lang xml:lang="en">The parameter defines the power level change that will result in a
+new power report being sent. The value is a percentage of the
+previous report.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Power Report deaktiviert</lang>
+                    <lang xml:lang="en">power reports disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="64" unit="%">
+                <description>
+                    <lang xml:lang="de">definiert den Wert im Power Report</lang>
+                    <lang xml:lang="en">define the power report threshold.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="52" type="rangemapped" size="2" default="0e10">
+            <name>
+                <lang xml:lang="de">Regelmäßig wiederkehrende Power- und Energieberichte</lang>
+                <lang xml:lang="en">Periodic active power and energy reports</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Parameter 52 definiert eine Zeitspanne zwischen aufeinanderfolgender Berichte. Der Timer wird zurück und nach jedem Bericht auf Null gesetzt.</lang>
+                <lang xml:lang="en">Parameter 52 defines a time period between consecutive reports.
+Timer is reset and counted from zero after each report.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="de">Funkion ist deaktiviert</lang>
+                    <lang xml:lang="en">function is disabled</lang>
+                  </description>
+              </value>
+            <value from="0001" to="7fff" unit="sec">
+                <description>
+                    <lang xml:lang="de">definiert den Zeitraum für regelmäßig wiederkehrende Berichte</lang>
+                    <lang xml:lang="en">Define a time period for periodic reports.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="53" type="rangemapped" size="2" default="000a">
+            <name>
+                <lang xml:lang="de">Energieberichte</lang>
+                <lang xml:lang="en">Energy reports</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Änderungen des Energiepegels werden im neuen Energiebericht gesendet. </lang>
+                <lang xml:lang="en">Energy level change which will result in sending a new energy report.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="de">Energieberichte sind deaktiviert</lang>
+                    <lang xml:lang="en">energy reports are disabled</lang>
+                  </description>
+              </value>
+            <value from="0001" to="00ff" unit="x 0,01 kWh">
+                <description>
+                    <lang xml:lang="de">meldet auslösenden Schwellenwert</lang>
+                    <lang xml:lang="en">report triggering threshold</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="54" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Selbstmessung</lang>
+                <lang xml:lang="en">Self-measurement</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Der Dimmer kann seine selbst genutzte Wirkleistung und Energie in Berichten an den Hauptregler senden.</lang>
+                <lang xml:lang="en">The Dimmer may include active power and energy consumed by
+itself in reports sent to the main controller.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Selbstmessung deaktiviert</lang>
+                    <lang xml:lang="en">Self-measurement inactive</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Selbstmessung aktiviert</lang>
+                    <lang xml:lang="en">Self-measurement active</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="58" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Methode zur Berechnung der Wirkleistung</lang>
+                <lang xml:lang="en">Method of calculating the active power</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Dieser Parameter legt fest, wie die Wirkleistung zu berechnen ist. Dieser Parameter ist im Fall von 2-Draht-Verbindung mit Lichtquellen, außer resistiver, zu verwenden.
+Der Parameter wird nach der Zwangsautokalibrierung auf 0 gesetzt.</lang>
+                <lang xml:lang="en">This parameter defines how to calculate active power. This
+parameter is useful in a case of 2-wire connection with light sources
+other than resistive.
+The parameter is set to 0 after forced auto-calibration.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Leistungsmessung basierend auf dem Standardalgorithmus</lang>
+                    <lang xml:lang="en">power measurement based on the standard algorithm</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Angleichung basierend auf den Eichdaten</lang>
+                    <lang xml:lang="en">approximation based on the calibration data</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Angleichung basierend auf der Kantensteuerung</lang>
+                    <lang xml:lang="en">approximation based on the control angle</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="59" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">Ungefährer Strom bei maximaler Helligkeit.</lang>
+                <lang xml:lang="en">Approximated power at the maximum brightness level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Dieser Parameter bestimmt den ungefähren Energiewert, der bei maximaler Helligkeit durch das Gerät angegeben wird. Dieser Parameter funktioniert nur, wenn Parameter 58 einen anderen Wert als 0 hat.</lang>
+                <lang xml:lang="en">This parameter determines the approximate value of the power that
+will be reported by the device at its maximum brightness level. This
+parameter works only when parameter 58 has a value other than 0.</lang>
+              </description>
+      
+                  <value from="0000" to="01f4" unit="W">
+                <description>
+                    <lang xml:lang="de">durch den Verbraucher konsumierte Energie bei maximaler Helligkeitsstufe</lang>
+                    <lang xml:lang="en">power consumed by the load at the maximum
+brightness level</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    <endpoints>
+           <endpoint number="2">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="11"/>
+                  <specificClass value="01"/>
+                  <commandClass id="005e"/>
+            <commandClass id="0020"/>
+            <commandClass id="0086"/>
+            <commandClass id="0026"/>
+            <commandClass id="0085"/>
+            <commandClass id="0059"/>
+            <commandClass id="008e"/>
+          </endpoint>
+           <endpoint number="1">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="11"/>
+                  <specificClass value="01"/>
+                  <commandClass id="005e"/>
+            <commandClass id="0020"/>
+            <commandClass id="0086"/>
+            <commandClass id="0026"/>
+            <commandClass id="0085"/>
+            <commandClass id="0059"/>
+            <commandClass id="008e"/>
+            <commandClass id="0032"/>
+            <commandClass id="0031"/>
+            <commandClass id="0071"/>
+          </endpoint>
+      </endpoints>
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/016e861800029706fddd83b3161b4cd70846e95f.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

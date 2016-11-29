@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0109"/>
+        <productType value="2005"/>
+    <productId value="0505"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="53"/>
+    <appVersion value="0e"/>
+    <appSubVersion value="03"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="05"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="false"/>
+        <beamSensor>1000</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Wireless Siren &amp; Strobe Alarm will sound a loud siren and flash a strobe light when an alarm message or alert is received.</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Open the bracket and press the program switch of ZM 1601 for 1 second at least &amp; release to be included. </lang>
+          </inclusionNote>
+            <productName>Wireless Siren &amp; Strobe Alarm, Battery Type</productName>
+            <brandName>Vision</brandName>
+            <productLine>Home Security</productLine>
+            <productCode>05</productCode>
+                <batteryType>AAA</batteryType>
+            <batteryCount>4</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0080"/>
+        <commandClass id="0070"/>
+        <commandClass id="005a"/>
+        <commandClass id="007a" version="2"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0071" version="4"/>
+        <commandClass id="0073"/>
+        <commandClass id="0025"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0020"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Back Cover Switch Trigger (COMMAND_CLASS_NOTIFICATION) &amp; Low Voltage Report (COMMAND_CLASS_BATTERY) will be sent to the associated nodes.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Siren/Strobe Mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Configure the desired mode.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">All Enable</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Siren Only</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Strobe Only</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Alarm Auto StopTime</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Set an alarm auto stop time.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">30s</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">60s</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">120s</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">Will Not Automatically Stop</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/d092624a8aef407bfcd5e9be68eeaa3bc63a523b.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

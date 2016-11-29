@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="013c"/>
+        <productType value="0002"/>
+    <productId value="001f"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="5f"/>
+    <appVersion value="01"/>
+    <appSubVersion value="05"/>
+        <basicClass value="04"/>
+            <genericClass value="07"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">The flood multisensor PAT02-1A has flood, temperature and humidity, 3 sensors function in one, based on Z-Wave technology.</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Pressing the tamper key three times within 1.5
+seconds to enter the inclusion mode.</lang>
+          </inclusionNote>
+            <productName>Flood Multisensor</productName>
+            <brandName>Philio</brandName>
+            <productLine>Philio Z-Wave Products </productLine>
+            <productCode>PAT02-1A</productCode>
+                <batteryType>CR123A</batteryType>
+            <batteryCount>1</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0073"/>
+        <commandClass id="005a"/>
+        <commandClass id="008f"/>
+        <commandClass id="0098"/>
+        <commandClass id="007a" version="2"/>
+        <commandClass id="0080" secure="true" nonSecure="false"/>
+        <commandClass id="0085" version="2" secure="true" nonSecure="false"/>
+        <commandClass id="0070" secure="true" nonSecure="false"/>
+        <commandClass id="0030" version="2" secure="true" nonSecure="false"/>
+        <commandClass id="0031" version="5" secure="true" nonSecure="false"/>
+        <commandClass id="0084" version="2" secure="true" nonSecure="false"/>
+        <commandClass id="0020" controlled="true"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="2" maxNodes="8">
+            <description>
+                <lang xml:lang="en">The group 2 is for the light
+control, the device will send the “Basic Set” command
+to this group.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="8">
+            <description>
+                <lang xml:lang="en">The group 1 is for
+receiving the report message, like triggered event,
+temperature, humidity etc.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Basic Set OFF Level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Setting the BASIC command value.
+When the flood trigger off, send the BASIC CC to the group 2.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="2" type="range" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">Basic Set ON Level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Setting the BASIC command value.
+When the flood trigger on, send the BASIC CC to the group 2.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="5" type="bitset" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Operation Mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Operation mode. Using bit to control.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Disable the Flood function.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01" reserved="true">
+                <description>
+                    <lang xml:lang="en">Reserve.</lang>
+                  </description>
+              </value>
+            <value from="02" to="02" reserved="true">
+                <description>
+                    <lang xml:lang="en">Reserve.</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">Setting the temperature scale.
+0: Fahrenheit, 1:Celsius</lang>
+                  </description>
+              </value>
+            <value from="04" to="04" reserved="true">
+                <description>
+                    <lang xml:lang="en">Reserve.</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">Disable the temperature report
+after event triggered. (1:Disable,
+0:Enable)</lang>
+                  </description>
+              </value>
+            <value from="06" to="06" reserved="true">
+                <description>
+                    <lang xml:lang="en">Reserve.</lang>
+                  </description>
+              </value>
+            <value from="07" to="07" reserved="true">
+                <description>
+                    <lang xml:lang="en">Reserve.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="bitset" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Multsensor Function Switch</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Multisensor function switch. Using bit
+to control.</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">Reserve.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01" reserved="true">
+                <description>
+                    <lang xml:lang="en">Reserve.</lang>
+                  </description>
+              </value>
+            <value from="02" to="02" reserved="true">
+                <description>
+                    <lang xml:lang="en">Reserve.</lang>
+                  </description>
+              </value>
+            <value from="03" to="03" reserved="true">
+                <description>
+                    <lang xml:lang="en">Reserve.</lang>
+                  </description>
+              </value>
+            <value from="04" to="04" reserved="true">
+                <description>
+                    <lang xml:lang="en">Reserve.</lang>
+                  </description>
+              </value>
+            <value from="05" to="05" reserved="true">
+                <description>
+                    <lang xml:lang="en">Reserve.</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="en">Disable the humidity report after
+event triggered. (1:Disable, 0:Enable)</lang>
+                  </description>
+              </value>
+            <value from="07" to="07" reserved="true">
+                <description>
+                    <lang xml:lang="en">Reserve.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="bitset" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Customer Function</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Customer function switch, using bit
+control.</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en">Reserve.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01" reserved="true">
+                <description>
+                    <lang xml:lang="en">Reserve.</lang>
+                  </description>
+              </value>
+            <value from="02" to="02" reserved="true">
+                <description>
+                    <lang xml:lang="en">Reserve.</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">Disable send out BASIC OFF
+after the flood event cleared.
+(1:Disable, 0:Enable)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">Notification Type,
+0: Using Notification Report.
+1: Using Sensor Binary Report.</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">Disable Multi CC in auto report.
+(1:Disable, 0:Enable)</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="en">Disable to report battery state
+when the device triggered. (1:Disable,
+0:Enable)</lang>
+                  </description>
+              </value>
+            <value from="07" to="07" reserved="true">
+                <description>
+                    <lang xml:lang="en">Reserve.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="range" size="1" default="0c">
+            <name>
+                <lang xml:lang="en">Auto Report Battery Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Sets the time interval to send an auto report of the battery level.
+The tick time
+is set by the configuration No.20.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Auto report is turned off.</lang>
+                  </description>
+              </value>
+            <value from="01" to="7f">
+                <description>
+                    <lang xml:lang="en">Defines time interval for auto report.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="range" size="1" default="0c">
+            <name>
+                <lang xml:lang="en">Auto Report Temperature Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Sets the time interval to send an auto report of the temperature. The tick time
+is set by the configuration No.20.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Auto report is turned off.</lang>
+                  </description>
+              </value>
+            <value from="01" to="7f">
+                <description>
+                    <lang xml:lang="en">Defines interval time for auto report.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="14" type="range" size="1" default="0c">
+            <name>
+                <lang xml:lang="en">Auto Report Humidity Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Sets the time interval to send an auto report of the humidity. The tick time
+is set by the configuration No.20.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Auto report is turned off.</lang>
+                  </description>
+              </value>
+            <value from="01" to="7f">
+                <description>
+                    <lang xml:lang="en">Defines time interval for auto report.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="15" type="range" size="1" default="0c">
+            <name>
+                <lang xml:lang="en">Auto Report Flood Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Sets the time interval to send an auto report of the flood state. The tick time
+is set by the configuration No.20.
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Auto report is turned off.</lang>
+                  </description>
+              </value>
+            <value from="01" to="7f">
+                <description>
+                    <lang xml:lang="en">Defines interval time for auto report.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="20" type="range" size="1" default="1e">
+            <name>
+                <lang xml:lang="en">Auto Report Tick Interval</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Sets the time interval for an auto report of each tick.
+Setting this configuration will
+effect configuration No.10, No.13,
+No.14 and No.15.
+Caution: Setting to 0 means turn off
+all auto report function.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">All auto report function is disabled.</lang>
+                  </description>
+              </value>
+            <value from="01" to="ff">
+                <description>
+                    <lang xml:lang="en">Defines interval time for an auto report each
+tick.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="21" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Temperature Differential Report</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The temperature differential that is reported.
+The unit is Fahrenheit.
+Enable this function the device will
+detect every 10 seconds.
+If the temperature is over 140
+degree Fahrenheit, it will continue report.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+            <value from="01" to="7f">
+                <description>
+                    <lang xml:lang="en">Defines temperature differential that will be reported.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="23" type="range" size="1" default="05">
+            <name>
+                <lang xml:lang="en">Humidity Differential Report</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+The humidity differential that is reported.
+
+The unit is percentage.
+Enable this function the device will detect every 10 seconds.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+            <value from="01" to="3c">
+                <description>
+                    <lang xml:lang="en">Defines humidity differential that will be reported.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/b67b00ccb0cf6ee3b4587e83e3a730872b7ed2a6.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

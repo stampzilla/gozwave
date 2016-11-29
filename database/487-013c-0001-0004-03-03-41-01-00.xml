@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="013c"/>
+        <productType value="0001"/>
+    <productId value="0004"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="41"/>
+    <appVersion value="01"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+            <certId>15399</certId>
+            <certNumber>ZC08-13050004</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">In-Wall Switch module PAN06-1</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en"></lang>
+          </inclusionNote>
+            <productName>In Wall Dual Relay (1 Way) Switch Module</productName>
+            <brandName>Philio</brandName>
+            <productLine>Philio Z-wave Products</productLine>
+            <productCode>PAN06-1</productCode>
+            <productVersion>V1.0</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020"/>
+        <commandClass id="0025"/>
+        <commandClass id="0027"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0086"/>
+        <commandClass id="0060" version="3"/>
+        <commandClass id="0085"/>
+        <commandClass id="0070"/>
+        <commandClass id="0071"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="3" maxNodes="1">
+            <description>
+                <lang xml:lang="en"></lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="1">
+            <description>
+                <lang xml:lang="en"></lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="en"></lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Ausgewählter Endpunkt</lang>
+                <lang xml:lang="en">Selected end point</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert das aus gewählte Relais</lang>
+                <lang xml:lang="en">defines the relays selected</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Relais 1 und Relais 2</lang>
+                    <lang xml:lang="en">Relay 1 and Relay 2</lang>
+                  </description>
+              </value>
+            <value from="02" to="03">
+                <description>
+                    <lang xml:lang="de">Relais 1</lang>
+                    <lang xml:lang="en">Relay 1</lang>
+                  </description>
+              </value>
+            <value from="03" to="04">
+                <description>
+                    <lang xml:lang="de">Relais 2</lang>
+                    <lang xml:lang="en">Relay 2</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Schalt oder Tastermodus</lang>
+                <lang xml:lang="en">Edge or Pulse mode or Edge-Togle mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">
+definiert den Arbeitsmodus des extern angeschlossenen Schalters
+</lang>
+                <lang xml:lang="en">
+defines the operating mode of the externally connected switch
+</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Schaltermodus</lang>
+                    <lang xml:lang="en">Edge Mode</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Tastermodus</lang>
+                    <lang xml:lang="en">Toggle Mode</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Schalter/Tastermodus</lang>
+                    <lang xml:lang="en">Edge/Toggle Mode</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    <endpoints>
+           <endpoint number="3">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0025"/>
+          </endpoint>
+           <endpoint number="2">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0025"/>
+          </endpoint>
+           <endpoint number="1">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0025"/>
+          </endpoint>
+      </endpoints>
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/6c23c45c17ba98519c7d3819c3073ebdb1ee0b60.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

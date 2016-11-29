@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="015a"/>
+        <productType value="1007"/>
+    <productId value="0002"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="67"/>
+    <appVersion value="02"/>
+    <appSubVersion value="01"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="07"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">JTB-1007 is a Z-Wave enabled curtian motor support scene setting.</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">3.	Click the PB-button once, located near by motor power socket.</lang>
+          </inclusionNote>
+            <productName>Curtain Motor</productName>
+            <brandName>Jintaobao</brandName>
+            <productLine>Home Automatic Products</productLine>
+            <productCode>JTB-1007-02</productCode>
+            <productVersion>1.10</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0085"/>
+        <commandClass id="0025"/>
+        <commandClass id="0026" version="3"/>
+        <commandClass id="0070"/>
+        <commandClass id="002b"/>
+        <commandClass id="002c"/>
+        <commandClass id="0072"/>
+        <commandClass id="0086"/>
+        <commandClass id="0020"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Association Group is assigned to the device status - sending the multilevel report frame to the associated devices while curtain position is change. </lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="17" type="constant" size="4" default="00000000">
+            <name>
+                <lang xml:lang="en">Motor Open, Go to Direction B</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Set only, any value possible</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="18" type="constant" size="4" default="00000000">
+            <name>
+                <lang xml:lang="en">Motor Stop</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Set only, any value possible</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="19" type="constant" size="4" default="00000000">
+            <name>
+                <lang xml:lang="en">Motor Close, Go to Direction A</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Set only, any value possible</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="20" type="range" size="4" default="00000000">
+            <name>
+                <lang xml:lang="en">Motor Position</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Return motor current position</lang>
+              </description>
+      
+                  <value from="00000000" to="00000063">
+                <description>
+                    <lang xml:lang="en">Set the parameter to move motor to desired position.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="21" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Return motor current position</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Get only</lang>
+              </description>
+      
+                  <value from="0000" to="0063">
+                <description>
+                    <lang xml:lang="en">Define the value.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="22" type="constant" size="4" default="00000000">
+            <name>
+                <lang xml:lang="en">Motor revert direction</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Set only, any value possible</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="23" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Clear motor lead tail endpoint setting</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Set only, any value possible</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="32" type="bitset" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Return motor status flag</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Get Only</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">motor is closing, go to direction A</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">motor is opening, go to direction B</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">motor endpoint A has setting</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">motor endpoint B has setting</lang>
+                  </description>
+              </value>
+            <value from="04" to="04" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="05" to="05" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="06" to="06" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="07" to="07">
+                <description>
+                    <lang xml:lang="en">direction revert</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="33" type="constant" size="4" default="00000000">
+            <name>
+                <lang xml:lang="en">Enable manual pulling function</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Set only, any value possible</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="34" type="constant" size="4" default="00000000">
+            <name>
+                <lang xml:lang="en">Disable manual pulling function</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Set only, any value possible</lang>
+              </description>
+      
+          </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/a8f3dc9e54fa3e46f83baa67bcb718c61579c437.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

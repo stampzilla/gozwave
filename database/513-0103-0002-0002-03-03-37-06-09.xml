@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0103"/>
+        <productType value="0002"/>
+    <productId value="0002"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="37"/>
+    <appVersion value="06"/>
+    <appSubVersion value="09"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+                    
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">The Dimmer Actuator is used for switching on, switching off or dimming one or more connected loads. </lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">The inclusion process can take place in three different ways:
+▪▪ By connecting the SDA to the power supply
+▪▪ Via the integrated operating button (2)
+▪▪ Via a button or switch connected to T1 or T2
+You can use this option if the SDA has been installed and the
+integrated operating button (2) is no longer accessible.</lang>
+          </inclusionNote>
+            <productName>Dimmer Actuator</productName>
+            <brandName>DiehlControls</brandName>
+            <productLine>n / a</productLine>
+            <productCode>766366</productCode>
+            <productVersion>6.9</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0072"/>
+        <commandClass id="0086"/>
+        <commandClass id="0070"/>
+        <commandClass id="0027"/>
+        <commandClass id="0026" version="2" controlled="true"/>
+        <commandClass id="0032" version="2"/>
+        <commandClass id="0085"/>
+        <commandClass id="0071" version="3"/>
+        <commandClass id="0020" controlled="true"/>
+        <commandClass id="0022" controlled="true" inNIF="false"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="3" maxNodes="2">
+            <description>
+                <lang xml:lang="en">Nodes in this group are automatically assigned a corresponding wireless
+control command (ON/OFF/DIM) in operation via T2</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="2">
+            <description>
+                <lang xml:lang="en">Nodes in this group are automatically assigned a corresponding wireless
+control command (ON/OFF/DIM) in operation via T1 </lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="en">The nodes in this group automatically receive a notification if the device
+status changes</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/7cb48548ac3dd949531201eb019ee5483e3a6eff.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

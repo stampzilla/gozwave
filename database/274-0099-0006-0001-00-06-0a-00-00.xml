@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0099"/>
+        <productType value="0006"/>
+    <productId value="0001"/>
+    <libType value="00"/>
+    <protoVersion value="06"/>
+    <protoSubVersion value="0a"/>
+    <appVersion value="00"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="04"/>
+            <specificClass value="01"/>
+        <optional value="false"/>
+    <listening value="true"/>
+    <routing value="false"/>
+            <rfFrequency>Australia and New Zealand</rfFrequency>
+            <certId>14226</certId>
+            <certNumber>ZC08-11040002</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">In Home Display v0.26 (Australia &amp; New Zealand)</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Press the Setup button to go to “Join Network” menu. Pressing the blinked OK-button will trigger the inclusion process. Once the inclusion succeeds, the completion screen will be shown. Otherwise, it will show the no connection error page.</lang>
+          </inclusionNote>
+            <productName>In Home Display</productName>
+            <brandName>GreenWave Reality</brandName>
+            <productLine>In Home Display</productLine>
+            <productCode>DE210</productCode>
+            <productVersion>0.26</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020"/>
+        <commandClass id="0071"/>
+        <commandClass id="0085"/>
+        <commandClass id="0080"/>
+        <commandClass id="0081"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+        <commandClass id="0093"/>
+        <commandClass id="0092"/>
+        <commandClass id="0086"/>
+        <commandClass id="0084"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="en">Smart Control Group, bound with Alarm type 1</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="1">
+            <description>
+                <lang xml:lang="en">Low Battery Group, bound with Alarm type 2</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="1">
+            <description>
+                <lang xml:lang="en">Messaging Service Group, bound with Alarm type 3</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="6" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Display Operating Mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">normal operation</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">suspended operation</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Clock operating mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00" unit="h">
+                <description>
+                    <lang xml:lang="en">24</lang>
+                  </description>
+              </value>
+            <value from="01" to="01" unit="h">
+                <description>
+                    <lang xml:lang="en">12</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="bitset" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Sound Disable bitmask</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">disable button beep</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">disable alarm beep</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="constant" size="1" default="07">
+            <name>
+                <lang xml:lang="en">Number of VSR rows</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+          </configParam>
+        <configParam number="11" type="constant" size="1" default="06">
+            <name>
+                <lang xml:lang="en">Number of String Pack rows</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+          </configParam>
+        <configParam number="12" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Number of message record rows</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+          </configParam>
+        <configParam number="15" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Number of logical screens defined</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+          </configParam>
+        <configParam number="16" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Index of startup &quot;logo&quot; screen</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Depends the actual screens pushed</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">not set (show &quot;GreenWave&quot; text)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="17" type="bitset" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Smart Control Enable Bit mask</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Home</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Away</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Night</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="18" type="range" size="1" default="0a">
+            <name>
+                <lang xml:lang="en">Battery low level in terms of percentage</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">set to default</lang>
+                  </description>
+              </value>
+            <value from="01" to="64" unit="percentage">
+                <description>
+                    <lang xml:lang="en">battery low level</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="19" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Index of active language</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Depends on the language pack in EEPROM</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">first language in language pack</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">English</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="20" type="range" size="1" default="32">
+            <name>
+                <lang xml:lang="en">Base scheduler timer tick</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">using default value</lang>
+                  </description>
+              </value>
+            <value from="01" to="7f" unit="10ms">
+                <description>
+                    <lang xml:lang="en">base scheduler timer tick</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="22" type="range" size="2" default="0708">
+            <name>
+                <lang xml:lang="en">Battery powered RF wake up interval</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Battery powered RF wake up interval</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">using default value (1800 = 900s)</lang>
+                  </description>
+              </value>
+            <value from="ffff" to="ffff">
+                <description>
+                    <lang xml:lang="en">WUT disable</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="24" type="range" size="2" default="0078">
+            <name>
+                <lang xml:lang="en">AC powered RF wakeup interval</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Value is in terms of base scheduler time</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">120 (1 min)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="26" type="range" size="2" default="003c">
+            <name>
+                <lang xml:lang="en">Auto (Presentation) mode screen cycling interval</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Value is in terms of base scheduler time</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">default 60 (30 s)</lang>
+                  </description>
+              </value>
+            <value from="ffff" to="ffff">
+                <description>
+                    <lang xml:lang="en">no automatic cycle</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="28" type="range" size="2" default="000a">
+            <name>
+                <lang xml:lang="en">Multiple line text scroll interval</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Value is in terms of base scheduler time</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">default 10 (5 s)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="30" type="range" size="2" default="0004">
+            <name>
+                <lang xml:lang="en">Logo screen show time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Value is in terms of base scheduler time</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">default 4  (2s)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="32" type="range" size="2" default="003c">
+            <name>
+                <lang xml:lang="en">Time out for exiting manual mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Value is in terms of base scheduler time</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">default 60 (30s)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="34" type="range" size="2" default="003c">
+            <name>
+                <lang xml:lang="en">Time out for exiting inspect mode (grid navigation)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Value is in terms of base scheduler time</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">default 60 (30s)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="36" type="range" size="2" default="003c">
+            <name>
+                <lang xml:lang="en">Time out for exiting setup/menu mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Value is in terms of base scheduler time</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">default 60 (30s)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="38" type="range" size="2" default="003c">
+            <name>
+                <lang xml:lang="en">Time out for exiting interactive mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Value is in terms of base scheduler time</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">default 60 (30s)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="40" type="range" size="2" default="000a">
+            <name>
+                <lang xml:lang="en">Timeout for notification text (messaging, no service, etc)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Value is in terms of base scheduler time</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">default 10 (5 s)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="42" type="range" size="2" default="000a">
+            <name>
+                <lang xml:lang="en">RF keep alive time after RF wakeup</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Value is in terms of base scheduler time</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">default 10 (5 s)</lang>
+                  </description>
+              </value>
+            <value from="ffff" to="ffff">
+                <description>
+                    <lang xml:lang="en">sleep disabled, always alive</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="44" type="constant" size="2" default="0001">
+            <name>
+                <lang xml:lang="en">Blink Duration for highlighted items</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Value is in terms of base scheduler time</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">default 1 (0.5 s)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="46" type="constant" size="2" default="000a">
+            <name>
+                <lang xml:lang="en">Time out for result view</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Value is in terms of base scheduler time</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">default 10 (5 s),</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/70e7de96825f18f26a8577550bef6f4dbd465f4d.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

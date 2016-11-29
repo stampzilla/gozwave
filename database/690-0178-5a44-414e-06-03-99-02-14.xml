@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0178"/>
+        <productType value="5a44"/>
+    <productId value="414e"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="99"/>
+    <appVersion value="02"/>
+    <appSubVersion value="14"/>
+        <basicClass value="04"/>
+            <genericClass value="0f"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>US</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">The VeriLock Translator is a Z-Wave Plus Repeater that recieves VeriLock messages and reports the status over the Z-Wave network using the Multi Channel Command Class. </lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">While the 4-minute timer is running, plug in your VeriLock Translator into an outlet within 30 feet of your Nexia Bridge. If a success message is not shown within one minute, try pressing and releasing the VeriLock Translator round Z-Wave button while the 4-minute timer is still running.</lang>
+          </inclusionNote>
+            <productName>VeriLock Translator</productName>
+            <brandName>Andersen</brandName>
+            <productLine>VeriLock</productLine>
+            <productCode>9125051</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0070"/>
+        <commandClass id="008e" version="2"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="007a" version="3"/>
+        <commandClass id="0071" version="3"/>
+        <commandClass id="0022"/>
+        <commandClass id="005a"/>
+        <commandClass id="0073"/>
+        <commandClass id="0072"/>
+        <commandClass id="0060" version="3"/>
+        <commandClass id="0020"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="en">Lifeline: Any unsolicited messages from the device will be sent to the associated node after an association is setup by the controller. If there is no association, unsolicited messages are sent by default to Node ID 1.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="1" default="64">
+            <name>
+                <lang xml:lang="en">Buzzer Volume</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Adjust the Buzzer Volume.
+Nexia sends 0/33/66/100.</lang>
+              </description>
+      
+                  <value from="00" to="64">
+                <description>
+                    <lang xml:lang="en">Set the buzzer volume.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Sensor Discovery Mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Start or stop Sensor Discovery Mode.
+Starting this mode allows the user to add/remove sensors on the ZID.
+Nexia sends 0/1
+ZID responds with 0-3.
+ZID sends capability report of end point upon successful addition of sensor.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">0 = Disable</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">1 = Enable</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Night Light Mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Turn Night Light Mode On/Off.
+Buzzer and LED’s do not operate when Night Light Mode is enabled.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">0=False</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">1=True</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    <endpoints>
+           <endpoint number="1" dynamic="true">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="0f"/>
+                  <specificClass value="01"/>
+                  <commandClass id="005e"/>
+            <commandClass id="0086"/>
+            <commandClass id="0070"/>
+            <commandClass id="008e"/>
+            <commandClass id="0085"/>
+            <commandClass id="0059"/>
+            <commandClass id="007a"/>
+            <commandClass id="0071"/>
+            <commandClass id="0022"/>
+          </endpoint>
+      </endpoints>
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/52197447fd1a6615a359ddcffd4749ea48172103.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

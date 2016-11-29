@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="010f"/>
+        <productType value="0c00"/>
+    <productId value="1000"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="67"/>
+    <appVersion value="02"/>
+    <appSubVersion value="05"/>
+        <basicClass value="04"/>
+            <genericClass value="a1"/>
+            <specificClass value="00"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Smoke Sensor</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en">Triple click B-button.</lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Press the B-button once.</lang>
+          </inclusionNote>
+            <productName>FGSS-001</productName>
+            <brandName>Fibaro</brandName>
+            <productLine>Fibaro</productLine>
+            <productCode>001</productCode>
+            <productVersion>2x.2x</productVersion>
+            <batteryType>CR123A</batteryType>
+            <batteryCount>1</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="009c"/>
+        <commandClass id="0031"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0072"/>
+        <commandClass id="0070"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="008e" version="2"/>
+        <commandClass id="008b" controlled="true"/>
+        <commandClass id="0056" controlled="true"/>
+        <commandClass id="0084"/>
+        <commandClass id="0080"/>
+        <commandClass id="0020" controlled="true"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="3" maxNodes="5">
+            <description>
+                <lang xml:lang="en">3-rd Association Group reports the device status and allows for assigning a
+single device only (the main controller by default - the device reports its status to
+the main controller). It’s not recommended to modify this association group.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="en">2-nd Association Group is assigned to the TMP button and the malfunction alarm.
+Alarm frame will be sent to the associated devices once tampering or malfunction
+are detected.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">1-st Association Group is assigned to the device status - Sending the BASIC SET
+(default) or ALARM control frame to the associated devices having detected fire</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="rangemapped" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Smoke alarm cancellation delay</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The time between when the smoke disappears and the Fibaro Smoke Sensor
+stops sending the alarm signal.
+Available settings: 0 – 17280, 65535 (5s multiplier) [5s-24h]
+0 - no delay, immediate cancellation
+65535 - alarm cancellation inactive - Smoke Sensor will keep indicating smoke
+alarm after the smoke will have disappeared. The smoke alarm can be only ceased
+manually, by entering 2nd menu level</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">no delay, immediate cancellation</lang>
+                  </description>
+              </value>
+            <value from="0001" to="4380" unit="x5sec">
+                <description>
+                    <lang xml:lang="en">Define the time delay.</lang>
+                  </description>
+              </value>
+            <value from="fffe" to="fffe">
+                <description>
+                    <lang xml:lang="en">alarm cancellation inactive</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="1" default="03">
+            <name>
+                <lang xml:lang="en">LED indicator and acoustic alarm turned ON / OFF at any alarm type.</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Allows for deactivating the LED indicator and the acoustic alarm, in case of
+detecting an alarm of any type. This doesn’t affect the communication with the
+Z-Wave network controller, i.e. the sensor will keep sending alarms, reports and all
+information to the associated devices. Modifying this parameter settings helps
+extending the battery life.
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">acoustic and visual alarms inactive</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">acoustic alarm inactive, visual alarm active</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">acoustic alarm active, visual alarm inactive</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">acoustic and visual alarms active</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="constant" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">Type of alarm frame sent to 1-st Association Group devices (smoke alarm).</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Allows for choosing a command class used in 1-st Association Group.
+Available settings: 0, 255
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">ALARM SENSOR (SMOKE) command frame</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">BASIC_SET command frame</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="rangemapped" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">Forced level of dimming / opening dimmers, roller blinds etc. devices at sending turn on / open / change level commands to 1-st Association Group’s devices.</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The value of 255 allows for turning on a device. In case of Dimmer, the value of 255
+means turning on the device with the last memorized state. E.g. Dimmer set to
+30% and then turned off, and next turned on using the 255 command, will turn on
+with the last remembered status, i.e. 30%.
+In case of alarm frames, alarm priority is defined.
+Available settings: (1 - 99) or 255
+</lang>
+              </description>
+      
+                  <value from="01" to="63">
+                <description>
+                    <lang xml:lang="en">Set the forced level of dimming/opening devices.</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Device is turned on.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="rangemapped" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Temperature report interval</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Time interval between consecutive temperature reports.
+The parameter is relevant for the battery powering mode only. Longer time interval
+means less frequent communication and thus a longer battery life.
+Report is sent when new temperatue value is different from the one previously
+reported. Temperature reports can be also sent as a result of polling.
+Available settings: 1 – 17280, 0 (multiply by 5 seconds) [5s-24h]
+</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Reports are inactive.</lang>
+                  </description>
+              </value>
+            <value from="0001" to="4380" unit="x5sec">
+                <description>
+                    <lang xml:lang="en">Define the temperature report interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="range" size="1" default="14">
+            <name>
+                <lang xml:lang="en">Temperature report hysteresis.</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The temperature report will only be sent if there is a difference in temperature value
+from the previous value reported, defined in this parameter (hysteresis).
+Temperature reports can be also sent as a result of polling.
+Available settings: 0 – 100 (in 0,1°C steps)
+Default setting: 20 (2°C)</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">The temperature change reporting function is inactive.</lang>
+                  </description>
+              </value>
+            <value from="01" to="64">
+                <description>
+                    <lang xml:lang="en">Define delta T for a temperature report.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="73" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Temperature measurement compensation</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Parameter stores a temperature value to be added to or deducted from the current
+temperature measured by internal temperature sensor in order to compensate the
+difference between air temperature and temperature measured at the ceiling level.
+Available settings: -1000 -/+ 1000 (in 0,1°C steps)</lang>
+              </description>
+      
+                  <value from="fc18" to="03e8" unit="x0.1 °C">
+                <description>
+                    <lang xml:lang="en">Set a temperature compensation value.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="80" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Z-Wave range test interval.</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Time period between the consecutive Z-Wave network range tests.
+In battery powering mode, Z-Wave network range test is carried out at the wake up
+interval. The value of 0 turns off the Z-Wave range test, regardless of the powering
+mode chosen.
+Available settings: 0 – 144 (10min multiplier) [10min-24h]
+Default setting: 1 (10min)</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Z-Wave network range test is inactive.</lang>
+                  </description>
+              </value>
+            <value from="01" to="90" unit="x10min">
+                <description>
+                    <lang xml:lang="en">Set the time interval for Z-Wave network range tests.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="81" type="rangemapped" size="1" default="36">
+            <name>
+                <lang xml:lang="en">Temperature alarm threshold.</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Temperature value, measured by the built-in temperature sensor, above which the
+temperature alarm is sent.
+
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+            <value from="02" to="64" unit="°C">
+                <description>
+                    <lang xml:lang="en">Set the temperature value.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="82" type="constant" size="1" default="02">
+            <name>
+                <lang xml:lang="en">Fibaro Smoke Sensor sensitivity</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">There are 3 levels of sensitivity to smoke presence. Level 1 means the highest
+sensitivity.
+</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">HIGH Sensitivity</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">MEDIUM Sensitivity</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">LOW Sensitivity</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="83" type="constant" size="1" default="02">
+            <name>
+                <lang xml:lang="en">Black Box sensitivity level.</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter allows for specifying the moment in which the Black Box starts
+recording data. After the specified smoke and temperature values will be
+exceeded, the Fibaro Smoke Sensor’s Black Box will record them.
+</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">HIGH Sensitivity</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">MEDIUM Sensitivity</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">LOW Sensitivity</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="84" type="range" size="1" default="0a">
+            <name>
+                <lang xml:lang="en">Malfunction alarm</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Time interval in which malfuntion alarm, if detected, is repeated using visual and
+acoustic alarms.
+Available settings: 1 - 255 (100 ms multiplier) [100ms-25,5s]
+</lang>
+              </description>
+      
+                  <value from="01" to="ff">
+                <description>
+                    <lang xml:lang="en">Set the time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="85" type="range" size="1" default="05">
+            <name>
+                <lang xml:lang="en">Temperature alarm</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Time interval in which temperature alarm, if detected, is repeated using visual and
+acoustic alarms.
+Available settings: 1 - 255 (100 ms multiplier) [100ms-25,5s]
+</lang>
+              </description>
+      
+                  <value from="01" to="ff">
+                <description>
+                    <lang xml:lang="en">Set the time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="86" type="range" size="2" default="0168">
+            <name>
+                <lang xml:lang="en">Lack of the Z-Wave range alarm</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Time interval in which lack of the Z-Wave network alarm, if detected, is repeated
+using visual and acoustic alarms.
+Available settings: 1 - 17280 (5s multiplier) [5s-24h]
+Default setting: 360 (30min)</lang>
+              </description>
+      
+                  <value from="0001" to="4380">
+                <description>
+                    <lang xml:lang="en">Set the time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="87" type="range" size="2" default="0168">
+            <name>
+                <lang xml:lang="en">Low battery alarm</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Time interval in which low battery alarm, if detected, is repeated using visual and
+acoustic alarms.
+Available settings: 1 - 17280 (5s multiplier) [5s-24h]
+Default setting: 360 (30min)</lang>
+              </description>
+      
+                  <value from="0001" to="4380">
+                <description>
+                    <lang xml:lang="en">Set the time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="88" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Consider temperature measurement compensation (parameter 73) when sending temperature report.</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">ignore temperature compensation</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">include temperature compensation</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="89" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Tamper alarm</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The parameter defines the state of the tamper alarm.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">tamper alarm inactive</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">tamper alarm active, with cancellation option available</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">tamper alarm active, without cancellation option</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Alarm broadcast</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">A value other than 0 means that alarms are being sent in broadcast mode, i.e. to
+all devices within a Fibaro Smoke Sensor’s range.
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">broadcast inactive</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">smoke alarm broadcast (1-st Association Group) active; tamper alarm
+broadcast (2-nd Association Group) inactive</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">smoke alarm broadcast (1-st Association Group) inactive; tamper alarm
+broadcast (2-nd Association Group) active</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">smoke alarm broadcast active (1-st association group); tamper alarm
+broadcast (2-nd association group) active</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/158e966170dc40718918ef4a73c28a4e3dc0246c.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+
