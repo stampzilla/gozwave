@@ -8,6 +8,7 @@ import (
 type FuncApplicationCommandHandler struct {
 	Command commands.ZWaveCommand
 	Class   byte // Command Class
+	Node    byte
 
 	Data interface{}
 }
@@ -44,6 +45,8 @@ func (self *FuncApplicationCommandHandler) Decode(data []byte) {
 			logrus.Debugf("%+v\n", self.Data)
 		}
 	case commands.WakeUp:
+		//	self.Node = data[2];
+		self.Data = commands.NewWakeUp(data[2:])
 	default:
 		self.Data = data
 	}

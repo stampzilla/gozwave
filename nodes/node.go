@@ -1,6 +1,8 @@
 package nodes
 
 import (
+	"time"
+
 	"github.com/Sirupsen/logrus"
 	"github.com/stampzilla/gozwave/commands"
 	"github.com/stampzilla/gozwave/events"
@@ -16,6 +18,7 @@ func New(address byte, connection *serialapi.Connection, eventQue chan interface
 	}
 
 	c := make(chan struct{})
+
 	go n.Worker(c)
 
 	return n, c
@@ -41,16 +44,41 @@ func (n *node) Id() byte {
 
 func (n *node) isAwake() chan struct{} {
 	c := make(chan struct{})
-	close(c)
+	if n.IsAwake {
+		close(c)
+	}
 	return c
 }
 
 func (n *node) Worker(basicDone chan struct{}) {
+
+	updateChan := n.connection.RegisterNode(n.Id())
+	go func() {
+		for {
+			select {
+			case update := <-updateChan:
+				//logrus.Errorf("Node received update: %T", update)
+				switch msg := update.(type) {
+				case *serialapi.Message:
+					switch body := msg.Data.(type) {
+					case *functions.FuncApplicationCommandHandler:
+						switch body.Data.(type) {
+						case *commands.CmdWakeUp:
+							//logrus.Error("NODE RECEIVED WAKEUP")
+						}
+					}
+				}
+			}
+		}
+	}()
+
 	go n.Identify(basicDone)
 
-	n.pushEvent(events.NodeDiscoverd{
-		Address: n.Id(),
-	})
+	if n.Id() != 1 {
+		n.pushEvent(events.NodeDiscoverd{
+			Address: n.Id(),
+		})
+	}
 
 	for {
 		select {}
@@ -58,6 +86,7 @@ func (n *node) Worker(basicDone chan struct{}) {
 }
 func (n *node) Identify(basicDone chan struct{}) {
 	logrus.Warnf("Started identification on node %d", n.Id())
+	defer logrus.Warnf("Ended identification on node %d", n.Id())
 
 	defer func() {
 		if basicDone != nil {
@@ -74,6 +103,7 @@ func (n *node) Identify(basicDone chan struct{}) {
 		if n.ProtocolInfo == nil {
 			err := n.RequestProtocolInfo()
 			if err != nil {
+				<-time.After(time.Second * 10)
 				continue
 			}
 			n.pushEvent(events.NodeUpdated{
@@ -96,6 +126,7 @@ func (n *node) Identify(basicDone chan struct{}) {
 		if n.ManufacurerSpecific == nil {
 			err := n.RequestManufacturerSpecific()
 			if err != nil {
+				<-time.After(time.Second * 10)
 				continue
 			}
 			n.pushEvent(events.NodeUpdated{

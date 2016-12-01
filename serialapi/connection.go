@@ -3,12 +3,15 @@ package serialapi
 import (
 	"encoding/hex"
 	"io"
+	"strconv"
 	"strings"
 	"sync"
 	"time"
 
 	"github.com/Sirupsen/logrus"
 	"github.com/pborman/uuid"
+	"github.com/stampzilla/gozwave/commands"
+	"github.com/stampzilla/gozwave/functions"
 	"github.com/tarm/serial"
 )
 
@@ -20,6 +23,7 @@ type Connection struct {
 
 	// Keep track of requests wating a response
 	inFlight    map[string]*sendPackage
+	updateChans map[string]chan interface{}
 	send        chan *sendPackage
 	lastCommand string // Uuid of last sent command
 	lastResult  chan byte
@@ -43,11 +47,20 @@ type sendPackage struct {
 
 func NewConnection() *Connection {
 	z := &Connection{
-		inFlight:   make(map[string]*sendPackage),
-		send:       make(chan *sendPackage),
-		lastResult: make(chan byte),
+		inFlight:    make(map[string]*sendPackage),
+		updateChans: make(map[string]chan interface{}),
+		send:        make(chan *sendPackage),
+		lastResult:  make(chan byte),
 	}
 	return z
+}
+
+func (self *Connection) RegisterNode(address byte) chan interface{} {
+	c := make(chan interface{})
+
+	self.updateChans[strconv.Itoa(int(address))] = c
+
+	return c
 }
 
 type Encodable interface {
@@ -256,6 +269,24 @@ func (self *Connection) Reader() error {
 						close(c.returnChan)
 					}
 					self.Unlock()
+				}
+
+				if msg != nil {
+					switch cmd := msg.Data.(type) {
+					case *functions.FuncApplicationCommandHandler:
+						switch cmd.Data.(type) {
+						case *commands.CmdWakeUp:
+							c, ok := self.updateChans[strconv.Itoa(int(msg.NodeId))]
+							if ok {
+								go func() {
+									select {
+									case c <- msg:
+									case <-time.After(time.Second):
+									}
+								}()
+							}
+						}
+					}
 				}
 
 				logrus.Infof("Recived: %s", strings.TrimSpace(hex.Dump(incomming)))

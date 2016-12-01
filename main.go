@@ -8,18 +8,6 @@ import (
 	"github.com/stampzilla/gozwave/serialapi"
 )
 
-//type Controller struct {
-//Name      string
-//Baud      int
-//port      io.ReadWriteCloser
-//Connected bool
-
-//// Keep track of requests wating a response
-//inFlight map[string]chan *Message
-
-//sync.Mutex
-//}
-
 func Connect(port string, file ...string) (*Controller, error) {
 
 	c := &Controller{
