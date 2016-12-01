@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0103"/>
+        <productType value="0001"/>
+    <productId value="0002"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="25"/>
+    <appVersion value="01"/>
+    <appSubVersion value="0f"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+            <certId>15144</certId>
+            <certNumber>ZC08-12120001</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Funktstecker für Steckdosen mit integriertem Energie- und Leistungsmessgerät.</lang>
+            <lang xml:lang="en">Controlable plug for wall outlets including energy and power meter.</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Taste am Funktionsstecker 3-mal innerhalb von ca. 2 Sekunden 
+drücken.</lang>
+            <lang xml:lang="en">Press control button three times within 2 seconds.</lang>
+          </inclusionNote>
+            <productName>Plug Actuator 2.0</productName>
+            <brandName>DiehlControls</brandName>
+            <productLine>n/a</productLine>
+            <productCode>751529</productCode>
+            <productVersion>1.15</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" inNIF="false"/>
+        <commandClass id="0025"/>
+        <commandClass id="0086"/>
+        <commandClass id="0027"/>
+        <commandClass id="0087"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0070"/>
+        <commandClass id="0071" version="3"/>
+        <commandClass id="0032" version="2"/>
+        <commandClass id="0075" version="2"/>
+        <commandClass id="0085"/>
+        <commandClass id="0022" controlled="true" inNIF="false"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="de">Knoten dieser Gruppe erhalten 
+automatisch Benachrichtigungen bei 
+Zustandsänderungen des Geräts.</lang>
+                <lang xml:lang="en">On status change, notifications are sent to the associated node.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="02">
+            <name>
+                <lang xml:lang="de">Standard Schaltzustand</lang>
+                <lang xml:lang="en">Default switch state</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Verhalten nach einem Netzausfall</lang>
+                <lang xml:lang="en">Behavior after power breakdown</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Aus</lang>
+                    <lang xml:lang="en">Off</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">An</lang>
+                    <lang xml:lang="en">On</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Der letzte Zustand wird wiederhergestellt</lang>
+                    <lang xml:lang="en">Restore last active state.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="2" default="000a">
+            <name>
+                <lang xml:lang="de">Mindestzeit Energiewerte</lang>
+                <lang xml:lang="en">Energy minimum report time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Mindestzeit zwischen zwei (unaufgeforderten) Energiewerten</lang>
+                <lang xml:lang="en">Minimum time between two unrequested energy values.</lang>
+              </description>
+      
+                  <value from="0000" to="7fff" unit="s">
+                <description>
+                    <lang xml:lang="de">Mindestzeit zwischen zwei 
+Energiewerten in Sekunden</lang>
+                    <lang xml:lang="en">minimum time in seconds between two energy values</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="range" size="2" default="0078">
+            <name>
+                <lang xml:lang="de">Maximal Zeit Energiewerte</lang>
+                <lang xml:lang="en">Energy maximum report time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Maximal Zeit zwischen zwei Ener-
+giewerten, unabhängig von einer Änderung des Werts</lang>
+                <lang xml:lang="en">Maximum time between two energy values, independent of value change.</lang>
+              </description>
+      
+                  <value from="0000" to="7fff" unit="s">
+                <description>
+                    <lang xml:lang="de">Max. Zeit zwischen zwei Ener-
+giewerten in Sekunden</lang>
+                    <lang xml:lang="en">maximum time in seconds between two energy values.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="2" default="000a">
+            <name>
+                <lang xml:lang="de">Mindestzeit Leistungswerte</lang>
+                <lang xml:lang="en">Power minimum report time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Mindestzeit zwischen zwei (unaufgeforderten) Leistungswerten</lang>
+                <lang xml:lang="en">Minimum time between two unrequested power values.</lang>
+              </description>
+      
+                  <value from="0000" to="7fff" unit="s">
+                <description>
+                    <lang xml:lang="de"> Mindestzeit zwischen zwei Leistungswerten in Sekunden</lang>
+                    <lang xml:lang="en">minimum time in seconds between two power values</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="range" size="2" default="0078">
+            <name>
+                <lang xml:lang="de">Maximal Zeit Leistungswerte</lang>
+                <lang xml:lang="en">Power maximum report time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Maximum Zeit zwischen zwei Leistungswerten, unabhängig von einer Änderung des Werts</lang>
+                <lang xml:lang="en">Maximum time between two power values, independent of value change.</lang>
+              </description>
+      
+                  <value from="0001" to="7fff" unit="s">
+                <description>
+                    <lang xml:lang="de">Max. Zeit zwischen zwei Leis-
+tungswerten in Sekunden</lang>
+                    <lang xml:lang="en">maximum time in seconds between two energy values</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="range" size="2" default="000a">
+            <name>
+                <lang xml:lang="de">Änderung des Energiewertes</lang>
+                <lang xml:lang="en">Energy delta value</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Mindeständerung, damit ein neuer Energiewert übertragen wird. Die Übertragung muss im Zeitfenster zwischen Parameter 2 und 3 erfolgen.</lang>
+                <lang xml:lang="en">Minimum change to send a energy value. This value must be in between the value of parameter 2 and 3.</lang>
+              </description>
+      
+                  <value from="0000" to="7fff" unit="Wh">
+                <description>
+                    <lang xml:lang="de">Mindeständerung, damit ein neuer Energiewert übertragen wird. </lang>
+                    <lang xml:lang="en">minimum energy value change to send ernergy value</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="range" size="2" default="0096">
+            <name>
+                <lang xml:lang="de">Änderung des Leistungswertes</lang>
+                <lang xml:lang="en">Power delta value</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Mindeständerung, damit ein neuer Leistungswert übertragen wird. Die Übertragung muss im Zeitfenster zwischen Parameter 4 und 5 erfolgen.</lang>
+                <lang xml:lang="en">Minimum change to send a power value. This value must be in between the value of parameter 4 and 5.</lang>
+              </description>
+      
+                  <value from="0000" to="7fff" unit="Wh">
+                <description>
+                    <lang xml:lang="de">Mindeständerung, damit ein neuer Leistungswert übertragen wird.</lang>
+                    <lang xml:lang="en">minimum power value change to send power value</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Einstellung für Sicherheitsabschaltung</lang>
+                <lang xml:lang="en">Security shutdown configuration </lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Verhalten bei Sicherheitsabschaltung</lang>
+                <lang xml:lang="en">Behavior after safety shutdown. After three times safety shutdown the device stays off.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Funktionsstecker bleibt aus</lang>
+                    <lang xml:lang="en">device stays off</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Neustart nach Übertemperatur sobald die Temperatur fällt oder bei Überlast nach 3 Minuten</lang>
+                    <lang xml:lang="en">relaunch of the device if temperature falls after overheat  or three minutes after overload.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Reset nach Überspannungsabschaltung</lang>
+                <lang xml:lang="en">Reset of overcurrent shutdown</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Aktivierung trotz 3-maliger 
+Sicherheitsabschaltung</lang>
+                <lang xml:lang="en">Behavior after three times safety shutdown.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Kein Reset</lang>
+                    <lang xml:lang="en">no reset</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Der Zähler der Sicherheitsabschaltung wird zurückgesetzt, der 
+Funktionsstecker ist wieder aktiviert</lang>
+                    <lang xml:lang="en">reset the counter for safety shutdown and activate the device</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Nachtmodus</lang>
+                <lang xml:lang="en">Night mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Nachtmodus aus</lang>
+                    <lang xml:lang="en">night mode off</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Nachtmodus ein, d.h. die LEDs leuchten beim Schalten 
+1 Sekunde lang, ansonsten sind sie aus.</lang>
+                    <lang xml:lang="en">night mode on, LEDs will light up for one second on after activating the device, otherwise the LEDs stay off.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Farbe der Info-LED</lang>
+                <lang xml:lang="en">Info LED Color</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Info-LED aus</lang>
+                    <lang xml:lang="en">Info-LED off</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Info-LED grün</lang>
+                    <lang xml:lang="en">Info-LED green</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Info-LED gelb</lang>
+                    <lang xml:lang="en">Info-LED yellow</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Info-LED rot</lang>
+                    <lang xml:lang="en">Info-LED red</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/119ba0e4d3f10b3e571ff77f1fb974638e57ec42.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

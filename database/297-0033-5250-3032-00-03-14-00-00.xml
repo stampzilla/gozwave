@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0033"/>
+        <productType value="5250"/>
+    <productId value="3032"/>
+    <libType value="00"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="14"/>
+    <appVersion value="00"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="03"/>
+        <optional value="false"/>
+    <listening value="true"/>
+    <routing value="false"/>
+            <rfFrequency>Indien</rfFrequency>
+            <certId>14246</certId>
+            <certNumber>ZC08-11080003</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">DC Motor Controller for window coverings (India)</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Do a quick press of the LEARN button on the side of the DBMZ unit (Z-Wave STATUS LED
+will flash GREEN).</lang>
+          </inclusionNote>
+            <productName>DBMZ  India</productName>
+                        <productVersion>1+2</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020"/>
+        <commandClass id="0026"/>
+        <commandClass id="0027"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+        <commandClass id="0073"/>
+        <commandClass id="002b"/>
+        <commandClass id="002c"/>
+        <commandClass id="0086"/>
+      </commandClasses>
+  
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Calibration State</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Unit calibration state.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Read value: Not calibrated / Write value: No Action</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Read value: Calibrated / Write value: Begin calibration sequence</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Motor direction</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Unit calibrated for normal or reversed motor direction.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Read value: Motor direction normal / Write value: Set direction to “normal” and begin calibration sequence</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Read value: Reversed motor direction / Write value: Set direction to reverse and begin calibration sequence</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Positioning</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Allows precision positioning of wood blinds.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Read value: Tilt feature not enabled / Write value: Disable tilt</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Read value: Tilt feature enabled / Write value: Enable tilt</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/ab0f75f83df724ee5614836ee554d9dfc33da224.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

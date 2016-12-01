@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="010f"/>
+        <productType value="0300"/>
+    <productId value="0109"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="2a"/>
+    <appVersion value="01"/>
+    <appSubVersion value="09"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="03"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>Russia</rfFrequency>
+            <certId>14409</certId>
+            <certNumber>ZC08-11080006</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en">Roller Shutter Controller FGR-221</lang>
+            <lang xml:lang="ru">Компактный модуль для управления мотороми (жалюзи, шторы) FGR-221</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+            <lang xml:lang="ru"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Dreifach den kleinen Taster</lang>
+            <lang xml:lang="en">Tripple Press little button on device</lang>
+            <lang xml:lang="ru">Тройное нажатие сервисной кнопки B</lang>
+          </inclusionNote>
+            <productName>FGR211 V1.9</productName>
+            <brandName>Fibaro</brandName>
+            <productLine>Fibaro</productLine>
+            <productCode>001</productCode>
+            <productVersion>1.9</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" controlled="true"/>
+        <commandClass id="0070"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0026" version="3" controlled="true"/>
+        <commandClass id="0027"/>
+        <commandClass id="008e" version="2"/>
+        <commandClass id="0050"/>
+        <commandClass id="0072"/>
+        <commandClass id="0073"/>
+        <commandClass id="0086"/>
+        <commandClass id="0025"/>
+        <commandClass id="0071" controlled="true"/>
+        <commandClass id="009c" controlled="true"/>
+        <commandClass id="0060" version="2" controlled="true"/>
+        <commandClass id="0000"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Group 1 is assigned to the first button.</lang>
+                <lang xml:lang="ru">Управляется кнопкой №1</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Group 2 is assigned to the second button.</lang>
+                <lang xml:lang="ru">Управляется кнопкой №2</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="1">
+            <description>
+                <lang xml:lang="en">Reports state of device</lang>
+                <lang xml:lang="ru">Отправлять отчёт при изменение состояния устройства</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Parameter no.1 - Activation/Deactivation</lang>
+                <lang xml:lang="ru">Параметр №1 - Включить всё/Выключить всё</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Activation/deactivation of ALL ON/ALL OFF functions</lang>
+                <lang xml:lang="ru">Параметр позволяет настроить, будет ли модуль реагировать на широковещательные команды &quot;Включить всё&quot; и &quot;Выключить всё&quot;. </lang>
+              </description>
+      
+                  <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">ALL ON active ALL OFF active</lang>
+                    <lang xml:lang="ru">Реагировать на команду Включить всё, Реагировать на команду Выключить всё</lang>
+                  </description>
+              </value>
+            <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">ALL ON non active ALL OFF non active</lang>
+                    <lang xml:lang="ru">Игнорировать команду Включить всё, Игнорировать команду Выключить всё</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">ALL ON non active ALL OFF active</lang>
+                    <lang xml:lang="ru">Игнорировать команду Включить всё, Реагировать на команду Выключить всё</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">ALL ON active ALL OFF non active</lang>
+                    <lang xml:lang="ru">Реагировать на команду Включить всё, Игнорировать команду Выключить всё</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Parameter no.10 - Turning off the shutter positioning function</lang>
+                <lang xml:lang="ru">Параметр №10 - Запоминать положение жалюзи</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Turning on the shutter positioning function</lang>
+                    <lang xml:lang="ru">Запоминать</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Turning off the shutter positioning function</lang>
+                    <lang xml:lang="ru">Не запоминать</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="14" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Parameter no.14 - Switch Type</lang>
+                <lang xml:lang="ru">Параметр №14 - Режим переключения</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Switch type. Choose between mono or bi- stable</lang>
+                <lang xml:lang="ru">Моностабильный: для выключателя возвратного типа с двумя клавишами, первая клавиша открывает жалюзи или останавливает, если жалюзи закрывается, вторая закрывает или останавливает, если жалюзи открываются. Бистабильный: для обычных выключателей с двумя положениями Открыть и Закрыть. Моностабильный с одной кнопкой: для выключателя возвратного типа, каждое нажатие переключает устройство в противоположное состояние.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">mono-stable switch</lang>
+                    <lang xml:lang="ru">Моностабильный</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">bistable switch</lang>
+                    <lang xml:lang="ru">Бистабильный</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">single mono-stable switch</lang>
+                    <lang xml:lang="ru">Моностабильный с одной кнопкой</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="20" type="range" size="1" default="10">
+            <name>
+                <lang xml:lang="en">Parameter no.20 - Saving the position &quot;Favorites&quot;</lang>
+                <lang xml:lang="ru">Параметр №20 - Избранное положение</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="01" to="63">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="30" type="rangemapped" size="1" default="02">
+            <name>
+                <lang xml:lang="en">Parameter no.30 - General alarm set for shutter no. 1</lang>
+                <lang xml:lang="ru">Параметр №30 - Общие настройки реагирования на сигнал тревоги</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">General alarm set for shutter no. 1</lang>
+                <lang xml:lang="ru">Параметр определяет, что сделает устройство если получит от датчика сигнал тревоги.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">DACTIVATION – the device doesn&#039;t respond to alarm data frames</lang>
+                    <lang xml:lang="ru">Отключено – устройство не будет реагировать на сигнал тревоги</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">OPEN SHUTTER ALARM – the device closes the roller shutter after detecting an alarm</lang>
+                    <lang xml:lang="ru">Откроется</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">CLOSED SHUTTER ALARM - the device opens the roller shutter after detecting an alarm</lang>
+                    <lang xml:lang="ru">Закроется</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="31" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Parameter no.31 - Alarm of flooding with water, set for shutter no. 1</lang>
+                <lang xml:lang="ru">Параметр №31 - Реагирование на сигнал тревоги при затоплении</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Alarm of flooding with water, set for shutter no. 1</lang>
+                <lang xml:lang="ru">Параметр определяет, что сделает устройство если получит от датчика сигнал тревоги.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">DACTIVATION – the device doesn&#039;t respond to alarm data frames</lang>
+                    <lang xml:lang="ru">Отключено – устройство не будет реагировать на сигнал тревоги</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">OPEN SHUTTER ALARM – the device closes the roller shutter after detecting an alarm</lang>
+                    <lang xml:lang="ru">Откроется</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">CLOSED SHUTTER ALARM - the device opens the roller shutter after detecting an alarm</lang>
+                    <lang xml:lang="ru">Закроется</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="32" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Parameter no.32 - Smoke, CO, CO2 Alarm. Set for the roller shutter</lang>
+                <lang xml:lang="ru">Параметр №32 - Реагирование на сигнал тревоги о задымлении, CO, CO2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Smoke, CO, CO2 Alarm. Set for roller shutter</lang>
+                <lang xml:lang="ru">Параметр определяет, что сделает устройство если получит от датчика дыма или газа сигнал тревоги.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">DACTIVATION – the device doesn&#039;t respond to alarm data frames</lang>
+                    <lang xml:lang="ru">Отключено – устройство не будет реагировать на сигнал тревоги</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">OPEN SHUTTER ALARM – the device closes the roller shutter after detecting an alarm</lang>
+                    <lang xml:lang="ru">Откроется</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">CLOSED SHUTTER ALARM - the device opens the roller shutter after detecting an alarm</lang>
+                    <lang xml:lang="ru">Закроется</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="33" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Parameter no.33 - Temperature Alarm. Set for roller shutter</lang>
+                <lang xml:lang="ru">Параметр №33 - Реагирование на сигнал тревоги о температуре</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Temperature Alarm. Set for relay roller shutter</lang>
+                <lang xml:lang="ru">Параметр определяет, что сделает устройство если получит от датчика температуры сигнал тревоги.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">DACTIVATION – the device doesn&#039;t respond to alarm data frames</lang>
+                    <lang xml:lang="ru">Отключено – устройство не будет реагировать на сигнал тревоги</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">OPEN SHUTTER ALARM – the device closes the roller shutter after detecting an alarm</lang>
+                    <lang xml:lang="ru">Откроется</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">CLOSED SHUTTER ALARM - the device opens the roller shutter after detecting an alarm</lang>
+                    <lang xml:lang="ru">Закроется</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="41" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Parameter no. 41 - Scene activation functionality</lang>
+                <lang xml:lang="ru">Параметр №41 - Использовать сцены</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The device offers the possibility of sending commands compatible with Command class scene activation. Information is sent to devices assigned to association group no. 3. Controllers such as Home Center 2 are able to interpret such commands and based on these commands they activate scenes, to which specific scene IDs have been assigned. The user may expand the functionality of the button connected to inputs S1 and S2 by distinguishing the actions of keys connected to those inputs. For example: double click would activate the scene “goodnight” and triple click would activate the scene “morning”.</lang>
+                <lang xml:lang="ru">Это устройство позволяет выполнять сцены. Команды на выполнения сцен отправляются устройствам находящимся в группе 3. Контроллеры, такие как Home Center 2, Z-Box понимают эти команды и могут исполнить сцену, ID которой указан в команде. Нажатие определенной комбинации кнопок подключенных к S1 и S2 отправляет определенный ID. Таким образом можно по двойному нажатию запускать сцену &quot;Включить везде свет&quot;, а по тройному &quot;Выключить везде свет&quot;.
+Для моностабильного выключателя: ID 12 - удержание S1; ID 13 - отпускание S1; ID 14 - двойное нажатие S1; ID 15 - тройное нажатие S1; ID 16 - одинарное нажатие S1; ID 22 - удержание S2; ID 23 - отпускание S2; ID 24 - двойное нажатие S2; ID 25 - тройное нажатие S2; ID 25 - одинарное нажатие S2. Для бистабильно выключателя:  ID 10 - переключение S1 с ВЫКЛ на ВКЛ; ID 11 - переключение S1 с ВКЛ на ВЫКЛ; ID 14 - двойное нажатие S1; ID 15 - тройное нажатие S1; ID 20 - переключение S2 с ВЫКЛ на ВКЛ; ID 21 - переключение S2 с ВКЛ на ВЫКЛ; ID 24 - двойное нажатие S2;</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">deactivation of functionality</lang>
+                    <lang xml:lang="ru">Не использовать</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">activation of functionality</lang>
+                    <lang xml:lang="ru">Использовать</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/2540e61642d48c35a1c48c977476c7c44953b2de.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

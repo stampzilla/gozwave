@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0276"/>
+        <productType value="0139"/>
+    <productId value="0001"/>
+    <libType value="03"/>
+    <protoVersion value="04"/>
+    <protoSubVersion value="05"/>
+    <appVersion value="01"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="08"/>
+            <specificClass value="06"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                <certNumber>50141</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">A residential Ventilation system, which can be controlled locally by one or more UI, as well as remotely by a mobile App or a browser via Z-Wave.</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">When the device is not added to a z-wave network, then triple short clicks of the
+inclusion button will start the inclusion. The device begins a classic inclusion. If after 3
+attempts the inclusion doesn’t succeed, then the Network Wide Inclusion will be started.</lang>
+          </inclusionNote>
+            <productName>Remotely Controlled Ventilation</productName>
+            <brandName>Systemair</brandName>
+            <productLine>SAVE</productLine>
+            <productCode>29990</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="005a"/>
+        <commandClass id="0040" version="2"/>
+        <commandClass id="0043" version="3"/>
+        <commandClass id="0044" version="3"/>
+        <commandClass id="0070"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0025"/>
+        <commandClass id="0071" version="3"/>
+        <commandClass id="0073"/>
+        <commandClass id="0059"/>
+        <commandClass id="0022"/>
+        <commandClass id="007a" version="3"/>
+        <commandClass id="0020" inNIF="false"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Lifeline</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">System Type (read-only)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"> Ventilation System Type</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="2" type="constant" size="2" default="000c">
+            <name>
+                <lang xml:lang="en">Filter - Period (read-only)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">In step of 30 days; 6=180days</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="3" type="constant" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Filter - Days Used (read-only)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">How many days has been
+used since the last change</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="4" type="constant" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Boost Mode Remaining Time (read-only)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">How many seconds are left
+for Boost mode</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="5" type="constant" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Temperature Setpoint Step (read-only)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The min change available in
+degree Celsius x 10; 25 = 2.5 C.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="6" type="bitset" size="4" default="00000000">
+            <name>
+                <lang xml:lang="en">CDx New Firmware Version Available</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The New FW Version:
+MSB – don’t care/0x00,
+Next – version High,
+Next – version Middle,
+LSB – version Low.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="7" type="bitset" size="4" default="00000000">
+            <name>
+                <lang xml:lang="en">PCU-ECx New Firmware Version Available</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The New FW Version:
+MSB – don’t care/0x00,
+Next – version High,
+Next – version Middle,
+LSB – version Low.</lang>
+              </description>
+      
+          </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/7e9385c0bfdcad7cc9d4886aba8250f6d51b41a6.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

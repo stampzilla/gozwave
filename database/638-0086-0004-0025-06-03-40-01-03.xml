@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0086"/>
+        <productType value="0004"/>
+    <productId value="0025"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="40"/>
+    <appVersion value="01"/>
+    <appSubVersion value="03"/>
+        <basicClass value="04"/>
+            <genericClass value="0f"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>US</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Repeater</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Click trigger and let Repeater into Learn Mode which can pairing into z-wave network or remove from z-wave network.</lang>
+          </inclusionNote>
+            <productName>Repeater</productName>
+            <brandName>Aeotec</brandName>
+            <productLine>Z-Wave Product Line</productLine>
+            <productCode>DSD37-ZWUS</productCode>
+            <productVersion>1.02</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0085"/>
+        <commandClass id="0073"/>
+        <commandClass id="0086"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Group 1</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="200" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Partner ID</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The parameter defines the partner,
+ that is used by the repeater.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">0= Aeon Labs’s Standard Product</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">1= AT&amp;T</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">2= Jean</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">3= Telefonica</lang>
+                  </description>
+              </value>
+            <value from="04" to="ff">
+                <description>
+                    <lang xml:lang="en">4-255 = Reserved for other Partner</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="254" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Device Tag</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">When Repeater removed from z-wave network, device Tag will not change.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="255" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Reset</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Reset configuration settings to default values, except parameter is 254</lang>
+              </description>
+      
+          </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/928b0fa56b644a969e1f3c164ff7d73a38ab2d35.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

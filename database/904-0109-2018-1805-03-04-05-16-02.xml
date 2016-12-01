@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0109"/>
+        <productType value="2018"/>
+    <productId value="1805"/>
+    <libType value="03"/>
+    <protoVersion value="04"/>
+    <protoSubVersion value="05"/>
+    <appVersion value="16"/>
+    <appSubVersion value="02"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="07"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Curtain Module</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Press the program switch or up switch or down switch 3 times to be included.</lang>
+          </inclusionNote>
+            <productName>Curtain Module</productName>
+            <brandName>Vision </brandName>
+            <productLine>Vision </productLine>
+            <productCode>ZW4111EU-5</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0098"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0022" secure="true" nonSecure="false"/>
+        <commandClass id="0085" version="2" secure="true" nonSecure="false"/>
+        <commandClass id="0059" secure="true" nonSecure="false"/>
+        <commandClass id="0070" secure="true" nonSecure="false"/>
+        <commandClass id="005a" secure="true" nonSecure="false"/>
+        <commandClass id="007a" version="2" secure="true" nonSecure="false"/>
+        <commandClass id="0073" secure="true" nonSecure="false"/>
+        <commandClass id="0025" secure="true" nonSecure="false"/>
+        <commandClass id="0026" version="3" secure="true" nonSecure="false"/>
+        <commandClass id="0020" inNIF="false" secure="true" nonSecure="false"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="en"></lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="en">Lifeline</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Curtain Type</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The Parameter defines which curtain type is used. The curtain will reset the value after setting the parameter 1, the value and the relative setting should be configured first before reacticating the curtain. Curtain type number 2 should support overload function.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Pure AC motor curtain (with curtain learn mode function)</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Normal motor curtain (control curtain by &quot;curtain total distance time&quot; and &quot;curtain motor wake up time&quot;)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="2" default="03e8">
+            <name>
+                <lang xml:lang="en">Curtain Total Distance Time (Type 2 curtain only)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Set up curtains total opening or closing time, the interval time is 0.01 seconds. The value should be equal or bigger than the total running time value but not including the value of &quot;Curtain Motor Wake Up Time&quot;.</lang>
+              </description>
+      
+                  <value from="0064" to="ffff" unit="sec">
+                <description>
+                    <lang xml:lang="en">Available settings: 0,01 sec. to 655,35 sec.; Define a total distance time.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Curtain Motor wake Up Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Set up curtains activating time after power on, the interval time is 0.01 seconds. The value is the time to activate the motor after power on, it could calibrate the curtains correct position.</lang>
+              </description>
+      
+                  <value from="0000" to="03e8">
+                <description>
+                    <lang xml:lang="en">Define a wake up time. Available settings: 0 sec. to 10 sec.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/8e4a5af5e92693739137c7833f672276d7fafada.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

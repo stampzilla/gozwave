@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0092"/>
+        <productType value="0102"/>
+    <productId value="0002"/>
+    <libType value="06"/>
+    <protoVersion value="02"/>
+    <protoSubVersion value="61"/>
+    <appVersion value="01"/>
+    <appSubVersion value="02"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="05"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+            <certId>14228</certId>
+            <certNumber>ZC08-11050001</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Flush-mounted motorcontroller for shutter  (ROUTING-SLAVE Device)</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Hold a magnet over the magnet switch area</lang>
+          </inclusionNote>
+            <productName>UPz- Empfänger</productName>
+            <brandName>FZ1-U-230</brandName>
+            <productLine>FZ</productLine>
+            <productCode>780020600</productCode>
+            <productVersion>1.0</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" inNIF="false"/>
+        <commandClass id="0026" version="3"/>
+        <commandClass id="0086"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+        <commandClass id="0073"/>
+        <commandClass id="0025"/>
+      </commandClasses>
+  
+  
+    <configParams>
+        <configParam number="0" type="range" size="1" default="b4">
+            <name>
+                <lang xml:lang="en">Self-retaining time &quot;Up&quot; </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Low-Byte</lang>
+              </description>
+      
+                  <value from="80" to="7f" unit="Sec">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="1" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Self-retaining time &quot;Up&quot;</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">High-Byte</lang>
+              </description>
+      
+                  <value from="80" to="7f" unit="Sec">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="1" default="b4">
+            <name>
+                <lang xml:lang="en">Self-retaining time &quot;Down&quot;</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Low-Byte</lang>
+              </description>
+      
+                  <value from="80" to="7f" unit="Sec">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Self-retaining time &quot;Down&quot;</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">High-Byte</lang>
+              </description>
+      
+                  <value from="80" to="7f" unit="Sec">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="1" default="19">
+            <name>
+                <lang xml:lang="en">Switch-over time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Up-Down / Down-Up</lang>
+              </description>
+      
+                  <value from="80" to="7f" unit="20ms">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Change of direction</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Switching-operation-bit for change of direction</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Off</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">On</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Change-Direction-Duration </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="80" to="7f" unit="Sec">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/0b91e9551a3ed3c872e42a77364f2e12ac880c14.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0115"/>
+        <productType value="1000"/>
+    <productId value="0009"/>
+    <libType value="03"/>
+    <protoVersion value="04"/>
+    <protoSubVersion value="05"/>
+    <appVersion value="02"/>
+    <appSubVersion value="01"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+                    
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Secure Dimmer: Dimmer mode (configured in parameter №55)</lang>
+            <lang xml:lang="en">Secure Dimmer: Dimmer mode (configured in parameter №55)</lang>
+            <lang xml:lang="ru">Диммер с шифрованием: режим Диммер (настраивается в параметре №55)</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+            <lang xml:lang="ru"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">With security - click up three times. Without security - click down three times</lang>
+            <lang xml:lang="en">With security - click up three times. Without security - click down three times</lang>
+            <lang xml:lang="ru">С шифрованием - нажать 3 раза вверх. Без шифрования - нажать 3 раза вниз</lang>
+          </inclusionNote>
+            <productName>Secure Dimmer</productName>
+            <brandName>Z-Wave.Me</brandName>
+            <productLine>Düwi modification</productLine>
+                <productVersion>2.1</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" controlled="true" inNIF="false" secure="true"/>
+        <commandClass id="0026" version="3" controlled="true" inNIF="false" secure="true"/>
+        <commandClass id="0027" controlled="true" inNIF="false" secure="true"/>
+        <commandClass id="002b" controlled="true" inNIF="false" secure="true"/>
+        <commandClass id="002c" inNIF="false" secure="true"/>
+        <commandClass id="002d" inNIF="false" secure="true"/>
+        <commandClass id="0032" version="4" inNIF="false" secure="true"/>
+        <commandClass id="0059" inNIF="false" secure="true"/>
+        <commandClass id="005a" inNIF="false"/>
+        <commandClass id="005e" version="2" secure="true"/>
+        <commandClass id="0070" inNIF="false" secure="true"/>
+        <commandClass id="0072" version="2" secure="true"/>
+        <commandClass id="0073"/>
+        <commandClass id="0075" inNIF="false" secure="true"/>
+        <commandClass id="0077" inNIF="false" secure="true"/>
+        <commandClass id="0085" version="2" inNIF="false" secure="true"/>
+        <commandClass id="0086" version="2" secure="true"/>
+        <commandClass id="0087" inNIF="false" secure="true"/>
+        <commandClass id="008e" version="2" inNIF="false" secure="true"/>
+        <commandClass id="0098" secure="true"/>
+        <commandClass id="0060" controlled="true"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="14">
+            <description>
+                <lang xml:lang="de">Lifeline</lang>
+                <lang xml:lang="en">Lifeline. Send Reports about brightness level and energy consumption</lang>
+                <lang xml:lang="ru">Lifeline. Отправлять отчёты о уровне яркости и энергопотреблении</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="14">
+            <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Single press and hold of up/down buttons</lang>
+                <lang xml:lang="ru">Одиночное нажатие или удержание клавиш вверх/вниз</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="14">
+            <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Double press and press-hold of up/down buttons</lang>
+                <lang xml:lang="ru">Двойное нажатие или нажатие-удержание клавиш вверх/вниз</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="2" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Automatically switch off</lang>
+                <lang xml:lang="ru">Авто отключение</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">If not zero, automatically switch off after a user defined time</lang>
+                <lang xml:lang="ru">Если не 0, автоматически отключает устройство после определённого пользователем времени</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="0001" to="ffff">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">sec</lang>
+                    <lang xml:lang="ru">секунд</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">What to do on RF off command</lang>
+                <lang xml:lang="ru">Что делать при получении радиокоманды выключения</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Defines how to interpret RF Off command. Can be used in conjunction with Auto Off function: Ignore - to switch on the light by motion detectors and switch it off after some amount of time: in case of multiple motion detectors each would try to switch the light off that would break logics; Switch on - to switch on the light on both On and Off paddle press on the remote and switch it off after some amount of time. Button off click will still work (if button operations are not disabled).</lang>
+                <lang xml:lang="ru">Определяет поведение при получении радио команды выключения. Может использоваться совместно с функцией авто отключения: Игнорирование - для включения света по детектору движения и отключения по прошествии определённого времени: в случае использования нескольких детекторов движения каждый будет пытаться выключить свет сам, что приведёт к неправильной логике работы; Включть нагрузку - для включения света при нажатии на кнопки Вкл и Выкл на пульте управления и отключения по прошествии определённого времени. Выключение по кнопке будет продолжать работать (если не отключено).</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Switch off</lang>
+                    <lang xml:lang="ru">Выключить нарузку</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Ignore</lang>
+                    <lang xml:lang="ru">Игнорировать</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Switch on</lang>
+                    <lang xml:lang="ru">Включить нарузку</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Switch on if load is off else switch off</lang>
+                    <lang xml:lang="ru">Включить, если нагрузка выключена, иначе выключить</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Ignore start level</lang>
+                <lang xml:lang="ru">Игнорировать начальный уровень</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Defines if the dimmer shall ignore start level in StartLevelChange command despite it is specified or not</lang>
+                <lang xml:lang="ru">Определяет игнорировать ли начальный уровень димминга в коммандах StartLevelChange (начать изменение яркости) даже если он указан или нет</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">No</lang>
+                    <lang xml:lang="ru">Нет</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Yes</lang>
+                    <lang xml:lang="ru">Да</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="range" size="1" default="1e">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Dimming speed</lang>
+                <lang xml:lang="ru">Время диммирования</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Time to dim on button presses and Set command (if it has no duration specified). If not 0, dimming will be done smoothly to preserv bulb life.</lang>
+                <lang xml:lang="ru">Время димирования при нажатии на кнопки и при получении команды Set (если она не содержит времени включения). Если не 0, то диммирование будет плавным, что сбережёт лампочку дольше.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Instantly</lang>
+                    <lang xml:lang="ru">Мгновенно</lang>
+                  </description>
+              </value>
+            <value from="01" to="ff">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">in 10ms units</lang>
+                    <lang xml:lang="ru">в единицах 10мс</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="range" size="1" default="03">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Dimming long speed</lang>
+                <lang xml:lang="ru">Время долгого диммирования</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Time to dim on button holds and StartLevelChange command (if it has no duration specified).</lang>
+                <lang xml:lang="ru">Время димирования при удержании кнопок и при получении команды StartLevelChange (начать изменение яркости; если она не содержит времени включения).</lang>
+              </description>
+      
+                  <value from="01" to="ff">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">seconds</lang>
+                    <lang xml:lang="ru">секунды</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Set maximum light level on On click</lang>
+                <lang xml:lang="ru">Устанавливать максимальный уровень яркости при включении</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Defines if the dimmer shall set maximum light level on On command. By default on On command dimmer restores last level. This parameter allows to configure to set maximum level on second On command (if already On) or to always switch on to maximum level</lang>
+                <lang xml:lang="ru">Определяет устанавливать ли максимальную яркость при получении команды Включить. По умолчанию по команде Включить диммер восстанавливает последний уровень яркости. Настройка этого параметра позволяет устанавливать максимальную яркость по второй команде Включить (если уже включен) или всегда включать диммер на максимальную яркость</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">No</lang>
+                    <lang xml:lang="ru">Нет</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">If already On</lang>
+                    <lang xml:lang="ru">Если уже включен</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Always</lang>
+                    <lang xml:lang="ru">Всегда</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Baby Dimming time</lang>
+                <lang xml:lang="ru">Время диммирования Баю-бай</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Time to dim on double click Off button for Baby-Dim function. This function works only if the load is operated by single press and hold button action. If enabled, the device will wait for a click timeout to see if the second click would be pressed. This will introduce a small delay for single click commands</lang>
+                <lang xml:lang="ru">Время димирования при двойном нажатии на кнопку выключения для функции Баю-бай. Данная функция работает только если нагрузка управляется одинарным нажатием или удержанием кнопок. Если включено, устройство будет ждать характерное время нажатия второго нажатия. Данная функция приведёт к небольшой задержке при одинарном нажатии</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="01" to="63">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">in minutes</lang>
+                    <lang xml:lang="ru">в минутах</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Target dimming level for Baby Dimming</lang>
+                <lang xml:lang="ru">Конечный уровень диммирования функции Баю-бай</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Target level on which to stop while executing Baby Dimming. Can be 0 to completely switch off the light.</lang>
+                <lang xml:lang="ru">Конечный уровень, до которого диммировать функции Баю-бай. Используйте 0 для полного выключения света.</lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="de">%</lang>
+                    <lang xml:lang="en">%</lang>
+                    <lang xml:lang="ru">%</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Invert buttons</lang>
+                <lang xml:lang="ru">Инвертировать кнопки</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">No</lang>
+                    <lang xml:lang="ru">Нет</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Yes</lang>
+                    <lang xml:lang="ru">Да</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Switch by buttons</lang>
+                <lang xml:lang="ru">Включать/выключать нагрузку кнопками</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">If disabled, the local operations by buttons will not switch the load, but only send commands to On/Off association group. In this mode buttons are not linked with the switch anymore. They can be used separately: buttons to control remote device, switch will operate by RF commands only.</lang>
+                <lang xml:lang="ru">Если отключено, нажатия на кнопки не будут включать реле, а только отправлят команды группе ассоциаций Включит/Выключить. В данном режиме кнопки не связаны с реле. Они могут быть использованы отдельно: кнопки для управления удалённой нагрузкой, реле будет управляться только по радио.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">No</lang>
+                    <lang xml:lang="ru">Нет</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">By single press and hold</lang>
+                    <lang xml:lang="ru">Одинарным нажатием и удержанием</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">By double press and press-hold</lang>
+                    <lang xml:lang="ru">Двойным нажатием и нажатием-удержанием</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="rangemapped" size="1" default="04">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Action on button single press or hold</lang>
+                <lang xml:lang="ru">Действия при одинарном нажатии или удержании клавиши</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Defines which command should be sent on button single press or hold. Basic and Scene Activation commands are sent to Association group. Use Scene Controller Conf to set up Scene ID for Scene Activation. Switch All commands are sent broadcast.</lang>
+                <lang xml:lang="ru">Определяет вид команд, которые отправляюся при одинарном нажатии или удержании кнопок. Команды Basic и Активация сцен отправляются группе ассоциаций. Используйте Scene Controller Conf для задания номера сцены для Scene Activation. Команда Включить/Выключить всё отправляется на широковещательный адрес (всем).</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; und &#039;SwitchMultilevel&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off and Dim (send Basic Set and Switch Multilevel)</lang>
+                    <lang xml:lang="ru">Включать/Выключать и Диммировать (отправлять Basic Set и Switch Multilevel)</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off only (send Basic Set)</lang>
+                    <lang xml:lang="ru">Только Включать/Выключать (отправлять Basic Set)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">&#039;Switch All&quot; Kommando</lang>
+                    <lang xml:lang="en">Switch All</lang>
+                    <lang xml:lang="ru">Выключать/Выключать всё</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Szenenaktivierung</lang>
+                    <lang xml:lang="en">Send Scenes</lang>
+                    <lang xml:lang="ru">Отправлять Сцены</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Send Preconfigured Scenes</lang>
+                    <lang xml:lang="ru">Отправлять преднастроенные Сцены</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="14" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Action on button double press or hold</lang>
+                <lang xml:lang="ru">Действия при двойном нажатии или удержании клавиши</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Defines which command should be sent on button double press or press-hold. Basic and Scene Activation commands are sent to Association group. Use Scene Controller Conf to set up Scene ID for Scene Activation. Switch All commands are sent broadcast. If not disabled, the device will wait for a click timeout to see if the second click would be pressed. This will introduce a small delay for single click commands</lang>
+                <lang xml:lang="ru">Определяет вид команд, которые отправляются при двойном нажатии или нажатии-удержании кнопок. Команды Basic и Активация сцен отправляются группе ассоциаций. Используйте Scene Controller Conf для задания номера сцены для Scene Activation. Команда Включить/Выключить всё отправляется на широковещательный адрес (всем). Если не отключено, устройство будет ждать характерное время нажатия второго нажатия. Данная функция приведёт к небольшой задержке при одинарном нажатии</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; und &#039;SwitchMultilevel&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off and Dim (send Basic Set and Switch Multilevel)</lang>
+                    <lang xml:lang="ru">Включать/Выключать и Диммировать (отправлять Basic Set и Switch Multilevel)</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off only (send Basic Set)</lang>
+                    <lang xml:lang="ru">Только Включать/Выключать (отправлять Basic Set)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">&#039;Switch All&quot; Kommando</lang>
+                    <lang xml:lang="en">Switch All</lang>
+                    <lang xml:lang="ru">Выключать/Выключать всё</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Szenenaktivierung</lang>
+                    <lang xml:lang="en">Send Scenes</lang>
+                    <lang xml:lang="ru">Отправлять Сцены</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Send Preconfigured Scenes</lang>
+                    <lang xml:lang="ru">Отправлять преднастроенные Сцены</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="15" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Send the following Switch All commands</lang>
+                <lang xml:lang="ru">Отправлять следующие команды включить/выключит всё</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Switch off only</lang>
+                    <lang xml:lang="ru">Только выключить всё</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Switch on only</lang>
+                    <lang xml:lang="ru">Только включить всё</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Switch all on and off</lang>
+                    <lang xml:lang="ru">Включить и выключить всё</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="16" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">What to do on button Down press</lang>
+                <lang xml:lang="ru">Что делать при нажатии вниз</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Defines how to interpret button Down press. Depends on &quot;Switch by buttons&quot; parameter. If not Disabled this parameter will affect the action selected by the latter parameter. Can be used in conjunction with Auto Off function.</lang>
+                <lang xml:lang="ru">Определяет поведение при нажатии клавиши вниз. Зависит от параметра &quot;Включать/выключать нагрузку кнопками&quot;. Если не &quot;Нет&quot;, данный параметр будет применён к выбранному упомянутым параметром действию. Может использоваться совместно с функцией авто отключения.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Switch off</lang>
+                    <lang xml:lang="ru">Выключить нарузку</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Switch On if load is Off, else switch Off</lang>
+                    <lang xml:lang="ru">Включить, если нагрузка выключена, иначе выключить.</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Switch on</lang>
+                    <lang xml:lang="ru">Включить нарузку</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="17" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Limit minimal light level</lang>
+                <lang xml:lang="ru">Ограничивать минимальный уровень яркости</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="01" to="5f">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Level limit</lang>
+                    <lang xml:lang="ru">Ограничить уровнем</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="18" type="range" size="1" default="63">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Limit maximal light level</lang>
+                <lang xml:lang="ru">Ограничивать максимальный уровень яркости</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Maximal level should be greater than minial</lang>
+                <lang xml:lang="ru">Максимальный уровень должен быть выше минимального</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Work as switch: use off and maximal level</lang>
+                    <lang xml:lang="ru">Работать как реле: только выключен или на полную</lang>
+                  </description>
+              </value>
+            <value from="0a" to="63">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Level limit</lang>
+                    <lang xml:lang="ru">Ограничить уровнем</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="19" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Switch On on a defined level</lang>
+                <lang xml:lang="ru">Включаться на заданном уровне яркости</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru">Эта функция работает, только если в параметре &quot;Устанавливать максимальный уровень яркости при включении&quot; выбрано &quot;Нет&quot; или &quot;Если уже включен&quot;, иначе этот параметр игнорируется и свет всегда будет включаться на 100%</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Use previous light level</lang>
+                    <lang xml:lang="ru">Использовать предыдущий уровень яркости</lang>
+                  </description>
+              </value>
+            <value from="01" to="63">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Define light level</lang>
+                    <lang xml:lang="ru">Задать уровень</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="20" type="range" size="2" default="000a">
+            <name>
+                <lang xml:lang="de">Energy consumption</lang>
+                <lang xml:lang="en">Energy consumption</lang>
+                <lang xml:lang="ru">Энергопотребление</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Specify the consumption of the load in watts, for the calculation of power consumption. Max load 300 W</lang>
+                <lang xml:lang="en">Specify the consumption of the load in watts, for the calculation of power consumption. Max load 300 W</lang>
+                <lang xml:lang="ru"> Укажите потребление нагрузки в ваттах, для подсчета энергопотребления. Максимальная нагрузка 300 Вт</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="de">Disabled</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="0001" to="012c">
+                <description>
+                    <lang xml:lang="de">W</lang>
+                    <lang xml:lang="en">W</lang>
+                    <lang xml:lang="ru">Вт</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="55" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Dimmer/relay mode</lang>
+                <lang xml:lang="en">Dimmer/relay mode</lang>
+                <lang xml:lang="ru">Режим Диммер/реле</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Defines device mode: dimmer or relay. If lamp not dimmable so connect bypass and choose relay mode. Need to exclude and include again!</lang>
+                <lang xml:lang="en">Defines device mode: dimmer or relay. If lamp not dimmable so connect bypass and choose relay mode. Need to exclude and include again!</lang>
+                <lang xml:lang="ru">Параметр определяет режим работы устройства: диммер или реле. Если лампа не диммируемая, то подключите к ней шунт и выберите режим реле. Требуется исключить и включить устройство заново!</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Dimmer mode</lang>
+                    <lang xml:lang="en">Dimmer mode</lang>
+                    <lang xml:lang="ru">Режим диммера</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Relay mode</lang>
+                    <lang xml:lang="en">Relay mode</lang>
+                    <lang xml:lang="ru">Режим реле</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/0f342333210e1fde9685e695b8b6c82e2bcfd382.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

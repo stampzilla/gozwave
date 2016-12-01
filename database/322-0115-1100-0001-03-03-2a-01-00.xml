@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0115"/>
+        <productType value="1100"/>
+    <productId value="0001"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="2a"/>
+    <appVersion value="01"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>Russia</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Plug-in schalter</lang>
+            <lang xml:lang="en">Plug-in switch</lang>
+            <lang xml:lang="ru">Радиореле в розетку</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+            <lang xml:lang="ru"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Dreifach auf Schaltfläche</lang>
+            <lang xml:lang="en">Button triple press</lang>
+            <lang xml:lang="ru">Тройное нажатие на одну из кнопок</lang>
+          </inclusionNote>
+            <productName>Plug-in Switch</productName>
+            <brandName>Z-Wave.Me</brandName>
+            <productLine>TKB modification</productLine>
+            <productCode>TZ68-G</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020"/>
+        <commandClass id="0025"/>
+        <commandClass id="0086"/>
+        <commandClass id="0087"/>
+        <commandClass id="0027"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+        <commandClass id="0075"/>
+        <commandClass id="0077"/>
+        <commandClass id="0085" version="2"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Send Reports on switch state change</lang>
+                <lang xml:lang="ru">Отправлять отчёты при изменение состояния нагрузки</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">LED-Verhalten</lang>
+                <lang xml:lang="en">LED mode</lang>
+                <lang xml:lang="ru">Режим световой индикации</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert, welche Information die LED anzeigen soll</lang>
+                <lang xml:lang="en">Set LED indication mode</lang>
+                <lang xml:lang="ru">Режим работы светодиода</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="ru">Отключен</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Zeigt Schaltzustand</lang>
+                    <lang xml:lang="en">Show switch state</lang>
+                    <lang xml:lang="ru">Индикация состояния реле</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Nachtlicht (umgekehrter Schaltzustand)</lang>
+                    <lang xml:lang="en">Night mode (inverted switch state)</lang>
+                    <lang xml:lang="ru">Ночной режим (противоположно состоянию реле)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Gesteuert über das Z-ave Funkkommando &quot;Indikator&quot;</lang>
+                    <lang xml:lang="en">Operated by Indicator Command Class</lang>
+                    <lang xml:lang="ru">Управляется классом комманд Indicator</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">Automatisches Abschalten</lang>
+                <lang xml:lang="en">Automatically switch off after</lang>
+                <lang xml:lang="ru">Авто отключение через</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Wenn ungleich 0, schaltet das Gerät nach x Sekunden aus</lang>
+                <lang xml:lang="en">If not zero, automatically switch off after a user defined time</lang>
+                <lang xml:lang="ru">Если не 0, автоматически отключает реле после определённого пользователем времени</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="0001" to="ffff">
+                <description>
+                    <lang xml:lang="de">Sekunden</lang>
+                    <lang xml:lang="en">sec</lang>
+                    <lang xml:lang="ru">секунд</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Reaktion auf das Funkkommando &quot;AUS&quot;</lang>
+                <lang xml:lang="en">What to do on RF off command</lang>
+                <lang xml:lang="ru">Что делать при получении радиокоманды выключения</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert das Verhalten beim Empfang eines &#039;AUS&#039;-Kommandos. Dies kann in Verbindung mit der Automatic-AUS-Funktion verwendet werden, um zum Beispiel ein Licht durch einen Bewegungsmelder einzuschalten und danach nach einer definierten Zeit wieder auszuschalten.</lang>
+                <lang xml:lang="en">Defines how to interpret RF Off command. Can be used in conjunction with Auto Off function: Ignore - to switch on the light by motion detectors and switch it off after some amount of time: in case of multiple motion detectors each would try to switch the light off that would break logics; Switch on - to switch on the light on both On and Off paddle press on the remote and switch it off after some amount of time. Button off click will still work (if button operations are not disabled).</lang>
+                <lang xml:lang="ru">Определяет поведение при получении радио команды выключения. Может использоваться совместно с функцией авто отключения: Игнорирование - для включения света по детектору движения и отключения по прошествии определённого времени: в случае использования нескольких детекторов движения каждый будет пытаться выключить свет сам, что приведёт к неправильной логике работы; Включть нагрузку - для включения света при нажатии на кнопки Вкл и Выкл на пульте управления и отключения по прошествии определённого времени. Выключение по кнопке будет продолжать работать (если не отключено).</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Ausschalten</lang>
+                    <lang xml:lang="en">Switch off</lang>
+                    <lang xml:lang="ru">Выключить нарузку</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Ignorieren</lang>
+                    <lang xml:lang="en">Ignore</lang>
+                    <lang xml:lang="ru">Игнорировать</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Einschalten</lang>
+                    <lang xml:lang="en">Switch on</lang>
+                    <lang xml:lang="ru">Включить нарузку</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Umschalten</lang>
+                    <lang xml:lang="en">Switch on if load is off else switch off</lang>
+                    <lang xml:lang="ru">Включить, если нагрузка выключена, иначе выключить</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Schaltstatus nach Stromausfall</lang>
+                <lang xml:lang="en">Restore switch state after power cycle</lang>
+                <lang xml:lang="ru">Восстанавливать состояние реле после отключения питания</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert, welchen Schaltzustatus der Schalter nach einem plötzlichen Stromausfall annehmen soll</lang>
+                <lang xml:lang="en">Defines if the switch should restore switch state to the last state prior to device power off (power cycle).</lang>
+                <lang xml:lang="ru">Определяет восстанавливать ли состояние реле на то, которое было до отключения питания устройства.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Nein, Ausschalten</lang>
+                    <lang xml:lang="en">No, turn off</lang>
+                    <lang xml:lang="ru">Не восстанавливать. После подачи питания устройство будет в состоянии &quot;Выключено&quot;</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Ja</lang>
+                    <lang xml:lang="en">Yes</lang>
+                    <lang xml:lang="ru">Восстанавливать</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/914ddf5bb948fc9e4a5a5d91593bc3240d2a8ed5.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

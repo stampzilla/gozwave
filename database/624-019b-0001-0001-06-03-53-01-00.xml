@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="019b"/>
+        <productType value="0001"/>
+    <productId value="0001"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="53"/>
+    <appVersion value="01"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="08"/>
+            <specificClass value="06"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Elektronisches Thermostat mit drahtloser Kommunikation über Z-Wave. Das Thermostat kann sowohl Boden- und Raumsensoren, Raumsensoren mit Maximaldruckbegrenzer im Boden sowie 2 externe Sensoren steuern als auch als Leistungsregler verwendet werden. In allen diesen Modi kann das Thermostat einer Ladung von 16A/3600W standhalten.</lang>
+            <lang xml:lang="en">Electronic thermostat with wireless communication via Z-Wave. The thermostat can control a floor sensor,a room sensor, a rooms sensor with a max limitor in the floor, 2 external sensors and also be used as a power regulator. In all of these modes the thermostat can withstand a load of 16A/3600W.</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Drücken Sie Taste 3 bis das Gerät eingeschalten ist. Dann bestätigen Sie mit Taste 2. Achten Sie auf das Inclusionexclusion-Symbol zur Bestätigung. Sobald das Gerät im Gateway hinzugefügt ist, wird &quot;Inc&quot; oder &quot;Ecl&quot; auf dem Bildschirm angezeigt. Bei Verbindungsfehler wird &quot;Err&quot; angezeigt.</lang>
+            <lang xml:lang="en">Press button 3 till you see On. Then confirm with button 2. Look for the inclusion\exclusion symbol for confirmation. When added in gateway, Inc or Ecl will appear on the screen. If pairing fails, Err will appear.</lang>
+          </inclusionNote>
+            <productName>Multireg Z-Wave electronic thermostat with 4 functions</productName>
+            <brandName>Multireg</brandName>
+            <productLine>Multireg thermostats</productLine>
+            <productCode>MR Z-Wave</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0043" version="3"/>
+        <commandClass id="0031" version="6"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0040" version="3"/>
+        <commandClass id="0059"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0073"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="005a"/>
+        <commandClass id="0020" controlled="true"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="2" maxNodes="8">
+            <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">On/Off Control: 
+This group defines the group of Z-Wave units that the thermostat controls. Control is done with BASIC_SET commands, thus all switching units can be used as auxiliary heating controllers.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Lifeline:
+This group is the ‘Lifeline’ group that all reporting is sent to. Generally gateway address is assigned to this group.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/01a5789d91e6e12c4c57182b2d0f617b84c5d0f2.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

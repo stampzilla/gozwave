@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0059"/>
+        <productType value="0010"/>
+    <productId value="0002"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="22"/>
+    <appVersion value="01"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="00"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">fernsteuerbarer 3KW-Wandschalter mit Zeitschaltuhr</lang>
+            <lang xml:lang="en">a wirelessly controllable 3 KW wall switch timer function</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">drücken und halten der pairing-taste bis die RF-LED schnell blinkt</lang>
+            <lang xml:lang="en">press and hold the pairing button on the unit until the RF LED starts flashing at a fast rate</lang>
+          </inclusionNote>
+            <productName>RF Countdown Timer</productName>
+            <brandName>Secure</brandName>
+                <productCode>SEC_SIR321</productCode>
+            <productVersion>1.0</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020"/>
+        <commandClass id="0025"/>
+        <commandClass id="0031"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0085"/>
+        <commandClass id="0086"/>
+        <commandClass id="0053" controlled="true" inNIF="false"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="4">
+            <description>
+                <lang xml:lang="de">Gruppe 1</lang>
+                <lang xml:lang="en">Group 1</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="4">
+            <description>
+                <lang xml:lang="de">Gruppe 2</lang>
+                <lang xml:lang="en">Group 2</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Timer für die Ausfallsicherheit</lang>
+                <lang xml:lang="en">Fail Save timer</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Aktiviert/Deaktiviert den Timer für die Ausfallsicherheit</lang>
+                <lang xml:lang="en">Enable/Disable the Fail save timer</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktivieren der Ausfallsicherheit</lang>
+                    <lang xml:lang="en">Deactivate the Fail Save timer</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Temperaturskala</lang>
+                <lang xml:lang="en">Temperature Scale</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert die Temperatur in Grad Celsius oder Fahrenheit</lang>
+                <lang xml:lang="en">Set the Temperatur scale to Celsius or Fahrenheit.</lang>
+              </description>
+      
+                  <value from="00" to="7f">
+                <description>
+                    <lang xml:lang="de">Temperaturskala = Celsius</lang>
+                    <lang xml:lang="en">Temperaturescale = Celsius</lang>
+                  </description>
+              </value>
+            <value from="80" to="ff">
+                <description>
+                    <lang xml:lang="de">Temperaturskala = Fahrenheit</lang>
+                    <lang xml:lang="en">Temperaturescale = Fahrenheit</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">Temperaturberichtinterval</lang>
+                <lang xml:lang="en">Temperature reporting intervals</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert das Intervall in dem Berichte über die Temperatur gesendet werden.</lang>
+                <lang xml:lang="en">Define the time interval for the temperature report that is sent.</lang>
+              </description>
+      
+                  <value from="0000" to="7fff" unit="sec">
+                <description>
+                    <lang xml:lang="de">Bericht-interval in sec.</lang>
+                    <lang xml:lang="en">Reportinginterval in sec.</lang>
+                  </description>
+              </value>
+            <value from="8000" to="ffff" unit="sec">
+                <description>
+                    <lang xml:lang="de">Bericht-interval in sec.</lang>
+                    <lang xml:lang="en">Reportinginterval in sec.
+Define time interval for temperature report. Values 128 to 255 are defined as -128 to -1.</lang>
+                  </description>
+              </value>
+            <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="de">Funktion ist ausgeschalten.</lang>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">Delta-konfiguration der Temperaturberichte</lang>
+                <lang xml:lang="en">Delta configuration temperature reporting</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert die delta-konfiguration der Temperaturberichte in Grad Celsius oder Fahrenheit</lang>
+                <lang xml:lang="en">Set the delta-configuration of the temperature report in Celsius or Fahrenheit, e.g. 50°F = 0.1x500.</lang>
+              </description>
+      
+                  <value from="0001" to="0064" unit="C">
+                <description>
+                    <lang xml:lang="de">Delta-Konfiguration der Temperaturberichte</lang>
+                    <lang xml:lang="en">Set the delta-configuration of the temperature report in °C.</lang>
+                  </description>
+              </value>
+            <value from="0001" to="01f4" unit="F">
+                <description>
+                    <lang xml:lang="de">Delta-Konfiguration der Temperaturberichte</lang>
+                    <lang xml:lang="en">Set the delta-configuration of the temperature report in °F.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">Temperaturgrenzwert</lang>
+                <lang xml:lang="en">Temperature Cutoff</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert den Grenzwert in Grad Celsius oder Fahrenheit</lang>
+                <lang xml:lang="en">Set the Cutoff in Celsius or Fahrenheit, e.g. 200°F = 0.01x2000</lang>
+              </description>
+      
+                  <value from="0001" to="03e8" unit="°C">
+                <description>
+                    <lang xml:lang="de">Temperatur-grenzwert</lang>
+                    <lang xml:lang="en">Temperatur Cutoff</lang>
+                  </description>
+              </value>
+            <value from="0140" to="0848" unit="°F">
+                <description>
+                    <lang xml:lang="de">Temperatur-grenzwert</lang>
+                    <lang xml:lang="en">Temperatur Cutoff</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/41a442074720db353e5141e6a3aeae9373fcbb79.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

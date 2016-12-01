@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0080"/>
+        <productType value="0004"/>
+    <productId value="0001"/>
+    <libType value="77"/>
+    <protoVersion value="6f"/>
+    <protoSubVersion value="36"/>
+    <appVersion value="02"/>
+    <appSubVersion value="01"/>
+        <basicClass value="02"/>
+            <genericClass value="02"/>
+            <specificClass value="00"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+            <certId>14463</certId>
+            <certNumber>ZC08-11100011</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">RH Sensor with controller functionality </lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">First put the device in install mode (pushing all 4 buttons together for 3 seconds), then press 3 seconds the first button (bottom left)</lang>
+          </inclusionNote>
+            <productName>Z-Wave RH Sensor </productName>
+            <brandName>DUCO</brandName>
+            <productLine>DucoTronic</productLine>
+            <productCode>00001801/G12809</productCode>
+            <productVersion>V1.1</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" controlled="true"/>
+        <commandClass id="0060" version="2"/>
+        <commandClass id="0085"/>
+        <commandClass id="0086"/>
+        <commandClass id="0070" controlled="true"/>
+        <commandClass id="0031" version="3"/>
+        <commandClass id="0072" controlled="true"/>
+        <commandClass id="0077"/>
+        <commandClass id="007a"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="7" maxNodes="20">
+            <description>
+                <lang xml:lang="en">is the same as group 2,3,4; just that it is with RH value instead of temperature.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="6" maxNodes="20">
+            <description>
+                <lang xml:lang="en">is the same as group 2,3,4; just that it is with RH value instead of temperature.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="5" maxNodes="20">
+            <description>
+                <lang xml:lang="en">is the same as group 2,3,4; just that it is with RH value instead of temperature.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="4" maxNodes="20">
+            <description>
+                <lang xml:lang="en">This is the temperature DELTA group. When the temperature has changed more than the
+Delta temperature value, then the sensor will send a MULTI SENSOR REPORT with the
+temperature value to all the nodes in the group.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="20">
+            <description>
+                <lang xml:lang="en">This is the temperature OFF group. When the temperature goes above the temperature high set point,
+then the sensor will send BASIC SET( OFF ) to all the nodes in the group. And when the temperature
+goes below the temperature low set point, then the sensor will send BASIC SET( ON ) to all the nodes
+in the group.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="20">
+            <description>
+                <lang xml:lang="en">This is the temperature ON group. When the temperature goes above the temperature high set point,
+then the sensor will send BASIC SET( ON ) to all the nodes in the group. And when the temperature
+goes below the temperature low set point, then the sensor will send BASIC SET( OFF ) to all the
+nodes in the group.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="20">
+            <description>
+                <lang xml:lang="en">This is the control group used by the DUCO products to talk to each other.
+Only DUCO products should be added to this group.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="1" default="3c">
+            <name>
+                <lang xml:lang="en">Measure Level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">How often the value is measured(example: if value=60, the sensor value is measured every
+60 seconds)</lang>
+              </description>
+      
+                  <value from="80" to="7f" unit="Sec">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="rangemapped" size="2" default="03e8">
+            <name>
+                <lang xml:lang="en">CO² set point</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Set point CO2: Used in ‘automatic mode’. (button 4) if the device is a CO2 sensor.
+The CO2 level in a room is a good indication of the air quality in this room.
+When the CO2 level is above this set point, the room needs more ventilation.
+Consequently, the CO2 sensor will open the associated grating unit.</lang>
+              </description>
+      
+                  <value from="8000" to="7fff">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="rangemapped" size="1" default="46">
+            <name>
+                <lang xml:lang="en">Humidity set point</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Setpoint Humidity: Used in ‘automatic mode’ (button 4) if the device is a RH sensor. RH: Relative
+Humidity. When the RH in the room is above this set point, the RH sensor will ask the IQ unit for
+more ventilation.</lang>
+              </description>
+      
+                  <value from="80" to="7f">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="1" default="63">
+            <name>
+                <lang xml:lang="en">Button 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The value when button1 is pressed. Values above 0x63 will be capped to 0x63 (maximum) used in
+association group 1</lang>
+              </description>
+      
+                  <value from="80" to="7f">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="range" size="1" default="63">
+            <name>
+                <lang xml:lang="en">Button 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The value when button2 is pressed. Values above 0x63 will be capped to 0x63 (maximum) used in
+association group 1</lang>
+              </description>
+      
+                  <value from="80" to="7f">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="range" size="1" default="63">
+            <name>
+                <lang xml:lang="en">Button 3</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The value when button3 is pressed. Values above 0x63 will be capped to 0x63 (maximum) used in
+association group 1</lang>
+              </description>
+      
+                  <value from="80" to="7f">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="range" size="1" default="0f">
+            <name>
+                <lang xml:lang="en">Rooster Min Open</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The minimum value that can be send by the CO2 sensor when it is in automatic mode.</lang>
+              </description>
+      
+                  <value from="80" to="7f">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Temperature high setpoint</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Temperature highset point: used in association group 2 or 3</lang>
+              </description>
+      
+                  <value from="8000" to="7fff">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Temperature low setpoint</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Temperature low set point: used in association group 2 or 3</lang>
+              </description>
+      
+                  <value from="8000" to="7fff">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="range" size="2" default="0002">
+            <name>
+                <lang xml:lang="en">Temperature delta setpoint</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Temperature delta set point: used in association group 4</lang>
+              </description>
+      
+                  <value from="8000" to="7fff">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">RH high setpoint</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">RH high set point: used in association group 5 or 6</lang>
+              </description>
+      
+                  <value from="8000" to="7fff">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">RH low setpoint</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">RH low set point: used in group5 or 6</lang>
+              </description>
+      
+                  <value from="8000" to="7fff">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">RH delta setpoint</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">RH delta set point: used in group7</lang>
+              </description>
+      
+                  <value from="8000" to="7fff">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="14" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">CO2 high setpoint</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">CO2 high set point: not available in RH senor</lang>
+              </description>
+      
+                  <value from="8000" to="7fff">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="15" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">CO2 lowsetpoint</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">CO2 low set point: not available in RH senor</lang>
+              </description>
+      
+                  <value from="8000" to="7fff">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="16" type="range" size="2" default="01f4">
+            <name>
+                <lang xml:lang="en">CO2deltasetpoint</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">CO2 delta set point: not available in RH senor</lang>
+              </description>
+      
+                  <value from="8000" to="7fff">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    <endpoints>
+           <endpoint number="2">
+            <name>
+                <lang xml:lang="en">RH value</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">When
+receiving a multilevel sensor get on multichannel endpoint 2, the measured RH value is returned</lang>
+              </description>
+                  <genericClass value="21"/>
+                  <specificClass value="00"/>
+                  <commandClass id="0020"/>
+            <commandClass id="0031" version="3"/>
+          </endpoint>
+           <endpoint number="1">
+            <name>
+                <lang xml:lang="en">Temperature value</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">When it receives a multilevel sensor get, it returns the temperature value.</lang>
+              </description>
+                  <genericClass value="21"/>
+                  <specificClass value="00"/>
+                  <commandClass id="0020"/>
+            <commandClass id="0031" version="3"/>
+          </endpoint>
+      </endpoints>
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/588322cf1785bc852cad0538a24bfdbc9b2d8170.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

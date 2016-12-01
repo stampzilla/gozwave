@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="010f"/>
+        <productType value="0600"/>
+    <productId value="1000"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="52"/>
+    <appVersion value="24"/>
+    <appSubVersion value="24"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="00"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Wall Plug</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Triple click the B button, located on the Plug&#039;s casing</lang>
+          </inclusionNote>
+            <productName>FGWPE/F-101</productName>
+            <brandName>Fibaro</brandName>
+            <productLine>Fibaro</productLine>
+            <productCode>101</productCode>
+            <productVersion>22.23/2.1</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0072"/>
+        <commandClass id="0086"/>
+        <commandClass id="0070"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="008e" version="2"/>
+        <commandClass id="0025" controlled="true"/>
+        <commandClass id="0073"/>
+        <commandClass id="0032" version="2"/>
+        <commandClass id="0031" version="2"/>
+        <commandClass id="007a" controlled="true"/>
+        <commandClass id="0020"/>
+        <commandClass id="009c" controlled="true" inNIF="false"/>
+        <commandClass id="0071" controlled="true" inNIF="false"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="3" maxNodes="5">
+            <description>
+                <lang xml:lang="en">III association group reports relay&#039;s status to just one device,
+Z-Wave network&#039;s main controller by default. It&#039;s not recommended
+to modify settings of this association group.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="en">II association group allows for sending control commands to
+associated devices depending on the current load. This association
+group is configured through the advanced parameters no. 50, 51
+and 52.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">I association group is assigned to Plugs status - On / Off. Allows
+for sending control command to associated devices whenever the
+Plug is turned On or Off.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Always on function</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Once activated, Wall Plug will keep a connected device constantly
+ON, will stop reacting to alarm frames and B-button push.
+&quot;Always on&quot; function turns the Plug into a power and energy meter.
+Also, connected device will not be turned off upon receiving an alarm
+frame from another Z-Wave device (parameter 35 will be ignored).
+In &quot;Always on&quot; mode, connected device may be turned off only after
+user defined power has been exceeded (parameter 70). In such a
+case, connected device can be turned on again by pushing the
+B-button or sending a control frame. By default, overload protection
+is inactive.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">function activated</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">function inactive</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="16" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Remember device status after power failure</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Define how will the Plug react after the power supply is back on.
+Default setting: 1
+Available settings:
+0 - Wall Plug does not memorize its state after a power failure.
+Connected device will be off after the power supply is
+reconnected.
+1 - Wall Plug memorizes its state after a power failure.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Wall Plug does not memorize its state after a power failure.
+Connected device will be off after the power supply is
+reconnected.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Wall Plug memorizes its state after a power failure.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="34" type="range" size="1" default="3f">
+            <name>
+                <lang xml:lang="en">Reaction to alarms</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Define Z-Wave network alarms to which the Wall Plug will respond.
+Available settings: 0 - 63.
+1 - general alarm,
+2 - smoke alarm,
+4 - CO alarm,
+8 - CO2 alarm,
+16 - high temperature alarm,
+32 - flood alarm,
+63 - device responds to all types of alarm frames.
+Set value may be a sum of available values, e.g. set value = 5 means
+the Plug will respond to general alarm (1) and CO alarm (4).</lang>
+              </description>
+      
+                  <value from="00" to="3f">
+                <description>
+                    <lang xml:lang="en">Set the alarm reactions the wall plug is responding to.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="35" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Wall Plug&#039;s response to alarm frames</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Parameter defines how the Wall Plug will respond to alarms (device&#039;s
+status change)
+
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">no reaction</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">turn on connected device. LED ring signals an alarm through
+defined time period (parameter 39) or untill the alarm is
+cancelled</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">turn off connected device. LED ring signals an alarm through
+defined time period (parameter 39) or untill the alarm is
+cancelled</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">cyclically change device state, each 1second. In alarm mode
+Wall Plug does not report status change, power changes,
+ignores alarm frames. After the defined time period has passed
+(parameter 39) or after the alarm cancellation, connected
+device is set to the previous state</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="39" type="range" size="2" default="0258">
+            <name>
+                <lang xml:lang="en">Alarm duration</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Wall Plug&#039;s alarm mode duration. If a device sending an alarm frame
+through the Z-Wave network sets alarm duration as well, this
+parameter&#039;s settings are ignored.
+Available settings: 1 - 65536 (seconds)</lang>
+              </description>
+      
+                  <value from="0001" to="ffff" unit="sec">
+                <description>
+                    <lang xml:lang="en">Define the alarm duration.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="40" type="range" size="1" default="50">
+            <name>
+                <lang xml:lang="en">Immediate power report</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Parameter defines by how much power load must change, in
+percents, to be reported to the main controller, with the highest
+priority in the Z-Wave network. By default, Fibaro Wall Plug
+immediately sends power report if the power load changes by 80%.
+Available settings: 1 - 100 (%).
+Value of 100 (%) means the reports are turned off.</lang>
+              </description>
+      
+                  <value from="00" to="64" unit="%">
+                <description>
+                    <lang xml:lang="en">Define a percentage by which a report is sent to the controller.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="42" type="range" size="1" default="0f">
+            <name>
+                <lang xml:lang="en">Standard power load reporting</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Parameter defines by how much power load must change, in
+percents, to be reported to the main controller. By default, Fibaro
+Wall Plug sends power report if the power load changes by 15%.
+By default such changes in power load may be reported up to 5 times
+per 30 seconds. Wall Plug sends 5 reports during time period
+specified in paramater 43.
+Available settings: 1 - 100 (%)
+Value of 100 (%) means the reports are turned off.</lang>
+              </description>
+      
+                  <value from="01" to="64" unit="%">
+                <description>
+                    <lang xml:lang="en">Define a value.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="43" type="rangemapped" size="1" default="1e">
+            <name>
+                <lang xml:lang="en">Power reporting frequency</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter defines how frequently standard power reports
+(parameter 42) will be sent. By default Wall Plug sends up to 5
+reports each 30 seconds, provided the power load changes by 15%.
+Available settings: 1 - 254 (s)
+Value of 255 - Reports will be sent only as a result of parameter 47
+settings or in case of polling.</lang>
+              </description>
+      
+                  <value from="01" to="fe" unit="sec">
+                <description>
+                    <lang xml:lang="en">Define the frequency of reports.</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Reports will be sent only as a result of parameter 47
+settings or in case of polling.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="45" type="range" size="1" default="0a">
+            <name>
+                <lang xml:lang="en">Reporting changes in energy consumed by controlled devices</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">New, reported energy value is calculated based on last reported
+value.
+Available settings: 1 - 254 (0,01kWh - 2,54kWh).
+Value of 255 - changes in consumed energy will not be reported.
+Reports will be sent only in case of polling.</lang>
+              </description>
+      
+                  <value from="01" to="fe">
+                <description>
+                    <lang xml:lang="en">Define a value.</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Changes in consumed energy will not be reported.
+Reports will be sent only in case of polling.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="47" type="range" size="2" default="0e10">
+            <name>
+                <lang xml:lang="en">Time period between reports on power load and energy consumption</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Parameter defines time period between reports sent when changes
+in power load have not been recorded. By default, if power load
+changes have not been recorded, reports are sent every hour.
+Available settings: 1 - 65534 (s)
+Value of 65535 - no periodic reports. Reports will be sent only in
+case of power load / energy consumption changes (parameters 40,
+42, 43,45) or in case of polling.</lang>
+              </description>
+      
+                  <value from="0001" to="fffe" unit="sec">
+                <description>
+                    <lang xml:lang="en">Define a time period.</lang>
+                  </description>
+              </value>
+            <value from="ffff" to="ffff">
+                <description>
+                    <lang xml:lang="en">No periodic reports. Reports will be sent only in
+case of power load / energy consumption changes (parameters 40,
+42, 43,45) or in case of polling.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="49" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Metering energy consumed by the Wall Plug itself</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This parameter determines whether energy metering should include
+the amount of energy consumed by the Wall Plug itself.
+Results are being added to energy consumed by controlled device.
+Available settings:
+0 - function inactive,
+1 - function activated.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">function inactive</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">function activated</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="50" type="range" size="2" default="012c">
+            <name>
+                <lang xml:lang="en">DOWN value</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Lower power threshold, used in parameter 52.
+Available settings: 0 - 25 000 (0,0W - 2 500W)
+DOWN value cannot be higher than a value specified in parameter
+51.</lang>
+              </description>
+      
+                  <value from="0000" to="61a8">
+                <description>
+                    <lang xml:lang="en">Define a lower treshold.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="51" type="range" size="2" default="01f4">
+            <name>
+                <lang xml:lang="en">UP value</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Upper power threshold, used in parameter 52.
+Available settings: 1 - 25 000 (0,1W - 2 500W)
+UP value cannot be lower than a value specified in parameter 50.</lang>
+              </description>
+      
+                  <value from="0001" to="61a8">
+                <description>
+                    <lang xml:lang="en">Define an upper treshold.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="52" type="constant" size="1" default="06">
+            <name>
+                <lang xml:lang="en">Action in case of exceeding defined power values (parameters 50 and 51)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Parameter deifines the way 2nd association group devices are
+controlled, depending on the current power load.
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">function inactive</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Turn the associated devices on, once the power drops below
+DOWN value (parameter 50).</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Turn the associated devices off, once the power drops below
+DOWN value (parameter 50).</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">Turn the associated devices on, once the power rises above UP
+value (parameter 51).</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">Turn the associated devices off, once the power rises above UP
+value (parameter 51).</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">1 and 4 combined. Turn the associated devices on, once the
+power drops below DOWN value (parameter 50). Turn the
+associated devices off, once the power rises above UP value
+(parameter 51).</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="en">2 and 3 combined. Turn the associated devices off, once the
+power drops below DOWN value (parameter 50). Turn the
+associated devices on, once the power rises above UP value
+(parameter 51).</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="60" type="range" size="2" default="61a8">
+            <name>
+                <lang xml:lang="en">Power load, which when exceeded, makes the LED ring flash violet</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Function is active only when parameter 61 is set to 0 or 1.
+Available settings: 1 000 - 32 000 (100W - 3200W).</lang>
+              </description>
+      
+                  <value from="03e8" to="7d00">
+                <description>
+                    <lang xml:lang="en">Define a value.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="61" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">LED ring illumination colour when controlled device is on.</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">LED ring illumination colour changes in predefined steps,
+depending on power consumption changes.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">LED ring illumination colour changes continuously, using full
+spectrum of available colorus, depending on power consumption
+changes.</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">White illumination</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">Red illumination</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">Green illumination</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">Blue illumination</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="en">Yellow illumination</lang>
+                  </description>
+              </value>
+            <value from="07" to="07">
+                <description>
+                    <lang xml:lang="en">Cyan (Greenish blue) illumination</lang>
+                  </description>
+              </value>
+            <value from="08" to="08">
+                <description>
+                    <lang xml:lang="en">Magenta (Purplish red) illumination</lang>
+                  </description>
+              </value>
+            <value from="09" to="09">
+                <description>
+                    <lang xml:lang="en">illumination turned off completely</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="62" type="constant" size="1" default="08">
+            <name>
+                <lang xml:lang="en">LED ring illumination color when controlled device is off.</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">LED ring is illuminated with a color corresponding to the last
+measured power, before the controlled device was turned off.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">White illumination</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Red illumination</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">Green illumination</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">Blue illumination</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">Yellow illumination</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="en">Cyan (Greenish blue) illumination</lang>
+                  </description>
+              </value>
+            <value from="07" to="07">
+                <description>
+                    <lang xml:lang="en">Magenta (Purplish red) illumination</lang>
+                  </description>
+              </value>
+            <value from="08" to="08">
+                <description>
+                    <lang xml:lang="en">illumination turned off completely</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="63" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">LED ring illumination colour at the Z-Wave network alarm detection</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">No change in colour. LED ring illumination colour determined by
+parameters 61 or 62 settings.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">LED ring flashes red / blue / white (default).</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">White illumination</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">Red illumination</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">Green illumination</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">Blue illumination</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="en">Yellow illumination</lang>
+                  </description>
+              </value>
+            <value from="07" to="07">
+                <description>
+                    <lang xml:lang="en">Cyan (Greenish blue) illumination</lang>
+                  </description>
+              </value>
+            <value from="08" to="08">
+                <description>
+                    <lang xml:lang="en">Magenta (Purplish red) illumination</lang>
+                  </description>
+              </value>
+            <value from="09" to="09">
+                <description>
+                    <lang xml:lang="en">Illumination turned off completely.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="70" type="range" size="2" default="ffff">
+            <name>
+                <lang xml:lang="en">Overload safety switch</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This function allows for turning off the controlled device in case of
+exceeding the defined power. Controlled device will be turned off
+even if &quot;always on&quot; function is active (parameter 1).
+Controlled device can be turned back on via B-button or sending a
+control frame. By default this function is inactive.
+Available settings: 10 - 65 535 (1W - 6 553,5W).
+Value higher than 32 000 (3 200W) turns the overload safety switch
+off, i.e. this functionality is turned off by default.
+Default setting: 65 535 (6 553,5W)</lang>
+              </description>
+      
+                  <value from="000a" to="ffff">
+                <description>
+                    <lang xml:lang="en">Define a value.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/d3794c2aebd7d7d592935e22e1530326f2c343df.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

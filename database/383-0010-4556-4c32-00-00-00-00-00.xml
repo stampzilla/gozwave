@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0010"/>
+        <productType value="4556"/>
+    <productId value="4c32"/>
+    <libType value="00"/>
+    <protoVersion value="00"/>
+    <protoSubVersion value="00"/>
+    <appVersion value="00"/>
+    <appSubVersion value="00"/>
+        <basicClass value="02"/>
+            <genericClass value="02"/>
+            <specificClass value="00"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+            <rfFrequency>US</rfFrequency>
+            <certId>14339</certId>
+            
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">LCD Keypad for Scene Control</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Press the upper-leftmost keypad button when the main screen is displayed</lang>
+          </inclusionNote>
+            <productName>EVLCD1</productName>
+            <brandName>EVLCD1/EVLCDD2</brandName>
+            <productLine>Evolve</productLine>
+                            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0085"/>
+        <commandClass id="0070"/>
+        <commandClass id="0087" controlled="true"/>
+        <commandClass id="0072"/>
+        <commandClass id="0031" controlled="true"/>
+        <commandClass id="0073"/>
+        <commandClass id="002b" controlled="true"/>
+        <commandClass id="002d"/>
+        <commandClass id="0093"/>
+        <commandClass id="0092"/>
+        <commandClass id="0043" controlled="true"/>
+        <commandClass id="0086"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="30">
+            <description>
+                <lang xml:lang="en">keypad button/scene for button 1</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="30">
+            <description>
+                <lang xml:lang="en">keypad button/scene for button 2</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="30">
+            <description>
+                <lang xml:lang="en">keypad button/scene for button 3</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="4" maxNodes="30">
+            <description>
+                <lang xml:lang="en">keypad button/scene for button 4</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="5" maxNodes="30">
+            <description>
+                <lang xml:lang="en">keypad button/scene for button 5</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="6" maxNodes="30">
+            <description>
+                <lang xml:lang="en">the &quot;Off&quot; button/scene for button 1</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="7" maxNodes="30">
+            <description>
+                <lang xml:lang="en">the &quot;Off&quot; button/scene for button 2</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="8" maxNodes="30">
+            <description>
+                <lang xml:lang="en">the &quot;Off&quot; button/scene for button 3</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="9" maxNodes="30">
+            <description>
+                <lang xml:lang="en">the &quot;Off&quot; button/scene for button 4</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="10" maxNodes="30">
+            <description>
+                <lang xml:lang="en">the &quot;Off&quot; button/scene for button 5</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="16" maxNodes="30">
+            <description>
+                <lang xml:lang="en">All the keypads in the system, used for setting Language options, DND/HK to all 
+keypads.  OR if Keypad Type = CUSTOM METADATA, this will be the Indicator Group</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Button 1 Type</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Scene Control momentary </lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Scene Control toggle</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">BASICSET Toggle</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">n/a</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">Privacy</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">HouseKeeping</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="en">Scene Control/BASICSET toggle</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Button 2 Type</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Scene Control momentary</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Scene Control toggle</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">BASICSET Toggle</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">Stat (Setpoint Up)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">Privacy</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">HouseKeeping</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="en">Scene Control/BASICSET toggle</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Button 3 Type </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Scene Control momentary</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Scene Control toggle</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">BASICSET Toggle</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">Stat (Temperature)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">Privacy</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">HouseKeeping</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="en">Scene Control/BASICSET toggle</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Button 4 Type</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Scene Control momentary </lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Scene Control toggle</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">BASICSET Toggle</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">Stat (Setpoint Down)</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">Privacy</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">HouseKeeping </lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="en">Scene Control/BASICSET toggle</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Button 5 Type</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Scene Control momentary</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Scene Control toggle</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">BASICSET Toggle</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">n/a </lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">Privacy</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">HouseKeeping</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="en">Scene Control/BASICSET toggle</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="16" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Language</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">English</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Spanish</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">Chinese</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">German</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">French</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="en">Italian</lang>
+                  </description>
+              </value>
+            <value from="07" to="07">
+                <description>
+                    <lang xml:lang="en">Punjabi</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="17" type="constant" size="1" default="11">
+            <name>
+                <lang xml:lang="en">Keypad Type</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">See appendix of the manual for Keypad types</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">ENTRY2GANG</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">RESORTROOMWALL</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">RESORTROOM3GANGTABLE</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">SLIVINGROOMLEFT</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">SLIVINGROOMRIGHT</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="en">SLIVINGROOM3GANG</lang>
+                  </description>
+              </value>
+            <value from="07" to="07">
+                <description>
+                    <lang xml:lang="en">SBEDROOM1GANG</lang>
+                  </description>
+              </value>
+            <value from="08" to="08">
+                <description>
+                    <lang xml:lang="en">SBEDROOM1GANGTABLE</lang>
+                  </description>
+              </value>
+            <value from="09" to="09">
+                <description>
+                    <lang xml:lang="en">SBEDROOM3GANGTABLE</lang>
+                  </description>
+              </value>
+            <value from="0a" to="0a">
+                <description>
+                    <lang xml:lang="en">DRAPECONTROL1GANG</lang>
+                  </description>
+              </value>
+            <value from="0b" to="0b">
+                <description>
+                    <lang xml:lang="en">VANITYBATH1GANG</lang>
+                  </description>
+              </value>
+            <value from="0c" to="0c">
+                <description>
+                    <lang xml:lang="en">SONOSTA1GANG</lang>
+                  </description>
+              </value>
+            <value from="0d" to="0d">
+                <description>
+                    <lang xml:lang="en">INATPENN1GANG</lang>
+                  </description>
+              </value>
+            <value from="0e" to="0e">
+                <description>
+                    <lang xml:lang="en">TYPE14</lang>
+                  </description>
+              </value>
+            <value from="0f" to="0f">
+                <description>
+                    <lang xml:lang="en">LOWELL1</lang>
+                  </description>
+              </value>
+            <value from="10" to="10">
+                <description>
+                    <lang xml:lang="en">LOWELL2</lang>
+                  </description>
+              </value>
+            <value from="11" to="11">
+                <description>
+                    <lang xml:lang="en">CUSTOM METADATA </lang>
+                  </description>
+              </value>
+            <value from="12" to="12">
+                <description>
+                    <lang xml:lang="en">CES3DEMO</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="20" type="range" size="1" default="0f">
+            <name>
+                <lang xml:lang="en">Display Timeout</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+          </configParam>
+        <configParam number="21" type="range" size="1" default="0f">
+            <name>
+                <lang xml:lang="en">Backlight ON  Level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="01" to="14">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="22" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Backlight OFF  Level </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="01" to="14">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="23" type="range" size="1" default="0f">
+            <name>
+                <lang xml:lang="en">Button ON Level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="01" to="14">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="24" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Button OFF  Level </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="01" to="14">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="25" type="range" size="1" default="0e">
+            <name>
+                <lang xml:lang="en">LCD Contrast</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="05" to="14">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="26" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Screen  Orientation</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Normal</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Rotated 180 </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="27" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Network Update </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">When loaded, LCD will trigger a Network Update after timeout</lang>
+              </description>
+      
+                  <value from="00" to="3c" unit="seconds">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="29" type="range" size="1" default="64">
+            <name>
+                <lang xml:lang="en">Red Backlight  ON Level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="64">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="30" type="range" size="1" default="64">
+            <name>
+                <lang xml:lang="en">Red Backlight  ON Level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="64">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="31" type="constant" size="1" default="64">
+            <name>
+                <lang xml:lang="en">Green Backlight  ON Level </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="64">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="32" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">RGB Demo  Mode </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Scrolls through RGB levels</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">off</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">on</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

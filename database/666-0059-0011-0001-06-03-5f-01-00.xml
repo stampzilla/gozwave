@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0059"/>
+        <productType value="0011"/>
+    <productId value="0001"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="5f"/>
+    <appVersion value="01"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">SSP 302 is a switch, mains powered plug-in device that supports energy monitoring and measure electrical parameters as well as it acts as a repeater in a Z-Wave network. </lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Press and
+hold the button on SSP 302 for 4 to 7 seconds
+then release. The network status LED will start
+flashing (twice per second) on successful start of
+inclusion process.</lang>
+          </inclusionNote>
+            <productName>Secure Smart Plug</productName>
+            <brandName>Secure </brandName>
+            <productLine>SSP 302</productLine>
+            <productCode>SSP302</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0073"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0032" version="3"/>
+        <commandClass id="0070"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="003d"/>
+        <commandClass id="003c"/>
+        <commandClass id="005a"/>
+        <commandClass id="0025"/>
+        <commandClass id="0056"/>
+        <commandClass id="008a" controlled="true"/>
+        <commandClass id="0020"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="5" maxNodes="1">
+            <description>
+                <lang xml:lang="en">Time</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="4" maxNodes="4">
+            <description>
+                <lang xml:lang="en">Relay Status</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="4">
+            <description>
+                <lang xml:lang="en">Electrical Parameter</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="4">
+            <description>
+                <lang xml:lang="en">Power</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="4">
+            <description>
+                <lang xml:lang="en">Lifeline</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Switch Status</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Sends a report if switch was used.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Function is enabled.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Voltage</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Sends a report if voltage parameter is exceeded. 
+Voltage Delta 10V = 10/0.1 = 100</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+            <value from="0001" to="0258">
+                <description>
+                    <lang xml:lang="en">Define delta parameter.
+Range is from 0.1V to 60V.
+Resolution is 0.1.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Current</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Sends a report if current parameter is exceeded.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+            <value from="0001" to="05dc">
+                <description>
+                    <lang xml:lang="en">Define current parameter.
+Range is from 0.01A to 15A. 
+Resolution is 0.01.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Power Factor</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Sends a report if power factor parameter is exceeded.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+            <value from="0001" to="03e8">
+                <description>
+                    <lang xml:lang="en">Define parameter for Power Factor.
+Range is from 0.1% to 100%.
+Resolution is 0.1.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Active Power</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Sends a report if active power parameter is exceeded.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+            <value from="0001" to="0fa0" unit="W">
+                <description>
+                    <lang xml:lang="en">Define parameter for Active Power.
+</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Active Energy</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Sends a report if active energy parameter is exceeded.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+            <value from="0001" to="7d00" unit="Wh">
+                <description>
+                    <lang xml:lang="en">Define parameter for Active Energy.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Apparent Energy</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Sends a report if apparent energy parameter is exceeded.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+            <value from="0001" to="7d00" unit="VAh">
+                <description>
+                    <lang xml:lang="en">Define parameter for Apparent Energy.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Switch Status</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Define the time interval for metering.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+            <value from="8000" to="7fff">
+                <description>
+                    <lang xml:lang="en">Set a time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Voltage</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Define time interval for metering.
+Controllers may only allow configuring signed
+values. In order to set values in the range 32768…
+65520, the value sent in the application shall be
+equal to desired value minus 65536.For example, to
+set time interval to 36000 seconds it may be needed
+to set a value 36000−65536=−29536.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+            <value from="8000" to="7fff" unit="sec">
+                <description>
+                    <lang xml:lang="en">Set a time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Current</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Define the time interval for metering.
+</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+            <value from="8000" to="7fff" unit="sec">
+                <description>
+                    <lang xml:lang="en">Set a time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Power Factor</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Define the time interval for metering.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+            <value from="8000" to="7fff">
+                <description>
+                    <lang xml:lang="en">Set a time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Active Power</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Define the time interval for metering.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+            <value from="8000" to="7fff">
+                <description>
+                    <lang xml:lang="en">Set a time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Active Energy</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Define the time interval for metering.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+            <value from="8000" to="7fff">
+                <description>
+                    <lang xml:lang="en">Set a time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="14" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Apparent Energy</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Define the time interval for metering.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+            <value from="8000" to="7fff">
+                <description>
+                    <lang xml:lang="en">Set a time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="15" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Relay and LED configuration</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Configure the relay status after power cycle.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Relay status after power cycle = Open; LED status is ON for relay close and OFF for relay open.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Retain last status over the power cycle; LED status is ON for relay close and OFF for relay open.</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Relay status after power cycle = Open; LED status is ON for relay open and OFF for relay close.</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">Retain last status over the power cycle; LED status is ON for relay open and OFF for relay close.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="16" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Sleep current configuration</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Define the parameter for sleep current.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+            <value from="8000" to="7fff">
+                <description>
+                    <lang xml:lang="en">Define the parameter. Range is from 0A to 1A. Resolution is 0.001. Example: 0.5A = 0.5/.001 = 500</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/6fce1a73b390af873a3587de5b238c964429d31c.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

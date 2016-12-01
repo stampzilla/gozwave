@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="017c"/>
+        <productType value="0006"/>
+    <productId value="0003"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="67"/>
+    <appVersion value="03"/>
+    <appSubVersion value="94"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Multiple On/Off Switch</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">1. In the menu of the heatapp! gateway select the
+menu item &quot;Register / deregister&quot; under &quot;radio
+Modules&quot; and then &quot;Register&quot;. You are requested to
+press the learn key (10) on the heatapp! floor.
+(See also the operating instructions at
+www.heatapp.de).
+2. Press the learn key (10) for 2 seconds (see also
+section &quot;Functions of the learn key&quot;, line &quot;b&quot;).
+3. As soon as the heatapp! gateway detects the
+heatapp! floor, you will be requested to enter a
+name (e.g. Ground floor).
+4. Check in the menu of the heatapp! gateway under
+&quot; radio Modules &quot;, whether the heatapp! floor has
+been successfully registered or deregistered.
+</lang>
+          </inclusionNote>
+            <productName>floor heating regulator z-wave</productName>
+            <brandName>heatapp! floor</brandName>
+            <productLine>heating regulator</productLine>
+            <productCode>9600801000</productCode>
+            <productVersion>1.1</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+        <commandClass id="0060" version="3"/>
+        <commandClass id="0027"/>
+        <commandClass id="0025"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0020"/>
+      </commandClasses>
+  
+  
+    <configParams>
+        <configParam number="1" type="range" size="1" default="03">
+            <name>
+                <lang xml:lang="en">Missing Radio Link time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Sets the maximum amount of time the device will wait for reconnection
+before going to emergency mode (All switches
+ON).</lang>
+              </description>
+      
+                  <value from="01" to="18">
+                <description>
+                    <lang xml:lang="en">It is possible to set a range of 10min to 4hours. Default value is 30min. The time interval is set in 10 min steps.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Relay Type</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Sets relay type. Default relay
+type is normal open.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">0 = normal open</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">1 = normal close</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">2 = switching</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    <endpoints>
+           <endpoint number="8">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0025"/>
+          </endpoint>
+           <endpoint number="7">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0025"/>
+          </endpoint>
+           <endpoint number="6">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0025"/>
+          </endpoint>
+           <endpoint number="5">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0025"/>
+          </endpoint>
+           <endpoint number="4">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0025"/>
+          </endpoint>
+           <endpoint number="3">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0025"/>
+          </endpoint>
+           <endpoint number="2">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0025"/>
+          </endpoint>
+           <endpoint number="1">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0025"/>
+          </endpoint>
+      </endpoints>
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/25337ce52548fe61508f6d0ec84f370bad49288f.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

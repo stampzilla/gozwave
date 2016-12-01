@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0010"/>
+        <productType value="5053"/>
+    <productId value="3231"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="52"/>
+    <appVersion value="01"/>
+    <appSubVersion value="04"/>
+        <basicClass value="04"/>
+            <genericClass value="08"/>
+            <specificClass value="06"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>US</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Pool Controller</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Press and hold the Install button. The controller will indicate the keypad has been included into the network.</lang>
+          </inclusionNote>
+            <productName>PSCH21</productName>
+            <brandName>PSCH21</brandName>
+            <productLine>Pool-Spa Controller</productLine>
+            <productCode>PSCH21</productCode>
+            <productVersion>1.4</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0040"/>
+        <commandClass id="0042"/>
+        <commandClass id="0043"/>
+        <commandClass id="0070"/>
+        <commandClass id="0031" version="5"/>
+        <commandClass id="0086"/>
+        <commandClass id="0072"/>
+        <commandClass id="0085"/>
+        <commandClass id="002c"/>
+        <commandClass id="002b"/>
+        <commandClass id="0073"/>
+        <commandClass id="0020"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Association Alerts are to notify an associated device of a relay generated change or temperature change.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Reset Count</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">0-255</lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">SI Sensor Cal (S1)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="f9" to="07">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">SO Sensor Cal (S2)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="f9" to="07">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Relay Polarity</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">If set, reverses all relay polarities.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">normal polarity</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">reverse polarity</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Temperature Delta Autosend Threshold</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">how many degree change from the last AutoSend</lang>
+              </description>
+      
+                  <value from="01" to="05" unit="deg">
+                <description>
+                    <lang xml:lang="en">Set the amount of degrees.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Periodic Temperature Send Interval (min)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The parameter defines the time interval a temperature report is sent.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+            <value from="01" to="78" unit="min">
+                <description>
+                    <lang xml:lang="en">Define the time interval in minutes.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">F/C Mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The parameter defines which temperature scale is used by the device.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Celsius</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Fahrenheit</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">SI Temperature</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Always reports in Fahrenheit</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="9" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">SO Temperature</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Always reports in Fahrenheit</lang>
+              </description>
+      
+          </configParam>
+      </configParams>
+  
+    
+  
+    
+  </ZWaveDevice>
+
+

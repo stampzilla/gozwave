@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="5254"/>
+        <productType value="0107"/>
+    <productId value="8377"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="67"/>
+    <appVersion value="01"/>
+    <appSubVersion value="21"/>
+        <basicClass value="04"/>
+            <genericClass value="08"/>
+            <specificClass value="06"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="false"/>
+        <beamSensor>1000</beamSensor>
+            <rfFrequency>IL</rfFrequency>
+                <certNumber>19848</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Z-Extender</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Press the button 3 times within 2 seconds</lang>
+          </inclusionNote>
+            <productName>ZXT-120IL</productName>
+            <brandName>Remotec</brandName>
+            <productLine>Z-Wave Home Automation</productLine>
+            <productCode>BW8377IL</productCode>
+            <productVersion>1.8</productVersion>
+            <batteryType>AAA</batteryType>
+            <batteryCount>3</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020"/>
+        <commandClass id="0027"/>
+        <commandClass id="0031"/>
+        <commandClass id="0040" version="2"/>
+        <commandClass id="0043" version="2"/>
+        <commandClass id="0044" version="2"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+        <commandClass id="0080"/>
+        <commandClass id="0086"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="en">Lifeline</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="25" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">IR code</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Indicate a location for IR code learning and start learning</lang>
+              </description>
+      
+                  <value from="00" to="16" unit="1">
+                <description>
+                    <lang xml:lang="en">location for IR code</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="26" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Learning Status register</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Idle</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">OK - the latest learning process successful and complete</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Learning - The ZXT is busy</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">Failed</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="27" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">IR code number</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">for built-in library</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Please refer to the &quot;code list&quot;</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="28" type="constant" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">External IR Emitter power level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">normal power mode</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">High power mode</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="32" type="constant" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">Surround IR control</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">disable surround IR emitters</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">enable surround IR emitters</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="33" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">AC function &quot;SWING&quot; control</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">SWING OFF</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">SWING AUTO</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="35" type="bitset" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Learn location status</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="01" to="01" unit="Bit">
+                <description>
+                    <lang xml:lang="en">On (resume)</lang>
+                  </description>
+              </value>
+            <value from="07" to="07" unit="Bit">
+                <description>
+                    <lang xml:lang="en">24°C cool</lang>
+                  </description>
+              </value>
+            <value from="08" to="08" unit="Bit">
+                <description>
+                    <lang xml:lang="en">25°C cool</lang>
+                  </description>
+              </value>
+            <value from="0c" to="0c" unit="Bit">
+                <description>
+                    <lang xml:lang="en">19°C heat</lang>
+                  </description>
+              </value>
+            <value from="10" to="10" unit="Bit">
+                <description>
+                    <lang xml:lang="en">23°C heat</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="37" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Sensor temperature compensation</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">0°C</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">1°C</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">2°C</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">3°C</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">4°C</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">5°C</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">-1°C</lang>
+                  </description>
+              </value>
+            <value from="fe" to="fe">
+                <description>
+                    <lang xml:lang="en">-2°C</lang>
+                  </description>
+              </value>
+            <value from="fd" to="fd">
+                <description>
+                    <lang xml:lang="en">-3°C</lang>
+                  </description>
+              </value>
+            <value from="fc" to="fc">
+                <description>
+                    <lang xml:lang="en">-4°C</lang>
+                  </description>
+              </value>
+            <value from="fb" to="fb">
+                <description>
+                    <lang xml:lang="en">-5°C</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/44a3488ec6281e48a9a85bc15c0575e9249b04fb.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="013c"/>
+        <productType value="0008"/>
+    <productId value="001d"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="5f"/>
+    <appVersion value="01"/>
+    <appSubVersion value="0b"/>
+        <basicClass value="04"/>
+            <genericClass value="01"/>
+            <specificClass value="04"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">The Remote PSR03 is a simple control can control AV device through Z-Wave-to-IR extender, and it can also controls 8 scenes ON/OFF through basic set, based on Z-WaveTM technology.</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Hold down the central key, then press the top-right
+key three times within 1.5 seconds to enter the add
+mode.</lang>
+          </inclusionNote>
+            <productName>Remote</productName>
+            <brandName>Philio</brandName>
+            <productLine>Philio Z-Wave Products</productLine>
+            <productCode>PSR03</productCode>
+                <batteryType>Li 602025</batteryType>
+            <batteryCount>1</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0073"/>
+        <commandClass id="005a"/>
+        <commandClass id="0098"/>
+        <commandClass id="007a" version="2"/>
+        <commandClass id="0080" secure="true" nonSecure="false"/>
+        <commandClass id="0071" version="4" secure="true" nonSecure="false"/>
+        <commandClass id="0085" version="2" secure="true" nonSecure="false"/>
+        <commandClass id="0070" secure="true" nonSecure="false"/>
+        <commandClass id="0084" version="2" secure="true" nonSecure="false"/>
+        <commandClass id="0020" controlled="true" inNIF="false"/>
+        <commandClass id="0094" controlled="true"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="9" maxNodes="4">
+            <description>
+                <lang xml:lang="en">The group 2 to group 9 are for lighting group
+control, the device will send the “Basic Set” command
+to these groups.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="8" maxNodes="4">
+            <description>
+                <lang xml:lang="en">The group 2 to group 9 are for lighting group
+control, the device will send the “Basic Set” command
+to these groups.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="7" maxNodes="4">
+            <description>
+                <lang xml:lang="en">The group 2 to group 9 are for lighting group
+control, the device will send the “Basic Set” command
+to these groups.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="6" maxNodes="4">
+            <description>
+                <lang xml:lang="en">The group 2 to group 9 are for lighting group
+control, the device will send the “Basic Set” command
+to these groups.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="5" maxNodes="4">
+            <description>
+                <lang xml:lang="en">The group 2 to group 9 are for lighting group
+control, the device will send the “Basic Set” command
+to these groups.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="4" maxNodes="4">
+            <description>
+                <lang xml:lang="en">The group 2 to group 9 are for lighting group
+control, the device will send the “Basic Set” command
+to these groups.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="4">
+            <description>
+                <lang xml:lang="en">The group 2 to group 9 are for lighting group
+control, the device will send the “Basic Set” command
+to these groups.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="4">
+            <description>
+                <lang xml:lang="en">The group 2 to group 9 are for lighting group
+control, the device will send the “Basic Set” command
+to these groups.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="4">
+            <description>
+                <lang xml:lang="en">Group 1 is for
+receiving the report message, like AV controls, battery
+status.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="2" type="rangemapped" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">Basic Set Level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Setting the BASIC command value to turn on
+the light. The 0xFF(-1) means turn on the
+light. For dimmer equipment 1 to 100 means
+the light strength.
+0 means turn off the light.</lang>
+              </description>
+      
+                  <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">-1 = Lights are turned on.</lang>
+                  </description>
+              </value>
+            <value from="01" to="64">
+                <description>
+                    <lang xml:lang="en">Set light strength for dimmer.</lang>
+                  </description>
+              </value>
+            <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">0 = Lights are turned off.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="bitset" size="1" default="0c">
+            <name>
+                <lang xml:lang="en">Customer Function</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Customer function switch, using bit control.
+
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Switch AV control/Lighting group
+control. (0: AV control, 1: lighting group
+control)</lang>
+                  </description>
+              </value>
+            <value from="01" to="01" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="02" to="02" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="03" to="03" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="04" to="04" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="05" to="05" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="06" to="06" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="07" to="07" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="range" size="1" default="0c">
+            <name>
+                <lang xml:lang="en">Auto Report Battery Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The interval time for auto report the battery
+level.
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">0 means turn off auto report battery.</lang>
+                  </description>
+              </value>
+            <value from="01" to="7f">
+                <description>
+                    <lang xml:lang="en">Set the interval time for auto report the battery
+level.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="82" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Association Group 2 Basic Set Level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Setting the BASIC command value to turn on the light in the association group 2.
+0 means using the value of configuration 2 to set.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="83" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Association Group 3 Basic Set Level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Setting the BASIC command value to turn on the light in the association group 3.
+0 means using the value of configuration 2 to set.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="84" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Association Group 4 Basic Set Level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Setting the BASIC command value to turn on the light in the association group 4.
+0 means using the value of configuration 2 to set.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="85" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Association Group 5 Basic Set Level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Setting the BASIC command value to turn on the light in the association group 5.
+0 means using the value of configuration 2 to set.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="86" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Association Group 6 Basic Set Level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Setting the BASIC command value to turn on the light in the association group 6.
+0 means using the value of configuration 2 to set.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="87" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Association Group 7 Basic Set Level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Setting the BASIC command value to turn on the light in the association group 7.
+0 means using the value of configuration 2 to set.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="88" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Association Group 8 Basic Set Level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Setting the BASIC command value to turn on the light in the association group 8.
+0 means using the value of configuration 2 to set.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="89" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Association Group 9 Basic Set Level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Setting the BASIC command value to turn on the light in the association group 9.
+0 means using the value of configuration 2 to set.</lang>
+              </description>
+      
+          </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/e22d091ca09807212dfe5dc67f6419a7f485a79b.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

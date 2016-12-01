@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0060"/>
+        <productType value="0004"/>
+    <productId value="0006"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="5f"/>
+    <appVersion value="01"/>
+    <appSubVersion value="01"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">The AN181 is a On/Off plug with meter function, mounted directly to the outlet. It can control the ON/Off status by RF or button. It can detect current wattage and  overload wattage.</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Press the link key three times within 1.5 seconds to put
+the unit into inclusion mode.</lang>
+          </inclusionNote>
+            <productName>Z-Wave Meter Mini Plug -500 Series</productName>
+            <brandName>Everspring</brandName>
+            <productLine>Everspring Z-Wave Plus Devices</productLine>
+            <productCode>AN181-6</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="005a"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0073"/>
+        <commandClass id="0020" controlled="true"/>
+        <commandClass id="0071" version="4"/>
+        <commandClass id="0070"/>
+        <commandClass id="0025"/>
+        <commandClass id="0027"/>
+        <commandClass id="0032" version="3"/>
+        <commandClass id="0022"/>
+        <commandClass id="007a" version="2"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="2" maxNodes="1">
+            <description>
+                <lang xml:lang="en">On/Off control: Basic Set</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="en">Lifeline: Binary Switch Report,
+Notification Report,
+Device Reset Locally Notification,
+Meter Report</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="2" default="00ff">
+            <name>
+                <lang xml:lang="en">Basic Set Command value</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Set Basic Set Command value</lang>
+              </description>
+      
+                  <value from="0000" to="0063">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="1" default="03">
+            <name>
+                <lang xml:lang="en">Delay Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Set the delaying time to report
+to Group 1.</lang>
+              </description>
+      
+                  <value from="03" to="19" unit="sec">
+                <description>
+                    <lang xml:lang="en">Define the delay time.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Last Status</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Set whether to remember the
+last status.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">The last status is not remembered.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">The last status is remembered.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="rangemapped" size="2" default="0001">
+            <name>
+                <lang xml:lang="en">Wattage Auto Report</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Set the interval for wattage auto
+report.</lang>
+              </description>
+      
+                  <value from="0001" to="7fff" unit="min">
+                <description>
+                    <lang xml:lang="en">Define the time interval.</lang>
+                  </description>
+              </value>
+            <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">The automatic report is disabled.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="rangemapped" size="2" default="003c">
+            <name>
+                <lang xml:lang="en">Energy Auto report</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Set the interval for kW*h auto
+report.</lang>
+              </description>
+      
+                  <value from="0001" to="7fff" unit="min">
+                <description>
+                    <lang xml:lang="en">Define the time interval.</lang>
+                  </description>
+              </value>
+            <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">The automatic report is disabled.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="rangemapped" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Value of Wattage surpassed</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Auto is sent report, when load
+surpasses the set value of
+wattage.</lang>
+              </description>
+      
+                  <value from="0001" to="09c4" unit="W">
+                <description>
+                    <lang xml:lang="en">Define the treshold of wattage.</lang>
+                  </description>
+              </value>
+            <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Change of Wattage surpassed</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Auto report is sent, when the change of
+wattage surpasses the set
+percentage.</lang>
+              </description>
+      
+                  <value from="01" to="64" unit="%">
+                <description>
+                    <lang xml:lang="en">Define the level of change in percent.</lang>
+                  </description>
+              </value>
+            <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/99c909f38a4ec15dbd6296b6a64be6f9cae60698.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="013c"/>
+        <productType value="0004"/>
+    <productId value="000a"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="5f"/>
+    <appVersion value="01"/>
+    <appSubVersion value="08"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="05"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">The multiple sound siren PSE02 is a wireless siren, based on Z-Wave technology.</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Pressing tamper key three times within 1.5 seconds
+to enter the inclusion mode.</lang>
+          </inclusionNote>
+            <productName>Multi Sound Siren</productName>
+            <brandName>Philio</brandName>
+            <productLine>Philio Z-Wave Products</productLine>
+            <productCode>PSE02</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0073"/>
+        <commandClass id="005a"/>
+        <commandClass id="0098"/>
+        <commandClass id="007a" version="2"/>
+        <commandClass id="0071" version="4" controlled="true" secure="true" nonSecure="false"/>
+        <commandClass id="0020" secure="true" nonSecure="false"/>
+        <commandClass id="0025" secure="true" nonSecure="false"/>
+        <commandClass id="0085" version="2" secure="true" nonSecure="false"/>
+        <commandClass id="0070" secure="true" nonSecure="false"/>
+        <commandClass id="0030" version="2" secure="true" nonSecure="false"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="8">
+            <description>
+                <lang xml:lang="en">The group 1 is for receiving the report message, like
+tamper event. And the group support 8 nodes
+maximum.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="7" type="bitset" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Customer Function</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Customer function switch, using bit
+control.
+</lang>
+              </description>
+      
+                  <value from="00" to="00" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="01" to="01" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="02" to="02" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="03" to="03" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">Notification Type,
+0: Using Notification Report.
+1: Using Sensor Binary Report.</lang>
+                  </description>
+              </value>
+            <value from="05" to="05" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="06" to="06" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="07" to="07" reserved="true">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="29" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Disable Alarm</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Disable the alarm function.
+
+Caution: After the power up, this
+configuration always be 0.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">0: Enable Alarm</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">1: Disable Alarm</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="31" type="range" size="1" default="06">
+            <name>
+                <lang xml:lang="en">Alarm Duration</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Play alarm sound duration, 1 tick is 30
+seconds. Default is 3 minutes, maximum is 63.5 minutes.
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">0 = never auto stop</lang>
+                  </description>
+              </value>
+            <value from="01" to="7f">
+                <description>
+                    <lang xml:lang="en">Set duration of alarm sound.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/4add7da9366b77ca54a8998499374d3767977710.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

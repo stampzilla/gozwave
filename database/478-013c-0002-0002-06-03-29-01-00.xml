@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="013c"/>
+        <productType value="0002"/>
+    <productId value="0002"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="29"/>
+    <appVersion value="01"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="20"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+                    
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en">3 in 1 Sensor (Door-/Window, Temperature, Illumination)</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </inclusionNote>
+            <productName>Slim Multi-Sensor PSM01-1 </productName>
+            <brandName>Philio Technology Corporation</brandName>
+                <productCode>PHI_PSM01-1</productCode>
+                <batteryType>CR123A</batteryType>
+            <batteryCount>1</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0080"/>
+        <commandClass id="0020"/>
+        <commandClass id="0084" version="2"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0086"/>
+        <commandClass id="0070"/>
+        <commandClass id="0030" version="2"/>
+        <commandClass id="0031" version="5"/>
+        <commandClass id="0072" version="2"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="2" maxNodes="7">
+            <description>
+                <lang xml:lang="de">Gruppe 2 ist für Lichtsteuerung, das Gerät sendet “Basic Set” Kommandos zu dieser Gruppe</lang>
+                <lang xml:lang="en">group 2 is for light control, the device will send the “Basic Set” command to this group.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="7">
+            <description>
+                <lang xml:lang="de">Gruppe 1 ist für empfang der Reports wie ausgelöster Event, Temperatur, Helligkeit usw.</lang>
+                <lang xml:lang="en">group 1 is for receiving the report message, like triggered event, temperature, illumination etc.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="2" type="range" size="1" default="ff">
+            <name>
+                <lang xml:lang="de">Basic Set Level</lang>
+                <lang xml:lang="en">Basic Set Level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Setzt des Basic Command Wertes um Licht zu schalten</lang>
+                <lang xml:lang="en">Setting the BASIC command value to turn on the light</lang>
+              </description>
+      
+                  <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="de">0xFF(-1) schaltet Licht ein.</lang>
+                    <lang xml:lang="en">0xFF(-1) turns on the light.</lang>
+                  </description>
+              </value>
+            <value from="01" to="64">
+                <description>
+                    <lang xml:lang="de">Für Dimmer 1 bis 100 Beleuchtungsstärke</lang>
+                    <lang xml:lang="en">For dimmers 1 to 100 means the light strength</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="1" default="63">
+            <name>
+                <lang xml:lang="de">Licht Grenzwert</lang>
+                <lang xml:lang="en">Light Threshold</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Grenzwert, bei dem das Licht bei ausgelöstem Event in Abhängigkeit von der Umgebungshelligkeit geschaltet wird</lang>
+                <lang xml:lang="en">Setting the illumination threshold to turn on the light. When the event triggered and the environment illumination lower then the threshold, the device will turn on the light</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">0 bedeutet Helligkeitsabhängiges Einschalten deaktiviert;  Licht nie einschalten. </lang>
+                    <lang xml:lang="en">0 means turn off illumination detected function And never turn on the light.</lang>
+                  </description>
+              </value>
+            <value from="01" to="64">
+                <description>
+                    <lang xml:lang="de">1 dunkelste Stufe. 99 hellste Stufe. 100 bedeutet Helligkeitsabhängiges Einschalten deaktiviert; Licht immer einschalten</lang>
+                    <lang xml:lang="en">1 means darkest.
+99 means brightest.
+100 means turn off illumination detected function. And always turn on the light
+</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Operations Modus</lang>
+                <lang xml:lang="en">Operation Mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Parameter zum Festlegen der Funktionsweise</lang>
+                <lang xml:lang="en">parameter to set the Operation Mode</lang>
+              </description>
+      
+                  <value from="00" to="7f">
+                <description>
+                    <lang xml:lang="de">Bit 0: reserviert. 
+Bit 1: reserviert. 
+Bit 2: deaktivieren der Tür/Fenster Funktion.
+Bit 3: Setzen der Temperatur Einheit.
+  0: Fahrenheit, 1:Celsius
+Bit 4: Deaktivieren des Beleuchtungs-Reports nach einem ausgelösten Event.
+Bit 5: Deaktivieren des Temperatur-Reports nach einem ausgelösten Event.</lang>
+                    <lang xml:lang="en">Bit 0: Reversed. 
+Bit 1: Reversed. 
+Bit 2: Disable the door/window function.
+Bit 3: Setting the temperature scale.
+  0: Fahrenheit, 1:Celsius
+Bit 4: Disable illumination report after event triggered.
+Bit 5: Disable temperature report after event triggered.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="range" size="1" default="04">
+            <name>
+                <lang xml:lang="de">Multi-Sensor Funktionsschalter</lang>
+                <lang xml:lang="en">Multi-Sensor Function Switch</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Parameter zum Festlegen der Sensor-Funktionen</lang>
+                <lang xml:lang="en">parameter to set the sensor functions</lang>
+              </description>
+      
+                  <value from="00" to="7f">
+                <description>
+                    <lang xml:lang="de">Bit 0: deaktiviert Magnetisch integrierte Beleuchtung.
+Bit 1: reserviert, immer 1.
+Bit 2: reserviert, immer 1.
+Bit 3: reserviert.
+Bit 4: Deaktiviert die 5 sek Verzögerung zum Ausschalten des Lichts, wenn Tür/Fenster geschlossen.
+Bit 5: Deaktiviert automat. Abschaltung des Lichts, nachdem Tür/Fenster geöffnet und Licht angeschaltet wurde.
+Bit 6: aktiviert Temperatur Messung. Wenn aktiviert wird bei Temperaturänderung von 3° ein Temperatur-Report gesendet. Ebenfalls wird ein Temperatur-Report (aller 64 Sekunden) gesendet, wenn diese über 140° Fahrenheit steigt.</lang>
+                    <lang xml:lang="en">Bit 0: Disable magnetic integrate illumination.
+Bit 1: Reserved, always 1.
+Bit 2: Reserved, always 1.
+Bit 3: Reserved.
+Bit 4: Disable delay 5 seconds to turn off the light, when door/window closed.
+Bit 5: Disable auto turn off the light, after door/window opened to turn on the light. 
+Bit 6:Enable temperature monitoring.
+When this bit enable, the temperature changed 3 degree Fahrenheit, it will report.
+And also the temperature over 140 degree Fahrenheit, it will report every 64 seconds.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="range" size="1" default="04">
+            <name>
+                <lang xml:lang="de">Ausschaltzeit Beleuchtung</lang>
+                <lang xml:lang="en">Turn Off Light Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Nach Aktivieren der Beleuchtung, Verzögerung bis Beleuchtung wieder deaktiviert wird</lang>
+                <lang xml:lang="en">After turn on the light, setting the delay time to turn off the light when the PIR motion is not detected</lang>
+              </description>
+      
+                  <value from="04" to="7f" unit="8 sec">
+                <description>
+                    <lang xml:lang="de">8 Sekunden pro Tick, minimal 32 Sekunden, Standard 4 Ticks = 32 Sekunden</lang>
+                    <lang xml:lang="en">8 seconds per tick, and minimum time is 32 seconds, default tick is 4 (32 seconds)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="range" size="1" default="0c">
+            <name>
+                <lang xml:lang="de">Auto Report Batterie Zeit</lang>
+                <lang xml:lang="en">Auto Report Battery Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Intervall-Zeit für automatischen Report des Batterie-Status</lang>
+                <lang xml:lang="en">interval time for auto report the battery level</lang>
+              </description>
+      
+                  <value from="01" to="7f" unit="30 min">
+                <description>
+                    <lang xml:lang="de">30 Minuten pro Tick, minimal 30 Minuten, Standard sind 12 Ticks = 6 Stunden</lang>
+                    <lang xml:lang="en">30 minutes per tick and minimum time is 30 minutes, default tick is 12 (6 hours)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="range" size="1" default="0c">
+            <name>
+                <lang xml:lang="de">Auto Report Tür/Fenster Zeit</lang>
+                <lang xml:lang="en">Auto Report Door/Window State Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Intervall-Zeit für automatischen Report des Tür/Fenster-Status</lang>
+                <lang xml:lang="en">interval time for auto report the door/window state</lang>
+              </description>
+      
+                  <value from="01" to="7f" unit="30 min">
+                <description>
+                    <lang xml:lang="de">30 Minuten pro Tick, minmal 30 Minuten, Standard sind 12 Ticks = 6 Stunden</lang>
+                    <lang xml:lang="en">30 minutes per tick and minimum time is 30 minutes, default tick is 12 (6 hours)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="range" size="1" default="0c">
+            <name>
+                <lang xml:lang="de">Auto Report Helligkeit Zeit</lang>
+                <lang xml:lang="en">Auto Report Temperature Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Intervall-Zeit für automatischen Report des Temperatur-Status</lang>
+                <lang xml:lang="en">interval time for auto report the temperature</lang>
+              </description>
+      
+                  <value from="01" to="7f" unit="30 min">
+                <description>
+                    <lang xml:lang="de">30 Minuten pro Tick, minimal 30 Minuten, Standard 12 Ticks = 6 Stunden</lang>
+                    <lang xml:lang="en">30 minutes per tick and minimum time is 30 minutes, default tick is 12 (6 hours)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="range" size="1" default="0c">
+            <name>
+                <lang xml:lang="de">Auto Report Temperatur Zeit</lang>
+                <lang xml:lang="en">Auto Report Temperature Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Intervall-Zeit für automatischen Report des Temperatur-Status</lang>
+                <lang xml:lang="en">interval time for auto report the temperature</lang>
+              </description>
+      
+                  <value from="01" to="7f" unit="3">
+                <description>
+                    <lang xml:lang="de">30 Minuten pro Tick, minimal 30 Minuten, Standard 12 Ticks = 6 Stunden</lang>
+                    <lang xml:lang="en">30 minutes per tick and minimum time is 30 minutes, default tick is 12 (6 hours)</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    
+  </ZWaveDevice>
+
+

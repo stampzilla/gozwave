@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="013c"/>
+        <productType value="0001"/>
+    <productId value="0001"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="41"/>
+    <appVersion value="01"/>
+    <appSubVersion value="01"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>US</rfFrequency>
+            <certId>15443</certId>
+            <certNumber>ZC08-13060012</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Plug-in ON/OFF switch PAN11-4</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en"></lang>
+          </inclusionNote>
+            <productName>Smart Energy Plug In Switch PAN11-4</productName>
+            <brandName>Philio</brandName>
+            <productLine>Philio Z_Wave Products</productLine>
+            <productCode>PAN11-4</productCode>
+            <productVersion>V1.1</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0025"/>
+        <commandClass id="0020"/>
+        <commandClass id="0027"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0086"/>
+        <commandClass id="0032" version="3"/>
+        <commandClass id="0085"/>
+        <commandClass id="0070"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="en">On/Off Event Report:
+When “on” or “off ” state has been changed, it will send Binary Switch Report to the nodes of Grouping 1. 
+METER REPORT:
+When the power consumption of load vary over 5%, it will send Meter report to the nodes of Grouping 1.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="2" default="02d0">
+            <name>
+                <lang xml:lang="en">Watt Meter Report Period</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">  If the setting is configured for 1hour (set value =720), the PAN11 will report its instant power consumption every 1 hour to Z-Wave Controller.  The maximum interval to report its instant power consumption is 45 hours (5s*32767/3600=45hr)</lang>
+              </description>
+      
+                  <value from="0001" to="7fff" unit="x5sec">
+                <description>
+                    <lang xml:lang="en">Define the time interval for the report.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="2" default="0006">
+            <name>
+                <lang xml:lang="en">KWH Meter Report  Period</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">   If the setting is configured for 1hour (set value =6), the PAN11 will report its Accumulated Power Consumption (KW/h) every 1 hour to Z-Wave Controller.  The maximum interval to report its Accumulated Power Consumption (KW/h) is 227.55 days (10min*32767/1440=227.55 days).</lang>
+              </description>
+      
+                  <value from="0001" to="7fff" unit="x5sec">
+                <description>
+                    <lang xml:lang="en">Define the time interval for the report.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="range" size="2" default="0bb8">
+            <name>
+                <lang xml:lang="en">Threshold of Watt for Load caution</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This is a warning when the wattage of load over the preset threshold value, if the setting value is 3000, when the load wattage of Relay1 over this value, PAN11 will send warning alarm command to the controller, the Range of the setting value is from 10 to 3000, and the default value is 3000.</lang>
+              </description>
+      
+                  <value from="000a" to="0bb8" unit="W">
+                <description>
+                    <lang xml:lang="en">Set the value of the treshold.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="2" default="2710">
+            <name>
+                <lang xml:lang="en">Threshold of KWh for Load caution</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This is a warning when the KWh of load over the preset threshold value, If  the setting value is 10000, when the Accumulated Power Consumption of Relay1  over this value, PAN11 will send warning alarm command to the controller, minum value is 1KWh and default value is 10000 kWh.</lang>
+              </description>
+      
+                  <value from="0001" to="2710" unit="kWh">
+                <description>
+                    <lang xml:lang="en">Set the value of the treshold.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/f7c6664bff82066362ea4065fb60e3ae88af21d3.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="010f"/>
+        <productType value="0100"/>
+    <productId value="0109"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="2a"/>
+    <appVersion value="01"/>
+    <appSubVersion value="09"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>Russia</rfFrequency>
+            <certId>14145</certId>
+            <certNumber>ZC08-11030010</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en">Universal Dimmer FGD-211</lang>
+            <lang xml:lang="ru">Компактный модуль плавного регулирования света Диммер FGD-211</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+            <lang xml:lang="ru"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Dreifach den kleinen Taster</lang>
+            <lang xml:lang="en">Tripple Press little button on device</lang>
+            <lang xml:lang="ru">Тройное нажатие сервисной  кнопки B</lang>
+          </inclusionNote>
+            <productName>FGD211 V1.9</productName>
+            <brandName>Fibaro</brandName>
+            <productLine>Fibaro</productLine>
+            <productCode>001</productCode>
+            <productVersion>1.9</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" controlled="true"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0026" controlled="true"/>
+        <commandClass id="0086"/>
+        <commandClass id="0027"/>
+        <commandClass id="008e" version="2"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+        <commandClass id="0073"/>
+        <commandClass id="0025"/>
+        <commandClass id="0060" version="2" controlled="true"/>
+        <commandClass id="0000"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Group 1 is assigned to the first button.</lang>
+                <lang xml:lang="ru">Управляется кнопкой №1</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Group 2 is assigned to the second button.</lang>
+                <lang xml:lang="ru">Управляется кнопкой №2</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="1">
+            <description>
+                <lang xml:lang="en">Reports state of device</lang>
+                <lang xml:lang="ru">Отправлять отчёт при изменение состояния устройства</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="rangemapped" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">Parameter no.1 - Activation/Deactivation</lang>
+                <lang xml:lang="ru">Параметр №1 - Включить всё/Выключить всё</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Activation/deactivation of ALL ON/ALL OFF functions</lang>
+                <lang xml:lang="ru">Параметр позволяет настроить, будет ли модуль реагировать на широковещательные команды &quot;Включить всё&quot; и &quot;Выключить всё&quot;. </lang>
+              </description>
+      
+                  <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">ALL ON active ALL OFF active</lang>
+                    <lang xml:lang="ru">Реагировать на команду Включить всё, Реагировать на команду Выключить всё</lang>
+                  </description>
+              </value>
+            <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">ALL ON non active ALL OFF non active</lang>
+                    <lang xml:lang="ru">Игнорировать команду Включить всё, Игнорировать команду Выключить всё</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">ALL ON non active ALL OFF active</lang>
+                    <lang xml:lang="ru">Игнорировать команду Включить всё, Реагировать на команду Выключить всё</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">ALL ON active ALL OFF non active</lang>
+                    <lang xml:lang="ru">Реагировать на команду Включить всё, Игнорировать команду Выключить всё</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Parameter no.6 - Sending commands to control devices assigned to 1-st association group (key № 1)</lang>
+                <lang xml:lang="ru">Параметр №6 - В каких случаях отправляется команда устройствам из группы 1, т.е. при нажатии кнопки №1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">NOTE: Parameter 15 value must be set to 1 to work properly. This activates the double-click functionality - dimmer/roller shutter control</lang>
+                <lang xml:lang="ru">Примечание: В параметре №15 &quot;Двойные клики&quot; должно быть выбрано значение &quot;Включены&quot;. Это активирует управление диммерами и жалюзи с помощью двойных кликов </lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">commands are sent when device it turned on and off</lang>
+                    <lang xml:lang="ru">Команда отправляется, когда устройство Включается или Выключается</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">commands are sent when device it turned off. Enabling device does not sent control commands. Double-clicking key sends &quot;turn on&quot; command, dimmers memorize the last saved state (e.g. 50% brightness)</lang>
+                    <lang xml:lang="ru">Команда отправляется, когда устройство Выключается. Двойной клик отправит команду включения Диммерам и те включатся на последний установленный уровень яркости.</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">commands are sent when device it turned off. Enabling device does not sent control commands. Double-clicking key sends &quot;turn on&quot; command and dimmers are set to 100% brightness</lang>
+                    <lang xml:lang="ru">Команда отправляется, когда устройство Выключается. Двойной клик отправит команду включения Диммерам и те включатся на 100%</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Parameter no.7 - Checking the device status before sending a control frame from the key no. 2</lang>
+                <lang xml:lang="ru">Параметр №7 - Проверять статус удаленного устройства перед отправкой ему команды ВКЛ или ВЫКЛ от кнопки № 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Info: Key no. 2 is not represented by any physical device expect of devices on association list. This functionality prevents of lack of reaction on pressing key no.2 through polling devices from list one by one and checking their actual states.
+
+It is not possible to check the device status before sending a control frame from the key no. 2 if roller blind switch is chosen in parameter 14 (value 2).
+
+If devices state is checked before sending association then parameter 19 should be set to value 0.</lang>
+                <lang xml:lang="ru">Нажатие на кнопку №2 отправит ассоциированному устройству команду ВКЛ или ВЫКЛ. Чтобы узнать какую команду нужно послать диммер сначала должен проверить статус ассоциированного устройства. Если устройство выключено, то нажатие на кнопку №2 отправит команду ВКЛ и наоборот. Если не проверять статус ассоциированного устройства, то при каждом нажатии на кнопку №2 команды ВКЛ и ВЫКЛ будут отправляться по очереди. Проверка статуса не работает если в Параметре 14 выбрано &quot;моностабильный с двумя кнопками&quot; (значение 2). Также, чтобы проверка статуса работала, в Параметре 19 должно быть выбрано &quot;[ВКЛ/ВЫКЛ] изменять статус&quot; (значение 0)</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Device status is not checked</lang>
+                    <lang xml:lang="ru">Не проверять статус</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Device status is checked</lang>
+                    <lang xml:lang="ru">Проверять статус</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Parameter no.8 - The percentage of a dimming step at automatic control</lang>
+                <lang xml:lang="ru">Параметр №8 - Шаг диммирования в процентах при удаленном управлении</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Options for changing parameter 1-99</lang>
+                <lang xml:lang="ru">Шаг диммирования при управлении с компьютера, телефона. Задайте 99%, и свет будет включаться на полную даже если уровень яркости установить на 1%. По умолчанию шаг диммирования равен 1%</lang>
+              </description>
+      
+                  <value from="00" to="63">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="range" size="1" default="05">
+            <name>
+                <lang xml:lang="en">Parameter no.9 - Time of manually moving the Dimmer between the extreme dimming values</lang>
+                <lang xml:lang="ru">Параметр №9 - Время изменения яркости от 0 до 100% при локальном использовании</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Options for changing parameter 1-255 in seconds</lang>
+                <lang xml:lang="ru">Время диммирования в секундах от минимального значения яркости до максимального при удержании кнопки №1</lang>
+              </description>
+      
+                  <value from="01" to="ff" unit="ms">
+                <description>
+                    <lang xml:lang="en">seconds</lang>
+                    <lang xml:lang="ru">секунды</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Parameter no.10 - Time of Automatic moving the Dimmer between the extreme dimming values</lang>
+                <lang xml:lang="ru">Параметр №10 - Время изменения яркости от 0 до 100% при удаленном использовании</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">NOTE value 0 is required for inductive and capacitive devices unsuitable for dimming, (e.g. fluorescent lamps, motors etc.)</lang>
+                <lang xml:lang="ru">0 (Мгновенное) означает, что яркость будет изменяться не плавно, а резко при удаленном управлении. Это нужно для устройств с индуктивной и емкостной нагрузкой, которые не поддерживают плавное изменение нагрузки (например, люминесцентные лампы, электродвигатели и т.д.) </lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Disabled the smooth change in light intensity</lang>
+                    <lang xml:lang="ru">Мгновенное изменение яркости</lang>
+                  </description>
+              </value>
+            <value from="01" to="ff" unit="ms">
+                <description>
+                    <lang xml:lang="en">seconds</lang>
+                    <lang xml:lang="ru">секунды</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Parameter no.11 - The percentage of a dimming step at manual control</lang>
+                <lang xml:lang="ru">Параметр №11 - Шаг диммирования в процентах при локальном управлении</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Options for changing parameter 1-99</lang>
+                <lang xml:lang="ru">Шаг диммирования при управлении с самого выключателя. Задайте 99%, и свет будет включаться на полную даже если уровень яркости установить на 1%. По умолчанию шаг диммирования равен 1%</lang>
+              </description>
+      
+                  <value from="01" to="63">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="range" size="1" default="63">
+            <name>
+                <lang xml:lang="en">Parameter no.12 - Maximum Dimmer level control</lang>
+                <lang xml:lang="ru">Параметр №12 - Максимальный уровень яркости</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Options for changing parameter 2-99</lang>
+                <lang xml:lang="ru">Максимальный уровень яркости можно задать от 2 до 99%</lang>
+              </description>
+      
+                  <value from="02" to="63">
+                <description>
+                    <lang xml:lang="en"></lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="range" size="1" default="02">
+            <name>
+                <lang xml:lang="en">Parameter no.13 - Minimum Dimmer level control</lang>
+                <lang xml:lang="ru">Параметр №13 - Минимальный уровень яркости</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Options for changing parameter 1-98. NOTE The maximum level may not be lower than the minimum level. Recommended values of parameters 12 and 13(max and min level) for controlling the devices are as follows: *AC motors [min 60%, max 99%]; *fluorescent lamps, fluorescent tubes, LED [min 98%, max 99%] [parameter 10 set to 0]</lang>
+                <lang xml:lang="ru">Минимальный уровень яркости можно задать от 1 до 98%. Максимальный уровень яркости не может быть меньше, чем минимальный. Рекомендуемые значения для Параметров 12 и 13 (Максимальный и Минимальный уровень) для управления устройствами: *AC моторы [min 60%, max 99%]; *люминесцентные лампы, LED [min 98%, max 99%], Параметр 10 должен быть установлен в 0 (Мгновенное изменение яркости)</lang>
+              </description>
+      
+                  <value from="01" to="62">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="14" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Parameter no.14 - Switch Type</lang>
+                <lang xml:lang="ru">Параметр №14 - Тип выключателя</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Switch type. Choose between mono or bi- stable</lang>
+                <lang xml:lang="ru">Моностабильный: для выключателя возвратного типа или для кнопки, каждое нажатие переключает устройство в противоположное состояние. Бистабильный: для обычных выключателей с двумя положениями Включено и Выключено. Моностабильный с двумя кнопками: для выключателей возвратного типа с двумя кнопками, нажатие верхней кнопки включает устройство, нажатие нижней кнопки - выключает, такие выключатели используются для управления шторами и жалюзи и могу быть использованы для управления диммером.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">mono-stable switch</lang>
+                    <lang xml:lang="ru">Моностабильный</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">bistable switch</lang>
+                    <lang xml:lang="ru">Бистабильный</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Roller blind switch (UP/DOWN) - two switch keys operate the Dimmer</lang>
+                    <lang xml:lang="ru">Моностабильный с двумя кнопками</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="15" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Parameter no.15 - Double click option (set lighting at 100%)</lang>
+                <lang xml:lang="ru">Параметр №15 - Двойные клики</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru">Этот параметр позволяет активировать функцию управления устройствами с помощью двойных кликов. В параметре 6 можно задать чтобы с помощью двойных кликов диммеры включались на 100% или на последний уровень</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Double click disabled</lang>
+                    <lang xml:lang="ru">отключены</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Double click enabled</lang>
+                    <lang xml:lang="ru">включены</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="16" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Parameter no.16 - Saving device state after power failure</lang>
+                <lang xml:lang="ru">Параметр №16 - Восстанавливать состояние устройства после отключения питания</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Saving the state of the devices after power failure. The Dimmer will return to the last position saved before power failure</lang>
+                <lang xml:lang="ru">Если требуется, чтобы после электро-сбоя устройство восстановило своё прежнее состояние, выберите &quot;Восстанавливать&quot;. Если нужно, чтобы устройство было выключено после электро-сбоя выберите &quot;Не восстанавливать&quot;</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">the Dimmer does not save the state after a power fialure, it returns to &quot;off&quot; position</lang>
+                    <lang xml:lang="ru">Не восстанавливать. После подачи питания устройство будет в состоянии &quot;Выключено&quot;</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">the Dimmer saves its state before power failure</lang>
+                    <lang xml:lang="ru">Восстанавливать</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="17" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Parameter no.17 - The function of 3-way switch, provides the option to double key no. 1</lang>
+                <lang xml:lang="ru">Параметр №17 - Использовать проходной выключатель</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The Dimmer may control two bi-stable push-buttons or an infinite number of mono-stable push-buttons</lang>
+                <lang xml:lang="ru">Позволяет подключить несколько кнопок к S1. Диммер может управляться двумя бистабильными выключателями или бесконечным количеством моностабильных выключателей</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">the function of 3-way switch is disabled</lang>
+                    <lang xml:lang="ru">Не использовать</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">the function of 3-way switch is enabled</lang>
+                    <lang xml:lang="ru">Использовать</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="18" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Parameter no.18 - The function of synchronizing the light level for associated devices</lang>
+                <lang xml:lang="ru">Параметр №18 - Синхронизировать уровень яркости с ассоциированными устройствами</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The Dimmer communicates the position to the associated device.</lang>
+                <lang xml:lang="ru">Если на диммере установить определенный уровень яркости, то этот же уровень яркости передастся на все ассоциированные устройства</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">function disabled</lang>
+                    <lang xml:lang="ru">не синхронизировать</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">function enabled</lang>
+                    <lang xml:lang="ru">синхронизировать</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="19" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Parameter no.19 - Assigns bistable key status to the device status</lang>
+                <lang xml:lang="ru">Параметр №19 - Как изменяется статус устройства в бистабильном режиме</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">INFO: Remote control from Fibaro System is Still Possible. This function is useful when you display status of external devices, e.g. Motion Sensor, in Fibaro System</lang>
+                <lang xml:lang="ru">Если выбрано &quot;Нажатие клавиши переключит устройство в противоположное состояние&quot;, то не важно в каком положение у вас находится клавиша выключателя. Если свет включен и клавиша находится в нижнем положении, то переведя её в верхнее положение свет выключится.
+
+Если выбрано &quot;Нажатие клавиши Вверх, Включит свет. Нажатие клавиши Вниз, Выключит свет&quot;, то включится свет или выключится зависит от положения клавиши. Если вы включили свет с контроллера, и клавиша осталась внизу, то чтобы выключить свет с выключателя, сначала нужно клавишу перевести в верхнее положение (свет по прежнему будет гореть), а затем в нижнее, тогда свет потухнет.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">[On/Off] device changes status on key status change</lang>
+                    <lang xml:lang="ru">Нажатие клавиши переключит устройство в противоположное состояние [Вкл/Выкл]</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Device status depends on key status: ON when the key is ON, OFF when the key is OFF</lang>
+                    <lang xml:lang="ru">Нажатие клавиши Вверх, Включит свет. Нажатие клавиши Вниз, Выключит свет</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="20" type="range" size="1" default="6e">
+            <name>
+                <lang xml:lang="en">Parameter no.20 - The function enabling the change of control impulse length</lang>
+                <lang xml:lang="ru">Параметр №20 - Длина управляющего импульса</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">This function will enable decreasing the minimum level of the Dimmer by extending the control impulse. By changing the minimum level, the user may completely dim LED bulbs. Not all LED bulbs available on the market have the dimming option. Default value 101 fo 60Hz or 110 for 50Hz.</lang>
+                <lang xml:lang="ru">Можно уменьшить минимальный уровень яркости за счет увеличения продолжительности управляющего импульса. Изменяя минимальный уровень, можно полноценно диммировать LED лампу. Не все LED лампы поддерживают плавное изменение яркости. По умолчанию: 101 для 60Гц, 110 для 50Гц. Внимание! Диммер может работать не корректно, если настройки заданы неверно</lang>
+              </description>
+      
+                  <value from="64" to="aa">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="30" type="rangemapped" size="1" default="03">
+            <name>
+                <lang xml:lang="en">Parameter no.30 - Alarm of any type (general alarm, water flooding alarm, smoke alarm: CO, CO2, temperature alarm)</lang>
+                <lang xml:lang="ru">Параметр №30 - Сигнал тревоги о затопление, задымление: CO, CO2, температуре и стандартный сигнал</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru">Параметр определяет, что сделает устройство если получит от датчика сигнал тревоги.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">DACTIVATION – the device doesn&#039;t respond to alarm data frames</lang>
+                    <lang xml:lang="ru">Отключено – устройство не будет реагировать на сигнал тревоги</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">ALARM DIMMER ON – the device turns on after detection an alarm</lang>
+                    <lang xml:lang="ru">Устройство включится</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">ALARM DIMMER OFF - the device turns off after detection an alarm</lang>
+                    <lang xml:lang="ru">Устройство выключится</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">ALARM FLASHING – the device periodically changes its states to the opposite, when it detects an alarm within 10 min</lang>
+                    <lang xml:lang="ru">Устройство начнет мигать, т.е. включаться и выключаться. Через 10 минут устройство перестанет реагировать на сигналы тревоги.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="39" type="range" size="2" default="0258">
+            <name>
+                <lang xml:lang="en">Parameter no.39 - Active flashing alarm time</lang>
+                <lang xml:lang="ru">Параметр №39 - Время мигания устройства</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru">Используется, если в параметре 30 выбрано значение: &quot;Устройство начнет мигать&quot;.</lang>
+              </description>
+      
+                  <value from="0001" to="ffff">
+                <description>
+                    <lang xml:lang="en">10 = 1 sec</lang>
+                    <lang xml:lang="ru">10 = 1 секунда</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="40" type="range" size="2" default="0063">
+            <name>
+                <lang xml:lang="en">Parameter no.40 - Updating the dimming level without the input from the switch</lang>
+                <lang xml:lang="ru">Параметр №40 - Обновлять уровень яркости без нажатия на кнопку</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Parameter&#039;s value changes depending  on the dimming level</lang>
+                <lang xml:lang="ru">Значение параметра зависит от уровня яркости</lang>
+              </description>
+      
+                  <value from="0001" to="0063">
+                <description>
+                    <lang xml:lang="en"></lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="41" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Parameter no. 41 - Scene activation functionality</lang>
+                <lang xml:lang="ru">Параметр №41 - Использовать сцены</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The device offers the possibility of sending commands compatible with Command class scene activation. Information is sent to devices assigned to association group no. 3. Controllers such as Home Center 2 are able to interpret such commands and based on these commands they activate scenes, to which specific scene IDs have been assigned. The user may expand the functionality of the button connected to inputs S1 and S2 by distinguishing the actions of keys connected to those inputs. For example: double click would activate the scene “goodnight” and triple click would activate the scene “morning”.</lang>
+                <lang xml:lang="ru">Это устройство позволяет выполнять сцены. Команды на выполнения сцен отправляются устройствам находящимся в группе 3. Контроллеры, такие как Home Center 2, Z-Box понимают эти команды и могут исполнить сцену, ID которой указан в команде. Нажатие определенной комбинации кнопок подключенных к S1 и S2 отправляет определенный ID. Таким образом можно по двойному нажатию запускать сцену &quot;Включить везде свет&quot;, а по тройному &quot;Выключить везде свет&quot;.
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">deactivation of functionality</lang>
+                    <lang xml:lang="ru">Не использовать</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">activation of functionality</lang>
+                    <lang xml:lang="ru">Использовать</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/3e377e9c9ff91a20e5c75118ff26072b633a73f4.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

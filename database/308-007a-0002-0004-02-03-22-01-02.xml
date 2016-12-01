@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="007a"/>
+        <productType value="0002"/>
+    <productId value="0004"/>
+    <libType value="02"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="22"/>
+    <appVersion value="01"/>
+    <appSubVersion value="02"/>
+        <basicClass value="01"/>
+            <genericClass value="01"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+            <certId>14764</certId>
+            <certNumber>ZC08-12050016</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Remote Control for RF system CONNECT</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en"></lang>
+          </inclusionNote>
+            <productName>Remote Control</productName>
+            <brandName>Schneider</brandName>
+            <productLine>CONNECT</productLine>
+            <productCode>MTN5051-0000</productCode>
+            <productVersion>1.0</productVersion>
+            <batteryType>AAA</batteryType>
+            <batteryCount>3</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0021" controlled="true"/>
+        <commandClass id="0084" version="2"/>
+        <commandClass id="0085" version="2" controlled="true"/>
+        <commandClass id="0086"/>
+        <commandClass id="008e" version="2" controlled="true"/>
+        <commandClass id="0070" controlled="true"/>
+        <commandClass id="0072"/>
+        <commandClass id="0020" controlled="true"/>
+        <commandClass id="0027" controlled="true"/>
+        <commandClass id="0060" version="2"/>
+        <commandClass id="0026" version="3" controlled="true"/>
+        <commandClass id="0000" controlled="true"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="12" maxNodes="12">
+            <description>
+                <lang xml:lang="en">Group Control 12</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="11" maxNodes="12">
+            <description>
+                <lang xml:lang="en">Group Control 11</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="10" maxNodes="12">
+            <description>
+                <lang xml:lang="en">Group Control 10</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="9" maxNodes="12">
+            <description>
+                <lang xml:lang="en">Group Control 9</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="8" maxNodes="12">
+            <description>
+                <lang xml:lang="en">Group Control 8</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="7" maxNodes="12">
+            <description>
+                <lang xml:lang="en">Group Control 7</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="6" maxNodes="12">
+            <description>
+                <lang xml:lang="en">Group Control 6</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="5" maxNodes="12">
+            <description>
+                <lang xml:lang="en">Group Control 5</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="4" maxNodes="12">
+            <description>
+                <lang xml:lang="en">Group Control 4</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="12">
+            <description>
+                <lang xml:lang="en">Group Control 3</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="12">
+            <description>
+                <lang xml:lang="en">Group Control 2</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="12">
+            <description>
+                <lang xml:lang="en">Group Control 1</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Group/Scene representation of zone 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">No group or scene in zone1</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Group is assigned in zone 1</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Scene is assigned in zone 1</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Group/Scene representation of zone 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">No group or scene in zone 2</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Group is assigned in zone 2</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Scene is assigned in zone 2</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Group/Scene representation of zone 3</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">No group or scene in zone 3</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Group is assigned in zone 3</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Scene is assigned in zone 3</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Group/Scene representation of zone 4</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">No group or scene in zone 4</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Group is assigned in zone 4</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Scene is assigned in zone 4</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Group/Scene representation of zone 5</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">No group or scene in zone 5</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Group is assigned in zone 5</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Scene is assigned in zone 5</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Group/Scene representation of zone 6</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">No group or scene in zone 6</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Group is assigned in zone 6</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Scene is assigned in zone 6</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Group/Scene representation of zone 7</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">No group or scene in zone 7</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Group is assigned in zone 7</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Scene is assigned in zone 7</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Group/Scene representation of zone 8</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">No group or scene in zone 8</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Group is assigned in zone 8</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Scene is assigned in zone 8</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Group/Scene representation of zone 9</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">No group or scene in zone 9</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Group is assigned in zone 9</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Scene is assigned in zone 9</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Group/Scene representation of zone 10</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">No group or scene in zone 10</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Group is assigned in zone 10</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Scene is assigned in zone 10</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Group/Scene representation of zone 11</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">No group or scene in zone 11</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Group is assigned in zone 11</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Scene is assigned in zone 11</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Group/Scene representation of zone 12</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">No group or scene in zone 12</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Group is assigned in zone 12</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Scene is assigned in zone 12</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/c5163e2c2caebea30eae2108c204d145fa16027c.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

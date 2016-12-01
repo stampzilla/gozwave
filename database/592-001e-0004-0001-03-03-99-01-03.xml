@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="001e"/>
+        <productType value="0004"/>
+    <productId value="0001"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="99"/>
+    <appVersion value="01"/>
+    <appSubVersion value="03"/>
+        <basicClass value="04"/>
+            <genericClass value="a1"/>
+            <specificClass value="02"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>US</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">MultiSensor - Motion Temperature Luminance that Plugs In to the wall and never needs batteries</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Pressing and releasing the push button on the side of EZMultiPli.</lang>
+          </inclusionNote>
+            <productName>EZMultiPli</productName>
+            <brandName>Express Controls</brandName>
+            <productLine>NA</productLine>
+            <productCode>EZMultiPli-US</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0071" version="3"/>
+        <commandClass id="0031" version="6"/>
+        <commandClass id="0033"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0070" version="2"/>
+        <commandClass id="0077"/>
+        <commandClass id="005a"/>
+        <commandClass id="007a" version="2"/>
+        <commandClass id="0073"/>
+        <commandClass id="0020" controlled="true"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="2" maxNodes="4">
+            <description>
+                <lang xml:lang="en">BASIC
+This group is used to directly turn lights on or off when motion is detected. Up to four (4) Z-Wave devices can be associated in this group. EZMultiPli will send a BASIC ON command to all devices that are associated in this group. Note that the Z-Wave devices in this group must be within direct range (about 30’) of EZMultiPli. Control of nodes that are further away or blocked by metal or concrete walls should rely on the Z-Wave system controller and the home-control application for reliable operation.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="en">LIFELINE</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="1" default="0a">
+            <name>
+                <lang xml:lang="en">OnTime</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">OnTime sets the number of minutes that the lights stay on when motion has not been detected. A value of 0 is a special mode where the lights are constantly sent a command to turn them on whenever motion is detected.
+EZMultiPli will NOT turn the lights off in this mode.
+Recommended values:
+5 min for hallways
+20 min for an office environment
+60 min for a library, office or other room where someone may be sitting still for a long time</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Special mode is turned on.</lang>
+                  </description>
+              </value>
+            <value from="01" to="7f" unit="min">
+                <description>
+                    <lang xml:lang="en">Define time frame for the lights to stay on.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">OnLevel</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">OnLevel is the value sent by the Z-Wave BASIC_SET command to all Group 2 nodes when motion is detected.
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">A value of 0 will turn the lights off (not recommended).</lang>
+                  </description>
+              </value>
+            <value from="01" to="63" unit="%">
+                <description>
+                    <lang xml:lang="en">A value between 1 and 99 will set the dim level to between 1% and 99% (99% is full on).</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">A value of -1 will turn the light “on” which depends on the device but most will set the dim level to the last dim setting.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="range" size="1" default="3c">
+            <name>
+                <lang xml:lang="en">LiteMin</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">A Luminance report is sent to the system controller every LiteMin minutes if the value has changed by more than 5% since the last reading.
+A value of zero turns this mode off. Luminance values can still be obtained at any time by the home-control application in this mode.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Mode is turned off.</lang>
+                  </description>
+              </value>
+            <value from="01" to="7f" unit="min">
+                <description>
+                    <lang xml:lang="en">Define time value for luminance report.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="1" default="3c">
+            <name>
+                <lang xml:lang="en">TempMin</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">A Temperature report is sent to the system controller every TempMin minutes if the value has changed by more than 0.5F since the last reading.
+A value of zero turns this mode off. Temperature values can still be obtained at any time by the home-control application in this mode.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Mode is turned off.</lang>
+                  </description>
+              </value>
+            <value from="01" to="7f" unit="min">
+                <description>
+                    <lang xml:lang="en">Define time value for temperature report.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">TempAdj</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">TempAdj is a twos-complement number that is used to adjust the temperature reading to make it more accurate. The value is in tenths of degree Fahrenheit. The temperature reading can be adjusted up to +12.7F to -12.8F. A value of 1 will adjust the temperature reading by +0.1F. A value of -1 will adjust the temperature by -0.1F. A value of 123 will adjust the temperature by +12.3F.</lang>
+              </description>
+      
+                  <value from="80" to="7f" unit="x0.1 °F">
+                <description>
+                    <lang xml:lang="en">Adjust temperature reading.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/876ed729c63554e90be94dec3bebcc1249d92059.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

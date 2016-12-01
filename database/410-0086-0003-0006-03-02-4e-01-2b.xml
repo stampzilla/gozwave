@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0086"/>
+        <productType value="0003"/>
+    <productId value="0006"/>
+    <libType value="03"/>
+    <protoVersion value="02"/>
+    <protoSubVersion value="4e"/>
+    <appVersion value="01"/>
+    <appSubVersion value="2b"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>US</rfFrequency>
+            <certId>14013</certId>
+            <certNumber>ZC08-10100001</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Smart Energy Switch</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en"></lang>
+          </inclusionNote>
+            <productName>Smart Energy Switch 1.43</productName>
+            <brandName>Aeon Labs</brandName>
+            <productLine>Z-Wave Product Line</productLine>
+            <productCode>DSB06xxx-ZWUS</productCode>
+            <productVersion>1.43</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" inNIF="false"/>
+        <commandClass id="0025"/>
+        <commandClass id="0086"/>
+        <commandClass id="0027"/>
+        <commandClass id="0032" version="2"/>
+        <commandClass id="0070"/>
+        <commandClass id="0031" version="3"/>
+        <commandClass id="0072"/>
+        <commandClass id="0085"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Status Reports</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Multilevel Sensor Report Content</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The content of &quot;Multilevel Sensor Report Command&quot;
+after SES receives &quot;Multilevel Sensor Get
+Command&quot;.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Power</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Voltage</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Blink</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Make SES blink</lang>
+              </description>
+      
+                  <value from="0001" to="00ff">
+                <description>
+                    <lang xml:lang="en">Configuration Value 1 is
+to Specify the time
+that SES need
+blink,The unit is
+Second;</lang>
+                  </description>
+              </value>
+            <value from="0001" to="00ff">
+                <description>
+                    <lang xml:lang="en">Configuration Value 2 is
+to Specify the Cycle
+of on/off,the unit of it
+is 0.1 second.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="80" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Automatic Notifications</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Enables automatic notifications to associated devices
+whenever there is a state change.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">nothing</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">hail</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">basic CC report</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="90" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Enable Parameter 91 </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Enables/disables parameter 91 and 92 below</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">enable</lang>
+                  </description>
+              </value>
+            <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">disable</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="91" type="range" size="2" default="0032">
+            <name>
+                <lang xml:lang="en">Minimum change in wattage</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The value here represents minimum change in wattage (in
+terms of wattage) for a REPORT to be sent (default 50W,
+size 2 bytes).</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="92" type="constant" size="1" default="0a">
+            <name>
+                <lang xml:lang="en">Minimum change in wattage (%)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The value here represents minimum change in wattage
+percent (in terms of percentage) for a REPORT to be
+sent (default 10%, size 1 byte).</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="100" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Set 101-103 to default</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+          </configParam>
+        <configParam number="101" type="range" size="4" default="00000008">
+            <name>
+                <lang xml:lang="en">Reports group 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Which reports need to send in Report group1</lang>
+              </description>
+      
+                  <value from="00000002" to="00000002">
+                <description>
+                    <lang xml:lang="en">MultiSensor Report</lang>
+                  </description>
+              </value>
+            <value from="00000004" to="00000004">
+                <description>
+                    <lang xml:lang="en">Meter Report for Watt</lang>
+                  </description>
+              </value>
+            <value from="00000008" to="00000008">
+                <description>
+                    <lang xml:lang="en">Meter Report for kWh</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="102" type="constant" size="4" default="00000000">
+            <name>
+                <lang xml:lang="en">Report group 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Which reports need to send in Report group2</lang>
+              </description>
+      
+                  <value from="00000002" to="00000002">
+                <description>
+                    <lang xml:lang="en">MultiSensor Report</lang>
+                  </description>
+              </value>
+            <value from="00000004" to="00000004">
+                <description>
+                    <lang xml:lang="en">Meter Report for Watt</lang>
+                  </description>
+              </value>
+            <value from="00000008" to="00000008">
+                <description>
+                    <lang xml:lang="en">Meter Report for kWh</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="103" type="constant" size="4" default="00000000">
+            <name>
+                <lang xml:lang="en">Report group 3</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Which reports need to send in Report group3</lang>
+              </description>
+      
+                  <value from="00000002" to="00000002">
+                <description>
+                    <lang xml:lang="en">MultiSensor Report</lang>
+                  </description>
+              </value>
+            <value from="00000004" to="00000004">
+                <description>
+                    <lang xml:lang="en">Meter Report for Watt</lang>
+                  </description>
+              </value>
+            <value from="00000008" to="00000008">
+                <description>
+                    <lang xml:lang="en">Meter Report for kWh</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="110" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Set 111-113 to default</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+          </configParam>
+        <configParam number="111" type="range" size="4" default="00000258">
+            <name>
+                <lang xml:lang="en">Interval group 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The time interval of sending Report group 1</lang>
+              </description>
+      
+                  <value from="00000001" to="0000ffff" unit="seconds">
+                <description>
+                    <lang xml:lang="en">interval (in seconds) to
+send out Report group 1</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="112" type="range" size="4" default="00000258">
+            <name>
+                <lang xml:lang="en">Interval group 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The time interval of sending Report group 2</lang>
+              </description>
+      
+                  <value from="00000001" to="0000ffff" unit="seconds">
+                <description>
+                    <lang xml:lang="en">interval (in seconds) to
+send out Report group 2</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="113" type="range" size="4" default="00000258">
+            <name>
+                <lang xml:lang="en">Interval group 3</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The time interval of sending Report group 3</lang>
+              </description>
+      
+                  <value from="00000001" to="0000ffff" unit="seconds">
+                <description>
+                    <lang xml:lang="en">interval (in seconds) to
+send out Report group 3</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="254" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Device Tag</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="0001" to="ffff">
+                <description>
+                    <lang xml:lang="en">Tag</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="255" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Factory Reset</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Reset to the default Configuration</lang>
+              </description>
+      
+          </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/0ec1d4e51704c79f3632e4f91a34429574e72116.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

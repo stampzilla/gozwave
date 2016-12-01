@@ -1,3 +1,5 @@
+//go:generate go run database/generate.go -file database/test.go -package database
+
 package gozwave
 
 import (

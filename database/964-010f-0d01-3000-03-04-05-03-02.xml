@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="010f"/>
+        <productType value="0d01"/>
+    <productId value="3000"/>
+    <libType value="03"/>
+    <protoVersion value="04"/>
+    <protoSubVersion value="05"/>
+    <appVersion value="03"/>
+    <appSubVersion value="02"/>
+        <basicClass value="04"/>
+            <genericClass value="18"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>Australia and New Zealand</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">This device allows to activate scenes in the controller and control association groups without touching the device - it can recognize gestures above its surface.
+</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Move and hold your hand close to the center of the pad. If the device is battery powered, high pitched beep will signal
+exiting the Standby Mode. Loud sound sequence will confirm entering the menu, keep
+holding your hand. After hearing two short beeps (green indicator colour), withdraw
+the hand and perform swiping up gesture to confirm selection
+(two beeps will confirm validity). Wait for the adding process to end. Successful adding will be confirmed by the Z-Wave controller’s
+message and 3 short beeps (green visual indicator colour).</lang>
+          </inclusionNote>
+            <productName>Gesture Controller</productName>
+            <brandName>Fibar Group S. A.</brandName>
+            <productLine>FIBARO Gesture Controller</productLine>
+            <productCode>FGGC-001</productCode>
+                <batteryType>AA</batteryType>
+            <batteryCount>4</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0080"/>
+        <commandClass id="0056" controlled="true"/>
+        <commandClass id="007a" version="3"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0073"/>
+        <commandClass id="0098"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0085" version="2" secure="true" nonSecure="false"/>
+        <commandClass id="005b" version="2" controlled="true" secure="true" nonSecure="false"/>
+        <commandClass id="0070" secure="true" nonSecure="false"/>
+        <commandClass id="005a" secure="true" nonSecure="false"/>
+        <commandClass id="008e" version="3" secure="true" nonSecure="false"/>
+        <commandClass id="0084" version="2" secure="true" nonSecure="false"/>
+        <commandClass id="0020" controlled="true" inNIF="false"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="6" maxNodes="5">
+            <description>
+                <lang xml:lang="en">“Circular AirWheel” is assigned to circular
+move of the hand clockwise or counter-clockwise over the panel
+(sends Switch Multilevel Start/Stop Level Change command frames).</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="5" maxNodes="5">
+            <description>
+                <lang xml:lang="en">“Flick RIGHT” is assigned to moving the
+hand from the left to the right side of the panel (sends Basic Set command
+frames) .</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="4" maxNodes="5">
+            <description>
+                <lang xml:lang="en">“Flick LEFT” is assigned to moving the
+hand from the right to the left side of the panel (sends Basic Set command
+frames).</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="5">
+            <description>
+                <lang xml:lang="en">“Flick DOWN” is assigned to moving the
+hand down over the panel (sends Basic Set command frames).</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="en">“Flick UP” is assigned to moving the hand
+up over the panel (sends Basic Set command frames).</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="en">“Lifeline” reports the device status and allows
+for assigning single device only (main controller by default).</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Device orientation</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter determines orientation of the Swipe in relation to its default position. Required for proper gestures recognition.
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">default orientation</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">180 rotation</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">90 clockwise rotation</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">90 counter-clockwise rotation</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Buzzer - acoustic signal settings</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Acoustic signalling of gestures detection.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">gestures detection is not signalled</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">gestures detection is signalled</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">LED diode - visual indicator settings</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Visual indication of gestures detection.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">gestures detection is not indicated</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">gestures detection is indicated</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="constant" size="1" default="03">
+            <name>
+                <lang xml:lang="en">Buzzer - signalling result of gesture recognition</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Acoustic signalling of gesture recognition result (using the built-in buzzer).
+</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">only successful recognition is signalled</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">only failed recognition is signalled</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">successful and failed recognition is signalled</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="rangemapped" size="2" default="0004">
+            <name>
+                <lang xml:lang="en">
+Powering mode - interval of updating the current mode
+</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+This parameter determines how often the device checks if the USB power supply is connected and updates powering mode if needed.
+</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">powering mode is not updated</lang>
+                  </description>
+              </value>
+            <value from="0001" to="0438" unit="min">
+                <description>
+                    <lang xml:lang="en">Define a time interval.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Power saving mode (battery mode)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+This parameter determines operation of gesture detection when battery powered. When Standby Mode is selected, hold gesture must be performed to exit power saving mode and reactivate normal gesture recognition. The device in Standby Mode consumes the least battery life. When Simple Mode mode is selected, gesture recognition is always active, but only slowly performed gestures will be recognized properly (high battery consumption).
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Standby Mode</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Simple Mode</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">the Swipe does not enter power saving mode</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Hold gesture to enter the menu</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+This parameter allows to choose if the menu can be entered using the Hold gesture.
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Hold gesture to enter the menu enabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Hold gesture to enter the menu disabled</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="range" size="1" default="0f">
+            <name>
+                <lang xml:lang="en">Scenes sent to the controller</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Defines which actions result in sending scenes to 1st &quot;Lifeline&quot; group. 1 - scenes for flick UP gesture enabled; 2 - scenes for flick DOWN gesture enabled; 4 - scenes for flick LEFT gesture enabled; 8 - scenes for flick RIGHT gesture enabled; 16 - scenes for clockwise circular gesture enabled; 32 - scenes for counter-clockwise circular gesture enabled. Please sum up the different options and set this value to configure the device.
+</lang>
+              </description>
+      
+                  <value from="01" to="3f">
+                <description>
+                    <lang xml:lang="en">Define a value.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="range" size="1" default="1f">
+            <name>
+                <lang xml:lang="en">Associations in Z-Wave network security mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter defines how commands are sent in specified association groups: as secure or non-secure. Parameter is active only in Z-Wave network security mode. It does not apply to 1st &quot;Lifeline&quot; association group. 1 - 2nd group &quot;Flick UP&quot; sent as secure; 2 - 3rd group &quot;Flick DOWN&quot; sent as secure; 4 - 4th group &quot;Flick LEFT&quot; sent as secure; 8 - 5th group &quot;Flick RIGHT&quot; sent as secure; 16 - 6th group &quot;Circular AirWheel&quot; sent as secure. Sum up the options which should be sent secure and set the value.
+</lang>
+              </description>
+      
+                  <value from="01" to="1f">
+                <description>
+                    <lang xml:lang="en">Define a value.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="range" size="1" default="0f">
+            <name>
+                <lang xml:lang="en">
+Control mode of 2nd - 5th &quot;Flick UP/DOWN/LEFT/RIGHT&quot; association groups and scenes
+</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter allows to choose control mode for 2nd-5th groups and scenes. By default, Toggle Mode is active, meaning that a single flick turns ON the group and the same flick turns it OFF, doubled flicks are inactive. After disabling Toggle Mode a single flick will turn the device ON and the same flick doubled will turn it OFF. 1 - Toggle Mode enabled for 2nd association; group 2 - Toggle Mode enabled for 3rd association group; 4 - Toggle Mode enabled for 4th association group; 8 - Toggle Mode enabled for 5th association group. Sum up the values for the desired control modes.
+</lang>
+              </description>
+      
+                  <value from="01" to="0f">
+                <description>
+                    <lang xml:lang="en">Set a value.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="rangemapped" size="2" default="00ff">
+            <name>
+                <lang xml:lang="en">Rate of smooth level control</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter allows to choose how long the hand has to be held near the center of the pad after &quot;AirWheel&quot; gesture for the associated devices to reach their maximum/minimum level.
+</lang>
+              </description>
+      
+                  <value from="0000" to="000a" unit="sec">
+                <description>
+                    <lang xml:lang="en">Define a time interval.</lang>
+                  </description>
+              </value>
+            <value from="00ff" to="00ff">
+                <description>
+                    <lang xml:lang="en">default settings of controlled devices</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="20" type="rangemapped" size="2" default="00ff">
+            <name>
+                <lang xml:lang="en">SWITCH ON control frame value for FLICK UP gesture</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+This parameter allows to set value sent in SWITCH ON command frame to the association group.
+</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">turning off associated devices</lang>
+                  </description>
+              </value>
+            <value from="0001" to="0063">
+                <description>
+                    <lang xml:lang="en">forcing level of associated devices</lang>
+                  </description>
+              </value>
+            <value from="00ff" to="00ff">
+                <description>
+                    <lang xml:lang="en">
+setting associated devices to the last remembered state or turning them on
+</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="21" type="rangemapped" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">
+SWITCH OFF control frame value for FLICK UP gesture
+</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+This parameter allows to set value sent in SWITCH OFF command frame to the association group.
+</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">turning off associated devices</lang>
+                  </description>
+              </value>
+            <value from="0001" to="0063">
+                <description>
+                    <lang xml:lang="en">forcing level of associated devices</lang>
+                  </description>
+              </value>
+            <value from="00ff" to="00ff">
+                <description>
+                    <lang xml:lang="en">
+setting associated devices to the last remembered state or turning them on
+</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="22" type="rangemapped" size="2" default="00ff">
+            <name>
+                <lang xml:lang="en">
+SWITCH ON control frame value for FLICK DOWN gesture
+</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+This parameter allows to set value sent in SWITCH ON command frame to the association group.
+</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">turning off associated devices</lang>
+                  </description>
+              </value>
+            <value from="0001" to="0063">
+                <description>
+                    <lang xml:lang="en">forcing level of associated devices</lang>
+                  </description>
+              </value>
+            <value from="00ff" to="00ff">
+                <description>
+                    <lang xml:lang="en">
+setting associated devices to the last remembered state or turning them on
+</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="23" type="rangemapped" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">
+SWITCH OFF control frame value for FLICK DOWN gesture
+</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+This parameter allows to set value sent in SWITCH OFF command frame to the association group.
+</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">turning off associated devices</lang>
+                  </description>
+              </value>
+            <value from="0001" to="0063">
+                <description>
+                    <lang xml:lang="en">forcing level of associated devices</lang>
+                  </description>
+              </value>
+            <value from="00ff" to="00ff">
+                <description>
+                    <lang xml:lang="en">
+setting associated devices to the last remembered state or turning them on
+</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="24" type="rangemapped" size="2" default="00ff">
+            <name>
+                <lang xml:lang="en">
+SWITCH ON control frame value for FLICK LEFT gesture
+</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+This parameter allows to set value sent in SWITCH ON command frame to the association group.
+</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">turning off associated devices</lang>
+                  </description>
+              </value>
+            <value from="0001" to="0063">
+                <description>
+                    <lang xml:lang="en">forcing level of associated devices</lang>
+                  </description>
+              </value>
+            <value from="00ff" to="00ff">
+                <description>
+                    <lang xml:lang="en">
+setting associated devices to the last remembered state or turning them on
+</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="25" type="rangemapped" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">
+SWITCH OFF control frame value for FLICK LEFT gesture
+</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+This parameter allows to set value sent in SWITCH OFF command frame to the association group.
+</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">turning off associated devices</lang>
+                  </description>
+              </value>
+            <value from="0001" to="0063">
+                <description>
+                    <lang xml:lang="en">forcing level of associated devices</lang>
+                  </description>
+              </value>
+            <value from="00ff" to="00ff">
+                <description>
+                    <lang xml:lang="en">
+setting associated devices to the last remembered state or turning them on
+</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="26" type="rangemapped" size="2" default="00ff">
+            <name>
+                <lang xml:lang="en">
+SWITCH ON control frame value for FLICK RIGHT gesture
+</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+This parameter allows to set value sent in SWITCH ON command frame to the association group.
+</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">turning off associated devices</lang>
+                  </description>
+              </value>
+            <value from="0001" to="0063">
+                <description>
+                    <lang xml:lang="en">forcing level of associated devices</lang>
+                  </description>
+              </value>
+            <value from="00ff" to="00ff">
+                <description>
+                    <lang xml:lang="en">
+setting associated devices to the last remembered state or turning them on
+</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="27" type="rangemapped" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">
+SWITCH OFF control frame value for FLICK RIGHT gesture
+</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+This parameter allows to set value sent in SWITCH OFF command frame to the association group.
+</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">turning off associated devices</lang>
+                  </description>
+              </value>
+            <value from="0001" to="0063">
+                <description>
+                    <lang xml:lang="en">forcing level of associated devices</lang>
+                  </description>
+              </value>
+            <value from="00ff" to="00ff">
+                <description>
+                    <lang xml:lang="en">
+setting associated devices to the last remembered state or turning them on
+</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="30" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Sequence learning mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Parameter activated by the main Z-Wave controller. Change its value to launch sequence learning procedure for the desired slot.
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">learning mode disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="06">
+                <description>
+                    <lang xml:lang="en">launch sequence learning for selected slot</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="31" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">1st gestures sequence (SLOT 1)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Value containing sequence of gestures. See &quot;Sequences of gestures&quot; on page 12 for more information.
+</lang>
+              </description>
+      
+                  <value from="0000" to="0434">
+                <description>
+                    <lang xml:lang="en">Set a value.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="32" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">2nd gestures sequence (SLOT 2)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Value containing sequence of gestures. See &quot;Sequences of gestures&quot; on page 12 for more information.
+</lang>
+              </description>
+      
+                  <value from="0000" to="0434">
+                <description>
+                    <lang xml:lang="en">Set a value.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="33" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">3rd gestures sequence (SLOT 3)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Value containing sequence of gestures. See &quot;Sequences of gestures&quot; on page 12 for more information.
+</lang>
+              </description>
+      
+                  <value from="0000" to="0434">
+                <description>
+                    <lang xml:lang="en">Set a value.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="34" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">4th gestures sequence (SLOT 4)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Value containing sequence of gestures. See &quot;Sequences of gestures&quot; on page 12 for more information.
+</lang>
+              </description>
+      
+                  <value from="0000" to="0434">
+                <description>
+                    <lang xml:lang="en">Set a value.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="35" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">5th gestures sequence (SLOT 5)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Value containing sequence of gestures. See &quot;Sequences of gestures&quot; on page 12 for more information.
+</lang>
+              </description>
+      
+                  <value from="0000" to="0434">
+                <description>
+                    <lang xml:lang="en">Set a value.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="36" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">6th gestures sequence (SLOT 6)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">
+Value containing sequence of gestures. See &quot;Sequences of gestures&quot; on page 12 for more information.
+</lang>
+              </description>
+      
+                  <value from="0000" to="0434">
+                <description>
+                    <lang xml:lang="en">Set a value.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/39fc411987d34a06a1fe655cf5ed6b7ae5198229.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

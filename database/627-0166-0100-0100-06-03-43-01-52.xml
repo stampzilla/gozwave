@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0166"/>
+        <productType value="0100"/>
+    <productId value="0100"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="43"/>
+    <appVersion value="01"/>
+    <appSubVersion value="52"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Ein Z-Wave gesteuertes Kabel-Schalter welcher entweder normal genutzt oder via Funkkommando geschalten werden kann.</lang>
+            <lang xml:lang="en">A Z-wave cord switch which is small enough to be compared to a regular cord switch. It can be used both manually
+like any ordinary cord switch and remotely by Z -Wave .</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Ein kurzer Druck auf den Knopf auf der Rückseite startet den Inklusions bzw. Exklusionsmodus</lang>
+            <lang xml:lang="en">Short click on the Button on the Backside starts the Inclusion/Exclusion-Mode</lang>
+          </inclusionNote>
+            <productName>Cord Switch</productName>
+            <brandName>Swiid</brandName>
+                <productCode>ZCS1</productCode>
+            <productVersion>1.82</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" inNIF="false"/>
+        <commandClass id="0025"/>
+        <commandClass id="0027"/>
+        <commandClass id="0072"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0086"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Gruppe 1
+Reagiert auf langes Drücken des Schalters.</lang>
+                <lang xml:lang="en">Group 1
+Responds to a long press.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Gruppe 1
+Reagiert auf jeden einzelnen Druck.</lang>
+                <lang xml:lang="en">Group 2
+Responds on every single-click.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Schaltmodus</lang>
+                <lang xml:lang="en">Switchmodus</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Bestimmt die Verwendung des Schalters
+Der Wert 255 bestimmt damti den &quot;normal&quot;-Modus (an und aus).</lang>
+                <lang xml:lang="en">Select the Switch-mode
+The Value 255 is the normal-mode(switch on and off)</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Schaltet an</lang>
+                    <lang xml:lang="en">Switch off only</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Schaltet aus</lang>
+                    <lang xml:lang="en">Switch off only</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    
+  </ZWaveDevice>
+
+

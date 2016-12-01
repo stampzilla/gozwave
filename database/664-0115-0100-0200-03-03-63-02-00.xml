@@ -1,0 +1,1955 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0115"/>
+        <productType value="0100"/>
+    <productId value="0200"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="63"/>
+    <appVersion value="02"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="21"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+                    
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Input-Output module 5th channel</lang>
+            <lang xml:lang="ru">Модуль ввода-вывода 5-ти канальный</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en">No sleep, no wake-up</lang>
+            <lang xml:lang="ru">Постоянно включенное устройство </lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Tripple button press</lang>
+            <lang xml:lang="ru">Три раза нажать на кнопку</lang>
+          </inclusionNote>
+                            <productVersion>1.0</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020"/>
+        <commandClass id="0025"/>
+        <commandClass id="0030" version="2"/>
+        <commandClass id="0031" version="5"/>
+        <commandClass id="0059"/>
+        <commandClass id="005a"/>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0060" version="3"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+        <commandClass id="0073"/>
+        <commandClass id="007a" version="2"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0086" version="2"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Lifeline</lang>
+                <lang xml:lang="ru">Lifeline</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="2" default="000a">
+            <name>
+                <lang xml:lang="en">Device polling time</lang>
+                <lang xml:lang="ru">Интервал опроса устройства</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Sensor data polling time, 1 = 0.1 sec. The device receives values of all installed channels for one inquiry at once</lang>
+                <lang xml:lang="ru">Устанавливает внутреннюю частоту опроса устройства, 1 = 0.1 секунды. За один запрос устройство получает значения всех установленных каналов сразу. Например, значение 100
+					установит внутренний интервал опроса устройства один раз в десять секунд
+				</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Off</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="0001" to="ffff">
+                <description>
+                    <lang xml:lang="en">seconds/10</lang>
+                    <lang xml:lang="ru">секунды/10</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="rangemapped" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">Channel 1</lang>
+                <lang xml:lang="ru">Канал 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Sensor type, Channel 1. Interview need for new values</lang>
+                <lang xml:lang="ru">Устанавливает тип подключенного сенсора, канал 1. Для новых значений необходимо прохождение повторного интервью</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">No sensor</lang>
+                    <lang xml:lang="ru">Нет сенсора</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">ThermoPair L type</lang>
+                    <lang xml:lang="ru">Термопара L типа</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">ThermoPair J type</lang>
+                    <lang xml:lang="ru">Термопара J типа</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">ThermoPair N type</lang>
+                    <lang xml:lang="ru">Термопара N типа</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">ThermoPair K type</lang>
+                    <lang xml:lang="ru">Термопара K типа</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">ThermoPair S type</lang>
+                    <lang xml:lang="ru">Термопара S типа</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="en">ThermoPair R type</lang>
+                    <lang xml:lang="ru">Термопара R типа</lang>
+                  </description>
+              </value>
+            <value from="07" to="07">
+                <description>
+                    <lang xml:lang="en">ThermoPair B type</lang>
+                    <lang xml:lang="ru">Термопара B типа</lang>
+                  </description>
+              </value>
+            <value from="08" to="08">
+                <description>
+                    <lang xml:lang="en">ThermoPair A1 type</lang>
+                    <lang xml:lang="ru">Термопара A1 типа</lang>
+                  </description>
+              </value>
+            <value from="09" to="09">
+                <description>
+                    <lang xml:lang="en">ThermoPair A2 type</lang>
+                    <lang xml:lang="ru">Термопара A2 типа</lang>
+                  </description>
+              </value>
+            <value from="0a" to="0a">
+                <description>
+                    <lang xml:lang="en">ThermoPair A3 type</lang>
+                    <lang xml:lang="ru">Термопара A3 типа</lang>
+                  </description>
+              </value>
+            <value from="0b" to="0b">
+                <description>
+                    <lang xml:lang="en">ThermoPair T type</lang>
+                    <lang xml:lang="ru">Термопара T типа</lang>
+                  </description>
+              </value>
+            <value from="0c" to="0c">
+                <description>
+                    <lang xml:lang="en">ThermoPair E type</lang>
+                    <lang xml:lang="ru">Термопара E типа</lang>
+                  </description>
+              </value>
+            <value from="0d" to="0d">
+                <description>
+                    <lang xml:lang="en">ThermoPair E type</lang>
+                    <lang xml:lang="ru">Термопара E типа</lang>
+                  </description>
+              </value>
+            <value from="0d" to="0d">
+                <description>
+                    <lang xml:lang="en">ThermoResistoristor Pt50 L=3.85</lang>
+                    <lang xml:lang="ru">Терморезистор Pt50 L=3.85</lang>
+                  </description>
+              </value>
+            <value from="0e" to="0e">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt50 L=3.91</lang>
+                    <lang xml:lang="ru">Терморезистор Pt50 L=3.91</lang>
+                  </description>
+              </value>
+            <value from="0f" to="0f">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt100 L=3.85</lang>
+                    <lang xml:lang="ru">Терморезистор Pt100 L=3.85</lang>
+                  </description>
+              </value>
+            <value from="10" to="10">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt100 L=3.91</lang>
+                    <lang xml:lang="ru">Терморезистор Pt100 L=3.91</lang>
+                  </description>
+              </value>
+            <value from="11" to="11">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt500 L=3.85</lang>
+                    <lang xml:lang="ru">Терморезистор Pt500 L=3.85</lang>
+                  </description>
+              </value>
+            <value from="12" to="12">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt500 L=3.91</lang>
+                    <lang xml:lang="ru">Терморезистор Pt500 L=3.91</lang>
+                  </description>
+              </value>
+            <value from="13" to="13">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt1000 L=3.85</lang>
+                    <lang xml:lang="ru">Терморезистор Pt1000 L=3.85</lang>
+                  </description>
+              </value>
+            <value from="14" to="14">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt1000 L=3.91</lang>
+                    <lang xml:lang="ru">Терморезистор Pt1000 L=3.91</lang>
+                  </description>
+              </value>
+            <value from="15" to="15">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu50 L=4.26</lang>
+                    <lang xml:lang="ru">Терморезистор Cu50 L=4.26</lang>
+                  </description>
+              </value>
+            <value from="16" to="16">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu50 L=4.28</lang>
+                    <lang xml:lang="ru">Терморезистор Cu50 L=4.28</lang>
+                  </description>
+              </value>
+            <value from="17" to="17">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu100 L=4.26</lang>
+                    <lang xml:lang="ru">Терморезистор Cu100 L=4.26</lang>
+                  </description>
+              </value>
+            <value from="18" to="18">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu100 L=4.28</lang>
+                    <lang xml:lang="ru">Терморезистор Cu100 L=4.28</lang>
+                  </description>
+              </value>
+            <value from="19" to="19">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu500 L=4.26</lang>
+                    <lang xml:lang="ru">Терморезистор Cu500 L=4.26</lang>
+                  </description>
+              </value>
+            <value from="1a" to="1a">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu500 L=4.28</lang>
+                    <lang xml:lang="ru">Терморезистор Cu500 L=4.28</lang>
+                  </description>
+              </value>
+            <value from="1b" to="1b">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu1000 L=4.26</lang>
+                    <lang xml:lang="ru">Терморезистор Cu1000 L=4.26</lang>
+                  </description>
+              </value>
+            <value from="1c" to="1c">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu1000 L=4.28</lang>
+                    <lang xml:lang="ru">Терморезистор Cu1000 L=4.28</lang>
+                  </description>
+              </value>
+            <value from="1d" to="1d">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Ni100 L=6.17</lang>
+                    <lang xml:lang="ru">Терморезистор Ni100 L=6.17</lang>
+                  </description>
+              </value>
+            <value from="1e" to="1e">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Ni500 L=6.17</lang>
+                    <lang xml:lang="ru">Терморезистор Ni500 L=6.17</lang>
+                  </description>
+              </value>
+            <value from="1f" to="1f">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Ni1000 L=6.17</lang>
+                    <lang xml:lang="ru">Терморезистор Ni1000 L=6.17</lang>
+                  </description>
+              </value>
+            <value from="20" to="20">
+                <description>
+                    <lang xml:lang="en">ThermoResistor 23</lang>
+                    <lang xml:lang="ru">Терморезистор 23</lang>
+                  </description>
+              </value>
+            <value from="21" to="21">
+                <description>
+                    <lang xml:lang="en">Voltage 0-1 V range</lang>
+                    <lang xml:lang="ru">Напряжение 0-1 В</lang>
+                  </description>
+              </value>
+            <value from="22" to="22">
+                <description>
+                    <lang xml:lang="en">Voltage 0-10 V range</lang>
+                    <lang xml:lang="ru">Напряжение 0-10 В</lang>
+                  </description>
+              </value>
+            <value from="23" to="23">
+                <description>
+                    <lang xml:lang="en">Current 4-20 mA range</lang>
+                    <lang xml:lang="ru">Ток 4-20 мА</lang>
+                  </description>
+              </value>
+            <value from="24" to="24">
+                <description>
+                    <lang xml:lang="en">Dry Contact</lang>
+                    <lang xml:lang="ru">Сухой контакт</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="range" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">Dry contact. High input level, channel 1</lang>
+                <lang xml:lang="ru">Сухой контакт. Уровень входного сигнала, высокий уровень, канал 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Use for &quot;Dry contact&quot; only. Detect high level, channel 1. Ex: 127 sets high level 12.7 V</lang>
+                <lang xml:lang="ru">Используется только для датчиков «Dry Contact». Детектирование высокого уровня датчика с выходом «сухой контакт», канал 1. Например, значение 127 установит входной уровень
+                    соответствующий значению напряжения 12.7 В.
+                </lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="en">V/10</lang>
+                    <lang xml:lang="ru">В/10</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Dry contact. Low input level, channel 1</lang>
+                <lang xml:lang="ru">Сухой контакт. Уровень входного сигнала, низкий уровень, канал 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Use for &quot;Dry contact&quot; only. Detect low level, channel 1. Ex: 7 sets low level 0.7 V</lang>
+                <lang xml:lang="ru">Используется только для датчиков «Dry Contact». Детектирование низкого уровня датчика с выходом «сухой контакт», канал 1. Например, значение 7 установит входной уровень
+                    соответствующий значению напряжения 0.7В.
+                </lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="en">V/10</lang>
+                    <lang xml:lang="ru">В/10</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="rangemapped" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">Dry contact. Undefined input level, channel 1</lang>
+                <lang xml:lang="ru">Сухой контакт. Уровень входного сигнала, не определен, канал 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Dry contact. Value from undefined input state, channel 1</lang>
+                <lang xml:lang="ru">Используется только для датчиков «Dry Contact». Значение, возвращаемое при неопределенном состоянии датчика, канал 1.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Low level</lang>
+                    <lang xml:lang="ru">Низкий уровень</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">High level</lang>
+                    <lang xml:lang="ru">Высокий уровень</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="14" type="range" size="2" default="012c">
+            <name>
+                <lang xml:lang="en">Report sending time, channel 1</lang>
+                <lang xml:lang="ru">Интервал отправки отчета, канал 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Time interval for sensor data sending, channel 1</lang>
+                <lang xml:lang="ru">Определяет временной интервал для отправки значений сенсора, канал 1.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Off</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="0001" to="ffff">
+                <description>
+                    <lang xml:lang="en">seconds</lang>
+                    <lang xml:lang="ru">секунды</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="15" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Send report at change of value to the set size, channel 1</lang>
+                <lang xml:lang="ru">Отправлять отчет, при изменении значения на заданную величину, канал 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Defines value of the changes necessary for sending the report, the channel 1. For example, the established value 1, will lead to sending the report at change of the value established
+                    sensor on 0.01</lang>
+                <lang xml:lang="ru">Определяет значение изменений, необходимых для отправки отчета, канал 1. Например, установленное значение 1, приведет к отправке отчета при изменении значения установленного
+                    сенсора на 0.01</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Off</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="0001" to="ffff">
+                <description>
+                    <lang xml:lang="en">value/100</lang>
+                    <lang xml:lang="ru">значение/100</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="16" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Send the report not more often, than, channel 1</lang>
+                <lang xml:lang="ru">Отправлять отчет не чаще, чем, канал 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru">Устанавливает ограничение на отправку отчетов для канала 1. Например, установленное значение 1000, приведет к отправке не более одного отчета в секунду.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Off</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="0001" to="ffff">
+                <description>
+                    <lang xml:lang="en">ms</lang>
+                    <lang xml:lang="ru">миллисекунды</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="20" type="rangemapped" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">Channel 2</lang>
+                <lang xml:lang="ru">Тип подключенного сенсора, канал 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Sensor type, Channel 2. Interview need for new values</lang>
+                <lang xml:lang="ru">Устанавливает тип подключенного сенсора, канал 2. Для новых значений необходимо прохождение повторного интервью.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">No sensor</lang>
+                    <lang xml:lang="ru">Нет сенсора</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">ThermoPair L type</lang>
+                    <lang xml:lang="ru">Термопара L типа</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">ThermoPair J type</lang>
+                    <lang xml:lang="ru">Термопара J типа</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">ThermoPair N type</lang>
+                    <lang xml:lang="ru">Термопара N типа</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">ThermoPair K type</lang>
+                    <lang xml:lang="ru">Термопара K типа</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">ThermoPair S type</lang>
+                    <lang xml:lang="ru">Термопара S типа</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="en">ThermoPair R type</lang>
+                    <lang xml:lang="ru">Термопара R типа</lang>
+                  </description>
+              </value>
+            <value from="07" to="07">
+                <description>
+                    <lang xml:lang="en">ThermoPair B type</lang>
+                    <lang xml:lang="ru">Термопара B типа</lang>
+                  </description>
+              </value>
+            <value from="08" to="08">
+                <description>
+                    <lang xml:lang="en">ThermoPair A1 type</lang>
+                    <lang xml:lang="ru">Термопара A1 типа</lang>
+                  </description>
+              </value>
+            <value from="09" to="09">
+                <description>
+                    <lang xml:lang="en">ThermoPair A2 type</lang>
+                    <lang xml:lang="ru">Термопара A2 типа</lang>
+                  </description>
+              </value>
+            <value from="0a" to="0a">
+                <description>
+                    <lang xml:lang="en">ThermoPair A3 type</lang>
+                    <lang xml:lang="ru">Термопара A3 типа</lang>
+                  </description>
+              </value>
+            <value from="0b" to="0b">
+                <description>
+                    <lang xml:lang="en">ThermoPair T type</lang>
+                    <lang xml:lang="ru">Термопара T типа</lang>
+                  </description>
+              </value>
+            <value from="0c" to="0c">
+                <description>
+                    <lang xml:lang="en">ThermoPair E type</lang>
+                    <lang xml:lang="ru">Термопара E типа</lang>
+                  </description>
+              </value>
+            <value from="0d" to="0d">
+                <description>
+                    <lang xml:lang="en">ThermoPair E type</lang>
+                    <lang xml:lang="ru">Термопара E типа</lang>
+                  </description>
+              </value>
+            <value from="0d" to="0d">
+                <description>
+                    <lang xml:lang="en">ThermoResistoristor Pt50 L=3.85</lang>
+                    <lang xml:lang="ru">Терморезистор Pt50 L=3.85</lang>
+                  </description>
+              </value>
+            <value from="0e" to="0e">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt50 L=3.91</lang>
+                    <lang xml:lang="ru">Терморезистор Pt50 L=3.91</lang>
+                  </description>
+              </value>
+            <value from="0f" to="0f">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt100 L=3.85</lang>
+                    <lang xml:lang="ru">Терморезистор Pt100 L=3.85</lang>
+                  </description>
+              </value>
+            <value from="10" to="10">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt100 L=3.91</lang>
+                    <lang xml:lang="ru">Терморезистор Pt100 L=3.91</lang>
+                  </description>
+              </value>
+            <value from="11" to="11">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt500 L=3.85</lang>
+                    <lang xml:lang="ru">Терморезистор Pt500 L=3.85</lang>
+                  </description>
+              </value>
+            <value from="12" to="12">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt500 L=3.91</lang>
+                    <lang xml:lang="ru">Терморезистор Pt500 L=3.91</lang>
+                  </description>
+              </value>
+            <value from="13" to="13">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt1000 L=3.85</lang>
+                    <lang xml:lang="ru">Терморезистор Pt1000 L=3.85</lang>
+                  </description>
+              </value>
+            <value from="14" to="14">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt1000 L=3.91</lang>
+                    <lang xml:lang="ru">Терморезистор Pt1000 L=3.91</lang>
+                  </description>
+              </value>
+            <value from="15" to="15">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu50 L=4.26</lang>
+                    <lang xml:lang="ru">Терморезистор Cu50 L=4.26</lang>
+                  </description>
+              </value>
+            <value from="16" to="16">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu50 L=4.28</lang>
+                    <lang xml:lang="ru">Терморезистор Cu50 L=4.28</lang>
+                  </description>
+              </value>
+            <value from="17" to="17">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu100 L=4.26</lang>
+                    <lang xml:lang="ru">Терморезистор Cu100 L=4.26</lang>
+                  </description>
+              </value>
+            <value from="18" to="18">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu100 L=4.28</lang>
+                    <lang xml:lang="ru">Терморезистор Cu100 L=4.28</lang>
+                  </description>
+              </value>
+            <value from="19" to="19">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu500 L=4.26</lang>
+                    <lang xml:lang="ru">Терморезистор Cu500 L=4.26</lang>
+                  </description>
+              </value>
+            <value from="1a" to="1a">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu500 L=4.28</lang>
+                    <lang xml:lang="ru">Терморезистор Cu500 L=4.28</lang>
+                  </description>
+              </value>
+            <value from="1b" to="1b">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu1000 L=4.26</lang>
+                    <lang xml:lang="ru">Терморезистор Cu1000 L=4.26</lang>
+                  </description>
+              </value>
+            <value from="1c" to="1c">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu1000 L=4.28</lang>
+                    <lang xml:lang="ru">Терморезистор Cu1000 L=4.28</lang>
+                  </description>
+              </value>
+            <value from="1d" to="1d">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Ni100 L=6.17</lang>
+                    <lang xml:lang="ru">Терморезистор Ni100 L=6.17</lang>
+                  </description>
+              </value>
+            <value from="1e" to="1e">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Ni500 L=6.17</lang>
+                    <lang xml:lang="ru">Терморезистор Ni500 L=6.17</lang>
+                  </description>
+              </value>
+            <value from="1f" to="1f">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Ni1000 L=6.17</lang>
+                    <lang xml:lang="ru">Терморезистор Ni1000 L=6.17</lang>
+                  </description>
+              </value>
+            <value from="20" to="20">
+                <description>
+                    <lang xml:lang="en">ThermoResistor 23</lang>
+                    <lang xml:lang="ru">Терморезистор 23</lang>
+                  </description>
+              </value>
+            <value from="21" to="21">
+                <description>
+                    <lang xml:lang="en">Voltage 0-1 V range</lang>
+                    <lang xml:lang="ru">Напряжение 0-1 В</lang>
+                  </description>
+              </value>
+            <value from="22" to="22">
+                <description>
+                    <lang xml:lang="en">Voltage 0-10 V range</lang>
+                    <lang xml:lang="ru">Напряжение 0-10 В</lang>
+                  </description>
+              </value>
+            <value from="23" to="23">
+                <description>
+                    <lang xml:lang="en">Current 4-20 mA range</lang>
+                    <lang xml:lang="ru">Ток 4-20 мА</lang>
+                  </description>
+              </value>
+            <value from="24" to="24">
+                <description>
+                    <lang xml:lang="en">Dry Contact</lang>
+                    <lang xml:lang="ru">Сухой контакт</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="21" type="range" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">Dry contact. High input level, channel 2</lang>
+                <lang xml:lang="ru">Сухой контакт. Уровень входного сигнала, высокий уровень, канал 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Use for &quot;Dry contact&quot; only. Detect high level, channel 2. Ex: 127 sets high level 12.7 V</lang>
+                <lang xml:lang="ru">Используется только для датчиков «Dry Contact». Детектирование высокого уровня датчика с выходом «сухой контакт», канал 2. Например, значение 127 установит входной уровень
+                    соответствующий значению напряжения 12.7 В.
+                </lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="en">V/10</lang>
+                    <lang xml:lang="ru">В/10</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="22" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Dry contact. Low input level, channel 2</lang>
+                <lang xml:lang="ru">Сухой контакт. Уровень входного сигнала, низкий уровень, канал 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Use for &quot;Dry contact&quot; only. Detect low level, channel 2. Ex: 7 sets low level 0.7 V</lang>
+                <lang xml:lang="ru">Используется только для датчиков «Dry Contact». Детектирование низкого уровня датчика с выходом «сухой контакт», канал 2. Например, значение 7 установит входной уровень
+                    соответствующий значению напряжения 0.7В.
+                </lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="en">V/10</lang>
+                    <lang xml:lang="ru">В/10</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="23" type="rangemapped" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">Dry contact. Undefined input level, channel 2</lang>
+                <lang xml:lang="ru">Сухой контакт. Уровень входного сигнала, не определен, канал 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Dry contact. Value from undefined input state, channel 2</lang>
+                <lang xml:lang="ru">Используется только для датчиков «Dry Contact». Значение, возвращаемое при неопределенном состоянии датчика, канал 2</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Low level</lang>
+                    <lang xml:lang="ru">Низкий уровень</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">High level</lang>
+                    <lang xml:lang="ru">Высокий уровень</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="24" type="range" size="2" default="012c">
+            <name>
+                <lang xml:lang="en">Report sending time, channel 2</lang>
+                <lang xml:lang="ru">Интервал отправки отчета, канал 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Time interval for sensor data sending, channel 2</lang>
+                <lang xml:lang="ru">Определяет временной интервал для отправки значений сенсора, канал 2</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Off</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="0001" to="ffff">
+                <description>
+                    <lang xml:lang="en">seconds</lang>
+                    <lang xml:lang="ru">секунды</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="25" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Send report at change of value to the set size, channel 2</lang>
+                <lang xml:lang="ru">Отправлять отчет, при изменении значения на заданную величину, канал 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Defines value of the changes necessary for sending the report, the channel 2. For example, the established value 1, will lead to sending the report at change of the value established
+                    sensor on 0.01</lang>
+                <lang xml:lang="ru">Определяет значение изменений, необходимых для отправки отчета, канал 2. Например, установленное значение 1, приведет к отправке отчета при изменении значения установленного
+                    сенсора на 0.01</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Off</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="0001" to="ffff">
+                <description>
+                    <lang xml:lang="en">value/100</lang>
+                    <lang xml:lang="ru">значение/100</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="26" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Send the report not more often, than, channel 2</lang>
+                <lang xml:lang="ru">Отправлять отчет не чаще, чем, канал 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru">Устанавливает ограничение на отправку отчетов для канала 2. Например, установленное значение 1000, приведет к отправке не более одного отчета в секунду.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Off</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="0001" to="ffff">
+                <description>
+                    <lang xml:lang="en">ms</lang>
+                    <lang xml:lang="ru">миллисекунды</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="30" type="rangemapped" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">Channel 3</lang>
+                <lang xml:lang="ru">Тип подключенного сенсора, канал 3</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Sensor type, Channel 3. Interview need for new values</lang>
+                <lang xml:lang="ru">Устанавливает тип подключенного сенсора, канал 3. Для новых значений необходимо прохождение повторного интервью.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">No sensor</lang>
+                    <lang xml:lang="ru">Нет сенсора</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">ThermoPair L type</lang>
+                    <lang xml:lang="ru">Термопара L типа</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">ThermoPair J type</lang>
+                    <lang xml:lang="ru">Термопара J типа</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">ThermoPair N type</lang>
+                    <lang xml:lang="ru">Термопара N типа</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">ThermoPair K type</lang>
+                    <lang xml:lang="ru">Термопара K типа</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">ThermoPair S type</lang>
+                    <lang xml:lang="ru">Термопара S типа</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="en">ThermoPair R type</lang>
+                    <lang xml:lang="ru">Термопара R типа</lang>
+                  </description>
+              </value>
+            <value from="07" to="07">
+                <description>
+                    <lang xml:lang="en">ThermoPair B type</lang>
+                    <lang xml:lang="ru">Термопара B типа</lang>
+                  </description>
+              </value>
+            <value from="08" to="08">
+                <description>
+                    <lang xml:lang="en">ThermoPair A1 type</lang>
+                    <lang xml:lang="ru">Термопара A1 типа</lang>
+                  </description>
+              </value>
+            <value from="09" to="09">
+                <description>
+                    <lang xml:lang="en">ThermoPair A2 type</lang>
+                    <lang xml:lang="ru">Термопара A2 типа</lang>
+                  </description>
+              </value>
+            <value from="0a" to="0a">
+                <description>
+                    <lang xml:lang="en">ThermoPair A3 type</lang>
+                    <lang xml:lang="ru">Термопара A3 типа</lang>
+                  </description>
+              </value>
+            <value from="0b" to="0b">
+                <description>
+                    <lang xml:lang="en">ThermoPair T type</lang>
+                    <lang xml:lang="ru">Термопара T типа</lang>
+                  </description>
+              </value>
+            <value from="0c" to="0c">
+                <description>
+                    <lang xml:lang="en">ThermoPair E type</lang>
+                    <lang xml:lang="ru">Термопара E типа</lang>
+                  </description>
+              </value>
+            <value from="0d" to="0d">
+                <description>
+                    <lang xml:lang="en">ThermoPair E type</lang>
+                    <lang xml:lang="ru">Термопара E типа</lang>
+                  </description>
+              </value>
+            <value from="0d" to="0d">
+                <description>
+                    <lang xml:lang="en">ThermoResistoristor Pt50 L=3.85</lang>
+                    <lang xml:lang="ru">Терморезистор Pt50 L=3.85</lang>
+                  </description>
+              </value>
+            <value from="0e" to="0e">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt50 L=3.91</lang>
+                    <lang xml:lang="ru">Терморезистор Pt50 L=3.91</lang>
+                  </description>
+              </value>
+            <value from="0f" to="0f">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt100 L=3.85</lang>
+                    <lang xml:lang="ru">Терморезистор Pt100 L=3.85</lang>
+                  </description>
+              </value>
+            <value from="10" to="10">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt100 L=3.91</lang>
+                    <lang xml:lang="ru">Терморезистор Pt100 L=3.91</lang>
+                  </description>
+              </value>
+            <value from="11" to="11">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt500 L=3.85</lang>
+                    <lang xml:lang="ru">Терморезистор Pt500 L=3.85</lang>
+                  </description>
+              </value>
+            <value from="12" to="12">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt500 L=3.91</lang>
+                    <lang xml:lang="ru">Терморезистор Pt500 L=3.91</lang>
+                  </description>
+              </value>
+            <value from="13" to="13">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt1000 L=3.85</lang>
+                    <lang xml:lang="ru">Терморезистор Pt1000 L=3.85</lang>
+                  </description>
+              </value>
+            <value from="14" to="14">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt1000 L=3.91</lang>
+                    <lang xml:lang="ru">Терморезистор Pt1000 L=3.91</lang>
+                  </description>
+              </value>
+            <value from="15" to="15">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu50 L=4.26</lang>
+                    <lang xml:lang="ru">Терморезистор Cu50 L=4.26</lang>
+                  </description>
+              </value>
+            <value from="16" to="16">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu50 L=4.28</lang>
+                    <lang xml:lang="ru">Терморезистор Cu50 L=4.28</lang>
+                  </description>
+              </value>
+            <value from="17" to="17">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu100 L=4.26</lang>
+                    <lang xml:lang="ru">Терморезистор Cu100 L=4.26</lang>
+                  </description>
+              </value>
+            <value from="18" to="18">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu100 L=4.28</lang>
+                    <lang xml:lang="ru">Терморезистор Cu100 L=4.28</lang>
+                  </description>
+              </value>
+            <value from="19" to="19">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu500 L=4.26</lang>
+                    <lang xml:lang="ru">Терморезистор Cu500 L=4.26</lang>
+                  </description>
+              </value>
+            <value from="1a" to="1a">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu500 L=4.28</lang>
+                    <lang xml:lang="ru">Терморезистор Cu500 L=4.28</lang>
+                  </description>
+              </value>
+            <value from="1b" to="1b">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu1000 L=4.26</lang>
+                    <lang xml:lang="ru">Терморезистор Cu1000 L=4.26</lang>
+                  </description>
+              </value>
+            <value from="1c" to="1c">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu1000 L=4.28</lang>
+                    <lang xml:lang="ru">Терморезистор Cu1000 L=4.28</lang>
+                  </description>
+              </value>
+            <value from="1d" to="1d">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Ni100 L=6.17</lang>
+                    <lang xml:lang="ru">Терморезистор Ni100 L=6.17</lang>
+                  </description>
+              </value>
+            <value from="1e" to="1e">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Ni500 L=6.17</lang>
+                    <lang xml:lang="ru">Терморезистор Ni500 L=6.17</lang>
+                  </description>
+              </value>
+            <value from="1f" to="1f">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Ni1000 L=6.17</lang>
+                    <lang xml:lang="ru">Терморезистор Ni1000 L=6.17</lang>
+                  </description>
+              </value>
+            <value from="20" to="20">
+                <description>
+                    <lang xml:lang="en">ThermoResistor 23</lang>
+                    <lang xml:lang="ru">Терморезистор 23</lang>
+                  </description>
+              </value>
+            <value from="21" to="21">
+                <description>
+                    <lang xml:lang="en">Voltage 0-1 V range</lang>
+                    <lang xml:lang="ru">Напряжение 0-1 В</lang>
+                  </description>
+              </value>
+            <value from="22" to="22">
+                <description>
+                    <lang xml:lang="en">Voltage 0-10 V range</lang>
+                    <lang xml:lang="ru">Напряжение 0-10 В</lang>
+                  </description>
+              </value>
+            <value from="23" to="23">
+                <description>
+                    <lang xml:lang="en">Current 4-20 mA range</lang>
+                    <lang xml:lang="ru">Ток 4-20 мА</lang>
+                  </description>
+              </value>
+            <value from="24" to="24">
+                <description>
+                    <lang xml:lang="en">Dry Contact</lang>
+                    <lang xml:lang="ru">Сухой контакт</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="31" type="range" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">Dry contact. High input level, channel 3</lang>
+                <lang xml:lang="ru">Сухой контакт. Уровень входного сигнала, высокий уровень, канал 3</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Use for &quot;Dry contact&quot; only. Detect high level, channel 3. Ex: 127 sets high level 12.7 V</lang>
+                <lang xml:lang="ru">Используется только для датчиков «Dry Contact». Детектирование высокого уровня датчика с выходом «сухой контакт», канал 3. Например, значение 127 установит входной уровень
+                    соответствующий значению напряжения 12.7 В.
+                </lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="en">V/10</lang>
+                    <lang xml:lang="ru">В/10</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="32" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Dry contact. Low input level, channel 3</lang>
+                <lang xml:lang="ru">Сухой контакт. Уровень входного сигнала, низкий уровень, канал 3</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Use for &quot;Dry contact&quot; only. Detect low level, channel 3. Ex: 7 sets low level 0.7 V</lang>
+                <lang xml:lang="ru">Используется только для датчиков «Dry Contact». Детектирование низкого уровня датчика с выходом «сухой контакт», канал 3. Например, значение 7 установит входной уровень
+                    соответствующий значению напряжения 0.7В.
+                </lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="en">V/10</lang>
+                    <lang xml:lang="ru">В/10</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="33" type="rangemapped" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">Dry contact. Undefined input level, channel 3</lang>
+                <lang xml:lang="ru">Сухой контакт. Уровень входного сигнала, не определен, канал 3</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Dry contact. Value from undefined input state, channel 3</lang>
+                <lang xml:lang="ru">Используется только для датчиков «Dry Contact». Значение, возвращаемое при неопределенном состоянии датчика, канал 3</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Low level</lang>
+                    <lang xml:lang="ru">Низкий уровень</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">High level</lang>
+                    <lang xml:lang="ru">Высокий уровень</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="34" type="range" size="2" default="012c">
+            <name>
+                <lang xml:lang="en">Report sending time, channel 3</lang>
+                <lang xml:lang="ru">Интервал отправки отчета, канал 3</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Time interval for sensor data sending, channel 3</lang>
+                <lang xml:lang="ru">Определяет временной интервал для отправки значений сенсора, канал 3</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Off</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="0001" to="ffff">
+                <description>
+                    <lang xml:lang="en">seconds</lang>
+                    <lang xml:lang="ru">секунды</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="35" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Send report at change of value to the set size, channel 3</lang>
+                <lang xml:lang="ru">Отправлять отчет, при изменении значения на заданную величину, канал 3</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Defines value of the changes necessary for sending the report, the channel 3. For example, the established value 1, will lead to sending the report at change of the value established
+                    sensor on 0.01</lang>
+                <lang xml:lang="ru">Определяет значение изменений, необходимых для отправки отчета, канал 3. Например, установленное значение 1, приведет к отправке отчета при изменении значения установленного
+                    сенсора на 0.01</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Off</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="0001" to="ffff">
+                <description>
+                    <lang xml:lang="en">value/100</lang>
+                    <lang xml:lang="ru">значение/100</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="36" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Send the report not more often, than, channel 3</lang>
+                <lang xml:lang="ru">Отправлять отчет не чаще, чем, канал 3</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru">Устанавливает ограничение на отправку отчетов для канала 3. Например, установленное значение 1000, приведет к отправке не более одного отчета в секунду.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Off</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="0001" to="ffff">
+                <description>
+                    <lang xml:lang="en">ms</lang>
+                    <lang xml:lang="ru">миллисекунды</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="40" type="rangemapped" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">Channel 4</lang>
+                <lang xml:lang="ru">Тип подключенного сенсора, канал 4</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Sensor type, Channel 4. Interview need for new values</lang>
+                <lang xml:lang="ru">Устанавливает тип подключенного сенсора, канал 4. Для новых значений необходимо прохождение повторного интервью.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">No sensor</lang>
+                    <lang xml:lang="ru">Нет сенсора</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">ThermoPair L type</lang>
+                    <lang xml:lang="ru">Термопара L типа</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">ThermoPair J type</lang>
+                    <lang xml:lang="ru">Термопара J типа</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">ThermoPair N type</lang>
+                    <lang xml:lang="ru">Термопара N типа</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">ThermoPair K type</lang>
+                    <lang xml:lang="ru">Термопара K типа</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">ThermoPair S type</lang>
+                    <lang xml:lang="ru">Термопара S типа</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="en">ThermoPair R type</lang>
+                    <lang xml:lang="ru">Термопара R типа</lang>
+                  </description>
+              </value>
+            <value from="07" to="07">
+                <description>
+                    <lang xml:lang="en">ThermoPair B type</lang>
+                    <lang xml:lang="ru">Термопара B типа</lang>
+                  </description>
+              </value>
+            <value from="08" to="08">
+                <description>
+                    <lang xml:lang="en">ThermoPair A1 type</lang>
+                    <lang xml:lang="ru">Термопара A1 типа</lang>
+                  </description>
+              </value>
+            <value from="09" to="09">
+                <description>
+                    <lang xml:lang="en">ThermoPair A2 type</lang>
+                    <lang xml:lang="ru">Термопара A2 типа</lang>
+                  </description>
+              </value>
+            <value from="0a" to="0a">
+                <description>
+                    <lang xml:lang="en">ThermoPair A3 type</lang>
+                    <lang xml:lang="ru">Термопара A3 типа</lang>
+                  </description>
+              </value>
+            <value from="0b" to="0b">
+                <description>
+                    <lang xml:lang="en">ThermoPair T type</lang>
+                    <lang xml:lang="ru">Термопара T типа</lang>
+                  </description>
+              </value>
+            <value from="0c" to="0c">
+                <description>
+                    <lang xml:lang="en">ThermoPair E type</lang>
+                    <lang xml:lang="ru">Термопара E типа</lang>
+                  </description>
+              </value>
+            <value from="0d" to="0d">
+                <description>
+                    <lang xml:lang="en">ThermoPair E type</lang>
+                    <lang xml:lang="ru">Термопара E типа</lang>
+                  </description>
+              </value>
+            <value from="0d" to="0d">
+                <description>
+                    <lang xml:lang="en">ThermoResistoristor Pt50 L=3.85</lang>
+                    <lang xml:lang="ru">Терморезистор Pt50 L=3.85</lang>
+                  </description>
+              </value>
+            <value from="0e" to="0e">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt50 L=3.91</lang>
+                    <lang xml:lang="ru">Терморезистор Pt50 L=3.91</lang>
+                  </description>
+              </value>
+            <value from="0f" to="0f">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt100 L=3.85</lang>
+                    <lang xml:lang="ru">Терморезистор Pt100 L=3.85</lang>
+                  </description>
+              </value>
+            <value from="10" to="10">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt100 L=3.91</lang>
+                    <lang xml:lang="ru">Терморезистор Pt100 L=3.91</lang>
+                  </description>
+              </value>
+            <value from="11" to="11">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt500 L=3.85</lang>
+                    <lang xml:lang="ru">Терморезистор Pt500 L=3.85</lang>
+                  </description>
+              </value>
+            <value from="12" to="12">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt500 L=3.91</lang>
+                    <lang xml:lang="ru">Терморезистор Pt500 L=3.91</lang>
+                  </description>
+              </value>
+            <value from="13" to="13">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt1000 L=3.85</lang>
+                    <lang xml:lang="ru">Терморезистор Pt1000 L=3.85</lang>
+                  </description>
+              </value>
+            <value from="14" to="14">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt1000 L=3.91</lang>
+                    <lang xml:lang="ru">Терморезистор Pt1000 L=3.91</lang>
+                  </description>
+              </value>
+            <value from="15" to="15">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu50 L=4.26</lang>
+                    <lang xml:lang="ru">Терморезистор Cu50 L=4.26</lang>
+                  </description>
+              </value>
+            <value from="16" to="16">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu50 L=4.28</lang>
+                    <lang xml:lang="ru">Терморезистор Cu50 L=4.28</lang>
+                  </description>
+              </value>
+            <value from="17" to="17">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu100 L=4.26</lang>
+                    <lang xml:lang="ru">Терморезистор Cu100 L=4.26</lang>
+                  </description>
+              </value>
+            <value from="18" to="18">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu100 L=4.28</lang>
+                    <lang xml:lang="ru">Терморезистор Cu100 L=4.28</lang>
+                  </description>
+              </value>
+            <value from="19" to="19">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu500 L=4.26</lang>
+                    <lang xml:lang="ru">Терморезистор Cu500 L=4.26</lang>
+                  </description>
+              </value>
+            <value from="1a" to="1a">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu500 L=4.28</lang>
+                    <lang xml:lang="ru">Терморезистор Cu500 L=4.28</lang>
+                  </description>
+              </value>
+            <value from="1b" to="1b">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu1000 L=4.26</lang>
+                    <lang xml:lang="ru">Терморезистор Cu1000 L=4.26</lang>
+                  </description>
+              </value>
+            <value from="1c" to="1c">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu1000 L=4.28</lang>
+                    <lang xml:lang="ru">Терморезистор Cu1000 L=4.28</lang>
+                  </description>
+              </value>
+            <value from="1d" to="1d">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Ni100 L=6.17</lang>
+                    <lang xml:lang="ru">Терморезистор Ni100 L=6.17</lang>
+                  </description>
+              </value>
+            <value from="1e" to="1e">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Ni500 L=6.17</lang>
+                    <lang xml:lang="ru">Терморезистор Ni500 L=6.17</lang>
+                  </description>
+              </value>
+            <value from="1f" to="1f">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Ni1000 L=6.17</lang>
+                    <lang xml:lang="ru">Терморезистор Ni1000 L=6.17</lang>
+                  </description>
+              </value>
+            <value from="20" to="20">
+                <description>
+                    <lang xml:lang="en">ThermoResistor 23</lang>
+                    <lang xml:lang="ru">Терморезистор 23</lang>
+                  </description>
+              </value>
+            <value from="21" to="21">
+                <description>
+                    <lang xml:lang="en">Voltage 0-1 V range</lang>
+                    <lang xml:lang="ru">Напряжение 0-1 В</lang>
+                  </description>
+              </value>
+            <value from="22" to="22">
+                <description>
+                    <lang xml:lang="en">Voltage 0-10 V range</lang>
+                    <lang xml:lang="ru">Напряжение 0-10 В</lang>
+                  </description>
+              </value>
+            <value from="23" to="23">
+                <description>
+                    <lang xml:lang="en">Current 4-20 mA range</lang>
+                    <lang xml:lang="ru">Ток 4-20 мА</lang>
+                  </description>
+              </value>
+            <value from="24" to="24">
+                <description>
+                    <lang xml:lang="en">Dry Contact</lang>
+                    <lang xml:lang="ru">Сухой контакт</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="41" type="range" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">Dry contact. High input level, channel 4</lang>
+                <lang xml:lang="ru">Сухой контакт. Уровень входного сигнала, высокий уровень, канал 4</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Use for &quot;Dry contact&quot; only. Detect high level, channel 4. Ex: 127 sets high level 12.7 V</lang>
+                <lang xml:lang="ru">Используется только для датчиков «Dry Contact». Детектирование высокого уровня датчика с выходом «сухой контакт», канал 4. Например, значение 127 установит входной уровень
+                    соответствующий значению напряжения 12.7 В.
+                </lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="en">V/10</lang>
+                    <lang xml:lang="ru">В/10</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="42" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Dry contact. Low input level, channel 4</lang>
+                <lang xml:lang="ru">Сухой контакт. Уровень входного сигнала, низкий уровень, канал 4</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Use for &quot;Dry contact&quot; only. Detect low level, channel 4. Ex: 7 sets low level 0.7 V</lang>
+                <lang xml:lang="ru">Используется только для датчиков «Dry Contact». Детектирование низкого уровня датчика с выходом «сухой контакт», канал 4. Например, значение 7 установит входной уровень
+                    соответствующий значению напряжения 0.7В.
+                </lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="en">V/10</lang>
+                    <lang xml:lang="ru">В/10</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="43" type="rangemapped" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">Dry contact. Undefined input level, channel 4</lang>
+                <lang xml:lang="ru">Сухой контакт. Уровень входного сигнала, не определен, канал 4</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Dry contact. Value from undefined input state, channel 4</lang>
+                <lang xml:lang="ru">Используется только для датчиков «Dry Contact». Значение, возвращаемое при неопределенном состоянии датчика, канал 4</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Low level</lang>
+                    <lang xml:lang="ru">Низкий уровень</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">High level</lang>
+                    <lang xml:lang="ru">Высокий уровень</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="44" type="range" size="2" default="012c">
+            <name>
+                <lang xml:lang="en">Report sending time, channel 4</lang>
+                <lang xml:lang="ru">Интервал отправки отчета, канал 4</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Time interval for sensor data sending, channel 4</lang>
+                <lang xml:lang="ru">Определяет временной интервал для отправки значений сенсора, канал 4</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Off</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="0001" to="ffff">
+                <description>
+                    <lang xml:lang="en">seconds</lang>
+                    <lang xml:lang="ru">секунды</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="45" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Send report at change of value to the set size, channel 4</lang>
+                <lang xml:lang="ru">Отправлять отчет, при изменении значения на заданную величину, канал 4</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Defines value of the changes necessary for sending the report, the channel 4. For example, the established value 1, will lead to sending the report at change of the value established
+                    sensor on 0.01</lang>
+                <lang xml:lang="ru">Определяет значение изменений, необходимых для отправки отчета, канал 4. Например, установленное значение 1, приведет к отправке отчета при изменении значения установленного
+                    сенсора на 0.01</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Off</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="0001" to="ffff">
+                <description>
+                    <lang xml:lang="en">value/100</lang>
+                    <lang xml:lang="ru">значение/100</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="46" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Send the report not more often, than, channel 4</lang>
+                <lang xml:lang="ru">Отправлять отчет не чаще, чем, канал 4</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru">Устанавливает ограничение на отправку отчетов для канала 4. Например, установленное значение 1000, приведет к отправке не более одного отчета в секунду.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Off</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="0001" to="ffff">
+                <description>
+                    <lang xml:lang="en">ms</lang>
+                    <lang xml:lang="ru">миллисекунды</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="50" type="rangemapped" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">Channel 5</lang>
+                <lang xml:lang="ru">Тип подключенного сенсора, канал 5</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Sensor type, Channel 5. Interview need for new values</lang>
+                <lang xml:lang="ru">Устанавливает тип подключенного сенсора, канал 5. Для новых значений необходимо прохождение повторного интервью.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">No sensor</lang>
+                    <lang xml:lang="ru">Нет сенсора</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">ThermoPair L type</lang>
+                    <lang xml:lang="ru">Термопара L типа</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">ThermoPair J type</lang>
+                    <lang xml:lang="ru">Термопара J типа</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">ThermoPair N type</lang>
+                    <lang xml:lang="ru">Термопара N типа</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">ThermoPair K type</lang>
+                    <lang xml:lang="ru">Термопара K типа</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="en">ThermoPair S type</lang>
+                    <lang xml:lang="ru">Термопара S типа</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="en">ThermoPair R type</lang>
+                    <lang xml:lang="ru">Термопара R типа</lang>
+                  </description>
+              </value>
+            <value from="07" to="07">
+                <description>
+                    <lang xml:lang="en">ThermoPair B type</lang>
+                    <lang xml:lang="ru">Термопара B типа</lang>
+                  </description>
+              </value>
+            <value from="08" to="08">
+                <description>
+                    <lang xml:lang="en">ThermoPair A1 type</lang>
+                    <lang xml:lang="ru">Термопара A1 типа</lang>
+                  </description>
+              </value>
+            <value from="09" to="09">
+                <description>
+                    <lang xml:lang="en">ThermoPair A2 type</lang>
+                    <lang xml:lang="ru">Термопара A2 типа</lang>
+                  </description>
+              </value>
+            <value from="0a" to="0a">
+                <description>
+                    <lang xml:lang="en">ThermoPair A3 type</lang>
+                    <lang xml:lang="ru">Термопара A3 типа</lang>
+                  </description>
+              </value>
+            <value from="0b" to="0b">
+                <description>
+                    <lang xml:lang="en">ThermoPair T type</lang>
+                    <lang xml:lang="ru">Термопара T типа</lang>
+                  </description>
+              </value>
+            <value from="0c" to="0c">
+                <description>
+                    <lang xml:lang="en">ThermoPair E type</lang>
+                    <lang xml:lang="ru">Термопара E типа</lang>
+                  </description>
+              </value>
+            <value from="0d" to="0d">
+                <description>
+                    <lang xml:lang="en">ThermoPair E type</lang>
+                    <lang xml:lang="ru">Термопара E типа</lang>
+                  </description>
+              </value>
+            <value from="0d" to="0d">
+                <description>
+                    <lang xml:lang="en">ThermoResistoristor Pt50 L=3.85</lang>
+                    <lang xml:lang="ru">Терморезистор Pt50 L=3.85</lang>
+                  </description>
+              </value>
+            <value from="0e" to="0e">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt50 L=3.91</lang>
+                    <lang xml:lang="ru">Терморезистор Pt50 L=3.91</lang>
+                  </description>
+              </value>
+            <value from="0f" to="0f">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt100 L=3.85</lang>
+                    <lang xml:lang="ru">Терморезистор Pt100 L=3.85</lang>
+                  </description>
+              </value>
+            <value from="10" to="10">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt100 L=3.91</lang>
+                    <lang xml:lang="ru">Терморезистор Pt100 L=3.91</lang>
+                  </description>
+              </value>
+            <value from="11" to="11">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt500 L=3.85</lang>
+                    <lang xml:lang="ru">Терморезистор Pt500 L=3.85</lang>
+                  </description>
+              </value>
+            <value from="12" to="12">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt500 L=3.91</lang>
+                    <lang xml:lang="ru">Терморезистор Pt500 L=3.91</lang>
+                  </description>
+              </value>
+            <value from="13" to="13">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt1000 L=3.85</lang>
+                    <lang xml:lang="ru">Терморезистор Pt1000 L=3.85</lang>
+                  </description>
+              </value>
+            <value from="14" to="14">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Pt1000 L=3.91</lang>
+                    <lang xml:lang="ru">Терморезистор Pt1000 L=3.91</lang>
+                  </description>
+              </value>
+            <value from="15" to="15">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu50 L=4.26</lang>
+                    <lang xml:lang="ru">Терморезистор Cu50 L=4.26</lang>
+                  </description>
+              </value>
+            <value from="16" to="16">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu50 L=4.28</lang>
+                    <lang xml:lang="ru">Терморезистор Cu50 L=4.28</lang>
+                  </description>
+              </value>
+            <value from="17" to="17">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu100 L=4.26</lang>
+                    <lang xml:lang="ru">Терморезистор Cu100 L=4.26</lang>
+                  </description>
+              </value>
+            <value from="18" to="18">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu100 L=4.28</lang>
+                    <lang xml:lang="ru">Терморезистор Cu100 L=4.28</lang>
+                  </description>
+              </value>
+            <value from="19" to="19">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu500 L=4.26</lang>
+                    <lang xml:lang="ru">Терморезистор Cu500 L=4.26</lang>
+                  </description>
+              </value>
+            <value from="1a" to="1a">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu500 L=4.28</lang>
+                    <lang xml:lang="ru">Терморезистор Cu500 L=4.28</lang>
+                  </description>
+              </value>
+            <value from="1b" to="1b">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu1000 L=4.26</lang>
+                    <lang xml:lang="ru">Терморезистор Cu1000 L=4.26</lang>
+                  </description>
+              </value>
+            <value from="1c" to="1c">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Cu1000 L=4.28</lang>
+                    <lang xml:lang="ru">Терморезистор Cu1000 L=4.28</lang>
+                  </description>
+              </value>
+            <value from="1d" to="1d">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Ni100 L=6.17</lang>
+                    <lang xml:lang="ru">Терморезистор Ni100 L=6.17</lang>
+                  </description>
+              </value>
+            <value from="1e" to="1e">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Ni500 L=6.17</lang>
+                    <lang xml:lang="ru">Терморезистор Ni500 L=6.17</lang>
+                  </description>
+              </value>
+            <value from="1f" to="1f">
+                <description>
+                    <lang xml:lang="en">ThermoResistor Ni1000 L=6.17</lang>
+                    <lang xml:lang="ru">Терморезистор Ni1000 L=6.17</lang>
+                  </description>
+              </value>
+            <value from="20" to="20">
+                <description>
+                    <lang xml:lang="en">ThermoResistor 23</lang>
+                    <lang xml:lang="ru">Терморезистор 23</lang>
+                  </description>
+              </value>
+            <value from="21" to="21">
+                <description>
+                    <lang xml:lang="en">Voltage 0-1 V range</lang>
+                    <lang xml:lang="ru">Напряжение 0-1 В</lang>
+                  </description>
+              </value>
+            <value from="22" to="22">
+                <description>
+                    <lang xml:lang="en">Voltage 0-10 V range</lang>
+                    <lang xml:lang="ru">Напряжение 0-10 В</lang>
+                  </description>
+              </value>
+            <value from="23" to="23">
+                <description>
+                    <lang xml:lang="en">Current 4-20 mA range</lang>
+                    <lang xml:lang="ru">Ток 4-20 мА</lang>
+                  </description>
+              </value>
+            <value from="24" to="24">
+                <description>
+                    <lang xml:lang="en">Dry Contact</lang>
+                    <lang xml:lang="ru">Сухой контакт</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="51" type="range" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">Dry contact. High input level, channel 5</lang>
+                <lang xml:lang="ru">Сухой контакт. Уровень входного сигнала, высокий уровень, канал 5</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Use for &quot;Dry contact&quot; only. Detect high level, channel 5. Ex: 127 sets high level 12.7 V</lang>
+                <lang xml:lang="ru">Используется только для датчиков «Dry Contact». Детектирование высокого уровня датчика с выходом «сухой контакт», канал 5. Например, значение 127 установит входной уровень
+                    соответствующий значению напряжения 12.7 В.
+                </lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="en">V/10</lang>
+                    <lang xml:lang="ru">В/10</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="52" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Dry contact. Low input level, channel 5</lang>
+                <lang xml:lang="ru">Сухой контакт. Уровень входного сигнала, низкий уровень, канал 5</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Use for &quot;Dry contact&quot; only. Detect low level, channel 5. Ex: 7 sets low level 0.7 V</lang>
+                <lang xml:lang="ru">Используется только для датчиков «Dry Contact». Детектирование низкого уровня датчика с выходом «сухой контакт», канал 5. Например, значение 7 установит входной уровень
+                    соответствующий значению напряжения 0.7В.
+                </lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="en">V/10</lang>
+                    <lang xml:lang="ru">В/10</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="53" type="rangemapped" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">Dry contact. Undefined input level, channel 5</lang>
+                <lang xml:lang="ru">Сухой контакт. Уровень входного сигнала, не определен, канал 5</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Dry contact. Value from undefined input state, channel 5</lang>
+                <lang xml:lang="ru">Используется только для датчиков «Dry Contact». Значение, возвращаемое при неопределенном состоянии датчика, канал 5</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Low level</lang>
+                    <lang xml:lang="ru">Низкий уровень</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">High level</lang>
+                    <lang xml:lang="ru">Высокий уровень</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="54" type="range" size="2" default="012c">
+            <name>
+                <lang xml:lang="en">Report sending time, channel 5</lang>
+                <lang xml:lang="ru">Интервал отправки отчета, канал 5</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Time interval for sensor data sending, channel 5</lang>
+                <lang xml:lang="ru">Определяет временной интервал для отправки значений сенсора, канал 5</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Off</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="0001" to="ffff">
+                <description>
+                    <lang xml:lang="en">seconds</lang>
+                    <lang xml:lang="ru">секунды</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="55" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Send report at change of value to the set size, channel 5</lang>
+                <lang xml:lang="ru">Отправлять отчет, при изменении значения на заданную величину, канал 5</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Defines value of the changes necessary for sending the report, the channel 5. For example, the established value 1, will lead to sending the report at change of the value established
+                    sensor on 0.01</lang>
+                <lang xml:lang="ru">Определяет значение изменений, необходимых для отправки отчета, канал 5. Например, установленное значение 1, приведет к отправке отчета при изменении значения установленного
+                    сенсора на 0.01</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Off</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="0001" to="ffff">
+                <description>
+                    <lang xml:lang="en">value/100</lang>
+                    <lang xml:lang="ru">значение/100</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="56" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Send the report not more often, than, channel 5</lang>
+                <lang xml:lang="ru">Отправлять отчет не чаще, чем, канал 5</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru">Устанавливает ограничение на отправку отчетов для канала 5. Например, установленное значение 1000, приведет к отправке не более одного отчета в секунду</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Off</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="0001" to="ffff">
+                <description>
+                    <lang xml:lang="en">ms</lang>
+                    <lang xml:lang="ru">миллисекунды</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    
+  </ZWaveDevice>
+
+

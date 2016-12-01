@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="5254"/>
+        <productType value="8201"/>
+    <productId value="8120"/>
+    <libType value="04"/>
+    <protoVersion value="02"/>
+    <protoSubVersion value="78"/>
+    <appVersion value="01"/>
+    <appSubVersion value="02"/>
+        <basicClass value="03"/>
+            <genericClass value="11"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+            <certId>15323</certId>
+            <certNumber>ZC08-13040019</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Z-Wave Dual Mode Insert Module (1 Gang)</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en"></lang>
+          </inclusionNote>
+            <productName>ZFM-X10EU</productName>
+            <brandName>Remotec</brandName>
+            <productLine>Z-Wave Home Automation</productLine>
+            <productCode>BW8120EU</productCode>
+            <productVersion>1.04</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020"/>
+        <commandClass id="0027"/>
+        <commandClass id="0026" version="2"/>
+        <commandClass id="0070"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0072"/>
+        <commandClass id="0086"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="10">
+            <description>
+                <lang xml:lang="en">these up to 10 devices turn on, when the buttons S1 or S2 are turned on.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="7f">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Activate/Deactivate All On/All
+Off (value is 255 not 127 - due to library regulations we had to inser 127)</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="5" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Switch returns to the last
+position saved before power
+failure</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="6" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Select switch type</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="8" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">switch contacts and Off is active after opening switch contacts</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="13" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Double click function disabled or enabled</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="17" type="constant" size="1" default="19">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Dimmer mode</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="25" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">select 2 or 3 wires system</lang>
+              </description>
+      
+          </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/75dae507c72199f25060052996459942cf8cda50.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

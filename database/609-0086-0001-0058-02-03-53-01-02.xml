@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0086"/>
+        <productType value="0001"/>
+    <productId value="0058"/>
+    <libType value="02"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="53"/>
+    <appVersion value="01"/>
+    <appSubVersion value="02"/>
+        <basicClass value="01"/>
+            <genericClass value="01"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Sichere Fernbedienung mit 4 Tasten</lang>
+            <lang xml:lang="en">Secure Key Chain Controller with 4 buttons</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Drücken der learn-Taste um die inklusion/exklusion zu starten</lang>
+            <lang xml:lang="en">Press the learn-button to start inclusion/excklusion-mode</lang>
+          </inclusionNote>
+            <productName>Key Chain Controller</productName>
+            <brandName>AEOTEC</brandName>
+                <productCode>AEO_KFOB</productCode>
+            <productVersion>1.2</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" inNIF="false"/>
+        <commandClass id="0059"/>
+        <commandClass id="005a"/>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0073"/>
+        <commandClass id="0080"/>
+        <commandClass id="0084" version="2"/>
+        <commandClass id="0085"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="002b" controlled="true"/>
+        <commandClass id="0026" controlled="true"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Lifeline</lang>
+                <lang xml:lang="en">Lifeline</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="250" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Aktiviert den selektiven Gruppenmodus</lang>
+                <lang xml:lang="en">Enable Selective Group Mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Aktiviert den selektiven Gruppenmodus oder den Szenenmodus wenn das Gerät im &quot;Use&quot;-Mode verwendet wird.</lang>
+                <lang xml:lang="en">Enable selective Group Mode or Scene Mode when the Key Fob is in Use mode.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Gruppenmodus</lang>
+                    <lang xml:lang="en">Groupmode</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Szenenmodus</lang>
+                    <lang xml:lang="en">Scenemode</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    
+  </ZWaveDevice>
+
+

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0123"/>
+        <productType value="0002"/>
+    <productId value="0000"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="53"/>
+    <appVersion value="01"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>Japan (922-926 MHz)</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">LED Dimming Unit with Z-Wave control</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Please push &quot;Inclusion/Exclusion Button&quot; of this equipment for a short time.</lang>
+          </inclusionNote>
+            <productName>Smart-CONNECT 灯具内蔵型調光制御ユニット</productName>
+            <brandName>Iwatsu</brandName>
+            <productLine>LED Dimmer</productLine>
+            <productCode>NE-1LCNT</productCode>
+            <productVersion>Ver. 1.00</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0026" version="2"/>
+        <commandClass id="0027"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+        <commandClass id="0073"/>
+        <commandClass id="0085"/>
+        <commandClass id="0086"/>
+        <commandClass id="0020"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="en">Multilevel switch report is sent if device is powered on.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="1" default="63">
+            <name>
+                <lang xml:lang="en">Illuminance</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The parameter defines the initial illuminance value when the device is powered on.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">The function is disabled.</lang>
+                  </description>
+              </value>
+            <value from="01" to="63">
+                <description>
+                    <lang xml:lang="en">Define the initial illuminance value.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="1" default="06">
+            <name>
+                <lang xml:lang="en">Dimming Duration</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The parameter defines the dimming duration in seconds.</lang>
+              </description>
+      
+                  <value from="00" to="7f" unit="sec">
+                <description>
+                    <lang xml:lang="en">Define the dimming duration.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">PWM Mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The parameter defines if the PWM is in normal or inverted mode.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Normal mode</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Inverted mode</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Tag ID</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The parameter defines the Tag ID.</lang>
+              </description>
+      
+                  <value from="00" to="63">
+                <description>
+                    <lang xml:lang="en">Define the Tag ID.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/0999af8544188cd6c4ef9caecbdab013e1671465.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

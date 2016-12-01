@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0060"/>
+        <productType value="0010"/>
+    <productId value="0001"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="2a"/>
+    <appVersion value="02"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="12"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+                    
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">unterputz Funkeinsatz, Gerät wird lokal mit Wandschalter bedient, schaltet assoziierte Geräte per Z-Wave</lang>
+            <lang xml:lang="en">in-wall remote module, transceiver to be switched with local wall switch, sends the correspond signal to the associated devices</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de">Drücken der Link Taste 3 mal schnell hintereinander</lang>
+            <lang xml:lang="en">pressing link button three times within 1.5 seconds</lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Auto-Inklusion oder Drücken der Link Taste 3 mal schnell hintereinander</lang>
+            <lang xml:lang="en">auto-inclusion or by pressing link button three times within 1.5 seconds</lang>
+          </inclusionNote>
+            <productName>In-wall remote module HAC01</productName>
+            <brandName>Everspring</brandName>
+                <productCode>EVR_HAC01</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020"/>
+        <commandClass id="0025" version="0"/>
+        <commandClass id="0086"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+        <commandClass id="0085"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="de">bei Schalterbetätigung (Statusänderung) sendet Basic Set Kommando an alle Geräte in Gruppe 1</lang>
+                <lang xml:lang="en">by switch input (changing status) sends Basic Set Command to the nodes in Grouping 1</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="1" default="63">
+            <name>
+                <lang xml:lang="de">Basic Set Level</lang>
+                <lang xml:lang="en">Basic Set Level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Aus</lang>
+                    <lang xml:lang="en">Off</lang>
+                  </description>
+              </value>
+            <value from="01" to="63">
+                <description>
+                    <lang xml:lang="de">An (Binary Switch Gerät)
+Dimmer Level (Multilevel Switch Gerät)</lang>
+                    <lang xml:lang="en">On (binary switch device);
+dim level (multilevel switch device)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Verzögerung</lang>
+                <lang xml:lang="en">Amount of delay</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Verzögerungszeit nach Schalteröffnen beim Senden des Basic Set Off Kommandos</lang>
+                <lang xml:lang="en">determine the delay time setting to send the Basic Set Off command when manual switch opens</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">schaltet sofort aus</lang>
+                    <lang xml:lang="en">immediately Off</lang>
+                  </description>
+              </value>
+            <value from="01" to="7f" unit="1s">
+                <description>
+                    <lang xml:lang="de">Verzögerung 1 - 127s zum Ausschalten</lang>
+                    <lang xml:lang="en">delay 1 ~ 127 second to Off</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    
+  </ZWaveDevice>
+
+

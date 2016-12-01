@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0109"/>
+        <productType value="2017"/>
+    <productId value="1719"/>
+    <libType value="03"/>
+    <protoVersion value="04"/>
+    <protoSubVersion value="05"/>
+    <appVersion value="0f"/>
+    <appSubVersion value="08"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Two Relay</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Press 3 times within 2 seconds or turn on the wall switch 3 times within 2 seconds (or press toggle switch 3 times) to be included. </lang>
+          </inclusionNote>
+            <productName>In-wall Two Relay</productName>
+            <brandName>Vision</brandName>
+            <productLine>Home Security</productLine>
+            <productCode>ZL7435EU-5</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0098"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0085" version="2" secure="true" nonSecure="false"/>
+        <commandClass id="0059" secure="true" nonSecure="false"/>
+        <commandClass id="0070" secure="true" nonSecure="false"/>
+        <commandClass id="005a" secure="true" nonSecure="false"/>
+        <commandClass id="007a" version="2" secure="true" nonSecure="false"/>
+        <commandClass id="0060" version="4" secure="true" nonSecure="false"/>
+        <commandClass id="008e" version="3" secure="true" nonSecure="false"/>
+        <commandClass id="0073" secure="true" nonSecure="false"/>
+        <commandClass id="0027" secure="true" nonSecure="false"/>
+        <commandClass id="0025" secure="true" nonSecure="false"/>
+        <commandClass id="0020"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Group 2 is the report node when ZL7435-5 triggered. After setting, all the switches’     
+report will be sent to specific node.
+</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="en">Group 1 is the report node when ZL7435-5 resets.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Button Mode Switching</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The parameter defines which button mode is activated.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Switch</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Toggle</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    <endpoints>
+           <endpoint number="2">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="005e"/>
+            <commandClass id="0059"/>
+            <commandClass id="0085"/>
+            <commandClass id="0025"/>
+          </endpoint>
+           <endpoint number="1">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="005e"/>
+            <commandClass id="0059"/>
+            <commandClass id="0085"/>
+            <commandClass id="0025"/>
+          </endpoint>
+      </endpoints>
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/17c6bee97924bf421047132089d5ad3637534604.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

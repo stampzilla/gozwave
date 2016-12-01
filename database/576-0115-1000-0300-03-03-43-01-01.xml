@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0115"/>
+        <productType value="1000"/>
+    <productId value="0300"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="43"/>
+    <appVersion value="01"/>
+    <appSubVersion value="01"/>
+        <basicClass value="04"/>
+            <genericClass value="12"/>
+            <specificClass value="02"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+                    
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Sleek Remote Control</lang>
+            <lang xml:lang="ru">Пульт управления с 11 группами кнопок</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en">Include button triple press</lang>
+            <lang xml:lang="ru">Тройное нажатие кнопки Include</lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Include button triple press</lang>
+            <lang xml:lang="ru">Тройное нажатие кнопки Include</lang>
+          </inclusionNote>
+            <productName>RCD</productName>
+            <brandName>Z-Wave.Me</brandName>
+                    <productVersion>1.1</productVersion>
+            <batteryType>AAA</batteryType>
+            <batteryCount>4</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+        <commandClass id="0075"/>
+        <commandClass id="0080"/>
+        <commandClass id="0084" version="2"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0086"/>
+        <commandClass id="008e" version="2"/>
+        <commandClass id="0060" version="3" controlled="true"/>
+        <commandClass id="0020" controlled="true"/>
+        <commandClass id="0026" controlled="true"/>
+        <commandClass id="0027" controlled="true"/>
+        <commandClass id="002b" controlled="true"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Lifeline. Send to controller battery level and WakeUp Notification</lang>
+                <lang xml:lang="ru">Lifeline. Отправлять контроллеру уровень заряда батареи и оповещение о пробуждении </lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="en">The buttons of group №1</lang>
+                <lang xml:lang="ru">Кнопки группы №1</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="5">
+            <description>
+                <lang xml:lang="en">The buttons of group №2</lang>
+                <lang xml:lang="ru">Кнопки группы №2</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="4" maxNodes="5">
+            <description>
+                <lang xml:lang="en">The buttons of group №3</lang>
+                <lang xml:lang="ru">Кнопки группы №3</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="5" maxNodes="5">
+            <description>
+                <lang xml:lang="en">The buttons of group №4</lang>
+                <lang xml:lang="ru">Кнопки группы №4</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="6" maxNodes="5">
+            <description>
+                <lang xml:lang="en">The buttons of group №5</lang>
+                <lang xml:lang="ru">Кнопки группы №5</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="7" maxNodes="5">
+            <description>
+                <lang xml:lang="en">The buttons of group №6</lang>
+                <lang xml:lang="ru">Кнопки группы №6</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="8" maxNodes="5">
+            <description>
+                <lang xml:lang="en">The buttons of group №7</lang>
+                <lang xml:lang="ru">Кнопки группы №7</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="9" maxNodes="5">
+            <description>
+                <lang xml:lang="en">The buttons of scene №1</lang>
+                <lang xml:lang="ru">Кнопки сцена №1</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="10" maxNodes="5">
+            <description>
+                <lang xml:lang="en">The buttons of scene №2</lang>
+                <lang xml:lang="ru">Кнопки сцена №2</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="11" maxNodes="5">
+            <description>
+                <lang xml:lang="en">The buttons of scene №3</lang>
+                <lang xml:lang="ru">Кнопки сцена №3</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="12" maxNodes="5">
+            <description>
+                <lang xml:lang="en">The buttons of All On/Off</lang>
+                <lang xml:lang="ru">Кнопки Включить/Выключить Всё</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="10" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Kommando an Steuergruppe №1 (association group 2)</lang>
+                <lang xml:lang="en">Command to Control Group №1 (association group 2)</lang>
+                <lang xml:lang="fr">Action pour groupe №1 (association group 2)</lang>
+                <lang xml:lang="ru">Действия для группы кнопок №1 (группа ассоциаций 2)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Dieser Parameter definiert das Schaltkommando, das an Geräte in Steuergruppe №1 gesendet wird (association group 2)</lang>
+                <lang xml:lang="en">This parameter defines the command to be sent to devices of control group №1 when the related button is pressed (association group 2)</lang>
+                <lang xml:lang="fr">Ce paramètre défini le commando manoeuvre, lequel est envoyé aux appareils de goupe №1 (association group 2)</lang>
+                <lang xml:lang="ru">Параметр определяет какие команды будут отправляться при нажатии на кнопки группы №1 (группа ассоциаций 2)</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="fr">désactivé</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; und &#039;SwitchMultilevel&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off and Dim (send Basic Set and Switch Multilevel)</lang>
+                    <lang xml:lang="fr">Commandos manoeuvres Marche et Arret (par commando Basic Set et Multilevel)</lang>
+                    <lang xml:lang="ru">Включать/Выключать и Диммировать (отправлять Basic Set и Switch Multilevel)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off only (send Basic Set)</lang>
+                    <lang xml:lang="fr">Commandos manoeuvres Marche et Arret (par commando Basic Set)</lang>
+                    <lang xml:lang="ru">Включать/Выключать (отправлять Basic Set)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">&#039;Switch All&quot; Kommando</lang>
+                    <lang xml:lang="en">Switch All</lang>
+                    <lang xml:lang="fr">accoupler tous</lang>
+                    <lang xml:lang="ru">Включать всё/Выключать всё</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Szenenaktivierung</lang>
+                    <lang xml:lang="en">Send Scenes</lang>
+                    <lang xml:lang="fr">activation de la scène</lang>
+                    <lang xml:lang="ru">Отправлять Сцены</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de">Vorkonfigurierte Szenen werden gesendet.</lang>
+                    <lang xml:lang="en">Send Preconfigured Scenes</lang>
+                    <lang xml:lang="fr">Envoi de scènes préconfigurées </lang>
+                    <lang xml:lang="ru">Отправлять преднастроенные Сцены</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Kommando an Steuergruppe №2 (association group 3)</lang>
+                <lang xml:lang="en">Command to Control Group №2 (association group 3)</lang>
+                <lang xml:lang="fr">Action pour groupe №2 (association group 3)</lang>
+                <lang xml:lang="ru">Действия для группы кнопок №2 (группа ассоциаций 3)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Dieser Parameter definiert das Schaltkommando, das an Geräte in Steuergruppe №2 gesendet wird (association group 3)</lang>
+                <lang xml:lang="en">This parameter defines the command to be sent to devices of control group №2 when the related button is pressed (association group 3)</lang>
+                <lang xml:lang="fr">Ce paramètre défini le commando manoeuvre, lequel est envoyé aux appareils de goupe №2 (association group 3)</lang>
+                <lang xml:lang="ru">Параметр определяет какие команды будут отправляться при нажатии на кнопки группы №2 (группа ассоциаций 3)</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="fr">désactivé</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; und &#039;SwitchMultilevel&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off and Dim (send Basic Set and Switch Multilevel)</lang>
+                    <lang xml:lang="fr">Commandos manoeuvres Marche et Arret (par commando Basic Set et Multilevel)</lang>
+                    <lang xml:lang="ru">Включать/Выключать и Диммировать (отправлять Basic Set и Switch Multilevel)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off only (send Basic Set)</lang>
+                    <lang xml:lang="fr">Commandos manoeuvres Marche et Arret (par commando Basic Set)</lang>
+                    <lang xml:lang="ru">Включать/Выключать (отправлять Basic Set)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">&#039;Switch All&quot; Kommando</lang>
+                    <lang xml:lang="en">Switch All</lang>
+                    <lang xml:lang="fr">accoupler tous</lang>
+                    <lang xml:lang="ru">Включать всё/Выключать всё</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Szenenaktivierung</lang>
+                    <lang xml:lang="en">Send Scenes</lang>
+                    <lang xml:lang="fr">activation de la scène</lang>
+                    <lang xml:lang="ru">Отправлять Сцены</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de">Vorkonfigurierte Szenen werden gesendet.</lang>
+                    <lang xml:lang="en">Send Preconfigured Scenes</lang>
+                    <lang xml:lang="fr">Envoi de scènes préconfigurées </lang>
+                    <lang xml:lang="ru">Отправлять преднастроенные Сцены</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Kommando an Steuergruppe №3 (association group 4)</lang>
+                <lang xml:lang="en">Command to Control Group №3 (association group 4)</lang>
+                <lang xml:lang="fr">Action pour groupe №3 (association group 4)</lang>
+                <lang xml:lang="ru">Действия для группы кнопок №3 (группа ассоциаций 4)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Dieser Parameter definiert das Schaltkommando, das an Geräte in Steuergruppe №3 gesendet wird (association group 4)</lang>
+                <lang xml:lang="en">This parameter defines the command to be sent to devices of control group №3 when the related button is pressed (association group 4)</lang>
+                <lang xml:lang="fr">Ce paramètre défini le commando manoeuvre, lequel est envoyé aux appareils de goupe №3 (association group 4)</lang>
+                <lang xml:lang="ru">Параметр определяет какие команды будут отправляться при нажатии на кнопки группы №3 (группа ассоциаций 4)</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="fr">désactivé</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; und &#039;SwitchMultilevel&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off and Dim (send Basic Set and Switch Multilevel)</lang>
+                    <lang xml:lang="fr">Commandos manoeuvres Marche et Arret (par commando Basic Set et Multilevel)</lang>
+                    <lang xml:lang="ru">Включать/Выключать и Диммировать (отправлять Basic Set и Switch Multilevel)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off only (send Basic Set)</lang>
+                    <lang xml:lang="fr">Commandos manoeuvres Marche et Arret (par commando Basic Set)</lang>
+                    <lang xml:lang="ru">Включать/Выключать (отправлять Basic Set)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">&#039;Switch All&quot; Kommando</lang>
+                    <lang xml:lang="en">Switch All</lang>
+                    <lang xml:lang="fr">accoupler tous</lang>
+                    <lang xml:lang="ru">Включать всё/Выключать всё</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Szenenaktivierung</lang>
+                    <lang xml:lang="en">Send Scenes</lang>
+                    <lang xml:lang="fr">activation de la scène</lang>
+                    <lang xml:lang="ru">Отправлять Сцены</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de">Vorkonfigurierte Szenen werden gesendet.</lang>
+                    <lang xml:lang="en">Send Preconfigured Scenes</lang>
+                    <lang xml:lang="fr">Envoi de scènes préconfigurées </lang>
+                    <lang xml:lang="ru">Отправлять преднастроенные Сцены</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Kommando an Steuergruppe №4 (association group 5)</lang>
+                <lang xml:lang="en">Command to Control Group №4 (association group 5)</lang>
+                <lang xml:lang="fr">Action pour groupe №4 (association group 5)</lang>
+                <lang xml:lang="ru">Действия для группы кнопок №4 (группа ассоциаций 5)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Dieser Parameter definiert das Schaltkommando, das an Geräte in Steuergruppe №4 gesendet wird (association group 5)</lang>
+                <lang xml:lang="en">This parameter defines the command to be sent to devices of control group №4 when the related button is pressed (association group 5)</lang>
+                <lang xml:lang="fr">Ce paramètre défini le commando manoeuvre, lequel est envoyé aux appareils de goupe №4 (association group 5)</lang>
+                <lang xml:lang="ru">Параметр определяет какие команды будут отправляться при нажатии на кнопки группы №4 (группа ассоциаций 5)</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="fr">désactivé</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; und &#039;SwitchMultilevel&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off and Dim (send Basic Set and Switch Multilevel)</lang>
+                    <lang xml:lang="fr">Commandos manoeuvres Marche et Arret (par commando Basic Set et Multilevel)</lang>
+                    <lang xml:lang="ru">Включать/Выключать и Диммировать (отправлять Basic Set и Switch Multilevel)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off only (send Basic Set)</lang>
+                    <lang xml:lang="fr">Commandos manoeuvres Marche et Arret (par commando Basic Set)</lang>
+                    <lang xml:lang="ru">Включать/Выключать (отправлять Basic Set)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">&#039;Switch All&quot; Kommando</lang>
+                    <lang xml:lang="en">Switch All</lang>
+                    <lang xml:lang="fr">accoupler tous</lang>
+                    <lang xml:lang="ru">Включать всё/Выключать всё</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Szenenaktivierung</lang>
+                    <lang xml:lang="en">Send Scenes</lang>
+                    <lang xml:lang="fr">activation de la scène</lang>
+                    <lang xml:lang="ru">Отправлять Сцены</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de">Vorkonfigurierte Szenen werden gesendet.</lang>
+                    <lang xml:lang="en">Send Preconfigured Scenes</lang>
+                    <lang xml:lang="fr">Envoi de scènes préconfigurées </lang>
+                    <lang xml:lang="ru">Отправлять преднастроенные Сцены</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="14" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Kommando an Steuergruppe №5 (association group 6)</lang>
+                <lang xml:lang="en">Command to Control Group №5 (association group 6)</lang>
+                <lang xml:lang="fr">Action pour groupe №5 (association group 6)</lang>
+                <lang xml:lang="ru">Действия для группы кнопок №5 (группа ассоциаций 6)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Dieser Parameter definiert das Schaltkommando, das an Geräte in Steuergruppe №5 gesendet wird (association group 6)</lang>
+                <lang xml:lang="en">This parameter defines the command to be sent to devices of control group №5 when the related button is pressed (association group 6)</lang>
+                <lang xml:lang="fr">Ce paramètre défini le commando manoeuvre, lequel est envoyé aux appareils de goupe №5 (association group 6)</lang>
+                <lang xml:lang="ru">Параметр определяет какие команды будут отправляться при нажатии на кнопки группы №5 (группа ассоциаций 6)</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="fr">désactivé</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; und &#039;SwitchMultilevel&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off and Dim (send Basic Set and Switch Multilevel)</lang>
+                    <lang xml:lang="fr">Commandos manoeuvres Marche et Arret (par commando Basic Set et Multilevel)</lang>
+                    <lang xml:lang="ru">Включать/Выключать и Диммировать (отправлять Basic Set и Switch Multilevel)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off only (send Basic Set)</lang>
+                    <lang xml:lang="fr">Commandos manoeuvres Marche et Arret (par commando Basic Set)</lang>
+                    <lang xml:lang="ru">Включать/Выключать (отправлять Basic Set)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">&#039;Switch All&quot; Kommando</lang>
+                    <lang xml:lang="en">Switch All</lang>
+                    <lang xml:lang="fr">accoupler tous</lang>
+                    <lang xml:lang="ru">Включать всё/Выключать всё</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Szenenaktivierung</lang>
+                    <lang xml:lang="en">Send Scenes</lang>
+                    <lang xml:lang="fr">activation de la scène</lang>
+                    <lang xml:lang="ru">Отправлять Сцены</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de">Vorkonfigurierte Szenen werden gesendet.</lang>
+                    <lang xml:lang="en">Send Preconfigured Scenes</lang>
+                    <lang xml:lang="fr">Envoi de scènes préconfigurées </lang>
+                    <lang xml:lang="ru">Отправлять преднастроенные Сцены</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="15" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Kommando an Steuergruppe №6 (association group 7)</lang>
+                <lang xml:lang="en">Command to Control Group №6 (association group 7)</lang>
+                <lang xml:lang="fr">Action pour groupe №6 (association group 7)</lang>
+                <lang xml:lang="ru">Действия для группы кнопок №6 (группа ассоциаций 7)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Dieser Parameter definiert das Schaltkommando, das an Geräte in Steuergruppe №6 gesendet wird (association group 7)</lang>
+                <lang xml:lang="en">This parameter defines the command to be sent to devices of control group №6 when the related button is pressed (association group 7)</lang>
+                <lang xml:lang="fr">Ce paramètre défini le commando manoeuvre, lequel est envoyé aux appareils de goupe №6 (association group 7)</lang>
+                <lang xml:lang="ru">Параметр определяет какие команды будут отправляться при нажатии на кнопки группы №6 (группа ассоциаций 7)</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="fr">désactivé</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; und &#039;SwitchMultilevel&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off and Dim (send Basic Set and Switch Multilevel)</lang>
+                    <lang xml:lang="fr">Commandos manoeuvres Marche et Arret (par commando Basic Set et Multilevel)</lang>
+                    <lang xml:lang="ru">Включать/Выключать и Диммировать (отправлять Basic Set и Switch Multilevel)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off only (send Basic Set)</lang>
+                    <lang xml:lang="fr">Commandos manoeuvres Marche et Arret (par commando Basic Set)</lang>
+                    <lang xml:lang="ru">Включать/Выключать (отправлять Basic Set)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">&#039;Switch All&quot; Kommando</lang>
+                    <lang xml:lang="en">Switch All</lang>
+                    <lang xml:lang="fr">accoupler tous</lang>
+                    <lang xml:lang="ru">Включать всё/Выключать всё</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Szenenaktivierung</lang>
+                    <lang xml:lang="en">Send Scenes</lang>
+                    <lang xml:lang="fr">activation de la scène</lang>
+                    <lang xml:lang="ru">Отправлять Сцены</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de">Vorkonfigurierte Szenen werden gesendet.</lang>
+                    <lang xml:lang="en">Send Preconfigured Scenes</lang>
+                    <lang xml:lang="fr">Envoi de scènes préconfigurées </lang>
+                    <lang xml:lang="ru">Отправлять преднастроенные Сцены</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="16" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Kommando an Steuergruppe №7 (association group 8)</lang>
+                <lang xml:lang="en">Command to Control Group №7 (association group 8)</lang>
+                <lang xml:lang="fr">Action pour groupe №7 (association group 8)</lang>
+                <lang xml:lang="ru">Действия для группы кнопок №7 (группа ассоциаций 8)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Dieser Parameter definiert das Schaltkommando, das an Geräte in Steuergruppe №7 gesendet wird (association group 8)</lang>
+                <lang xml:lang="en">This parameter defines the command to be sent to devices of control group №7 when the related button is pressed (association group 8)</lang>
+                <lang xml:lang="fr">Ce paramètre défini le commando manoeuvre, lequel est envoyé aux appareils de goupe №7 (association group 8)</lang>
+                <lang xml:lang="ru">Параметр определяет какие команды будут отправляться при нажатии на кнопки группы №7 (группа ассоциаций 8)</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="fr">désactivé</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; und &#039;SwitchMultilevel&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off and Dim (send Basic Set and Switch Multilevel)</lang>
+                    <lang xml:lang="fr">Commandos manoeuvres Marche et Arret (par commando Basic Set et Multilevel)</lang>
+                    <lang xml:lang="ru">Включать/Выключать и Диммировать (отправлять Basic Set и Switch Multilevel)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off only (send Basic Set)</lang>
+                    <lang xml:lang="fr">Commandos manoeuvres Marche et Arret (par commando Basic Set)</lang>
+                    <lang xml:lang="ru">Включать/Выключать (отправлять Basic Set)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">&#039;Switch All&quot; Kommando</lang>
+                    <lang xml:lang="en">Switch All</lang>
+                    <lang xml:lang="fr">accoupler tous</lang>
+                    <lang xml:lang="ru">Включать всё/Выключать всё</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Szenenaktivierung</lang>
+                    <lang xml:lang="en">Send Scenes</lang>
+                    <lang xml:lang="fr">activation de la scène</lang>
+                    <lang xml:lang="ru">Отправлять Сцены</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de">Vorkonfigurierte Szenen werden gesendet.</lang>
+                    <lang xml:lang="en">Send Preconfigured Scenes</lang>
+                    <lang xml:lang="fr">Envoi de scènes préconfigurées </lang>
+                    <lang xml:lang="ru">Отправлять преднастроенные Сцены</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="17" type="rangemapped" size="1" default="04">
+            <name>
+                <lang xml:lang="de">Command to Control Scene №1 (association group 9)</lang>
+                <lang xml:lang="en">Command to Control Scene №1 (association group 9)</lang>
+                <lang xml:lang="fr">Action pour scene №1 (association group 9)</lang>
+                <lang xml:lang="ru">Действия для кнопок сцены №1 (группа ассоциаций 9)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Dieser Parameter definiert das Schaltkommando, das an Geräte in Scene Group №1 gesendet wird (association group 9)</lang>
+                <lang xml:lang="en">This parameter defines the command to be sent to devices of control scene group №1 when the related button is pressed (association group 9)</lang>
+                <lang xml:lang="fr">Ce paramètre défini le commando manoeuvre, lequel est envoyé aux appareils de goupe scene №1 (association group 9)</lang>
+                <lang xml:lang="ru">Параметр определяет какие команды будут отправляться при нажатии на кнопки сцены №1 (группа ассоциаций 9)</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="fr">désactivé</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; und &#039;SwitchMultilevel&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off and Dim (send Basic Set and Switch Multilevel)</lang>
+                    <lang xml:lang="fr">Commandos manoeuvres Marche et Arret (par commando Basic Set et Multilevel)</lang>
+                    <lang xml:lang="ru">Включать/Выключать и Диммировать (отправлять Basic Set и Switch Multilevel)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off only (send Basic Set)</lang>
+                    <lang xml:lang="fr">Commandos manoeuvres Marche et Arret (par commando Basic Set)</lang>
+                    <lang xml:lang="ru">Включать/Выключать (отправлять Basic Set)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">&#039;Switch All&quot; Kommando</lang>
+                    <lang xml:lang="en">Switch All</lang>
+                    <lang xml:lang="fr">accoupler tous</lang>
+                    <lang xml:lang="ru">Включать всё/Выключать всё</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Szenenaktivierung</lang>
+                    <lang xml:lang="en">Send Scenes</lang>
+                    <lang xml:lang="fr">activation de la scène</lang>
+                    <lang xml:lang="ru">Отправлять Сцены</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de">Vorkonfigurierte Szenen werden gesendet.</lang>
+                    <lang xml:lang="en">Send Preconfigured Scenes</lang>
+                    <lang xml:lang="fr">Envoi de scènes préconfigurées </lang>
+                    <lang xml:lang="ru">Отправлять преднастроенные Сцены</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="18" type="rangemapped" size="1" default="04">
+            <name>
+                <lang xml:lang="de">Command to Control Scene №2 (association group 10)</lang>
+                <lang xml:lang="en">Command to Control Scene №2 (association group 10)</lang>
+                <lang xml:lang="fr">Action pour scene №2 (association group 10)</lang>
+                <lang xml:lang="ru">Действия для кнопок сцены №2 (группа ассоциаций 10)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Dieser Parameter definiert das Schaltkommando, das an Geräte in Scene Group №2 gesendet wird (association group 10)</lang>
+                <lang xml:lang="en">This parameter defines the command to be sent to devices of control scene group №2 when the related button is pressed (association group 10)</lang>
+                <lang xml:lang="fr">Ce paramètre défini le commando manoeuvre, lequel est envoyé aux appareils de goupe scene №2 (association group 10)</lang>
+                <lang xml:lang="ru">Параметр определяет какие команды будут отправляться при нажатии на кнопки сцены №2 (группа ассоциаций 10)</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="fr">désactivé</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; und &#039;SwitchMultilevel&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off and Dim (send Basic Set and Switch Multilevel)</lang>
+                    <lang xml:lang="fr">Commandos manoeuvres Marche et Arret (par commando Basic Set et Multilevel)</lang>
+                    <lang xml:lang="ru">Включать/Выключать и Диммировать (отправлять Basic Set и Switch Multilevel)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off only (send Basic Set)</lang>
+                    <lang xml:lang="fr">Commandos manoeuvres Marche et Arret (par commando Basic Set)</lang>
+                    <lang xml:lang="ru">Включать/Выключать (отправлять Basic Set)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">&#039;Switch All&quot; Kommando</lang>
+                    <lang xml:lang="en">Switch All</lang>
+                    <lang xml:lang="fr">accoupler tous</lang>
+                    <lang xml:lang="ru">Включать всё/Выключать всё</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Szenenaktivierung</lang>
+                    <lang xml:lang="en">Send Scenes</lang>
+                    <lang xml:lang="fr">activation de la scène</lang>
+                    <lang xml:lang="ru">Отправлять Сцены</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de">Vorkonfigurierte Szenen werden gesendet.</lang>
+                    <lang xml:lang="en">Send Preconfigured Scenes</lang>
+                    <lang xml:lang="fr">Envoi de scènes préconfigurées </lang>
+                    <lang xml:lang="ru">Отправлять преднастроенные Сцены</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="19" type="rangemapped" size="1" default="04">
+            <name>
+                <lang xml:lang="de">Command to Control Scene №3 (association group 11)</lang>
+                <lang xml:lang="en">Command to Control Scene №3 (association group 11)</lang>
+                <lang xml:lang="fr">Action pour scene №3 (association group 11)</lang>
+                <lang xml:lang="ru">Действия для кнопок сцены №3 (группа ассоциаций 11)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Dieser Parameter definiert das Schaltkommando, das an Geräte in Scene Group №3 gesendet wird (association group 11)</lang>
+                <lang xml:lang="en">This parameter defines the command to be sent to devices of control scene group №3 when the related button is pressed (association group 11)</lang>
+                <lang xml:lang="fr">Ce paramètre défini le commando manoeuvre, lequel est envoyé aux appareils de goupe scene №3 (association group 11)</lang>
+                <lang xml:lang="ru">Параметр определяет какие команды будут отправляться при нажатии на кнопки сцены №3 (группа ассоциаций 11)</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="fr">désactivé</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; und &#039;SwitchMultilevel&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off and Dim (send Basic Set and Switch Multilevel)</lang>
+                    <lang xml:lang="fr">Commandos manoeuvres Marche et Arret (par commando Basic Set et Multilevel)</lang>
+                    <lang xml:lang="ru">Включать/Выключать и Диммировать (отправлять Basic Set и Switch Multilevel)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off only (send Basic Set)</lang>
+                    <lang xml:lang="fr">Commandos manoeuvres Marche et Arret (par commando Basic Set)</lang>
+                    <lang xml:lang="ru">Включать/Выключать (отправлять Basic Set)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">&#039;Switch All&quot; Kommando</lang>
+                    <lang xml:lang="en">Switch All</lang>
+                    <lang xml:lang="fr">accoupler tous</lang>
+                    <lang xml:lang="ru">Включать всё/Выключать всё</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Szenenaktivierung</lang>
+                    <lang xml:lang="en">Send Scenes</lang>
+                    <lang xml:lang="fr">activation de la scène</lang>
+                    <lang xml:lang="ru">Отправлять Сцены</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de">Vorkonfigurierte Szenen werden gesendet.</lang>
+                    <lang xml:lang="en">Send Preconfigured Scenes</lang>
+                    <lang xml:lang="fr">Envoi de scènes préconfigurées </lang>
+                    <lang xml:lang="ru">Отправлять преднастроенные Сцены</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="20" type="rangemapped" size="1" default="03">
+            <name>
+                <lang xml:lang="de">Command to Control group All On/Off (association group 12)</lang>
+                <lang xml:lang="en">Command to Control group All On/Off (association group 12)</lang>
+                <lang xml:lang="fr">Command to Control group All On/Off  (association group 12)</lang>
+                <lang xml:lang="ru">Действия для кнопок Включить/Выключить Всё (группа ассоциаций 12)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">This parameter defines the command to be sent to devices of control group All On/Off when the related button is pressed (association group 12)</lang>
+                <lang xml:lang="en">This parameter defines the command to be sent to devices of control group All On/Off when the related button is pressed (association group 12)</lang>
+                <lang xml:lang="fr">This parameter defines the command to be sent to devices of control group All On/Off when the related button is pressed (association group 12)</lang>
+                <lang xml:lang="ru">Параметр определяет какие команды будут отправляться при нажатии на кнопки Включить/Выключить Всё (группа ассоциаций 12)</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="fr">désactivé</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; und &#039;SwitchMultilevel&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off and Dim (send Basic Set and Switch Multilevel)</lang>
+                    <lang xml:lang="fr">Commandos manoeuvres Marche et Arret (par commando Basic Set et Multilevel)</lang>
+                    <lang xml:lang="ru">Включать/Выключать и Диммировать (отправлять Basic Set и Switch Multilevel)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off only (send Basic Set)</lang>
+                    <lang xml:lang="fr">Commandos manoeuvres Marche et Arret (par commando Basic Set)</lang>
+                    <lang xml:lang="ru">Включать/Выключать (отправлять Basic Set)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">&#039;Switch All&quot; Kommando</lang>
+                    <lang xml:lang="en">Switch All</lang>
+                    <lang xml:lang="fr">accoupler tous</lang>
+                    <lang xml:lang="ru">Включать всё/Выключать всё</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Szenenaktivierung</lang>
+                    <lang xml:lang="en">Send Scenes</lang>
+                    <lang xml:lang="fr">activation de la scène</lang>
+                    <lang xml:lang="ru">Отправлять Сцены</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de">Vorkonfigurierte Szenen werden gesendet.</lang>
+                    <lang xml:lang="en">Send Preconfigured Scenes</lang>
+                    <lang xml:lang="fr">Envoi de scènes préconfigurées </lang>
+                    <lang xml:lang="ru">Отправлять преднастроенные Сцены</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="21" type="rangemapped" size="1" default="ff">
+            <name>
+                <lang xml:lang="de">Sende die folgenden &#039;Switch All&#039; Kommandos</lang>
+                <lang xml:lang="en">Send the following Switch All commands</lang>
+                <lang xml:lang="fr">envoie les commandos &quot;Switch All&quot; suivants</lang>
+                <lang xml:lang="ru">Отправлять следующие команды включить/выключит всё</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="fr"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Nur alle Ausschalten</lang>
+                    <lang xml:lang="en">Switch off only</lang>
+                    <lang xml:lang="fr">éteindre tous seulement</lang>
+                    <lang xml:lang="ru">Только выключить всё</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Nur alle Einschalten</lang>
+                    <lang xml:lang="en">Switch on only</lang>
+                    <lang xml:lang="fr">activer tous seulement</lang>
+                    <lang xml:lang="ru">Только включить всё</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="de">Alle Einschalten und Ausschalten</lang>
+                    <lang xml:lang="en">Switch all on and off</lang>
+                    <lang xml:lang="fr">activer et éteindre tous</lang>
+                    <lang xml:lang="ru">Включить и выключить всё</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/61da7688e54a1e63d71a50a279812d15ce12d8c0.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

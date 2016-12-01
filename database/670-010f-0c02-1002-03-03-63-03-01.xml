@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="010f"/>
+        <productType value="0c02"/>
+    <productId value="1002"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="63"/>
+    <appVersion value="03"/>
+    <appSubVersion value="01"/>
+        <basicClass value="04"/>
+                <optional value="true"/>
+    <listening value="false"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Rauchwarnmelder</lang>
+            <lang xml:lang="en">Smoke Sensor</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de">Dreifaches drücken des B-Knopfes</lang>
+            <lang xml:lang="en">Triple click B-button.</lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Einmaliges drücken des B-Knopfes</lang>
+            <lang xml:lang="en">Press the B-button once.</lang>
+          </inclusionNote>
+            <productName>FGSS-002</productName>
+            <brandName>Fibaro</brandName>
+            <productLine>Fibaro</productLine>
+                <productVersion>3.1</productVersion>
+            <batteryType>CR123A</batteryType>
+            <batteryCount>1</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" controlled="true" inNIF="false"/>
+        <commandClass id="0022"/>
+        <commandClass id="0031" version="8"/>
+        <commandClass id="0056"/>
+        <commandClass id="0059"/>
+        <commandClass id="005a"/>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0070"/>
+        <commandClass id="0071" version="5"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0073"/>
+        <commandClass id="007a" version="3"/>
+        <commandClass id="0080"/>
+        <commandClass id="0084" version="2"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="008e" version="2"/>
+        <commandClass id="009c"/>
+        <commandClass id="008b" controlled="true"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="de">Gruppe 1</lang>
+                <lang xml:lang="en">Group 1</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Gruppe 2</lang>
+                <lang xml:lang="en">Group 2</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Gruppe 3</lang>
+                <lang xml:lang="en">Group 3</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="4" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Gruppe 4</lang>
+                <lang xml:lang="en">Group 4</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="5" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Gruppe 5</lang>
+                <lang xml:lang="en">Group 5</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="rangemapped" size="1" default="02">
+            <name>
+                <lang xml:lang="de">Sensorempfindlichkeit</lang>
+                <lang xml:lang="en">Sensor sensitivity</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Bestimmt die Empfindlichkeit des Sensor in 3 Stufen.</lang>
+                <lang xml:lang="en">Defines the sensitivity of the smoke sensor in 3 levels.</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Hoch</lang>
+                    <lang xml:lang="en">High</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Mittel</lang>
+                    <lang xml:lang="en">Medium</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Niedrig</lang>
+                    <lang xml:lang="en">Low</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Z-Wave benachrichtungen</lang>
+                <lang xml:lang="en">Z-Wave Notification status</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Bestimmt den Benachrichtigungstyp des Gerätes.</lang>
+                <lang xml:lang="en">Defines the notification type of the device.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Alle Benachrichtung deaktivert</lang>
+                    <lang xml:lang="en">All notifications disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Gehäuse geöffnet - aktiviert</lang>
+                    <lang xml:lang="en">enclosure opening - enabled</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Temperaturgrenzwert erreicht - aktiviert</lang>
+                    <lang xml:lang="en">exceeding temperature threshold - enabled</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Benachrichtigungsart des visuellen Indikators</lang>
+                <lang xml:lang="en">Visual indicator notification status</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Bestimmt den Benachrichtigungstyp des visuellen Indikators.</lang>
+                <lang xml:lang="en">Defines the notification type of the visual indicator.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Alle Benachrichtigungen deaktiviert</lang>
+                    <lang xml:lang="en">All notifications disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Gehäuse geöffnet - aktiviert</lang>
+                    <lang xml:lang="en">enclosure opening - enabled</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Temperaturgrenzwert erreicht - aktiviert</lang>
+                    <lang xml:lang="en">exceeding temperature threshold - enabled</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Mangel bei Z-Wave Reichweite - aktiviert</lang>
+                    <lang xml:lang="en">lack of Z-Wave range indication</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Akustische Benachrichtung</lang>
+                <lang xml:lang="en">Sound notification</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Bestimmt den Benachrichtigungstyp des akustischen Indikators.</lang>
+                <lang xml:lang="en">Defines the notification type of the sound indicator.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Alle Benachrichtungen deaktiviert</lang>
+                    <lang xml:lang="en">All notifications disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Gehäuse geöffnet - aktiviert</lang>
+                    <lang xml:lang="en">enclosure opening - enabled</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Temperaturgrenzwert erreicht - aktiviert</lang>
+                    <lang xml:lang="en">exceeding temperature threshold - enabled</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Mangel bei Z-Wave Reichweite - aktiviert</lang>
+                    <lang xml:lang="en">lack of Z-Wave range - enabled</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Konfiguration der Alarmpackete in der BASIC - Kommandoklasse</lang>
+                <lang xml:lang="en">Configuration of control frames in BASIC command class</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Bestimmmt welcher Frame an die 2te Assoziationsgruppe gesendet wird.</lang>
+                <lang xml:lang="en">Defines which frame will be sent in the 2-nd Association Group.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">BASIC ON &amp; BASIC OFF - aktiviert</lang>
+                    <lang xml:lang="en">BASIC ON &amp; BASIC OFF - enabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">BASIC ON - aktiviert</lang>
+                    <lang xml:lang="en">BASIC ON - enabled</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">BASIC OFF - aktiviert</lang>
+                    <lang xml:lang="en">BASIC OFF - enabled</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="range" size="2" default="00ff">
+            <name>
+                <lang xml:lang="de">BASIC ON - Wert</lang>
+                <lang xml:lang="en">BASIC ON frame value</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Dieser Wert wird gesendet im Falle eines Rauchalarms bzw. Feueralarms.</lang>
+                <lang xml:lang="en">This frame is sent in case of smoke presence and FIRE ALARM.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="de">schaltet das gerät ab</lang>
+                    <lang xml:lang="en">turn off the device</lang>
+                  </description>
+              </value>
+            <value from="0001" to="0063">
+                <description>
+                    <lang xml:lang="de">setzt das gerät auf 1-99%</lang>
+                    <lang xml:lang="en">set the device to 1 - 99%</lang>
+                  </description>
+              </value>
+            <value from="00ff" to="00ff">
+                <description>
+                    <lang xml:lang="de">setzt den letzten status</lang>
+                    <lang xml:lang="en">set the last status</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">BASIC OFF - Wert</lang>
+                <lang xml:lang="en">BASIC OFF frame value</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Dieser Wert wird gesendet im Falle eines Alarmabbruchs.</lang>
+                <lang xml:lang="en">This frame is sent in case of Alarm cancelation.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="de">schaltet das gerät ab</lang>
+                    <lang xml:lang="en">turn the device off</lang>
+                  </description>
+              </value>
+            <value from="0001" to="0063">
+                <description>
+                    <lang xml:lang="de">setzt das gerät auf 1-99%</lang>
+                    <lang xml:lang="en">set the device to 1-99%</lang>
+                  </description>
+              </value>
+            <value from="00ff" to="00ff">
+                <description>
+                    <lang xml:lang="de">setzt den letzten status</lang>
+                    <lang xml:lang="en">set the last status</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Weitersenden des Alarms</lang>
+                <lang xml:lang="en">Alarm broadcast</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Bestimmt ob ein Alarm auch an andere Fibaro Geräte gesendet werden soll.</lang>
+                <lang xml:lang="en">Defines the type of broadcast in case of a Alarm which is sent to other Fibaro devices in range.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">broadcast deaktiviert</lang>
+                    <lang xml:lang="en">broadcast inactive</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Feuer Alarm - broadcast (Assoziationsgruppe 2 &amp; 4) - aktiv
+
+Gehäuse geöffnet - broadcast (Assoziationsgruppe 3 &amp; 5) - inaktiv</lang>
+                    <lang xml:lang="en">Fire Alarm broadcast (2nd &amp; 4th Associationgroup) acitve
+
+enclosure opening notification broadcast (3rd &amp; 5th Associationsgroup) inacitve</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Feuer Alarm - broadcast (Assoziationsgruppe 2 &amp; 4) - inaktiv
+
+Gehäuse geöffnet - broadcast (Assoziationsgruppe 3 &amp; 5) - aktiv</lang>
+                    <lang xml:lang="en">Fire Alarm broadcast (2nd &amp; 4th Associationgroup) inacitve
+
+enclosure opening notification broadcast (3rd &amp; 5th Associationsgroup) active</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Feuer Alarm - broadcast (Assoziationsgruppe 2 &amp; 4) - aktiv
+
+Gehäuse geöffnet - broadcast (Assoziationsgruppe 3 &amp; 5) - aktiv</lang>
+                    <lang xml:lang="en">Fire Alarm broadcast (2nd &amp; 4th Associationgroup) active
+
+enclosure opening notification broadcast (3rd &amp; 5th Associationsgroup) active</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="20" type="range" size="2" default="0001">
+            <name>
+                <lang xml:lang="de">Temperaturbericht-intervall</lang>
+                <lang xml:lang="en">Temperature report interval</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Zeitintervall in welchem Temperaturberichte gesendet werden.</lang>
+                <lang xml:lang="en">Time interval between consecutive temperature reports.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="de">Berichte deaktiviert</lang>
+                    <lang xml:lang="en">report inactive</lang>
+                  </description>
+              </value>
+            <value from="0001" to="21c0">
+                <description>
+                    <lang xml:lang="de">10s - 24h</lang>
+                    <lang xml:lang="en">10s - 24h</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="21" type="range" size="1" default="0a">
+            <name>
+                <lang xml:lang="de">Temperaturbericht hysteresis</lang>
+                <lang xml:lang="en">Temperature report hysteresis.</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Bestimmt das ein Temperaturbericht nur gesendet wird wenn eine bestimmte Differenz zwischen dem aktuellen und dem zuvor gemessenen Wert besteht.</lang>
+                <lang xml:lang="en">The temperature report will only be sent if there is a difference in temperature value
+from the previous value reported, defined in this parameter (hysteresis).
+Temperature reports can be also sent as a result of polling.</lang>
+              </description>
+      
+                  <value from="01" to="64">
+                <description>
+                    <lang xml:lang="de">Wert in Grad</lang>
+                    <lang xml:lang="en">Value in degree</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="30" type="range" size="1" default="37">
+            <name>
+                <lang xml:lang="de">Temperaturgrenzwert</lang>
+                <lang xml:lang="en">Temperature alarm threshold.</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Bestimmt den grenzwert bei welchem einem Alarm ausgelöst werden soll gemessen an dem internen Temperatursensor.</lang>
+                <lang xml:lang="en">Temperature value, measured by the built-in temperature sensor, above which the
+temperature alarm is sent.</lang>
+              </description>
+      
+                  <value from="01" to="64">
+                <description>
+                    <lang xml:lang="de">Wert in Grad</lang>
+                    <lang xml:lang="en">Value in degree</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="31" type="range" size="2" default="0001">
+            <name>
+                <lang xml:lang="de">Signalintervall bei Temperaturüberschreitung</lang>
+                <lang xml:lang="en">Excess temperature signaling interval</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Bestimmt den Zeitintervall des Alarms beim überschreiben der Temperatur.</lang>
+                <lang xml:lang="en">Defines the time interval of signaling in case of Alarm.</lang>
+              </description>
+      
+                  <value from="0001" to="21c0">
+                <description>
+                    <lang xml:lang="de">10s-24h</lang>
+                    <lang xml:lang="en">10s-24h</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="32" type="range" size="2" default="00b4">
+            <name>
+                <lang xml:lang="de">Intervall des Z-Wave Reichweitenindikators</lang>
+                <lang xml:lang="en">Lack of Z-Wave range indication interval</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Bestimmt den Zeitintervall des Signals des Reichweitenindikators.</lang>
+                <lang xml:lang="en">Timeinterval of signaling lack of Z-Wave range.</lang>
+              </description>
+      
+                  <value from="0001" to="21c0">
+                <description>
+                    <lang xml:lang="de">10s-24h</lang>
+                    <lang xml:lang="en">10s-24h</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    
+  </ZWaveDevice>
+
+

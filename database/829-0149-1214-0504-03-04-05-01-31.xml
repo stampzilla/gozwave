@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0149"/>
+        <productType value="1214"/>
+    <productId value="0504"/>
+    <libType value="03"/>
+    <protoVersion value="04"/>
+    <protoSubVersion value="05"/>
+    <appVersion value="01"/>
+    <appSubVersion value="31"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Two independent channels with own power metering function that can act as local switch and\or controls traditional devices or multichannel device</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">If the device is not included into a Z-Wave network, a single click on the (B) button or on one of the external switches will launch the process of traditional inclusion.</lang>
+          </inclusionNote>
+            <productName>Universal double Switch</productName>
+            <brandName>WiDom</brandName>
+            <productLine>Z-wavePlus</productLine>
+            <productCode>WDS1.04</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0020"/>
+        <commandClass id="0025"/>
+        <commandClass id="0027"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0072"/>
+        <commandClass id="0070"/>
+        <commandClass id="007a" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0073"/>
+        <commandClass id="005a"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0060" version="4"/>
+        <commandClass id="008e" version="3"/>
+        <commandClass id="0032" version="3"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="5" maxNodes="8">
+            <description>
+                <lang xml:lang="en">Dimming control (Switch 2)</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="4" maxNodes="8">
+            <description>
+                <lang xml:lang="en">On/Off control (Switch 2)</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="8">
+            <description>
+                <lang xml:lang="en">Dimming control (Switch 1)</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="8">
+            <description>
+                <lang xml:lang="en">On/Off control (Switch 1)</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="8">
+            <description>
+                <lang xml:lang="en">LifeLine: Devices to receive notifications on: status changes; instantaneous power level; device local reset</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Outputs Status 1 Click</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Defines the status of the output O1/O2 when the switch connected to I1/I2 receives 1 Click.</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">TOGGLE </lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">ON: If the initial status is OFF the system switches to ON; conversely, it maintains its status (ON).</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">OFF: If the initial status is ON the system switches to OFF; conversely, it maintains its status (OFF).</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">IGNORE: The device maintains the initial status</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Output Status 2 Clicks</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Defines the status of the output O1/O2 when the switch connected to I1/I2 receives 2 Click.</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">TOGGLE</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">ON: If the initial status is OFF the system switches to ON; conversely, it maintains its status (ON).</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">OFF: If the initial status is ON the system switches to OFF; conversely, it maintains its status (OFF).</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">IGNORE: The device maintains the initial status</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Type of outputs</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Defines if the outputs are controlled individually, as a traditional device with two channels, or if its behaviour simulates a single pole double throw relay.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">SINGLE CHANNELS: Channel 1 and Channel 2 are controlled individually</lang>
+                  </description>
+              </value>
+            <value from="01" to="7f">
+                <description>
+                    <lang xml:lang="en">SINGLE POLE DOUBLE THROW RELAY: The two channels are in opposite status. If the Channel 1 is close the Channel 2 is open, if the Channel 1 is open the Channel 2 is close. The value of the parameter defines the closing delay of the relay in tenth of seconds</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="constant" size="1" default="02">
+            <name>
+                <lang xml:lang="en">Number of clicks that activate the control of the associated devices</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Defines the number of clicks on the Switch 1 or Switch 2 that enable the control of the correspondent associated devices.</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Associated devices are controlled by 1 Click on the correspondent external switch</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Associated devices are controlled by 2 Clicks on the correspondent external switch</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="rangemapped" size="1" default="64">
+            <name>
+                <lang xml:lang="en">Level used to control the devices associated to group 2 and 3</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Defines how to control the devices associated to group 2 and 3.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">The associated devices are switched OFF</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">The associated devices are switched ON</lang>
+                  </description>
+              </value>
+            <value from="01" to="63">
+                <description>
+                    <lang xml:lang="en">The associated devices (dimmer, roller shutters) are set to the indicated level (only for devices associated to group 3)</lang>
+                  </description>
+              </value>
+            <value from="64" to="64">
+                <description>
+                    <lang xml:lang="en">If the Relay 1 is ON/OFF, the associated devices are ON/OFF</lang>
+                  </description>
+              </value>
+            <value from="65" to="65">
+                <description>
+                    <lang xml:lang="en">If the Relay 1 is ON the associated devices are ON; if it is OFF no action is taken on the associated devices</lang>
+                  </description>
+              </value>
+            <value from="66" to="66">
+                <description>
+                    <lang xml:lang="en">If the Relay 1 is OFF the associated devices are OFF; if it is ON no action is taken on the associated devices</lang>
+                  </description>
+              </value>
+            <value from="67" to="67">
+                <description>
+                    <lang xml:lang="en">If the Relay 1 is ON the associated devices are OFF; if it is OFF no action is taken on the associated devices</lang>
+                  </description>
+              </value>
+            <value from="68" to="68">
+                <description>
+                    <lang xml:lang="en">If the Relay 1 is OFF the associated devices are ON; if it is ON no action is taken on the associated devices</lang>
+                  </description>
+              </value>
+            <value from="69" to="69">
+                <description>
+                    <lang xml:lang="en">If the Relay 1 is ON/OFF, the associated devices are OFF/ON</lang>
+                  </description>
+              </value>
+            <value from="6a" to="6a">
+                <description>
+                    <lang xml:lang="en">No action is taken on the associated devices</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="rangemapped" size="1" default="64">
+            <name>
+                <lang xml:lang="en">Level used to control the devices associated to group 4 and 5</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Defines how to control the devices associated to group 4 and 5.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">The associated devices are switched OFF</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">The associated devices are switched ON</lang>
+                  </description>
+              </value>
+            <value from="01" to="63">
+                <description>
+                    <lang xml:lang="en">The associated devices (dimmer, roller shutters) are set to the indicated level (only for devices associated to group 5)</lang>
+                  </description>
+              </value>
+            <value from="64" to="64">
+                <description>
+                    <lang xml:lang="en">If the Relay 2 is ON/OFF, the associated devices are ON/OFF</lang>
+                  </description>
+              </value>
+            <value from="65" to="65">
+                <description>
+                    <lang xml:lang="en">If the Relay 2 is ON the associated devices are ON; if it is OFF no action is taken on the associated devices</lang>
+                  </description>
+              </value>
+            <value from="66" to="66">
+                <description>
+                    <lang xml:lang="en">If the Relay 2 is OFF the associated devices are OFF; if it is ON no action is taken on the associated devices</lang>
+                  </description>
+              </value>
+            <value from="67" to="67">
+                <description>
+                    <lang xml:lang="en">If the Relay 2 is ON the associated devices are OFF; if it is OFF no action is taken on the associated devices</lang>
+                  </description>
+              </value>
+            <value from="68" to="68">
+                <description>
+                    <lang xml:lang="en">If the Relay 2 is OFF the associated devices are ON; if it is ON no action is taken on the associated devices</lang>
+                  </description>
+              </value>
+            <value from="69" to="69">
+                <description>
+                    <lang xml:lang="en">If the Relay 2 is ON/OFF, the associated devices are OFF/ON</lang>
+                  </description>
+              </value>
+            <value from="6a" to="6a">
+                <description>
+                    <lang xml:lang="en">No action is taken on the associated devices</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="rangemapped" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Timer to switch ON the Channel 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Defines the time after which the Channel 1 is switched ON.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Timer disabled</lang>
+                  </description>
+              </value>
+            <value from="0001" to="7d00" unit="sec">
+                <description>
+                    <lang xml:lang="en">After this time the relay of the Channel 1 is ON</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="rangemapped" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Timer to switch ON the Channel 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Defines the time after which the Channel 2 is switched ON.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Timer disabled</lang>
+                  </description>
+              </value>
+            <value from="0001" to="7d00">
+                <description>
+                    <lang xml:lang="en">After this time the relay of the Channel 2 is ON</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="rangemapped" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Timer to switch OFF the Channel 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Defines the time after which the Channel 1 is switched OFF.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Timer disabled</lang>
+                  </description>
+              </value>
+            <value from="0001" to="7d00">
+                <description>
+                    <lang xml:lang="en">After this time the relay of the Channel 1 is OFF</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="rangemapped" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Timer to switch OFF the Channel 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Defines the time after which the Channel 2 is switched OFF.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Timer disabled</lang>
+                  </description>
+              </value>
+            <value from="0001" to="7d00">
+                <description>
+                    <lang xml:lang="en">After this time the relay of the Channel 2 is OFF</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="20" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Outputs status upon receipt of a Multi-Channel Basic Set command</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The two channels can be controlled individually by Z-Wave network. The status of the channels upon receipt of a Multi-Channel Basic Set command is defined by the value set on the parameter.</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">AS RECEIVED</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">IGNORE IF ON</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">IGNORE IF OFF</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">IGNORE</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="21" type="constant" size="1" default="03">
+            <name>
+                <lang xml:lang="en">Outputs status upon receipt of a Basic Set command</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The channels of the device can be controlled individually from all other Z-Wave devices that support the multichannel feature. In order to support also the integration with no-multichannel systems, this parameter allows to define if the receipt of a no-multichannel command controls only the Channel 1 or both.</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">The receipt of a Basic Set ON/OFF set the Channel 1 to ON/OFF</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">The receipt of a Basic Set ON/OFF set both the Channel 1 and the Channel 2 to ON/OFF</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="60" type="constant" size="1" default="04">
+            <name>
+                <lang xml:lang="en">Start-up status</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Defines the status of the device following a restart.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Both Relay 1 and Relay 2 OFF</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Relay 1 ON, Relay 2 OFF</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Relay 1 OFF, Relay 2 ON</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">Both Relay 1 and Relay 2 ON</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">PREVIOUS STATUS: Status prior to restart</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="61" type="constant" size="1" default="04">
+            <name>
+                <lang xml:lang="en">Configuration reset</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Defines which parameters should be reset to default values.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">The device is reset to the original factory settings</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">All associations and only the associations are reset</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">The associations are maintained while all other configuration parameters are reset to the original factory settings, except for the specific configuration.</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">The device will be restarted</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">No action is performed</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="62" type="constant" size="1" default="04">
+            <name>
+                <lang xml:lang="en">Type of external switch</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Defines the type of external switch connected to the device.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">The actions on the external switch are ignored. In this mode, the device can only be controlled via the network.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">The external switch is a normally open button</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">The external switch is a traditional switch</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="en">After the first single click on the external switch, the system automatically determines the type of external switch used and sets the parameter with the new value accordingly.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    <endpoints>
+           <endpoint number="2">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0025"/>
+            <commandClass id="0032"/>
+          </endpoint>
+           <endpoint number="1">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0025"/>
+            <commandClass id="0032"/>
+          </endpoint>
+      </endpoints>
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/9abe3c84efd54d22f4d31fc872c76ff0e7a17e95.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

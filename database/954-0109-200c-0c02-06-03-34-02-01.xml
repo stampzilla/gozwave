@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0109"/>
+        <productType value="200c"/>
+    <productId value="0c02"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="34"/>
+    <appVersion value="02"/>
+    <appSubVersion value="01"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>US</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">VISION‟s In-Wall One Relay Switch is designed to switch On/Off devices and without showing the out shape. The tiny and fireproof material can easily insert into the electric socket and secure the family. </lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">turn on and turn off the wall switch which connects with ZL 7431 module 4 times to be included (or press the program switch 4 times within 2 seconds to be included), then LED shall start flashing.</lang>
+          </inclusionNote>
+            <productName>In-Wall 1 relay switch </productName>
+            <brandName>Vision</brandName>
+            <productLine>Home Security </productLine>
+            <productCode>0C</productCode>
+            <productVersion>02</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0025"/>
+        <commandClass id="0027"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+        <commandClass id="0086"/>
+        <commandClass id="0085"/>
+        <commandClass id="0020"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Lifeline</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="02">
+            <name>
+                <lang xml:lang="en">Type of Light Control</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">&quot;to control light with 1 wall switch &amp; to control light with 2 wall switches.&quot;</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">&quot;to control 1 light witch 1 wall switch that has light indicator.&quot;</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/5e90c3c7fdd847a1e2fbcf00d4684c74f1f1bec9.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

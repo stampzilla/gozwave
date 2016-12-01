@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="010f"/>
+        <productType value="0501"/>
+    <productId value="0101"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="22"/>
+    <appVersion value="03"/>
+    <appSubVersion value="31"/>
+        <basicClass value="04"/>
+            <genericClass value="20"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+                    
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Universal Sensor with generic input and output</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Tripple Click (B) Button</lang>
+          </inclusionNote>
+            <productName>FGBS</productName>
+            <brandName>FGBS</brandName>
+                                </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0060" version="2"/>
+        <commandClass id="0020" inNIF="false"/>
+        <commandClass id="0025"/>
+        <commandClass id="0086"/>
+        <commandClass id="008e" version="2"/>
+        <commandClass id="0030"/>
+        <commandClass id="0031"/>
+        <commandClass id="0072"/>
+        <commandClass id="0085" version="2"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="3" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Report des Gerätestatus</lang>
+                <lang xml:lang="en">reports device status</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Eingang IN2</lang>
+                <lang xml:lang="en">Input IN2</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="de">Eingang IN1</lang>
+                <lang xml:lang="en">Input IN1</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">Alarmverzögerung für Alarm durch Eingang 1</lang>
+                <lang xml:lang="en">Input 1 Alarm Delay</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Es kann festgelegt werden, nach welcher Zeit Ein Signal am Eingang 1 einen Alarm auslösen soll. Verschwindet
+        die Alarmbedingung in dieser Zeit, wird kein Alarm ausgelöst.</lang>
+                <lang xml:lang="en">defines the delay from triggering Input 1 to sending an alarm. Removing Alarm condition will cancel alarm</lang>
+              </description>
+      
+                  <value from="0000" to="7d00">
+                <description>
+                    <lang xml:lang="de">Sekunden</lang>
+                    <lang xml:lang="en">seconds</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">Alarmverzögerung für Alarm durch Eingang 2</lang>
+                <lang xml:lang="en">Input 2 Alarm Delay</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Es kann festgelegt werden, nach welcher Zeit Ein Signal am Eingang 2 einen Alarm auslösen soll. Verschwindet
+        die Alarmbedingung in dieser Zeit, wird kein Alarm ausgelöst.</lang>
+                <lang xml:lang="en">defines the delay from triggering Input 2 to sending an alarm. Removing Alarm condition will cancel alarm</lang>
+              </description>
+      
+                  <value from="0000" to="7d00">
+                <description>
+                    <lang xml:lang="de">Sekunden</lang>
+                    <lang xml:lang="en">seconds</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Art des Eingangssignals 1</lang>
+                <lang xml:lang="en">Type of Input 1</lang>
+                <lang xml:lang="ru"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">INPUT_NO (normaler Öffner)</lang>
+                    <lang xml:lang="en">INPUT_NO (Normal Open)</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">INPUT_NC (normaler Schließer)</lang>
+                    <lang xml:lang="en">INPUT_NC (Normal Close)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">INPUT_MONOSTABLE (Monostabil)</lang>
+                    <lang xml:lang="en">INPUT_MONOSTABLE (Monostabil)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">INPUT_BISTABLE (bistabil)</lang>
+                    <lang xml:lang="en">INPUT_BISTABLE (bistabil)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Art des Eingangssignals 2</lang>
+                <lang xml:lang="en">Type of Input 2</lang>
+                <lang xml:lang="ru"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">INPUT_NO (normaler Öffner)</lang>
+                    <lang xml:lang="en">INPUT_NO (Normal Open)</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">INPUT_NC (normaler Schließer)</lang>
+                    <lang xml:lang="en">INPUT_NC (Normal Close)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">INPUT_MONOSTABLE (Monostabil)</lang>
+                    <lang xml:lang="en">INPUT_MONOSTABLE (Monostabil)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">INPUT_BISTABLE (bistabil)</lang>
+                    <lang xml:lang="en">INPUT_BISTABLE (bistabil)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="rangemapped" size="1" default="ff">
+            <name>
+                <lang xml:lang="de">Art der Alarmmeldung für Eingang 1</lang>
+                <lang xml:lang="en">Type of control frame activated via IN input 1
+</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">erlaubt die Art der Alarmmeldung des Einganges 1 zu spezifizieren.</lang>
+                <lang xml:lang="en">
+The parameter allows you to specify the type of an alarm frame for Input 1
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Allgemeiner Alarm</lang>
+                    <lang xml:lang="en">ALARM GENERIC frame</lang>
+                    <lang xml:lang="ru">Общий сигнал тревоги</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Rauchalarm</lang>
+                    <lang xml:lang="en">ALARM SMOKE frame</lang>
+                    <lang xml:lang="ru">Задымление</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Kohlenmonoxid-Alarm</lang>
+                    <lang xml:lang="en">ALARM CO frame</lang>
+                    <lang xml:lang="ru">Угарный газ</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Kohlendioxid.Alarm</lang>
+                    <lang xml:lang="en">ALARM CO2 frame</lang>
+                    <lang xml:lang="ru">Углекислый газ</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Überhitzungs-Alarm</lang>
+                    <lang xml:lang="en">ALARM HEAT frame</lang>
+                    <lang xml:lang="ru">Высокая температура</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de">Überflutungsalarm</lang>
+                    <lang xml:lang="en">ALARM WATER frame</lang>
+                    <lang xml:lang="ru">Протечка</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="de">BASIC SET Kommando</lang>
+                    <lang xml:lang="en">Control frame BASIC_SET</lang>
+                    <lang xml:lang="ru">BASIC_SET</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="rangemapped" size="1" default="ff">
+            <name>
+                <lang xml:lang="de">Art der Alarmmeldung für Eingang 2</lang>
+                <lang xml:lang="en">Type of control frame activated via IN input 2
+</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">erlaubt die Art der Alarmmeldung des Einganges 2 zu spezifizieren.</lang>
+                <lang xml:lang="en">
+The parameter allows you to specify the type of an alarm frame for Input 2
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Allgemeiner Alarm</lang>
+                    <lang xml:lang="en">ALARM GENERIC frame</lang>
+                    <lang xml:lang="ru">Общий сигнал тревоги</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Rauchalarm</lang>
+                    <lang xml:lang="en">ALARM SMOKE frame</lang>
+                    <lang xml:lang="ru">Задымление</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Kohlenmonoxid-Alarm</lang>
+                    <lang xml:lang="en">ALARM CO frame</lang>
+                    <lang xml:lang="ru">Угарный газ</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Kohlendioxid.Alarm</lang>
+                    <lang xml:lang="en">ALARM CO2 frame</lang>
+                    <lang xml:lang="ru">Углекислый газ</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Überhitzungs-Alarm</lang>
+                    <lang xml:lang="en">ALARM HEAT frame</lang>
+                    <lang xml:lang="ru">Высокая температура</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de">Überflutungsalarm</lang>
+                    <lang xml:lang="en">ALARM WATER frame</lang>
+                    <lang xml:lang="ru">Протечка</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="de">BASIC SET Kommando</lang>
+                    <lang xml:lang="en">Control frame BASIC_SET</lang>
+                    <lang xml:lang="ru">BASIC_SET</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="range" size="1" default="ff">
+            <name>
+                <lang xml:lang="de">Dimmer/Motorsteuerung Niveau bei Alarmsteuerung am Eingang 1</lang>
+                <lang xml:lang="en">
+Value of the parameter specifying the forced level of dimming/opening roller blinds from Input 1
+</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">
+Im Alarmfall wird eine Alarmmeldung ausgesendet und es kann ein Aktor geschaltet werden. Für Dimmer und 
+Jalousiecontroller kann definiert werden, auf welches Dimmerniveau oder welche Motorposition der Aktor 
+gesteuert werden soll
+</lang>
+                <lang xml:lang="en">
+In case of alarm frames an alarm priority is specified. Value of 255 makes it possible to activate a device. 
+In case of the Dimmer module it means activating the device and setting it to the previously stored 
+condition, e.g. when Dimmer is set to 30%, deactivated and then reactivated using 255 commend, it will 
+be automatically set to the previous condition i.e. 30%.
+</lang>
+              </description>
+      
+                  <value from="01" to="63">
+                <description>
+                    <lang xml:lang="de">Dimming-Niveau</lang>
+                    <lang xml:lang="en">Dimming level</lang>
+                    <lang xml:lang="ru">Уровень диммирования</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="de">Einschalten</lang>
+                    <lang xml:lang="en">Turn On</lang>
+                    <lang xml:lang="ru">Включить</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="range" size="1" default="ff">
+            <name>
+                <lang xml:lang="de">Dimmer/Motorsteuerung Niveau bei Alarmsteuerung am Eingang 2</lang>
+                <lang xml:lang="en">
+Value of the parameter specifying the forced level of dimming/opening roller blinds from Input 2
+</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">
+Im Alarmfall wird eine Alarmmeldung ausgesendet und es kann ein Aktor geschaltet werden. Für Dimmer und 
+Jalousiecontroller kann definiert werden, auf welches Dimmerniveau oder welche Motorposition der Aktor 
+gesteuert werden soll
+</lang>
+                <lang xml:lang="en">
+In case of alarm frames an alarm priority is specified. Value of 255 makes it possible to activate a device. 
+In case of the Dimmer module it means activating the device and setting it to the previously stored 
+condition, e.g. when Dimmer is set to 30%, deactivated and then reactivated using 255 commend, it will 
+be automatically set to the previous condition i.e. 30%.
+</lang>
+              </description>
+      
+                  <value from="01" to="63">
+                <description>
+                    <lang xml:lang="de">Dimming-Niveau</lang>
+                    <lang xml:lang="en">Dimming level</lang>
+                    <lang xml:lang="ru">Уровень диммирования</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="de">Einschalten</lang>
+                    <lang xml:lang="en">Turn On</lang>
+                    <lang xml:lang="ru">Включить</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Senden einer Alarmdeaktivierungsnachricht</lang>
+                <lang xml:lang="en">
+Deactivating transmission of the alarm cancelling frame or the control frame deactivating the device (Basic)
+</lang>
+                <lang xml:lang="ru">
+Отправлять устройствам из группы 1 сигнал тревоги или команду отключения
+</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">
+Es wird definiert, das Verschwinden der Alarmbedingung zum erneuten Schalten eines Aktors oder zum Aussenden einer Alarmdeaktivierungsnachricht führen soll
+</lang>
+                <lang xml:lang="en">
+It allows for disabling the function of deactivating the device and cancelling alarms for devices associated with IN input.
+</lang>
+                <lang xml:lang="ru">
+Deactivating transmission of the alarm cancelling frame or the control frame deactivating the device (Basic). It allows for disabling the function of deactivating the device and cancelling alarms for devices associated with IN input.
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Information wird gesendet an Gruppe 1 und Gruppe 2</lang>
+                    <lang xml:lang="en">information is sent to group 1 and 2</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Information wird nicht gesendet für Gruppe 2 und gesendet für Gruppe 1</lang>
+                    <lang xml:lang="en">information is not sent for group 2 but sent for group 1</lang>
+                    <lang xml:lang="ru">Не отправлять</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Information wird nicht gesendet für Gruppe 1 und gesendet für Gruppe 2</lang>
+                    <lang xml:lang="en">information is not sent for group 1 but sent for group 2</lang>
+                    <lang xml:lang="ru">Не отправлять</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Information wird nicht gesendet</lang>
+                    <lang xml:lang="en">information is not sent</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="range" size="1" default="08">
+            <name>
+                <lang xml:lang="de">Schwellwert zum Aussenden eines Temperatur-Reports</lang>
+                <lang xml:lang="en">Trigger level to send out temperature report</lang>
+                <lang xml:lang="ru">
+Параметр №12 - Отправлять отчет при изменении температуры на Температура = значение/16
+</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">
+Es wird die Abweichung der gemessenen Temperatur zur letzten per Funk gesendeten Temperatur definiert, die zu einem erneuten Report der Temperatur an die Geräte in Assoziationsgruppe 3 führt. Ist der Wert = Null, wird ein Temperatur mindestens aller 4 Minuten oder bei jedem Aufweckintervall gesendet.
+</lang>
+                <lang xml:lang="en">
+defines the maximum deviation of the actual temperature compared to the last wirelessly reported temperature to create a new wireless report to the device in association group 3. If set to zero a report will be generated at every regular wakeup of the device but as a minimum every 4 minutes.
+</lang>
+                <lang xml:lang="ru">
+Если с последнего замера температура изменилась больше чем на заданное значение, например 0.5 градусов, то будет отправлен отчет устройству из группы 3. Значение для градусов Цельсия высчитывается по формуле: X = deltaT*16; X - нужное значение; deltaT - разница температур (например 0.5); Если мы хотим получать отчет при изменении температуры на 0.5 градусов формула такова: 8 = 0.5*15. Если задано значение 0 и интервал пробуждения 255 секунд, то отчет о температуре будет присылаться при пробуждении (каждые 255 секунд). Если задано 0 и интервал пробуждения больше 255, то отчет будет присылаться каждые 4 минуты.
+</lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="de">1/16 Kelvin</lang>
+                    <lang xml:lang="en">1/16 Kelvin</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Sendemodus für Alarm-Nachricht</lang>
+                <lang xml:lang="en">
+Sending an alarm or control frame (for IN input, depending on parameter no.5 value), and TMP button alarm frame
+</lang>
+                <lang xml:lang="ru">Отправлять широковещательные сообщения от IN и TMP</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">
+Definiert, wie Alarmmeldungen gesendet werden. Nachrichten im Broadcast Mode werden von allen umgebenden Geräten empfangen jedoch nicht geroutet.
+</lang>
+                <lang xml:lang="en">
+The frame is sent in “broadcast” mode, i.e. to all devices within range - information sent in this mode is not repeated by the mesh network.
+</lang>
+                <lang xml:lang="ru">
+Широковещательные сообщения отправляются всем устройствам в сети.
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">IN1 und IN2 Broadcast inaktiv</lang>
+                    <lang xml:lang="en">IN1 and IN2 Broadcast mode inactive</lang>
+                    <lang xml:lang="ru">от IN1 не отправлять, от IN2 не отправлять</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">IN1 Broadcast aktiv, IN2 Broadcast inaktiv</lang>
+                    <lang xml:lang="en">
+IN1 broadcast mode active, IN2 broadcast mode inactive
+</lang>
+                    <lang xml:lang="ru">от IN1 отправлять, от IN2 не отправлять</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">IN1 Broadcase inakiv und IN2 Broadcast aktiv</lang>
+                    <lang xml:lang="en">
+IN1 broadcast mode inactive, IN2 broadcast mode active
+</lang>
+                    <lang xml:lang="ru">от IN1 не отправлять, от IN2 отправлять</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">IN1 und IN2 Broadcast aktiv</lang>
+                    <lang xml:lang="en">IN1 and IN2 broadcast mode active</lang>
+                    <lang xml:lang="ru">от IN1 отправлять, от IN2 отправлять</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="14" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Szenenaktivierungsoption </lang>
+                <lang xml:lang="en">Scene activation functionality</lang>
+                <lang xml:lang="ru">Использовать сцены</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">
+von &quot;AUS&quot; nach &quot;EIN&quot; generiert id 10, von &quot;EIN&quot; nach &quot;AUS&quot; generiert id 11, Taste gedrückt halten generiert id 12, Loslassen generiert id 13, Doppelklick generiert id 14, Dreifachklick generiert id 15: Achtung: Szenenaktivierung entlädt die Batterie schneller.
+</lang>
+                <lang xml:lang="en">
+IN input: Switch from “off” to “on” ID10; Switch from “on” to “off” ID11; Remaining IDs are recognized correctly if the value of parameter no.3 was set to 2 Holding down ID12; Releasing ID13; Double click ID14; Triple click ID 15; Scene activation functionality may shorten the battery life, even by 25%.
+</lang>
+                <lang xml:lang="ru">
+Это устройство позволяет выполнять сцены. Команды на выполнения сцен отправляются устройствам находящимся в группе 3. Контроллеры, такие как Home Center 2, Z-Box понимают эти команды и могут исполнить сцену, ID которой указан в команде. Нажатие кнопки подключенной к IN отправляет определенный ID. Таким образом можно по двойному нажатию запускать сцену &quot;Включить везде свет&quot;, а по тройному &quot;Выключить везде свет&quot;. Для бистабильного выключателя: ID 10 - переключение с ВЫКЛ на ВКЛ; ID 11 - переключение с ВКЛ на ВЫКЛ. Для моностабильного выключателя: ID 12 - удержание; ID 13 - отпускание; ID 14 - двойное нажатие; ID 15 - тройное нажатие.
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">functionality deactivated</lang>
+                    <lang xml:lang="ru">Не использовать</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Aktiviert</lang>
+                    <lang xml:lang="en">functionality activated</lang>
+                    <lang xml:lang="ru">Использовать</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="constant" size="1" default="14">
+            <name>
+                <lang xml:lang="de">Interval des periodischen Erfassens aller Temperaturwerte  </lang>
+                <lang xml:lang="en">Interval between Readings of all temperature sensors</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"> </lang>
+                <lang xml:lang="en"> </lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="de">Sekunden</lang>
+                    <lang xml:lang="en">seconds</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    
+  </ZWaveDevice>
+
+

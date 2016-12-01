@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="011a"/>
+        <productType value="0101"/>
+    <productId value="0603"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="2a"/>
+    <appVersion value="03"/>
+    <appSubVersion value="01"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+            <certId>15020</certId>
+            <certNumber>ZC08-12100007</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Smart Lighting Control Module</lang>
+            <lang xml:lang="en">Smart Lighting Control Module</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Drücken Sie die Taste am ZWN-RSM2 für 1 Sekunde oder betätigen Sie den Schalter der über das orange Kabel angeschlossen ist.</lang>
+            <lang xml:lang="en">Press and release the internal button for one second or toggle the switch wired with the orange line</lang>
+          </inclusionNote>
+            <productName>Smart Lighting Control Module(RSM2)</productName>
+            <brandName>ENERWAVE</brandName>
+            <productLine>Switch Series</productLine>
+            <productCode>ZWN-RSM2</productCode>
+            <productVersion>3.0</productVersion>
+            <batteryType>On/Off Toggle Switch and 3-Way Control</batteryType>
+                </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0060" version="3"/>
+        <commandClass id="0020" inNIF="false"/>
+        <commandClass id="0025"/>
+        <commandClass id="0086"/>
+        <commandClass id="0027"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+      </commandClasses>
+  
+  
+    <configParams>
+        <configParam number="3" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Unsolicited Report Configuration</lang>
+                <lang xml:lang="en">Unsolicited Report Configuration</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">In der Werkseinstellung sendet das ZWN-RSM2 unaufgefordert Statusberichte an Node-ID 1</lang>
+                <lang xml:lang="en">By default setting, ZWN-RSM2 will send unsolicited status report to Master controller (Node ID 0x01) when switch toggled due to some controllers designed as gateway.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">deaktiviert</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="e8">
+                <description>
+                    <lang xml:lang="de">beliebige Node-ID</lang>
+                    <lang xml:lang="en">Other controller nodeID</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="de">Broadcast</lang>
+                    <lang xml:lang="en">Send broadcast</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    <endpoints>
+           <endpoint number="1">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0025"/>
+          </endpoint>
+           <endpoint number="2">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0025"/>
+          </endpoint>
+      </endpoints>
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/673de7cfca966ecd4d2e017eb14b23c35b6bfce0.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0159"/>
+        <productType value="0001"/>
+    <productId value="0001"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="67"/>
+    <appVersion value="04"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Z-Wave Unterputzdimmer</lang>
+            <lang xml:lang="en">in flush zwave dimmer</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Servicetaste S für mehr als 2 Sekunden gedrückt halten</lang>
+            <lang xml:lang="en">Press the service button S for more than 2
+seconds.</lang>
+          </inclusionNote>
+            <productName>Flush dimmer</productName>
+            <brandName>Qubino</brandName>
+            <productLine>Z-wave dimmer</productLine>
+            <productCode>ZMNHDA2 </productCode>
+            <productVersion>ZMNHDA2 H1S4P1</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" controlled="true"/>
+        <commandClass id="0026" version="3" controlled="true"/>
+        <commandClass id="0027"/>
+        <commandClass id="0025"/>
+        <commandClass id="0032" version="3"/>
+        <commandClass id="0031" version="3"/>
+        <commandClass id="0060" version="3"/>
+        <commandClass id="0073"/>
+        <commandClass id="0085"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+        <commandClass id="0086"/>
+        <commandClass id="0030"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="4" maxNodes="16">
+            <description>
+                <lang xml:lang="de">Standardberichtsgruppe</lang>
+                <lang xml:lang="en">Default reporting group</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="16">
+            <description>
+                <lang xml:lang="de">Einfaches Ein-/ Ausschalten (erfolgt bei Statusänderung des Input I3 und spiegelt dessen Status wieder)</lang>
+                <lang xml:lang="en">Basic on/off (triggered at change of the
+input I3 state and reflecting its state)</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="16">
+            <description>
+                <lang xml:lang="de">Einfaches Ein-/ Ausschalten (erfolgt bei Statusänderung des Input I2 und spiegelt dessen Status wieder)</lang>
+                <lang xml:lang="en">Basic on/off (triggered at change of the
+input I2 state and reflecting its state)</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="16">
+            <description>
+                <lang xml:lang="de">Multilevel (erfolgt bei Statuswechsel/ Wertänderung des Flush Dimmers)</lang>
+                <lang xml:lang="en">Multilevel (triggered at changes of
+state/value of the Flush dimmer)</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Input 1 Schaltertyp</lang>
+                <lang xml:lang="en">Input 1 switch type</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Der Parameter definiert den verwendeten Schaltertyp</lang>
+                <lang xml:lang="en">The parameter defines the type of the used switch.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">monostabiler Schaltertyp (Druckknopf)</lang>
+                    <lang xml:lang="en">mono-stable switch type (push button)</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">bistabiler Schaltertyp</lang>
+                    <lang xml:lang="en">bi-stable switch type</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Input 2 Kontakttyp</lang>
+                <lang xml:lang="en">Input 2 contact type</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Der Parameter definiert den Kontakttyp.</lang>
+                <lang xml:lang="en">The parameter defines the contact type.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">NO (Öffner) Inputtyp</lang>
+                    <lang xml:lang="en">NO (normally open) input type</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">NC (Schließer) Inputtyp</lang>
+                    <lang xml:lang="en">NC (normally close) input type</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Input 3 Kontakttyp</lang>
+                <lang xml:lang="en">Input 3 contact type</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Der Parameter definiert den Kontakttyp</lang>
+                <lang xml:lang="en">The parameter defines the contact type.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">NO (Öffner) Inputtyp</lang>
+                    <lang xml:lang="en">NO (normally open) input type</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">NC (Schließer) Inputtyp</lang>
+                    <lang xml:lang="en">NC (normally close) input type</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="constant" size="1" default="ff">
+            <name>
+                <lang xml:lang="de">De-/Aktiviert ALLES AN / ALLES AUS</lang>
+                <lang xml:lang="en">Deactivate/Activate ALL ON / ALL OFF</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Der Parameter definiert den Status der ALLES AN / ALLES AUS Funktionen</lang>
+                <lang xml:lang="en">The parameter defines the status of the ALL ON/ALL OFF functions.
+Dimmer module responds to commands ALL ON
+/ ALL OFF that may be sent by the main
+controller or by other controller belonging to the
+system.</lang>
+              </description>
+      
+                  <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="de">ALLES AN aktiviert, 
+ALLES AUS aktiviert</lang>
+                    <lang xml:lang="en">ALL ON active, ALL OFF active</lang>
+                  </description>
+              </value>
+            <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">ALLES AN ist nicht aktiviert, ALLES AUS ist nicht aktiviert</lang>
+                    <lang xml:lang="en">ALL ON is not active, ALL OFF is not
+active</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">ALLES AN ist nicht aktiviert,
+ALLES AUS ist aktiviert</lang>
+                    <lang xml:lang="en">ALL ON is not active, ALL OFF active</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">ALLES AN ist aktiviert, 
+ALLES AUS ist nicht aktiviert</lang>
+                    <lang xml:lang="en">ALL ON active, ALL OFF is not active</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="30" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Gerätestatus nach Stromausfall</lang>
+                <lang xml:lang="en">State of device after power failure</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Der Parameter legt fest, ob der Gerätestatus nach einem Stromausfall entweder gespeichert oder nicht gespeichert werden soll.</lang>
+                <lang xml:lang="en">The parameter defines if the state of the device should be either saved or not in case of a power failure.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Unterputzdimmermodul speichert seinen Status vor dem Stromausfall (kehr in die vor dem Stromausfall zuletzt abgespeicherte Position zurück).</lang>
+                    <lang xml:lang="en">Flush dimmer module saves its state
+before power failure (it returns to the last
+position saved before a power failure).</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Unterputzdimmermodul speichert seinen Status vor dem Stromausfall nicht ab und kehrt in die &quot;Aus&quot; Stellung zurück.</lang>
+                    <lang xml:lang="en">Flush dimmer module does not save the
+state after a power failure, it returns to &quot;off&quot;
+position.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="40" type="range" size="1" default="05">
+            <name>
+                <lang xml:lang="de">Energiebericht bei Leistungsänderung</lang>
+                <lang xml:lang="en">Power report on power change</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Der Parameter definiert, ob ein Energiebericht in Abhängigkeit von der vorgegebenen Leistungsänderung in Prozent gesendet werden soll</lang>
+                <lang xml:lang="en">The parameter defines if a power report should be sent depending on the predefined power change in percent.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Funktion ist deaktiviert</lang>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+            <value from="01" to="64" unit="%">
+                <description>
+                    <lang xml:lang="de">Berichterstattung aktiviert.
+Es wird nur dann ein Leistungsbericht gesendet, wenn die gegenwärtige Leistung in Watt sich in Echtzeit über den gesetzten Prozentsatz verändert verglichen mit der vorherigen Ist-Leistung in Watt, Schritte in 1%
+
+
+</lang>
+                    <lang xml:lang="en">Reporting enabled.
+Power report is send (push) only when actual
+power in Watts in real time changes for more
+than set percentage comparing to previous
+actual power in Watts, step is 1%.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="42" type="range" size="2" default="012c">
+            <name>
+                <lang xml:lang="de">Leistungsreport nach Zeitintervall</lang>
+                <lang xml:lang="en">Power report by time interval</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Ein Leistungsbericht wird basierend auf den voreingestellten Zeitintervall (in Sekunden) gesendet.</lang>
+                <lang xml:lang="en">A power report is sent based on the  predefined time interval in seconds.</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="de">Funktion ist deaktiviert.</lang>
+                    <lang xml:lang="en">Function is disabled.</lang>
+                  </description>
+              </value>
+            <value from="0001" to="ffff">
+                <description>
+                    <lang xml:lang="de">1 Sekunde – 65535 Sekunden.
+Berichterstattung ist aktiviert. Ein Leistungsbericht wird in dem eingestellten Wert entsprechenden Zeitintervall gesendet.</lang>
+                    <lang xml:lang="en">1 second – 65535 seconds. Reporting enabled. Power report is send with time interval set by entered value.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="61" type="range" size="1" default="63">
+            <name>
+                <lang xml:lang="de">Maximaldimmwert</lang>
+                <lang xml:lang="en">Maximum dimming value</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Der Parameter bestimmt den Höchstdimmwert.
+Hinweis: Der Maximalwert kann nicht unter dem Minimallevel liegen! 99% max. Der Dimmwert wird durch die mehrstufige Z-Wave Geräteklasse bestimmt.</lang>
+                <lang xml:lang="en">The parameter defines the maximum dimming value.
+NOTE: The maximum level may not be lower than the minimum level! 99% max. dimming value is defined by Z-Wave multilevel device class.</lang>
+              </description>
+      
+                  <value from="02" to="63" unit="%">
+                <description>
+                    <lang xml:lang="de">2% – 99%, Schritt je 1%. Maximaler Dimmwert wird durch den eingegebenen Wert eingestellt.</lang>
+                    <lang xml:lang="en">2% – 99%, step is 1%. Maximum dimming values is set by entered value.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="60" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Mindestdimmwert</lang>
+                <lang xml:lang="en">Minimum dimming value</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Der Parameter bestimmt den Mindestdimmwert.
+Hinweis: Der Maximalwert kann nicht unter dem Minimallevel liegen! 1% mind. Der Dimmwert wird durch die mehrstufige Z-Wave Geräteklasse bestimmt.</lang>
+                <lang xml:lang="en">The parameter defines the minimum dimming value.
+NOTE: The maximum level may not be lower than the minimum level! 1% min. dimming value is defined by Z-Wave multilevel device class.</lang>
+              </description>
+      
+                  <value from="01" to="62" unit="%">
+                <description>
+                    <lang xml:lang="de">1% – 98%, Schritt je 1%. Mindestdimmwerte werden durch den eingegebenen Wert gesetzt.</lang>
+                    <lang xml:lang="en">1% – 98%, step is 1%. Minimum dimming values is set by entered value.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="65" type="range" size="1" default="64">
+            <name>
+                <lang xml:lang="de">Dimmzeit (Soft An/ Aus)</lang>
+                <lang xml:lang="en">Dimming time (soft on/off)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Der eingestellte Wert veranschaulicht die Zeit in welcher der Dimmer sich zwischen Mindest- und Höchstdimmwert bewegt durch kurzes Drücken der Taste I1 oder gesteuert durch UI. Standardwert ist 100 (Dimmzeit zwischen min. und max. Dimmwert beträgt 1s).
+1 - 255 = 10 Millisekunden – 2550 Millisekunden (2,55s), Schritt in 10 Millisekunden</lang>
+                <lang xml:lang="en">Set value means time of moving the Dimmer between min. and max. dimming values by short press of push button I1 or controlled through UI.
+Default value is 100 (Dimming time between min. and max. dimming values is 1s).
+1 - 255 = 10 mseconds – 2550 mseconds (2,55s), step is 10 mseconds</lang>
+              </description>
+      
+                  <value from="01" to="ff">
+                <description>
+                    <lang xml:lang="de">Legt die Dimmzeit fest.</lang>
+                    <lang xml:lang="en">Define the dimming time.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="66" type="range" size="1" default="03">
+            <name>
+                <lang xml:lang="de">Dimmzeit auf Knopfdruck</lang>
+                <lang xml:lang="en">Dimming time when key pressed</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Zeit in welcher der Dimmer sich zwischen Mindest- und Höchstdimmwert bewegt durch Halten des Druckknopfes I1. 
+1- 255 = 1 Sekunde – 255 Sekunden</lang>
+                <lang xml:lang="en">Time of moving the Dimmer between min. and max dimming values by continues hold of push button I1.
+1- 255 = 1 second – 255 seconds</lang>
+              </description>
+      
+                  <value from="01" to="ff" unit="sec">
+                <description>
+                    <lang xml:lang="de">Legt die Dimmzeit fest.</lang>
+                    <lang xml:lang="en">Define the dimming time.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    <endpoints>
+           <endpoint number="3">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="20"/>
+                  <specificClass value="00"/>
+                  <commandClass id="0030"/>
+            <commandClass id="0020"/>
+          </endpoint>
+           <endpoint number="2">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="20"/>
+                  <specificClass value="00"/>
+                  <commandClass id="0030"/>
+            <commandClass id="0020"/>
+          </endpoint>
+           <endpoint number="1">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="11"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0020"/>
+            <commandClass id="0025"/>
+            <commandClass id="0026"/>
+            <commandClass id="0027"/>
+            <commandClass id="0032"/>
+            <commandClass id="0031"/>
+            <commandClass id="0073"/>
+            <commandClass id="0085"/>
+            <commandClass id="0070"/>
+            <commandClass id="0072"/>
+            <commandClass id="0086"/>
+            <commandClass id="00ef"/>
+          </endpoint>
+      </endpoints>
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/3ec06cbd231e9e9a986e56995133249ed7689acc.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

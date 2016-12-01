@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="011a"/>
+        <productType value="0111"/>
+    <productId value="0201"/>
+    <libType value="06"/>
+    <protoVersion value="04"/>
+    <protoSubVersion value="18"/>
+    <appVersion value="05"/>
+    <appSubVersion value="0a"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>US</rfFrequency>
+            <certId>50256</certId>
+            <certNumber>50256</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">In-wall Smart Meter Dimmer Switch
+</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">When the primary controller is in the adding mode, flicks the paddle 3 times in the
+1.5 second. The primary controller will verify the adding, assign a node ID number
+for the module .</lang>
+          </inclusionNote>
+            <productName>In-wall Smart Meter Dimmer Switch</productName>
+            <brandName>Enerwave</brandName>
+            <productLine>Z-Wave Plus Devices</productLine>
+            <productCode>ZW500DM</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="005a"/>
+        <commandClass id="0073"/>
+        <commandClass id="0032" version="3"/>
+        <commandClass id="0070"/>
+        <commandClass id="0026" version="2"/>
+        <commandClass id="0025"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0027"/>
+        <commandClass id="0020" inNIF="false"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="3" maxNodes="5">
+            <description>
+                <lang xml:lang="en">PowerReport: Send meter power report</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="en">StatusReport: Send basic report</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="en">Lifeline</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">synchronization of load power and LED indicator</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Power on, LED off</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Power on, LED on</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/0785f6707b73de03d5434dc08eaa2948f97b23b6.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

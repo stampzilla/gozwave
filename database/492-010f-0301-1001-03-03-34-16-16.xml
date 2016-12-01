@@ -1,0 +1,715 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="010f"/>
+        <productType value="0301"/>
+    <productId value="1001"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="34"/>
+    <appVersion value="16"/>
+    <appSubVersion value="16"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="06"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+                    
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">flacher Zweifach-Jalousiecontrollereinsatz, der hinter normalen Lichtschaltern installiert wird</lang>
+            <lang xml:lang="en">Very thin and little wall insert blind control to be mounted behind a standard switch </lang>
+            <lang xml:lang="ru">Компактный модуль для управления моторами (жалюзи, шторы, маркизы, рольставни, ворота и др.)</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+            <lang xml:lang="ru"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Dreifach den kleinen Taster</lang>
+            <lang xml:lang="en">Tripple Press little button on device</lang>
+            <lang xml:lang="ru">Тройное нажатие сервисной кнопки B</lang>
+          </inclusionNote>
+            <productName>Roller Shutter FGRM-222</productName>
+            <brandName>Fibargroup</brandName>
+                <productCode>FGRM-222</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" inNIF="false"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0086"/>
+        <commandClass id="0031" version="2"/>
+        <commandClass id="0072"/>
+        <commandClass id="0070"/>
+        <commandClass id="0091"/>
+        <commandClass id="0032" version="2"/>
+        <commandClass id="0073"/>
+        <commandClass id="0075" version="2"/>
+        <commandClass id="007a"/>
+        <commandClass id="0025"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="3" maxNodes="1">
+            <description>
+                <lang xml:lang="de">meldet den Gerätestatus;  Standardeinstellung ist Primärcontroller</lang>
+                <lang xml:lang="en">reports the module status; default setting primary controller</lang>
+                <lang xml:lang="ru">Отправлять отчёт при изменение состояния устройства</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="16">
+            <description>
+                <lang xml:lang="de">ausgelöst durch Halten eines Tasters</lang>
+                <lang xml:lang="en">triggered through a momentary switch hold</lang>
+                <lang xml:lang="ru">Управляется кнопкой №2</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="16">
+            <description>
+                <lang xml:lang="de">ausgelöst durch einen Taster-Klick oder Positionswechsel eines Kippschalters</lang>
+                <lang xml:lang="en">triggered through a momentary switch click or a toggle switch position change</lang>
+                <lang xml:lang="ru">Управляется кнопкой №1</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">lokaler Schutz</lang>
+                <lang xml:lang="en">local protection</lang>
+                <lang xml:lang="ru">Блокировка локального управления</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">aktiviert/deaktiviert lokalen Schutz. Wenn aktiv Eingabe durch S1 und S2 nicht möglich, Szenen ID und Assoziations-Kommandos werden nicht gesendet. Einzige Ausnahme ist B Taste.</lang>
+                <lang xml:lang="en">enables/disables local entry. If activated module stops
+responding to S1 and S2 push buttons, SCENE ID and association commands will not be sent. Only exception is the
+B-button.</lang>
+                <lang xml:lang="ru">Если блокировка включена, то устройство не будет реагировать на нажатия клавиш. Управление будет возможно только по радио.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">0 - kein Schutz. Gerät reagiert auf lokale Eingaben.</lang>
+                    <lang xml:lang="en">0 - no protection. Roller Shutter responds to push buttons.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">1 - nicht unterstützt.</lang>
+                    <lang xml:lang="en">1 - not supported.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">2 - lokaler Schutz aktiviert. Gerät reagiert nicht auf lokale Eingaben.</lang>
+                    <lang xml:lang="en">2 - Local protection active. Roller Shutter does not respond to push buttons.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Funk Schutz</lang>
+                <lang xml:lang="en">radio protection</lang>
+                <lang xml:lang="ru">Блокировка управления по радио</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">aktiviert/deaktiviert Funk Schutz. Wenn aktiv reagiert Gerät nicht auf Command Frames. Konfiguration und Abfrage (Polling) weiterhin möglich.</lang>
+                <lang xml:lang="en">enables/disables RF protection. If activated device stops responding to command frames. Configuration and polling still possible.</lang>
+                <lang xml:lang="ru">Если блокировка включена, то устройство не будет реагировать на радио команды. Управление будет возможно только с помощью клавиш.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">0 – Schutz deaktiviert. Gerät reagiert auf Command Frames.</lang>
+                    <lang xml:lang="en">0 – No protection. Roller Shutter responds to command frames.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">1 - Funk Schutz aktiv. Gerät reagiert nicht auf command frames.</lang>
+                    <lang xml:lang="en">1 - RF Protection active. Roller Shutter does not respond to the
+Z-Wave control frames.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de"> 2 - nicht unterstützt.</lang>
+                    <lang xml:lang="en">2 - not supported.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Report Typ</lang>
+                <lang xml:lang="en">reports type</lang>
+                <lang xml:lang="ru">Тип отчет (Z-Wave или Fibaro)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Parameter Wert sollte auf 1 gesetzt werden für Jalousie-Modus.</lang>
+                <lang xml:lang="en">Parameters value shoud be set to 1 if the module operates in
+Venetian Blind mode.</lang>
+                <lang xml:lang="ru">Отчет о положении жалюзи может приходить в командах Z-Wave или Fibaro</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">0 - Jalousie Positions Report wird als Z-Wave Kommando an Primärcontroller gesendet.</lang>
+                    <lang xml:lang="en">0 – Blind position reports sent to the main controller using Z-Wave
+Command Class.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">1 - Jalousie Positions Report wird als Fibaro Kommando an Primärcontroller gesendet.</lang>
+                    <lang xml:lang="en">1 - Blind position reports sent to the main controller using Fibar
+Command Class.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Jalousiesteuerung Betriebsmodus</lang>
+                <lang xml:lang="en">Roller Shutter operating modes</lang>
+                <lang xml:lang="ru">Режим работы</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Parameter legt den Betriebsmodus fest.</lang>
+                <lang xml:lang="en">parameter sets the operating mode.</lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">0 - Rolladen Modus, ohne Positionsunterstützung</lang>
+                    <lang xml:lang="en">0 - Roller Blind Mode, without positioning</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">1 - Rolladen Modus, mit Positionsunterstützung</lang>
+                    <lang xml:lang="en">1 - Roller Blind Mode, with positioning</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">2 - Jalousie Modus, mit Positionsunterstützung</lang>
+                    <lang xml:lang="en">2 - Venetian Blind Mode, with positioning</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">3 - Garagentor-Modus, ohne Positionsunterstützung</lang>
+                    <lang xml:lang="en">3 - Gate Mode, without positioning</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">4 - Garagentor-Modus, mit Positionsunterstützung</lang>
+                    <lang xml:lang="en">4 - Gate Mode, with positioning</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="range" size="2" default="0096">
+            <name>
+                <lang xml:lang="de">Drehzeit/ Verzögerungszeit</lang>
+                <lang xml:lang="en">turning time/ delay time</lang>
+                <lang xml:lang="ru">Время полного открытия для Венецианских жалюзи</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Im Jalousie Modus (Parameter 10 auf 2) legt Parameter die Zeit für das vollständige Drehen der Lamellen fest. Im Garagentor-Modus (Parameter 10 auf 3) legt der Parameter die Verzögerung bis zum Schließen des Tores fest.</lang>
+                <lang xml:lang="en">In Venetian Blind mode (parameter 10 set to 2) the
+parameter determines time of full turn of the lamellas.
+In Gate Mode (parameter 10 set to 3 or 4) the parameter defines the delay time after which an open gate starts closing.</lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="8001" to="7fff" unit="0,01s">
+                <description>
+                    <lang xml:lang="de">Wert 0 bedeutet das Garagentor schließt nicht automatisch.</lang>
+                    <lang xml:lang="en">Value 0 means the gate will not close automatically.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Lamellen Positions-Modus</lang>
+                <lang xml:lang="en">lamellas positioning mode</lang>
+                <lang xml:lang="ru">Возвращение ламелей</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Parameter steuert die Positionierung der Lamellen im Jalousie-Modus (Parameter 10 auf 2)</lang>
+                <lang xml:lang="en">parameter influences the lamellas positioning in venetian blind mode (parameter 10 set to 2)</lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">0 - Lamellen gehen in gespeicherte Position, bei Primärcontroller-Aktion.</lang>
+                    <lang xml:lang="en">0 - Lamellas return to previously set position only in case of the
+main controller operation.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">1 - Lamellen gehen in gespeicherte Position, bei Primärcontroller-Aktion, Taster Steuerung oder wenn der Endpositions-Schalter erreicht ist.</lang>
+                    <lang xml:lang="en">1 - Lamellas return to previously set position in case of the main controller operation, momentary switch operation, or when the
+limit switch is reached.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">2 - Lamellen gehen in gespeicherte Position, bei Primärcontroller-Aktion, Taster Steuerung, wenn der Endpositions-Schalter erreicht ist oder wenn ein &quot;STOP&quot; Control Frame empfangen wird (Switch Multilevel Stop).</lang>
+                    <lang xml:lang="en">2 - Lamellas return to previously set position in case of the main
+controller operation, momentary switch operation, when the limit
+switch is reached or after receiving a “STOP” control frame
+(Switch Multilevel Stop).</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="14" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Schalter Typ</lang>
+                <lang xml:lang="en">switch type</lang>
+                <lang xml:lang="ru">Тип клавиши</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Parameter Modus relevant für Rolladen Modus und Jalousie Modus (Parameter 10 auf 0, 1, 2).</lang>
+                <lang xml:lang="en">parameter settings are relevant for Roller Blind Mode and
+Venetian Blind Mode (parameter 10 set to 0, 1, 2).</lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">0 - Taster</lang>
+                    <lang xml:lang="en">0 - Momentary switches</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">1 - Kippschalter</lang>
+                    <lang xml:lang="en">1 - Toggle switches</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">2 - Einfacher Taster. (Taster sollte am S1 Eingang angeschlossen sein).</lang>
+                    <lang xml:lang="en">2 - Single, momentary switch. (The switch should be connected to S1 terminal)</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="17" type="range" size="1" default="0a">
+            <name>
+                <lang xml:lang="de">Verzögerungszeit nach S2</lang>
+                <lang xml:lang="en">delay time after S2</lang>
+                <lang xml:lang="ru">Время отключения реле после достижения концевого выключателя</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Im Rolladen Modus und Jalousie Modus (Parameter 10 auf 0, 1, 2) legt der Parameter fest, nach welcher Verzögerung die Relais ausgeschaltet werden nach Erreichen des Endpositions-Schalters. Im Garagentor Modus (Parameter 10 auf 3, 4) legt der Parameter fest, nach welcher Verzögerung das Tor geschlossen wird, nachdem der S2 Kontakt geöffnet wurde.</lang>
+                <lang xml:lang="en">In roller blind mode or venetian blind mode (parameter 10
+set to 0, 1, 2) the parameter determines when the Roller
+Shutter relays are turned off after reaching a limit switch.
+In Gate Mode (parameter 10 set to 3 or 4) the parameter
+determines a time period after which a gate will start closing after a S2 contact has been disconnected.</lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="81" to="7f" unit="0,1s">
+                <description>
+                    <lang xml:lang="de">Wert 10 = 1s.
+Im Garagentor Modus, ist Wert zum Ausschalten der Relais automatisch auf 3 Sekunden gesetzt, und kann nicht geändert werden. Wert 0 bedeutet Tor wird nicht automatisch geschlossen.</lang>
+                    <lang xml:lang="en">value 10 = 1s.
+In Gate Mode, time to turn off the Roller Shutter relays after reaching a limit switch is set to 3 seconds and cannot be modified. Value of 0 means the gate will note close automatically.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="18" type="range" size="1" default="0a">
+            <name>
+                <lang xml:lang="de">Motor Status Erkennung</lang>
+                <lang xml:lang="en">motor operation detection</lang>
+                <lang xml:lang="ru">Мощность соответствующая достижению концевого выключателя</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Leistungsgrenzwert zur Interpretation als Erreichen eines Endpositions-Schalters.</lang>
+                <lang xml:lang="en">Power threshold to be interpreted as reaching a limit switch.</lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="81" to="7f" unit="1W">
+                <description>
+                    <lang xml:lang="de">Wert 0 bedeutet, Erreichen der Endposition wird nicht gemeldet.</lang>
+                    <lang xml:lang="en">The value of 0 means reaching a limit switch will not be detected.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="22" type="range" size="2" default="00f0">
+            <name>
+                <lang xml:lang="de">Motor Laufzeit</lang>
+                <lang xml:lang="en">motor operation time</lang>
+                <lang xml:lang="ru">Время продолжения работы мотора</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Zeit Periode in der der Motor arbeitet.</lang>
+                <lang xml:lang="en">Time period for the motor to continue operation.</lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="8001" to="7fff" unit="1s">
+                <description>
+                    <lang xml:lang="de">Wert 0 bedeutet Funktion ist deaktiviert.</lang>
+                    <lang xml:lang="en">value of 0 means the function is disabled.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="29" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Kalibrierung erzwingen</lang>
+                <lang xml:lang="en">Forced Roller Shutter calibration</lang>
+                <lang xml:lang="ru">Калибровка</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">setzen des Parameters auf 1 löst Kalibrierung aus. Parameter ist nur relevant, wenn Gerät auf Positionierungs Modus gesetzt ist (Parameter 10 auf 1, 2 oder 4).</lang>
+                <lang xml:lang="en">seting the parameter to 1 Roller Shutter enters the calibration mode. Parameteronly is only relevant if a Roller Shutter is set to work in positioning mode (parameter 10 set to 1, 2 or 4).</lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">0 - deaktiviert. (Wert 0 wird automatisch nach dem Kalibirerungsprozess gesetzt).</lang>
+                    <lang xml:lang="en">0 - deactivated (value 0 is automatically set after calibration process)</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">1 - Start des Kalibrierungsprozesses</lang>
+                    <lang xml:lang="en">1 - Start calibration process</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="30" type="rangemapped" size="1" default="02">
+            <name>
+                <lang xml:lang="de">Reaktion auf normalen Alarm</lang>
+                <lang xml:lang="en">Response to general alarm</lang>
+                <lang xml:lang="ru">Реакция на общий сигнал тревоги</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">0 - keine Reaktion.</lang>
+                    <lang xml:lang="en">0 - No reaction.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">1 - Öffnen.</lang>
+                    <lang xml:lang="en">1 - Open blind.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">2 - Schließen.</lang>
+                    <lang xml:lang="en">2 - Close blind.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="31" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Reaktion auf Überflutungs-Alarm</lang>
+                <lang xml:lang="en">Response to flooding alarm</lang>
+                <lang xml:lang="ru">Реакция на сигнал тревоги о затоплении</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">0 - keine Reaktion.</lang>
+                    <lang xml:lang="en">0 - No reaction.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">1 - Öffnen.</lang>
+                    <lang xml:lang="en">1 - Open blind.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">2 - Schließen.</lang>
+                    <lang xml:lang="en">2 - Close blind.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="32" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Reaktion auf Rauch, CO oder CO2 Alarm </lang>
+                <lang xml:lang="en">Response to smoke, CO or CO2 alarm</lang>
+                <lang xml:lang="ru">Реакция на сигнал тревоги CO и CO2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">0 - keine Reaktion.</lang>
+                    <lang xml:lang="en">0 - No reaction.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">1 - Öffnen.</lang>
+                    <lang xml:lang="en">1 - Open blind.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">2 - Schließen.</lang>
+                    <lang xml:lang="en">2 - Close blind.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="33" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Reaktion auf Temperatur Alarm</lang>
+                <lang xml:lang="en">Response to temperature alarm</lang>
+                <lang xml:lang="ru">Реакция на сигнал тревоги о высокой температуре</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">0 - keine Reaktion.</lang>
+                    <lang xml:lang="en">0 - No reaction.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">1 - Öffnen.</lang>
+                    <lang xml:lang="en">1 - Open blind.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">2 - Schließen.</lang>
+                    <lang xml:lang="en">2 - Close blind.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="35" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Steuerung der Lamellen in Verbindung mit dem Alarm</lang>
+                <lang xml:lang="en">Managing lamellas in response to alarm</lang>
+                <lang xml:lang="ru">Реакция Ламелей на сигнал тревоги</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Im Jalousie Modus (Parameter 10 auf 2) legt der Parameter die Reaktion auf einen Alarm fest.</lang>
+                <lang xml:lang="en">In Venetian Blind Mode (parameter 10 set to 2), the parameter determines how the lamellas will react upon alarm detection.</lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">0 - Lamellenposition nicht ändern. Lamellen gehen in die letzte Position zurück.</lang>
+                    <lang xml:lang="en">0 - Do not change lamellas position - lamellas return to the last set position.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">1 - Lamellen gehen in weiteste Position.</lang>
+                    <lang xml:lang="en">1 - Set lamellas to their extreme position.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="40" type="range" size="1" default="0a">
+            <name>
+                <lang xml:lang="de">Momentanverbrauchs-Report</lang>
+                <lang xml:lang="en">Power reports</lang>
+                <lang xml:lang="ru">Отчет о мощности</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Änderung des Momentanverbrauchs führt zum Aussenden eines Momentanverbrauchs-Reports. Wert in Prozent des letzten gemeldeten Wertes.</lang>
+                <lang xml:lang="en">Power level change that will result in new power value report being
+sent. value is a percentage of the previous report.</lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="01" to="64" unit="1%">
+                <description>
+                    <lang xml:lang="de">Wert 0 bedeutet report ist deaktiviert.</lang>
+                    <lang xml:lang="en">Value of 0 means the reports are turned off.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="42" type="range" size="2" default="0e10">
+            <name>
+                <lang xml:lang="de">Zeit Periode bis nächste Momentan- und Gesamtverbrauchs-Meldung</lang>
+                <lang xml:lang="en">Periodic power or energy reports</lang>
+                <lang xml:lang="ru">Время периодичного отчета о мощности</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Zeit bis zur nächsten Meldung</lang>
+                <lang xml:lang="en">time to the next report</lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="8001" to="7fff" unit="1s">
+                <description>
+                    <lang xml:lang="de">Wert 0 bedeutet Meldung ist deaktiviert.</lang>
+                    <lang xml:lang="en">Value of 0 means the reports are turned off.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="43" type="range" size="1" default="0a">
+            <name>
+                <lang xml:lang="de">Gesamtverbrauchs-Report</lang>
+                <lang xml:lang="en">Energy reports</lang>
+                <lang xml:lang="ru">Отчет о потреблении энергии</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Änderung des Gesamtverbrauchs führt zum Aussenden eines Gesamtverbrauchs-Reports.</lang>
+                <lang xml:lang="en">Energy level change which will result in new energy value report
+being sent.</lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="82" to="7f" unit="0,01KWh">
+                <description>
+                    <lang xml:lang="de">Wert 0 bedeutet Report ist deaktiviert.</lang>
+                    <lang xml:lang="en">Value of 0 means the reports are turned off.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="44" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Eigenverbrauchs-Messung</lang>
+                <lang xml:lang="en">Self-measurement</lang>
+                <lang xml:lang="ru">Измерение мощности самого Roller Shutter</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">aktiviert/deaktiviert das Einbeziehen des eigenen Momentan- und Gesamtverbrauchs in die Reports an den Primärcontroller.</lang>
+                <lang xml:lang="en">enables/disables to include the power and energy used by itself in reports to main controller.</lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">0 - Eigenverbrauchsmessung inaktiv.</lang>
+                    <lang xml:lang="en">0 - Self-measurement inactive.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">1 - Eigenverbrauchsmessung aktiv.</lang>
+                    <lang xml:lang="en">1 - Self-measurement active.</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="50" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Szenen/ Assoziationen Aktivierung</lang>
+                <lang xml:lang="en">Scenes/ Associations activation</lang>
+                <lang xml:lang="ru"> Сцены и Ассоциации</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Parameter legt fest, ob Szenen oder Assoziationen durch die Taster/ Schalter aktiviert werden.</lang>
+                <lang xml:lang="en">Parameter determines whether scenes or associations are
+activated by the switch keys.</lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">0 - Assoziationen aktivieren</lang>
+                    <lang xml:lang="en">0 - Associations activation</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">1 - Szenen aktivieren</lang>
+                    <lang xml:lang="en">1 - Scenes activation</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/62d5f61fd188c1800a55845ad8183527f4c415c6.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

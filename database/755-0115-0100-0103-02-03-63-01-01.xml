@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0115"/>
+        <productType value="0100"/>
+    <productId value="0103"/>
+    <libType value="02"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="63"/>
+    <appVersion value="01"/>
+    <appSubVersion value="01"/>
+        <basicClass value="01"/>
+            <genericClass value="01"/>
+            <specificClass value="06"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Die 4-Tasten-Mini-Fernbedienung mit Sicherheitsunterstützung kann sowohl als Primär- als auch als Sekundär-Controller verwendet werden. Sie ist in der Lage Geräte durch Assoziation oder mittels Auslösen von Szenen in einem Zentralkontroller zu steuern.</lang>
+            <lang xml:lang="en">4 Button Keychain controller with security support able to run as primary and as secondary controller controlling devices by association or triggering scenes in a central controller</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Taste 1: Inklusion /Exklusion als Sekundärkontroller</lang>
+            <lang xml:lang="en">Button 1: Include/Exclude being a sec controller</lang>
+          </inclusionNote>
+            <productName>4 Button Secure Remote Control</productName>
+            <brandName>Z-Wave.Me</brandName>
+            <productLine>Z-Wave</productLine>
+            <productCode>KFOBC</productCode>
+                <batteryType>CR2032</batteryType>
+            <batteryCount>1</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="008f" controlled="true"/>
+        <commandClass id="0073"/>
+        <commandClass id="0098" controlled="true"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0072"/>
+        <commandClass id="0070"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="002d"/>
+        <commandClass id="008e" version="2"/>
+        <commandClass id="0080"/>
+        <commandClass id="0084" version="2" controlled="true"/>
+        <commandClass id="005a"/>
+        <commandClass id="0059"/>
+        <commandClass id="005b"/>
+        <commandClass id="0020" controlled="true" inNIF="false"/>
+        <commandClass id="0062" controlled="true" inNIF="false"/>
+        <commandClass id="0060" version="4" controlled="true" inNIF="false"/>
+        <commandClass id="0026" controlled="true" inNIF="false"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="5" maxNodes="10">
+            <description>
+                <lang xml:lang="de">Steuergruppe D, gesteuert durch Taste 4 oder Doppelklicks auf Taste 2 und 4</lang>
+                <lang xml:lang="en">Control Group D, controlled by button 4 or double
+clicks of buttons 2 and 4</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="4" maxNodes="10">
+            <description>
+                <lang xml:lang="de">Steuergruppe C, gesteuert durch Taste 3 oder doppelklicks auf Taste 1 und 3</lang>
+                <lang xml:lang="en">Control Group C, controlled by button 3 or double
+clicks of buttons 1 and 3</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="10">
+            <description>
+                <lang xml:lang="de">Steuergruppe B, gesteuert durch Taste 2 oder einfache Klicks auf Taste 2 und 4</lang>
+                <lang xml:lang="en">Control Group B, controlled by button 2 or single
+clicks of buttons 2 and 4</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="10">
+            <description>
+                <lang xml:lang="de">Steuergruppe A, gesteuert durch Taste 1 oder einfache Klicks auf Taste 1 und 3</lang>
+                <lang xml:lang="en">Control Group A, controlled by button 1 or single
+clicks of buttons 1 and 3</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="10">
+            <description>
+                <lang xml:lang="de">Lifeline</lang>
+                <lang xml:lang="en">Lifeline</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Taste 1 und 3 gekoppelt</lang>
+                <lang xml:lang="en">Button 1/3 pair mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Im entkoppelten Modus steuern Tasten 1/2 Gruppe A, Tasten 3/4 Gruppe C. 
+Im gekoppelten Modus steuern 1+3/ 2+3 die Gruppen A und C, wobei Einfachklick Gruppe A und Doppelklick Gruppe C schaltet.
+
+</lang>
+                <lang xml:lang="en">In separate mode button 1/2 works with group A, button 3/4 with group C. Click is On, Hold is dimming Up, Double
+click is Off, Click-Hold is dimming Down. In pair button 1+3/2+3 are Up/Down correspondingly. Click is On/Off,
+Hold dimms Up/Down. Single clicks work with group A, double click with group C.
+
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Tasten sind unabhänging</lang>
+                    <lang xml:lang="en">Separately</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Tasten steuern gemeinsam, Doppelklick wird nicht beachtet</lang>
+                    <lang xml:lang="en">In pair without double clicks
+
+</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Tasten steuern gemeinsam, Doppelklick wird beachtet</lang>
+                    <lang xml:lang="en">In pair with double clicks</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Taste 2 und 4 gekoppelt</lang>
+                <lang xml:lang="en">Button 2/4 pair mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Im entkoppelten Modus steuern Tasten 1/2 die Gruppe A und Tasten 3/4 die Gruppe C, im gekoppelten Modus steuern 1+3/ 2+3 entsprechend die Gruppen A und C, wobei Einfachklick Gruppe A und Doppelklick Gruppe C schaltet.</lang>
+                <lang xml:lang="en">In separate mode button 1/2 works with group A, button 3/4 with group C. Click is On, Hold is dimming Up, Double click is Off, Click-Hold is dimming Down. In pair button 1+3/2+3 are Up/Down correspondingly. Click is On/Off, Hold dimms Up/Down. Single clicks work with group A, double click with group C.
+
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Tasten 2 und 4 sind unabhänging</lang>
+                    <lang xml:lang="en">Separately</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Tasten 2 und 4 steuern gemeinsam, Doppelklick wird nicht beachtet</lang>
+                    <lang xml:lang="en">In pair without double clicks</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Tasten 2 und 4 steuern gemeinsam, Doppelklick wird beachtet</lang>
+                    <lang xml:lang="en">In pair with double clicks</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Kommando an Steuergruppe A</lang>
+                <lang xml:lang="en">Command to Control Group A</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Dieser Parameter definiert das Schaltkommando, das an Geräte in Steuergruppe A gesendet wird.</lang>
+                <lang xml:lang="en">This parameter defines the command to be sent to devices of control group A when the related button is pressed.
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; und &#039;SwitchMultilevel&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off and Dim (send Basic Set and
+Switch Multilevel)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off only (send Basic Set)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">&#039;Switch All&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch All</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Szenenaktivierung</lang>
+                    <lang xml:lang="en">Send Scenes</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de">Vorkonfigurierte Szenen werden gesendet.</lang>
+                    <lang xml:lang="en">Send Preconfigured Scenes</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="de"> Alle Geräte in der Nähe werden durch den Schlüsselanhänger gesteuert.</lang>
+                    <lang xml:lang="en">Control devices in proximity</lang>
+                  </description>
+              </value>
+            <value from="07" to="07">
+                <description>
+                    <lang xml:lang="de">Steuert Türschloss</lang>
+                    <lang xml:lang="en">Control Door Lock</lang>
+                  </description>
+              </value>
+            <value from="08" to="08">
+                <description>
+                    <lang xml:lang="de">Zentrale Szene im Gateway (Voreinstellung)</lang>
+                    <lang xml:lang="en">Central Scene to Gateway (Default)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Kommando an Steuergruppe B</lang>
+                <lang xml:lang="en">Command to Control Group B</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Dieser Parameter definiert das Schaltkommando, das an Geräte in Steuergruppe B gesendet wird.</lang>
+                <lang xml:lang="en">This parameter defines the command to be sent to devices of control group B when the related button is pressed.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; und &#039;SwitchMultilevel&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off and Dim (send Basic Set and Switch Multilevel)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off only (send Basic Set)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">&#039;Switch All&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch All</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Szenenaktivierung</lang>
+                    <lang xml:lang="en">Send Scenes</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de">Vorkonfigurierte Szenen werden gesendet.</lang>
+                    <lang xml:lang="en">Send Preconfigured Scenes</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="de"> Alle Geräte in der Nähe werden durch den Schlüsselanhänger gesteuert.</lang>
+                    <lang xml:lang="en">Control devices in proximity</lang>
+                  </description>
+              </value>
+            <value from="07" to="07">
+                <description>
+                    <lang xml:lang="de">Steuert Türschloss</lang>
+                    <lang xml:lang="en">Control Door Lock</lang>
+                  </description>
+              </value>
+            <value from="08" to="08">
+                <description>
+                    <lang xml:lang="de">Zentrale Szene im Gateway</lang>
+                    <lang xml:lang="en">Central Scene to Gateway</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Kommando an Steuergruppe C</lang>
+                <lang xml:lang="en">Command to Control Group C</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Dieser Parameter definiert das Schaltkommando, das an Geräte in Steuergruppe C gesendet wird.</lang>
+                <lang xml:lang="en">This parameter defines the command to be sent to devices of control group C when the related button is pressed.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; und &#039;SwitchMultilevel&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off and Dim (send Basic Set and Switch Multilevel)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off only (send Basic Set)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">&#039;Switch All&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch All</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Szenenaktivierung</lang>
+                    <lang xml:lang="en">Send Scenes</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de">Vorkonfigurierte Szenen werden gesendet.</lang>
+                    <lang xml:lang="en">Send Preconfigured Scenes</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="de"> Alle Geräte in der Nähe werden durch den Schlüsselanhänger gesteuert.</lang>
+                    <lang xml:lang="en">Control devices in proximity</lang>
+                  </description>
+              </value>
+            <value from="07" to="07">
+                <description>
+                    <lang xml:lang="de">Steuert Türschloss</lang>
+                    <lang xml:lang="en">Control Door Lock</lang>
+                  </description>
+              </value>
+            <value from="08" to="08">
+                <description>
+                    <lang xml:lang="de">Zentrale Szene im Gateway</lang>
+                    <lang xml:lang="en">Central Scene to Gateway</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="14" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Kommando an Steuergruppe D</lang>
+                <lang xml:lang="en">Command to Control Group D</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Dieser Parameter definiert das Schaltkommando, das an Geräte in Steuergruppe D gesendet wird.</lang>
+                <lang xml:lang="en">This parameter defines the command to be sent to devices of control group D
+when the related button is pressed.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; und &#039;SwitchMultilevel&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off and Dim (send Basic Set and Switch Multilevel)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off only (send Basic Set)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">&#039;Switch All&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch All</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Szenenaktivierung</lang>
+                    <lang xml:lang="en">Send Scenes</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de">Vorkonfigurierte Szenen werden gesendet.</lang>
+                    <lang xml:lang="en">Send Preconfigured Scenes</lang>
+                  </description>
+              </value>
+            <value from="06" to="06">
+                <description>
+                    <lang xml:lang="de"> Alle Geräte in der Nähe werden durch den Schlüsselanhänger gesteuert.</lang>
+                    <lang xml:lang="en">Control devices in proximity</lang>
+                  </description>
+              </value>
+            <value from="07" to="07">
+                <description>
+                    <lang xml:lang="de">Steuert Türschloss</lang>
+                    <lang xml:lang="en">Control Door Lock</lang>
+                  </description>
+              </value>
+            <value from="08" to="08">
+                <description>
+                    <lang xml:lang="de">Zentrale Szene im Gateway</lang>
+                    <lang xml:lang="en">Central Scene to Gateway</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="21" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de"> &#039;Switch All&#039; Kommandos</lang>
+                <lang xml:lang="en">Switch All commands</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Der Parameter entscheidet, welche Kommandos gesendet werden.</lang>
+                <lang xml:lang="en">The parameter determines which commands are sent.
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Nur alle Ausschalten</lang>
+                    <lang xml:lang="en">Switch off only</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Nur alle Einschalten</lang>
+                    <lang xml:lang="en">Switch on only</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="de">Alle Einschalten und Ausschalten</lang>
+                    <lang xml:lang="en">Switch all on and off</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="22" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Invertieren der Tastenbedeutung</lang>
+                <lang xml:lang="en">Invert Buttons</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Nein</lang>
+                    <lang xml:lang="en">No</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Ja</lang>
+                    <lang xml:lang="en">Yes</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="25" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Blockiert das Aufwecken des Gerätes selbst bei gesetztem Aufweckintervall</lang>
+                <lang xml:lang="en">Blocks wakeup even when wakeup interval is set</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Weckt der KFOB auf und es befindet sich kein Controller in der Nähe, wird mit erfolglosen Kommunikationsversuchen viel Batterieleistung verbraucht.</lang>
+                <lang xml:lang="en">If the KFOB wakes up and there is no controller nearby, several
+unsuccessful communication attempts will drain battery.
+</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Aufwecken Blockiert</lang>
+                    <lang xml:lang="en">Wakeup is blocked</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Wakeup findet statt, wenn entsprechend konfiguriert</lang>
+                    <lang xml:lang="en">Wakeup is possible if configured accordingly</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="30" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Sendet beim Aufwecken unaufgefordert eine Batterie-Statusmeldung</lang>
+                <lang xml:lang="en">Send unsolicited Battery Report on Wake Up</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Nein</lang>
+                    <lang xml:lang="en">No</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">An das gleiche Gerät wie die Aufweck-Meldung</lang>
+                    <lang xml:lang="en">To same node as wake up
+notification</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Broadcast an alle Nachbarn</lang>
+                    <lang xml:lang="en">Broadcast to neighbors</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/6aa9a9e7b7dad00bb9d392cf79df00eeff31e1c5.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

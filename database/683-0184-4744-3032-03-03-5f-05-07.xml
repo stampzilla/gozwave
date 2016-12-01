@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0184"/>
+        <productType value="4744"/>
+    <productId value="3032"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="5f"/>
+    <appVersion value="05"/>
+    <appSubVersion value="07"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>US</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">RF Controlled, Plug In Dimmer</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">When the controller’s software is ready, single click the button on the front of PD-
+100.</lang>
+          </inclusionNote>
+            <productName>Plug In Dimmer Switch</productName>
+            <brandName>domitech</brandName>
+            <productLine>Wireless Dimmer Control</productLine>
+            <productCode>PD100</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="005a"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0073"/>
+        <commandClass id="0026"/>
+        <commandClass id="0027"/>
+        <commandClass id="0070"/>
+        <commandClass id="007a" version="2"/>
+        <commandClass id="0020"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Lifeline</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="3" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">LED Indicator</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The parameter defines the functionality of the LED indicator.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">The LED indicator will be OFF when the connected appliance is ON, and the LED indicator will be ON when the connected appliance is OFF.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">The LED indicator will be ON when the connected appliance is ON, and the
+LED indicator will be OFF when the connected appliance is OFF.</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">The LED indicator is always OFF regardless of the load condition.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Lighting Level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The time interval of brightness change between dimming up and down can be adjusted by
+changing the following configuration with a controller(if supported).
+indicates the number of levels the lighting will change when the timer runs out.</lang>
+              </description>
+      
+                  <value from="01" to="63">
+                <description>
+                    <lang xml:lang="en">Define the parameter for the change of the level of the lighting.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="range" size="1" default="03">
+            <name>
+                <lang xml:lang="en">Timer</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The time interval of brightness change between dimming up and down can be adjusted by
+changing the following configuration with a controller(if supported).
+Indicates the time duration of each level.
+The resolution is 10 milliseconds. For example, a default value of 3 means the timer runs out
+every 30 milliseconds. Using the combinations of these 2 parameters, you can create a dim
+rate adjustment range as short as 10 milliseconds to a very slow dim rate.</lang>
+              </description>
+      
+                  <value from="01" to="ff">
+                <description>
+                    <lang xml:lang="en">Define the time duration of each level.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/7c0328b852d2f461cc25d473ecf5b4de69305b6a.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

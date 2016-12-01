@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="015f"/>
+        <productType value="0001"/>
+    <productId value="0001"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="67"/>
+    <appVersion value="01"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="04"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>US</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Z-Wave enabled dimmer which can monitor energy consumption </lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Press the ON/OFF/PROGRAM button on the Mini Energy Dimmer, or toggle the external switch/button.</lang>
+          </inclusionNote>
+            <productName>Mini Energy Dimmer</productName>
+            <brandName>Mcohome</brandName>
+            <productLine>Z-Wave Dimmer</productLine>
+            <productCode>MH-P210-US</productCode>
+            <productVersion>V1.00</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0026" version="2"/>
+        <commandClass id="0027"/>
+        <commandClass id="0070"/>
+        <commandClass id="0032" version="3"/>
+        <commandClass id="002b"/>
+        <commandClass id="002c"/>
+        <commandClass id="0085"/>
+        <commandClass id="0072"/>
+        <commandClass id="0086"/>
+        <commandClass id="0020"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">When set unsolicited report, the module will send data to these devices initiatively. </lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">0x00: Switch(2 state switch mode)
+0x01: Button( Momentary button mode)
+</lang>
+              </description>
+      
+          </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/64778b8e95ccfa12889bc39fa63283c1bc4dd7b1.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

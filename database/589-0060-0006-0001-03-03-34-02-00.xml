@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0060"/>
+        <productType value="0006"/>
+    <productId value="0001"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="34"/>
+    <appVersion value="02"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="21"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+                    
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Temperatur/Feuchtigkeitssensor</lang>
+            <lang xml:lang="en">Temperature/Humidity Sensor</lang>
+            <lang xml:lang="ru">Датчик Влажности/Температуры</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de">Ist 10 min nach Includieren wach, danach Dreifachclick auf C/F</lang>
+            <lang xml:lang="en">Stays awake for 10 min. after inclusion, tripple click on C/F</lang>
+            <lang xml:lang="ru">Трижды нажать C/F. После включения в сеть датчик не спит 10 минут</lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">C/F Taste dreifach</lang>
+            <lang xml:lang="en">Tripple press C/F button</lang>
+            <lang xml:lang="ru">Трижды нажать C/F</lang>
+          </inclusionNote>
+            <productName>Temperature/Humidity Sensor 2.0 ST814</productName>
+            <brandName>Everspring</brandName>
+            <productLine>Sensors</productLine>
+            <productCode>ST814</productCode>
+            <productVersion>2.0</productVersion>
+            <batteryType>AA</batteryType>
+            <batteryCount>3</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020"/>
+        <commandClass id="0031" version="2"/>
+        <commandClass id="0060" version="2"/>
+        <commandClass id="0070"/>
+        <commandClass id="0071"/>
+        <commandClass id="0072"/>
+        <commandClass id="0080"/>
+        <commandClass id="0084" version="2"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0086"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="de">Battery Status und Sensor Report</lang>
+                <lang xml:lang="en">Battery Status and Sensor Report</lang>
+                <lang xml:lang="ru">Отчет для контроллера о батареи, состоянии датчиков, и сигналы тревоги от датчиков</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="3">
+            <description>
+                <lang xml:lang="de">Sensor Sendet Alarm Meldung</lang>
+                <lang xml:lang="en">Sensor Triggered</lang>
+                <lang xml:lang="ru">Для устройств управляемых датчиком влажности и температуры (BASIC_SET)</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="1" default="63">
+            <name>
+                <lang xml:lang="de">Basic Level Set</lang>
+                <lang xml:lang="en">Basic Level Set</lang>
+                <lang xml:lang="ru">Уровень диммирования, отправляемый устройствам из группы 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert, ob der Schaltimpuls des Gerätes bei Erreichen der Triggerschwelle EIN oder AUS sein soll.</lang>
+                <lang xml:lang="en">Set basic set value to be on or off</lang>
+                <lang xml:lang="ru">Отправлять устройствам из группы 2 заданный уровень диммирования. Так можно при срабатывании датчика влажности или температуры открытия включать свет на 50% или открывать жалюзи на 30%.</lang>
+              </description>
+      
+                  <value from="01" to="63">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Use value</lang>
+                    <lang xml:lang="ru">Уровень диммирования</lang>
+                  </description>
+              </value>
+            <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Disable</lang>
+                    <lang xml:lang="en">Disable</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="1" default="63">
+            <name>
+                <lang xml:lang="de">Temperaturschwellwert zum Einschalten</lang>
+                <lang xml:lang="en">Temperature Trigger ON value</lang>
+                <lang xml:lang="ru">Температура при которой отправляется команда Включить</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Der Temperaturschwellwert, bei dem ein assoziiertes Gerät eingeschaltet wird.</lang>
+                <lang xml:lang="en">Temperature level when a ON command is sent out</lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="ec" to="ff" unit="°C">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Trigger On on</lang>
+                    <lang xml:lang="ru">Температура включения (-20 ... -1)</lang>
+                  </description>
+              </value>
+            <value from="00" to="32" unit="°C">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Trigger On on</lang>
+                    <lang xml:lang="ru">Температура включения (0 ... 50)</lang>
+                  </description>
+              </value>
+            <value from="63" to="63">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Disable</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="range" size="1" default="63">
+            <name>
+                <lang xml:lang="de">Temperaturschwellwert zum Ausschalten</lang>
+                <lang xml:lang="en">Temperature Trigger OFF value</lang>
+                <lang xml:lang="ru">Температура при которой отправляется команда Выключить</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Der Temperaturschwellwert, bei dem ein assoziiertes Gerät ausgeschaltet wird.</lang>
+                <lang xml:lang="en">Trigger Temperature level when a OFF command is sent out</lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="ec" to="ff" unit="°C">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Trigger Off on</lang>
+                    <lang xml:lang="ru">Температура выключения (-20 ... -1)</lang>
+                  </description>
+              </value>
+            <value from="00" to="32" unit="°C">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Trigger Off on</lang>
+                    <lang xml:lang="ru">Температура выключения (0 ... 50)</lang>
+                  </description>
+              </value>
+            <value from="63" to="63">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Disable</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="1" default="63">
+            <name>
+                <lang xml:lang="de">Feuchtigkeitschwellwert zum Einschalten</lang>
+                <lang xml:lang="en">Humidity Trigger ON value</lang>
+                <lang xml:lang="ru">Влажности при которой отправляется команда Включить</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Der Feuchtigkeitsschwellwert, bei dem ein assoziiertes Gerät eingeschaltet wird.</lang>
+                <lang xml:lang="en">Humidity level when a ON command is sent out</lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="14" to="5a" unit="%">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Trigger On on</lang>
+                    <lang xml:lang="ru">Влажность включения</lang>
+                  </description>
+              </value>
+            <value from="63" to="63">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Disable</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="range" size="1" default="63">
+            <name>
+                <lang xml:lang="de">Feuchtigkeitschwellwert zum Ausschalten</lang>
+                <lang xml:lang="en">Humidity Trigger OFF value</lang>
+                <lang xml:lang="ru">Влажности при которой отправляется команда Выключить</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Der Feuchtigkeitsschwellwert, bei dem ein assoziiertes Gerät ausgeschaltet wird.</lang>
+                <lang xml:lang="en">Humidity level when a OFF command is sent out</lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="14" to="5a" unit="%">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Tigger Off on</lang>
+                    <lang xml:lang="ru">Влажность выключения</lang>
+                  </description>
+              </value>
+            <value from="63" to="63">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Disable</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">Status-Interval</lang>
+                <lang xml:lang="en">Auto Report Time</lang>
+                <lang xml:lang="ru">Время автоматического отчета о температуре и влажности</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Der Zeitinterval innerhalb dessen ein automatisch zu sendender Statuswert gesendet wird</lang>
+                <lang xml:lang="en">Sets the time interval when a sensor report is sent</lang>
+                <lang xml:lang="ru">Интервал времени через который будет отправляться автоматический отчет о температуре и влажности</lang>
+              </description>
+      
+                  <value from="0001" to="059f" unit="min">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Auto report periodically</lang>
+                    <lang xml:lang="ru">Время отчета</lang>
+                  </description>
+              </value>
+            <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Disable</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Status-Interval für Temperatur</lang>
+                <lang xml:lang="en">Auto Report Temperature</lang>
+                <lang xml:lang="ru">Температура при изменении на которую отправляется отчет</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Der Zeitinterval innerhalb dessen ein automatisch zu sendender Statuswert gesendet wird</lang>
+                <lang xml:lang="en">Sets the temperature change causing  a sensor report </lang>
+                <lang xml:lang="ru">Если задать 1°C, то при изменении температуры на 1°C будет отправлен отчет контроллеру с текущей температурой</lang>
+              </description>
+      
+                  <value from="01" to="46" unit="deg">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Auto report on temp. change</lang>
+                    <lang xml:lang="ru">Температура отчета</lang>
+                  </description>
+              </value>
+            <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Status-Interval für Feuchtigkeit</lang>
+                <lang xml:lang="en">Auto Report Humidity</lang>
+                <lang xml:lang="ru">Влажность при изменении на которую отправляется отчет</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Der Zeitinterval innerhalb dessen ein automatisch zu sendender Statuswert gesendet wird</lang>
+                <lang xml:lang="en">Sets the humidity change causing  a sensor report </lang>
+                <lang xml:lang="ru">Если задать 1%, то при изменении влажности на 1°C будет отправлен отчет контроллеру с текущей влажностью</lang>
+              </description>
+      
+                  <value from="05" to="46" unit="%">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Auto report on humidity change</lang>
+                    <lang xml:lang="ru">Влажность отчета</lang>
+                  </description>
+              </value>
+            <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Disable</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    <endpoints>
+           <endpoint number="1">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="21"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0020"/>
+            <commandClass id="0031" version="2"/>
+          </endpoint>
+           <endpoint number="2">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="21"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0020"/>
+            <commandClass id="0031" version="2"/>
+          </endpoint>
+      </endpoints>
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/b7f7611342fb1bdf5a63e925d131c4286f97a068.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

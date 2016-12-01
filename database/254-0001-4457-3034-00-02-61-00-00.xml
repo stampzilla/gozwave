@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0001"/>
+        <productType value="4457"/>
+    <productId value="3034"/>
+    <libType value="00"/>
+    <protoVersion value="02"/>
+    <protoSubVersion value="61"/>
+    <appVersion value="00"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="04"/>
+        <optional value="false"/>
+    <listening value="true"/>
+    <routing value="false"/>
+            <rfFrequency>US</rfFrequency>
+            <certId>13946</certId>
+            <certNumber>ZC08-10110002</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Scene Capable Wall Switch Dimmer with Load Sense</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Tap the button</lang>
+          </inclusionNote>
+            <productName>ZDW104,LRM-AS</productName>
+            <brandName>HomePro, Evolve</brandName>
+            <productLine>HomePro, Evolve</productLine>
+            <productCode>ZDW104,LRM-AS</productCode>
+            <productVersion>V5.1</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020"/>
+        <commandClass id="0026"/>
+        <commandClass id="002b"/>
+        <commandClass id="002c"/>
+        <commandClass id="0027"/>
+        <commandClass id="0072"/>
+        <commandClass id="0086"/>
+        <commandClass id="0070"/>
+        <commandClass id="0073"/>
+      </commandClasses>
+  
+  
+    <configParams>
+        <configParam number="3" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Night Light</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">the LED will
+turn ON when the load attached is turned ON</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">the LED will turn OFF when the load attached is turned ON</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Invert Switch</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Changes the top of the switch to OFF and the bottom of the switch to ON</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="29" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Load Sense</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Disable load sense</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Enable load sense</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/dba0a582ad588c2837a76042aee8d29218d6ef2d.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

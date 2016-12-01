@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="010a"/>
+        <productType value="1300"/>
+    <productId value="5a00"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="14"/>
+    <appVersion value="03"/>
+    <appSubVersion value="04"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="05"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+            <certId>14019</certId>
+            <certNumber>ZC08-11100001</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Motor Control Wireless</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Touch any of the keys on Vitrum to include the unit.</lang>
+          </inclusionNote>
+            <productName>VITRUM II Control of Roller Blinds - EU BOX</productName>
+            <brandName>Vitrum</brandName>
+            <productLine>Wireless Automation</productLine>
+            <productCode>02E020010</productCode>
+            <productVersion>0</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" inNIF="false"/>
+        <commandClass id="0060" version="2"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0026" version="3" controlled="true"/>
+        <commandClass id="0027"/>
+        <commandClass id="0087"/>
+        <commandClass id="008e" version="2"/>
+        <commandClass id="0091"/>
+        <commandClass id="0072"/>
+        <commandClass id="0077"/>
+        <commandClass id="0086"/>
+        <commandClass id="0025" controlled="true"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="10">
+            <description>
+                <lang xml:lang="en">Controls up to 5 units.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+  
+    <endpoints>
+           <endpoint number="1">
+            <name>
+                <lang xml:lang="en">Motor Control Channel</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="11"/>
+                  <specificClass value="05"/>
+                  <commandClass id="0020"/>
+            <commandClass id="0072"/>
+            <commandClass id="0026" version="3"/>
+            <commandClass id="0086"/>
+            <commandClass id="0025"/>
+          </endpoint>
+      </endpoints>
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/d2f12c1ec1e4b26a7194191e47e61d6184d34f15.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

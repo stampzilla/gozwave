@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0060"/>
+        <productType value="0006"/>
+    <productId value="0001"/>
+    <libType value="00"/>
+    <protoVersion value="02"/>
+    <protoSubVersion value="40"/>
+    <appVersion value="00"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="21"/>
+            <specificClass value="01"/>
+        <optional value="false"/>
+    <listening value="false"/>
+    <routing value="false"/>
+            <rfFrequency>US</rfFrequency>
+            <certId>14397</certId>
+            <certNumber>ZC08-11100005</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Temperature &amp; Humidity Sensor (US) - 300 Series -  	ST814-US</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Pressing the °C/°F key 3 times within 1,5 seconds will enter inclusion mode.</lang>
+          </inclusionNote>
+            <productName>Z-Wave Temperature &amp; Humidity Sensor (US) - 300 Series</productName>
+            <brandName>MK</brandName>
+            <productLine>Everspring Z-Wave Products</productLine>
+            <productCode>ST814-US</productCode>
+            <productVersion>V1.7</productVersion>
+            <batteryType>AA</batteryType>
+            <batteryCount>3</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" controlled="true"/>
+        <commandClass id="0031" version="2"/>
+        <commandClass id="0084" version="2"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0080"/>
+        <commandClass id="0072"/>
+        <commandClass id="0086"/>
+        <commandClass id="0071"/>
+        <commandClass id="0070"/>
+        <commandClass id="0060"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="en">Control/ Report Group 1</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="3">
+            <description>
+                <lang xml:lang="en">Control/ Report Group 2</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="1" default="63">
+            <name>
+                <lang xml:lang="en">Send Basic Set level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="63" unit="Dimmer level">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="rangemapped" size="1" default="63">
+            <name>
+                <lang xml:lang="en">Temperature Trigger on value</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="ec" to="32" unit="degree">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="63" to="63">
+                <description>
+                    <lang xml:lang="en">disable</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="rangemapped" size="1" default="63">
+            <name>
+                <lang xml:lang="en">Temperature Trigger off value</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="ec" to="32" unit="degree">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="63" to="63">
+                <description>
+                    <lang xml:lang="en">disable</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="rangemapped" size="1" default="63">
+            <name>
+                <lang xml:lang="en">Humidity Trigger on value</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="14" to="5a" unit="%">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="63" to="63">
+                <description>
+                    <lang xml:lang="en">disable</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="rangemapped" size="1" default="63">
+            <name>
+                <lang xml:lang="en">Humidity Trigger off value</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="14" to="5a" unit="%">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="63" to="63">
+                <description>
+                    <lang xml:lang="en">disable</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="rangemapped" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Auto Report Time Interval</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="0001" to="059f" unit="minutes">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="en">Disable Auto Report</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Auto Report Temperature Trigger </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="01" to="46" unit="degree">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Disable Auto Report</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Auto Report Humidity Trigger Interval</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="05" to="46" unit="%">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+            <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Disable Auto Report</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/1aeccdad38e0ee46b19927bb4615f2466e890b8e.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

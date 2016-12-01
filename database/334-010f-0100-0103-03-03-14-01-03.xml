@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="010f"/>
+        <productType value="0100"/>
+    <productId value="0103"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="14"/>
+    <appVersion value="01"/>
+    <appSubVersion value="03"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+                    
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">flacher Dimmereinsatz, der hinter normalen Lichtschaltern installiert wird</lang>
+            <lang xml:lang="en">Very thin and little wall dimmer insert to be mounted behind a standard switch</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Dreifach den kleinen Taster</lang>
+            <lang xml:lang="en">Tripple Press little button on device</lang>
+          </inclusionNote>
+            <productName>FGD-211</productName>
+            <brandName>Wall Insert</brandName>
+                <productCode>FGD-211</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020"/>
+        <commandClass id="0026"/>
+        <commandClass id="0086"/>
+        <commandClass id="0027"/>
+        <commandClass id="008e" version="2"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+        <commandClass id="0073"/>
+        <commandClass id="0085" version="2"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="3" maxNodes="1">
+            <description>
+                <lang xml:lang="de">sendet alle Statusänderungen</lang>
+                <lang xml:lang="en">Report any State Change </lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="16">
+            <description>
+                <lang xml:lang="de">externer Schalter 2</lang>
+                <lang xml:lang="en">external Switch No 2</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="16">
+            <description>
+                <lang xml:lang="de">externer Schalter 1</lang>
+                <lang xml:lang="en">external Switch No 1</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="ff">
+            <name>
+                <lang xml:lang="de">Alles-Aus-Steuerung</lang>
+                <lang xml:lang="en">All on/off function</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert das Verhalten bei Alles-AUS- und Alles-AN-Befehlen </lang>
+                <lang xml:lang="en">Enables or disabled the all on / all off function</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">weder AUS noch EIN werden ausgeführt</lang>
+                    <lang xml:lang="en">neither ALL ON nor ALL OFF are active</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Nur AUS wird ausgeführt</lang>
+                    <lang xml:lang="en">only ALL OFF is active</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Nur EIN wird ausgeführt</lang>
+                    <lang xml:lang="en">only ALL ON is active</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="de">sowohl AUS als EIN werden ausgeführt</lang>
+                    <lang xml:lang="en">ALL ON and ALL OFF are active</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Kommandos die an Assoziationsgruppe 1 gesendet werden</lang>
+                <lang xml:lang="en">Commands Sent to Association Group 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Legt fest, welche Schaltoperation andere Geräte in Assoziationsgruppen steuert. Um die Doppelklcikfunktion zu unterstützen, muss Parameter 14 auf den Wert 1 gesetzt werden.</lang>
+                <lang xml:lang="en">Defines what status changes cause sending out a wireless command. Zu allow double click function parameter 14 needs to be turned to 1 </lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">sowohl Einschalten als auch Ausschalten senden ein Funkkommando</lang>
+                    <lang xml:lang="en">turning on and turning off sends out a wireless command</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Das Ausschalten sendet ein Funkkommando. Ein Doppelklick führt zum Einschalten aller Geräte, Dimmer kehren zu ihrem letzten Zustand zurück.  </lang>
+                    <lang xml:lang="en">Turning off sends a wireless command. All devices can be turned on using a double click, dimmers will return to their last dimming state.</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Das Ausschalten sendet ein Funkkommando. Ein Doppelklick führt zum Einschalten aller Geräte, Dimmer dimmen auf 100 %.  </lang>
+                    <lang xml:lang="en">Turning ff sends a wireless command. All devices can be turned on using a double click, dimmers will dim to 100 %. </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Prüfe Status des Gerätes, an das bei Betätigen von Schalter No2 ein Signal gesendet werden soll.</lang>
+                <lang xml:lang="en">Check status before sending a control command on external switch no 2.</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Wenn ein zweiter externer Schalter angeschlossen ist, kann dieser genutzt werden, um wietere Geräte zu steuern. Es wird festgelegt, ob dabei der Schaltzustand dieser Geräte vor Aussenden eines Schaltsignals geprüft wird.</lang>
+                <lang xml:lang="en">When external switch no 2 is switches the status of the remote device to be switches is checked or not.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Wird nicht geprüft.</lang>
+                    <lang xml:lang="en">Not checked</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Wird geprüft.</lang>
+                    <lang xml:lang="en">Checked</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Prozentaler Schritt beim automatischen Dimmen</lang>
+                <lang xml:lang="en">The percentage of a dimming step at automated control</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert um wieviel Prozent mit jedem Schritt bei automatischen Bedienung der Dimmerpegel geändert wird. </lang>
+                <lang xml:lang="en">The percentage drop of regulation per one dimming step with automated control</lang>
+              </description>
+      
+                  <value from="01" to="63">
+                <description>
+                    <lang xml:lang="de">%</lang>
+                    <lang xml:lang="en">%</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Laufzeit zwischen Dimmerendpegeln / manuelles Dimmen</lang>
+                <lang xml:lang="en">Time between extreme values of manual dimming</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Es wird die Zeit definiert, die der Dimmer beim manuellen Dimmen zwischen 0 % und 100 % Dimmerpegel braucht.</lang>
+                <lang xml:lang="en">The time of travel between extreme values of manual dimming level .</lang>
+              </description>
+      
+                  <value from="01" to="ff" unit="ms">
+                <description>
+                    <lang xml:lang="de">* 10 ms</lang>
+                    <lang xml:lang="en">* 10 ms</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Laufzeit zwischen Dimmerendpegeln / automatisches Dimmen</lang>
+                <lang xml:lang="en">Time between extreme values of automatic dimming</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Es wird die Zeit definiert, die der Dimmer beim automatischen Dimmen zwischen 0 % und 100 % Dimmerpegel braucht.</lang>
+                <lang xml:lang="en">The time of travel between extreme values of dimming level with remote control.</lang>
+              </description>
+      
+                  <value from="01" to="ff" unit="ms">
+                <description>
+                    <lang xml:lang="de">* 10 ms</lang>
+                    <lang xml:lang="en">* 10 ms</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Prozentaler Schritt beim manuellen Dimmen</lang>
+                <lang xml:lang="en">The percentage of a dimming step at manual control</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert um wieviel Prozent mit jedem Schritt bei manueller Bedienung der Dimmerpegel geändert wird. </lang>
+                <lang xml:lang="en">The percentage drop of regulation per one dimming step with manual control</lang>
+              </description>
+      
+                  <value from="01" to="63">
+                <description>
+                    <lang xml:lang="de">%</lang>
+                    <lang xml:lang="en">%</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="range" size="1" default="63">
+            <name>
+                <lang xml:lang="de">Maximaler Dimmerpegel</lang>
+                <lang xml:lang="en">The maximal dimming level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert den maximal möglichen Dimmerpegel. Kann benutzt werden, um Flickern bei zu hohem Dimmerpegel zu vermeiden.</lang>
+                <lang xml:lang="en">The maximal level of dimmer’s brightening</lang>
+              </description>
+      
+                  <value from="01" to="62">
+                <description>
+                    <lang xml:lang="de">%</lang>
+                    <lang xml:lang="en">%</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="range" size="1" default="02">
+            <name>
+                <lang xml:lang="de">Minimaler Dimmerpegel</lang>
+                <lang xml:lang="en">The minimal dimming level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert den minimal möglichen Dimmerpegel. Kann benutzt werden, um Flickern bei zu geringem Dimmerpegel zu vermeiden.</lang>
+                <lang xml:lang="en">The minimal level of dimmer’s brightening</lang>
+              </description>
+      
+                  <value from="01" to="62">
+                <description>
+                    <lang xml:lang="de">%</lang>
+                    <lang xml:lang="en">%</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="14" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Typ des externen Schalters</lang>
+                <lang xml:lang="en">External Switch Type</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Es wird der Typ des externen Steuerschalters definiert.</lang>
+                <lang xml:lang="en">The type of switch may be chosen from mono-stable or bistable switches</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Taster (mono-stabil)</lang>
+                    <lang xml:lang="en">mono-stable switch</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Kippschalter (bistabil)</lang>
+                    <lang xml:lang="en">bistable switch</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="15" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Doppelklick</lang>
+                <lang xml:lang="en">Double Click Option</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"> Aktiviert/Deaktiviert die Doppelclickfunktion - Dimmerlevel = 100 %.</lang>
+                <lang xml:lang="en"> Defines if the double click option is enabled. This will turn the dimmer to 100 % dimming level.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Aktiviert</lang>
+                    <lang xml:lang="en">enabled</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="16" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Wiederherstellen des letzten Schaltzustandes nach Stromverlust</lang>
+                <lang xml:lang="en">Saving of the device state after power failure</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Dieser Parameter definiert, welcher Dimmerzustand nach einem Stromausfall eingenommen wird</lang>
+                <lang xml:lang="en">Saving of the device state after the power supply black-out. The dimmer will return to the last state before the power supply black-out.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">aus</lang>
+                    <lang xml:lang="en">off state</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">letzter Dimmerpegel</lang>
+                    <lang xml:lang="en">last dim state</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="17" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Doppelter externer Schalter 1 für Treppenhausschaltung</lang>
+                <lang xml:lang="en">Allows to double the key number 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Treppenhausschaltung ermöglicht die Doppelnutzung des externen Schalters 1. Dieser Dimmer kann zwei Kippschalter
+                oder eine unbegrenzte Anzahl von mit Tipptastern.</lang>
+                <lang xml:lang="en">Stair button function allows to double the key number 1. The dimmer may operate two bistable keys or an infinite number of mono-stable keys.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Aktiviert</lang>
+                    <lang xml:lang="en">Enabled</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="18" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Abstimmung des Dimmerniveaus zwischen verschiedenen Dimmern</lang>
+                <lang xml:lang="en">Light intensity synchronization</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"> Diese Funktion ermöglich ein synchrones Dimmen mehrer Dimmer. Jede Änderung des Dimmerzustandes des Gerätes wird an alle anderen assoziierten Dimmer übertragen.</lang>
+                <lang xml:lang="en">The function of synchronization of the light intensity for associated devices. The dimmer transmits this state to the associated device.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Function off</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Aktiviert</lang>
+                    <lang xml:lang="en">Function on</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="19" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Definiert, wie mit externen bistabilen Kippschaltern gesteuert wird</lang>
+                <lang xml:lang="en">Defines how to use bistable external switches</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Kippschalter verbleiben in einer Stellung. Es muss definiert werden, wie der Dimmer auf das Schalten eines solchen Kippschalters reagiert.</lang>
+                <lang xml:lang="en">Bistable Switches remain in the switching state. The parameters defines how such a switch can be used for dimming.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Das Einschalten erzeugt einen Schaltimpuls, der entweder ein -oder ausschaltet.</lang>
+                    <lang xml:lang="en">Every Switch on toggles the device</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Schließen des external Schalter schaltet ein, Öffnen schaltet aus.</lang>
+                    <lang xml:lang="en">Closing external contact turns on, opening external contacts turns off</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="20" type="range" size="1" default="6e">
+            <name>
+                <lang xml:lang="de">Länge des Dimmersteuerimpulses</lang>
+                <lang xml:lang="en">Length of the Dimmer control pulse</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Diese Funktion ermöglicht das Verlängern des Dimmersteuerimpulses. Damit können Phasenverschiebungen durch kapazitive Lastne ausgeglichen und LED euchten gedimmt werden, so diese LED Leuchten eine Dimmfunktion überhaupt unterstützen. </lang>
+                <lang xml:lang="en">The function allows for lowering of the minimal dimmer’s level by extending of control impulse. By the means of minimal level change, the dimmer allows for the complete dimmering of LED bulbs. Not all of the LED bulbs available on the market allow dimming.</lang>
+              </description>
+      
+                  <value from="64" to="aa">
+                <description>
+                    <lang xml:lang="de">variiert von Mitte der Halbwelle bis kurz hinter Nulldurchgang der Halbwelle </lang>
+                    <lang xml:lang="en"> </lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/2a96bbaf3b8980cf89d0c13e265877240c0ba76f.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="010f"/>
+        <productType value="0b00"/>
+    <productId value="1001"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="67"/>
+    <appVersion value="24"/>
+    <appSubVersion value="24"/>
+        <basicClass value="04"/>
+            <genericClass value="a1"/>
+            <specificClass value="02"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Flood Sensor</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en">Wake up interval (battery mode)
+Available settings: 0 or 5 - 86399 (in seconds, 5 s. to 24 hours)
+Default setting: 4 000 (each 66 minutes)
+Defines a time period, in seconds, by which a Flood Sensor will perform a “Wake
+up” instruction - communicate with main controller, update parameters, update
+software. Flood Sensor will wake up each defined time interval and will always
+attempt to connect with the main controller, without retrying if connection fails
+(thus preventing a battery from discharging when the Sensor is used at the range
+limit, in case of the main controller’s breakdown, or in case the sensor is taken
+away from the main controllers range). This parameter is relevant in case of
+battery operation - higher Wake up interval means the Sensor communicates less
+often saving a battery.
+After successful communication attempt, a sensor will go into standby mode,
+update parameters or will enter a software update mode.
+After failed communication attempt, a sensor will go into standby mode until
+another time interval will have elapsed.
+Wake Up Interval set to 0 disables sending WAKE UP frame. Device will not
+wake up automatically. To wake it up it is needed to manually press the
+TMPbutton, which will send Node Info frame.</lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Triple click TMP button.</lang>
+          </inclusionNote>
+            <productName>FGFS-101</productName>
+            <brandName>Fibaro</brandName>
+            <productLine>Fibaro</productLine>
+            <productCode>101</productCode>
+            <productVersion>24.24</productVersion>
+            <batteryType>CR123A</batteryType>
+            <batteryCount>1</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0030"/>
+        <commandClass id="009c"/>
+        <commandClass id="0060" version="3"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="008e" version="2"/>
+        <commandClass id="0072"/>
+        <commandClass id="0070"/>
+        <commandClass id="0086"/>
+        <commandClass id="0080"/>
+        <commandClass id="0084"/>
+        <commandClass id="007a" controlled="true"/>
+        <commandClass id="0020" controlled="true"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="3" maxNodes="5">
+            <description>
+                <lang xml:lang="en">3-rd Association Group reports the device status and allows for assigning single
+device only (the main controller by default - the device reports its status to the main
+controller).</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="en">2-nd Association Group is assigned to a TMP button and tilt sensor - ALARM
+GENERIC control frame will be sent to the associated devices in case a TMP
+button is released or a tilt sensor triggered (depending on parameter 74 settings)</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">1-st Association Group is assigned to the device status - sending the BASIC SET
+(default) or ALARM control frame to the associated devices.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Alarm cancellation delay</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Delays flood alarm cancelation for the device after flooding has ceased.
+Available settings: 0 - 3 600 (in seconds, each 1s)
+Determines time period, in seconds, by which a Flood Sensor will retain the flood
+state after the flooding itself, has ceased. Sensor will keep on reporting flooding to
+the main controller. This parameter settings do not affect acoustic and visual
+alarms, which turn off immediately after flooding ceases.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="2" type="constant" size="1" default="03">
+            <name>
+                <lang xml:lang="en">Acoustic and visual signals On / Off in case of flooding</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The parameter allows for LED indicator and acoustic alarm deactivation in case of
+flooding detection.
+Available settings:
+0 - acoustic and visual alarms inactive
+1 - acoustic alarm inactive, visual alarm active
+2 - acoustic alarm active, visual alarm inactive
+3 - acoustic and visual alarms active.
+Changes in this parameter settings allow for increasing a battery life. Settings
+changes will not affect the Sensors communication with the main controller -
+commands to association groups, alarms and reports will still be sent.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="5" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Type of alarm frame sent to 1-st association group (FLOOD)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Available settings:
+0 - ALARM WATER command frame
+255 - BASIC SET command frame.
+The parameter determines a type of command frame sent by the Sensor in case
+flooding has been detected or cancelled.
+Default setting: 255</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="7" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Forced dimming level / roller blind opening level, when sending turn on / open command to 1-st association group devices</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">In case of alarm frames, alarm priority is determined.
+Available settings: (1-99) or 255.
+The value of 255 allows for turning a device on. In case of a Dimmer it means
+turning it on with the last memorized state, e.g. Dimmer set to 30% and turned off,
+turned on again using 255 command is turned on with last state i.e. 30%.
+Default setting: 255</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="9" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Alarm cancelling or turning a device off (Basic) command frame deactivation.</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Allows for deactivating device turn off and alarm cancellation functions for the
+devices assigned to 1-st association group.
+Setting the parameter’s value to 0 results in stopping BASIC SET = 0 or ALARM
+WATER = 0 control frames from being sent. After sending flood alarm report the
+device will keep on reporting flooding after the flooding itself has ceased. Such a
+state can be cancelled by choosing alarm cancelation from the MENU, marked
+with green LED colour.
+Available settings:
+0 - alarm (flooding) cancellation inactive
+1 - alarm (flooding) cancellation active</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="10" type="range" size="2" default="012c">
+            <name>
+                <lang xml:lang="en">Temperature measurement interval</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Time interval, in seconds, between consecutive temperature measurements done
+by built in temperature sensor. New temperature value is reported to the main
+controller if it differs from the previously measured by hysteresis (defined in
+parameter 12).
+Available settings: 1 - 65535 (in seconds).
+The parameter determines time interval, in seconds, at which a Flood Sensor
+measures and reports ambient temperature and battery level.
+If a temperature value will differ from previously reported by a value determined in
+parameter 12 (e.g. P12 = 50, i.e. temperatures differ by 0,5°C), new temperature
+value will be reported. If a battery level changes, the device will report a battery
+status change - Battery Report.
+The parameter is relevant when using a Flood Sensor in a battery power mode -
+longer time interval means less frequent communication resulting in extended
+battery life.
+After consecutive FAILED and SUCCESSFUL communication attempts, the
+Sensor will go to standby mode.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="12" type="range" size="2" default="0032">
+            <name>
+                <lang xml:lang="en">Temperature measurement hysteresis</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Determines a minimum temperature change value (insensitivity level), resulting in
+a temperature report being sent to the main controller, according to the Parameter
+10 settings.
+Available settings: 1 - 1 000 (each 0,01°C)</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="13" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Alarm BROADCAST</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Value other than 0 means alarms are sent in BROADCAST mode (with a priority
+over other communicates), to all devices within the Fibaro Flood Sensor’s range.
+Available settings:
+0 - broadcasts inactive
+1 - flood (1-st Association Group) broadcast active, tamper (2-nd Association
+Group) broadcast inactive
+2 - flood broadcast inactive, tamper broadcast active
+3 - flood broadcast active, tamper broadcast active</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="50" type="range" size="2" default="05dc">
+            <name>
+                <lang xml:lang="en">Low temperature alarm threshold</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The parameter stores a temperature value, below which LED indicator blinks with
+a colour determined by a Parameter 61 settings. By default the LED indicator
+blinks blue.
+Available settings: - 10 000 to +10 000 (each 0,01°C)</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="51" type="range" size="2" default="0dac">
+            <name>
+                <lang xml:lang="en">High temperature alarm threshold</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The parameter stores a temperature value, above which LED indicator blinks with
+a colour determined by the Parameter 62 settings. By default the LED indicator
+blinks red.
+Available settings: - 10 000 to +10 000 (each 0,01°C)</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="61" type="range" size="4" default="000000ff">
+            <name>
+                <lang xml:lang="en">Low temperature alarm indicator colour</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Parameter stores RGB colour value.
+Available settings: 0 - 16777215</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="62" type="range" size="4" default="00ff0000">
+            <name>
+                <lang xml:lang="en">High temperature alarm indicator colour</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Parameter stores RGB colour value.
+Available settings: 0 - 16777215</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="63" type="constant" size="1" default="02">
+            <name>
+                <lang xml:lang="en">Managing a LED indicator under standard operation</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Parameter determines LED indicator’s operation. Set to 0 turns the indicator off,
+saving a battery life.
+Available settings:
+0 - LED indicator doesn’t indicate the temperature
+1 - LED indicator indicates the temperature (blink) every Temperature
+Measurement Interval (Parameter 10, constant current and battery) or Wake
+Up Interval (battery mode)
+2 - LED indicator indicates the temperature continuously, only in constant power
+mode.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="73" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Temperature measurement compensation</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Available settings: -10 000 to +10 000.
+Parameter stores a temperature value to be added to or deducted from the current
+temperature measured by internal temperature sensor in order to compensate the
+difference between air temperature and temperature at the floor level.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="74" type="constant" size="1" default="02">
+            <name>
+                <lang xml:lang="en">Alarm frame sent to 2-nd Association Group activation</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Available settings:
+0 - tamper alarms inactive
+1 - button tamper alarm active
+2 - movement tamper alarm active
+3 - button and movement tampers alarm active.
+The device is able to turn on alarms resulting from sensor’s vibrations e.g. when
+the sensor is moved, or the TMP button released. 2-nd Association Group alarms
+are not cancelled.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="75" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Visual and audible alarms duration</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The user can silence the Flood Sensor. Because the Sensor’s alarm may last for
+a long time, it’s possible to turn off visual and audible alarm signaling to save
+battery.
+Available settings: 0 - 65535 (each 1 second).
+The parameter determines a time period after which alarm will become “quiet” -
+still active but the device will go into battery saving mode. Visual or acoustic alarm
+will be reactivated after time period specified in the Parameter 76. When alarm
+status ceases, alarm will be turned off immediately.
+The value of 0 means visual and acoustic alarms are active indefinitely. In battery
+power mode the Sensor will never go to sleep which may shorten battery life
+significantly.</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="76" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Alarm frame / Basic Set frame retransmission time when retaining flood alarm</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Parameter determines a time period after which an alarm frame will be retransmitted.
+The value of 0 cancels an alarm frame retransmission.
+Available settings: 0 - 65535 (each 1 second).</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="77" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Flood sensor functionality turned off</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Allows for turning of the internal flood sensor. Tamper and built in temperature
+sensor will remain active.
+Available settings:
+0 - Default flood sensor operation (flood detection, reactions)
+1 - Built in flood sensor TURNED OFF (doesn’t change its state in the main
+controller, doesn’t send Alarms and Basic Set frames with flood state changes.
+Always visible in the main controller as turned off)</lang>
+              </description>
+      
+          </configParam>
+      </configParams>
+  
+    <endpoints>
+           <endpoint number="2">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="21"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0031"/>
+          </endpoint>
+           <endpoint number="1">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="20"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0030"/>
+          </endpoint>
+      </endpoints>
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/35f1ba94127e0a21ffaddcef49ed06fd3d4ace5d.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

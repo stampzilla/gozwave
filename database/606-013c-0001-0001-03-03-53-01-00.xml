@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="013c"/>
+        <productType value="0001"/>
+    <productId value="0001"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="53"/>
+    <appVersion value="01"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+                    
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Funkstecker für Steckdosen mit Zähler-Funktionalität</lang>
+            <lang xml:lang="en">Plugin Switch with meter functionality PAN11-1</lang>
+            <lang xml:lang="ru">Розеточный модуль с функцией измерения энергопотребления PAN11-1</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+            <lang xml:lang="ru"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Drücken Sie den An/Aus Schalter dreimal innerhalb von 1,5 Sekunden</lang>
+            <lang xml:lang="en">Press On/Off button three times within 1.5 seconds</lang>
+            <lang xml:lang="ru">Трижды нажмите на кнопку Вкл/Выкл в течении 1.5 секунд</lang>
+          </inclusionNote>
+            <productName>Smart Energy Plug In Switch PAN11-1</productName>
+            <brandName>Philio</brandName>
+            <productLine>Philio Z-wave Products</productLine>
+            <productCode>PAN11-1</productCode>
+            <productVersion>1.0</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020"/>
+        <commandClass id="0025"/>
+        <commandClass id="0027"/>
+        <commandClass id="0032" version="3"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0085"/>
+        <commandClass id="0086"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="de">Wenn die Leistungsaufnahme mehr als 5% schwankt sendet das PAN11 einen Meter Report. Wenn sich der An/Aus-Status ändert sendet das PAN11 einen Binary Switch Report.</lang>
+                <lang xml:lang="en">When the power consumption of load vary over 5%, the PAN11 will send a Meter Report. When &quot;on&quot; or &quot;off&quot; state has been changed, it will send Binary Switch Report.</lang>
+                <lang xml:lang="ru">При изменении потребляемой мощности на 5% отправляется отчет. При изменении состояния (вкл/выкл) отправляется Binary Switch Report.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="2" default="02d0">
+            <name>
+                <lang xml:lang="de">Zeitinterval für einen automatischen Report des Stromverbrauches</lang>
+                <lang xml:lang="en">Watt Meter Report Period</lang>
+                <lang xml:lang="ru">Период отчета о мощности (Вт)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Wird ein Wert von 720 eingestellt, so meldet das PAN11 jede Stunde den momentan Stromverbrauch an den Z-Wave Controller. Einheit: 5 Sekunden</lang>
+                <lang xml:lang="en">If  the  setting  is  configured for  1hour  (set  value  =720),  the  PAN11  will  report  its instant  power  consumption every  1  hour  to  Z-Wave Controller. Unit: 5 seconds</lang>
+                <lang xml:lang="ru">Если установлено 1 час (значение = 720), то PAN11 будет отправлять отчеты о энергопотреблении раз в 1 час. Значение 1 = 5 секунд.</lang>
+              </description>
+      
+                  <value from="0001" to="7fff">
+                <description>
+                    <lang xml:lang="de">720 * 5 Sekunden = 3600 Sekunden = 1 Stunde </lang>
+                    <lang xml:lang="en">720 * 5s = 3600s = 1 hour</lang>
+                    <lang xml:lang="ru">720 * 5с = 3600с = 1 час</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="2" default="0006">
+            <name>
+                <lang xml:lang="de">Zeitinterval für einen automatischenReport der elektr. Arbeit (kWh)</lang>
+                <lang xml:lang="en">KWH Meter Report  Period</lang>
+                <lang xml:lang="ru">Период отчета о энергопотреблении (КВт*Ч)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Wird ein Wert von 6 eingestellt, so meldet das PAN11 jede Stunde die innerhalb einer Stunde aufgenommen Leistung (KW*h) an den Z-Wave Controller.</lang>
+                <lang xml:lang="en">If  the  setting  is  configured for  1hour  (set  value  =6), the  PAN11  will  report  its Accumulated Power Consumption (KW*h) every hour to Z-Wave Controller. Unit: 10min</lang>
+                <lang xml:lang="ru">Если установлено 1 час (значение = 6), то PAN11 будет отправлять отчет о суммарном энергопотреблении за весь период использования (КВт*Ч) раз в 1 час. Значение 1 = 10 минут.</lang>
+              </description>
+      
+                  <value from="0001" to="7fff">
+                <description>
+                    <lang xml:lang="de">6  * 10 Minuten = 1 Stunde</lang>
+                    <lang xml:lang="en">6 * 10min = 1 hour</lang>
+                    <lang xml:lang="ru">6 * 10мин = 1 час</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="range" size="2" default="0bb8">
+            <name>
+                <lang xml:lang="de">Threshold of Watt for Load caution</lang>
+                <lang xml:lang="en">Threshold of Watt for Load caution</lang>
+                <lang xml:lang="ru">Отчет при превышении мощности (Вт)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Übersteigt die Wattleistung den hier festgelegten Wert, so sendet das PAN11 einen Alarm Report an den Z-Wave Controller.</lang>
+                <lang xml:lang="en">This is a warning when the wattage of load over the preset threshold value, if the load wattage exceeds the setting value the PAN11 will send a warning alarm command to the controller.</lang>
+                <lang xml:lang="ru">Если мощность превысит указанное значение, на контроллер отправится команда Alarm.</lang>
+              </description>
+      
+                  <value from="000a" to="0bb8" unit="Watt">
+                <description>
+                    <lang xml:lang="de">Wattzahl Schwellenwert</lang>
+                    <lang xml:lang="en">wattage threshold value</lang>
+                    <lang xml:lang="ru">Мощность (Вт)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="2" default="2710">
+            <name>
+                <lang xml:lang="de">Schwellwert zum Erkennen der Überlastsituation</lang>
+                <lang xml:lang="en">Threshold of KWh for Load caution</lang>
+                <lang xml:lang="ru">Отчет при превышении энергопотребления (КВт*Ч)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Übersteigt die innerhalb einer Stunde aufgenommen Leistung den hier festgelegten Wert, so sendet das PAN11 einen Alarm Report an den Z-Wave Controller.</lang>
+                <lang xml:lang="en">This is a warning when the KWh of load over the preset threshold value, if the Accumulated Power Consumption exceeds the setting value the PAN11 will send a warning alarm command to the controller.</lang>
+                <lang xml:lang="ru">Если суммарное энергопотребление за весь период использования (КВт*Ч) превысит указанное значение, на контроллер отправится команда Alarm.</lang>
+              </description>
+      
+                  <value from="0001" to="2710" unit="KWh">
+                <description>
+                    <lang xml:lang="de">KWh Schwellenwert</lang>
+                    <lang xml:lang="en">KWh threshold value</lang>
+                    <lang xml:lang="ru">Энергопотребление (КВт*Ч)</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/3d4d8a95a6ce78f866482aeeff8de7af6210d298.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="010f"/>
+        <productType value="0200"/>
+    <productId value="0103"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="14"/>
+    <appVersion value="01"/>
+    <appSubVersion value="03"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+                    
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">flacher Zweifach-Schalteinsatz, der hinter normalen Lichtschaltern installiert wird</lang>
+            <lang xml:lang="en">Very thin and little wall insert to be mounted behind a standard switch</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Dreifach den kleinen Taster</lang>
+            <lang xml:lang="en">Tripple Press little button on device</lang>
+          </inclusionNote>
+            <productName>FGS-221</productName>
+            <brandName>Fibar</brandName>
+                <productCode>FGS221- 2 * 1.5KW</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" inNIF="false"/>
+        <commandClass id="0000" version="0" inNIF="false"/>
+        <commandClass id="0025"/>
+        <commandClass id="0086"/>
+        <commandClass id="0027"/>
+        <commandClass id="0060" version="2"/>
+        <commandClass id="008e" version="2"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+        <commandClass id="0073"/>
+        <commandClass id="0085" version="2"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="3" maxNodes="1">
+            <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="16">
+            <description>
+                <lang xml:lang="de">externer Schalter 2</lang>
+                <lang xml:lang="en">external Switch No 2</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="16">
+            <description>
+                <lang xml:lang="de">externer Schalter 1</lang>
+                <lang xml:lang="en">external Switch No 1</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="ff">
+            <name>
+                <lang xml:lang="de">Alles-Aus-Steuerung</lang>
+                <lang xml:lang="en">All on/off function</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert das Verhalten bei Alles-AUS- und Alles-AN-Befehlen </lang>
+                <lang xml:lang="en">Enables or disabled the all on / all off function</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">weder AUS noch EIN werden ausgeführt</lang>
+                    <lang xml:lang="en">neither ALL ON nor ALL OFF are active</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Nur AUS wird ausgeführt</lang>
+                    <lang xml:lang="en">only ALL OFF is active</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Nur EIN wird ausgeführt</lang>
+                    <lang xml:lang="en">only ALL ON is active</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="de">sowohl AUS als EIN werden ausgeführt</lang>
+                    <lang xml:lang="en">ALL ON and ALL OFF are active</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Automatisches Abschalten nach definierter Zeit</lang>
+                <lang xml:lang="en">Automatic Switching Off after defined time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Ermöglicht eine automatische Abschaltfunktion nach einer in Parameter 4 festgelegten Zeit</lang>
+                <lang xml:lang="en">Allows to automatically turn off the relais after a fixed time set in parameter 4</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Aktiviert für Relais 1, deaktiviert für Relais 2</lang>
+                    <lang xml:lang="en">Enabled for relays 1, disabled for relays 2</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Aktiviert für Relais 2, deaktiviert für Relais 1</lang>
+                    <lang xml:lang="en">Enabled for relays 2, disabled for relays 1</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Aktiviert</lang>
+                    <lang xml:lang="en">Enabled</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="constant" size="1" default="c8">
+            <name>
+                <lang xml:lang="de">Automatische Abschaltzeit für Relais 1</lang>
+                <lang xml:lang="en">Automated Turn Off Time for relays 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert die Zeit, nach der bei gesetztem Parameter 3 das Relais 1ausgeschaltet wird</lang>
+                <lang xml:lang="en">defines the time  to turn off the relais 1in case parameter no 3 is enabled</lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="de">ms</lang>
+                    <lang xml:lang="en">ms</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="constant" size="1" default="c8">
+            <name>
+                <lang xml:lang="de">Automatische Abschaltzeit für Relais 2</lang>
+                <lang xml:lang="en">Automated Turn Off Time for relays 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert die Zeit, nach der bei gesetztem Parameter 3 das Relais 2ausgeschaltet wird</lang>
+                <lang xml:lang="en">defines the time  to turn off the relais 2 in case parameter no 3 is enabled</lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="de">ms</lang>
+                    <lang xml:lang="en">ms</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Kommandos die an Assoziationsgruppe 1 gesendet werden</lang>
+                <lang xml:lang="en">Commands Sent to Association Group 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Legt fest, welche Schaltoperation andere Geräte in Assoziationsgruppen steuert. Um die Doppelklcikfunktion zu unterstützen, muss Parameter 15 auf den Wert 1 gesetzt werden.</lang>
+                <lang xml:lang="en">Defines what status changes cause sending out a wireless command. Zu allow double click function parameter 15 needs to be turned to 1 </lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">sowohl Einschalten als auch Ausschalten senden ein Funkkommando</lang>
+                    <lang xml:lang="en">turning on and turning off sends out a wireless command</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Das Ausschalten sendet ein Funkkommando. Ein Doppelklick führt zum Einschalten aller Geräte, Dimmer kehren zu ihrem letzten Zustand zurück.  </lang>
+                    <lang xml:lang="en">Turning off sends a wireless command. All devices can be turned on using a double click, dimmers will return to their last dimming state.</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Das Ausschalten sendet ein Funkkommando. Ein Doppelklick führt zum Einschalten aller Geräte, Dimmer dimmen auf 100 %.  </lang>
+                    <lang xml:lang="en">Turning ff sends a wireless command. All devices can be turned on using a double click, dimmers will dim to 100 %. </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Prüfe Status des Gerätes, an das bei Betätigen von Schalter No2 ein Signal gesendet werden soll.</lang>
+                <lang xml:lang="en">Check status before sending a control command on external switch no 2.</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Wenn ein zweiter externer Schalter angeschlossen ist, kann dieser genutzt werden, um wietere Geräte zu steuern. Es wird festgelegt, ob dabei der Schaltzustand dieser Geräte vor Aussenden eines Schaltsignals geprüft wird.</lang>
+                <lang xml:lang="en">When external switch no 2 is switches the status of the remote device to be switches is checked or not.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Wird nicht geprüft.</lang>
+                    <lang xml:lang="en">Not checked</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Wird geprüft.</lang>
+                    <lang xml:lang="en">Checked</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Bistabiler Schalter</lang>
+                <lang xml:lang="en">Bistable Switch State</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Typ des angeschlossenen bistabilen Schalters</lang>
+                <lang xml:lang="en">Defines the behavior of a connected bistable switch</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">EIN/AUS werden entsprechend dem angeschossenen Schalterzustand gesetzt</lang>
+                    <lang xml:lang="en">ON/OFF sets to change of key state</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">EIN is aktiv, wenn der Schalter geschlossen ist, AUS ist aktiv, wenn der Schalter ausgeschaltet ist</lang>
+                    <lang xml:lang="en">ON is active when contacts are closed and OFF is active when contacts are open</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="14" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Schaltertyp</lang>
+                <lang xml:lang="en">Type of Switch</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert den Typ des verwendeten Schalters</lang>
+                <lang xml:lang="en">Defines the type of switch attached to the device</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Monostabiler Schalter</lang>
+                    <lang xml:lang="en">mono-stable switch</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Bistabiler Schalter</lang>
+                    <lang xml:lang="en">bi-stable switch</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="16" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Sichern des letzten Schaltzustandes</lang>
+                <lang xml:lang="en">Saving of switch state after power-down</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert das Verhalten nach Wiedereinschalten des Stromes</lang>
+                <lang xml:lang="en">The device will or will not return to the last switch state after a power down</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Keine Rückkehr zum alten Schaltzustand</lang>
+                    <lang xml:lang="en">not return to previous state</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Rückkehr zum alten Schaltzustand</lang>
+                    <lang xml:lang="en">return to previous state</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="30" type="constant" size="1" default="03">
+            <name>
+                <lang xml:lang="de">Verhalten des Relais 1 bei Allgemeinem Alarm</lang>
+                <lang xml:lang="en">General Alarm Set - Relay 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert das Schaltverhaltens des Relais 1 bei Allgemeinem Alarm</lang>
+                <lang xml:lang="en">This defines the behavior of relay 1 in case of general alarms</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert- Schalter reagiert nicht auf Alarm</lang>
+                    <lang xml:lang="en">Deactivated, devices does not react to alarms</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"> Schalter schalter AUS bei Alarm</lang>
+                    <lang xml:lang="en">Disable on Alarm - will switch off in case of  alarm</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de"> Schalter schalter EIN bei Alarm</lang>
+                    <lang xml:lang="en">Enable on Alarm - will switch on in case of  alarm</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Schalter erzeugt 10 Minuten lang Blinken bei Alarm</lang>
+                    <lang xml:lang="en">Flashing  on Alarm - will switch on and off periodically for 10 minutes</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="31" type="constant" size="1" default="02">
+            <name>
+                <lang xml:lang="de">Verhalten des Relais 1 bei WasserAlarm</lang>
+                <lang xml:lang="en">Flood Alarm Set - Relay 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert das Schaltverhaltens des Relais 1 bei Wasserschadens-Alarm</lang>
+                <lang xml:lang="en">This defines the behavior of relay 1 in case of flood alarms</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert- Schalter reagiert nicht auf Alarm</lang>
+                    <lang xml:lang="en">Deactivated, devices does not react to alarms</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"> Schalter schalter AUS bei Alarm</lang>
+                    <lang xml:lang="en">Disable on Alarm - will switch off in case of  alarm</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de"> Schalter schalter EIN bei Alarm</lang>
+                    <lang xml:lang="en">Enable on Alarm - will switch on in case of  alarm</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Schalter erzeugt 10 Minuten lang Blinken bei Alarm</lang>
+                    <lang xml:lang="en">Flashing  on Alarm - will switch on and off periodically for 10 minutes</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="32" type="constant" size="1" default="03">
+            <name>
+                <lang xml:lang="de">Verhalten des Relais 1 bei Rauchmelder-Alarm</lang>
+                <lang xml:lang="en">Smoke Alarm Set - Relay 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert das Schaltverhaltens des Relais 1 bei Rauchmelder-Alarm</lang>
+                <lang xml:lang="en">This defines the behavior of relay 1 in case of smoke alarms</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert- Schalter reagiert nicht auf Alarm</lang>
+                    <lang xml:lang="en">Deactivated, devices does not react to alarms</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"> Schalter schalter AUS bei Alarm</lang>
+                    <lang xml:lang="en">Disable on Alarm - will switch off in case of  alarm</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de"> Schalter schalter EIN bei Alarm</lang>
+                    <lang xml:lang="en">Enable on Alarm - will switch on in case of  alarm</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Schalter erzeugt 10 Minuten lang Blinken bei Alarm</lang>
+                    <lang xml:lang="en">Flashing  on Alarm - will switch on and off periodically for 10 minutes</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="33" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Verhalten des Relais 1 bei Temperatur-Alarm</lang>
+                <lang xml:lang="en">Temperature Alarm Set - Relay 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert das Schaltverhaltens des Relais 1 bei TemperaturAlarm</lang>
+                <lang xml:lang="en">This defines the behavior of relay 1 in case of temperature alarms</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert- Schalter reagiert nicht auf Alarm</lang>
+                    <lang xml:lang="en">Deactivated, devices does not react to alarms</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"> Schalter schalter AUS bei Alarm</lang>
+                    <lang xml:lang="en">Disable on Alarm - will switch off in case of  alarm</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de"> Schalter schalter EIN bei Alarm</lang>
+                    <lang xml:lang="en">Enable on Alarm - will switch on in case of  alarm</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Schalter erzeugt 10 Minuten lang Blinken bei Alarm</lang>
+                    <lang xml:lang="en">Flashing  on Alarm - will switch on and off periodically for 10 minutes</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="39" type="range" size="2" default="0258">
+            <name>
+                <lang xml:lang="de">Zeitdauer des Alarms</lang>
+                <lang xml:lang="en">Time of Active Alarm</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert die Länge eines Alarmzustandes</lang>
+                <lang xml:lang="en">Defines how long a alarm shall be active</lang>
+              </description>
+      
+                  <value from="0000" to="4e20" unit="s">
+                <description>
+                    <lang xml:lang="de">Sekunden </lang>
+                    <lang xml:lang="en">Seconds</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="40" type="constant" size="1" default="03">
+            <name>
+                <lang xml:lang="de">Verhalten des Relais 2 bei Allgemeinem Alarm</lang>
+                <lang xml:lang="en">General Alarm Set - Relay 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert das Schaltverhaltens des Relais 2 bei Allgemeinem Alarm</lang>
+                <lang xml:lang="en">This defines the behavior of relay 2 in case of general alarms</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert- Schalter reagiert nicht auf Alarm</lang>
+                    <lang xml:lang="en">Deactivated, devices does not react to alarms</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"> Schalter schalter AUS bei Alarm</lang>
+                    <lang xml:lang="en">Disable on Alarm - will switch off in case of  alarm</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de"> Schalter schalter EIN bei Alarm</lang>
+                    <lang xml:lang="en">Enable on Alarm - will switch on in case of  alarm</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Schalter erzeugt 10 Minuten lang Blinken bei Alarm</lang>
+                    <lang xml:lang="en">Flashing  on Alarm - will switch on and off periodically for 10 minutes</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="41" type="constant" size="1" default="02">
+            <name>
+                <lang xml:lang="de">Verhalten des Relais 2 bei WasserAlarm</lang>
+                <lang xml:lang="en">Flood Alarm Set - Relay 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert das Schaltverhaltens des Relais 2 bei Wasserschadens-Alarm</lang>
+                <lang xml:lang="en">This defines the behavior of relay 2 in case of flood alarms</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert- Schalter reagiert nicht auf Alarm</lang>
+                    <lang xml:lang="en">Deactivated, devices does not react to alarms</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"> Schalter schalter AUS bei Alarm</lang>
+                    <lang xml:lang="en">Disable on Alarm - will switch off in case of  alarm</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de"> Schalter schalter EIN bei Alarm</lang>
+                    <lang xml:lang="en">Enable on Alarm - will switch on in case of  alarm</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Schalter erzeugt 10 Minuten lang Blinken bei Alarm</lang>
+                    <lang xml:lang="en">Flashing  on Alarm - will switch on and off periodically for 10 minutes</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="42" type="constant" size="1" default="03">
+            <name>
+                <lang xml:lang="de">Verhalten des Relais 2 bei Rauchmelder-Alarm</lang>
+                <lang xml:lang="en">Smoke Alarm Set - Relay 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert das Schaltverhaltens des Relais 2 bei Rauchmelder-Alarm</lang>
+                <lang xml:lang="en">This defines the behavior of relay 2 in case of smoke alarms</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert- Schalter reagiert nicht auf Alarm</lang>
+                    <lang xml:lang="en">Deactivated, devices does not react to alarms</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"> Schalter schalter AUS bei Alarm</lang>
+                    <lang xml:lang="en">Disable on Alarm - will switch off in case of  alarm</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de"> Schalter schalter EIN bei Alarm</lang>
+                    <lang xml:lang="en">Enable on Alarm - will switch on in case of  alarm</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Schalter erzeugt 10 Minuten lang Blinken bei Alarm</lang>
+                    <lang xml:lang="en">Flashing  on Alarm - will switch on and off periodically for 10 minutes</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="43" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Verhalten des Relais 2 bei Temperatur-Alarm</lang>
+                <lang xml:lang="en">Temperature Alarm Set - Relay 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert das Schaltverhaltens des Relais 2 bei TemperaturAlarm</lang>
+                <lang xml:lang="en">This defines the behavior of relay 2 in case of temperature alarms</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert- Schalter reagiert nicht auf Alarm</lang>
+                    <lang xml:lang="en">Deactivated, devices does not react to alarms</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"> Schalter schalter AUS bei Alarm</lang>
+                    <lang xml:lang="en">Disable on Alarm - will switch off in case of  alarm</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de"> Schalter schalter EIN bei Alarm</lang>
+                    <lang xml:lang="en">Enable on Alarm - will switch on in case of  alarm</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Schalter erzeugt 10 Minuten lang Blinken bei Alarm</lang>
+                    <lang xml:lang="en">Flashing  on Alarm - will switch on and off periodically for 10 minutes</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    <endpoints>
+           <endpoint number="2">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0020"/>
+            <commandClass id="0000" version="0"/>
+            <commandClass id="0025"/>
+            <commandClass id="0027"/>
+          </endpoint>
+           <endpoint number="1">
+            <name>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0020"/>
+            <commandClass id="0000" version="0"/>
+            <commandClass id="0025"/>
+            <commandClass id="0027"/>
+          </endpoint>
+      </endpoints>
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/a9f7ddb68c525efef681869356a4e015791767b7.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

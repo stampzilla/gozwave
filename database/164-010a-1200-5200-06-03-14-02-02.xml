@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="010a"/>
+        <productType value="1200"/>
+    <productId value="5200"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="14"/>
+    <appVersion value="02"/>
+    <appSubVersion value="02"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+            <certId>14018</certId>
+            <certNumber>ZC08-11040001</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">2 channel Switch On-Off - EU BOX - Wireless</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Touch gently any button of the device to be included</lang>
+          </inclusionNote>
+            <productName>Vitrum II EU on-off wireless</productName>
+            <brandName>Vitrum</brandName>
+            <productLine>Lighting</productLine>
+            <productCode>01E020020</productCode>
+            <productVersion>0</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" controlled="true" inNIF="false"/>
+        <commandClass id="0060" version="2"/>
+        <commandClass id="0025"/>
+        <commandClass id="0086"/>
+        <commandClass id="0027"/>
+        <commandClass id="0087"/>
+        <commandClass id="008e" version="2"/>
+        <commandClass id="0091"/>
+        <commandClass id="0072"/>
+        <commandClass id="0077"/>
+        <commandClass id="0085" version="2"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Controls up to 5 switches or dimmers.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Controls up to 5 switches or dimmers.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+  
+    <endpoints>
+           <endpoint number="2">
+            <name>
+                <lang xml:lang="en">Switch Channel 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0020"/>
+            <commandClass id="0072"/>
+            <commandClass id="0025"/>
+            <commandClass id="0086"/>
+            <commandClass id="0027" version="0"/>
+          </endpoint>
+           <endpoint number="1">
+            <name>
+                <lang xml:lang="en">Switch Channel 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0020"/>
+            <commandClass id="0072"/>
+            <commandClass id="0025"/>
+            <commandClass id="0086"/>
+            <commandClass id="0027" version="0"/>
+          </endpoint>
+      </endpoints>
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/91082a366a054ef7a11747587498b5e84259b7e9.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

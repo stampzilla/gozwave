@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0129"/>
+        <productType value="0002"/>
+    <productId value="0000"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="22"/>
+    <appVersion value="14"/>
+    <appSubVersion value="20"/>
+        <basicClass value="03"/>
+            <genericClass value="40"/>
+            <specificClass value="03"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="true"/>
+        <beamSensor>1000</beamSensor>
+            <rfFrequency>US</rfFrequency>
+            <certId>14747</certId>
+            <certNumber>ZC08-12050006</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Battery operated Deadbolt lock with capacitive touch screen</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">After waking up the display (left lower corner) enter 1234# - 7# and 1# </lang>
+          </inclusionNote>
+            <productName>Yale Real Living Cap-Touch Deadbolt</productName>
+            <brandName>Yale</brandName>
+            <productLine>Real Living</productLine>
+                <productVersion>1</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0086" secure="true"/>
+        <commandClass id="0020"/>
+        <commandClass id="0072" secure="true"/>
+        <commandClass id="0098" secure="true"/>
+        <commandClass id="0071" inNIF="false" secure="true"/>
+        <commandClass id="0085" inNIF="false" secure="true"/>
+        <commandClass id="0080" inNIF="false" secure="true"/>
+        <commandClass id="0070" inNIF="false" secure="true"/>
+        <commandClass id="0062" inNIF="false" secure="true"/>
+        <commandClass id="004c" inNIF="false" secure="true"/>
+        <commandClass id="0075" version="2" inNIF="false" secure="true"/>
+        <commandClass id="004e" version="3" inNIF="false" secure="true"/>
+        <commandClass id="008a" inNIF="false" secure="true"/>
+        <commandClass id="008b" inNIF="false" secure="true"/>
+        <commandClass id="0063" inNIF="false" secure="true"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Alarm Reports are sent out
+unsolicited to devices included in the association group.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="03">
+            <name>
+                <lang xml:lang="en">Audio Mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">3-level control</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Silent</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Low</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">High</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="1" default="ff">
+            <name>
+                <lang xml:lang="en">Auto Relock</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">auto relock is OFF</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">auto relock is ON</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="range" size="1" default="1e">
+            <name>
+                <lang xml:lang="en">Re-lock Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">seconds; after successful code entry and
+unit unlocks, it will automatically re-lock after
+specified time</lang>
+              </description>
+      
+                  <value from="05" to="ff">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="1" default="05">
+            <name>
+                <lang xml:lang="en">Wrong Code Entry Limit</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The number of invalid code entries lock will
+accept before sending TAMPER Alarm. When
+number of wrong code entries is exceeded,
+lock will disable keypad for the time specified
+by Shutdown Time parameter.</lang>
+              </description>
+      
+                  <value from="01" to="07">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">Language</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">English</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Spanish</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">French</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="range" size="1" default="1e">
+            <name>
+                <lang xml:lang="en">Shutdown Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">number of seconds unit will be inoperable
+after number of wrong code entries is exceeded</lang>
+              </description>
+      
+                  <value from="01" to="ff">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Operating Mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Normal Mode</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Vacation Mode - all user codes disabled</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Privacy Mode - all user codes disabled and RF Lock/Unlock disabled</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/fa4ee42a618fc46911a9412d91716f4c32c3f1bc.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

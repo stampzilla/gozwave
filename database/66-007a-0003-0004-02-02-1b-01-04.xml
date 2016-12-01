@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="007a"/>
+        <productType value="0003"/>
+    <productId value="0004"/>
+    <libType value="02"/>
+    <protoVersion value="02"/>
+    <protoSubVersion value="1b"/>
+    <appVersion value="01"/>
+    <appSubVersion value="04"/>
+        <basicClass value="01"/>
+            <genericClass value="20"/>
+            <specificClass value="01"/>
+        <optional value="false"/>
+    <listening value="false"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">4-fach Unterputz Controller</lang>
+            <lang xml:lang="en">Flush-mounted 4-channel radio transmitter</lang>
+            <lang xml:lang="ru">Встраиваемый радиопередатчик с 4 входами</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de">dreifaches kurzes Verbinden von zwei Kabeln der gleichen Farbe und 5 Sekunden warten</lang>
+            <lang xml:lang="en">Connect any pair of cables of same colour shortly three times and wait 5 seconds</lang>
+            <lang xml:lang="ru">Замкните 3 раза любую пару проводов одного цвета и подождите 5 секунд</lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">dreifaches kurzes Verbinden von zwei Kabeln der gleichen Farbe</lang>
+            <lang xml:lang="en">Connect any pair of cables of same colour shortly three times</lang>
+            <lang xml:lang="ru">Замкните 3 раза любую пару проводов одного цвета</lang>
+          </inclusionNote>
+            <productName>506004</productName>
+            <brandName>Merten</brandName>
+            <productLine>Funk-System CONNECT</productLine>
+            <productCode>506004</productCode>
+                <batteryType>CR2450</batteryType>
+            <batteryCount>1</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020"/>
+        <commandClass id="0060"/>
+        <commandClass id="0085"/>
+        <commandClass id="0086"/>
+        <commandClass id="0030"/>
+        <commandClass id="008e"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="12">
+            <description>
+                <lang xml:lang="de">Rote Kabel</lang>
+                <lang xml:lang="en">Red cables</lang>
+                <lang xml:lang="ru">Красные провода</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="12">
+            <description>
+                <lang xml:lang="de">Grüne Kabel</lang>
+                <lang xml:lang="en">Green cables</lang>
+                <lang xml:lang="ru">Зелёные провода</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="12">
+            <description>
+                <lang xml:lang="de">Braune Kabel </lang>
+                <lang xml:lang="en">Brown cables</lang>
+                <lang xml:lang="ru">Коричневые провода</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="4" maxNodes="12">
+            <description>
+                <lang xml:lang="de">Blaue Kabel </lang>
+                <lang xml:lang="en">Blue cables</lang>
+                <lang xml:lang="ru">Синие провода</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="0" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Schalten, Dimmen, Jalousiesteuerung</lang>
+                <lang xml:lang="en">Switching/dimming/shutters</lang>
+                <lang xml:lang="ru">Включатель/диммер/управление жалюзи</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="7f">
+                <description>
+                    <lang xml:lang="de">Kanfigurationsparameter</lang>
+                    <lang xml:lang="en">Config Byte</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Schalten mit einer Schaltwippe</lang>
+                <lang xml:lang="en">Switching single-surface</lang>
+                <lang xml:lang="ru">Включатель с одной клавишей</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="7f">
+                <description>
+                    <lang xml:lang="de">Kanfigurationsparameter</lang>
+                    <lang xml:lang="en">Config Byte</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="44" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Türgongfunktion</lang>
+                <lang xml:lang="en">Doorbell function </lang>
+                <lang xml:lang="ru">Функция звонка</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="7f">
+                <description>
+                    <lang xml:lang="de">Kanfigurationsparameter</lang>
+                    <lang xml:lang="en">Config Byte</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="54" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Jalousiesteuerung mittels einer Schaltwippe</lang>
+                <lang xml:lang="en">Move shutter single-surface</lang>
+                <lang xml:lang="ru">Управление жалюзи с одной кнопки</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Richtung des Steuerungmotors wechselt bei jedem Schaltvorgang</lang>
+                <lang xml:lang="en">Direction of movement changes after each switching process</lang>
+                <lang xml:lang="ru">Направление движения меняется при каждом нажатии</lang>
+              </description>
+      
+                  <value from="00" to="7f">
+                <description>
+                    <lang xml:lang="de">Kanfigurationsparameter</lang>
+                    <lang xml:lang="en">Config Byte</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="52" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Jalousie senken, solange Taster gedrückt ist</lang>
+                <lang xml:lang="en">LOWER shutter as long as button is pressed</lang>
+                <lang xml:lang="ru">Опускать жалюзи пока кнопка удерживается</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="7f">
+                <description>
+                    <lang xml:lang="de">Kanfigurationsparameter</lang>
+                    <lang xml:lang="en">Config Byte</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="55" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Jalousie anheben, solange Taster gedrückt ist</lang>
+                <lang xml:lang="en">RAISE shutter as long as button is pressed</lang>
+                <lang xml:lang="ru">Поднимать жалюзи пока кнопка удерживается</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="7f">
+                <description>
+                    <lang xml:lang="de">Kanfigurationsparameter</lang>
+                    <lang xml:lang="en">Config Byte</lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    <endpoints>
+           <endpoint number="1">
+            <name>
+                <lang xml:lang="de">Rote Kabel</lang>
+                <lang xml:lang="en">Red cables</lang>
+                <lang xml:lang="ru">Красные провода</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Sende Kommando bei Verbinden der roten Kabel</lang>
+                <lang xml:lang="en">Send commands on red cables connection/disconnection</lang>
+                <lang xml:lang="ru">Отправляет команды при замыкании/размыкании красных проводов</lang>
+              </description>
+                        <specificClass value="00"/>
+                  <commandClass id="0020"/>
+            <commandClass id="0060"/>
+            <commandClass id="0085"/>
+            <commandClass id="0086"/>
+            <commandClass id="0070"/>
+            <commandClass id="008e"/>
+            <commandClass id="0030"/>
+            <commandClass id="0072"/>
+          </endpoint>
+           <endpoint number="2">
+            <name>
+                <lang xml:lang="de">Grüne Kabel</lang>
+                <lang xml:lang="en">Green cables</lang>
+                <lang xml:lang="ru">Зелёные провода</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Sende Kommando bei Verbinden der grünen Kabel</lang>
+                <lang xml:lang="en">Send commands on green cables connection/disconnection</lang>
+                <lang xml:lang="ru">Отправляет команды при замыкании/размыкании зелёных проводов</lang>
+              </description>
+                        <specificClass value="00"/>
+                  <commandClass id="0020"/>
+            <commandClass id="0060"/>
+            <commandClass id="0085"/>
+            <commandClass id="0086"/>
+            <commandClass id="0070"/>
+            <commandClass id="008e"/>
+            <commandClass id="0030"/>
+            <commandClass id="0072"/>
+          </endpoint>
+           <endpoint number="3">
+            <name>
+                <lang xml:lang="de">Braune Kabel</lang>
+                <lang xml:lang="en">Brown cables</lang>
+                <lang xml:lang="ru">Коричневые провода</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Sende Kommando bei Verbinden der braunen Kabel</lang>
+                <lang xml:lang="en">Send commands on brown cables connection/disconnection</lang>
+                <lang xml:lang="ru">Отправляет команды при замыкании/размыкании коричневых проводов</lang>
+              </description>
+                        <specificClass value="00"/>
+                  <commandClass id="0020"/>
+            <commandClass id="0060"/>
+            <commandClass id="0085"/>
+            <commandClass id="0086"/>
+            <commandClass id="0070"/>
+            <commandClass id="008e"/>
+            <commandClass id="0030"/>
+            <commandClass id="0072"/>
+          </endpoint>
+           <endpoint number="4">
+            <name>
+                <lang xml:lang="de">Blaue Kabel</lang>
+                <lang xml:lang="en">Blue cables</lang>
+                <lang xml:lang="ru">Синие провода</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Sende Kommando bei Verbinden der blauen Kabel</lang>
+                <lang xml:lang="en">Send commands on blue cables connection/disconnection</lang>
+                <lang xml:lang="ru">Отправляет команды при замыкании/размыкании синих проводов</lang>
+              </description>
+                        <specificClass value="00"/>
+                  <commandClass id="0020"/>
+            <commandClass id="0060"/>
+            <commandClass id="0085"/>
+            <commandClass id="0086"/>
+            <commandClass id="0070"/>
+            <commandClass id="008e"/>
+            <commandClass id="0030"/>
+            <commandClass id="0072"/>
+          </endpoint>
+      </endpoints>
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://pepper1.net/zwavedb/uploads/resources/c7e7399a45e4855049bb72f4a77c8dae4ddb2cd8.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

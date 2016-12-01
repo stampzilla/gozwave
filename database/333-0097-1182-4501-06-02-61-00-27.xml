@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0097"/>
+        <productType value="1182"/>
+    <productId value="4501"/>
+    <libType value="06"/>
+    <protoVersion value="02"/>
+    <protoSubVersion value="61"/>
+    <appVersion value="00"/>
+    <appSubVersion value="27"/>
+        <basicClass value="04"/>
+            <genericClass value="20"/>
+            <specificClass value="00"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Temperatur und Binärsensor</lang>
+            <lang xml:lang="en">Temperature and Binary Sensor</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de">Abnehmen der hinteren Abdeckung weckt das Gerät auf</lang>
+            <lang xml:lang="en">Press Tamper switch between 3 and 8 seconds and then release it</lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Bei offener Abdeckung den Tamper-Schalter 3 Sekunden drücken, bis die rote LED blinkt. Danach loslassen.</lang>
+            <lang xml:lang="en">Press Tamper switch between 3 and 8 seconds and then release it</lang>
+          </inclusionNote>
+            <productName>iTemp</productName>
+            <brandName>Wintop</brandName>
+            <productLine>Sensors</productLine>
+            <productCode>iTemp</productCode>
+                <batteryType>AAA</batteryType>
+            <batteryCount>2</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0080"/>
+        <commandClass id="0070"/>
+        <commandClass id="0084"/>
+        <commandClass id="0085"/>
+        <commandClass id="0086"/>
+        <commandClass id="0020"/>
+        <commandClass id="0030"/>
+        <commandClass id="0031"/>
+        <commandClass id="0072"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Alarm durch Manipulationsschutz</lang>
+                <lang xml:lang="en">Alarm triggered by Tamper Switch</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Binäreingangsklemmen offen/geschlossen</lang>
+                <lang xml:lang="en">Dry Binary Input close/open</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Reset</lang>
+                <lang xml:lang="en">Reset</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Setzt das Gerät zurück</lang>
+                <lang xml:lang="en">Resets the device</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Normal</lang>
+                    <lang xml:lang="en">normal operation</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Reset</lang>
+                    <lang xml:lang="en">reset</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Kommando bei Klemmen</lang>
+                <lang xml:lang="en">Command Sent on Dry Input</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Kommando, das beim Schließen der Schaltklemmen aus gesendet werden</lang>
+                <lang xml:lang="en">Defines the type of command sent when dry input triggers</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Alarm Report Typ 2</lang>
+                    <lang xml:lang="en">Alarm Report Type 2</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Basic ON oder AUS</lang>
+                    <lang xml:lang="en">Basic On or Off</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Arbeitsmodus</lang>
+                <lang xml:lang="en">Operation Mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert, ob der Sensor im normalen oder im Aufweckmodus arbeitet. Aufweckmodus sollte nur zum testen verwendet werden.</lang>
+                <lang xml:lang="en">Defines ￼if the sensor is in normal – ￼wakeup- mode or always on. This ￼function shall be used only for testing ￼since its draining the battery very fast</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Normal</lang>
+                    <lang xml:lang="en">normal mode</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Immer Wach</lang>
+                    <lang xml:lang="en">always awake</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Temperatur-Offset</lang>
+                <lang xml:lang="en">Temperature Offset</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">ermöglichst das Kalibrieren des Gerätes</lang>
+                <lang xml:lang="en">Allows to calibrate the temperature measurement function</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">0 K</lang>
+                    <lang xml:lang="en">0 K</lang>
+                  </description>
+              </value>
+            <value from="ce" to="32">
+                <description>
+                    <lang xml:lang="de">Temperatur-Offset in K</lang>
+                    <lang xml:lang="en">Temperature Offset in K</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/60e15facc56da4953fe38d90d71aa8cc2da5e39d.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

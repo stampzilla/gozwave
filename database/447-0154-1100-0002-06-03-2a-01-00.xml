@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0154"/>
+        <productType value="1100"/>
+    <productId value="0002"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="2a"/>
+    <appVersion value="01"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+                    
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Zwischenstecker Dimmer</lang>
+            <lang xml:lang="en">Plug-in Dimmer</lang>
+            <lang xml:lang="ru">Диммер с одной клавишей</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+            <lang xml:lang="ru"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Dreifach-Klick Taste</lang>
+            <lang xml:lang="en">Button triple press</lang>
+            <lang xml:lang="ru">Тройное нажатие на одну из кнопок</lang>
+          </inclusionNote>
+            <productName>123580</productName>
+            <brandName>Popp</brandName>
+            <productLine>Smart Plugs</productLine>
+            <productCode>696859123580</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020"/>
+        <commandClass id="0026" version="2"/>
+        <commandClass id="0086"/>
+        <commandClass id="0087"/>
+        <commandClass id="0027"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+        <commandClass id="0075"/>
+        <commandClass id="0077"/>
+        <commandClass id="0085" version="2"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Aktualisierung bei jeder Statusänderung</lang>
+                <lang xml:lang="en">Send Reports on blind state change</lang>
+                <lang xml:lang="ru">Отправлять отчёты при изменение уровня открытия</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="rangemapped" size="1" default="03">
+            <name>
+                <lang xml:lang="de">LED Modus</lang>
+                <lang xml:lang="en">LED mode</lang>
+                <lang xml:lang="ru">Режим световой индикации</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert das Verhalten der LED</lang>
+                <lang xml:lang="en">Set LED indication mode</lang>
+                <lang xml:lang="ru">Режим работы светодиода</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="ru">Отключен</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Zeigt Dimmer-Zustand (An/Aus)</lang>
+                    <lang xml:lang="en">Show switch state</lang>
+                    <lang xml:lang="ru">Индикация состояния реле</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Nachtlicht (invertierter Dimmer-Zustand)</lang>
+                    <lang xml:lang="en">Night mode (inverted switch state)</lang>
+                    <lang xml:lang="ru">Ночной режим (противоположно состоянию реле)</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">gesteurt durch Funkkommando (Kommandoklasse &#039;Indicator&#039;)</lang>
+                    <lang xml:lang="en">Operated by Indicator Command Class</lang>
+                    <lang xml:lang="ru">Управляется классом комманд Indicator</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">Automatisches Ausschalten</lang>
+                <lang xml:lang="en">Automatically switch off after</lang>
+                <lang xml:lang="ru">Авто отключение через</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Wenn ungleich 0, dimmt das Gerät nach x Sekunden auf Null</lang>
+                <lang xml:lang="en">If not zero, automatically switch off after a user defined time</lang>
+                <lang xml:lang="ru">Если не 0, автоматически отключает реле после определённого пользователем времени</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="0001" to="ffff">
+                <description>
+                    <lang xml:lang="de">Sekunden</lang>
+                    <lang xml:lang="en">sec</lang>
+                    <lang xml:lang="ru">секунд</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Verhalten bei Funkkommando &#039;AUS&#039; </lang>
+                <lang xml:lang="en">What to do on RF off command</lang>
+                <lang xml:lang="ru">Что делать при получении радиокоманды выключения</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert das Verhalten beim Empfang eines &#039;AUS&#039;-Kommandos. Dies kann in Verbindung mit der Automatic-AUS-Funktion verwendet werden, um zum Beispiel ein Licht durch einen Bewegungsmelder einzuschalten und danach
+
+		nach einer definierten Zeit wieder auszuschalten.</lang>
+                <lang xml:lang="en">		Defines how to interpret RF Off command. Can be used in conjunction with Auto Off function: Ignore - to switch on the light by motion detectors and switch it off after some amount of time: in case of multiple motion detectors each would try to switch the light off that would break logics; Switch on - to switch on the light on both On and Off paddle press on the remote and switch it off after some amount of time. Button off click will still work (if button operations are not disabled).</lang>
+                <lang xml:lang="ru">		Определяет поведение при получении радио команды выключения. Может использоваться совместно с функцией авто отключения: Игнорирование - для включения света по детектору движения и отключения по прошествии определённого времени: в случае использования нескольких детекторов движения каждый будет пытаться выключить свет сам, что приведёт к неправильной логике работы; Включть нагрузку - для включения света при нажатии на кнопки Вкл и Выкл на пульте управления и отключения по прошествии определённого времени. Выключение по кнопке будет продолжать работать (если не отключено)</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Ausschalten</lang>
+                    <lang xml:lang="en">Switch off</lang>
+                    <lang xml:lang="ru">Выключить нарузку</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Ignorieren</lang>
+                    <lang xml:lang="en">Ignore</lang>
+                    <lang xml:lang="ru">Игнорировать</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Einschalten</lang>
+                    <lang xml:lang="en">Switch on</lang>
+                    <lang xml:lang="ru">Включить нарузку</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Schalte ein, wenn ausgeschaltet und schalte aus, wenn eingeschaltet</lang>
+                    <lang xml:lang="en">Switch on if load is off else switch off</lang>
+                    <lang xml:lang="ru">Включить, если нагрузка выключена, иначе выключить</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Ignoriere Startlevel des Dimmers</lang>
+                <lang xml:lang="en">Ignore start level</lang>
+                <lang xml:lang="ru">Игнорировать начальный уровень</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert, ob der Dimmer den Startwert beim Start eines Dimmvorganges ignorieren soll </lang>
+                <lang xml:lang="en">Defines if the dimmer shall ignore start level in StartLevelChange command despite it is specified or not</lang>
+                <lang xml:lang="ru">Определяет игнорировать ли начальный уровень димминга в коммандах StartLevelChange (начать изменение яркости) даже если он указан или нет</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Nein</lang>
+                    <lang xml:lang="en">No</lang>
+                    <lang xml:lang="ru">Нет</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Ja </lang>
+                    <lang xml:lang="en">Yes</lang>
+                    <lang xml:lang="ru">Да</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="range" size="1" default="1e">
+            <name>
+                <lang xml:lang="de">Geschwindigkeit bei schnellen Dimmen</lang>
+                <lang xml:lang="en">Speed for fast dimming</lang>
+                <lang xml:lang="ru">Время диммирования</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert die Dimm-Geschwindigkeit beim direkten Setzens eines Dimmerniveaus, entweder per Funk oder durch kurzem Klick auf die Taste</lang>
+                <lang xml:lang="en">Time to dim on button presses and Set command (if it has no duration specified). If not 0, dimming will be done smoothly to preserv bulb life.</lang>
+                <lang xml:lang="ru">Время димирования при нажатии на кнопки и при получении команды Set (если она не содержит времени включения). Если не 0, то диммирование будет плавным, что сбережёт лампочку дольше.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Sofort</lang>
+                    <lang xml:lang="en">Instantly</lang>
+                    <lang xml:lang="ru">Мгновенно</lang>
+                  </description>
+              </value>
+            <value from="01" to="ff">
+                <description>
+                    <lang xml:lang="de">in 10 ms Schritten </lang>
+                    <lang xml:lang="en">in 10ms units</lang>
+                    <lang xml:lang="ru">в единицах 10мс</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="range" size="1" default="03">
+            <name>
+                <lang xml:lang="de">Geschwindigkeit bei langsamen Dimmen</lang>
+                <lang xml:lang="en">Speed for slow dimming</lang>
+                <lang xml:lang="ru">Время долгого диммирования</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Zeit bei manuellen Dimmeen (Drücken der Taste) bzw. Funksteuerung zum langsamen Dimmen</lang>
+                <lang xml:lang="en">Time to dim on button holds and StartLevelChange command (if it has no duration specified).</lang>
+                <lang xml:lang="ru">Время димирования при удержании кнопок и при получении команды StartLevelChange (начать изменение яркости; если она не содержит времени включения).</lang>
+              </description>
+      
+                  <value from="01" to="ff">
+                <description>
+                    <lang xml:lang="de">Sekunden</lang>
+                    <lang xml:lang="en">seconds</lang>
+                    <lang xml:lang="ru">секунды</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Dimmer-Verhalten bei Einschaltkommando </lang>
+                <lang xml:lang="en">Behavior on &#039;Switch On&#039; </lang>
+                <lang xml:lang="ru">Устанавливать максимальный уровень яркости при включении</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert das Dimmer-Niveau bei Funkkommando &#039;EIN&#039;</lang>
+                <lang xml:lang="en"> Defines the dim level on command &#039;ON&#039;. On default he dimmer restores last dim level. 
+
+	This parameter allows to configure to set maximum level on second On command (if already On) or to 
+
+	always switch on to maximum level</lang>
+                <lang xml:lang="ru"> Определяет устанавливать ли максимальную яркость при получении команды Включить. По умолчанию по команде 
+
+	Включить диммер восстанавливает последний уровень яркости. Настройка этого параметра позволяет устанавливать м
+
+	аксимальную яркость по второй команде Включить (если уже включен) или всегда включать диммер на максимальную яркость</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Letztes Dim-Niveau von Ausschalten</lang>
+                    <lang xml:lang="en">last dim level</lang>
+                    <lang xml:lang="ru">last dim level</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">maximales Dim-Niveau, wenn bereits eingeschaltet</lang>
+                    <lang xml:lang="en">maximum dim level when already turned on</lang>
+                    <lang xml:lang="ru">maximum dim level when already turned on</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">immer auf maximales Dim-Niveau</lang>
+                    <lang xml:lang="en">Always maximum dim level</lang>
+                    <lang xml:lang="ru">Always maximum dim level</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Kinderschlaf-Funktion</lang>
+                <lang xml:lang="en">Baby Dimming time</lang>
+                <lang xml:lang="ru">Время диммирования Баю-бай</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Ein Doppel-Klick aktiviert die Kinderschlaf-Funktion. Hier bei wird die Leuchte über einen längeren definierbaren
+
+		Zeitraum langsam heruntergedimmt, um dem Kind das Einschlafen zu erleichtern.</lang>
+                <lang xml:lang="en">		Time to dim on double click Off button for Baby-Dim function. This function works only if the load is operated by single press and hold button action. If enabled, the device will wait for a click timeout to see if the second click would be pressed. This will introduce a small delay for single click commands </lang>
+                <lang xml:lang="ru">		Время димирования при двойном нажатии на кнопку выключения для функции Баю-бай. Данная функция работает только если нагрузка управляется одинарным нажатием или удержанием кнопок. Если включено, устройство будет ждать характерное время нажатия второго нажатия. Данная функция приведёт к небольшой задержке при одинарном нажати 
+
+		</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="01" to="63">
+                <description>
+                    <lang xml:lang="de">in Minuten</lang>
+                    <lang xml:lang="en">in minutes</lang>
+                    <lang xml:lang="ru">в минутах</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Ziel-Dimm-Niveau bei Kinderschlaf-Funktion</lang>
+                <lang xml:lang="en">Target dimming level for Baby Dimming</lang>
+                <lang xml:lang="ru">Конечный уровень диммирования функции Баю-бай</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert das End-Niveau, das der Dimmer nach Ablauf der Kinderschlaf-Funktion ereichen soll. Ein Wetr von 0 schaltet die Leuchte komplett aus</lang>
+                <lang xml:lang="en">Target level on which to stop while executing Baby Dimming. Can be 0 to completely switch off the light.</lang>
+                <lang xml:lang="ru">Конечный уровень, до которого диммировать функции Баю-бай. Используйте 0 для полного выключения света.</lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="de">%</lang>
+                    <lang xml:lang="en">%</lang>
+                    <lang xml:lang="ru">%</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="range" size="1" default="32">
+            <name>
+                <lang xml:lang="de">Typischer Klick-Timeout</lang>
+                <lang xml:lang="en">Typical click timeout</lang>
+                <lang xml:lang="ru">Характерное время нажатия</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"> Definiert die Wartezeit zum Erkennen eines Doppel-Klickes</lang>
+                <lang xml:lang="en">Typical time used to differenciate click, hold, double and triple clicks</lang>
+                <lang xml:lang="ru">Харакерное время для отличия нажатия, удержания, двойного и тройного нажатий</lang>
+              </description>
+      
+                  <value from="01" to="64">
+                <description>
+                    <lang xml:lang="de">in 10 ms Schritten </lang>
+                    <lang xml:lang="en">in 10ms units</lang>
+                    <lang xml:lang="ru">в единицах 10мс</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="17" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Untere Begrenzung des Dimm-Bereiches</lang>
+                <lang xml:lang="en">Limit minimal light level</lang>
+                <lang xml:lang="ru">Ограничивать минимальный уровень яркости</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Minimales Dimmer-Niveau. Die Begrenzung kann bei Energiesparlampen oder LEDs Sinn machen und muss kleiner sein als
+
+		das maximal erlaubte Dimmer-Niveau</lang>
+                <lang xml:lang="en">Minimal level should be greater than maximal</lang>
+                <lang xml:lang="ru">Максимальный уровень должен быть выше минимального</lang>
+              </description>
+      
+                  <value from="01" to="5f">
+                <description>
+                    <lang xml:lang="de">Prozent</lang>
+                    <lang xml:lang="en">Level limit</lang>
+                    <lang xml:lang="ru">Ограничить уровнем</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="18" type="range" size="1" default="63">
+            <name>
+                <lang xml:lang="de">Obere Begrenzung des Dimm-Bereiches</lang>
+                <lang xml:lang="en">Limit maximal light level</lang>
+                <lang xml:lang="ru">Ограничивать максимальный уровень яркости</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Maximales Dimmer-Niveau. Die Begrenzung kann bei Energiesparlampen oder LEDs Sinn machen.</lang>
+                <lang xml:lang="en">Maximal level should be greater than minimal</lang>
+                <lang xml:lang="ru">Максимальный уровень должен быть выше минимального</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Funktioniert als Schalter zwischen 0 % und 100 % </lang>
+                    <lang xml:lang="en">Work as switch: use off and maximal level</lang>
+                    <lang xml:lang="ru">Работать как реле: только выключен или на полную</lang>
+                  </description>
+              </value>
+            <value from="0a" to="63">
+                <description>
+                    <lang xml:lang="de">Prozent</lang>
+                    <lang xml:lang="en">Level limit</lang>
+                    <lang xml:lang="ru">Ограничить уровнем</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="19" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Dimmer-Niveau bei Schaltkommando &#039;EIN&#039;</lang>
+                <lang xml:lang="en">Dim Level on &#039;Switch On&#039;</lang>
+                <lang xml:lang="ru">Включаться на заданном уровне яркости</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">definiert das Dimmerverhalten beim Einschaltkkommando (Switch Binary On oder Basic On).</lang>
+                <lang xml:lang="en">defines how the dimmer hall react on a simple ON Command.</lang>
+                <lang xml:lang="ru">Эта функция работает, только если в параметре &quot;Устанавливать максимальный уровень яркости при включении&quot; выбрано &quot;Нет&quot; или &quot;Если уже включен&quot;, иначе этот параметр игнорируется и свет всегда будет включаться на 100%</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Zurück zum letzten Dimmerzustand </lang>
+                    <lang xml:lang="en">Use previous light level</lang>
+                    <lang xml:lang="ru">Использовать предыдущий уровень яркости</lang>
+                  </description>
+              </value>
+            <value from="01" to="63">
+                <description>
+                    <lang xml:lang="de"> Definiertes Dimmerniveau in %</lang>
+                    <lang xml:lang="en">Define light level in %</lang>
+                    <lang xml:lang="ru">Задать уровень %</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="51" type="range" size="1" default="1c">
+            <name>
+                <lang xml:lang="de">Pause vor dem Startimpuls</lang>
+                <lang xml:lang="en">Pause before pulse</lang>
+                <lang xml:lang="ru">Пауза до импульса</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Achtung: Dieser Wert darf nur bei genauer Kenntnis des Dimmerverhaltens 
+
+	geändert werden. Eine Fehlkonfiguration kann zur Zerstörung des Dimmers und/oder der angeschlossenen Last führen. Bei dimmbaren Energiesparlampen oder LED-Leuchten mti Bypass kann ein Wert von 1 verwendet werden. Für normale
+
+	Leichten wird der Standardwert empfohlen.</lang>
+                <lang xml:lang="en">	NB: Do not touch these settings if you are not sure what they mean! For dimmable LEDs and CFL with bypass use value 1. For other bulbs use default value.</lang>
+                <lang xml:lang="ru">	Важно: не трогайте эти параметры, если вы не уверены, что они значат! Для диммируемых светодиодных и энергосберегающих газоразрядных ламп используйте значение по умолчанию.</lang>
+              </description>
+      
+                  <value from="05" to="3c" unit="10/156 ms">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="52" type="range" size="1" default="1c">
+            <name>
+                <lang xml:lang="de">Pause nach dem Startimpuls</lang>
+                <lang xml:lang="en">Pause after pulse</lang>
+                <lang xml:lang="ru">Пауза после импульса</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Achtung: Dieser Wert darf nur bei genauer Kenntnis des Dimmerverhaltens 
+
+	geändert werden. Eine Fehlkonfiguration kann zur Zerstörung des Dimmers und/oder der angeschlossenen Last führen. Bei dimmbaren Energiesparlampen oder LED-Leuchten mti Bypass kann ein Wert von 40 verwendet werden. Für normale
+
+	Leichten wird der Standardwert empfohlen.</lang>
+                <lang xml:lang="en">	NB: Do not touch these settings if you are not sure what they mean! For dimmable LEDs and CFL with bypass use value 40. For other bulbs use default value.</lang>
+                <lang xml:lang="ru">Важно: не трогайте эти параметры, если вы не уверены, что они значат! Для диммируемых светодиодных и энергосберегающих газоразрядных ламп используйте значение по умолчанию.</lang>
+              </description>
+      
+                  <value from="05" to="3c" unit="10/156 ms">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="53" type="range" size="1" default="0a">
+            <name>
+                <lang xml:lang="de">Pulsweite</lang>
+                <lang xml:lang="en">Pulse width</lang>
+                <lang xml:lang="ru">Ширина импульса</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Achtung: Dieser Wert darf nur bei genauer Kenntnis des Dimmerverhaltens 
+
+	geändert werden. Eine Fehlkonfiguration kann zur Zerstörung des Dimmers und/oder der angeschlossenen Last führen. Bei dimmbaren Energiesparlampen oder LED-Leuchten mti Bypass kann ein Wert von 20 verwendet werden. Für normale
+
+	Leichten wird der Standardwert empfohlen.</lang>
+                <lang xml:lang="en">NB: Do not touch these settings if you are not sure what they mean! For dimmable LEDs and CFL with bypass use value 20. For other bulbs use default value.</lang>
+                <lang xml:lang="ru">Важно: не трогайте эти параметры, если вы не уверены, что они значат! Для диммируемых светодиодных и энергосберегающих газоразрядных ламп используйте значение по умолчанию.</lang>
+              </description>
+      
+                  <value from="03" to="14" unit="10/156 ms">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                    <lang xml:lang="ru"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="54" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Impulstyp</lang>
+                <lang xml:lang="en">Pulse type</lang>
+                <lang xml:lang="ru">Тип импульса</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Achtung: Dieser Wert darf nur bei genauer Kenntnis des Dimmerverhaltens 
+
+	geändert werden. Eine Fehlkonfiguration kann zur Zerstörung des Dimmers und/oder der angeschlossenen Last führen.</lang>
+                <lang xml:lang="en">NB: Do not touch these settings if you are not sure what they mean!</lang>
+                <lang xml:lang="ru">Важно: не трогайте эти параметры, если вы не уверены, что они значат!</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Langer Impuls</lang>
+                    <lang xml:lang="en">Long pulse</lang>
+                    <lang xml:lang="ru">Длинный импульс</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Kurzer Impuls</lang>
+                    <lang xml:lang="en">Short pulse</lang>
+                    <lang xml:lang="ru">Короткий импульс</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/c19d3be7407ad38ec99825dddd68a695171ad5d7.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

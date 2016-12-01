@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="008a"/>
+        <productType value="0001"/>
+    <productId value="0100"/>
+    <libType value="01"/>
+    <protoVersion value="02"/>
+    <protoSubVersion value="61"/>
+    <appVersion value="01"/>
+    <appSubVersion value="00"/>
+        <basicClass value="02"/>
+            <genericClass value="02"/>
+            <specificClass value="00"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+            <certId>14316</certId>
+            <certNumber>ZC08-11060018</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Gateway</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Press and hold the learn button. Wait until the indicator light starts blinking again. </lang>
+          </inclusionNote>
+            <productName>myGate</productName>
+            <brandName>myGate</brandName>
+            <productLine>Control</productLine>
+            <productCode>1</productCode>
+            <productVersion>1.0</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" controlled="true" inNIF="false"/>
+        <commandClass id="0081"/>
+        <commandClass id="0086" controlled="true"/>
+        <commandClass id="008a"/>
+        <commandClass id="008c"/>
+        <commandClass id="0072" version="2" controlled="true"/>
+        <commandClass id="008f" controlled="true"/>
+        <commandClass id="0070" version="2" controlled="true"/>
+        <commandClass id="0092"/>
+        <commandClass id="0073" controlled="true"/>
+        <commandClass id="009a"/>
+        <commandClass id="0071" version="2" controlled="true"/>
+        <commandClass id="0027" controlled="true"/>
+        <commandClass id="0085" controlled="true"/>
+        <commandClass id="0080" controlled="true"/>
+        <commandClass id="0030" controlled="true"/>
+        <commandClass id="0025" controlled="true"/>
+        <commandClass id="0032" version="3" controlled="true"/>
+        <commandClass id="0060" version="2" controlled="true"/>
+        <commandClass id="008e" version="2" controlled="true"/>
+        <commandClass id="0031" version="4" controlled="true"/>
+        <commandClass id="0026" controlled="true"/>
+        <commandClass id="0075" controlled="true"/>
+        <commandClass id="0093" controlled="true"/>
+        <commandClass id="0063" controlled="true"/>
+        <commandClass id="0084" controlled="true"/>
+      </commandClasses>
+  
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Current Lifestyle</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Obtain / Change the current lifestyle (set of active rules) of the myGate. / Sending 0x21 will cause lifestyle Home (0x20) to be activated.
+Sending 0x41 will cause lifestyle Home (0x40) to be activated. Not listed values will reset the lifestyle-system to disabled (0x00).</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">No lifestyle selected</lang>
+                  </description>
+              </value>
+            <value from="20" to="20">
+                <description>
+                    <lang xml:lang="en">Home 1</lang>
+                  </description>
+              </value>
+            <value from="22" to="22">
+                <description>
+                    <lang xml:lang="en">Home 2</lang>
+                  </description>
+              </value>
+            <value from="23" to="23">
+                <description>
+                    <lang xml:lang="en">Home 3</lang>
+                  </description>
+              </value>
+            <value from="24" to="24">
+                <description>
+                    <lang xml:lang="en">Home 4</lang>
+                  </description>
+              </value>
+            <value from="40" to="40">
+                <description>
+                    <lang xml:lang="en">Away 1</lang>
+                  </description>
+              </value>
+            <value from="42" to="42">
+                <description>
+                    <lang xml:lang="en">Away 2</lang>
+                  </description>
+              </value>
+            <value from="43" to="43">
+                <description>
+                    <lang xml:lang="en">Away 3</lang>
+                  </description>
+              </value>
+            <value from="44" to="44">
+                <description>
+                    <lang xml:lang="en">Away 4</lang>
+                  </description>
+              </value>
+            <value from="60" to="60">
+                <description>
+                    <lang xml:lang="en">Sleep</lang>
+                  </description>
+              </value>
+            <value from="80" to="80">
+                <description>
+                    <lang xml:lang="en">Party</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Lifestyle lock</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Check if lifestyles are locked for security reasons.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">No Lock</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Locked</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">External Screen page</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Obtain/Change the current page displayed on external displays using
+the Screen Meta Data Command Class.
+What is displayed on each of these pages can be configured using the
+2MyHome Graphical Web interface.</lang>
+              </description>
+      
+                  <value from="00" to="ff">
+                <description>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/62ad018ce2100bf12d34380e9fe9139d755053a3.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

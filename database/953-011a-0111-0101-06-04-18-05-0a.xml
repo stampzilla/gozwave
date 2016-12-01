@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="011a"/>
+        <productType value="0111"/>
+    <productId value="0101"/>
+    <libType value="06"/>
+    <protoVersion value="04"/>
+    <protoSubVersion value="18"/>
+    <appVersion value="05"/>
+    <appSubVersion value="0a"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>US</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">PLUG-IN SMART METER ON/OFF SWITCH</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">While the gateway/remote is in the add mode and the blue LED blinks on the ZWN-
+333M, press and hold the program button for 3 second on the module. The gateway/
+remote will verify the adding, assign a node ID number for the module and the LED
+will stop blinking on the module.</lang>
+          </inclusionNote>
+            <productName>PLUG-IN SMART METER APPLIANCE MODULE</productName>
+            <brandName>Enerwave</brandName>
+            <productLine>Z-Wave Plus Devices</productLine>
+            <productCode>ZWN-333M</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="005a"/>
+        <commandClass id="0073"/>
+        <commandClass id="0020" inNIF="false"/>
+        <commandClass id="0032" version="3"/>
+        <commandClass id="0070"/>
+        <commandClass id="0025"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0027" version="2"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="3" maxNodes="5">
+            <description>
+                <lang xml:lang="en">PowerReport: Send meter power report</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="en">StatusReport: Send basic report</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Lifeline: Send device reset locally notification</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">LED Configuration</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">synchronization of load
+power and LED indicator</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Power on, LED off</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Power on, LED on</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/636a16f8c0567359ea53775aa448b4ef43c673f1.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0115"/>
+        <productType value="0110"/>
+    <productId value="0001"/>
+    <libType value="03"/>
+    <protoVersion value="04"/>
+    <protoSubVersion value="05"/>
+    <appVersion value="00"/>
+    <appSubVersion value="46"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+            <certId>50106</certId>
+            <certNumber>50106</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Z-Wave prototyping board, compatible with Arduino IDE.
+</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Triple press the button</lang>
+          </inclusionNote>
+            <productName>Z-Uno</productName>
+            <brandName>Z-Wave.Me</brandName>
+            <productLine>ZME</productLine>
+            <productCode>Z-Uno h/w revision 3 (10 Channels sample sketch)</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0020" controlled="true" inNIF="false" secure="true" nonSecure="false"/>
+        <commandClass id="0025"/>
+        <commandClass id="0026" controlled="true"/>
+        <commandClass id="0030" version="2"/>
+        <commandClass id="0071" version="5"/>
+        <commandClass id="0031" version="7"/>
+        <commandClass id="0070"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="008e" version="3"/>
+        <commandClass id="0060" version="4" controlled="true"/>
+        <commandClass id="007a" version="3"/>
+        <commandClass id="005a"/>
+        <commandClass id="0059"/>
+        <commandClass id="0073"/>
+        <commandClass id="0098" controlled="true"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0072" version="2"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Control Group</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Lifeline</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Debugging</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Debug mode to apply channels, associations and power mode changes on the fly without exclusion-inclusion sequence. Use for debugging only!</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">No</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Yes</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="en">LED</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Blink with service LED during operation</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">No</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Yes</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    <endpoints>
+           <endpoint number="10">
+            <name>
+                <lang xml:lang="en">SensorBinary, Notification </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">(Door/Window sensor)</lang>
+              </description>
+                  <genericClass value="07"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0071"/>
+            <commandClass id="0030"/>
+          </endpoint>
+           <endpoint number="9">
+            <name>
+                <lang xml:lang="en">SensorMultilevel </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">(Temperature sensor)</lang>
+              </description>
+                  <genericClass value="21"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0031"/>
+          </endpoint>
+           <endpoint number="8">
+            <name>
+                <lang xml:lang="en">SensorMultilevel </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">(Luminance sensor)</lang>
+              </description>
+                  <genericClass value="21"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0031"/>
+          </endpoint>
+           <endpoint number="7">
+            <name>
+                <lang xml:lang="en">SensorBinary, Notification </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">(Motion sensor)</lang>
+              </description>
+                  <genericClass value="07"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0071"/>
+            <commandClass id="0030"/>
+          </endpoint>
+           <endpoint number="6">
+            <name>
+                <lang xml:lang="en">SwitchMultilevel </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">(LED dimming)</lang>
+              </description>
+                  <genericClass value="11"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0026"/>
+          </endpoint>
+           <endpoint number="5">
+            <name>
+                <lang xml:lang="en">SwitchMultilevel </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">(LED dimming)</lang>
+              </description>
+                  <genericClass value="11"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0026"/>
+          </endpoint>
+           <endpoint number="4">
+            <name>
+                <lang xml:lang="en">SwitchMultilevel </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">(LED dimming)</lang>
+              </description>
+                  <genericClass value="11"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0026"/>
+          </endpoint>
+           <endpoint number="3">
+            <name>
+                <lang xml:lang="en">SwitchBinary </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">(LED on/off)</lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0025"/>
+          </endpoint>
+           <endpoint number="2">
+            <name>
+                <lang xml:lang="en">SwitchBinary </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">(LED on/off)</lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0025"/>
+          </endpoint>
+           <endpoint number="1">
+            <name>
+                <lang xml:lang="en">SwitchBinary </lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">(LED on/off)</lang>
+              </description>
+                  <genericClass value="10"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0025"/>
+          </endpoint>
+      </endpoints>
+    
+  
+    
+  </ZWaveDevice>
+
+

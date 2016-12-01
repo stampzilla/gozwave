@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="011a"/>
+        <productType value="0111"/>
+    <productId value="0605"/>
+    <libType value="06"/>
+    <protoVersion value="04"/>
+    <protoSubVersion value="18"/>
+    <appVersion value="05"/>
+    <appSubVersion value="0a"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>US</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Smart Single Relay ON/OFF Switch Module</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Once program button is pressed and release, the device will enter into learn
+mode to accomplish adding or removing by controller.</lang>
+          </inclusionNote>
+            <productName>Smart Single Relay Switch Module</productName>
+            <brandName>Enerwave</brandName>
+            <productLine>Z-Wave Plus Devices</productLine>
+            <productCode>ZWN-RSM1</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="005a"/>
+        <commandClass id="0073"/>
+        <commandClass id="0020"/>
+        <commandClass id="0025"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0027"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="en">StatusReport: Send basic report</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="en">Lifeline: Send device reset
+locally notification</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/4acbe2bedda1d7b8a22fcf95ad040ddb11e67636.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

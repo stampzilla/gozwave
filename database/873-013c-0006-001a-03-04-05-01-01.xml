@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="013c"/>
+        <productType value="0006"/>
+    <productId value="001a"/>
+    <libType value="03"/>
+    <protoVersion value="04"/>
+    <protoSubVersion value="05"/>
+    <appVersion value="01"/>
+    <appSubVersion value="01"/>
+        <basicClass value="04"/>
+            <genericClass value="31"/>
+            <specificClass value="03"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">This dual meter module is a transceiver which is a Z-WaveTM enabled device and is fully compatible with any Z-WaveTM enabled network. Mini size design let the module can easily hide itself into the electricity distribution box and that will be good for the house decoration. This dual meter module is able to detect Instant power wattage (13800W/230Vac)(60 Amperes) of connected light or appliances. </lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Pressing Include button three times
+within 2 seconds will enter inclusion
+mode.</lang>
+          </inclusionNote>
+            <productName>Smart Engery In Wall Meter</productName>
+            <brandName>Philio</brandName>
+            <productLine>Philio Z-Wave Products</productLine>
+            <productCode>PAB01-1</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="005a"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0073"/>
+        <commandClass id="0056"/>
+        <commandClass id="007a" version="2"/>
+        <commandClass id="0060" version="4"/>
+        <commandClass id="008e" version="3"/>
+        <commandClass id="0032" version="3"/>
+        <commandClass id="0070"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="3" maxNodes="1">
+            <description>
+                <lang xml:lang="en">For group 3, the Switch will report ：(1) Instant Power Consumption (Watt) read from
+CT2， (2) Accumulated Power Consumption (KWh) read from CT2.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="1">
+            <description>
+                <lang xml:lang="en">For group 2, the Switch will report ：(1) Instant Power Consumption (Watt) read from
+CT1， (2) Accumulated Power Consumption (KWh) read from CT1.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="en">For group 1, the Switch will report (1) The sum of instant Power Consumption (Watt)
+read from CT1 and CT2 (2) The sum of accumulated Power Consumption (KWh)
+read from CT1 and CT2.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="2" default="02d0">
+            <name>
+                <lang xml:lang="en">Watt Meter Report Period</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">5*720s=3600s=1
+hour</lang>
+              </description>
+      
+                  <value from="0001" to="7fff" unit="x 5sec ">
+                <description>
+                    <lang xml:lang="en">Define a time interval to send a watt meter report.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="2" default="02d0">
+            <name>
+                <lang xml:lang="en">KWH Meter Report Period</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">5*720s=3600s=1
+hour</lang>
+              </description>
+      
+                  <value from="0001" to="7fff" unit="x 5sec ">
+                <description>
+                    <lang xml:lang="en">Define a time interval to send a kWh meter report.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="constant" size="1" default="03">
+            <name>
+                <lang xml:lang="en">Selected End Point</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">The parameter defines which endpoint(s) are selected.</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">CT1 and CT2</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">CT1</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">CT2</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="2" default="1770">
+            <name>
+                <lang xml:lang="en">Threshold of Current for Load Caution</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">6000*0.01A=60A</lang>
+              </description>
+      
+                  <value from="000a" to="1770" unit="x 0,01A">
+                <description>
+                    <lang xml:lang="en">Set up a treshold.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="range" size="2" default="2710">
+            <name>
+                <lang xml:lang="en">Threshold of KWH for Load Caution</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="0001" to="2710" unit="kWh">
+                <description>
+                    <lang xml:lang="en">Set up a treshold.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    <endpoints>
+           <endpoint number="3" dynamic="true">
+            <name>
+                <lang xml:lang="en">Endpoint 3</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Endpoint 3 is only related to CT2.</lang>
+              </description>
+                  <genericClass value="31"/>
+                  <specificClass value="03"/>
+                  <commandClass id="0032"/>
+          </endpoint>
+           <endpoint number="2">
+            <name>
+                <lang xml:lang="en">Endpoint 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Endpoint 2 is only related to CT1.</lang>
+              </description>
+                  <genericClass value="31"/>
+                  <specificClass value="03"/>
+                  <commandClass id="0032"/>
+          </endpoint>
+           <endpoint number="1">
+            <name>
+                <lang xml:lang="en">Endpoint 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Endpoint 1 is is related to CT1 and CT2.</lang>
+              </description>
+                  <genericClass value="31"/>
+                  <specificClass value="03"/>
+                  <commandClass id="0032"/>
+          </endpoint>
+      </endpoints>
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/78f16f272af1a3d99ae7162b847a7901ce24f16a.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

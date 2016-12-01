@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0086"/>
+        <productType value="0204"/>
+    <productId value="0050"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="5c"/>
+    <appVersion value="01"/>
+    <appSubVersion value="15"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="05"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>Australia and New Zealand</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Aeon Labs Siren Gen5 is a siren Z-Wave device that when an emergency is happening it lets you know. </lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Turn the primary controller of Z-Wave network into inclusion mode, short press the product’s Action button that you can find on the product&#039;s housing. </lang>
+          </inclusionNote>
+            <productName>Siren Gen 5 ANZ</productName>
+            <brandName>Aeotec</brandName>
+            <productLine>Z-wave Product Line</productLine>
+            <productCode>ZW080-B21</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2" secure="true"/>
+        <commandClass id="0086" version="2" secure="true"/>
+        <commandClass id="0020"/>
+        <commandClass id="0025"/>
+        <commandClass id="0070"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0072" version="2" secure="true"/>
+        <commandClass id="0073"/>
+        <commandClass id="002b"/>
+        <commandClass id="002c"/>
+        <commandClass id="007a" version="2"/>
+        <commandClass id="0098" secure="true"/>
+        <commandClass id="0082" controlled="true" secure="true"/>
+        <commandClass id="005a" secure="true"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">Group 1 is assigned to the Lifeline association group and every device has 5 nodes to associate. When the Siren is received the commands sent by controller to be turned on or off, the Siren will send a basic report of its status to the nodes in association group 1. To change what kind of signal is sent to the nodes in group 1, please see the detailed description of configuration parameter 80.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="2" default="0000">
+            <name>
+                <lang xml:lang="en">Siren Sound/Volume</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Configure the Siren sound and its volume.
+1, The value1 (low byte) is used to select the Siren sound :
+Value1=0, do not change the current Siren sound.
+Value1=1, Siren sound 1 is selected.
+Value1=2, Siren sound 2 is selected.
+Value1=3, Siren sound 3 is selected.
+Value1=4, Siren sound 4 is selected.
+Value1=5, Siren sound 5 is selected.
+Other values will be ignored. Default = 1; 
+
+2, The value2 (high byte) is used to adjust the volume:
+Value2=0, do not change the current volume.
+Value2=1, set the volume to 88 dB.
+Value2=2, set the volume to 100 dB.
+Value2=3, set the volume to 105 dB.
+Other values will be ignored. Default = 3</lang>
+              </description>
+      
+                  <value from="0001" to="0001">
+                <description>
+                    <lang xml:lang="en">Set the volume to 88 dB</lang>
+                  </description>
+              </value>
+            <value from="0002" to="0002">
+                <description>
+                    <lang xml:lang="en">Set the volume to 100 dB</lang>
+                  </description>
+              </value>
+            <value from="0003" to="0003">
+                <description>
+                    <lang xml:lang="en">Set the volume to 105 dB</lang>
+                  </description>
+              </value>
+            <value from="0100" to="0100">
+                <description>
+                    <lang xml:lang="en">The siren sound 1 is selected</lang>
+                  </description>
+              </value>
+            <value from="0200" to="0200">
+                <description>
+                    <lang xml:lang="en">The siren sound 2 is selected</lang>
+                  </description>
+              </value>
+            <value from="0300" to="0300">
+                <description>
+                    <lang xml:lang="en">The siren sound 3 is selected</lang>
+                  </description>
+              </value>
+            <value from="0400" to="0400">
+                <description>
+                    <lang xml:lang="en">The siren sound 4 is selected</lang>
+                  </description>
+              </value>
+            <value from="0500" to="0500">
+                <description>
+                    <lang xml:lang="en">The siren sound 5 is selected</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="80" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Notifications</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Enable to send notifications to associated devices (Group 1)
+when the state of Siren changed.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">nothing</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Hail CC</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">Basic CC report</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="200" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Partner ID</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Aeon Labs Standard Product</lang>
+                  </description>
+              </value>
+            <value from="01" to="ff">
+                <description>
+                    <lang xml:lang="en">Partner ID of Partner Product</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="252" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Lock Configuration</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Enable/disable Lock Configuration.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">disable</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">enable</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="255" type="constant" size="4" default="00000001">
+            <name>
+                <lang xml:lang="en">Reset to Default Factory Settings</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en"></lang>
+              </description>
+      
+                  <value from="00000001" to="00000001">
+                <description>
+                    <lang xml:lang="en">Resets all configuration parameters to default setting.</lang>
+                  </description>
+              </value>
+            <value from="55555555" to="55555555">
+                <description>
+                    <lang xml:lang="en">Reset the product to default factory setting and be excluded from the Z-wave network.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/3de121d2d051c6805465df657202546f4b284db8.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

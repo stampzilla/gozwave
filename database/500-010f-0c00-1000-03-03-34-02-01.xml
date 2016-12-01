@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="010f"/>
+        <productType value="0c00"/>
+    <productId value="1000"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="34"/>
+    <appVersion value="02"/>
+    <appSubVersion value="01"/>
+        <basicClass value="04"/>
+            <genericClass value="a1"/>
+            <specificClass value="02"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+                    
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Rauchmelder mit Temperatursensor</lang>
+            <lang xml:lang="en">Smoke Sensor with Temperature Sensor</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de">Dreifach Taste am Gerät drücken</lang>
+            <lang xml:lang="en">Tripple Press B-button on device</lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Dreifach Taste am Gerät drücken</lang>
+            <lang xml:lang="en">Tripple Press button on device</lang>
+          </inclusionNote>
+            <productName>Smoke Sensor FGSS-001</productName>
+            <brandName>Fibargroup</brandName>
+                <productCode>FGSS-001</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0080"/>
+        <commandClass id="0020" inNIF="false"/>
+        <commandClass id="0084"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0031"/>
+        <commandClass id="008b"/>
+        <commandClass id="008e" version="2"/>
+        <commandClass id="0070"/>
+        <commandClass id="0091"/>
+        <commandClass id="0072"/>
+        <commandClass id="0073"/>
+        <commandClass id="007a"/>
+        <commandClass id="009c"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="de">zugeordnet zu Geräte Status - sendet BASIC SET (standard) oder ALARM CONTROLE FRAME an assoziierte Geräte, wenn Feuer erkannt wird.</lang>
+                <lang xml:lang="en">assigned to the device status - sending the BASIC SET
+(default) or ALARM control frame to the associated devices having detected fire.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="de">zugeordnet zu Manipulationsschutzschalter und Fehlfunktionsalarm. Alarm Frame wird an assoziierte Geräte gesendet, wenn Manipulation oder Fehlfunktion festgestellt werden.</lang>
+                <lang xml:lang="en">assigned to a TMP button and the malfunction alarm.
+Alarm frame will be sent to the associated devices once tampering or malfunction
+are detected.</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="1">
+            <description>
+                <lang xml:lang="de">meldet Geräte Status. Nur ein Gerät kann assoziiert werden (standardmäßig der Primärcontroller).</lang>
+                <lang xml:lang="en">reports the device status and allows for assigning single
+device only (the main controller by default - the device reports its status to the main
+controller).</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">Rauchmeldung Abstellungs-Verzögerung</lang>
+                <lang xml:lang="en">Smoke alarm cancellation delay</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Zeitperiode, in der der Rauchalarm weiter gemeldet wird, nachdem Rauch verschwunden ist</lang>
+                <lang xml:lang="en">time period, during which the Smoke Sensor will keep indicating the smoke alarm after smoke will have disappeared</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="de">keine Verzögerung, sofortige Beendigung des Alarms
+</lang>
+                    <lang xml:lang="en">no delay, immediate cancellation
+</lang>
+                  </description>
+              </value>
+            <value from="0001" to="4380" unit="5s">
+                <description>
+                    <lang xml:lang="de">Verzögerung</lang>
+                    <lang xml:lang="en">delay</lang>
+                  </description>
+              </value>
+            <value from="8000" to="8000">
+                <description>
+                    <lang xml:lang="de">Alarm Beeindigung ausgeschaltet - Alarm wird nach verschwinden des Rauches weiter gemeldet. Alarm kann nur manuell durch öffnen des 2. Menüs beendet werden</lang>
+                    <lang xml:lang="en">alarm cancellation inactive - Smoke Sensor will keep indicating smoke alarm after the smoke will have disappeared. The smoke alarm can be only ceased manually, by entering 2nd menu level</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="rangemapped" size="1" default="03">
+            <name>
+                <lang xml:lang="de">LED Anzeige und akustischer Alarm An/Aus für jeden Alarm Typ</lang>
+                <lang xml:lang="en">LED indicator and acoustic alarm turned ON / OFF at any alarm type</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">aktiviert/deaktiviert LED Anzeige und akustischen Alarm für jeden Alarm Typ. Kein Einfluss auf Z-Wave Alarmmeldung.</lang>
+                <lang xml:lang="en">activates/deactivates the LED indicator and acoustic alarm for any alarm type. Doesn’t affect the Z-Wave alarm.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">akustischer und visueler Alarm inaktiv</lang>
+                    <lang xml:lang="en">acoustic and visual alarms inactive</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">akustischer Alarm inaktiv, visueller Alarm aktiv</lang>
+                    <lang xml:lang="en">acoustic alarm inactive, visual alarm active</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">akustischer Alarm aktiv, visueller Alarm inaktiv</lang>
+                    <lang xml:lang="en">acoustic alarm active, visual alarm inactive</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">akustischer und visueler Alarm aktiv</lang>
+                    <lang xml:lang="en">acoustic and visual alarms active</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="rangemapped" size="1" default="ff">
+            <name>
+                <lang xml:lang="de">Typ des Alarm Frame, der an 1. Assoziationsgruppe gesendet wird (Rauch Alarm)</lang>
+                <lang xml:lang="en">Type of alarm frame sent to 1-st Association Group devices (smoke alarm)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">bestimmen der Kommando Klasse für 1. Assoziationsgruppe</lang>
+                <lang xml:lang="en">choose a command class used in 1-st Association Group</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">ALARM SENSOR (RAUCH) Kommando
+</lang>
+                    <lang xml:lang="en">ALARM SENSOR (SMOKE) command frame</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="de">BASIC SET Kommando</lang>
+                    <lang xml:lang="en">BASIC_SET command frame</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="range" size="1" default="7f">
+            <name>
+                <lang xml:lang="de">Dimmer Niveau für Geräte der 1. Assoziationsgruppe</lang>
+                <lang xml:lang="en">Forced dimming level sent to 1-st association group devices</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Erzwungenes Dimmer Niveau für Dimmer, Jalousien beim Anschalten/ Umschalten der Geräte der 1. Assoziationsgruppe</lang>
+                <lang xml:lang="en">Forced level of dimming / opening dimmers, roller blinds etc. devices at
+sending turn on / open / change level commands to 1-st Association Group’s
+devices.</lang>
+              </description>
+      
+                  <value from="01" to="63">
+                <description>
+                    <lang xml:lang="de">99 bedeutet Gerät wird auf letztes gespeichertes Level geschaltet</lang>
+                    <lang xml:lang="en">99 means turning on the device with the last remembered status</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">Temperaturreport Intervall</lang>
+                <lang xml:lang="en">Temperature report interval</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Zeitintervall zwischen Aussenden der Temperaturreports</lang>
+                <lang xml:lang="en">Time interval between consecutive temperature reports</lang>
+              </description>
+      
+                  <value from="0000" to="4380" unit="5s [5s-24h]">
+                <description>
+                    <lang xml:lang="de">0 (Reports inaktiv)</lang>
+                    <lang xml:lang="en">0 (Reports inactive)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="range" size="1" default="14">
+            <name>
+                <lang xml:lang="de">Temperaturreport Hysterese</lang>
+                <lang xml:lang="en">Temperature report hysteresis</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Temperaturänderung, durch die ein Temperaturreport ausgelöst wird</lang>
+                <lang xml:lang="en">temperature change, resulting in a temperature report</lang>
+              </description>
+      
+                  <value from="00" to="64" unit="0,1°C">
+                <description>
+                    <lang xml:lang="de">0 - temperaturänderungsabhängige Meldung inaktiv</lang>
+                    <lang xml:lang="en">0 - temperature change reporting inactive</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Alarm Broadcast</lang>
+                <lang xml:lang="en">Alarm broadcast</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">bestimmt die Broadcast Alrm Einstellungen (Alarm an alle Geräte in direkter Reichweite)</lang>
+                <lang xml:lang="en">defines the broadcast alarm setting (alarm to all devices in direct range)</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Broadcast inaktiv</lang>
+                    <lang xml:lang="en">broadcast inactive</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Rauchalarm Broadcast (1.Assozitionsgruppe) aktiv;
+Manipulationsalarm Broadcast (2. Assoziationsgruppe) inaktiv</lang>
+                    <lang xml:lang="en">smoke alarm broadcast (1-st Association Group) active; tamper alarm broadcast (2-nd Association Group) inactive</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Rauchalarm Broadcast (1.Assozitionsgruppe) inaktiv;
+Manipulationsalarm Broadcast (2. Assoziationsgruppe) aktiv</lang>
+                    <lang xml:lang="en">smoke alarm broadcast (1-st Association Group) inactive; tamper alarm broadcast (2-nd Association Group) active</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Rauchalarm Broadcast (1.Assozitionsgruppe) aktiv;
+Manipulationsalarm Broadcast (2. Assoziationsgruppe) aktiv</lang>
+                    <lang xml:lang="en">smoke alarm broadcast active (1-st association group); tamper alarm broadcast (2-nd association group) active</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="73" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">Tempraturmessungs-Ausgleich</lang>
+                <lang xml:lang="en">Temperature measurement compensation</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Temperaturwert, der addiert oder subtrahiert vom aktuell gemessenen Wert wird</lang>
+                <lang xml:lang="en">temperature value to be added to or deducted from the current measured temperature </lang>
+              </description>
+      
+                  <value from="fc18" to="03e8" unit="0,1°C">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="80" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Z-wave Reichweitentest Intervall</lang>
+                <lang xml:lang="en">Z-Wave range test interval</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Zeitperiode zwischen dem Ausführen der Z-Wave Reichweitentests</lang>
+                <lang xml:lang="en">Time period between the consecutive Z-Wave network range tests</lang>
+              </description>
+      
+                  <value from="00" to="11" unit="10min[10min-24h]">
+                <description>
+                    <lang xml:lang="de">0 - Z-Wave Reichweitentest inaktiv</lang>
+                    <lang xml:lang="en">0 – Z-Wave network range test inactive</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="81" type="range" size="1" default="36">
+            <name>
+                <lang xml:lang="de">Temperatur-Alarm-Grenze</lang>
+                <lang xml:lang="en">Temperature alarm threshold</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Temperaturwert, oberhalb dessen ein Tempertur-Alarm ausgesendet wird</lang>
+                <lang xml:lang="en">Temperature value, above which the temperature alarm is sent</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">0 – Temperatur Alarm inaktiv</lang>
+                    <lang xml:lang="en">0 – temperature alarm inactive</lang>
+                  </description>
+              </value>
+            <value from="02" to="64" unit="°C">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="82" type="rangemapped" size="1" default="02">
+            <name>
+                <lang xml:lang="de">Rauchmelder Empfindlichkeit</lang>
+                <lang xml:lang="en">Smoke Sensor sensitivity</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">3 Empfindlichkeitsstufen für den Rauchmelder. Stufe 1 hat die höchste Empfindlichkeit.</lang>
+                <lang xml:lang="en">There are 3 levels of sensitivity to smoke presence. Level 1 means the highest sensitivity.</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">hohe Empfindlichkeit</lang>
+                    <lang xml:lang="en">HIGH Sensitivity</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">mittlere Empfindlichkeit</lang>
+                    <lang xml:lang="en">MEDIUM Sensitivity</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">niedrige Empfindlichkeit</lang>
+                    <lang xml:lang="en">LOW Sensitivity</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="83" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Black Box Empfindlichkeit</lang>
+                <lang xml:lang="en">Black Box sensitivity level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Parameter legt fest bei welchem temperatur- und Rauchniveau die Black Box beginnt die Daten aufzuzeichnen</lang>
+                <lang xml:lang="en">Parameter specifies temperature and smoke level after which the Black Box starts recording them </lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">hohe Empfindlichkeit</lang>
+                    <lang xml:lang="en">HIGH Sensitivity</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">mittlere Empfindlichkeit</lang>
+                    <lang xml:lang="en">MEDIUM Sensitivity</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">niedrige Empfindlichkeit</lang>
+                    <lang xml:lang="en">LOW Sensitivity</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="84" type="range" size="1" default="0a">
+            <name>
+                <lang xml:lang="de">Fehlfunktionsalarm</lang>
+                <lang xml:lang="en">Malfunction alarm</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Zeitintervall, über das der Fehlfunktionsalarm, wenn festgestellt, wiederholt wird mit optischem und akustischem Signal.</lang>
+                <lang xml:lang="en">Time interval in which malfuntion alarm, if detected, is repeated using visual and
+acoustic alarms.</lang>
+              </description>
+      
+                  <value from="82" to="7f" unit="100ms[100ms-25,5s]">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en"></lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="85" type="range" size="1" default="05">
+            <name>
+                <lang xml:lang="de">Temperatur Alarm</lang>
+                <lang xml:lang="en">Temperature alarm</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Zeitintervall, über das der Temperatur Alarm, wenn festgestellt, wiederholt wird mit optischem und akustischem Signal.</lang>
+                <lang xml:lang="en">Time interval in which temperature alarm, if detected, is repeated using visual and
+acoustic alarms.</lang>
+              </description>
+      
+                  <value from="82" to="7f" unit="100ms[100ms-25,5s]">
+                <description>
+                    <lang xml:lang="de">5 bedeutet 500ms</lang>
+                    <lang xml:lang="en">5 means 500ms</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="86" type="range" size="2" default="0168">
+            <name>
+                <lang xml:lang="de">Reichweiten Alarm</lang>
+                <lang xml:lang="en">Lack of the Z-Wave range alarm</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Zeitintervall, über das der Reichweiten Alarm, wenn festgestellt, wiederholt wird mit optischem und akustischem Signal.</lang>
+                <lang xml:lang="en">Time interval in which lack of the Z-Wave network alarm, if detected, is repeated
+using visual and acoustic alarms.</lang>
+              </description>
+      
+                  <value from="0001" to="4380" unit="5s [5s-24h]">
+                <description>
+                    <lang xml:lang="de">360 bedeutet 30min</lang>
+                    <lang xml:lang="en">360 means 30min</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="87" type="range" size="2" default="0168">
+            <name>
+                <lang xml:lang="de">Niedriger Batteriestatus Alarm</lang>
+                <lang xml:lang="en">Low battery alarm</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Zeitintervall, über das der Niedriger Batteriestatus Alarm, wenn festgestellt, wiederholt wird mit optischem und akustischem Signal.</lang>
+                <lang xml:lang="en">Time interval in which low battery alarm, if detected, is repeated using visual and
+acoustic alarms.</lang>
+              </description>
+      
+                  <value from="0001" to="4380" unit="5s [5s-24h]">
+                <description>
+                    <lang xml:lang="de">360 bedeutet 30min</lang>
+                    <lang xml:lang="en">360 means 30min</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="88" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Temperatur Messungsausgleich für Report</lang>
+                <lang xml:lang="en">temperature measurement compensation for report</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Festlegung zur Berücksichtigung des Temperaturausgleichs (Parameter 73) bei Senden des Temperatur Reports.</lang>
+                <lang xml:lang="en">Consider temperature measurement compensation (parameter 73) when
+sending temperature report.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">0 - Temperaturausgleich ignorieren</lang>
+                    <lang xml:lang="en">0 - ignore temperature compensation</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">1 - Temperaturausgleich einberechnen</lang>
+                    <lang xml:lang="en">1 - include temperature compensation</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="89" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Manipulationsalarm</lang>
+                <lang xml:lang="en">Tamper alarm</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">aktiviert/deaktiviert Manipulationsschutz Alarm</lang>
+                <lang xml:lang="en">activates/inactivates temper switch alarm</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">0 - Manipulationsschutz Alarm inaktiv</lang>
+                    <lang xml:lang="en">0 – tamper alarm inactive</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">1 - Manipulationsschutz Alarm aktiv, mit Möglichkeit zum Deaktivieren</lang>
+                    <lang xml:lang="en">1 – tamper alarm active, with cancellation option available</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">2 - Manipulationsschutz Alarm aktiv, ohne Möglichkeit zum Deaktivieren</lang>
+                    <lang xml:lang="en">2 – tamper alarm active, without cancellation option</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/e51e24992129c995046a00a181729922efc729eb.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="014f"/>
+        <productType value="4754"/>
+    <productId value="3038"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="5f"/>
+    <appVersion value="05"/>
+    <appSubVersion value="07"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>US</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Z-Wave Dimmable LED Light Bulb</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Turn On power to the light bulb.  If successful, the LED light bulb will flash twice to indicate successful inclusion.</lang>
+          </inclusionNote>
+            <productName>BulbZ</productName>
+            <brandName>LinearLinc</brandName>
+            <productLine>LED Light Bulb</productLine>
+            <productCode>LB60Z-1</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0027"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0020"/>
+        <commandClass id="0070"/>
+        <commandClass id="005a"/>
+        <commandClass id="007a" version="2"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0026"/>
+        <commandClass id="0073"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="005e" version="2"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">LB60Z-1 supports Group 1 with up to ﬁve devices for lifeline communication. Group 1 must be assigned the Node ID of the controller to which unsolicited notiﬁcations will be sent. The Z-Wave controller should set this association automatically after inclusion. Lifeline association only supports the “manual reset” event.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Dim Level Memory</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">By default, the LB60Z-1 bulb will go to full brightness when turned on. To have
+the bulb turn on to the last dim level setting, set parameter 1 to 1.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">The bulb will be full brightness when turned on.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">The bulb will turn on to the last dim level setting.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/a8ee6ce0c5fc11a4a0c23f318d48c365271c7742.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

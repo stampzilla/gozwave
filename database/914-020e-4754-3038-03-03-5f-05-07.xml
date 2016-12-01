@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="020e"/>
+        <productType value="4754"/>
+    <productId value="3038"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="5f"/>
+    <appVersion value="05"/>
+    <appSubVersion value="07"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>US</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Z-Wave LED Light Bulb</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Turn On power to the light bulb.  If successful, the LED light bulb will flash twice to indicate successful inclusion.</lang>
+          </inclusionNote>
+            <productName>Z-Wave LED Light Bulb</productName>
+            <brandName>domitech</brandName>
+            <productLine>LED Light Bulb</productLine>
+            <productCode>dtA19-750-27</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0027"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0020"/>
+        <commandClass id="0070"/>
+        <commandClass id="005a"/>
+        <commandClass id="007a" version="2"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0026"/>
+        <commandClass id="0073"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="005e" version="2"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">The dtSmart Bulb supports Group 1 with up to ﬁve devices for lifeline communication. Group 1 must be assigned the Node ID of the controller to which unsolicited notiﬁcations will be sent. The Z-Wave controller should set this association automatically after inclusion. Lifeline association only supports the “manual reset” event. Please refer to the instructions manual of your remote controller or gateway for detail procedures on how these function can be set.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Dim Level</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">You may select the Dim level whenever the light is turned back ON to be either full
+brightness (100% dim level) or be the same as the last dim setting when the light was 
+previously ON.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">0, the brightness level will be resume to full brightness when the dt Smart
+Bulb is turned ON every time.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">1, the brightness level will maintain same dim level as the last setting when
+the dt Smart Bulb is turned ON again.
+</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/5be214cead66514e4bae98062ba0f9a9a9afa392.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

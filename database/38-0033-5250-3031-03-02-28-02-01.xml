@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0033"/>
+        <productType value="5250"/>
+    <productId value="3031"/>
+    <libType value="03"/>
+    <protoVersion value="02"/>
+    <protoSubVersion value="28"/>
+    <appVersion value="02"/>
+    <appSubVersion value="01"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="03"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+                    
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Fensterjalousiesteuerung mit 220 V Anschluss</lang>
+            <lang xml:lang="en">Window Blind Controller 220 V powered</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </inclusionNote>
+            <productName>ABMHZ</productName>
+            <brandName>Z-Wave</brandName>
+                <productCode>ABMHZ</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" inNIF="false"/>
+        <commandClass id="0026"/>
+        <commandClass id="0086"/>
+        <commandClass id="0027"/>
+        <commandClass id="002b"/>
+        <commandClass id="002c"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+        <commandClass id="0073"/>
+      </commandClasses>
+  
+  
+    <configParams>
+        <configParam number="1" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Kalibration</lang>
+                <lang xml:lang="en">Calibration</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Started die Kalibierungssequenz (1 = start)</lang>
+                <lang xml:lang="en">Starts the calibration sequence (1 = start)</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="2" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Motor Richtung</lang>
+                <lang xml:lang="en">Motor Direction</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert die Richtung des Motors und startet danach Kalibierung</lang>
+                <lang xml:lang="en">Defines the direction of the motor and starts calibration sequence</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Normal</lang>
+                    <lang xml:lang="en">normal</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Umbekehrt</lang>
+                    <lang xml:lang="en">reverse</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Tilt-Funktion</lang>
+                <lang xml:lang="en">Tilt Feature</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Ermöglicht eine genaue Positionierung für Holzjalousien</lang>
+                <lang xml:lang="en">Allows precision positioning for wood blinds</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert</lang>
+                    <lang xml:lang="en">Disable</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Aktiviert</lang>
+                    <lang xml:lang="en">Enable</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/fcff4c4ebbd26225165733b7bac59c570d76d197.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

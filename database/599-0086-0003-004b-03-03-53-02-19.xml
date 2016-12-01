@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0086"/>
+        <productType value="0003"/>
+    <productId value="004b"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="53"/>
+    <appVersion value="02"/>
+    <appSubVersion value="19"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Schalt-Zwischenstecker mit Messfunktion</lang>
+            <lang xml:lang="en">Metering Switch Plug In</lang>
+            <lang xml:lang="ru">Модуль в розетку с измерением энергопотребления</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+            <lang xml:lang="ru"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Einmaliges Drücken der Aktionstaste startet die Inklusion bzw. Exklusion</lang>
+            <lang xml:lang="en">Click on Button</lang>
+            <lang xml:lang="ru">Одинарное нажатие на кнопку</lang>
+          </inclusionNote>
+            <productName>SES3</productName>
+            <brandName>Aeon Labs</brandName>
+            <productLine>Smart Switch</productLine>
+                <productVersion>2.25</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0056" secure="true"/>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0072" version="2" secure="true"/>
+        <commandClass id="0086" version="2" secure="true"/>
+        <commandClass id="0098" secure="true"/>
+        <commandClass id="0025" inNIF="false" secure="true"/>
+        <commandClass id="0027" inNIF="false" secure="true"/>
+        <commandClass id="002b" inNIF="false" secure="true"/>
+        <commandClass id="002c" inNIF="false" secure="true"/>
+        <commandClass id="0032" version="3" inNIF="false" secure="true"/>
+        <commandClass id="0059" inNIF="false" secure="true"/>
+        <commandClass id="005a" controlled="true" inNIF="false" secure="true"/>
+        <commandClass id="0070" inNIF="false" secure="true"/>
+        <commandClass id="0073" inNIF="false" secure="true"/>
+        <commandClass id="007a" version="2" inNIF="false" secure="true"/>
+        <commandClass id="0085" version="2" inNIF="false" secure="true"/>
+        <commandClass id="0082" controlled="true"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Group 1</lang>
+                <lang xml:lang="ru">Отправлять отчёты при изменение состояния нагрузки. Группа 1</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="5">
+            <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Group 2</lang>
+                <lang xml:lang="ru">Отправлять отчёты при изменение состояния нагрузки. Группа 2</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="5">
+            <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Group 3</lang>
+                <lang xml:lang="ru">Отправлять отчёты при изменение состояния нагрузки. Группа 3</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="2" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="de">Aktiviert das Blinken des Geräten</lang>
+                <lang xml:lang="en">Blinking Behavior</lang>
+                <lang xml:lang="ru">Время мигания</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Dies ist ein Zwei-Byte Wert, in dem das Blinkverhalten des Gerätes definiert wird. Das niederwertige Byte definiert in Sekunden, wie lange das Blinken dauern soll. Das höherwertige Byte definiert in 0.1 s, wie lange die einzelne an/aus Sequenz dauern soll.</lang>
+                <lang xml:lang="en">This is a double byte value. The LSB defines the total time the device needs to blink. The value if set in seconds. The MSB defines the on/off interval of the blinking. The unit is 0.1 s.  </lang>
+                <lang xml:lang="ru">Время, которое светодиод будет мигать.</lang>
+              </description>
+      
+                  <value from="0001" to="00ff">
+                <description>
+                    <lang xml:lang="de">Dies ist ein Zwei-Byte Wert.
+Das niederwertige Byte definiert in Sekunden, wie lange das Blinken dauern soll. Das höherwertige Byte definiert in 0.1 s, wie lange die einzelne an/aus Sequenz dauern soll.</lang>
+                    <lang xml:lang="en">This is a double byte value. The LSB defines the total time the device needs to blink. The value if set in seconds. The MSB defines the on/off interval of the blinking. The unit is 0.1 s.  </lang>
+                    <lang xml:lang="ru">0.1 секунда</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Überspannungsschutz</lang>
+                <lang xml:lang="en">Current Overload Protection</lang>
+                <lang xml:lang="ru">Защита от перегрузки</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Die Spannung wird geschlossen, wenn diese die Grenzwerte für mehr als 2 Minuten (US: 15,5A, andere: 16,2A) überschreitet.</lang>
+                <lang xml:lang="en">Load will be closed when the Current overrun (US: 15.5A, other country: 16.2A) and the time more than 2 minutes (0=disabled, 1=enabled).</lang>
+                <lang xml:lang="ru">Если ток будет больше 16.2 А в течении 2-х минут, то модуль выключится.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Aktiver Überspannungsschutz</lang>
+                    <lang xml:lang="en">Active Overload Protection</lang>
+                    <lang xml:lang="ru">Защита от перегрузки включена</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Deaktiviert Überspannungsschutz</lang>
+                    <lang xml:lang="en">Deactivate Overload Protection</lang>
+                    <lang xml:lang="ru">Защита от перегрузки выключена</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="20" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Ausgabe des Laststatus</lang>
+                <lang xml:lang="en">Output Load Status</lang>
+                <lang xml:lang="ru">Восстанавливать состояние после отключения питания</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert die Ausgabe der Statusmeldung zur anliegenden Last nach dem Anschliesen.</lang>
+                <lang xml:lang="en">Configure the output load status after re‐power on.</lang>
+                <lang xml:lang="ru">Определяет восстанавливать ли состояние модуля (включено/выключено) на то, которое было до отключения питания модуля.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">letzter Status</lang>
+                    <lang xml:lang="en">last status</lang>
+                    <lang xml:lang="ru">Восстанавливать состояние</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">immer aktiv</lang>
+                    <lang xml:lang="en">always on</lang>
+                    <lang xml:lang="ru">Всегда включено</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">immer inaktiv</lang>
+                    <lang xml:lang="en">always off</lang>
+                    <lang xml:lang="ru">Всегда выключено</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="80" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Benachrichtigung bei Statusänderungen</lang>
+                <lang xml:lang="en">Notification on Status Change</lang>
+                <lang xml:lang="ru">Отчет о включении/выключении</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert die automatische Benachrichtigung eines assoziierten Gerätes bei Statusänderungen (0=nichts, 1=hail CC, 2=basic CC report).</lang>
+                <lang xml:lang="en">Defines the automated status notification of an associated device when status changes (0=nothing, 1=hail CC, 2=basic CC report).</lang>
+                <lang xml:lang="ru">Каким классом команд отправлять отчет о включении/выключении</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">nichts</lang>
+                    <lang xml:lang="en">nothing</lang>
+                    <lang xml:lang="ru">Не отправлять отчет</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">hail</lang>
+                    <lang xml:lang="en">hail</lang>
+                    <lang xml:lang="ru">Hail (Сказать контроллеру Привет!)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">basic CC report</lang>
+                    <lang xml:lang="en">basic CC report</lang>
+                    <lang xml:lang="ru">Basic Report</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="81" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Einstellungen der roten LED</lang>
+                <lang xml:lang="en">Configure the state of red LED</lang>
+                <lang xml:lang="ru">Настройка светодиода</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Die LED reagiert entsprechend dem Status (on/off) der anliegenden Last.</lang>
+                    <lang xml:lang="en">The LED will follow the status (on/off) of its load.</lang>
+                    <lang xml:lang="ru">Светодиод горит соответственно состоянию нагрузки (включено/выключено) </lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Die LED reagiert entsprechend dem Status (on/off) der anliegenden Last, aber die rote LED schaltet sich nach 5 Sekunden ab, falls keine Änderung des Zustands eintritt (Schalten/Laständerung).</lang>
+                    <lang xml:lang="en">When the state of Switch’s load changed, The LED will follow the status (on/off) of its load, but the red LED will turn off after 5 seconds if there is no any switch action.</lang>
+                    <lang xml:lang="ru">Светодиод горит соответственно состоянию нагрузки (включено/выключено), но красный светодиод выключится через 5 секунд, если не будет других переключений.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="90" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Aktiviert/Deaktiviert Parameter 91/92</lang>
+                <lang xml:lang="en">Enables/disables parameter 91/92</lang>
+                <lang xml:lang="ru">Управление параметрами 91/92</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Aktiviert Parameter 91/92</lang>
+                    <lang xml:lang="en">Enabled parameter 91/92</lang>
+                    <lang xml:lang="ru">Параметры 91/92 включены</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Deaktiviert Parameter 91/92</lang>
+                    <lang xml:lang="en">Disabled parameter 91/92</lang>
+                    <lang xml:lang="ru">Параметры 91/92 выключены</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="91" type="range" size="2" default="0019">
+            <name>
+                <lang xml:lang="de">Änderungsschwellwert für Leistungs-Report (Watt)</lang>
+                <lang xml:lang="en">Minimum Change to send Report (Watt)</lang>
+                <lang xml:lang="ru">Отчет о изменении энергопотребления</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert die minimale Änderung der Leistungsaufnahme des angeschlossenen Verbrauchers in Watt, die zu einem automatischen Senden von Leistungsdaten führt.</lang>
+                <lang xml:lang="en">The value represents the minimum change in wattage for a report to be sent .</lang>
+                <lang xml:lang="ru">Минимальное значение на которое должно измениться энергопотребление, чтобы отправился отчет</lang>
+              </description>
+      
+                  <value from="0000" to="7d00">
+                <description>
+                    <lang xml:lang="de">Definiert die minimale Änderung der Leistungsaufnahme des angeschlossenen Verbrauchers in Watt</lang>
+                    <lang xml:lang="en">The value represents the minimum change in wattage.</lang>
+                    <lang xml:lang="ru">Ватт</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="92" type="range" size="1" default="05">
+            <name>
+                <lang xml:lang="de">Änderungsschwellwert für Leistungs-Report (%)</lang>
+                <lang xml:lang="en">Minimum Change to send Report (%)</lang>
+                <lang xml:lang="ru">Отчет о изменении энергопотребления (%)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert die minimale Änderung der Leistungsaufnahme des angeschlossenen Verbrauchers in Prozent, die zu einem automatischen Senden von Leistungsdaten führt.</lang>
+                <lang xml:lang="en">The value represents the minimum change in wattage Percent for a report to be sent.
+(Valid values 0‐100) </lang>
+                <lang xml:lang="ru">Минимальное значение на которое должно измениться энергопотребление в процентах, чтобы отправился отчет</lang>
+              </description>
+      
+                  <value from="00" to="64">
+                <description>
+                    <lang xml:lang="de">Definiert die minimale Änderung der Leistungsaufnahme des angeschlossenen Verbrauchers in Prozent.</lang>
+                    <lang xml:lang="en">The value represents the minimum change in wattage Percent.</lang>
+                    <lang xml:lang="ru">%</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="100" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Setzt die Parameter 101/103 zurück</lang>
+                <lang xml:lang="en">Set 101‐103 to default</lang>
+                <lang xml:lang="ru">Установить параметры 101-103 по умолчанию</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">zurücksetzen</lang>
+                    <lang xml:lang="en">set to default</lang>
+                    <lang xml:lang="ru">Установить по умолчанию</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">nichts</lang>
+                    <lang xml:lang="en">nothing</lang>
+                    <lang xml:lang="ru">Оставить как есть</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="101" type="rangemapped" size="4" default="00000008">
+            <name>
+                <lang xml:lang="de">Benachrichtigungsart der Benachrichtigungsgruppe 1</lang>
+                <lang xml:lang="en">Report type send in Reporting Group 1</lang>
+                <lang xml:lang="ru">Отчет отправлять в группу 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert die Benachrichtigungsart (Typ des Reports), der in der Benachrichtigungsgruppe 1 gesendet wird.</lang>
+                <lang xml:lang="en">Defines the type of report sent for the Reporting Group 1.</lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00000002" to="00000002">
+                <description>
+                    <lang xml:lang="de">Multisensor-Report</lang>
+                    <lang xml:lang="en">Multisensor Report</lang>
+                    <lang xml:lang="ru">Отчет мультисенсора</lang>
+                  </description>
+              </value>
+            <value from="00000004" to="00000004">
+                <description>
+                    <lang xml:lang="de">Zähler-Report als Watt</lang>
+                    <lang xml:lang="en">Meter Report for Watt</lang>
+                    <lang xml:lang="ru">Отчет о энергопотреблении в Ваттах</lang>
+                  </description>
+              </value>
+            <value from="00000008" to="00000008">
+                <description>
+                    <lang xml:lang="de">Zähler-Report als kWh</lang>
+                    <lang xml:lang="en">Meter Report for kWh</lang>
+                    <lang xml:lang="ru">Отчет о энергопотреблении в КВтЧ</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="102" type="rangemapped" size="4" default="00000000">
+            <name>
+                <lang xml:lang="de">Benachrichtigungsart der Benachrichtigungsgruppe 2</lang>
+                <lang xml:lang="en">Report Type send in Reporting Group 2</lang>
+                <lang xml:lang="ru">Отчет отправлять в группу 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert die Benachrichtigungsart (Typ des Reports), der in der Benachrichtigungsgruppe 2 gesendet wird.</lang>
+                <lang xml:lang="en">Defines the type of report sent for the Reporting Group 2.</lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00000002" to="00000002">
+                <description>
+                    <lang xml:lang="de">Multisensor-Report</lang>
+                    <lang xml:lang="en">Multisensor-Report</lang>
+                    <lang xml:lang="ru">Отчет мультисенсора</lang>
+                  </description>
+              </value>
+            <value from="00000004" to="00000004">
+                <description>
+                    <lang xml:lang="de">Zähler-Report als Watt</lang>
+                    <lang xml:lang="en">Meter Report for Watt</lang>
+                    <lang xml:lang="ru">Отчет о энергопотреблении в Ваттах</lang>
+                  </description>
+              </value>
+            <value from="00000008" to="00000008">
+                <description>
+                    <lang xml:lang="de">Zähler-Report als kWh</lang>
+                    <lang xml:lang="en">Meter Report for kWh</lang>
+                    <lang xml:lang="ru">Отчет о энергопотреблении в КВтЧ</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="103" type="rangemapped" size="4" default="00000000">
+            <name>
+                <lang xml:lang="de">Benachrichtigungsart der Benachrichtigungsgruppe 3</lang>
+                <lang xml:lang="en">Report Type send in Reporting Group 3</lang>
+                <lang xml:lang="ru">Отчет отправлять в группу 3</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert die Benachrichtigungsart (Typ des Reports), der in der Benachrichtigungsgruppe 3 gesendet wird.</lang>
+                <lang xml:lang="en">Defines the type of report sent for the Reporting Group 3.</lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00000002" to="00000002">
+                <description>
+                    <lang xml:lang="de">Multisensor-Report</lang>
+                    <lang xml:lang="en">Multisensor-Report</lang>
+                    <lang xml:lang="ru">Отчет мультисенсора</lang>
+                  </description>
+              </value>
+            <value from="00000004" to="00000004">
+                <description>
+                    <lang xml:lang="de">Zähler-Report als Watt</lang>
+                    <lang xml:lang="en">Meter Report for Watt</lang>
+                    <lang xml:lang="ru">Отчет о энергопотреблении в Ваттах</lang>
+                  </description>
+              </value>
+            <value from="00000008" to="00000008">
+                <description>
+                    <lang xml:lang="de">Zähler-Report als kWh</lang>
+                    <lang xml:lang="en">Meter Report for kWh</lang>
+                    <lang xml:lang="ru">Отчет о энергопотреблении в КВтЧ</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="110" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Setzt die Parameter 111/113 zurück</lang>
+                <lang xml:lang="en">Set 111‐113 to default</lang>
+                <lang xml:lang="ru">Установить параметры 111-113 по умолчанию</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Zurücksetzen</lang>
+                    <lang xml:lang="en">Set to default</lang>
+                    <lang xml:lang="ru">Установить по умолчанию</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">nichts</lang>
+                    <lang xml:lang="en">nothing</lang>
+                    <lang xml:lang="ru">Оставить как есть</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="111" type="range" size="4" default="000002d0">
+            <name>
+                <lang xml:lang="de">Sendeintervall für Benachrichtigungsgruppe 1</lang>
+                <lang xml:lang="en">Send Interval for Reporting Group 1</lang>
+                <lang xml:lang="ru">Интервал отправки отчета в группу 1</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert das Zeitintervall, in dem die definierte Benachrichtigung der Benachrichtigungsgruppe 1 ausgesendet wird.</lang>
+                <lang xml:lang="en">Defines the time interval when the defined report of Reporting Group 1 is sent out.</lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00000000" to="0000ffff" unit="s">
+                <description>
+                    <lang xml:lang="de">Interval</lang>
+                    <lang xml:lang="en">Interval</lang>
+                    <lang xml:lang="ru">секунды</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="112" type="range" size="4" default="000002d0">
+            <name>
+                <lang xml:lang="de">Sendeinterval für Benachrichtigungsgruppe 2</lang>
+                <lang xml:lang="en">Send Interval for Reporting Group 2</lang>
+                <lang xml:lang="ru">Интервал отправки отчета в группу 2</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert das Zeitinterval, in dem die definierte Benachrichtigung der Benachrichtigungsgruppe 2 ausgesendet wird.</lang>
+                <lang xml:lang="en">Defines the time interval when the defined report of Reporting Group 2 is sent out.</lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00000000" to="0000ffff" unit="s">
+                <description>
+                    <lang xml:lang="de">Intervall</lang>
+                    <lang xml:lang="en">Interval</lang>
+                    <lang xml:lang="ru">секунды</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="113" type="range" size="4" default="0000ffff">
+            <name>
+                <lang xml:lang="de">Sendeintervall für Benachrichtigungsgruppe 3</lang>
+                <lang xml:lang="en">Send Interval for Reporting Group 3</lang>
+                <lang xml:lang="ru">Интервал отправки отчета в группу 3</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Definiert das Zeitintervall, in dem die definierte Benachrichtigung der Benachrichtigungsgruppe 3 ausgesendet wird.</lang>
+                <lang xml:lang="en">Defines the time interval when the defined report of Reporting Group 3 is sent out.</lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00000000" to="00007d00" unit="s">
+                <description>
+                    <lang xml:lang="de">Intervall</lang>
+                    <lang xml:lang="en">Interval</lang>
+                    <lang xml:lang="ru">секунды</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="200" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Partner ID</lang>
+                <lang xml:lang="en">Partner ID</lang>
+                <lang xml:lang="ru">Partner ID</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Aeon Labs Standard </lang>
+                    <lang xml:lang="en">Aeon Labs Standard </lang>
+                    <lang xml:lang="ru">Aeon Labs Standard </lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">AT&amp;T</lang>
+                    <lang xml:lang="en">AT&amp;T</lang>
+                    <lang xml:lang="ru">AT&amp;T</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="252" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="de">Aktivieren/Deaktivieren der Konfigurationssperre</lang>
+                <lang xml:lang="en">Enable/disable Configuration Locked</lang>
+                <lang xml:lang="ru">Блокировка настроек</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Deaktiviert Konfigurationssperre</lang>
+                    <lang xml:lang="en">Deactivate configurationlock</lang>
+                    <lang xml:lang="ru">Настройка параметров заблокирована</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Aktiviert Konfigurationssperre</lang>
+                    <lang xml:lang="en">Activate configurationlock</lang>
+                    <lang xml:lang="ru">Настройка параметров разблокирована</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/7c111690b51e052cb1e018d5101fcfc6fad5509d.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0111"/>
+        <productType value="1000"/>
+    <productId value="0010"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="52"/>
+    <appVersion value="02"/>
+    <appSubVersion value="12"/>
+        <basicClass value="04"/>
+            <genericClass value="10"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">Z-Wave SmartPlug with Power Meter</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">When prompted by your primary controller, triple-click the PROG-button within 2 seconds.</lang>
+          </inclusionNote>
+            <productName>China SmartPlug with Power Meter</productName>
+            <brandName>KUJU</brandName>
+            <productLine>Z-Wave Home Automation</productLine>
+            <productCode>SPZ7113</productCode>
+            <productVersion>2.12</productVersion>
+                    </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020"/>
+        <commandClass id="0032" version="2"/>
+        <commandClass id="0025"/>
+        <commandClass id="0027"/>
+        <commandClass id="0072"/>
+        <commandClass id="0086"/>
+        <commandClass id="0081"/>
+        <commandClass id="0070"/>
+        <commandClass id="0085"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="en">The association group can be used to report switch status automatically when switch status changed.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="2" default="0384">
+            <name>
+                <lang xml:lang="en">Power Auto Report</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">It is used to configure the time interval of instant power (W) auto report. 
+</lang>
+              </description>
+      
+                  <value from="000a" to="4650" unit="sec">
+                <description>
+                    <lang xml:lang="en">Define the time interval for a power auto report.</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="4" default="00000384">
+            <name>
+                <lang xml:lang="en">Energy Auto Report</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">It is used to configure the time interval of accumulated energy (kWh) auto report. </lang>
+              </description>
+      
+                  <value from="00000258" to="00069780" unit="sec">
+                <description>
+                    <lang xml:lang="en">Define the time interval for an accumulated energy auto report.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/5a6c6c28db90b1f3f2b68cf80afaa70d15c6d2d3.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

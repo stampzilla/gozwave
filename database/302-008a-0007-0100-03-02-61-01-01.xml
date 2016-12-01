@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="008a"/>
+        <productType value="0007"/>
+    <productId value="0100"/>
+    <libType value="03"/>
+    <protoVersion value="02"/>
+    <protoSubVersion value="61"/>
+    <appVersion value="01"/>
+    <appSubVersion value="01"/>
+        <basicClass value="04"/>
+            <genericClass value="40"/>
+            <specificClass value="00"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+            <certId>14324</certId>
+            <certNumber>ZC08-11080001</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="en">RFID Tag Reader</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="en">Tap a button. The always awake mode can be activated by: CONFIGURATION_SET / Parameter: 0x05 / Size: 0x01 (can’t be different from 1) /
+Value: 0x03 (mode 3)</lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="en">Press and hold the tamper for 1 seconds and release to start the inclusion/exclusion process.</lang>
+          </inclusionNote>
+            <productName>Tag Reader</productName>
+            <brandName>Tag Reader</brandName>
+            <productLine>Security</productLine>
+            <productCode>7</productCode>
+            <productVersion>1.0</productVersion>
+            <batteryType>AA</batteryType>
+            <batteryCount>2</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0080"/>
+        <commandClass id="0020" inNIF="false"/>
+        <commandClass id="0063"/>
+        <commandClass id="0084"/>
+        <commandClass id="0085"/>
+        <commandClass id="0086"/>
+        <commandClass id="0070"/>
+        <commandClass id="0071" version="2"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0025"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="en">The Association Command Class is used to associate the TagReader to other devices. When a tag or code is
+read, the TagReader will send a notification to the Z‐Wave devices in its association group. It will also report
+the state of the tamper alarm to the devices in this association group.</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Set to default</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">Set all configuration values to default values (factory settings).
+Read more in chapter Configuration Reset.</lang>
+              </description>
+      
+                  <value from="80" to="7f">
+                <description>
+                    <lang xml:lang="en">If 0xFF (-1) then set to default</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="constant" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Feedback time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">To configure the time the beep is automatically turned off in seconds.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="en">Disabled</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="en">Endless</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="en">Feedback timeout</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">To configure the timeout to wait for a
+WAKEUP_NO_MORE_INFORMATION before the error beep is automatically sound. The error beep are fixed 8 beeps shortly after each other.</lang>
+              </description>
+      
+                  <value from="80" to="7f">
+                <description>
+                    <lang xml:lang="en">0x00 means disabled </lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="1" default="02">
+            <name>
+                <lang xml:lang="en">Feedback beeps per second</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">To configure the number of beeps per second. Every beep is fixed about 10ms.</lang>
+              </description>
+      
+                  <value from="80" to="7f" unit="10ms">
+                <description>
+                    <lang xml:lang="en">Number of beeps per second</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="range" size="1" default="01">
+            <name>
+                <lang xml:lang="en">The mode</lang>
+              </name>
+                  <description>
+                <lang xml:lang="en">To configure the operating mode.</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="en">Normal operating mode</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="en">Z‐Wave chip is always on to request e.g. version or manufacturer id.</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="en">If any mode other then 3, that value will be reported after a get but
+will be handled in SW as mode 1.</lang>
+                  </description>
+              </value>
+            <value from="04" to="7f">
+                <description>
+                    <lang xml:lang="en">If any mode other then 3, that value will be reported after a get but
+will be handled in SW as mode 1.</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/68c37a3151f6ae957c98c684e3544e8f9e4d0ea8.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

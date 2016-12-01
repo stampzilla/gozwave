@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0081"/>
+        <productType value="00a0"/>
+    <productId value="0001"/>
+    <libType value="06"/>
+    <protoVersion value="02"/>
+    <protoSubVersion value="40"/>
+    <appVersion value="01"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="21"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+                    
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">CO2 Sensor</lang>
+            <lang xml:lang="en">Carbon Dioxide Sensor</lang>
+            <lang xml:lang="ru">Датчик углекислого газа (CO2)</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+            <lang xml:lang="ru"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Taste einfach</lang>
+            <lang xml:lang="en">Press button</lang>
+            <lang xml:lang="ru">Нажать кнопку</lang>
+          </inclusionNote>
+            <productName>Siegenia-Aubi</productName>
+            <brandName>SensoAir</brandName>
+                                </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020"/>
+        <commandClass id="0085"/>
+        <commandClass id="0086"/>
+        <commandClass id="0070"/>
+        <commandClass id="0031" version="2"/>
+        <commandClass id="0072"/>
+        <commandClass id="009e"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Automatische Sensormeldung</lang>
+                <lang xml:lang="en">Unsolicitated Sensor Reports</lang>
+                <lang xml:lang="ru">Получать отчёты без запросов</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="bitset" size="1" default="8d">
+            <name>
+                <lang xml:lang="de">Konfiguration</lang>
+                <lang xml:lang="en">Configuration</lang>
+                <lang xml:lang="ru">Конфигурация</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Enthält Bits zur Grundeinstellungen des Gerätes.</lang>
+                <lang xml:lang="en">Contains bits for device settings.</lang>
+                <lang xml:lang="ru">Содержит битовые настройки устройства.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">Einen Report sendet, wenn der CO2-Gehalt 600, 800, 100, 1500, 2000 oder 2500 ppm übersteigt</lang>
+                    <lang xml:lang="en">Send unsolicitated reports when the C02 level hits 600, 800, 100, 1500, 2000 or 2500 ppm.</lang>
+                    <lang xml:lang="ru">Отправлять отчёт при достижении уровня CO2 значений 600, 800, 100, 1500, 2000 or 2500 промилле.</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Aktiviert das regelmäßige Senden eines Status-Reports.</lang>
+                    <lang xml:lang="en">Enables regular unsolicited Sensor reports.</lang>
+                    <lang xml:lang="ru">Включить отправку периодических отчётов без запросов.</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Aktiviert das Senden eines &quot;AN&quot; Signals bei Erreichen eines definierten CO2 Schwellwertes.</lang>
+                    <lang xml:lang="en">A BASIC Set command is send, when the sensor hits the defined CO2 level.</lang>
+                    <lang xml:lang="ru">Отправлять BASIC Set команду при достижении заданных значений CO2</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Aktiviert das Senden des Report als Broadcast.</lang>
+                    <lang xml:lang="en">Enables broadcast reports.</lang>
+                    <lang xml:lang="ru">Включить широковещательные отчёты</lang>
+                  </description>
+              </value>
+            <value from="07" to="07">
+                <description>
+                    <lang xml:lang="de">Aktiviert die LED an der Frontseite.</lang>
+                    <lang xml:lang="en">Enables the front side LED.</lang>
+                    <lang xml:lang="ru">Включить светодиоды</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="2" default="001e">
+            <name>
+                <lang xml:lang="de">Interval zum automatischen Senden einer Sensor-Statusmeldung</lang>
+                <lang xml:lang="en">Interval for unsolicited Sensor Report</lang>
+                <lang xml:lang="ru">Интервал отправки отчётов без запроса</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"> Der Parameter definiert, wie oft ein Sensorwert gesendet werden soll, wenn Bit 2 des Konfiguationsparameters 1 aktiviert ist.</lang>
+                <lang xml:lang="en">The parameter defines how often a Sensor report shall be sent when enabled by parameter 1</lang>
+                <lang xml:lang="ru">Интервал времени между отправками отчётов без запроса (если разрешено параметром 1)</lang>
+              </description>
+      
+                  <value from="0001" to="00ff">
+                <description>
+                    <lang xml:lang="de">Sekunden</lang>
+                    <lang xml:lang="en">sec.</lang>
+                    <lang xml:lang="ru">секунды</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/7bd8580197838997e211847d84cab256b229f791.gif" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

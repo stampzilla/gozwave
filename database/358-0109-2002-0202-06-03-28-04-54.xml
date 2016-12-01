@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0109"/>
+        <productType value="2002"/>
+    <productId value="0202"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="28"/>
+    <appVersion value="04"/>
+    <appSubVersion value="54"/>
+        <basicClass value="04"/>
+            <genericClass value="20"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+            <certId>14925</certId>
+            <certNumber>ZC08-12100006</certNumber>
+        
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Bewegungsmelder mit Temperatursensor</lang>
+            <lang xml:lang="en">Motion detector with Temperature sensor and temper protection</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de">Kurzer Druck auf den Taster hinter dem kleinen Loch in der Rückseite </lang>
+            <lang xml:lang="en">Push button behind hole on back side</lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Kurzer Druck auf den Taster hinter dem kleinen Loch in der Rückseite </lang>
+            <lang xml:lang="en">Push button behind hole on back side</lang>
+          </inclusionNote>
+            <productName>ZD3102EU 2013</productName>
+            <brandName>Vision</brandName>
+                        <batteryType>CR123A</batteryType>
+            <batteryCount>1</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0080"/>
+        <commandClass id="0030"/>
+        <commandClass id="0084" version="2"/>
+        <commandClass id="0085"/>
+        <commandClass id="0086"/>
+        <commandClass id="0071" version="2"/>
+        <commandClass id="0070"/>
+        <commandClass id="0031" version="4"/>
+        <commandClass id="0072"/>
+        <commandClass id="0020" inNIF="false"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="5">
+            <description>
+                <lang xml:lang="de">Steuert Geräte bei erkannter Bewegung</lang>
+                <lang xml:lang="en">Control Device when Motion is detected</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="1" default="03">
+            <name>
+                <lang xml:lang="de">Re-Trigger Wartezeit </lang>
+                <lang xml:lang="en">Re-Trigger Waiting Time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Zeit, bis ein assoziiertes Gerät wieder ausgeschaltet wird. Jedes neu erkannte Gerät startet den Timer erneut </lang>
+                <lang xml:lang="en">Time until an associated device will turn off if no new movement is detected</lang>
+              </description>
+      
+                  <value from="81" to="7f" unit="s">
+                <description>
+                    <lang xml:lang="de">Sekunden</lang>
+                    <lang xml:lang="en">Seconds</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/18503d54feafda2f173fa4b39a9bc97ef45787e4.png" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

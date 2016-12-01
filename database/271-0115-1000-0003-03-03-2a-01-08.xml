@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0115"/>
+        <productType value="1000"/>
+    <productId value="0003"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="2a"/>
+    <appVersion value="01"/>
+    <appSubVersion value="08"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="07"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="true"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>Russia</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Jalousiesch</lang>
+            <lang xml:lang="en">One paddle blind control</lang>
+            <lang xml:lang="ru">Устройство управление жалюзи с одной клавишей</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+            <lang xml:lang="ru"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Dreifach auf Schaltfläche</lang>
+            <lang xml:lang="en">Button triple press</lang>
+            <lang xml:lang="ru">Тройное нажатие на одну из кнопок</lang>
+          </inclusionNote>
+            <productName>Flush-Mountable Blind Control v1.8</productName>
+            <brandName>Z-Wave.Me</brandName>
+            <productLine>Düwi modification</productLine>
+            <productCode>054367Z</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020" controlled="true"/>
+        <commandClass id="0025"/>
+        <commandClass id="0026" version="3" controlled="true"/>
+        <commandClass id="0086"/>
+        <commandClass id="0087"/>
+        <commandClass id="0027" controlled="true"/>
+        <commandClass id="008e" version="2"/>
+        <commandClass id="0070"/>
+        <commandClass id="0072"/>
+        <commandClass id="0075"/>
+        <commandClass id="0077"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0060" version="2" controlled="true" inNIF="false"/>
+        <commandClass id="002b" controlled="true"/>
+        <commandClass id="002c"/>
+        <commandClass id="002d"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="14">
+            <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Single press and hold of up/down buttons</lang>
+                <lang xml:lang="ru">Одиночное нажатие или удержание клавиш вверх/вниз</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="2" maxNodes="14">
+            <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Double press and press-hold of up/down buttons</lang>
+                <lang xml:lang="ru">Двойное нажатие или нажатие-удержание клавиш вверх/вниз</lang>
+              </description>
+          </assocGroup>
+        <assocGroup number="3" maxNodes="14">
+            <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Send Reports on blind state change</lang>
+                <lang xml:lang="ru">Отправлять отчёты при изменение уровня открытия</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="rangemapped" size="1" default="03">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">LED mode</lang>
+                <lang xml:lang="ru">Режим световой индикации</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Set LED indication mode</lang>
+                <lang xml:lang="ru">Режим работы светодиода</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="ru">Отключен</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Show working state</lang>
+                    <lang xml:lang="ru">Индикация состояния работы</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Show idle state</lang>
+                    <lang xml:lang="ru">Индикация состояния простоя</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Show if not closed</lang>
+                    <lang xml:lang="ru">Индикация незакрытой двери</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Operated by Indicator Command Class</lang>
+                    <lang xml:lang="ru">Управляется классом комманд Indicator</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="2" default="0000">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Automatically open or close after</lang>
+                <lang xml:lang="ru">Авто открытие/закрытие через</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">If not zero, automatically open or close blind after a user defined time</lang>
+                <lang xml:lang="ru">Если не 0, автоматически открывает/закрывает жалюзи после определённого пользователем времени</lang>
+              </description>
+      
+                  <value from="0000" to="0000">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="0001" to="ffff">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">sec</lang>
+                    <lang xml:lang="ru">секунд</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">What to do on RF close command</lang>
+                <lang xml:lang="ru">Что делать при получении радиокоманды закрытия</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Defines how to interpret RF Off command. Can be used in conjunction with Auto Close function: Ignore - to open the door by motion detectors and close it back after some amount of time: in case of multiple motion detectors each would try to open that would break logics; Open - to open on both On and Off paddle press on the remote and close after some amount of time. Button close click will still work (if button operations are not disabled). Note that Dim Down command will still begin close motion.</lang>
+                <lang xml:lang="ru">Определяет поведение при получении радио команды выключения. Может использоваться совместно с функцией авто закрытия: Игнорирование - для открытия двери по детектору движения и закрытия по прошествии определённого времени: в случае использования нескольких детекторов движения каждый будет пытаться открыть дверь сам, что приведёт к неправильной логике работы; Открывать - для открытия при нажатии на кнопки Вкл и Выкл на пульте управления и закрытия по прошествии определённого времени. Закрытие по кнопке будет продолжать работать (если не отключено). Обратите внимение, что команда Димировать Вниз в любом случае будет включать закрытие.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Close</lang>
+                    <lang xml:lang="ru">Закрыть</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Ignore</lang>
+                    <lang xml:lang="ru">Игнорировать</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Open</lang>
+                    <lang xml:lang="ru">Открыть</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Open if closed else close</lang>
+                    <lang xml:lang="ru">Открыть, если закрыто, иначе закрыть</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="16" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">What to do on button Down press</lang>
+                <lang xml:lang="ru">Что делать при нажатии вниз</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Defines how to interpret button Down press. Depends on &quot;Switch by buttons&quot; parameter. If not Disabled this parameter will affect the action selected by the latter parameter. Can be used in conjunction with Auto Off function.</lang>
+                <lang xml:lang="ru">Определяет поведение при нажатии клавиши вниз. Зависит от параметра &quot;Включать/выключать нагрузку кнопками&quot;. Если не &quot;Нет&quot;, данный параметр будет применён к выбранному упомянутым параметром действию. Может использоваться совместно с функцией авто отключения.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Close</lang>
+                    <lang xml:lang="ru">Закрыть</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Open if closed else close</lang>
+                    <lang xml:lang="ru">Открыть, если закрыто, иначе закрыть</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Open</lang>
+                    <lang xml:lang="ru">Открыть</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="1" default="3c">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Full close time</lang>
+                <lang xml:lang="ru">Время полного закрытия</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Time to go from opened to closed state. Used to estimate the current level. Note that in Permanent motion mode the reported value would a be Closed or Opened, while all Basic and Multilevel Set values (1-99, 255) would Open except 0 value that would Close.</lang>
+                <lang xml:lang="ru">Время, необходимое для полного закрытия из открытого состояния. Используется для оценки текущего положения. Обратите внимание, в режиме Держать включеным возвращаемые отчёты будут всегда или Закрыто или Открыто, тогда как все значения команд Basic и Multilevel Set (1-99, 255) будут работать на Открытия, кроме команды 0, которая будет Закрывать.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Keep in permanent motion</lang>
+                    <lang xml:lang="ru">Постоянно держать включеным</lang>
+                  </description>
+              </value>
+            <value from="01" to="ff">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">seconds</lang>
+                    <lang xml:lang="ru">секунд</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="range" size="1" default="3c">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Full open time</lang>
+                <lang xml:lang="ru">Время полного открытия</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Time to go from closed to open state. This value may differ from Full close time for some blinds due to gravity. Used to estimate the current level. Note that in Permanent motion mode the reported value would a be Closed or Opened, while all Basic and Multilevel Set values (1-99, 255) would Open except 0 value that would Close.</lang>
+                <lang xml:lang="ru">Время, необходимое для полного открытия из закрытого состояния. Это значение может отличаться от значения Времени полного закрытия из-за воздействия силы гравитации. Используется для оценки текущего положения. Обратите внимание, в режиме Держать включеным возвращаемые отчёты будут всегда или Закрыто или Открыто, тогда как все значения команд Basic и Multilevel Set (1-99, 255) будут работать на Открытия, кроме команды 0, которая будет Закрывать.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Keep in permanent motion</lang>
+                    <lang xml:lang="ru">Постоянно держать включеным</lang>
+                  </description>
+              </value>
+            <value from="01" to="ff">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">seconds</lang>
+                    <lang xml:lang="ru">секунд</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="range" size="1" default="00">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Node Id of the blocking device</lang>
+                <lang xml:lang="ru">Идентификатор блокирующего узла</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Id of the device which commands would be interpreted not as Open/Close, but as block/unblock. Usefull with door opening detector: if the door is open, block the blind not to break shades while they move.</lang>
+                <lang xml:lang="ru">Номер утройства, команды BASIC и BINARY Set которого будут использоваться не для открытия/закрытия, а для включение/выключения защиты, предотвращающей открытие/закрытие. Данная функция полезна в сочетании с датчиком открытия двери: при открытии двери жалюзи будут заблокированны, чтобы случайно не сламать шторки.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="01" to="e8">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Node Id</lang>
+                    <lang xml:lang="ru">Номер узла</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">On which command from blocking node to enable the protection</lang>
+                <lang xml:lang="ru">По какой команде от блокирующего узла включать защиту</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Defines which command from blocking device to interpret as closed door and hence, unprotected.</lang>
+                <lang xml:lang="ru">Считать команду Выключить от блокирующего узла оповещающей о закрытии двери, и снимать защиту. Определяет по какой команде от блокирующего узла включать блокировку управления.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">on On</lang>
+                    <lang xml:lang="ru">по команде Включения</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">on Off</lang>
+                    <lang xml:lang="ru">пл команде Выключения</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Stop or Revert if opposite button is pressed</lang>
+                <lang xml:lang="ru">Остановить или запустить в обратном направлении при нажатии на противоположную клавишу</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Defines behaviour on open press while closing and vice versa. To allow Stop behavior when switched by remote, use Stop by Basic</lang>
+                <lang xml:lang="ru">Определяет поведение при нажатии на кнопку вниз при движении вверх и наоборот. Для того, чтобы делать Остановку при управлении со стороннего пульта, используйте Остановить по Basic</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Stop (by buttons and Binary)</lang>
+                    <lang xml:lang="ru">Остановить (по кнопкам и Binary)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Stop (by buttons, Binary and Basic)</lang>
+                    <lang xml:lang="ru">Остановить (по кнопкам, Binary и Basic)</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Revert</lang>
+                    <lang xml:lang="ru">Запустить в обратном направлении</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Invert open and close relays</lang>
+                <lang xml:lang="ru">Поменять местами реле открытия и зкарытия</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Allow exchanging open and close relays if blind control is wired to the motor incorrectly</lang>
+                <lang xml:lang="ru">Позволяет поменять местами реле закрытия и открытия, если управление жалюзи подключено к мотору неверным образом</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">No</lang>
+                    <lang xml:lang="ru">Нет</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Yes</lang>
+                    <lang xml:lang="ru">Да</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="range" size="1" default="32">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Typical click timeout</lang>
+                <lang xml:lang="ru">Характерное время нажатия</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Typical time used to differentiate click, hold, double and triple clicks</lang>
+                <lang xml:lang="ru">Харакерное время для отличия нажатия, удержания, двойного и тройного нажатий</lang>
+              </description>
+      
+                  <value from="01" to="64">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">in 10ms units</lang>
+                    <lang xml:lang="ru">в единицах 10мс</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="11" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Invert buttons</lang>
+                <lang xml:lang="ru">Инвертировать кнопки</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">No</lang>
+                    <lang xml:lang="ru">Нет</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Yes</lang>
+                    <lang xml:lang="ru">Да</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="12" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Switch by buttons</lang>
+                <lang xml:lang="ru">Включать/выключать нагрузку кнопками</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">If disabled, the local operations by buttons will not switch the load, but only send commands to On/Off association group. In this mode buttons are not linked with the switch anymore. They can be used separately: buttons to control remote device, switch will operate by RF commands only.</lang>
+                <lang xml:lang="ru">Если отключено, нажатия на кнопки не будут включать реле, а только отправлят команды группе ассоциаций Включит/Выключить. В данном режиме кнопки не связаны с реле. Они могут быть использованы отдельно: кнопки для управления удалённой нагрузкой, реле будет управляться только по радио.</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">No</lang>
+                    <lang xml:lang="ru">Нет</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">By single press and hold</lang>
+                    <lang xml:lang="ru">Одинарным нажатием и удержанием</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">By double press and press-hold</lang>
+                    <lang xml:lang="ru">Двойным нажатием и нажатием-удержанием</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="13" type="rangemapped" size="1" default="04">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Action on button single press or hold</lang>
+                <lang xml:lang="ru">Действия при одинарном нажатии или удержании клавиши</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Defines which command should be sent on button single press or hold. Basic and Scene Activation commands are sent to Association group. Use Scene Controller Conf to set up Scene ID for Scene Activation. Switch All commands are sent broadcast.</lang>
+                <lang xml:lang="ru">Определяет вид команд, которые отправляюся при одинарном нажатии или удержании кнопок. Команды Basic и Активация сцен отправляются группе ассоциаций. Используйте Scene Controller Conf для задания номера сцены для Scene Activation. Команда Включить/Выключить всё отправляется на широковещательный адрес (всем).</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; und &#039;SwitchMultilevel&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off and Dim (send Basic Set and Switch Multilevel)</lang>
+                    <lang xml:lang="ru">Включать/Выключать и Диммировать (отправлять Basic Set и Switch Multilevel)</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off only (send Basic Set)</lang>
+                    <lang xml:lang="ru">Только Включать/Выключать (отправлять Basic Set)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">&#039;Switch All&quot; Kommando</lang>
+                    <lang xml:lang="en">Switch All</lang>
+                    <lang xml:lang="ru">Выключать/Выключать всё</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Szenenaktivierung</lang>
+                    <lang xml:lang="en">Send Scenes</lang>
+                    <lang xml:lang="ru">Отправлять Сцены</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Send Preconfigured Scenes</lang>
+                    <lang xml:lang="ru">Отправлять преднастроенные Сцены</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="14" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Action on button double press or hold</lang>
+                <lang xml:lang="ru">Действия при двойном нажатии или удержании клавиши</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Defines which command should be sent on button double press or press-hold. Basic and Scene Activation commands are sent to Association group. Use Scene Controller Conf to set up Scene ID for Scene Activation. Switch All commands are sent broadcast. If not disabled, the device will wait for a click timeout to see if the second click would be pressed. This will introduce a small delay for single click commands</lang>
+                <lang xml:lang="ru">Определяет вид команд, которые отправляются при двойном нажатии или нажатии-удержании кнопок. Команды Basic и Активация сцен отправляются группе ассоциаций. Используйте Scene Controller Conf для задания номера сцены для Scene Activation. Команда Включить/Выключить всё отправляется на широковещательный адрес (всем). Если не отключено, устройство будет ждать характерное время нажатия второго нажатия. Данная функция приведёт к небольшой задержке при одинарном нажатии</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Disabled</lang>
+                    <lang xml:lang="ru">Отключено</lang>
+                  </description>
+              </value>
+            <value from="04" to="04">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; und &#039;SwitchMultilevel&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off and Dim (send Basic Set and Switch Multilevel)</lang>
+                    <lang xml:lang="ru">Включать/Выключать и Диммировать (отправлять Basic Set и Switch Multilevel)</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Schaltkommandos Ein und Aus mittels &#039;Basic&#039; Kommando</lang>
+                    <lang xml:lang="en">Switch On/Off only (send Basic Set)</lang>
+                    <lang xml:lang="ru">Только Включать/Выключать (отправлять Basic Set)</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">&#039;Switch All&quot; Kommando</lang>
+                    <lang xml:lang="en">Switch All</lang>
+                    <lang xml:lang="ru">Выключать/Выключать всё</lang>
+                  </description>
+              </value>
+            <value from="03" to="03">
+                <description>
+                    <lang xml:lang="de">Szenenaktivierung</lang>
+                    <lang xml:lang="en">Send Scenes</lang>
+                    <lang xml:lang="ru">Отправлять Сцены</lang>
+                  </description>
+              </value>
+            <value from="05" to="05">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Send Preconfigured Scenes</lang>
+                    <lang xml:lang="ru">Отправлять преднастроенные Сцены</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="15" type="rangemapped" size="1" default="01">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Send the following Switch All commands</lang>
+                <lang xml:lang="ru">Отправлять следующие команды включить/выключит всё</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Switch off only</lang>
+                    <lang xml:lang="ru">Только выключить всё</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Switch on only</lang>
+                    <lang xml:lang="ru">Только включить всё</lang>
+                  </description>
+              </value>
+            <value from="ff" to="ff">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Switch all on and off</lang>
+                    <lang xml:lang="ru">Включить и выключить всё</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="17" type="rangemapped" size="1" default="00">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en">Action on Auto open or close function</lang>
+                <lang xml:lang="ru">Действие по Авто открытию/закрытию</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+                <lang xml:lang="ru"></lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Close blinds</lang>
+                    <lang xml:lang="ru">Закрывать шторы</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de"></lang>
+                    <lang xml:lang="en">Open blinds</lang>
+                    <lang xml:lang="ru">Открывать шторы</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/5d084abc473c8461e158d4e82b0cda817d67054b.gif" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

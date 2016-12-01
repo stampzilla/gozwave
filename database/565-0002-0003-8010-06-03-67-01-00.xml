@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0002"/>
+        <productType value="0003"/>
+    <productId value="8010"/>
+    <libType value="06"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="67"/>
+    <appVersion value="01"/>
+    <appSubVersion value="00"/>
+        <basicClass value="04"/>
+            <genericClass value="21"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="false"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">Raumsensor</lang>
+            <lang xml:lang="en">Room Sensor</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de">Einmal LED Taste drücken</lang>
+            <lang xml:lang="en">Press the LED button once.</lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Einmal LED Taste drücken</lang>
+            <lang xml:lang="en">Press the LED button once.</lang>
+          </inclusionNote>
+            <productName>Z-Wave RS</productName>
+            <brandName>Z-Wave RS</brandName>
+            <productLine>PL03</productLine>
+            <productCode>014G0160</productCode>
+            <productVersion>1.0</productVersion>
+            <batteryType>AA</batteryType>
+            <batteryCount>2</batteryCount>
+            </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="0020"/>
+        <commandClass id="0072" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0080"/>
+        <commandClass id="008f" controlled="true"/>
+        <commandClass id="0084" version="2"/>
+        <commandClass id="0075" version="2"/>
+        <commandClass id="0070" version="2"/>
+        <commandClass id="0031" version="6"/>
+        <commandClass id="005b"/>
+        <commandClass id="0043" version="3"/>
+        <commandClass id="0053"/>
+        <commandClass id="0087"/>
+      </commandClasses>
+  
+  
+    <configParams>
+        <configParam number="1" type="range" size="2" default="0005">
+            <name>
+                <lang xml:lang="de">Temperaturgrenzwert für Bericht</lang>
+                <lang xml:lang="en">Temperature Report threshold</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">0.1 to 10°C
+1=0.1°C
+100=10°C</lang>
+                <lang xml:lang="en">0.1 to 10°C
+1=0.1°C
+100=10°C</lang>
+              </description>
+      
+                  <value from="0001" to="0064" unit="C°">
+                <description>
+                    <lang xml:lang="de">Temperatur in Grad</lang>
+                    <lang xml:lang="en">temperature in celsius</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="2" default="0005">
+            <name>
+                <lang xml:lang="de">Temperaturwert setzen</lang>
+                <lang xml:lang="en">Set-point display resolution</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">0.1 to 10°C
+1=0.1°C
+100=10°C</lang>
+                <lang xml:lang="en">0.1 to 10°C
+1=0.1°C
+100=10°C</lang>
+              </description>
+      
+                  <value from="0001" to="0064" unit="C°">
+                <description>
+                    <lang xml:lang="de">Temperatur in Grad</lang>
+                    <lang xml:lang="en">temperature in celsius</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="3" type="range" size="2" default="000c">
+            <name>
+                <lang xml:lang="de">Minimum Temperaturwert setzen</lang>
+                <lang xml:lang="en">Min Set-point and override limit</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">von min. 0 C° bis max. 28 C°</lang>
+                <lang xml:lang="en">from  min 0°C to max setpoint override limit
+0=0°C
+40=40°C</lang>
+              </description>
+      
+                  <value from="0000" to="0028" unit="C°">
+                <description>
+                    <lang xml:lang="de">Temperatur in Grad</lang>
+                    <lang xml:lang="en">temperature in celsius</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="4" type="range" size="2" default="001c">
+            <name>
+                <lang xml:lang="de">Maximum Temperaturwert setzen</lang>
+                <lang xml:lang="en">Max Set-point and override limit</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">von min. 0 C° bis max. 40 C°</lang>
+                <lang xml:lang="en">from  min setpoint override limit to max 40°C
+0=0°C
+40=40°C</lang>
+              </description>
+      
+                  <value from="0000" to="0028" unit="C°">
+                <description>
+                    <lang xml:lang="de">Temperatur in Grad</lang>
+                    <lang xml:lang="en">temperature in celsius</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="5" type="range" size="4" default="00000001">
+            <name>
+                <lang xml:lang="de">LED Flash Periode</lang>
+                <lang xml:lang="en">LED Flash period</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">0 bis 65535 Sekunden</lang>
+                <lang xml:lang="en">0 to 65535 seconds</lang>
+              </description>
+      
+                  <value from="00000000" to="0000ffff">
+                <description>
+                    <lang xml:lang="de">Sekunden</lang>
+                    <lang xml:lang="en">seconds</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="6" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Kontrollfunktion setzen</lang>
+                <lang xml:lang="en">Set-point control function</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">0 = deaktiviert
+1 = aktiviert</lang>
+                <lang xml:lang="en">0=Disabled
+1=Enabled</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">deaktiviert</lang>
+                    <lang xml:lang="en">disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">aktiviert</lang>
+                    <lang xml:lang="en">enabled</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="7" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Temporärer Überbrückungsplan</lang>
+                <lang xml:lang="en">Temporarily override scheduler</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">0 = deaktiviert
+1 = aktiviert</lang>
+                <lang xml:lang="en">0=Disabled
+1=Enabled</lang>
+              </description>
+      
+                  <value from="00" to="00">
+                <description>
+                    <lang xml:lang="de">deaktiviert</lang>
+                    <lang xml:lang="en">disabled</lang>
+                  </description>
+              </value>
+            <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">aktiviert</lang>
+                    <lang xml:lang="en">enabled</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="8" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="de">Temperaturregelung setzen</lang>
+                <lang xml:lang="en">Set-point type in Thermostat_Setpoint_Reports</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">1 = Heizen
+2 = Kühlen
+10 = Automatischer Wechsel</lang>
+                <lang xml:lang="en">1=Heating
+2=Cooling
+10=Auto Changeover</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Heizen</lang>
+                    <lang xml:lang="en">Heating</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Kühlen</lang>
+                    <lang xml:lang="en">Cooling</lang>
+                  </description>
+              </value>
+            <value from="0a" to="0a">
+                <description>
+                    <lang xml:lang="de">Automatischer Wechsel</lang>
+                    <lang xml:lang="en">Auto Changeover</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="9" type="range" size="2" default="0001">
+            <name>
+                <lang xml:lang="de">LED on time</lang>
+                <lang xml:lang="en">LED on time</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">1=100ms
+5=500ms</lang>
+                <lang xml:lang="en">1=100ms
+5=500ms</lang>
+              </description>
+      
+                  <value from="0064" to="01f4" unit="ms">
+                <description>
+                    <lang xml:lang="de">Millisekunden
+(100 ms/ Schritt)</lang>
+                    <lang xml:lang="en">milliseconds
+(in 100ms steps)</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="10" type="range" size="1" default="05">
+            <name>
+                <lang xml:lang="de">Dauer des LED Blinkens</lang>
+                <lang xml:lang="en">Number of LED flashes (duration)</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">0 bis 255</lang>
+                <lang xml:lang="en">0 to 255</lang>
+              </description>
+      
+          </configParam>
+        <configParam number="11" type="constant" size="1" default="01">
+            <name>
+                <lang xml:lang="de">LED Farbe</lang>
+                <lang xml:lang="en">LED color</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">1=Grün
+2=Rot</lang>
+                <lang xml:lang="en">1=Green
+2=Red</lang>
+              </description>
+      
+                  <value from="01" to="01">
+                <description>
+                    <lang xml:lang="de">Grün</lang>
+                    <lang xml:lang="en">Green</lang>
+                  </description>
+              </value>
+            <value from="02" to="02">
+                <description>
+                    <lang xml:lang="de">Rot</lang>
+                    <lang xml:lang="en">Red</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    <endpoints>
+           <endpoint number="1">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="21"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0020"/>
+            <commandClass id="0072" version="2"/>
+            <commandClass id="0086" version="2"/>
+            <commandClass id="0080"/>
+            <commandClass id="008f"/>
+            <commandClass id="0084" version="2"/>
+            <commandClass id="0075" version="2"/>
+            <commandClass id="0070" version="2"/>
+            <commandClass id="0031" version="6"/>
+            <commandClass id="005b"/>
+            <commandClass id="0043" version="3"/>
+            <commandClass id="0053"/>
+            <commandClass id="0087"/>
+          </endpoint>
+           <endpoint number="2">
+            <name>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </name>
+                  <description>
+                <lang xml:lang="de"></lang>
+                <lang xml:lang="en"></lang>
+              </description>
+                  <genericClass value="21"/>
+                  <specificClass value="01"/>
+                  <commandClass id="0020"/>
+            <commandClass id="0072" version="2"/>
+            <commandClass id="0086" version="2"/>
+            <commandClass id="0080"/>
+            <commandClass id="008f"/>
+            <commandClass id="0084" version="2"/>
+            <commandClass id="0075" version="2"/>
+            <commandClass id="0070" version="2"/>
+            <commandClass id="0031" version="6"/>
+            <commandClass id="005b"/>
+            <commandClass id="0043" version="3"/>
+            <commandClass id="0053"/>
+            <commandClass id="0087"/>
+          </endpoint>
+      </endpoints>
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/e1e3c9c78dd45fa19e41e8754e699c82e7feb925.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+

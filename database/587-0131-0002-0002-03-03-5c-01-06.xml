@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
+
+  <descriptorVersion>1</descriptorVersion>
+
+  <deviceData>
+            <manufacturerId value="0131"/>
+        <productType value="0002"/>
+    <productId value="0002"/>
+    <libType value="03"/>
+    <protoVersion value="03"/>
+    <protoSubVersion value="5c"/>
+    <appVersion value="01"/>
+    <appSubVersion value="06"/>
+        <basicClass value="04"/>
+            <genericClass value="11"/>
+            <specificClass value="01"/>
+        <optional value="true"/>
+    <listening value="true"/>
+    <routing value="false"/>
+        <beamSensor>0</beamSensor>
+            <rfFrequency>EU</rfFrequency>
+                
+      </deviceData>
+
+  <deviceDescription>
+                <description>
+            <lang xml:lang="de">RGBW Birne</lang>
+            <lang xml:lang="en">RGBW light bulb</lang>
+          </description>
+            <wakeupNote>
+            <lang xml:lang="de"></lang>
+            <lang xml:lang="en"></lang>
+          </wakeupNote>
+            <inclusionNote>
+            <lang xml:lang="de">Aktivierung der Inklusion durch ein leichtes Antippen </lang>
+            <lang xml:lang="en">Activate inclusion mode of the RGBW bulb by GENTLY TAPPING the bulb.</lang>
+          </inclusionNote>
+            <productName>Zipato RGBW bulb</productName>
+            <brandName>Zipato</brandName>
+            <productLine>Zipato</productLine>
+            <productCode>RGBWE27ZW.EU</productCode>
+                        </deviceDescription>
+
+    <commandClasses>
+        <commandClass id="005e" version="2"/>
+        <commandClass id="0086" version="2"/>
+        <commandClass id="0072"/>
+        <commandClass id="005a"/>
+        <commandClass id="0085" version="2"/>
+        <commandClass id="0059"/>
+        <commandClass id="0073"/>
+        <commandClass id="0020"/>
+        <commandClass id="0070"/>
+        <commandClass id="007a" version="2"/>
+        <commandClass id="0026" version="2"/>
+        <commandClass id="0033"/>
+      </commandClasses>
+  
+    <assocGroups>
+        <assocGroup number="1" maxNodes="1">
+            <description>
+                <lang xml:lang="de">Lifeline</lang>
+                <lang xml:lang="en">Lifeline</lang>
+              </description>
+          </assocGroup>
+      </assocGroups>
+  
+    <configParams>
+        <configParam number="1" type="range" size="1" default="32">
+            <name>
+                <lang xml:lang="de">Farbtemperatur</lang>
+                <lang xml:lang="en">Color temperature</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Die Konfigurationsoption 1 wird verwendet um die Farbtemperatur der RGBW Birne zu regulieren. Mit den Werten von 0 - 100, wobei 0 ein starkes Weiß und 100 ein warmes Weiß darstellt, können die verschiedenen Temperaturen gesteuert werden.</lang>
+                <lang xml:lang="en">Configuration option 1 is used to adjust color temperature. Values
+range from 0 to 100 where 0 means full cold white and 100 means
+full warm white.</lang>
+              </description>
+      
+                  <value from="01" to="64">
+                <description>
+                    <lang xml:lang="de">Farbtemperatur</lang>
+                    <lang xml:lang="en">Color temperature</lang>
+                  </description>
+              </value>
+                </configParam>
+        <configParam number="2" type="range" size="1" default="10">
+            <name>
+                <lang xml:lang="de">Schocksensor - Empfindlichkeit</lang>
+                <lang xml:lang="en">Shock sensor sensitivity</lang>
+              </name>
+                  <description>
+                <lang xml:lang="de">Der Konfigurationsparameter 2 wird verwendet um die Empfindlichkeit des Schocksensors zu regulieren. </lang>
+                <lang xml:lang="en">Configuration option 2 is used to adjust shock sensor sensitivity.
+Values range from 0 to 31 where 0 means minimum sensitivity and
+31 means maximum sensitivity.</lang>
+              </description>
+      
+                  <value from="00" to="1f">
+                <description>
+                    <lang xml:lang="de">Schocksensor - Empfindlichkeit</lang>
+                    <lang xml:lang="en">Shock sensor sensitivity</lang>
+                  </description>
+              </value>
+                </configParam>
+      </configParams>
+  
+    
+  
+    <resourceLinks>
+     
+    <deviceImage url="http://www.pepper1.net/zwavedb/uploads/resources/0d254ccecec17f478ce32d1f8d566f1907a8dd11.jpg" />
+      </resourceLinks>
+    
+  </ZWaveDevice>
+
+
