@@ -43,11 +43,17 @@ func (n *node) Id() byte {
 }
 
 func (n *node) isAwake() chan struct{} {
-	c := make(chan struct{})
 	if n.IsAwake {
+		c := make(chan struct{})
 		close(c)
+		return c
 	}
-	return c
+
+	if n.awake == nil {
+		n.awake = make(chan struct{})
+	}
+
+	return n.awake
 }
 
 func (n *node) Worker(basicDone chan struct{}) {
@@ -64,7 +70,11 @@ func (n *node) Worker(basicDone chan struct{}) {
 					case *functions.FuncApplicationCommandHandler:
 						switch body.Data.(type) {
 						case *commands.CmdWakeUp:
-							//logrus.Error("NODE RECEIVED WAKEUP")
+							logrus.Error("NODE RECEIVED WAKEUP")
+							if n.awake != nil {
+								close(n.awake)
+								n.awake = nil
+							}
 						}
 					}
 				}
