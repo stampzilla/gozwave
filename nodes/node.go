@@ -5,6 +5,7 @@ import (
 
 	"github.com/Sirupsen/logrus"
 	"github.com/stampzilla/gozwave/commands"
+	"github.com/stampzilla/gozwave/database"
 	"github.com/stampzilla/gozwave/events"
 	"github.com/stampzilla/gozwave/functions"
 	"github.com/stampzilla/gozwave/serialapi"
@@ -30,6 +31,8 @@ type node struct {
 
 	ProtocolInfo        *functions.FuncGetNodeProtocolInfo
 	ManufacurerSpecific *commands.CmdManufacturerSpecific
+
+	Device interface{}
 
 	connection *serialapi.Connection
 	eventQue   chan interface{}
@@ -139,9 +142,13 @@ func (n *node) Identify(basicDone chan struct{}) {
 				<-time.After(time.Second * 10)
 				continue
 			}
+
+			n.Device = database.New(n.ManufacurerSpecific.Manufacturer, n.ManufacurerSpecific.Type, n.ManufacurerSpecific.Id)
+
 			n.pushEvent(events.NodeUpdated{
 				Address: n.Id(),
 			})
+
 		}
 
 		//<-self.Connection.SendRaw([]byte{functions.IsFailedNode, byte(index + 1)}) // Request is failed node

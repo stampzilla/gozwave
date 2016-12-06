@@ -86,11 +86,20 @@ type commandClass struct {
 	Version    string `xml:"version,attr"`
 }
 
+type deviceDescription struct {
+	BrandName   string `xml:"brandName"`
+	ProductName string `xml:"productName"`
+	Description string `xml:"description"`
+}
+
 type zWaveDevice struct {
-	XMLName           xml.Name       `xml:"ZWaveDevice"`
-	DescriptorVersion string         `xml:"descriptorVersion"`
-	DeviceData        deviceData     `xml:"deviceData"`
-	CommandClasses    []commandClass `xml:"commandClasses>commandClass"`
+	Filename          string
+	Name              string
+	XMLName           xml.Name          `xml:"ZWaveDevice"`
+	DescriptorVersion string            `xml:"descriptorVersion"`
+	DeviceData        deviceData        `xml:"deviceData"`
+	DeviceDescription deviceDescription `xml:"deviceDescription"`
+	CommandClasses    []commandClass    `xml:"commandClasses>commandClass"`
 	//ManufacturerId    string     `xml:"deviceData>manufacturerId,attr"`
 }
 
@@ -103,8 +112,20 @@ type commandClass struct {
 	NonSecure  bool
 	Version    string 
 }
+type parameter struct {
+	Id int
+	Name string
+	Type string
+	Description string
+}
 type Device struct{
-	CommandClasses []commandClass
+	Brand string
+	Product string
+	Description string 
+
+	CommandClasses []*commandClass
+	Parameters []*parameter
+
 	ManufacturerId string
 	ProductType string
 	ProductId string
@@ -114,17 +135,23 @@ func New(manufacturerId, productType, productId string) *Device{
 	switch dev {
 {{- range $value := .Devices }}
 	case "{{ $value.DeviceData.ManufacturerId.Value }}{{ $value.DeviceData.ProductType.Value }}{{ $value.DeviceData.ProductId.Value }}":
-		return New{{ $value.DeviceData.ManufacturerId.Value }}{{ $value.DeviceData.ProductType.Value }}{{ $value.DeviceData.ProductId.Value }}()
+		return New{{ $value.DeviceData.ManufacturerId.Value }}{{ $value.DeviceData.ProductType.Value }}{{ $value.DeviceData.ProductId.Value }}() // {{ $value.Filename }} | {{ $value.Name }}
 {{- end}}
 	}
+
+	return nil
 }
 {{- range $value := .Devices }}
 func New{{ $value.DeviceData.ManufacturerId.Value }}{{ $value.DeviceData.ProductType.Value }}{{ $value.DeviceData.ProductId.Value }}() *Device{
 	return &Device{
+		Brand: "{{ $value.DeviceDescription.BrandName | printf ` + "`%q`" + `  }}",
+		Product: "{{ $value.DeviceDescription.ProductName | printf ` + "`%q`" + ` }}",
+		Description:  "{{ $value.DeviceDescription.Description | printf ` + "`%q`" + ` }}",
+
 		ManufacturerId: "{{$value.DeviceData.ManufacturerId.Value }}",
 		ProductType: "{{$value.DeviceData.ProductType.Value }}",
 		ProductId: "{{$value.DeviceData.ProductId.Value }}",
-		CommandClasses: []commandClass{
+		CommandClasses: []*commandClass{
 {{- range $cmd := $value.CommandClasses }}
 			&commandClass{
 				{{- if ne $cmd.Id ""}}
@@ -159,7 +186,7 @@ func New{{ $value.DeviceData.ManufacturerId.Value }}{{ $value.DeviceData.Product
 // has same ManufacturerId-ProductType-ProductId ?
 
 type templates struct {
-	Devices []*zWaveDevice
+	Devices map[string]*zWaveDevice
 	Package string
 }
 
@@ -176,17 +203,19 @@ func main() {
 	devices := &templates{
 		Package: packageName,
 	}
-	files, err := ioutil.ReadDir("./")
+	files, err := ioutil.ReadDir("./database")
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	devices.Devices = make(map[string]*zWaveDevice)
 
 	for _, file := range files {
 		if filepath.Ext(file.Name()) != ".xml" {
 			continue
 		}
 		var q *zWaveDevice
-		xmlFile, err := os.Open(file.Name())
+		xmlFile, err := os.Open("./database/" + file.Name())
 		if err != nil {
 			fmt.Println("Error opening file:", err)
 			return
@@ -201,8 +230,14 @@ func main() {
 			return
 		}
 
+		q.Filename = file.Name()
+		q.Name =
+			q.DeviceData.ManufacturerId.Value +
+				q.DeviceData.ProductType.Value +
+				q.DeviceData.ProductId.Value
+
 		//spew.Dump(q)
-		devices.Devices = append(devices.Devices, q)
+		devices.Devices[q.Name] = q
 	}
 
 	t := template.New("t")

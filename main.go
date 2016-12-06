@@ -1,4 +1,4 @@
-//go:generate go run database/generate.go -file database/test.go -package database
+//go:generate go run generators/database.go -file database/test.go -package database
 
 package gozwave
 
