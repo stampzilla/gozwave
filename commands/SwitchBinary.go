@@ -1,25 +1,25 @@
-package switchbinary
+package commands
 
-type command struct {
+type CmdSwitchBinary struct {
 	node  byte
 	value bool
 }
 
-func New() *command {
-	return &command{}
+func NewSwitchBinary() *CmdSwitchBinary {
+	return &CmdSwitchBinary{}
 
 }
 
-func (c *command) SetValue(v bool) *command {
+func (c *CmdSwitchBinary) SetValue(v bool) *CmdSwitchBinary {
 	c.value = v
 	return c
 }
-func (c *command) SetNode(n byte) *command {
+func (c *CmdSwitchBinary) SetNode(n byte) *CmdSwitchBinary {
 	c.node = n
 	return c
 }
 
-func (c *command) Encode() []byte {
+func (c *CmdSwitchBinary) Encode() []byte {
 	v := byte(0x00)
 	if c.value {
 		v = 0xff
