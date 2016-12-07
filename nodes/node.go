@@ -151,6 +151,19 @@ func (n *node) Identify(basicDone chan struct{}) {
 
 		}
 
+		resp := <-n.connection.SendRaw([]byte{
+			functions.SendData, // Function
+			byte(n.Id()),       // Node id
+			0x02,               // Length
+			commands.Version,   // Command
+			0x11,               // VersionCmd_Get
+			0x00,
+			//0x05, // TransmitOptions?
+			//0x23, // Callback?
+		}, time.Second*10) // Request node information
+
+		logrus.Println("%#v", resp)
+
 		//<-self.Connection.SendRaw([]byte{functions.IsFailedNode, byte(index + 1)}) // Request is failed node
 		//	<-self.SendRaw([]byte{0xa0, byte(index + 1)}) // Request ?
 
