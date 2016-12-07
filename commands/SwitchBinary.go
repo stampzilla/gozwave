@@ -32,6 +32,7 @@ func (c *CmdSwitchBinary) Encode() []byte {
 		0x01,   // set
 		v,      // value
 		0x25,   // transmit options
-		0x25,   // transmit options
+		0x08,   // transmit options
+		//0x25,   // transmit options
 	}
 }

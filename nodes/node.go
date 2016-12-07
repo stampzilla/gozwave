@@ -124,7 +124,9 @@ func (n *node) Identify(basicDone chan struct{}) {
 			})
 		}
 
-		n.IsAwake = n.ProtocolInfo.Listening
+		if n.ProtocolInfo != nil {
+			n.IsAwake = n.ProtocolInfo.Listening
+		}
 
 		if basicDone != nil {
 			close(basicDone)
