@@ -9,76 +9,81 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 // http://products.z-wavealliance.org/products/1729
 // http://www.pepper1.net/zwavedb/
 
-type manufacturerId struct {
-	Value string `xml:"value,attr"`
-}
+//type manufacturerId struct {
+//Value string `xml:"value,attr"`
+//}
 
-type productType struct {
-	Value string `xml:"value,attr"`
-}
-type productId struct {
-	Value string `xml:"value,attr"`
-}
-type libType struct {
-	Value string `xml:"value,attr"`
-}
-type protoVersion struct {
-	Value string `xml:"value,attr"`
-}
-type protoSubVersion struct {
-	Value string `xml:"value,attr"`
-}
-type appVersion struct {
-	Value string `xml:"value,attr"`
-}
-type appSubVersion struct {
-	Value string `xml:"value,attr"`
-}
-type basicClass struct {
-	Value string `xml:"value,attr"`
-}
-type genericClass struct {
-	Value string `xml:"value,attr"`
-}
-type specificClass struct {
-	Value string `xml:"value,attr"`
-}
-type optional struct {
-	Value string `xml:"value,attr"`
-}
-type listening struct {
-	Value string `xml:"value,attr"`
-}
-type routing struct {
+//type productType struct {
+//Value string `xml:"value,attr"`
+//}
+//type productId struct {
+//Value string `xml:"value,attr"`
+//}
+//type libType struct {
+//Value string `xml:"value,attr"`
+//}
+//type protoVersion struct {
+//Value string `xml:"value,attr"`
+//}
+//type protoSubVersion struct {
+//Value string `xml:"value,attr"`
+//}
+//type appVersion struct {
+//Value string `xml:"value,attr"`
+//}
+//type appSubVersion struct {
+//Value string `xml:"value,attr"`
+//}
+//type basicClass struct {
+//Value string `xml:"value,attr"`
+//}
+//type genericClass struct {
+//Value string `xml:"value,attr"`
+//}
+//type specificClass struct {
+//Value string `xml:"value,attr"`
+//}
+//type optional struct {
+//Value string `xml:"value,attr"`
+//}
+//type listening struct {
+//Value string `xml:"value,attr"`
+//}
+//type routing struct {
+//Value string `xml:"value,attr"`
+//}
+
+type deviceDataValue struct {
 	Value string `xml:"value,attr"`
 }
 
 type deviceData struct {
-	ManufacturerId  manufacturerId  `xml:"manufacturerId"`
-	ProductType     productType     `xml:"productType"`
-	ProductId       productId       `xml:"productId"`
-	LibType         libType         `xml:"libType"`
-	ProtoVersion    protoVersion    `xml:"protoVersion"`
-	ProtoSubVersion protoSubVersion `xml:"protoSubVersion"`
-	AppVersion      appVersion      `xml:"appVersion"`
-	AppSubVersion   appSubVersion   `xml:"appSubVersion"`
-	BasicClass      basicClass      `xml:"basicClass"`
-	GenericClass    genericClass    `xml:"genericClass"`
-	SpecificClass   specificClass   `xml:"specificClass"`
-	Optional        optional        `xml:"optional"`
-	Listening       listening       `xml:"listening"`
-	Routing         routing         `xml:"routing"`
+	ManufacturerID  deviceDataValue `xml:"manufacturerId"`
+	ProductType     deviceDataValue `xml:"productType"`
+	ProductID       deviceDataValue `xml:"productId"`
+	LibType         deviceDataValue `xml:"libType"`
+	ProtoVersion    deviceDataValue `xml:"protoVersion"`
+	ProtoSubVersion deviceDataValue `xml:"protoSubVersion"`
+	AppVersion      deviceDataValue `xml:"appVersion"`
+	AppSubVersion   deviceDataValue `xml:"appSubVersion"`
+	BasicClass      deviceDataValue `xml:"basicClass"`
+	GenericClass    deviceDataValue `xml:"genericClass"`
+	SpecificClass   deviceDataValue `xml:"specificClass"`
+	Optional        deviceDataValue `xml:"optional"`
+	Listening       deviceDataValue `xml:"listening"`
+	Routing         deviceDataValue `xml:"routing"`
 	BeamSensor      string          `xml:"beamSensor"`
 	RfFrequency     string          `xml:"rfFrequency"`
 }
 
 type commandClass struct {
-	Id         string `xml:"id,attr"`
+	ID         string `xml:"id,attr"`
 	Controlled string `xml:"controlled,attr"`
 	InNIF      string `xml:"inNIF,attr"`
 	Secure     string `xml:"secure,attr"`
@@ -90,6 +95,17 @@ type deviceDescription struct {
 	BrandName   string `xml:"brandName"`
 	ProductName string `xml:"productName"`
 	Description string `xml:"description"`
+}
+
+func (dd deviceDescription) EscapedDescription() string {
+	return removeNewLines(dd.Description)
+}
+
+func (dd deviceDescription) EscapedProductName() string {
+	return removeNewLines(dd.ProductName)
+}
+func (dd deviceDescription) EscapedBrandName() string {
+	return removeNewLines(dd.BrandName)
 }
 
 type zWaveDevice struct {
@@ -105,7 +121,7 @@ type zWaveDevice struct {
 
 var templ = `package {{.Package}}
 type commandClass struct {
-	Id         string
+	ID         string
 	Controlled string
 	InNIF      string
 	Secure     bool
@@ -113,7 +129,7 @@ type commandClass struct {
 	Version    string 
 }
 type parameter struct {
-	Id int
+	ID int
 	Name string
 	Type string
 	Description string
@@ -126,36 +142,36 @@ type Device struct{
 	CommandClasses []*commandClass
 	Parameters []*parameter
 
-	ManufacturerId string
+	ManufacturerID string
 	ProductType string
-	ProductId string
+	ProductID string
 }
-func New(manufacturerId, productType, productId string) *Device{
-	dev := manufacturerId+productType+productId
+func New(manufacturerID, productType, productID string) *Device{
+	dev := manufacturerID+productType+productID
 	switch dev {
 {{- range $value := .Devices }}
-	case "{{ $value.DeviceData.ManufacturerId.Value }}{{ $value.DeviceData.ProductType.Value }}{{ $value.DeviceData.ProductId.Value }}":
-		return New{{ $value.DeviceData.ManufacturerId.Value }}{{ $value.DeviceData.ProductType.Value }}{{ $value.DeviceData.ProductId.Value }}() // {{ $value.Filename }} | {{ $value.Name }}
+	case "{{ $value.DeviceData.ManufacturerID.Value }}{{ $value.DeviceData.ProductType.Value }}{{ $value.DeviceData.ProductID.Value }}":
+		return New{{ $value.DeviceData.ManufacturerID.Value }}{{ $value.DeviceData.ProductType.Value }}{{ $value.DeviceData.ProductID.Value }}() // {{ $value.Filename }} | {{ $value.Name }}
 {{- end}}
 	}
 
 	return nil
 }
 {{- range $value := .Devices }}
-func New{{ $value.DeviceData.ManufacturerId.Value }}{{ $value.DeviceData.ProductType.Value }}{{ $value.DeviceData.ProductId.Value }}() *Device{
+func New{{ $value.DeviceData.ManufacturerID.Value }}{{ $value.DeviceData.ProductType.Value }}{{ $value.DeviceData.ProductID.Value }}() *Device{
 	return &Device{
-		Brand: "{{ $value.DeviceDescription.BrandName | printf ` + "`%q`" + `  }}",
-		Product: "{{ $value.DeviceDescription.ProductName | printf ` + "`%q`" + ` }}",
-		Description:  "{{ $value.DeviceDescription.Description | printf ` + "`%q`" + ` }}",
+		Brand: "{{ $value.DeviceDescription.EscapedBrandName }}",
+		Product: "{{ $value.DeviceDescription.EscapedProductName }}",
+		Description: "{{ $value.DeviceDescription.EscapedDescription }}",
 
-		ManufacturerId: "{{$value.DeviceData.ManufacturerId.Value }}",
+		ManufacturerID: "{{$value.DeviceData.ManufacturerID.Value }}",
 		ProductType: "{{$value.DeviceData.ProductType.Value }}",
-		ProductId: "{{$value.DeviceData.ProductId.Value }}",
+		ProductID: "{{$value.DeviceData.ProductID.Value }}",
 		CommandClasses: []*commandClass{
 {{- range $cmd := $value.CommandClasses }}
 			&commandClass{
-				{{- if ne $cmd.Id ""}}
-				Id: "{{$cmd.Id}}",
+				{{- if ne $cmd.ID ""}}
+				ID: "{{$cmd.ID}}",
 				{{- end }}
 				{{- if ne $cmd.Controlled "" }}
 				Controlled: "{{$cmd.Controlled}}",
@@ -183,7 +199,7 @@ func New{{ $value.DeviceData.ManufacturerId.Value }}{{ $value.DeviceData.Product
 //TODO wee need to be more specific in our template above
 // 135-0115-1000-0001-06-03-16-01-04.xml
 // 132-0115-1000-0001-06-03-16-01-05.xml
-// has same ManufacturerId-ProductType-ProductId ?
+// has same ManufacturerID-ProductType-ProductID ?
 
 type templates struct {
 	Devices map[string]*zWaveDevice
@@ -191,10 +207,12 @@ type templates struct {
 }
 
 var outputfile string
+var databaseDir string
 var packageName string
 
 func init() {
 	flag.StringVar(&outputfile, "file", "", "Output file")
+	flag.StringVar(&databaseDir, "databasedir", "./database", "Directory with xml files")
 	flag.StringVar(&packageName, "package", "devices", "Package name of generated code")
 	flag.Parse()
 }
@@ -203,7 +221,7 @@ func main() {
 	devices := &templates{
 		Package: packageName,
 	}
-	files, err := ioutil.ReadDir("./database")
+	files, err := ioutil.ReadDir(databaseDir)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -214,15 +232,15 @@ func main() {
 		if filepath.Ext(file.Name()) != ".xml" {
 			continue
 		}
-		var q *zWaveDevice
-		xmlFile, err := os.Open("./database/" + file.Name())
+		var dev *zWaveDevice
+		xmlFile, err := os.Open(filepath.Join(databaseDir, file.Name()))
 		if err != nil {
 			fmt.Println("Error opening file:", err)
 			return
 		}
 		decoder := xml.NewDecoder(xmlFile)
 
-		err = decoder.Decode(&q)
+		err = decoder.Decode(&dev)
 		xmlFile.Close()
 		if err != nil {
 			log.Println(file.Name())
@@ -230,14 +248,14 @@ func main() {
 			return
 		}
 
-		q.Filename = file.Name()
-		q.Name =
-			q.DeviceData.ManufacturerId.Value +
-				q.DeviceData.ProductType.Value +
-				q.DeviceData.ProductId.Value
+		dev.Filename = file.Name()
+		dev.Name =
+			dev.DeviceData.ManufacturerID.Value +
+				dev.DeviceData.ProductType.Value +
+				dev.DeviceData.ProductID.Value
 
-		//spew.Dump(q)
-		devices.Devices[q.Name] = q
+		//spew.Dump(dev)
+		devices.Devices[dev.Name] = dev
 	}
 
 	t := template.New("t")
@@ -265,4 +283,10 @@ func main() {
 		panic(err)
 	}
 
+}
+
+func removeNewLines(s string) string {
+	s = strings.Replace(s, "\n", `\n`, -1)
+	s = strings.Replace(s, "\r", `\n`, -1)
+	return s
 }
