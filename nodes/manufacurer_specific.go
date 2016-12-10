@@ -12,12 +12,12 @@ import (
 type ManufacurerSpecific struct {
 }
 
-func (n *node) RequestManufacturerSpecific() error {
+func (n *Node) RequestManufacturerSpecific() error {
 	// Todo: Send raw messages here
 
 	resp := <-n.connection.SendRaw([]byte{
 		functions.SendData, // Function
-		byte(n.Id()),       // Node id
+		byte(n.Id),         // Node id
 		0x02,               // Length
 		commands.ManufacturerSpecific, // Command
 		0x04, // MANUFACTURER_SPECIFIC_GET

@@ -1,20 +1,20 @@
 package nodes
 
 import (
+	"fmt"
 	"time"
 
 	"github.com/Sirupsen/logrus"
-	"github.com/davecgh/go-spew/spew"
 	"github.com/stampzilla/gozwave/functions"
 )
 
-func (n *node) RequestProtocolInfo() error {
+func (n *Node) RequestProtocolInfo() error {
 	// Todo: Send raw messages here
 
 	resp := <-n.connection.SendRaw([]byte{
 		functions.GetNodeProtocolInfo, // Function
-		byte(n.Id()),                  // Node id
-	}, time.Second*1) // Request node information
+		byte(n.Id),                    // Node id
+	}, time.Second*10) // Request node information
 
 	logrus.Infof("RESP: %#v", resp)
 
@@ -22,10 +22,11 @@ func (n *node) RequestProtocolInfo() error {
 		switch r := resp.Data.(type) {
 		case *functions.FuncGetNodeProtocolInfo:
 			n.ProtocolInfo = r
+			return nil
 		default:
-			spew.Dump("Wrong type: %t", resp.Data)
+			return fmt.Errorf("Wrong type: %t", resp.Data)
 		}
 	}
 
-	return nil
+	return fmt.Errorf("Reponse was nil")
 }

@@ -91,6 +91,17 @@ type commandClass struct {
 	Version    string `xml:"version,attr"`
 }
 
+func (c commandClass) IDasHex() string {
+	//h, err := hex.DecodeString(c.ID)
+
+	//if err != nil {
+	//log.Println(err)
+	//return ""
+	//}
+
+	return "0x" + c.ID
+}
+
 type deviceDescription struct {
 	BrandName   string `xml:"brandName"`
 	ProductName string `xml:"productName"`
@@ -120,8 +131,13 @@ type zWaveDevice struct {
 }
 
 var templ = `package {{.Package}}
+
+import (
+	"github.com/stampzilla/gozwave/commands"
+)
+
 type commandClass struct {
-	ID         string
+	ID         commands.ZWaveCommand
 	Controlled string
 	InNIF      string
 	Secure     bool
@@ -171,7 +187,7 @@ func New{{ $value.DeviceData.ManufacturerID.Value }}{{ $value.DeviceData.Product
 {{- range $cmd := $value.CommandClasses }}
 			&commandClass{
 				{{- if ne $cmd.ID ""}}
-				ID: "{{$cmd.ID}}",
+				ID: {{$cmd.IDasHex}},
 				{{- end }}
 				{{- if ne $cmd.Controlled "" }}
 				Controlled: "{{$cmd.Controlled}}",

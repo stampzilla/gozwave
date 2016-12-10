@@ -25,14 +25,13 @@ func (c *CmdSwitchBinary) Encode() []byte {
 		v = 0xff
 	}
 	return []byte{
-		0x13,   // SEND ZW
-		c.node, // NOD ID
-		0x03,   // binary switch report
-		0x25,   // command class id
-		0x01,   // set
-		v,      // value
-		0x25,   // transmit options
-		0x08,   // transmit options
-		//0x25,   // transmit options
+		0x13,         // SEND ZW
+		c.node,       // NOD ID
+		0x03,         // length
+		SwitchBinary, // command class id
+		0x01,         // set
+		v,            // value
+		0x25,         // transmit options
+		//0x08,         // transmit options
 	}
 }

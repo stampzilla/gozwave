@@ -116,6 +116,7 @@ func (self *Connection) SendRaw(data []byte, timeout time.Duration) chan *Messag
 				logrus.Warnf("TIMEOUT: %s - %#v", uuid, c)
 				delete(self.inFlight, uuid)
 				close(c.returnChan)
+				c.returnChan = nil
 			}
 		}
 		self.Unlock()
@@ -170,7 +171,7 @@ func (self *Connection) Writer() {
 
 			select {
 			case result := <-self.lastResult:
-				//logrus.Infof("RESULT: %s", pkg.uuid)
+				logrus.Infof("RESULT: %s", pkg.uuid)
 				pkg.result = result
 			case <-time.After(time.Second):
 				// SEND TIMEOUT
@@ -219,6 +220,7 @@ func (self *Connection) Reader() error {
 							logrus.Warnf("Command failed: %s - %#v", c.uuid, c)
 							delete(self.inFlight, index)
 							close(c.returnChan)
+							c.returnChan = nil
 						}
 
 						if incomming[0] == 0x18 { // CAN - resend request
@@ -229,74 +231,80 @@ func (self *Connection) Reader() error {
 				}
 			}
 
-			if l <= len(incomming) { // If complete message was decoded, remove it from buffer
-				if l == -1 { // Invalid checksum
-					incomming = incomming[1:] // Remove first char and try again
-					logrus.Infof("Removing first byte, buffer len=%d", len(incomming))
+			// The message is not compleatly read yet, wait for some more data
+			if l > len(incomming) {
+				break
+			}
 
-					continue
-				}
+			if l == -1 { // Invalid checksum
+				incomming = incomming[1:] // Remove first char and try again
+				logrus.Infof("Removing first byte, buffer len=%d", len(incomming))
 
-				if l > 1 { // A message was received
-					self.Lock()
-					for index, c := range self.inFlight {
-						if len(incomming) > 3 {
-							if c.function != 0 && c.function != incomming[3] && !(c.function == 0x13 && incomming[3] == 0x04) {
-								logrus.Warnf("Skipping pkg %s, function %x != %x", c.uuid, c.function, incomming[3])
+				continue
+			}
+
+			if l > 1 { // A message was received
+				self.Lock()
+				for index, c := range self.inFlight {
+					if len(incomming) > 3 {
+						if c.function != 0 && c.function != incomming[3] && !(c.function == 0x13 && incomming[3] == 0x04) {
+							//logrus.Warnf("Skipping pkg %s, function %x != %x", c.uuid, c.function, incomming[3])
+							continue
+						}
+					}
+					if c.function != 0x41 {
+						if len(incomming) > 5 {
+							if c.node != 0 && c.node != incomming[5] {
+								//logrus.Warnf("Skipping pkg %s, node %x != %x", c.uuid, c.node, incomming[5])
 								continue
 							}
 						}
-						if c.function != 0x41 {
-							if len(incomming) > 5 {
-								if c.node != 0 && c.node != incomming[5] {
-									logrus.Warnf("Skipping pkg %s, node %x != %x", c.uuid, c.node, incomming[5])
-									continue
-								}
-							}
-							if len(incomming) > 7 {
-								if c.commandclass != 0 && c.commandclass != incomming[7] {
-									logrus.Warn("Skipping pkg %s, command %x is not %x", c.uuid, c.commandclass, incomming[7])
-									continue
-								}
+						if len(incomming) > 7 {
+							if c.commandclass != 0 && c.commandclass != incomming[7] {
+								//logrus.Warn("Skipping pkg %s, command %x is not %x", c.uuid, c.commandclass, incomming[7])
+								continue
 							}
 						}
+					}
 
+					if c.returnChan != nil {
 						select {
 						case c.returnChan <- msg: // Try to deliver message
 						default:
 						}
-						delete(self.inFlight, index)
-						close(c.returnChan)
-					}
-					self.Unlock()
-				}
 
-				if msg != nil {
-					switch cmd := msg.Data.(type) {
-					case *functions.FuncApplicationCommandHandler:
-						switch cmd.Data.(type) {
-						case *commands.CmdWakeUp:
-							c, ok := self.updateChans[strconv.Itoa(int(msg.NodeId))]
-							if ok {
-								go func() {
-									select {
-									case c <- msg:
-									case <-time.After(time.Second):
-									}
-								}()
-							}
+						close(c.returnChan)
+						c.returnChan = nil
+					}
+					delete(self.inFlight, index)
+				}
+				self.Unlock()
+			}
+
+			if msg != nil {
+				switch cmd := msg.Data.(type) {
+				case *functions.FuncApplicationCommandHandler:
+					switch cmd.Data.(type) {
+					case *commands.CmdWakeUp:
+						c, ok := self.updateChans[strconv.Itoa(int(msg.NodeId))]
+						if ok {
+							go func() {
+								select {
+								case c <- msg:
+								case <-time.After(time.Second):
+								}
+							}()
 						}
 					}
 				}
-
-				logrus.Infof("Recived: %s", strings.TrimSpace(hex.Dump(incomming)))
-				incomming = incomming[l:]
-				if l > 1 {
-					self.port.Write([]byte{0x06}) // Send ACK to stick
-				}
-			} else {
-				break
 			}
+
+			logrus.Infof("Recived: %s", strings.TrimSpace(hex.Dump(incomming)))
+			incomming = incomming[l:]
+			if l > 1 {
+				self.port.Write([]byte{0x06}) // Send ACK to stick
+			}
+
 		}
 	}
 

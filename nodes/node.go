@@ -11,9 +11,9 @@ import (
 	"github.com/stampzilla/gozwave/serialapi"
 )
 
-func New(address byte, connection *serialapi.Connection, eventQue chan interface{}) (*node, chan struct{}) {
-	n := &node{
-		Id_:        address,
+func New(address byte, connection *serialapi.Connection, eventQue chan interface{}) (*Node, chan struct{}) {
+	n := &Node{
+		Id:         address,
 		connection: connection,
 		eventQue:   eventQue,
 	}
@@ -25,14 +25,14 @@ func New(address byte, connection *serialapi.Connection, eventQue chan interface
 	return n, c
 }
 
-type node struct {
-	Id_     byte `json:"id"`
+type Node struct {
+	Id      byte `json:"id"`
 	IsAwake bool `json:"is_awake"`
 
 	ProtocolInfo        *functions.FuncGetNodeProtocolInfo
 	ManufacurerSpecific *commands.CmdManufacturerSpecific
 
-	Device interface{}
+	Device *database.Device
 
 	connection *serialapi.Connection
 	eventQue   chan interface{}
@@ -41,11 +41,7 @@ type node struct {
 	identified bool
 }
 
-func (n *node) Id() byte {
-	return n.Id_
-}
-
-func (n *node) isAwake() chan struct{} {
+func (n *Node) isAwake() chan struct{} {
 	if n.IsAwake {
 		c := make(chan struct{})
 		close(c)
@@ -59,9 +55,9 @@ func (n *node) isAwake() chan struct{} {
 	return n.awake
 }
 
-func (n *node) Worker(basicDone chan struct{}) {
+func (n *Node) Worker(basicDone chan struct{}) {
 
-	updateChan := n.connection.RegisterNode(n.Id())
+	updateChan := n.connection.RegisterNode(n.Id)
 	go func() {
 		for {
 			select {
@@ -87,9 +83,9 @@ func (n *node) Worker(basicDone chan struct{}) {
 
 	go n.Identify(basicDone)
 
-	if n.Id() != 1 {
+	if n.Id != 1 {
 		n.pushEvent(events.NodeDiscoverd{
-			Address: n.Id(),
+			Address: n.Id,
 		})
 	}
 
@@ -97,9 +93,9 @@ func (n *node) Worker(basicDone chan struct{}) {
 		select {}
 	}
 }
-func (n *node) Identify(basicDone chan struct{}) {
-	logrus.Warnf("Started identification on node %d", n.Id())
-	defer logrus.Warnf("Ended identification on node %d", n.Id())
+func (n *Node) Identify(basicDone chan struct{}) {
+	logrus.Warnf("Started identification on node %d", n.Id)
+	defer logrus.Warnf("Ended identification on node %d", n.Id)
 
 	defer func() {
 		if basicDone != nil {
@@ -108,7 +104,7 @@ func (n *node) Identify(basicDone chan struct{}) {
 		}
 	}()
 
-	if n.Id() == 1 {
+	if n.Id == 1 {
 		return
 	}
 
@@ -120,13 +116,12 @@ func (n *node) Identify(basicDone chan struct{}) {
 				continue
 			}
 			n.pushEvent(events.NodeUpdated{
-				Address: n.Id(),
+				Address: n.Id,
 			})
+			continue
 		}
 
-		if n.ProtocolInfo != nil {
-			n.IsAwake = n.ProtocolInfo.Listening
-		}
+		n.IsAwake = n.ProtocolInfo.Listening
 
 		if basicDone != nil {
 			close(basicDone)
@@ -148,14 +143,14 @@ func (n *node) Identify(basicDone chan struct{}) {
 			n.Device = database.New(n.ManufacurerSpecific.Manufacturer, n.ManufacurerSpecific.Type, n.ManufacurerSpecific.Id)
 
 			n.pushEvent(events.NodeUpdated{
-				Address: n.Id(),
+				Address: n.Id,
 			})
 
 		}
 
 		resp := <-n.connection.SendRaw([]byte{
 			functions.SendData, // Function
-			byte(n.Id()),       // Node id
+			byte(n.Id),         // Node id
 			0x02,               // Length
 			commands.Version,   // Command
 			0x11,               // VersionCmd_Get
@@ -179,14 +174,31 @@ func (n *node) Identify(basicDone chan struct{}) {
 		// If association groups are available the gateway will always put its own Node ID into these association groups in order to be informed about status changes and to be prepared for using associations for scene switching
 		// The user can change all values. However it needs to be clear that particularly removing the gateways Node ID from the association groups may cause malfunctions of the gateway.
 
+		n.pushEvent(events.NodeUpdated{
+			Address: n.Id,
+		})
 		n.identified = true
 		return
 	}
 }
 
-func (self *node) pushEvent(event interface{}) {
+func (self *Node) pushEvent(event interface{}) {
 	select {
 	case self.eventQue <- event:
 	default:
 	}
+}
+
+func (n *Node) HasCommand(c commands.ZWaveCommand) bool {
+	if n.Device == nil {
+		return false
+	}
+
+	for _, v := range n.Device.CommandClasses {
+		if v.ID == c {
+			return true
+		}
+	}
+
+	return false
 }
