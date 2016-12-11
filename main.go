@@ -10,16 +10,23 @@ import (
 	"github.com/stampzilla/gozwave/serialapi"
 )
 
-func Connect(port string, file ...string) (*Controller, error) {
+func Connect(port string, filename string) (*Controller, error) {
 
 	c := &Controller{
 		Nodes:      nodes.NewList(),
 		Connection: serialapi.NewConnection(),
+		filename:   filename,
 	}
 
 	c.Connection.Name = port
 	c.Connection.Baud = 115200
+	c.Connection.ConfigController = c
 	connected := make(chan error)
+
+	//spew.Dump(c)
+
+	c.Nodes.SetConnection(c.Connection)
+	c.LoadConfigurationFromFile()
 
 	go func() {
 		for {

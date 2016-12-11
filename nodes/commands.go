@@ -4,11 +4,11 @@ import (
 	"time"
 
 	"github.com/stampzilla/gozwave/commands"
-	"github.com/stampzilla/gozwave/serialapi"
+	"github.com/stampzilla/gozwave/interfaces"
 )
 
 func (n *Node) On() {
-	var send serialapi.Encodable
+	var send interfaces.Encodable
 
 	switch {
 	case n.HasCommand(commands.SwitchBinary):
@@ -31,7 +31,7 @@ func (n *Node) On() {
 }
 
 func (n *Node) Off() {
-	var send serialapi.Encodable
+	var send interfaces.Encodable
 
 	switch {
 	case n.HasCommand(commands.SwitchBinary):
@@ -54,7 +54,7 @@ func (n *Node) Off() {
 }
 
 func (n *Node) Level(value float64) {
-	var send serialapi.Encodable
+	var send interfaces.Encodable
 
 	switch {
 	case n.HasCommand(commands.SwitchMultilevel):

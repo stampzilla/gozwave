@@ -12,6 +12,7 @@ import (
 	"github.com/pborman/uuid"
 	"github.com/stampzilla/gozwave/commands"
 	"github.com/stampzilla/gozwave/functions"
+	"github.com/stampzilla/gozwave/interfaces"
 	"github.com/tarm/serial"
 )
 
@@ -30,6 +31,8 @@ type Connection struct {
 
 	callback byte
 
+	ConfigController interfaces.LoadSaveable
+
 	sync.Mutex
 }
 
@@ -40,6 +43,7 @@ type sendPackage struct {
 
 	function     byte
 	commandclass byte
+	command      byte
 	node         byte
 
 	returnChan chan *Message
@@ -63,15 +67,15 @@ func (self *Connection) RegisterNode(address byte) chan interface{} {
 	return c
 }
 
-type Encodable interface {
-	Encode() []byte
-}
-
-func (self *Connection) Send(data Encodable, timeout time.Duration) chan *Message {
+func (self *Connection) Send(data interfaces.Encodable, timeout time.Duration) chan *Message {
 	return self.SendRaw(data.Encode(), timeout)
 }
 
 func (self *Connection) SendRaw(data []byte, timeout time.Duration) chan *Message {
+	return self.SendRawAndWaitForResponse(data, timeout, 0)
+}
+
+func (self *Connection) SendRawAndWaitForResponse(data []byte, timeout time.Duration, command byte) chan *Message {
 	returnChan := make(chan *Message)
 
 	// Compile message
@@ -101,8 +105,12 @@ func (self *Connection) SendRaw(data []byte, timeout time.Duration) chan *Messag
 	if len(data) > 1 {
 		pkg.node = data[1]
 	}
-	if len(data) > 3 {
+	if len(data) > 4 {
 		pkg.commandclass = data[3]
+
+		if command != 0 {
+			pkg.command = command
+		}
 	}
 
 	self.send <- pkg
@@ -163,7 +171,7 @@ func (self *Connection) Writer() {
 		select {
 		case pkg := <-self.send:
 			self.Lock()
-			logrus.Errorf("Sending: %#v", pkg)
+			logrus.Infof("Sending: %x", pkg.message)
 			self.inFlight[pkg.uuid] = pkg
 			self.port.Write(pkg.message)
 			self.lastCommand = pkg.uuid
@@ -246,25 +254,8 @@ func (self *Connection) Reader() error {
 			if l > 1 { // A message was received
 				self.Lock()
 				for index, c := range self.inFlight {
-					if len(incomming) > 3 {
-						if c.function != 0 && c.function != incomming[3] && !(c.function == 0x13 && incomming[3] == 0x04) {
-							//logrus.Warnf("Skipping pkg %s, function %x != %x", c.uuid, c.function, incomming[3])
-							continue
-						}
-					}
-					if c.function != 0x41 {
-						if len(incomming) > 5 {
-							if c.node != 0 && c.node != incomming[5] {
-								//logrus.Warnf("Skipping pkg %s, node %x != %x", c.uuid, c.node, incomming[5])
-								continue
-							}
-						}
-						if len(incomming) > 7 {
-							if c.commandclass != 0 && c.commandclass != incomming[7] {
-								//logrus.Warn("Skipping pkg %s, command %x is not %x", c.uuid, c.commandclass, incomming[7])
-								continue
-							}
-						}
+					if !c.Match(incomming) {
+						continue
 					}
 
 					if c.returnChan != nil {
@@ -299,7 +290,8 @@ func (self *Connection) Reader() error {
 				}
 			}
 
-			logrus.Infof("Recived: %s", strings.TrimSpace(hex.Dump(incomming)))
+			//logrus.Infof("Recived: %s", strings.TrimSpace(hex.Dump(incomming)))
+			logrus.Infof("Recived: %x", incomming)
 			incomming = incomming[l:]
 			if l > 1 {
 				self.port.Write([]byte{0x06}) // Send ACK to stick
@@ -308,4 +300,56 @@ func (self *Connection) Reader() error {
 		}
 	}
 
+}
+
+func (c *sendPackage) Match(incomming []byte) bool {
+	//if len(incomming) > 3 && c.function != 0 && c.function != incomming[3] && !(c.function == functions.SendData && incomming[3] == 0x04) {
+
+	// SerialAPI specific
+	if !MatchByteAt(incomming, c.function, 3) && !(c.function == functions.SendData && MatchByteAt(incomming, functions.ApplicationCommandHandler, 3)) {
+		//logrus.Warnf("Skipping pkg %s, function %x != %x", c.uuid, c.function, incomming[3])
+		return false
+	}
+
+	if c.function == functions.GetNodeProtocolInfo {
+		return true
+	}
+
+	// Z-wave specific
+	if !MatchByteAt(incomming, c.node, 5) {
+		//logrus.Warnf("Skipping pkg %s, node %x != %x", c.uuid, c.node, incomming[5])
+		return false
+	}
+	if !MatchByteAt(incomming, c.commandclass, 7) {
+		//logrus.Warnf("Skipping pkg %s, commandclass %x is not %x", c.uuid, c.commandclass, incomming[7])
+		return false
+	}
+	if !MatchByteAt(incomming, c.command, 8) {
+		logrus.Errorf("Skipping pkg %s, command %x is not %x", c.uuid, c.command, incomming[8])
+		return false
+	}
+
+	//if len(incomming) > 5 && c.node != 0 && c.node != incomming[5] {
+	//return false
+	//}
+	//if len(incomming) > 7 && c.commandclass != 0 && c.commandclass != incomming[7] {
+	//return false
+	//}
+	//if len(incomming) > 8 && c.command != 0 && c.command != incomming[8] {
+	//return false
+	//}
+
+	return true
+}
+
+func MatchByteAt(message []byte, b byte, position int) bool {
+	if b == 0 {
+		return true
+	}
+
+	if len(message) < position {
+		return false
+	}
+
+	return message[position] == b
 }

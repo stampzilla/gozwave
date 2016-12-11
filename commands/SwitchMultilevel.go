@@ -21,8 +21,8 @@ func (c *CmdSwitchMultilevel) SetValue(v float64) *CmdSwitchMultilevel {
 	c.level = byte(v)
 	return c
 }
-func (c *CmdSwitchMultilevel) SetNode(n byte) *CmdSwitchMultilevel {
-	c.node = n
+func (c *CmdSwitchMultilevel) SetNode(n int) *CmdSwitchMultilevel {
+	c.node = byte(n)
 	return c
 }
 

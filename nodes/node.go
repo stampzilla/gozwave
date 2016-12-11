@@ -11,7 +11,7 @@ import (
 	"github.com/stampzilla/gozwave/serialapi"
 )
 
-func New(address byte, connection *serialapi.Connection, eventQue chan interface{}) (*Node, chan struct{}) {
+func New(address int, connection *serialapi.Connection, eventQue chan interface{}) (*Node, chan struct{}) {
 	n := &Node{
 		Id:         address,
 		connection: connection,
@@ -26,13 +26,15 @@ func New(address byte, connection *serialapi.Connection, eventQue chan interface
 }
 
 type Node struct {
-	Id      byte `json:"id"`
+	Id      int  `json:"id"`
 	IsAwake bool `json:"is_awake"`
 
 	ProtocolInfo        *functions.FuncGetNodeProtocolInfo
 	ManufacurerSpecific *commands.CmdManufacturerSpecific
 
 	Device *database.Device
+
+	Endpoints []*Endpoint
 
 	connection *serialapi.Connection
 	eventQue   chan interface{}
@@ -57,7 +59,7 @@ func (n *Node) isAwake() chan struct{} {
 
 func (n *Node) Worker(basicDone chan struct{}) {
 
-	updateChan := n.connection.RegisterNode(n.Id)
+	updateChan := n.connection.RegisterNode(byte(n.Id))
 	go func() {
 		for {
 			select {
@@ -145,21 +147,36 @@ func (n *Node) Identify(basicDone chan struct{}) {
 			n.pushEvent(events.NodeUpdated{
 				Address: n.Id,
 			})
-
+			continue
 		}
 
-		resp := <-n.connection.SendRaw([]byte{
-			functions.SendData, // Function
-			byte(n.Id),         // Node id
-			0x02,               // Length
-			commands.Version,   // Command
-			0x11,               // VersionCmd_Get
-			0x00,
-			//0x05, // TransmitOptions?
-			//0x23, // Callback?
-		}, time.Second*10) // Request node information
+		// Get node version
+		//resp := <-n.connection.SendRaw([]byte{
+		//functions.SendData, // Function
+		//byte(n.Id),         // Node id
+		//0x02,               // Length
+		//commands.Version,   // Command
+		//0x11,               // VersionCmd_Get
+		//0x00,
+		////0x05, // TransmitOptions?
+		////0x23, // Callback?
+		//}, time.Second*10) // Request node information
+		//logrus.Println("%#v", resp)
 
-		logrus.Println("%#v", resp)
+		// Request node endpoints
+		<-n.isAwake()
+		if n.Endpoints == nil {
+			err := n.RequestEndpoints()
+			if err != nil {
+				<-time.After(time.Second * 10)
+				continue
+			}
+
+			n.pushEvent(events.NodeUpdated{
+				Address: n.Id,
+			})
+			continue
+		}
 
 		//<-self.Connection.SendRaw([]byte{functions.IsFailedNode, byte(index + 1)}) // Request is failed node
 		//	<-self.SendRaw([]byte{0xa0, byte(index + 1)}) // Request ?
@@ -186,6 +203,11 @@ func (self *Node) pushEvent(event interface{}) {
 	select {
 	case self.eventQue <- event:
 	default:
+	}
+
+	switch event.(type) {
+	case events.NodeUpdated:
+		self.connection.ConfigController.SaveConfigurationToFile()
 	}
 }
 

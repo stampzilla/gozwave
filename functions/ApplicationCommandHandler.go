@@ -38,6 +38,11 @@ func (self *FuncApplicationCommandHandler) Decode(data []byte) {
 			self.Data = commands.NewCmdManufacturerSpecific(data[2:])
 			logrus.Debugf("%+v\n", self.Data)
 		}
+	case commands.MultiInstance:
+		switch self.Class {
+		case 0x08: // MultiChannelCmd_EndPointReport
+			self.Data = commands.NewMultiChannelCmdEndPointReport(data[2:])
+		}
 	case commands.SensorMultiLevel:
 		switch self.Class {
 		case 0x05: // Report

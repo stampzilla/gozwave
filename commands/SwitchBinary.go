@@ -14,8 +14,8 @@ func (c *CmdSwitchBinary) SetValue(v bool) *CmdSwitchBinary {
 	c.value = v
 	return c
 }
-func (c *CmdSwitchBinary) SetNode(n byte) *CmdSwitchBinary {
-	c.node = n
+func (c *CmdSwitchBinary) SetNode(n int) *CmdSwitchBinary {
+	c.node = byte(n)
 	return c
 }
 

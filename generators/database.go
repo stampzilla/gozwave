@@ -136,7 +136,7 @@ import (
 	"github.com/stampzilla/gozwave/commands"
 )
 
-type commandClass struct {
+type CommandClass struct {
 	ID         commands.ZWaveCommand
 	Controlled string
 	InNIF      string
@@ -155,7 +155,7 @@ type Device struct{
 	Product string
 	Description string 
 
-	CommandClasses []*commandClass
+	CommandClasses []*CommandClass
 	Parameters []*parameter
 
 	ManufacturerID string
@@ -183,9 +183,9 @@ func New{{ $value.DeviceData.ManufacturerID.Value }}{{ $value.DeviceData.Product
 		ManufacturerID: "{{$value.DeviceData.ManufacturerID.Value }}",
 		ProductType: "{{$value.DeviceData.ProductType.Value }}",
 		ProductID: "{{$value.DeviceData.ProductID.Value }}",
-		CommandClasses: []*commandClass{
+		CommandClasses: []*CommandClass{
 {{- range $cmd := $value.CommandClasses }}
-			&commandClass{
+			&CommandClass{
 				{{- if ne $cmd.ID ""}}
 				ID: {{$cmd.IDasHex}},
 				{{- end }}

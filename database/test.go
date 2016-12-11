@@ -4,7 +4,7 @@ import (
 	"github.com/stampzilla/gozwave/commands"
 )
 
-type commandClass struct {
+type CommandClass struct {
 	ID         commands.ZWaveCommand
 	Controlled string
 	InNIF      string
@@ -23,7 +23,7 @@ type Device struct{
 	Product string
 	Description string 
 
-	CommandClasses []*commandClass
+	CommandClasses []*CommandClass
 	Parameters []*parameter
 
 	ManufacturerID string
@@ -1330,7 +1330,7 @@ func New00000000() *Device{
 		ManufacturerID: "",
 		ProductType: "0000",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
+		CommandClasses: []*CommandClass{
 		},
 	}
 }
@@ -1343,38 +1343,38 @@ func New000000000000() *Device{
 		ManufacturerID: "0000",
 		ProductType: "0000",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0053,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
 		},
@@ -1389,29 +1389,29 @@ func New0000000021ac() *Device{
 		ManufacturerID: "0000",
 		ProductType: "0000",
 		ProductID: "21ac",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0094,
 				Controlled: "true",
 				InNIF: "false",
@@ -1428,184 +1428,184 @@ func New0000000121b4() *Device{
 		ManufacturerID: "0000",
 		ProductType: "0001",
 		ProductID: "21b4",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x004d,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0034,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0052,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0045,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0023,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005f,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0061,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Controlled: "true",
 				Version: "2",
@@ -1622,29 +1622,29 @@ func New0001444d3330() *Device{
 		ManufacturerID: "0001",
 		ProductType: "444d",
 		ProductID: "3330",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -1659,32 +1659,32 @@ func New000144503030() *Device{
 		ManufacturerID: "0001",
 		ProductType: "4450",
 		ProductID: "3030",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -1699,32 +1699,32 @@ func New000144573034() *Device{
 		ManufacturerID: "0001",
 		ProductType: "4457",
 		ProductID: "3034",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
 		},
@@ -1739,29 +1739,29 @@ func New000144573332() *Device{
 		ManufacturerID: "0001",
 		ProductType: "4457",
 		ProductID: "3332",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -1776,32 +1776,32 @@ func New000152463133() *Device{
 		ManufacturerID: "0001",
 		ProductType: "5246",
 		ProductID: "3133",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
 		},
@@ -1816,31 +1816,31 @@ func New0001524d3330() *Device{
 		ManufacturerID: "0001",
 		ProductType: "524d",
 		ProductID: "3330",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
 		},
@@ -1855,35 +1855,35 @@ func New000152503030() *Device{
 		ManufacturerID: "0001",
 		ProductType: "5250",
 		ProductID: "3030",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
 		},
@@ -1898,32 +1898,32 @@ func New000152523130() *Device{
 		ManufacturerID: "0001",
 		ProductType: "5252",
 		ProductID: "3130",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -1938,35 +1938,35 @@ func New000152523534() *Device{
 		ManufacturerID: "0001",
 		ProductType: "5252",
 		ProductID: "3534",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
 		},
@@ -1981,29 +1981,29 @@ func New000152573033() *Device{
 		ManufacturerID: "0001",
 		ProductType: "5257",
 		ProductID: "3033",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
 		},
@@ -2018,35 +2018,35 @@ func New0001544d3330() *Device{
 		ManufacturerID: "0001",
 		ProductType: "544d",
 		ProductID: "3330",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
 		},
@@ -2061,34 +2061,34 @@ func New000154573033() *Device{
 		ManufacturerID: "0001",
 		ProductType: "5457",
 		ProductID: "3033",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -2103,35 +2103,35 @@ func New000157573330() *Device{
 		ManufacturerID: "0001",
 		ProductType: "5757",
 		ProductID: "3330",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
 		},
@@ -2146,52 +2146,52 @@ func New000200038010() *Device{
 		ManufacturerID: "0002",
 		ProductType: "0003",
 		ProductID: "8010",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "6",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0053,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
 		},
@@ -2206,34 +2206,34 @@ func New000200050003() *Device{
 		ManufacturerID: "0002",
 		ProductType: "0005",
 		ProductID: "0003",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0046,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Version: "2",
 			},
@@ -2249,42 +2249,42 @@ func New000200050004() *Device{
 		ManufacturerID: "0002",
 		ProductType: "0005",
 		ProductID: "0004",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0046,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 				Controlled: "true",
 			},
@@ -2300,46 +2300,46 @@ func New00020005017c() *Device{
 		ManufacturerID: "0002",
 		ProductType: "0005",
 		ProductID: "017c",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0046,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "6",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 			},
 		},
@@ -2354,31 +2354,31 @@ func New000200640001() *Device{
 		ManufacturerID: "0002",
 		ProductType: "0064",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0046,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -2393,56 +2393,56 @@ func New00020248a030() *Device{
 		ManufacturerID: "0002",
 		ProductType: "0248",
 		ProductID: "a030",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "7",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
@@ -2460,56 +2460,56 @@ func New00020248a040() *Device{
 		ManufacturerID: "0002",
 		ProductType: "0248",
 		ProductID: "a040",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "7",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
@@ -2526,40 +2526,40 @@ func New000280040001() *Device{
 		ManufacturerID: "0002",
 		ProductType: "8004",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
@@ -2575,30 +2575,30 @@ func New000280042000() *Device{
 		ManufacturerID: "0002",
 		ProductType: "8004",
 		ProductID: "2000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -2613,53 +2613,53 @@ func New000280042010() *Device{
 		ManufacturerID: "0002",
 		ProductType: "8004",
 		ProductID: "2010",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 			},
 		},
@@ -2674,48 +2674,48 @@ func New000280042020() *Device{
 		ManufacturerID: "0002",
 		ProductType: "8004",
 		ProductID: "2020",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				Version: "2",
@@ -2732,37 +2732,37 @@ func New000280050001() *Device{
 		ManufacturerID: "0002",
 		ProductType: "8005",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0046,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Version: "2",
 			},
@@ -2778,24 +2778,24 @@ func New000280070200() *Device{
 		ManufacturerID: "0002",
 		ProductType: "8007",
 		ProductID: "0200",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0037,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0039,
 			},
 		},
@@ -2810,45 +2810,45 @@ func New000550450653() *Device{
 		ManufacturerID: "0005",
 		ProductType: "5045",
 		ProductID: "0653",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 			},
 		},
@@ -2863,53 +2863,53 @@ func New000550450953() *Device{
 		ManufacturerID: "0005",
 		ProductType: "5045",
 		ProductID: "0953",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0021,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0088,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 			},
@@ -2925,76 +2925,76 @@ func New000800010005() *Device{
 		ManufacturerID: "0008",
 		ProductType: "0001",
 		ProductID: "0005",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0021,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 			},
@@ -3010,29 +3010,29 @@ func New000800070020() *Device{
 		ManufacturerID: "0008",
 		ProductType: "0007",
 		ProductID: "0020",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -3047,27 +3047,27 @@ func New0010454d3532() *Device{
 		ManufacturerID: "0010",
 		ProductType: "454d",
 		ProductID: "3532",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -3082,45 +3082,45 @@ func New001045564c32() *Device{
 		ManufacturerID: "0010",
 		ProductType: "4556",
 		ProductID: "4c32",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002d,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0093,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0092,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -3135,42 +3135,42 @@ func New001050533231() *Device{
 		ManufacturerID: "0010",
 		ProductType: "5053",
 		ProductID: "3231",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0040,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -3185,18 +3185,18 @@ func New001a00000000() *Device{
 		ManufacturerID: "001a",
 		ProductType: "0000",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0021,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 			},
 		},
@@ -3211,53 +3211,53 @@ func New001a44490000() *Device{
 		ManufacturerID: "001a",
 		ProductType: "4449",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
 		},
@@ -3272,52 +3272,52 @@ func New001a44490003() *Device{
 		ManufacturerID: "001a",
 		ProductType: "4449",
 		ProductID: "0003",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
 		},
@@ -3332,51 +3332,51 @@ func New001a52440000() *Device{
 		ManufacturerID: "001a",
 		ProductType: "5244",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
 		},
@@ -3391,54 +3391,54 @@ func New001a534c0000() *Device{
 		ManufacturerID: "001a",
 		ProductType: "534c",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0028,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
 		},
@@ -3453,36 +3453,36 @@ func New001a574d0000() *Device{
 		ManufacturerID: "001a",
 		ProductType: "574d",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0021,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002d,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
 		},
@@ -3497,39 +3497,39 @@ func New001d01010316() *Device{
 		ManufacturerID: "001d",
 		ProductType: "0101",
 		ProductID: "0316",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
 		},
@@ -3544,39 +3544,39 @@ func New001d03010209() *Device{
 		ManufacturerID: "001d",
 		ProductType: "0301",
 		ProductID: "0209",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
 		},
@@ -3591,39 +3591,39 @@ func New001d04010209() *Device{
 		ManufacturerID: "001d",
 		ProductType: "0401",
 		ProductID: "0209",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -3638,32 +3638,32 @@ func New001d07020261() *Device{
 		ManufacturerID: "001d",
 		ProductType: "0702",
 		ProductID: "0261",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0082,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002d,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007c,
 			},
 		},
@@ -3678,39 +3678,39 @@ func New001e00020001() *Device{
 		ManufacturerID: "001e",
 		ProductType: "0002",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
 		},
@@ -3725,39 +3725,39 @@ func New001e00020002() *Device{
 		ManufacturerID: "001e",
 		ProductType: "0002",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009b,
 			},
 		},
@@ -3772,55 +3772,55 @@ func New001e00040001() *Device{
 		ManufacturerID: "001e",
 		ProductType: "0004",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "6",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0033,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
@@ -3836,55 +3836,55 @@ func New002080071398() *Device{
 		ManufacturerID: "0020",
 		ProductType: "8007",
 		ProductID: "1398",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0021,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002d,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 			},
@@ -3900,28 +3900,28 @@ func New003000010001() *Device{
 		ManufacturerID: "0030",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
@@ -3939,33 +3939,33 @@ func New003352503031() *Device{
 		ManufacturerID: "0033",
 		ProductType: "5250",
 		ProductID: "3031",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
 		},
@@ -3980,33 +3980,33 @@ func New003352503032() *Device{
 		ManufacturerID: "0033",
 		ProductType: "5250",
 		ProductID: "3032",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
 		},
@@ -4021,8 +4021,8 @@ func New003900000000() *Device{
 		ManufacturerID: "0039",
 		ProductType: "0000",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -4039,51 +4039,51 @@ func New003900010001() *Device{
 		ManufacturerID: "0039",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 				InNIF: "false",
@@ -4100,43 +4100,43 @@ func New003900110001() *Device{
 		ManufacturerID: "0039",
 		ProductType: "0011",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0045,
 			},
 		},
@@ -4151,39 +4151,39 @@ func New003900110003() *Device{
 		ManufacturerID: "0039",
 		ProductType: "0011",
 		ProductID: "0003",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0045,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -4198,30 +4198,30 @@ func New00475a525400() *Device{
 		ManufacturerID: "0047",
 		ProductType: "5a52",
 		ProductID: "5400",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0021,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -4236,56 +4236,56 @@ func New005600010001() *Device{
 		ManufacturerID: "0056",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0021,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 			},
@@ -4301,14 +4301,14 @@ func New005900010001() *Device{
 		ManufacturerID: "0059",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0040,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -4323,11 +4323,11 @@ func New005900010002() *Device{
 		ManufacturerID: "0059",
 		ProductType: "0001",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -4342,41 +4342,41 @@ func New005900010003() *Device{
 		ManufacturerID: "0059",
 		ProductType: "0001",
 		ProductID: "0003",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
 		},
@@ -4391,39 +4391,39 @@ func New005900010004() *Device{
 		ManufacturerID: "0059",
 		ProductType: "0001",
 		ProductID: "0004",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -4438,59 +4438,59 @@ func New005900010005() *Device{
 		ManufacturerID: "0059",
 		ProductType: "0001",
 		ProductID: "0005",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				InNIF: "false",
@@ -4507,20 +4507,20 @@ func New005900020002() *Device{
 		ManufacturerID: "0059",
 		ProductType: "0002",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -4535,21 +4535,21 @@ func New005900030001() *Device{
 		ManufacturerID: "0059",
 		ProductType: "0003",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -4564,21 +4564,21 @@ func New005900030002() *Device{
 		ManufacturerID: "0059",
 		ProductType: "0003",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -4593,43 +4593,43 @@ func New005900040001() *Device{
 		ManufacturerID: "0059",
 		ProductType: "0004",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
 		},
@@ -4644,43 +4644,43 @@ func New005900050001() *Device{
 		ManufacturerID: "0059",
 		ProductType: "0005",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0035,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0036,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Controlled: "true",
 			},
@@ -4696,28 +4696,28 @@ func New005900050005() *Device{
 		ManufacturerID: "0059",
 		ProductType: "0005",
 		ProductID: "0005",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -4732,31 +4732,31 @@ func New0059000d0001() *Device{
 		ManufacturerID: "0059",
 		ProductType: "000d",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -4771,47 +4771,47 @@ func New0059000d0002() *Device{
 		ManufacturerID: "0059",
 		ProductType: "000d",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "6",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
@@ -4827,51 +4827,51 @@ func New0059000d0003() *Device{
 		ManufacturerID: "0059",
 		ProductType: "000d",
 		ProductID: "0003",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "6",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -4886,39 +4886,39 @@ func New0059000e0001() *Device{
 		ManufacturerID: "0059",
 		ProductType: "000e",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -4933,39 +4933,39 @@ func New0059000e0002() *Device{
 		ManufacturerID: "0059",
 		ProductType: "000e",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -4980,38 +4980,38 @@ func New0059000f0001() *Device{
 		ManufacturerID: "0059",
 		ProductType: "000f",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 			},
 		},
@@ -5026,30 +5026,30 @@ func New005900100002() *Device{
 		ManufacturerID: "0059",
 		ProductType: "0010",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0053,
 				Controlled: "true",
 				InNIF: "false",
@@ -5066,56 +5066,56 @@ func New005900110001() *Device{
 		ManufacturerID: "0059",
 		ProductType: "0011",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x003d,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x003c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008a,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -5130,56 +5130,56 @@ func New005900110002() *Device{
 		ManufacturerID: "0059",
 		ProductType: "0011",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x003d,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x003c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008a,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -5194,30 +5194,30 @@ func New006000010001() *Device{
 		ManufacturerID: "0060",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
 		},
@@ -5232,34 +5232,34 @@ func New006000010002() *Device{
 		ManufacturerID: "0060",
 		ProductType: "0001",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
@@ -5275,30 +5275,30 @@ func New006000020001() *Device{
 		ManufacturerID: "0060",
 		ProductType: "0002",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -5313,29 +5313,29 @@ func New006000030001() *Device{
 		ManufacturerID: "0060",
 		ProductType: "0003",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
@@ -5351,50 +5351,50 @@ func New006000030002() *Device{
 		ManufacturerID: "0060",
 		ProductType: "0003",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
@@ -5410,50 +5410,50 @@ func New006000030003() *Device{
 		ManufacturerID: "0060",
 		ProductType: "0003",
 		ProductID: "0003",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
@@ -5469,31 +5469,31 @@ func New006000040001() *Device{
 		ManufacturerID: "0060",
 		ProductType: "0004",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
 		},
@@ -5508,31 +5508,31 @@ func New006000040002() *Device{
 		ManufacturerID: "0060",
 		ProductType: "0004",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
 		},
@@ -5547,57 +5547,57 @@ func New006000040006() *Device{
 		ManufacturerID: "0060",
 		ProductType: "0004",
 		ProductID: "0006",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
@@ -5613,50 +5613,50 @@ func New006000040007() *Device{
 		ManufacturerID: "0060",
 		ProductType: "0004",
 		ProductID: "0007",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
@@ -5672,50 +5672,50 @@ func New006000040008() *Device{
 		ManufacturerID: "0060",
 		ProductType: "0004",
 		ProductID: "0008",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
@@ -5731,39 +5731,39 @@ func New006000060001() *Device{
 		ManufacturerID: "0060",
 		ProductType: "0006",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -5778,35 +5778,35 @@ func New006000070001() *Device{
 		ManufacturerID: "0060",
 		ProductType: "0007",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
 		},
@@ -5821,31 +5821,31 @@ func New0060000b0001() *Device{
 		ManufacturerID: "0060",
 		ProductType: "000b",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 			},
 		},
@@ -5860,27 +5860,27 @@ func New0060000c0001() *Device{
 		ManufacturerID: "0060",
 		ProductType: "000c",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -5895,27 +5895,27 @@ func New0060000d0001() *Device{
 		ManufacturerID: "0060",
 		ProductType: "000d",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -5930,44 +5930,44 @@ func New0060000e0001() *Device{
 		ManufacturerID: "0060",
 		ProductType: "000e",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 			},
@@ -5983,24 +5983,24 @@ func New006000100001() *Device{
 		ManufacturerID: "0060",
 		ProductType: "0010",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
 		},
@@ -6015,29 +6015,29 @@ func New006001010001() *Device{
 		ManufacturerID: "0060",
 		ProductType: "0101",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -6052,34 +6052,34 @@ func New006001030001() *Device{
 		ManufacturerID: "0060",
 		ProductType: "0103",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "0",
 			},
@@ -6095,29 +6095,29 @@ func New006002020001() *Device{
 		ManufacturerID: "0060",
 		ProductType: "0202",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -6132,29 +6132,29 @@ func New006344503030() *Device{
 		ManufacturerID: "0063",
 		ProductType: "4450",
 		ProductID: "3030",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
 		},
@@ -6169,36 +6169,36 @@ func New006344503130() *Device{
 		ManufacturerID: "0063",
 		ProductType: "4450",
 		ProductID: "3130",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -6213,23 +6213,23 @@ func New006344573230() *Device{
 		ManufacturerID: "0063",
 		ProductType: "4457",
 		ProductID: "3230",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
 		},
@@ -6244,54 +6244,54 @@ func New006350443131() *Device{
 		ManufacturerID: "0063",
 		ProductType: "5044",
 		ProductID: "3131",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -6306,29 +6306,29 @@ func New006352503030() *Device{
 		ManufacturerID: "0063",
 		ProductType: "5250",
 		ProductID: "3030",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -6343,27 +6343,27 @@ func New006352503031() *Device{
 		ManufacturerID: "0063",
 		ProductType: "5250",
 		ProductID: "3031",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -6378,29 +6378,29 @@ func New006352503130() *Device{
 		ManufacturerID: "0063",
 		ProductType: "5250",
 		ProductID: "3130",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -6415,32 +6415,32 @@ func New006352523530() *Device{
 		ManufacturerID: "0063",
 		ProductType: "5252",
 		ProductID: "3530",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -6455,29 +6455,29 @@ func New006352573533() *Device{
 		ManufacturerID: "0063",
 		ProductType: "5257",
 		ProductID: "3533",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
 		},
@@ -6492,35 +6492,35 @@ func New006400010000() *Device{
 		ManufacturerID: "0064",
 		ProductType: "0001",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
 		},
@@ -6535,60 +6535,60 @@ func New006410000002() *Device{
 		ManufacturerID: "0064",
 		ProductType: "1000",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002d,
 			},
 		},
@@ -6603,29 +6603,29 @@ func New006410010000() *Device{
 		ManufacturerID: "0064",
 		ProductType: "1001",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
 		},
@@ -6640,34 +6640,34 @@ func New006420010000() *Device{
 		ManufacturerID: "0064",
 		ProductType: "2001",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
 		},
@@ -6682,29 +6682,29 @@ func New006430010000() *Device{
 		ManufacturerID: "0064",
 		ProductType: "3001",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
 		},
@@ -6719,38 +6719,38 @@ func New006440010000() *Device{
 		ManufacturerID: "0064",
 		ProductType: "4001",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
 		},
@@ -6765,15 +6765,15 @@ func New006450010000() *Device{
 		ManufacturerID: "0064",
 		ProductType: "5001",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -6788,19 +6788,19 @@ func New006450020000() *Device{
 		ManufacturerID: "0064",
 		ProductType: "5002",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 			},
@@ -6816,31 +6816,31 @@ func New006450030000() *Device{
 		ManufacturerID: "0064",
 		ProductType: "5003",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -6855,7 +6855,7 @@ func New006800000000() *Device{
 		ManufacturerID: "0068",
 		ProductType: "0000",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
+		CommandClasses: []*CommandClass{
 		},
 	}
 }
@@ -6868,25 +6868,25 @@ func New006800000004() *Device{
 		ManufacturerID: "0068",
 		ProductType: "0000",
 		ProductID: "0004",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 			},
 		},
@@ -6901,20 +6901,20 @@ func New006800000005() *Device{
 		ManufacturerID: "0068",
 		ProductType: "0000",
 		ProductID: "0005",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -6929,21 +6929,21 @@ func New006800000006() *Device{
 		ManufacturerID: "0068",
 		ProductType: "0000",
 		ProductID: "0006",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
@@ -6959,19 +6959,19 @@ func New006b00000000() *Device{
 		ManufacturerID: "006b",
 		ProductType: "0000",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0021,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -6986,30 +6986,30 @@ func New00710002035d() *Device{
 		ManufacturerID: "0071",
 		ProductType: "0002",
 		ProductID: "035d",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -7024,30 +7024,30 @@ func New00710004035d() *Device{
 		ManufacturerID: "0071",
 		ProductType: "0004",
 		ProductID: "035d",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -7062,30 +7062,30 @@ func New00710005035d() *Device{
 		ManufacturerID: "0071",
 		ProductType: "0005",
 		ProductID: "035d",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -7100,27 +7100,27 @@ func New007a00000000() *Device{
 		ManufacturerID: "007a",
 		ProductType: "0000",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007b,
 			},
 		},
@@ -7135,23 +7135,23 @@ func New007a00010002() *Device{
 		ManufacturerID: "007a",
 		ProductType: "0001",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -7166,23 +7166,23 @@ func New007a00010004() *Device{
 		ManufacturerID: "007a",
 		ProductType: "0001",
 		ProductID: "0004",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -7197,23 +7197,23 @@ func New007a00020001() *Device{
 		ManufacturerID: "007a",
 		ProductType: "0002",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -7228,53 +7228,53 @@ func New007a00020004() *Device{
 		ManufacturerID: "007a",
 		ProductType: "0002",
 		ProductID: "0004",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0021,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 				Controlled: "true",
 			},
@@ -7290,29 +7290,29 @@ func New007a00030004() *Device{
 		ManufacturerID: "007a",
 		ProductType: "0003",
 		ProductID: "0004",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -7327,37 +7327,37 @@ func New007a40020001() *Device{
 		ManufacturerID: "007a",
 		ProductType: "4002",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0028,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
 		},
@@ -7372,37 +7372,37 @@ func New007a40030001() *Device{
 		ManufacturerID: "007a",
 		ProductType: "4003",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0028,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
 		},
@@ -7417,38 +7417,38 @@ func New007a40030002() *Device{
 		ManufacturerID: "007a",
 		ProductType: "4003",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0029,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
 		},
@@ -7463,47 +7463,47 @@ func New007a40040001() *Device{
 		ManufacturerID: "007a",
 		ProductType: "4004",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0050,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009e,
 				Version: "0",
 			},
@@ -7519,35 +7519,35 @@ func New007a80010001() *Device{
 		ManufacturerID: "007a",
 		ProductType: "8001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0028,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
 		},
@@ -7562,35 +7562,35 @@ func New007a80018002() *Device{
 		ManufacturerID: "007a",
 		ProductType: "8001",
 		ProductID: "8002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0028,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
 		},
@@ -7605,35 +7605,35 @@ func New007a80018003() *Device{
 		ManufacturerID: "007a",
 		ProductType: "8001",
 		ProductID: "8003",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0028,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
 		},
@@ -7648,39 +7648,39 @@ func New007a80018004() *Device{
 		ManufacturerID: "007a",
 		ProductType: "8001",
 		ProductID: "8004",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0028,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
 		},
@@ -7695,35 +7695,35 @@ func New007a80020001() *Device{
 		ManufacturerID: "007a",
 		ProductType: "8002",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0029,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
 		},
@@ -7738,47 +7738,47 @@ func New007a80030001() *Device{
 		ManufacturerID: "007a",
 		ProductType: "8003",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0050,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				InNIF: "false",
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009e,
 				InNIF: "false",
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
 		},
@@ -7793,151 +7793,151 @@ func New007f00010001() *Device{
 		ManufacturerID: "007f",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0022,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0021,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x004d,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0034,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0054,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0045,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "3",
 			},
@@ -7953,37 +7953,37 @@ func New008000040001() *Device{
 		ManufacturerID: "0080",
 		ProductType: "0004",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 			},
 		},
@@ -7998,28 +7998,28 @@ func New008100140001() *Device{
 		ManufacturerID: "0081",
 		ProductType: "0014",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
 		},
@@ -8034,27 +8034,27 @@ func New008100a00001() *Device{
 		ManufacturerID: "0081",
 		ProductType: "00a0",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009e,
 			},
 		},
@@ -8069,36 +8069,36 @@ func New008400210109() *Device{
 		ManufacturerID: "0084",
 		ProductType: "0021",
 		ProductID: "0109",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -8113,35 +8113,35 @@ func New00840021010a() *Device{
 		ManufacturerID: "0084",
 		ProductType: "0021",
 		ProductID: "010a",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -8156,36 +8156,36 @@ func New00840023010a() *Device{
 		ManufacturerID: "0084",
 		ProductType: "0023",
 		ProductID: "010a",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -8200,26 +8200,26 @@ func New008403130108() *Device{
 		ManufacturerID: "0084",
 		ProductType: "0313",
 		ProductID: "0108",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 			},
@@ -8235,47 +8235,47 @@ func New008500030001() *Device{
 		ManufacturerID: "0085",
 		ProductType: "0003",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Secure: true,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 			},
@@ -8291,27 +8291,27 @@ func New008500160001() *Device{
 		ManufacturerID: "0085",
 		ProductType: "0016",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -8326,35 +8326,35 @@ func New008600000000() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0000",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
@@ -8370,26 +8370,26 @@ func New008600010003() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0001",
 		ProductID: "0003",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -8404,52 +8404,52 @@ func New008600010058() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0001",
 		ProductID: "0058",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -8466,7 +8466,7 @@ func New00860001005a() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0001",
 		ProductID: "005a",
-		CommandClasses: []*commandClass{
+		CommandClasses: []*CommandClass{
 		},
 	}
 }
@@ -8479,8 +8479,8 @@ func New008600020001() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0002",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -8495,32 +8495,32 @@ func New008600020004() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0002",
 		ProductID: "0004",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -8535,35 +8535,35 @@ func New008600020005() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0002",
 		ProductID: "0005",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -8578,38 +8578,38 @@ func New008600020009() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0002",
 		ProductID: "0009",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -8624,29 +8624,29 @@ func New00860002001c() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0002",
 		ProductID: "001c",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
@@ -8662,31 +8662,31 @@ func New008600020036() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0002",
 		ProductID: "0036",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
@@ -8702,75 +8702,75 @@ func New00860002004a() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0002",
 		ProductID: "004a",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Secure: true,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
 		},
@@ -8785,63 +8785,63 @@ func New008600020059() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0002",
 		ProductID: "0059",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 			},
@@ -8857,68 +8857,68 @@ func New008600020064() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0002",
 		ProductID: "0064",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 			},
@@ -8934,35 +8934,35 @@ func New008600030006() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0003",
 		ProductID: "0006",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
 		},
@@ -8977,45 +8977,45 @@ func New00860003000a() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0003",
 		ProductID: "000a",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 				Controlled: "true",
 			},
@@ -9031,41 +9031,41 @@ func New00860003000b() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0003",
 		ProductID: "000b",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x00ef,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 			},
 		},
@@ -9080,35 +9080,35 @@ func New00860003000c() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0003",
 		ProductID: "000c",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
 		},
@@ -9123,35 +9123,35 @@ func New00860003000d() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0003",
 		ProductID: "000d",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -9166,41 +9166,41 @@ func New00860003000e() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0003",
 		ProductID: "000e",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				InNIF: "false",
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
 		},
@@ -9215,43 +9215,43 @@ func New008600030018() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0003",
 		ProductID: "0018",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x00ef,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 			},
 		},
@@ -9266,34 +9266,34 @@ func New00860003001a() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0003",
 		ProductID: "001a",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
 		},
@@ -9308,67 +9308,67 @@ func New00860003003e() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0003",
 		ProductID: "003e",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0066,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
@@ -9384,74 +9384,74 @@ func New00860003004b() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0003",
 		ProductID: "004b",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 				Controlled: "true",
 				Secure: true,
@@ -9468,79 +9468,79 @@ func New00860003004e() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0003",
 		ProductID: "004e",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "5",
 			},
@@ -9556,68 +9556,68 @@ func New008600030060() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0003",
 		ProductID: "0060",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
@@ -9633,65 +9633,65 @@ func New008600030062() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0003",
 		ProductID: "0062",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0033,
 			},
 		},
@@ -9706,60 +9706,60 @@ func New008600030063() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0003",
 		ProductID: "0063",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 				Controlled: "true",
 			},
@@ -9775,24 +9775,24 @@ func New008600040025() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0004",
 		ProductID: "0025",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -9807,62 +9807,62 @@ func New008600040050() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0004",
 		ProductID: "0050",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 			},
@@ -9878,52 +9878,52 @@ func New008601010058() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0101",
 		ProductID: "0058",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -9940,7 +9940,7 @@ func New00860101005a() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0101",
 		ProductID: "005a",
-		CommandClasses: []*commandClass{
+		CommandClasses: []*CommandClass{
 		},
 	}
 }
@@ -9953,75 +9953,75 @@ func New00860102004a() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0102",
 		ProductID: "004a",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Secure: true,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
 		},
@@ -10036,63 +10036,63 @@ func New008601020059() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0102",
 		ProductID: "0059",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 			},
@@ -10108,60 +10108,60 @@ func New00860102005f() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0102",
 		ProductID: "005f",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "3",
 			},
@@ -10177,68 +10177,68 @@ func New008601020064() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0102",
 		ProductID: "0064",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 			},
@@ -10254,67 +10254,67 @@ func New00860103003e() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0103",
 		ProductID: "003e",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0066,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
@@ -10330,74 +10330,74 @@ func New00860103004b() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0103",
 		ProductID: "004b",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 				Controlled: "true",
 				Secure: true,
@@ -10414,79 +10414,79 @@ func New00860103004e() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0103",
 		ProductID: "004e",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "5",
 			},
@@ -10502,75 +10502,75 @@ func New008601030060() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0103",
 		ProductID: "0060",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0033,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
@@ -10586,71 +10586,71 @@ func New008601030062() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0103",
 		ProductID: "0062",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0033,
 			},
 		},
@@ -10665,53 +10665,53 @@ func New008601040038() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0104",
 		ProductID: "0038",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0090,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Secure: true,
 				Version: "2",
@@ -10728,61 +10728,61 @@ func New008601040050() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0104",
 		ProductID: "0050",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 			},
@@ -10798,52 +10798,52 @@ func New008602010058() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0201",
 		ProductID: "0058",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -10860,7 +10860,7 @@ func New00860201005a() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0201",
 		ProductID: "005a",
-		CommandClasses: []*commandClass{
+		CommandClasses: []*CommandClass{
 		},
 	}
 }
@@ -10873,75 +10873,75 @@ func New00860202004a() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0202",
 		ProductID: "004a",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Secure: true,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
 		},
@@ -10956,63 +10956,63 @@ func New008602020059() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0202",
 		ProductID: "0059",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 			},
@@ -11028,68 +11028,68 @@ func New008602020064() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0202",
 		ProductID: "0064",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 			},
@@ -11105,67 +11105,67 @@ func New00860203003e() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0203",
 		ProductID: "003e",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0066,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
@@ -11181,74 +11181,74 @@ func New00860203004b() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0203",
 		ProductID: "004b",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 				Controlled: "true",
 				Secure: true,
@@ -11265,79 +11265,79 @@ func New00860203004e() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0203",
 		ProductID: "004e",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "5",
 			},
@@ -11353,69 +11353,69 @@ func New008602030060() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0203",
 		ProductID: "0060",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
@@ -11431,68 +11431,68 @@ func New008602030062() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0203",
 		ProductID: "0062",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0033,
 			},
 		},
@@ -11507,61 +11507,61 @@ func New008602040050() *Device{
 		ManufacturerID: "0086",
 		ProductType: "0204",
 		ProductID: "0050",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 			},
@@ -11577,33 +11577,33 @@ func New008900010101() *Device{
 		ManufacturerID: "0089",
 		ProductType: "0001",
 		ProductID: "0101",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
 		},
@@ -11618,33 +11618,33 @@ func New008900020101() *Device{
 		ManufacturerID: "0089",
 		ProductType: "0002",
 		ProductID: "0101",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
 		},
@@ -11659,18 +11659,18 @@ func New008900030001() *Device{
 		ManufacturerID: "0089",
 		ProductType: "0003",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -11685,18 +11685,18 @@ func New008900030101() *Device{
 		ManufacturerID: "0089",
 		ProductType: "0003",
 		ProductID: "0101",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -11711,111 +11711,111 @@ func New008a00010100() *Device{
 		ManufacturerID: "008a",
 		ProductType: "0001",
 		ProductID: "0100",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0092,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Controlled: "true",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0093,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 			},
@@ -11831,40 +11831,40 @@ func New008a00020100() *Device{
 		ManufacturerID: "008a",
 		ProductType: "0002",
 		ProductID: "0100",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0093,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0092,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 				Controlled: "true",
 			},
@@ -11880,40 +11880,40 @@ func New008a00030100() *Device{
 		ManufacturerID: "008a",
 		ProductType: "0003",
 		ProductID: "0100",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
 		},
@@ -11928,35 +11928,35 @@ func New008a00040100() *Device{
 		ManufacturerID: "008a",
 		ProductType: "0004",
 		ProductID: "0100",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
@@ -11972,37 +11972,37 @@ func New008a00060100() *Device{
 		ManufacturerID: "008a",
 		ProductType: "0006",
 		ProductID: "0100",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
 		},
@@ -12017,38 +12017,38 @@ func New008a00070100() *Device{
 		ManufacturerID: "008a",
 		ProductType: "0007",
 		ProductID: "0100",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
 		},
@@ -12063,33 +12063,33 @@ func New008a00080100() *Device{
 		ManufacturerID: "008a",
 		ProductType: "0008",
 		ProductID: "0100",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
 		},
@@ -12104,38 +12104,38 @@ func New008a00180100() *Device{
 		ManufacturerID: "008a",
 		ProductType: "0018",
 		ProductID: "0100",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
@@ -12151,20 +12151,20 @@ func New008c00010001() *Device{
 		ManufacturerID: "008c",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0021,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 			},
 		},
@@ -12179,39 +12179,39 @@ func New008e01010101() *Device{
 		ManufacturerID: "008e",
 		ProductType: "0101",
 		ProductID: "0101",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0028,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 			},
 		},
@@ -12226,87 +12226,87 @@ func New009000010001() *Device{
 		ManufacturerID: "0090",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x004e,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x004c,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008b,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005d,
 				InNIF: "false",
 				Secure: true,
@@ -12325,80 +12325,80 @@ func New009000010236() *Device{
 		ManufacturerID: "0090",
 		ProductType: "0001",
 		ProductID: "0236",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x004e,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x004c,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008b,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005d,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 				NonSecure: false,
@@ -12415,25 +12415,25 @@ func New009201010001() *Device{
 		ManufacturerID: "0092",
 		ProductType: "0101",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
 		},
@@ -12448,28 +12448,28 @@ func New009201020002() *Device{
 		ManufacturerID: "0092",
 		ProductType: "0102",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
 		},
@@ -12484,178 +12484,178 @@ func New009400010101() *Device{
 		ManufacturerID: "0094",
 		ProductType: "0001",
 		ProductID: "0101",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0021,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x004e,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0045,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0047,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008b,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
@@ -12673,64 +12673,64 @@ func New009400010102() *Device{
 		ManufacturerID: "0094",
 		ProductType: "0001",
 		ProductID: "0102",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0021,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -12747,40 +12747,40 @@ func New009500000000() *Device{
 		ManufacturerID: "0095",
 		ProductType: "0000",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0021,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002d,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 				Controlled: "true",
 			},
@@ -12796,44 +12796,44 @@ func New009500010000() *Device{
 		ManufacturerID: "0095",
 		ProductType: "0001",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002d,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 				Controlled: "true",
 				InNIF: "false",
@@ -12850,32 +12850,32 @@ func New009500010001() *Device{
 		ManufacturerID: "0095",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002d,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Version: "2",
 			},
@@ -12891,45 +12891,45 @@ func New009500030000() *Device{
 		ManufacturerID: "0095",
 		ProductType: "0003",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x00ef,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
@@ -12945,39 +12945,39 @@ func New009531010001() *Device{
 		ManufacturerID: "0095",
 		ProductType: "3101",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
 		},
@@ -12992,39 +12992,39 @@ func New009531030001() *Device{
 		ManufacturerID: "0095",
 		ProductType: "3103",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
 		},
@@ -13039,44 +13039,44 @@ func New009600010001() *Device{
 		ManufacturerID: "0096",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x003d,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
@@ -13092,44 +13092,44 @@ func New009600100001() *Device{
 		ManufacturerID: "0096",
 		ProductType: "0010",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x003d,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
@@ -13145,30 +13145,30 @@ func New009700000000() *Device{
 		ManufacturerID: "0097",
 		ProductType: "0000",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
@@ -13184,59 +13184,59 @@ func New009700240045() *Device{
 		ManufacturerID: "0097",
 		ProductType: "0024",
 		ProductID: "0045",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 			},
@@ -13252,32 +13252,32 @@ func New009711824501() *Device{
 		ManufacturerID: "0097",
 		ProductType: "1182",
 		ProductID: "4501",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -13292,38 +13292,38 @@ func New009761315101() *Device{
 		ManufacturerID: "0097",
 		ProductType: "6131",
 		ProductID: "5101",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -13338,36 +13338,36 @@ func New009769415501() *Device{
 		ManufacturerID: "0097",
 		ProductType: "6941",
 		ProductID: "5501",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
 		},
@@ -13382,41 +13382,41 @@ func New00980001001e() *Device{
 		ManufacturerID: "0098",
 		ProductType: "0001",
 		ProductID: "001e",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0093,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0092,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 			},
 		},
@@ -13431,51 +13431,51 @@ func New00981e12015e() *Device{
 		ManufacturerID: "0098",
 		ProductType: "1e12",
 		ProductID: "015e",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0045,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
 		},
@@ -13490,74 +13490,74 @@ func New009820020100() *Device{
 		ManufacturerID: "0098",
 		ProductType: "2002",
 		ProductID: "0100",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005d,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0045,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
@@ -13573,75 +13573,75 @@ func New009820120100() *Device{
 		ManufacturerID: "0098",
 		ProductType: "2012",
 		ProductID: "0100",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005d,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0045,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
@@ -13657,53 +13657,53 @@ func New009850020100() *Device{
 		ManufacturerID: "0098",
 		ProductType: "5002",
 		ProductID: "0100",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0088,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0092,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0093,
 			},
 		},
@@ -13718,54 +13718,54 @@ func New009864010015() *Device{
 		ManufacturerID: "0098",
 		ProductType: "6401",
 		ProductID: "0015",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0045,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 			},
 		},
@@ -13780,58 +13780,58 @@ func New00986501000d() *Device{
 		ManufacturerID: "0098",
 		ProductType: "6501",
 		ProductID: "000d",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0045,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005d,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
@@ -13847,78 +13847,78 @@ func New00986e010100() *Device{
 		ManufacturerID: "0098",
 		ProductType: "6e01",
 		ProductID: "0100",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005d,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0045,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
@@ -13934,82 +13934,82 @@ func New0098c801000c() *Device{
 		ManufacturerID: "0098",
 		ProductType: "c801",
 		ProductID: "000c",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005d,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "6",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0045,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
@@ -14025,126 +14025,126 @@ func New009900010002() *Device{
 		ManufacturerID: "0099",
 		ProductType: "0001",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0092,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x003d,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0045,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
@@ -14161,117 +14161,117 @@ func New00990001a001() *Device{
 		ManufacturerID: "0099",
 		ProductType: "0001",
 		ProductID: "a001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "7",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				InNIF: "false",
@@ -14289,43 +14289,43 @@ func New009900020002() *Device{
 		ManufacturerID: "0099",
 		ProductType: "0002",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "2",
 			},
@@ -14341,48 +14341,48 @@ func New009900030004() *Device{
 		ManufacturerID: "0099",
 		ProductType: "0003",
 		ProductID: "0004",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 			},
 		},
@@ -14397,38 +14397,38 @@ func New009900060001() *Device{
 		ManufacturerID: "0099",
 		ProductType: "0006",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0093,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0092,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
 		},
@@ -14443,54 +14443,54 @@ func New00a500010001() *Device{
 		ManufacturerID: "00a5",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
 		},
@@ -14505,60 +14505,60 @@ func New00a500020001() *Device{
 		ManufacturerID: "00a5",
 		ProductType: "0002",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 			},
@@ -14574,69 +14574,69 @@ func New00a500020002() *Device{
 		ManufacturerID: "00a5",
 		ProductType: "0002",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 			},
@@ -14652,69 +14652,69 @@ func New00a500020003() *Device{
 		ManufacturerID: "00a5",
 		ProductType: "0002",
 		ProductID: "0003",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 			},
@@ -14730,27 +14730,27 @@ func New010000010020() *Device{
 		ManufacturerID: "0100",
 		ProductType: "0001",
 		ProductID: "0020",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0088,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0094,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 			},
@@ -14766,21 +14766,21 @@ func New010200010001() *Device{
 		ManufacturerID: "0102",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0094,
 				Controlled: "true",
 			},
@@ -14796,46 +14796,46 @@ func New010300010002() *Device{
 		ManufacturerID: "0103",
 		ProductType: "0001",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 				Controlled: "true",
 				InNIF: "false",
@@ -14852,40 +14852,40 @@ func New010300020002() *Device{
 		ManufacturerID: "0103",
 		ProductType: "0002",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 				Controlled: "true",
 				InNIF: "false",
@@ -14902,83 +14902,83 @@ func New01080002000d() *Device{
 		ManufacturerID: "0108",
 		ProductType: "0002",
 		ProductID: "000d",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				InNIF: "false",
 				Secure: true,
@@ -14997,83 +14997,83 @@ func New01080002000e() *Device{
 		ManufacturerID: "0108",
 		ProductType: "0002",
 		ProductID: "000e",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				InNIF: "false",
 				Secure: true,
@@ -15092,72 +15092,72 @@ func New010800200001() *Device{
 		ManufacturerID: "0108",
 		ProductType: "0020",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				Version: "2",
@@ -15174,150 +15174,150 @@ func New010828010001() *Device{
 		ManufacturerID: "0108",
 		ProductType: "2801",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0066,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002d,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x004e,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008a,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008b,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
@@ -15333,7 +15333,7 @@ func New010900000000() *Device{
 		ManufacturerID: "0109",
 		ProductType: "0000",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
+		CommandClasses: []*CommandClass{
 		},
 	}
 }
@@ -15346,22 +15346,22 @@ func New01090002ffff() *Device{
 		ManufacturerID: "0109",
 		ProductType: "0002",
 		ProductID: "ffff",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -15376,7 +15376,7 @@ func New010910010102() *Device{
 		ManufacturerID: "0109",
 		ProductType: "1001",
 		ProductID: "0102",
-		CommandClasses: []*commandClass{
+		CommandClasses: []*CommandClass{
 		},
 	}
 }
@@ -15389,54 +15389,54 @@ func New010910020202() *Device{
 		ManufacturerID: "0109",
 		ProductType: "1002",
 		ProductID: "0202",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 				InNIF: "false",
@@ -15453,50 +15453,50 @@ func New010910040402() *Device{
 		ManufacturerID: "0109",
 		ProductType: "1004",
 		ProductID: "0402",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 				Controlled: "true",
 				InNIF: "false",
@@ -15513,32 +15513,32 @@ func New010920010101() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2001",
 		ProductID: "0101",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -15553,34 +15553,34 @@ func New010920010102() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2001",
 		ProductID: "0102",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -15595,31 +15595,31 @@ func New010920010104() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2001",
 		ProductID: "0104",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -15634,51 +15634,51 @@ func New010920010105() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2001",
 		ProductID: "0105",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -15695,75 +15695,75 @@ func New010920010106() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2001",
 		ProductID: "0106",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -15780,64 +15780,64 @@ func New0109200101a1() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2001",
 		ProductID: "01a1",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Secure: true,
 				NonSecure: false,
@@ -15855,32 +15855,32 @@ func New010920020201() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2002",
 		ProductID: "0201",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -15895,33 +15895,33 @@ func New010920020202() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2002",
 		ProductID: "0202",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -15936,39 +15936,39 @@ func New010920020203() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2002",
 		ProductID: "0203",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -15983,38 +15983,38 @@ func New010920020204() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2002",
 		ProductID: "0204",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -16029,81 +16029,81 @@ func New010920020205() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2002",
 		ProductID: "0205",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Secure: true,
 				NonSecure: false,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -16120,33 +16120,33 @@ func New010920030302() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2003",
 		ProductID: "0302",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -16161,29 +16161,29 @@ func New010920040403() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2004",
 		ProductID: "0403",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -16198,47 +16198,47 @@ func New010920040404() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2004",
 		ProductID: "0404",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -16253,48 +16253,48 @@ func New0109200404a4() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2004",
 		ProductID: "04a4",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -16309,24 +16309,24 @@ func New010920050503() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2005",
 		ProductID: "0503",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -16341,50 +16341,50 @@ func New010920050505() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2005",
 		ProductID: "0505",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -16399,53 +16399,53 @@ func New010920050508() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2005",
 		ProductID: "0508",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -16460,30 +16460,30 @@ func New010920060610() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2006",
 		ProductID: "0610",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0076,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
 		},
@@ -16498,62 +16498,62 @@ func New010920060620() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2006",
 		ProductID: "0620",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008b,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x004c,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x004e,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
 		},
@@ -16568,23 +16568,23 @@ func New010920070703() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2007",
 		ProductID: "0703",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -16599,46 +16599,46 @@ func New010920070706() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2007",
 		ProductID: "0706",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -16653,23 +16653,23 @@ func New010920080803() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2008",
 		ProductID: "0803",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -16684,20 +16684,20 @@ func New010920090901() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2009",
 		ProductID: "0901",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -16712,66 +16712,66 @@ func New010920090908() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2009",
 		ProductID: "0908",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -16786,33 +16786,33 @@ func New0109200a0a02() *Device{
 		ManufacturerID: "0109",
 		ProductType: "200a",
 		ProductID: "0a02",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -16827,26 +16827,26 @@ func New0109200c0c02() *Device{
 		ManufacturerID: "0109",
 		ProductType: "200c",
 		ProductID: "0c02",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -16861,50 +16861,50 @@ func New0109200c0c06() *Device{
 		ManufacturerID: "0109",
 		ProductType: "200c",
 		ProductID: "0c06",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
 		},
@@ -16919,32 +16919,32 @@ func New0109200f0f02() *Device{
 		ManufacturerID: "0109",
 		ProductType: "200f",
 		ProductID: "0f02",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 			},
 		},
@@ -16959,71 +16959,71 @@ func New0109200f0f04() *Device{
 		ManufacturerID: "0109",
 		ProductType: "200f",
 		ProductID: "0f04",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -17040,17 +17040,17 @@ func New010920121203() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2012",
 		ProductID: "1203",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
@@ -17066,37 +17066,37 @@ func New010920121206() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2012",
 		ProductID: "1206",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -17111,45 +17111,45 @@ func New010920121207() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2012",
 		ProductID: "1207",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Secure: true,
 				NonSecure: false,
@@ -17166,28 +17166,28 @@ func New010920141401() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2014",
 		ProductID: "1401",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
 		},
@@ -17202,27 +17202,27 @@ func New010920171717() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2017",
 		ProductID: "1717",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -17237,77 +17237,77 @@ func New010920171719() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2017",
 		ProductID: "1719",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Secure: true,
 				NonSecure: false,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Secure: true,
 				NonSecure: false,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -17322,71 +17322,71 @@ func New010920181805() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2018",
 		ProductID: "1805",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Secure: true,
 				NonSecure: false,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 				Secure: true,
@@ -17404,53 +17404,53 @@ func New0109201a1a02() *Device{
 		ManufacturerID: "0109",
 		ProductType: "201a",
 		ProductID: "1a02",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -17465,55 +17465,55 @@ func New0109201b1b02() *Device{
 		ManufacturerID: "0109",
 		ProductType: "201b",
 		ProductID: "1b02",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0021,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
@@ -17529,70 +17529,70 @@ func New0109201c1c03() *Device{
 		ManufacturerID: "0109",
 		ProductType: "201c",
 		ProductID: "1c03",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -17609,85 +17609,85 @@ func New0109201f1f10() *Device{
 		ManufacturerID: "0109",
 		ProductType: "201f",
 		ProductID: "1f10",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Secure: true,
 				NonSecure: false,
 				Version: "7",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
 		},
@@ -17702,58 +17702,58 @@ func New0109201f1f20() *Device{
 		ManufacturerID: "0109",
 		ProductType: "201f",
 		ProductID: "1f20",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "7",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -17770,60 +17770,60 @@ func New010920212101() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2021",
 		ProductID: "2101",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "7",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
 		},
@@ -17838,70 +17838,70 @@ func New010920222201() *Device{
 		ManufacturerID: "0109",
 		ProductType: "2022",
 		ProductID: "2201",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -17920,21 +17920,21 @@ func New010930010104() *Device{
 		ManufacturerID: "0109",
 		ProductType: "3001",
 		ProductID: "0104",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -17949,43 +17949,43 @@ func New010a11004900() *Device{
 		ManufacturerID: "010a",
 		ProductType: "1100",
 		ProductID: "4900",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
@@ -18001,43 +18001,43 @@ func New010a11004a00() *Device{
 		ManufacturerID: "010a",
 		ProductType: "1100",
 		ProductID: "4a00",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
@@ -18053,43 +18053,43 @@ func New010a12005100() *Device{
 		ManufacturerID: "010a",
 		ProductType: "1200",
 		ProductID: "5100",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
@@ -18105,42 +18105,42 @@ func New010a12005200() *Device{
 		ManufacturerID: "010a",
 		ProductType: "1200",
 		ProductID: "5200",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
@@ -18156,47 +18156,47 @@ func New010a13005a00() *Device{
 		ManufacturerID: "010a",
 		ProductType: "1300",
 		ProductID: "5a00",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
@@ -18212,28 +18212,28 @@ func New010b43110001() *Device{
 		ManufacturerID: "010b",
 		ProductType: "4311",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -18248,130 +18248,130 @@ func New010c00010001() *Device{
 		ManufacturerID: "010c",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x008f,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008b,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0035,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x003d,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				InNIF: "false",
@@ -18388,48 +18388,48 @@ func New010e00030002() *Device{
 		ManufacturerID: "010e",
 		ProductType: "0003",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x004e,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008a,
 				InNIF: "false",
 				Secure: true,
@@ -18446,89 +18446,89 @@ func New010e00080001() *Device{
 		ManufacturerID: "010e",
 		ProductType: "0008",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008a,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008b,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x004e,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0053,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				NonSecure: false,
@@ -18546,90 +18546,90 @@ func New010e00080002() *Device{
 		ManufacturerID: "010e",
 		ProductType: "0008",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008a,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008b,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x004e,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0053,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				NonSecure: false,
@@ -18647,43 +18647,43 @@ func New010f00000000() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0000",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0033,
 			},
 		},
@@ -18698,83 +18698,83 @@ func New010f00011000() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0001",
 		ProductID: "1000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0045,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 			},
@@ -18790,98 +18790,98 @@ func New010f00021000() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0002",
 		ProductID: "1000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0045,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				Version: "4",
@@ -18898,100 +18898,100 @@ func New010f00021001() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0002",
 		ProductID: "1001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0045,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 				Controlled: "true",
 			},
@@ -19007,33 +19007,33 @@ func New010f01000103() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0100",
 		ProductID: "0103",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
@@ -19049,47 +19049,47 @@ func New010f01000109() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0100",
 		ProductID: "0109",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 			},
 		},
@@ -19104,103 +19104,103 @@ func New010f01021000() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0102",
 		ProductID: "1000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				Secure: true,
 				NonSecure: false,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Secure: true,
 				NonSecure: false,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Secure: true,
 				NonSecure: false,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
@@ -19216,103 +19216,103 @@ func New010f01022000() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0102",
 		ProductID: "2000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				Secure: true,
 				NonSecure: false,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Secure: true,
 				NonSecure: false,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Secure: true,
 				NonSecure: false,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 				InNIF: "false",
@@ -19331,43 +19331,43 @@ func New010f02000103() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0200",
 		ProductID: "0103",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 				InNIF: "false",
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
@@ -19383,52 +19383,52 @@ func New010f02000109() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0200",
 		ProductID: "0109",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 			},
 		},
@@ -19443,43 +19443,43 @@ func New010f0200100a() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0200",
 		ProductID: "100a",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 			},
 		},
@@ -19494,41 +19494,41 @@ func New010f03000103() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0300",
 		ProductID: "0103",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0050,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
 		},
@@ -19543,59 +19543,59 @@ func New010f03000109() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0300",
 		ProductID: "0109",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0050,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 			},
 		},
@@ -19610,46 +19610,46 @@ func New010f03011001() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0301",
 		ProductID: "1001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
 		},
@@ -19664,38 +19664,38 @@ func New010f04000103() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0400",
 		ProductID: "0103",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
@@ -19711,52 +19711,52 @@ func New010f04000109() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0400",
 		ProductID: "0109",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 			},
 		},
@@ -19771,43 +19771,43 @@ func New010f0400100a() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0400",
 		ProductID: "100a",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 			},
 		},
@@ -19822,35 +19822,35 @@ func New010f05010101() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0501",
 		ProductID: "0101",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
@@ -19866,30 +19866,30 @@ func New010f05010102() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0501",
 		ProductID: "0102",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -19904,52 +19904,52 @@ func New010f06001000() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0600",
 		ProductID: "1000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				InNIF: "false",
@@ -19966,84 +19966,84 @@ func New010f06020700() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0602",
 		ProductID: "0700",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Secure: true,
 				NonSecure: false,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
@@ -20061,49 +20061,49 @@ func New010f07001000() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0700",
 		ProductID: "1000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
 		},
@@ -20118,106 +20118,106 @@ func New010f07011001() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0701",
 		ProductID: "1001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Secure: true,
 				NonSecure: false,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Secure: true,
 				NonSecure: false,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008b,
 				Controlled: "true",
 				InNIF: "false",
@@ -20234,110 +20234,110 @@ func New010f07012001() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0701",
 		ProductID: "2001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Secure: true,
 				NonSecure: false,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008b,
 				Controlled: "true",
 				InNIF: "false",
@@ -20355,49 +20355,49 @@ func New010f08001001() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0800",
 		ProductID: "1001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 			},
 		},
@@ -20412,49 +20412,49 @@ func New010f08004001() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0800",
 		ProductID: "4001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 			},
 		},
@@ -20469,98 +20469,98 @@ func New010f08011001() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0801",
 		ProductID: "1001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "8",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 				Secure: true,
 				NonSecure: false,
@@ -20577,94 +20577,94 @@ func New010f08012001() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0801",
 		ProductID: "2001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "8",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "3",
 			},
@@ -20680,45 +20680,45 @@ func New010f09004000() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0900",
 		ProductID: "4000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
@@ -20734,45 +20734,45 @@ func New010f0b001001() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0b00",
 		ProductID: "1001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
@@ -20788,42 +20788,42 @@ func New010f0b004001() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0b00",
 		ProductID: "4001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 			},
 		},
@@ -20838,92 +20838,92 @@ func New010f0b011002() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0b01",
 		ProductID: "1002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "8",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
@@ -20941,91 +20941,91 @@ func New010f0b012002() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0b01",
 		ProductID: "2002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
@@ -21043,46 +21043,46 @@ func New010f0c001000() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0c00",
 		ProductID: "1000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x009c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
@@ -21098,91 +21098,91 @@ func New010f0c021002() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0c02",
 		ProductID: "1002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "8",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008b,
 				Controlled: "true",
 				InNIF: "false",
@@ -21199,74 +21199,74 @@ func New010f0d011000() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0d01",
 		ProductID: "1000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Secure: true,
 				NonSecure: false,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -21285,75 +21285,75 @@ func New010f0d012000() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0d01",
 		ProductID: "2000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 				Controlled: "true",
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Secure: true,
 				NonSecure: false,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -21370,75 +21370,75 @@ func New010f0d013000() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0d01",
 		ProductID: "3000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 				Controlled: "true",
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Secure: true,
 				NonSecure: false,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -21455,75 +21455,75 @@ func New010f0d014000() *Device{
 		ManufacturerID: "010f",
 		ProductType: "0d01",
 		ProductID: "4000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 				InNIF: "false",
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				InNIF: "false",
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				InNIF: "false",
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				InNIF: "false",
 				Secure: true,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
@@ -21539,25 +21539,25 @@ func New011024110001() *Device{
 		ManufacturerID: "0110",
 		ProductType: "2411",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -21572,33 +21572,33 @@ func New011110000010() *Device{
 		ManufacturerID: "0111",
 		ProductType: "1000",
 		ProductID: "0010",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
 		},
@@ -21613,27 +21613,27 @@ func New011182000200() *Device{
 		ManufacturerID: "0111",
 		ProductType: "8200",
 		ProductID: "0200",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
 		},
@@ -21648,36 +21648,36 @@ func New011344503030() *Device{
 		ManufacturerID: "0113",
 		ProductType: "4450",
 		ProductID: "3030",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				InNIF: "false",
 			},
@@ -21693,48 +21693,48 @@ func New011345565435() *Device{
 		ManufacturerID: "0113",
 		ProductType: "4556",
 		ProductID: "5435",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0045,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -21749,20 +21749,20 @@ func New011400010001() *Device{
 		ManufacturerID: "0114",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 			},
@@ -21778,7 +21778,7 @@ func New011500000000() *Device{
 		ManufacturerID: "0115",
 		ProductType: "0000",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
+		CommandClasses: []*CommandClass{
 		},
 	}
 }
@@ -21791,233 +21791,233 @@ func New011500010001() *Device{
 		ManufacturerID: "0115",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0046,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008a,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x004c,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x003d,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "6",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002d,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0045,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008b,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009e,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0046,
 				Controlled: "true",
 				InNIF: "false",
@@ -22034,60 +22034,60 @@ func New011500040002() *Device{
 		ManufacturerID: "0115",
 		ProductType: "0004",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
 		},
@@ -22102,75 +22102,75 @@ func New011500040003() *Device{
 		ManufacturerID: "0115",
 		ProductType: "0004",
 		ProductID: "0003",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Secure: true,
 				NonSecure: false,
 				Version: "7",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
@@ -22186,54 +22186,54 @@ func New011500040004() *Device{
 		ManufacturerID: "0115",
 		ProductType: "0004",
 		ProductID: "0004",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
@@ -22249,43 +22249,43 @@ func New011500240001() *Device{
 		ManufacturerID: "0115",
 		ProductType: "0024",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -22300,64 +22300,64 @@ func New011501000001() *Device{
 		ManufacturerID: "0115",
 		ProductType: "0100",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002d,
 			},
 		},
@@ -22372,62 +22372,62 @@ func New011501000004() *Device{
 		ManufacturerID: "0115",
 		ProductType: "0100",
 		ProductID: "0004",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002d,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 				InNIF: "false",
@@ -22444,88 +22444,88 @@ func New011501000101() *Device{
 		ManufacturerID: "0115",
 		ProductType: "0100",
 		ProductID: "0101",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002d,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
 		},
@@ -22540,77 +22540,77 @@ func New011501000103() *Device{
 		ManufacturerID: "0115",
 		ProductType: "0100",
 		ProductID: "0103",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002d,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
@@ -22627,53 +22627,53 @@ func New011501000200() *Device{
 		ManufacturerID: "0115",
 		ProductType: "0100",
 		ProductID: "0200",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
@@ -22689,72 +22689,72 @@ func New011501000201() *Device{
 		ManufacturerID: "0115",
 		ProductType: "0100",
 		ProductID: "0201",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				Secure: true,
 				NonSecure: false,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Secure: true,
 				NonSecure: false,
@@ -22771,65 +22771,65 @@ func New011501000400() *Device{
 		ManufacturerID: "0115",
 		ProductType: "0100",
 		ProductID: "0400",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "6",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0089,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -22846,37 +22846,37 @@ func New011501000401() *Device{
 		ManufacturerID: "0115",
 		ProductType: "0100",
 		ProductID: "0401",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x002d,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
@@ -22892,75 +22892,75 @@ func New011501100001() *Device{
 		ManufacturerID: "0115",
 		ProductType: "0110",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "7",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
@@ -22976,55 +22976,55 @@ func New011502000001() *Device{
 		ManufacturerID: "0115",
 		ProductType: "0200",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
@@ -23042,55 +23042,55 @@ func New011502010001() *Device{
 		ManufacturerID: "0115",
 		ProductType: "0201",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
@@ -23108,55 +23108,55 @@ func New011502010002() *Device{
 		ManufacturerID: "0115",
 		ProductType: "0201",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
@@ -23174,55 +23174,55 @@ func New011502010003() *Device{
 		ManufacturerID: "0115",
 		ProductType: "0201",
 		ProductID: "0003",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
@@ -23240,63 +23240,63 @@ func New011510000001() *Device{
 		ManufacturerID: "0115",
 		ProductType: "1000",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002d,
 			},
 		},
@@ -23311,60 +23311,60 @@ func New011510000002() *Device{
 		ManufacturerID: "0115",
 		ProductType: "1000",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002d,
 			},
 		},
@@ -23379,63 +23379,63 @@ func New011510000003() *Device{
 		ManufacturerID: "0115",
 		ProductType: "1000",
 		ProductID: "0003",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002d,
 			},
 		},
@@ -23450,60 +23450,60 @@ func New011510000004() *Device{
 		ManufacturerID: "0115",
 		ProductType: "1000",
 		ProductID: "0004",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 				InNIF: "false",
@@ -23520,64 +23520,64 @@ func New011510000005() *Device{
 		ManufacturerID: "0115",
 		ProductType: "1000",
 		ProductID: "0005",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002d,
 			},
 		},
@@ -23592,110 +23592,110 @@ func New011510000009() *Device{
 		ManufacturerID: "0115",
 		ProductType: "1000",
 		ProductID: "0009",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002d,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				InNIF: "false",
 				Secure: true,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				InNIF: "false",
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				InNIF: "false",
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 			},
@@ -23711,51 +23711,51 @@ func New011510000100() *Device{
 		ManufacturerID: "0115",
 		ProductType: "1000",
 		ProductID: "0100",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
@@ -23771,104 +23771,104 @@ func New011510000200() *Device{
 		ManufacturerID: "0115",
 		ProductType: "1000",
 		ProductID: "0200",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002d,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				InNIF: "false",
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				InNIF: "false",
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 			},
@@ -23884,52 +23884,52 @@ func New011510000300() *Device{
 		ManufacturerID: "0115",
 		ProductType: "1000",
 		ProductID: "0300",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
@@ -23945,76 +23945,76 @@ func New011510001001() *Device{
 		ManufacturerID: "0115",
 		ProductType: "1000",
 		ProductID: "1001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002d,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 			},
@@ -24030,104 +24030,104 @@ func New011510001003() *Device{
 		ManufacturerID: "0115",
 		ProductType: "1000",
 		ProductID: "1003",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002d,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				InNIF: "false",
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				InNIF: "false",
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 			},
@@ -24143,35 +24143,35 @@ func New011511000001() *Device{
 		ManufacturerID: "0115",
 		ProductType: "1100",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
@@ -24187,36 +24187,36 @@ func New011511000002() *Device{
 		ManufacturerID: "0115",
 		ProductType: "1100",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
@@ -24232,30 +24232,30 @@ func New011600010001() *Device{
 		ManufacturerID: "0116",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
 		},
@@ -24270,33 +24270,33 @@ func New011600020001() *Device{
 		ManufacturerID: "0116",
 		ProductType: "0002",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
 		},
@@ -24311,27 +24311,27 @@ func New011600100001() *Device{
 		ManufacturerID: "0116",
 		ProductType: "0010",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -24346,20 +24346,20 @@ func New011600110001() *Device{
 		ManufacturerID: "0116",
 		ProductType: "0011",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -24374,20 +24374,20 @@ func New011600110002() *Device{
 		ManufacturerID: "0116",
 		ProductType: "0011",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -24402,38 +24402,38 @@ func New011700010080() *Device{
 		ManufacturerID: "0117",
 		ProductType: "0001",
 		ProductID: "0080",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
 		},
@@ -24448,39 +24448,39 @@ func New011800030002() *Device{
 		ManufacturerID: "0118",
 		ProductType: "0003",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
@@ -24496,45 +24496,45 @@ func New011800030008() *Device{
 		ManufacturerID: "0118",
 		ProductType: "0003",
 		ProductID: "0008",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
@@ -24550,49 +24550,49 @@ func New011800040002() *Device{
 		ManufacturerID: "0118",
 		ProductType: "0004",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
@@ -24608,24 +24608,24 @@ func New011801010103() *Device{
 		ManufacturerID: "0118",
 		ProductType: "0101",
 		ProductID: "0103",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -24640,34 +24640,34 @@ func New011801021020() *Device{
 		ManufacturerID: "0118",
 		ProductType: "0102",
 		ProductID: "1020",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 			},
@@ -24683,30 +24683,30 @@ func New011802020611() *Device{
 		ManufacturerID: "0118",
 		ProductType: "0202",
 		ProductID: "0611",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
 		},
@@ -24721,27 +24721,27 @@ func New011808080808() *Device{
 		ManufacturerID: "0118",
 		ProductType: "0808",
 		ProductID: "0808",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
 		},
@@ -24756,20 +24756,20 @@ func New011a01010101() *Device{
 		ManufacturerID: "011a",
 		ProductType: "0101",
 		ProductID: "0101",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -24784,23 +24784,23 @@ func New011a01010102() *Device{
 		ManufacturerID: "011a",
 		ProductType: "0101",
 		ProductID: "0102",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -24815,20 +24815,20 @@ func New011a01010103() *Device{
 		ManufacturerID: "011a",
 		ProductType: "0101",
 		ProductID: "0103",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -24843,28 +24843,28 @@ func New011a01010603() *Device{
 		ManufacturerID: "011a",
 		ProductType: "0101",
 		ProductID: "0603",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -24879,24 +24879,24 @@ func New011a01020201() *Device{
 		ManufacturerID: "011a",
 		ProductType: "0102",
 		ProductID: "0201",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -24911,21 +24911,21 @@ func New011a01020202() *Device{
 		ManufacturerID: "011a",
 		ProductType: "0102",
 		ProductID: "0202",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
 		},
@@ -24940,47 +24940,47 @@ func New011a01110101() *Device{
 		ManufacturerID: "011a",
 		ProductType: "0111",
 		ProductID: "0101",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Version: "2",
 			},
@@ -24996,45 +24996,45 @@ func New011a01110105() *Device{
 		ManufacturerID: "011a",
 		ProductType: "0111",
 		ProductID: "0105",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
@@ -25050,50 +25050,50 @@ func New011a01110201() *Device{
 		ManufacturerID: "011a",
 		ProductType: "0111",
 		ProductID: "0201",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
@@ -25109,50 +25109,50 @@ func New011a01110202() *Device{
 		ManufacturerID: "011a",
 		ProductType: "0111",
 		ProductID: "0202",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
@@ -25168,39 +25168,39 @@ func New011a01110605() *Device{
 		ManufacturerID: "011a",
 		ProductType: "0111",
 		ProductID: "0605",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
 		},
@@ -25215,30 +25215,30 @@ func New011f00010001() *Device{
 		ManufacturerID: "011f",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
@@ -25254,31 +25254,31 @@ func New011f00010002() *Device{
 		ManufacturerID: "011f",
 		ProductType: "0001",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
@@ -25294,31 +25294,31 @@ func New011f00010003() *Device{
 		ManufacturerID: "011f",
 		ProductType: "0001",
 		ProductID: "0003",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
@@ -25334,20 +25334,20 @@ func New012100010001() *Device{
 		ManufacturerID: "0121",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 				Version: "2",
@@ -25364,34 +25364,34 @@ func New012200010001() *Device{
 		ManufacturerID: "0122",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x003d,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
@@ -25407,7 +25407,7 @@ func New012300000000() *Device{
 		ManufacturerID: "0123",
 		ProductType: "0000",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
+		CommandClasses: []*CommandClass{
 		},
 	}
 }
@@ -25420,26 +25420,26 @@ func New012300010000() *Device{
 		ManufacturerID: "0123",
 		ProductType: "0001",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -25454,33 +25454,33 @@ func New012300010001() *Device{
 		ManufacturerID: "0123",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				Version: "2",
@@ -25497,30 +25497,30 @@ func New012300020000() *Device{
 		ManufacturerID: "0123",
 		ProductType: "0002",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -25535,32 +25535,32 @@ func New012301020102() *Device{
 		ManufacturerID: "0123",
 		ProductType: "0102",
 		ProductID: "0102",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
@@ -25576,32 +25576,32 @@ func New012301030103() *Device{
 		ManufacturerID: "0123",
 		ProductType: "0103",
 		ProductID: "0103",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
@@ -25617,36 +25617,36 @@ func New012301040104() *Device{
 		ManufacturerID: "0123",
 		ProductType: "0104",
 		ProductID: "0104",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -25661,31 +25661,31 @@ func New012303010001() *Device{
 		ManufacturerID: "0123",
 		ProductType: "0301",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
 		},
@@ -25700,31 +25700,31 @@ func New012306010001() *Device{
 		ManufacturerID: "0123",
 		ProductType: "0601",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
 		},
@@ -25739,64 +25739,64 @@ func New012380000000() *Device{
 		ManufacturerID: "0123",
 		ProductType: "8000",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				InNIF: "false",
@@ -25813,88 +25813,88 @@ func New012380000001() *Device{
 		ManufacturerID: "0123",
 		ProductType: "8000",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				InNIF: "false",
@@ -25911,91 +25911,91 @@ func New012600010006() *Device{
 		ManufacturerID: "0126",
 		ProductType: "0001",
 		ProductID: "0006",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
@@ -26012,44 +26012,44 @@ func New012800000000() *Device{
 		ManufacturerID: "0128",
 		ProductType: "0000",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x003c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x003d,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x003e,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 			},
 		},
@@ -26064,7 +26064,7 @@ func New012801280000() *Device{
 		ManufacturerID: "0128",
 		ProductType: "0128",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
+		CommandClasses: []*CommandClass{
 		},
 	}
 }
@@ -26077,85 +26077,85 @@ func New012900010000() *Device{
 		ManufacturerID: "0129",
 		ProductType: "0001",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x004c,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x004e,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008a,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008b,
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				InNIF: "false",
 				Secure: true,
@@ -26173,75 +26173,75 @@ func New012900020000() *Device{
 		ManufacturerID: "0129",
 		ProductType: "0002",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x004c,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				InNIF: "false",
 				Secure: true,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x004e,
 				InNIF: "false",
 				Secure: true,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008a,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008b,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				InNIF: "false",
 				Secure: true,
@@ -26258,66 +26258,66 @@ func New013000010001() *Device{
 		ManufacturerID: "0130",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x003e,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 			},
@@ -26333,68 +26333,68 @@ func New013000020000() *Device{
 		ManufacturerID: "0130",
 		ProductType: "0002",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x003c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x003d,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x003e,
 			},
 		},
@@ -26409,139 +26409,139 @@ func New013100010001() *Device{
 		ManufacturerID: "0131",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0033,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Controlled: "true",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				Version: "7",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0035,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				Version: "3",
@@ -26558,138 +26558,138 @@ func New013100010002() *Device{
 		ManufacturerID: "0131",
 		ProductType: "0001",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0033,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Controlled: "true",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				Version: "7",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0035,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				Version: "3",
@@ -26706,138 +26706,138 @@ func New013100010003() *Device{
 		ManufacturerID: "0131",
 		ProductType: "0001",
 		ProductID: "0003",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0033,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Controlled: "true",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				Version: "7",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0035,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				Version: "3",
@@ -26854,46 +26854,46 @@ func New013100020002() *Device{
 		ManufacturerID: "0131",
 		ProductType: "0002",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0033,
 			},
 		},
@@ -26908,24 +26908,24 @@ func New013730010002() *Device{
 		ManufacturerID: "0137",
 		ProductType: "3001",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -26940,26 +26940,26 @@ func New013800010002() *Device{
 		ManufacturerID: "0138",
 		ProductType: "0001",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -26974,126 +26974,126 @@ func New013b10001828() *Device{
 		ManufacturerID: "013b",
 		ProductType: "1000",
 		ProductID: "1828",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0028,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
@@ -27111,7 +27111,7 @@ func New013c00000000() *Device{
 		ManufacturerID: "013c",
 		ProductType: "0000",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
+		CommandClasses: []*CommandClass{
 		},
 	}
 }
@@ -27124,31 +27124,31 @@ func New013c00010001() *Device{
 		ManufacturerID: "013c",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -27163,35 +27163,35 @@ func New013c00010003() *Device{
 		ManufacturerID: "013c",
 		ProductType: "0001",
 		ProductID: "0003",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -27206,34 +27206,34 @@ func New013c00010004() *Device{
 		ManufacturerID: "013c",
 		ProductType: "0001",
 		ProductID: "0004",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
 		},
@@ -27248,35 +27248,35 @@ func New013c00010006() *Device{
 		ManufacturerID: "013c",
 		ProductType: "0001",
 		ProductID: "0006",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
 		},
@@ -27291,68 +27291,68 @@ func New013c00010010() *Device{
 		ManufacturerID: "013c",
 		ProductType: "0001",
 		ProductID: "0010",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Secure: true,
 				NonSecure: false,
@@ -27370,79 +27370,79 @@ func New013c00010011() *Device{
 		ManufacturerID: "013c",
 		ProductType: "0001",
 		ProductID: "0011",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Secure: true,
 				NonSecure: false,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
@@ -27458,66 +27458,66 @@ func New013c00010012() *Device{
 		ManufacturerID: "013c",
 		ProductType: "0001",
 		ProductID: "0012",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
@@ -27533,63 +27533,63 @@ func New013c00010013() *Device{
 		ManufacturerID: "013c",
 		ProductType: "0001",
 		ProductID: "0013",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
 		},
@@ -27604,59 +27604,59 @@ func New013c00010015() *Device{
 		ManufacturerID: "013c",
 		ProductType: "0001",
 		ProductID: "0015",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
@@ -27672,75 +27672,75 @@ func New013c00010028() *Device{
 		ManufacturerID: "013c",
 		ProductType: "0001",
 		ProductID: "0028",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Secure: true,
 				NonSecure: false,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Secure: true,
 				NonSecure: false,
@@ -27758,53 +27758,53 @@ func New013c00010038() *Device{
 		ManufacturerID: "013c",
 		ProductType: "0001",
 		ProductID: "0038",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
@@ -27820,37 +27820,37 @@ func New013c00020002() *Device{
 		ManufacturerID: "013c",
 		ProductType: "0002",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
@@ -27866,79 +27866,79 @@ func New013c0002000c() *Device{
 		ManufacturerID: "013c",
 		ProductType: "0002",
 		ProductID: "000c",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Secure: true,
 				NonSecure: false,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -27955,79 +27955,79 @@ func New013c0002000d() *Device{
 		ManufacturerID: "013c",
 		ProductType: "0002",
 		ProductID: "000d",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Secure: true,
 				NonSecure: false,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -28044,64 +28044,64 @@ func New013c0002001e() *Device{
 		ManufacturerID: "013c",
 		ProductType: "0002",
 		ProductID: "001e",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				NonSecure: false,
@@ -28119,73 +28119,73 @@ func New013c0002001f() *Device{
 		ManufacturerID: "013c",
 		ProductType: "0002",
 		ProductID: "001f",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Secure: true,
 				NonSecure: false,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
@@ -28201,73 +28201,73 @@ func New013c00020020() *Device{
 		ManufacturerID: "013c",
 		ProductType: "0002",
 		ProductID: "0020",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Secure: true,
 				NonSecure: false,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				NonSecure: false,
@@ -28285,73 +28285,73 @@ func New013c00020021() *Device{
 		ManufacturerID: "013c",
 		ProductType: "0002",
 		ProductID: "0021",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -28368,58 +28368,58 @@ func New013c0002002b() *Device{
 		ManufacturerID: "013c",
 		ProductType: "0002",
 		ProductID: "002b",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
@@ -28435,64 +28435,64 @@ func New013c0004000a() *Device{
 		ManufacturerID: "013c",
 		ProductType: "0004",
 		ProductID: "000a",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				Secure: true,
 				NonSecure: false,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Secure: true,
 				NonSecure: false,
@@ -28510,52 +28510,52 @@ func New013c0006001a() *Device{
 		ManufacturerID: "013c",
 		ProductType: "0006",
 		ProductID: "001a",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
 		},
@@ -28570,69 +28570,69 @@ func New013c0008001d() *Device{
 		ManufacturerID: "013c",
 		ProductType: "0008",
 		ProductID: "001d",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0094,
 				Controlled: "true",
 			},
@@ -28648,58 +28648,58 @@ func New013c00080027() *Device{
 		ManufacturerID: "013c",
 		ProductType: "0008",
 		ProductID: "0027",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				NonSecure: false,
@@ -28717,67 +28717,67 @@ func New013c00090022() *Device{
 		ManufacturerID: "013c",
 		ProductType: "0009",
 		ProductID: "0022",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 				Controlled: "true",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
@@ -28793,39 +28793,39 @@ func New014500010004() *Device{
 		ManufacturerID: "0145",
 		ProductType: "0001",
 		ProductID: "0004",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Secure: true,
 				NonSecure: false,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -28840,40 +28840,40 @@ func New014800010001() *Device{
 		ManufacturerID: "0148",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
 		},
@@ -28888,41 +28888,41 @@ func New014800020001() *Device{
 		ManufacturerID: "0148",
 		ProductType: "0002",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -28937,42 +28937,42 @@ func New014900000000() *Device{
 		ManufacturerID: "0149",
 		ProductType: "0000",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				InNIF: "false",
@@ -28990,41 +28990,41 @@ func New014900120104() *Device{
 		ManufacturerID: "0149",
 		ProductType: "0012",
 		ProductID: "0104",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				Version: "3",
@@ -29041,54 +29041,54 @@ func New014912140304() *Device{
 		ManufacturerID: "0149",
 		ProductType: "1214",
 		ProductID: "0304",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -29105,56 +29105,56 @@ func New014912140504() *Device{
 		ManufacturerID: "0149",
 		ProductType: "1214",
 		ProductID: "0504",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
@@ -29170,7 +29170,7 @@ func New014d00000000() *Device{
 		ManufacturerID: "014d",
 		ProductType: "0000",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
+		CommandClasses: []*CommandClass{
 		},
 	}
 }
@@ -29183,87 +29183,87 @@ func New014d00010001() *Device{
 		ManufacturerID: "014d",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0021,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				InNIF: "false",
@@ -29280,7 +29280,7 @@ func New014f00000000() *Device{
 		ManufacturerID: "014f",
 		ProductType: "0000",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
+		CommandClasses: []*CommandClass{
 		},
 	}
 }
@@ -29293,34 +29293,34 @@ func New014f44503030() *Device{
 		ManufacturerID: "014f",
 		ProductType: "4450",
 		ProductID: "3030",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
 		},
@@ -29335,34 +29335,34 @@ func New014f44573034() *Device{
 		ManufacturerID: "014f",
 		ProductType: "4457",
 		ProductID: "3034",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
 		},
@@ -29377,34 +29377,34 @@ func New014f44573331() *Device{
 		ManufacturerID: "014f",
 		ProductType: "4457",
 		ProductID: "3331",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
 		},
@@ -29419,36 +29419,36 @@ func New014f47423030() *Device{
 		ManufacturerID: "014f",
 		ProductType: "4742",
 		ProductID: "3030",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
 		},
@@ -29463,44 +29463,44 @@ func New014f47443032() *Device{
 		ManufacturerID: "014f",
 		ProductType: "4744",
 		ProductID: "3032",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0066,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -29515,52 +29515,52 @@ func New014f47443530() *Device{
 		ManufacturerID: "014f",
 		ProductType: "4744",
 		ProductID: "3530",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0066,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
@@ -29578,45 +29578,45 @@ func New014f47543038() *Device{
 		ManufacturerID: "014f",
 		ProductType: "4754",
 		ProductID: "3038",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
@@ -29632,36 +29632,36 @@ func New014f52463133() *Device{
 		ManufacturerID: "014f",
 		ProductType: "5246",
 		ProductID: "3133",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
 		},
@@ -29676,36 +29676,36 @@ func New014f52503030() *Device{
 		ManufacturerID: "014f",
 		ProductType: "5250",
 		ProductID: "3030",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
 		},
@@ -29720,36 +29720,36 @@ func New014f52523530() *Device{
 		ManufacturerID: "014f",
 		ProductType: "5252",
 		ProductID: "3530",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
 		},
@@ -29764,29 +29764,29 @@ func New014f54573033() *Device{
 		ManufacturerID: "014f",
 		ProductType: "5457",
 		ProductID: "3033",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
 		},
@@ -29801,25 +29801,25 @@ func New015100020001() *Device{
 		ManufacturerID: "0151",
 		ProductType: "0002",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -29834,44 +29834,44 @@ func New015100030003() *Device{
 		ManufacturerID: "0151",
 		ProductType: "0003",
 		ProductID: "0003",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
@@ -29887,39 +29887,39 @@ func New015200030002() *Device{
 		ManufacturerID: "0152",
 		ProductType: "0003",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
@@ -29935,39 +29935,39 @@ func New015200030003() *Device{
 		ManufacturerID: "0152",
 		ProductType: "0003",
 		ProductID: "0003",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
@@ -29983,39 +29983,39 @@ func New015200030512() *Device{
 		ManufacturerID: "0152",
 		ProductType: "0003",
 		ProductID: "0512",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
 		},
@@ -30030,20 +30030,20 @@ func New015202020511() *Device{
 		ManufacturerID: "0152",
 		ProductType: "0202",
 		ProductID: "0511",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -30058,40 +30058,40 @@ func New015205000001() *Device{
 		ManufacturerID: "0152",
 		ProductType: "0500",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
@@ -30107,39 +30107,39 @@ func New015205000003() *Device{
 		ManufacturerID: "0152",
 		ProductType: "0500",
 		ProductID: "0003",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
@@ -30155,74 +30155,74 @@ func New015400010001() *Device{
 		ManufacturerID: "0154",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "6",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009b,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0089,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Controlled: "true",
 			},
@@ -30238,56 +30238,56 @@ func New015400030001() *Device{
 		ManufacturerID: "0154",
 		ProductType: "0003",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
 		},
@@ -30302,88 +30302,88 @@ func New015401000101() *Device{
 		ManufacturerID: "0154",
 		ProductType: "0100",
 		ProductID: "0101",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002d,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
 		},
@@ -30398,54 +30398,54 @@ func New015401000201() *Device{
 		ManufacturerID: "0154",
 		ProductType: "0100",
 		ProductID: "0201",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
@@ -30461,35 +30461,35 @@ func New015411000001() *Device{
 		ManufacturerID: "0154",
 		ProductType: "1100",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
@@ -30505,36 +30505,36 @@ func New015411000002() *Device{
 		ManufacturerID: "0154",
 		ProductType: "1100",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
@@ -30550,50 +30550,50 @@ func New015900010001() *Device{
 		ManufacturerID: "0159",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
 		},
@@ -30608,67 +30608,67 @@ func New015900010051() *Device{
 		ManufacturerID: "0159",
 		ProductType: "0001",
 		ProductID: "0051",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "3",
 			},
@@ -30684,46 +30684,46 @@ func New015900020001() *Device{
 		ManufacturerID: "0159",
 		ProductType: "0002",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -30738,46 +30738,46 @@ func New015900020002() *Device{
 		ManufacturerID: "0159",
 		ProductType: "0002",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -30792,60 +30792,60 @@ func New015900020051() *Device{
 		ManufacturerID: "0159",
 		ProductType: "0002",
 		ProductID: "0051",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "7",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
 		},
@@ -30860,64 +30860,64 @@ func New015900020053() *Device{
 		ManufacturerID: "0159",
 		ProductType: "0002",
 		ProductID: "0053",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "7",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
 		},
@@ -30932,47 +30932,47 @@ func New015900030002() *Device{
 		ManufacturerID: "0159",
 		ProductType: "0003",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -30987,55 +30987,55 @@ func New015900050001() *Device{
 		ManufacturerID: "0159",
 		ProductType: "0005",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "0",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 				Controlled: "true",
 			},
@@ -31051,33 +31051,33 @@ func New015a10070002() *Device{
 		ManufacturerID: "015a",
 		ProductType: "1007",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -31092,49 +31092,49 @@ func New015e80150001() *Device{
 		ManufacturerID: "015e",
 		ProductType: "8015",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x004c,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008b,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Version: "2",
 			},
@@ -31150,32 +31150,32 @@ func New015f00000000() *Device{
 		ManufacturerID: "015f",
 		ProductType: "0000",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -31192,37 +31192,37 @@ func New015f00010001() *Device{
 		ManufacturerID: "015f",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -31237,36 +31237,36 @@ func New015f00020001() *Device{
 		ManufacturerID: "015f",
 		ProductType: "0002",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -31281,32 +31281,32 @@ func New015f31020202() *Device{
 		ManufacturerID: "015f",
 		ProductType: "3102",
 		ProductID: "0202",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
@@ -31322,32 +31322,32 @@ func New015f41020201() *Device{
 		ManufacturerID: "015f",
 		ProductType: "4102",
 		ProductID: "0201",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 				Controlled: "true",
 			},
@@ -31363,33 +31363,33 @@ func New015f41020202() *Device{
 		ManufacturerID: "015f",
 		ProductType: "4102",
 		ProductID: "0202",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
@@ -31405,32 +31405,32 @@ func New015f51020103() *Device{
 		ManufacturerID: "015f",
 		ProductType: "5102",
 		ProductID: "0103",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -31447,52 +31447,52 @@ func New016000000000() *Device{
 		ManufacturerID: "0160",
 		ProductType: "0000",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
@@ -31509,40 +31509,40 @@ func New016330010301() *Device{
 		ManufacturerID: "0163",
 		ProductType: "3001",
 		ProductID: "0301",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x004e,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008b,
 				Secure: true,
 				NonSecure: false,
@@ -31559,57 +31559,57 @@ func New016500010001() *Device{
 		ManufacturerID: "0165",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 				Controlled: "true",
 			},
@@ -31625,66 +31625,66 @@ func New016500010003() *Device{
 		ManufacturerID: "0165",
 		ProductType: "0001",
 		ProductID: "0003",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -31701,69 +31701,69 @@ func New016500020001() *Device{
 		ManufacturerID: "0165",
 		ProductType: "0002",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 				InNIF: "false",
@@ -31780,70 +31780,70 @@ func New016500020002() *Device{
 		ManufacturerID: "0165",
 		ProductType: "0002",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 				Controlled: "true",
 				InNIF: "false",
@@ -31860,70 +31860,70 @@ func New016500020003() *Device{
 		ManufacturerID: "0165",
 		ProductType: "0002",
 		ProductID: "0003",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 				InNIF: "false",
@@ -31940,25 +31940,25 @@ func New016601000100() *Device{
 		ManufacturerID: "0166",
 		ProductType: "0100",
 		ProductID: "0100",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -31973,100 +31973,100 @@ func New017100010001() *Device{
 		ManufacturerID: "0171",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0035,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 				Controlled: "true",
 				InNIF: "false",
@@ -32084,35 +32084,35 @@ func New017300030002() *Device{
 		ManufacturerID: "0173",
 		ProductType: "0003",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
@@ -32128,59 +32128,59 @@ func New017500010011() *Device{
 		ManufacturerID: "0175",
 		ProductType: "0001",
 		ProductID: "0011",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
@@ -32196,80 +32196,80 @@ func New01750002000d() *Device{
 		ManufacturerID: "0175",
 		ProductType: "0002",
 		ProductID: "000d",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Secure: true,
 				NonSecure: false,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
@@ -32285,80 +32285,80 @@ func New01750002000e() *Device{
 		ManufacturerID: "0175",
 		ProductType: "0002",
 		ProductID: "000e",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Secure: true,
 				NonSecure: false,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
@@ -32374,79 +32374,79 @@ func New017501000101() *Device{
 		ManufacturerID: "0175",
 		ProductType: "0100",
 		ProductID: "0101",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002d,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
@@ -32462,100 +32462,100 @@ func New017600010002() *Device{
 		ManufacturerID: "0176",
 		ProductType: "0001",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Controlled: "true",
 				Version: "2",
@@ -32572,74 +32572,74 @@ func New017600050001() *Device{
 		ManufacturerID: "0176",
 		ProductType: "0005",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
@@ -32656,54 +32656,54 @@ func New01785a44414e() *Device{
 		ManufacturerID: "0178",
 		ProductType: "5a44",
 		ProductID: "414e",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -32718,27 +32718,27 @@ func New017c00010002() *Device{
 		ManufacturerID: "017c",
 		ProductType: "0001",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
 		},
@@ -32753,28 +32753,28 @@ func New017c00060003() *Device{
 		ManufacturerID: "017c",
 		ProductType: "0006",
 		ProductID: "0003",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -32789,90 +32789,90 @@ func New017f00010001() *Device{
 		ManufacturerID: "017f",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0091,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
@@ -32888,59 +32888,59 @@ func New018200010001() *Device{
 		ManufacturerID: "0182",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 				InNIF: "false",
@@ -32957,41 +32957,41 @@ func New018302010701() *Device{
 		ManufacturerID: "0183",
 		ProductType: "0201",
 		ProductID: "0701",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
@@ -33007,43 +33007,43 @@ func New018444473031() *Device{
 		ManufacturerID: "0184",
 		ProductType: "4447",
 		ProductID: "3031",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
 		},
@@ -33058,45 +33058,45 @@ func New018444473033() *Device{
 		ManufacturerID: "0184",
 		ProductType: "4447",
 		ProductID: "3033",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
@@ -33112,45 +33112,45 @@ func New018444473034() *Device{
 		ManufacturerID: "0184",
 		ProductType: "4447",
 		ProductID: "3034",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
@@ -33166,46 +33166,46 @@ func New018447443032() *Device{
 		ManufacturerID: "0184",
 		ProductType: "4744",
 		ProductID: "3032",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -33220,51 +33220,51 @@ func New018b00400001() *Device{
 		ManufacturerID: "018b",
 		ProductType: "0040",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0071,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
@@ -33280,48 +33280,48 @@ func New018e00010001() *Device{
 		ManufacturerID: "018e",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -33338,48 +33338,48 @@ func New018e00010002() *Device{
 		ManufacturerID: "018e",
 		ProductType: "0001",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -33396,43 +33396,43 @@ func New018e00020001() *Device{
 		ManufacturerID: "018e",
 		ProductType: "0002",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
@@ -33448,48 +33448,48 @@ func New018e00030001() *Device{
 		ManufacturerID: "018e",
 		ProductType: "0003",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -33506,48 +33506,48 @@ func New018e00030002() *Device{
 		ManufacturerID: "018e",
 		ProductType: "0003",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -33564,48 +33564,48 @@ func New018e00030003() *Device{
 		ManufacturerID: "018e",
 		ProductType: "0003",
 		ProductID: "0003",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -33622,48 +33622,48 @@ func New018e00030004() *Device{
 		ManufacturerID: "018e",
 		ProductType: "0003",
 		ProductID: "0004",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -33680,48 +33680,48 @@ func New018e00030009() *Device{
 		ManufacturerID: "018e",
 		ProductType: "0003",
 		ProductID: "0009",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -33738,44 +33738,44 @@ func New018e00040002() *Device{
 		ManufacturerID: "018e",
 		ProductType: "0004",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -33790,78 +33790,78 @@ func New018f01000101() *Device{
 		ManufacturerID: "018f",
 		ProductType: "0100",
 		ProductID: "0101",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002d,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
@@ -33877,67 +33877,67 @@ func New019000010001() *Device{
 		ManufacturerID: "0190",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "6",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0045,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
@@ -33953,51 +33953,51 @@ func New019000030001() *Device{
 		ManufacturerID: "0190",
 		ProductType: "0003",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Version: "2",
 			},
@@ -34013,62 +34013,62 @@ func New019500010001() *Device{
 		ManufacturerID: "0195",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Controlled: "true",
 				Version: "2",
@@ -34085,34 +34085,34 @@ func New019900010001() *Device{
 		ManufacturerID: "0199",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 			},
@@ -34128,46 +34128,46 @@ func New019a00030003() *Device{
 		ManufacturerID: "019a",
 		ProductType: "0003",
 		ProductID: "0003",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
 		},
@@ -34182,49 +34182,49 @@ func New019b00010001() *Device{
 		ManufacturerID: "019b",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "6",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
@@ -34240,138 +34240,138 @@ func New019c00010001() *Device{
 		ManufacturerID: "019c",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
@@ -34389,176 +34389,176 @@ func New019e00010001() *Device{
 		ManufacturerID: "019e",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "7",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0045,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
@@ -34576,152 +34576,152 @@ func New020000010001() *Device{
 		ManufacturerID: "0200",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "6",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0045,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0047,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
@@ -34739,173 +34739,173 @@ func New020600000000() *Device{
 		ManufacturerID: "0206",
 		ProductType: "0000",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0046,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x004c,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0045,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0047,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
@@ -34923,47 +34923,47 @@ func New020700270100() *Device{
 		ManufacturerID: "0207",
 		ProductType: "0027",
 		ProductID: "0100",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -34978,45 +34978,45 @@ func New020e47543038() *Device{
 		ManufacturerID: "020e",
 		ProductType: "4754",
 		ProductID: "3038",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
@@ -35032,104 +35032,104 @@ func New022300010001() *Device{
 		ManufacturerID: "0223",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "7",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				InNIF: "false",
@@ -35147,105 +35147,105 @@ func New022300010002() *Device{
 		ManufacturerID: "0223",
 		ProductType: "0001",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "7",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
@@ -35263,50 +35263,50 @@ func New022a01000100() *Device{
 		ManufacturerID: "022a",
 		ProductType: "0100",
 		ProductID: "0100",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
@@ -35322,104 +35322,104 @@ func New022d01000001() *Device{
 		ManufacturerID: "022d",
 		ProductType: "0100",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				InNIF: "false",
@@ -35437,82 +35437,82 @@ func New022e00010001() *Device{
 		ManufacturerID: "022e",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008b,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008a,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x004e,
 				Secure: true,
 				NonSecure: false,
@@ -35530,44 +35530,44 @@ func New022e00030003() *Device{
 		ManufacturerID: "022e",
 		ProductType: "0003",
 		ProductID: "0003",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
@@ -35583,44 +35583,44 @@ func New022e00040004() *Device{
 		ManufacturerID: "022e",
 		ProductType: "0004",
 		ProductID: "0004",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
@@ -35636,48 +35636,48 @@ func New022e00050005() *Device{
 		ManufacturerID: "022e",
 		ProductType: "0005",
 		ProductID: "0005",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
 		},
@@ -35692,47 +35692,47 @@ func New022e00060006() *Device{
 		ManufacturerID: "022e",
 		ProductType: "0006",
 		ProductID: "0006",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0050,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
@@ -35748,96 +35748,96 @@ func New022e00070007() *Device{
 		ManufacturerID: "022e",
 		ProductType: "0007",
 		ProductID: "0007",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				InNIF: "false",
@@ -35855,114 +35855,114 @@ func New022e00070008() *Device{
 		ManufacturerID: "022e",
 		ProductType: "0007",
 		ProductID: "0008",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x004e,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008b,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				InNIF: "false",
@@ -35980,66 +35980,66 @@ func New023000030001() *Device{
 		ManufacturerID: "0230",
 		ProductType: "0003",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				InNIF: "false",
 				Secure: true,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008a,
 				InNIF: "false",
 				Secure: true,
@@ -36056,70 +36056,70 @@ func New02340003010a() *Device{
 		ManufacturerID: "0234",
 		ProductType: "0003",
 		ProductID: "010a",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0028,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
@@ -36135,135 +36135,135 @@ func New023800030004() *Device{
 		ManufacturerID: "0238",
 		ProductType: "0003",
 		ProductID: "0004",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0045,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
@@ -36281,47 +36281,47 @@ func New023900010001() *Device{
 		ManufacturerID: "0239",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 			},
 		},
@@ -36336,62 +36336,62 @@ func New023c00010002() *Device{
 		ManufacturerID: "023c",
 		ProductType: "0001",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Secure: true,
 				NonSecure: false,
@@ -36409,157 +36409,157 @@ func New024000010001() *Device{
 		ManufacturerID: "0240",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0033,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "7",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0035,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				InNIF: "false",
@@ -36577,94 +36577,94 @@ func New0244ba5e0001() *Device{
 		ManufacturerID: "0244",
 		ProductType: "ba5e",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "8",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
@@ -36682,46 +36682,46 @@ func New024500030001() *Device{
 		ManufacturerID: "0245",
 		ProductType: "0003",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
@@ -36737,46 +36737,46 @@ func New024500030002() *Device{
 		ManufacturerID: "0245",
 		ProductType: "0003",
 		ProductID: "0002",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
@@ -36792,61 +36792,61 @@ func New024700420001() *Device{
 		ManufacturerID: "0247",
 		ProductType: "0042",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 				NonSecure: false,
@@ -36863,163 +36863,163 @@ func New024800010001() *Device{
 		ManufacturerID: "0248",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0055,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0023,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005f,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0061,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Controlled: "true",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x004d,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0052,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0067,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Secure: true,
 				NonSecure: false,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0069,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0034,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0052,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
@@ -37037,151 +37037,151 @@ func New024a01020304() *Device{
 		ManufacturerID: "024a",
 		ProductType: "0102",
 		ProductID: "0304",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0033,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "7",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
@@ -37189,7 +37189,7 @@ func New024a01020304() *Device{
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
@@ -37205,91 +37205,91 @@ func New024b01000001() *Device{
 		ManufacturerID: "024b",
 		ProductType: "0100",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Controlled: "true",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
@@ -37307,82 +37307,82 @@ func New024d00010001() *Device{
 		ManufacturerID: "024d",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
@@ -37400,50 +37400,50 @@ func New024d47610001() *Device{
 		ManufacturerID: "024d",
 		ProductType: "4761",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Secure: true,
 				NonSecure: false,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Secure: true,
 				NonSecure: false,
@@ -37461,134 +37461,134 @@ func New024f00010001() *Device{
 		ManufacturerID: "024f",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "6",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				InNIF: "false",
@@ -37606,51 +37606,51 @@ func New025800030082() *Device{
 		ManufacturerID: "0258",
 		ProductType: "0003",
 		ProductID: "0082",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -37667,55 +37667,55 @@ func New025800030083() *Device{
 		ManufacturerID: "0258",
 		ProductType: "0003",
 		ProductID: "0083",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Version: "7",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -37732,51 +37732,51 @@ func New025800030085() *Device{
 		ManufacturerID: "0258",
 		ProductType: "0003",
 		ProductID: "0085",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -37793,50 +37793,50 @@ func New025800030087() *Device{
 		ManufacturerID: "0258",
 		ProductType: "0003",
 		ProductID: "0087",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -37851,51 +37851,51 @@ func New025800031082() *Device{
 		ManufacturerID: "0258",
 		ProductType: "0003",
 		ProductID: "1082",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -37912,50 +37912,50 @@ func New025800031087() *Device{
 		ManufacturerID: "0258",
 		ProductType: "0003",
 		ProductID: "1087",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
 		},
@@ -37970,54 +37970,54 @@ func New025d01000100() *Device{
 		ManufacturerID: "025d",
 		ProductType: "0100",
 		ProductID: "0100",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -38034,54 +38034,54 @@ func New025d02000100() *Device{
 		ManufacturerID: "025d",
 		ProductType: "0200",
 		ProductID: "0100",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
@@ -38098,44 +38098,44 @@ func New026001680168() *Device{
 		ManufacturerID: "0260",
 		ProductType: "0168",
 		ProductID: "0168",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Version: "2",
 			},
@@ -38151,44 +38151,44 @@ func New026080011000() *Device{
 		ManufacturerID: "0260",
 		ProductType: "8001",
 		ProductID: "1000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Version: "2",
 			},
@@ -38204,262 +38204,262 @@ func New027200010001() *Device{
 		ManufacturerID: "0272",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008f,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008a,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0077,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009c,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0066,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0030,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0033,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0021,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x004c,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0082,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0087,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0032,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x003d,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "9",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0075,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0035,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002d,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x004e,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x009e,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0094,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0045,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008b,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0063,
 				Controlled: "true",
 				InNIF: "false",
@@ -38476,62 +38476,62 @@ func New027601390001() *Device{
 		ManufacturerID: "0276",
 		ProductType: "0139",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0071,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				InNIF: "false",
 			},
@@ -38547,125 +38547,125 @@ func New027700010001() *Device{
 		ManufacturerID: "0277",
 		ProductType: "0001",
 		ProductID: "0001",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0055,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0056,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0022,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0098,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x004d,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0052,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0067,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x007a,
 				Secure: true,
 				NonSecure: false,
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0069,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0034,
 				Secure: true,
 				NonSecure: false,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0033,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0062,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "3",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 				Controlled: "true",
 				InNIF: "false",
 				Version: "5",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Controlled: "true",
 				InNIF: "false",
@@ -38682,46 +38682,46 @@ func New52540000531e() *Device{
 		ManufacturerID: "5254",
 		ProductType: "0000",
 		ProductID: "531e",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0021,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002d,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
 		},
@@ -38736,44 +38736,44 @@ func New525400008510() *Device{
 		ManufacturerID: "5254",
 		ProductType: "0000",
 		ProductID: "8510",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0021,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 				Controlled: "true",
 				Version: "2",
@@ -38790,60 +38790,60 @@ func New5254000103e9() *Device{
 		ManufacturerID: "5254",
 		ProductType: "0001",
 		ProductID: "03e9",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0021,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002d,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0094,
 				Controlled: "true",
 			},
@@ -38859,65 +38859,65 @@ func New525400018332() *Device{
 		ManufacturerID: "5254",
 		ProductType: "0001",
 		ProductID: "8332",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 				InNIF: "false",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0021,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002d,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0094,
 				Controlled: "true",
 				Version: "4",
@@ -38934,28 +38934,28 @@ func New525400018380() *Device{
 		ManufacturerID: "5254",
 		ProductType: "0001",
 		ProductID: "8380",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0021,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002d,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -38970,44 +38970,44 @@ func New525400018510() *Device{
 		ManufacturerID: "5254",
 		ProductType: "0001",
 		ProductID: "8510",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0021,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 				Controlled: "true",
 				Version: "2",
@@ -39024,44 +39024,44 @@ func New5254000b8510() *Device{
 		ManufacturerID: "5254",
 		ProductType: "000b",
 		ProductID: "8510",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x005e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0021,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0084,
 				Controlled: "true",
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0059,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005b,
 				Controlled: "true",
 				Version: "2",
@@ -39078,25 +39078,25 @@ func New525401008371() *Device{
 		ManufacturerID: "5254",
 		ProductType: "0100",
 		ProductID: "8371",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0094,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
@@ -39112,25 +39112,25 @@ func New525401018371() *Device{
 		ManufacturerID: "5254",
 		ProductType: "0101",
 		ProductID: "8371",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0094,
 				Version: "4",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Version: "3",
 			},
@@ -39146,38 +39146,38 @@ func New525401018377() *Device{
 		ManufacturerID: "5254",
 		ProductType: "0101",
 		ProductID: "8377",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
 		},
@@ -39192,38 +39192,38 @@ func New525401078377() *Device{
 		ManufacturerID: "5254",
 		ProductType: "0107",
 		ProductID: "8377",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -39238,41 +39238,41 @@ func New525402008030() *Device{
 		ManufacturerID: "5254",
 		ProductType: "0200",
 		ProductID: "8030",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0081,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0045,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0042,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0047,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -39287,17 +39287,17 @@ func New525410008140() *Device{
 		ManufacturerID: "5254",
 		ProductType: "1000",
 		ProductID: "8140",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
 		},
@@ -39312,32 +39312,32 @@ func New52544d534331() *Device{
 		ManufacturerID: "5254",
 		ProductType: "4d53",
 		ProductID: "4331",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0080,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0031,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0044,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0040,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0043,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -39352,26 +39352,26 @@ func New525480010000() *Device{
 		ManufacturerID: "5254",
 		ProductType: "8001",
 		ProductID: "0000",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
 		},
@@ -39386,47 +39386,47 @@ func New525480018020() *Device{
 		ManufacturerID: "5254",
 		ProductType: "8001",
 		ProductID: "8020",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x008e,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x005a,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0060,
 				Controlled: "true",
 				Version: "3",
@@ -39443,38 +39443,38 @@ func New525482008130() *Device{
 		ManufacturerID: "5254",
 		ProductType: "8200",
 		ProductID: "8130",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},
@@ -39489,30 +39489,30 @@ func New525482010200() *Device{
 		ManufacturerID: "5254",
 		ProductType: "8201",
 		ProductID: "0200",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0000,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 				InNIF: "false",
 			},
@@ -39528,41 +39528,41 @@ func New525482018021() *Device{
 		ManufacturerID: "5254",
 		ProductType: "8201",
 		ProductID: "8021",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 				Controlled: "true",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002b,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x002c,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0073,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0025,
 			},
 		},
@@ -39577,28 +39577,28 @@ func New525482018120() *Device{
 		ManufacturerID: "5254",
 		ProductType: "8201",
 		ProductID: "8120",
-		CommandClasses: []*commandClass{
-			&commandClass{
+		CommandClasses: []*CommandClass{
+			&CommandClass{
 				ID: 0x0020,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0027,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0026,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0070,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0085,
 				Version: "2",
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0072,
 			},
-			&commandClass{
+			&CommandClass{
 				ID: 0x0086,
 			},
 		},

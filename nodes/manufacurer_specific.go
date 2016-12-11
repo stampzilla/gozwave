@@ -1,6 +1,7 @@
 package nodes
 
 import (
+	"fmt"
 	"time"
 
 	"github.com/Sirupsen/logrus"
@@ -15,7 +16,7 @@ type ManufacurerSpecific struct {
 func (n *Node) RequestManufacturerSpecific() error {
 	// Todo: Send raw messages here
 
-	resp := <-n.connection.SendRaw([]byte{
+	resp := <-n.connection.SendRawAndWaitForResponse([]byte{
 		functions.SendData, // Function
 		byte(n.Id),         // Node id
 		0x02,               // Length
@@ -24,7 +25,7 @@ func (n *Node) RequestManufacturerSpecific() error {
 		0x00,
 		//0x05, // TransmitOptions?
 		//0x23, // Callback?
-	}, time.Second*10) // Request node information
+	}, time.Second*10, 0x05) // Request node information
 
 	logrus.Infof("RESP: %#v", resp)
 
@@ -34,11 +35,12 @@ func (n *Node) RequestManufacturerSpecific() error {
 			switch cmd := r.Data.(type) {
 			case *commands.CmdManufacturerSpecific:
 				n.ManufacurerSpecific = cmd
+				return nil
 			default:
 				spew.Dump("Wrong type: %t", r.Command)
 			}
 		}
 	}
 
-	return nil
+	return fmt.Errorf("Failed to get ManufacurerSpecific")
 }

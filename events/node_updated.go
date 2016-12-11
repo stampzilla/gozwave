@@ -1,5 +1,5 @@
 package events
 
 type NodeUpdated struct {
-	Address byte
+	Address int
 }
