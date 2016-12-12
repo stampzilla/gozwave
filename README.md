@@ -12,8 +12,8 @@ We love any help we can get! If you are interested just fork the lib, make chang
 ## TODO
 - [x] Basic communication between controller and lib (serial-api)
 - [x] Get a list of nodes
-- [ ] Identify each node and look them up in a device database
+- [x] Identify each node and look them up in a device database
 - [ ] Save/Load the identified nodes in a file
 - [ ] List, get and set parameters in a node
-- [ ] Implement commands to send to the nodes
+- [x] Implement commands to send to the nodes (Some implemented)
 - [ ] Receive and decode events from sensors
