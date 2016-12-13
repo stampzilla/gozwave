@@ -15,50 +15,6 @@ import (
 // http://products.z-wavealliance.org/products/1729
 // http://www.pepper1.net/zwavedb/
 
-//type manufacturerId struct {
-//Value string `xml:"value,attr"`
-//}
-
-//type productType struct {
-//Value string `xml:"value,attr"`
-//}
-//type productId struct {
-//Value string `xml:"value,attr"`
-//}
-//type libType struct {
-//Value string `xml:"value,attr"`
-//}
-//type protoVersion struct {
-//Value string `xml:"value,attr"`
-//}
-//type protoSubVersion struct {
-//Value string `xml:"value,attr"`
-//}
-//type appVersion struct {
-//Value string `xml:"value,attr"`
-//}
-//type appSubVersion struct {
-//Value string `xml:"value,attr"`
-//}
-//type basicClass struct {
-//Value string `xml:"value,attr"`
-//}
-//type genericClass struct {
-//Value string `xml:"value,attr"`
-//}
-//type specificClass struct {
-//Value string `xml:"value,attr"`
-//}
-//type optional struct {
-//Value string `xml:"value,attr"`
-//}
-//type listening struct {
-//Value string `xml:"value,attr"`
-//}
-//type routing struct {
-//Value string `xml:"value,attr"`
-//}
-
 type deviceDataValue struct {
 	Value string `xml:"value,attr"`
 }
@@ -92,13 +48,6 @@ type commandClass struct {
 }
 
 func (c commandClass) IDasHex() string {
-	//h, err := hex.DecodeString(c.ID)
-
-	//if err != nil {
-	//log.Println(err)
-	//return ""
-	//}
-
 	return "0x" + c.ID
 }
 
@@ -127,7 +76,6 @@ type zWaveDevice struct {
 	DeviceData        deviceData        `xml:"deviceData"`
 	DeviceDescription deviceDescription `xml:"deviceDescription"`
 	CommandClasses    []commandClass    `xml:"commandClasses>commandClass"`
-	//ManufacturerId    string     `xml:"deviceData>manufacturerId,attr"`
 }
 
 var templ = `package {{.Package}}
@@ -212,11 +160,6 @@ func New{{ $value.DeviceData.ManufacturerID.Value }}{{ $value.DeviceData.Product
 {{- end}}
 `
 
-//TODO wee need to be more specific in our template above
-// 135-0115-1000-0001-06-03-16-01-04.xml
-// 132-0115-1000-0001-06-03-16-01-05.xml
-// has same ManufacturerID-ProductType-ProductID ?
-
 type templates struct {
 	Devices map[string]*zWaveDevice
 	Package string
@@ -271,6 +214,10 @@ func main() {
 				dev.DeviceData.ProductID.Value
 
 		//spew.Dump(dev)
+		//TODO wee need to be more specific in our template above
+		// 135-0115-1000-0001-06-03-16-01-04.xml
+		// 132-0115-1000-0001-06-03-16-01-05.xml
+		// has same ManufacturerID-ProductType-ProductID ?
 		devices.Devices[dev.Name] = dev
 	}
 
