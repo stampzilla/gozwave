@@ -3,9 +3,12 @@ package gozwave
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
 	"os"
+	"time"
 
 	"github.com/Sirupsen/logrus"
+	"github.com/stampzilla/gozwave/functions"
 	"github.com/stampzilla/gozwave/nodes"
 	"github.com/stampzilla/gozwave/serialapi"
 )
@@ -22,26 +25,25 @@ func (self *Controller) getNodes() (*nodes.List, error) {
 	if self.eventQue == nil {
 		self.eventQue = make(chan interface{}, 10)
 	}
-	/*
-		resp := <-self.Connection.SendRaw([]byte{0x02}, time.Second*5)
-		if resp == nil {
-			return nil, fmt.Errorf("Send failed, timeut?")
-		}
+	resp := <-self.Connection.SendRaw([]byte{0x02}, time.Second*5)
+	if resp == nil {
+		return nil, fmt.Errorf("Send failed, timeut?")
+	}
 
-		switch r := resp.Data.(type) {
-		case *functions.FuncDiscoveryNodes:
-			for index, active := range r.ActiveNodes {
-				if !active {
-					continue
-				}
-
-				node, basicIdentificationDone := nodes.New((index + 1), self.Connection, self.eventQue)
-				self.Nodes.Add(node)
-				<-basicIdentificationDone
+	switch r := resp.Data.(type) {
+	case *functions.FuncDiscoveryNodes:
+		for index, active := range r.ActiveNodes {
+			if !active {
+				continue
 			}
-		default:
-			logrus.Errorf("Got wrong response type: %t", r)
-		}*/
+
+			node, basicIdentificationDone := nodes.New((index + 1), self.Connection, self.eventQue)
+			self.Nodes.Add(node)
+			<-basicIdentificationDone
+		}
+	default:
+		logrus.Errorf("Got wrong response type: %t", r)
+	}
 
 	//spew.Dump(self)
 
