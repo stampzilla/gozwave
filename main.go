@@ -26,7 +26,9 @@ func Connect(port string, filename string) (*Controller, error) {
 	//spew.Dump(c)
 
 	c.Nodes.SetConnection(c.Connection)
-	c.LoadConfigurationFromFile()
+	if filename != "" {
+		c.LoadConfigurationFromFile()
+	}
 
 	go func() {
 		for {

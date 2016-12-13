@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"os"
 
-	"github.com/coreos/fleet/log"
+	"github.com/Sirupsen/logrus"
 	"github.com/stampzilla/gozwave/nodes"
 	"github.com/stampzilla/gozwave/serialapi"
 )
@@ -72,14 +72,14 @@ func (self *Controller) SaveConfigurationToFile() error {
 
 	configFile, err := os.Create(self.filename)
 	if err != nil {
-		log.Error("creating config file", err.Error())
+		logrus.Error("creating config file", err.Error())
 	}
 
-	log.Info("Save config: ", self.filename)
+	logrus.Info("Save config: ", self.filename)
 	var out bytes.Buffer
 	b, err := json.MarshalIndent(self, "", "\t")
 	if err != nil {
-		log.Error("error marshal json", err)
+		logrus.Error("error marshal json", err)
 	}
 	json.Indent(&out, b, "", "\t")
 	out.WriteTo(configFile)
