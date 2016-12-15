@@ -168,6 +168,7 @@ func (self *Connection) Connect(connectChan chan error) (err error) {
 
 func (self *Connection) Writer() {
 	for {
+		<-time.After(time.Millisecond * 50)
 		select {
 		case pkg := <-self.send:
 			self.Lock()
@@ -275,17 +276,15 @@ func (self *Connection) Reader() error {
 			if msg != nil {
 				switch cmd := msg.Data.(type) {
 				case *functions.FuncApplicationCommandHandler:
-					switch cmd.Data.(type) {
+					switch data := cmd.Data.(type) {
 					case *commands.CmdWakeUp:
-						c, ok := self.updateChans[strconv.Itoa(int(msg.NodeId))]
-						if ok {
-							go func() {
-								select {
-								case c <- msg:
-								case <-time.After(time.Second):
-								}
-							}()
-						}
+						self.DeliverUpdate(msg.NodeId, msg)
+					case *commands.SwitchBinaryReport:
+						self.DeliverUpdate(msg.NodeId, msg)
+					case *commands.SwitchMultilevelReport:
+						self.DeliverUpdate(msg.NodeId, msg)
+					default:
+						logrus.Infof("!DeliverUpdate: %T", data)
 					}
 				}
 			}
@@ -300,6 +299,19 @@ func (self *Connection) Reader() error {
 		}
 	}
 
+}
+
+func (self *Connection) DeliverUpdate(id byte, msg interface{}) {
+	logrus.Infof("DeliverUpdate: %T", msg)
+	c, ok := self.updateChans[strconv.Itoa(int(id))]
+	if ok {
+		go func() {
+			select {
+			case c <- msg:
+			case <-time.After(time.Second):
+			}
+		}()
+	}
 }
 
 func (c *sendPackage) Match(incomming []byte) bool {

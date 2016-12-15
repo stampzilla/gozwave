@@ -13,6 +13,9 @@ type Endpoint struct {
 	Id             int
 	CommandClasses []*database.CommandClass
 
+	StateBool  map[string]bool
+	StateFloat map[string]float64
+
 	node *Node
 }
 

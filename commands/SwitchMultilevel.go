@@ -6,8 +6,8 @@ type CmdSwitchMultilevel struct {
 }
 
 func NewSwitchMultilevel() *CmdSwitchMultilevel {
-	return &CmdSwitchMultilevel{}
 
+	return &CmdSwitchMultilevel{}
 }
 
 func (c *CmdSwitchMultilevel) SetValue(v float64) *CmdSwitchMultilevel {

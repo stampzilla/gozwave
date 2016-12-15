@@ -45,6 +45,9 @@ func (n *Node) RequestEndpoints() error {
 						Id:             i,
 						CommandClasses: n.Device.CommandClasses,
 
+						StateBool:  make(map[string]bool),
+						StateFloat: make(map[string]float64),
+
 						node: n,
 					})
 				}

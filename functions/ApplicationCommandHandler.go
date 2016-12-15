@@ -49,6 +49,18 @@ func (self *FuncApplicationCommandHandler) Decode(data []byte) {
 			self.Data = commands.NewCmdSensorMultiLevel(data[2:])
 			logrus.Debugf("%+v\n", self.Data)
 		}
+	case commands.SwitchBinary:
+		switch self.Class {
+		case 0x03: // Report
+			self.Data = commands.NewSwitchBinaryReport(data[2:])
+			logrus.Debugf("%+v\n", self.Data)
+		}
+	case commands.SwitchMultilevel:
+		switch self.Class {
+		case 0x03: // Report
+			self.Data = commands.NewSwitchMultilevelReport(data[2:])
+			logrus.Debugf("%+v\n", self.Data)
+		}
 	case commands.WakeUp:
 		//	self.Node = data[2];
 		self.Data = commands.NewWakeUp(data[2:])

@@ -14,6 +14,8 @@ import (
 func New(address int, connection *serialapi.Connection, eventQue chan interface{}) (*Node, chan struct{}) {
 	n := &Node{
 		Id:         address,
+		StateBool:  make(map[string]bool),
+		StateFloat: make(map[string]float64),
 		connection: connection,
 		eventQue:   eventQue,
 	}
@@ -35,6 +37,10 @@ type Node struct {
 	Device *database.Device
 
 	Endpoints []*Endpoint
+
+	StateBool  map[string]bool
+	StateFloat map[string]float64
+	statesOk   bool
 
 	connection *serialapi.Connection
 	eventQue   chan interface{}
@@ -69,13 +75,24 @@ func (n *Node) Worker(basicDone chan struct{}) {
 				case *serialapi.Message:
 					switch body := msg.Data.(type) {
 					case *functions.FuncApplicationCommandHandler:
-						switch body.Data.(type) {
+						switch data := body.Data.(type) {
 						case *commands.CmdWakeUp:
 							logrus.Error("NODE RECEIVED WAKEUP")
 							if n.awake != nil {
 								close(n.awake)
 								n.awake = nil
 							}
+						case *commands.SwitchBinaryReport:
+							n.StateBool["On"] = data.Status
+							n.pushEvent(events.NodeUpdated{
+								Address: n.Id,
+							})
+						case *commands.SwitchMultilevelReport:
+							n.StateBool["On"] = data.Level > 0
+							n.StateFloat["Level"] = float64(data.Level)
+							n.pushEvent(events.NodeUpdated{
+								Address: n.Id,
+							})
 						}
 					}
 				}
@@ -130,12 +147,12 @@ func (n *Node) Identify(basicDone chan struct{}) {
 			basicDone = nil
 		}
 
-		<-n.isAwake()
 		//<-self.Connection.SendRaw([]byte{functions.GetNodeProtocolInfo, byte(index + 1)}) // Request node information
 		//		nodeinfo := self.WaitForGetNodeProtocolInfo()
 
 		// All manufacturer specific information such as vendor, vendors product ID and product type
 		if n.ManufacurerSpecific == nil {
+			<-n.isAwake()
 			err := n.RequestManufacturerSpecific()
 			if err != nil {
 				<-time.After(time.Second * 10)
@@ -164,8 +181,8 @@ func (n *Node) Identify(basicDone chan struct{}) {
 		//logrus.Println("%#v", resp)
 
 		// Request node endpoints
-		<-n.isAwake()
 		if n.Endpoints == nil {
+			<-n.isAwake()
 			err := n.RequestEndpoints()
 			if err != nil {
 				<-time.After(time.Second * 10)
@@ -175,6 +192,16 @@ func (n *Node) Identify(basicDone chan struct{}) {
 			n.pushEvent(events.NodeUpdated{
 				Address: n.Id,
 			})
+			continue
+		}
+
+		if !n.statesOk {
+			<-n.isAwake()
+			err := n.RequestStates()
+			if err != nil {
+				<-time.After(time.Second * 10)
+				continue
+			}
 			continue
 		}
 
