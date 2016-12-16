@@ -93,6 +93,11 @@ func (n *Node) Worker(basicDone chan struct{}) {
 							n.pushEvent(events.NodeUpdated{
 								Address: n.Id,
 							})
+						case *commands.CmdSensorMultiLevel:
+							n.StateFloat[data.TypeString+" ("+data.Unit+")"] = data.Value
+							n.pushEvent(events.NodeUpdated{
+								Address: n.Id,
+							})
 						}
 					}
 				}

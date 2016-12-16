@@ -283,6 +283,8 @@ func (self *Connection) Reader() error {
 						self.DeliverUpdate(msg.NodeId, msg)
 					case *commands.SwitchMultilevelReport:
 						self.DeliverUpdate(msg.NodeId, msg)
+					case *commands.CmdSensorMultiLevel:
+						self.DeliverUpdate(msg.NodeId, msg)
 					default:
 						logrus.Infof("!DeliverUpdate: %T", data)
 					}
