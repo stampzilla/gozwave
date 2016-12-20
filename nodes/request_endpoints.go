@@ -12,6 +12,11 @@ import (
 func (n *Node) RequestEndpoints() error {
 	// Todo: Send raw messages here
 
+	if n.Device.CommandClasses == nil {
+		n.Endpoints = make([]*Endpoint, 0)
+		return fmt.Errorf("Failed 'RequestEndpoints', no commandclasses exists")
+	}
+
 	for _, v := range n.Device.CommandClasses {
 		logrus.Errorf("Request endpoint %d:%x - %s", n.Id, byte(v.ID), v.ID)
 	}

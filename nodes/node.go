@@ -185,13 +185,33 @@ func (n *Node) Identify(basicDone chan struct{}) {
 		//}, time.Second*10) // Request node information
 		//logrus.Println("%#v", resp)
 
+		// associoation with controller
+		//if n.Id == 5 {
+		//logrus.Println("")
+		//logrus.Println("")
+		//resp := <-n.connection.SendRaw([]byte{
+		//functions.SendData,   // Function
+		//byte(n.Id),           // Node id
+		//0x04,                 // Length
+		//commands.Association, // Command
+		//0x01,                 // AssociationCmd_Set
+		//0x01,                 // Group
+		//0x01,                 // Target node (controller)
+		//0x25,                 // TransmitOptions?
+		////0x23, // Callback?
+		//}, time.Second*10) // Request node information
+		//logrus.Println("")
+		//logrus.Println("")
+		//logrus.Println("%#v", resp)
+		//}
+
 		// Request node endpoints
 		if n.Endpoints == nil {
 			<-n.isAwake()
 			err := n.RequestEndpoints()
 			if err != nil {
 				<-time.After(time.Second * 10)
-				continue
+				//continue
 			}
 
 			n.pushEvent(events.NodeUpdated{

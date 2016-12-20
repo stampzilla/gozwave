@@ -507,6 +507,8 @@ func New(manufacturerID, productType, productID string) *Device{
 		return New009700240045() // 212-0097-0024-0045-03-03-22-01-00.xml | 009700240045
 	case "009711824501":
 		return New009711824501() // 333-0097-1182-4501-06-02-61-00-27.xml | 009711824501
+	case "009761314501":
+		return New009761314501() // 992-0097-6131-4101.xml | 009761314501
 	case "009761315101":
 		return New009761315101() // 944-0097-6131-5101-03-03-43-00-1c.xml | 009761315101
 	case "009769415501":
@@ -13279,6 +13281,52 @@ func New009711824501() *Device{
 			},
 			&CommandClass{
 				ID: 0x0072,
+			},
+		},
+	}
+}
+func New009761314501() *Device{
+	return &Device{
+		Brand: "Zipato (Wintop)",
+		Product: "Mini Keypad &amp; RFID Reader",
+		Description: "\n            \n            \n          ",
+
+		ManufacturerID: "0097",
+		ProductType: "6131",
+		ProductID: "4501",
+		CommandClasses: []*CommandClass{
+			&CommandClass{
+				ID: 0x0020,
+				InNIF: "false",
+			},
+			&CommandClass{
+				ID: 0x0025,
+			},
+			&CommandClass{
+				ID: 0x0063,
+			},
+			&CommandClass{
+				ID: 0x0070,
+			},
+			&CommandClass{
+				ID: 0x0071,
+				Version: "2",
+			},
+			&CommandClass{
+				ID: 0x0072,
+				Version: "2",
+			},
+			&CommandClass{
+				ID: 0x0080,
+			},
+			&CommandClass{
+				ID: 0x0084,
+			},
+			&CommandClass{
+				ID: 0x0085,
+			},
+			&CommandClass{
+				ID: 0x0086,
 			},
 		},
 	}
