@@ -1,6 +1,7 @@
 package nodes
 
 import (
+	"strings"
 	"time"
 
 	"github.com/Sirupsen/logrus"
@@ -83,18 +84,20 @@ func (n *Node) Worker(basicDone chan struct{}) {
 								n.awake = nil
 							}
 						case *commands.SwitchBinaryReport:
-							n.StateBool["On"] = data.Status
+							n.StateBool["on"] = data.Status
 							n.pushEvent(events.NodeUpdated{
 								Address: n.Id,
 							})
 						case *commands.SwitchMultilevelReport:
-							n.StateBool["On"] = data.Level > 0
-							n.StateFloat["Level"] = float64(data.Level)
+							n.StateBool["on"] = data.Level > 0
+							n.StateFloat["level"] = float64(data.Level)
 							n.pushEvent(events.NodeUpdated{
 								Address: n.Id,
 							})
 						case *commands.CmdSensorMultiLevel:
-							n.StateFloat[data.TypeString+" ("+data.Unit+")"] = data.Value
+							//n.StateFloat[data.TypeString+" ("+data.Unit+")"] = data.Value
+							key := strings.ToLower(data.TypeString + "_" + data.Unit)
+							n.StateFloat[key] = data.Value
 							n.pushEvent(events.NodeUpdated{
 								Address: n.Id,
 							})
