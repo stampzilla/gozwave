@@ -3,8 +3,6 @@ package nodes
 import (
 	"time"
 
-	"github.com/Sirupsen/logrus"
-	"github.com/davecgh/go-spew/spew"
 	"github.com/stampzilla/gozwave/commands"
 	"github.com/stampzilla/gozwave/functions"
 )
@@ -35,7 +33,7 @@ func (self *Node) RequestStates() error {
 			}, time.Second*2)
 		case commands.SensorMultiLevel:
 			//<-time.After(time.Second * 10)
-			resp := <-self.connection.SendRawAndWaitForResponse([]byte{
+			<-self.connection.SendRawAndWaitForResponse([]byte{
 				functions.SendData, // Function
 				byte(self.Id),      // Node id
 				0x02,               // Length
@@ -45,8 +43,8 @@ func (self *Node) RequestStates() error {
 				//0x23, // Callback?
 			}, time.Second*2, 0x02) // Wait for SupportedReport (0x02)
 
-			logrus.Errorf("Sensors supportedget:")
-			spew.Dump(resp)
+			//logrus.Errorf("Sensors supportedget:")
+			//spew.Dump(resp)
 		}
 	}
 

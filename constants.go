@@ -1,8 +1,7 @@
 package gozwave
 
 /************ Basic Device Class identifiers **************/
-const BASIC_TYPE_CONTROLLER = 0x01 /*Node is a portable
-controller */
+const BASIC_TYPE_CONTROLLER = 0x01        /*Node is a portable controller */
 const BASIC_TYPE_ROUTING_SLAVE = 0x04     /*Node is a slave with routing capabilities*/
 const BASIC_TYPE_SLAVE = 0x03             /*Node is a slave*/
 const BASIC_TYPE_STATIC_CONTROLLER = 0x02 /*Node is a static controller*/

@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/Sirupsen/logrus"
 	"github.com/davecgh/go-spew/spew"
 	"github.com/stampzilla/gozwave/commands"
 	"github.com/stampzilla/gozwave/functions"
@@ -26,8 +25,6 @@ func (n *Node) RequestManufacturerSpecific() error {
 		//0x05, // TransmitOptions?
 		//0x23, // Callback?
 	}, time.Second*10, 0x05) // Request node information
-
-	logrus.Infof("RESP: %#v", resp)
 
 	if resp != nil {
 		switch r := resp.Data.(type) {

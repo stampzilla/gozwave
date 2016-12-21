@@ -1,10 +1,8 @@
 package serialapi
 
 import (
-	"encoding/hex"
 	"io"
 	"strconv"
-	"strings"
 	"sync"
 	"time"
 
@@ -62,7 +60,9 @@ func NewConnection() *Connection {
 func (self *Connection) RegisterNode(address byte) chan interface{} {
 	c := make(chan interface{})
 
+	self.Lock()
 	self.updateChans[strconv.Itoa(int(address))] = c
+	self.Unlock()
 
 	return c
 }
@@ -92,7 +92,7 @@ func (self *Connection) SendRawAndWaitForResponse(data []byte, timeout time.Dura
 	msg = append([]byte{0x01}, msg...)
 
 	uuid := uuid.New()
-	logrus.Infof("Sending: %s", strings.TrimSpace(hex.Dump(msg)))
+	//logrus.Infof("Sending: %s", strings.TrimSpace(hex.Dump(msg)))
 	pkg := &sendPackage{
 		message:    msg,
 		uuid:       uuid,
@@ -180,7 +180,7 @@ func (self *Connection) Writer() {
 
 			select {
 			case result := <-self.lastResult:
-				logrus.Infof("RESULT: %s", pkg.uuid)
+				//logrus.Infof("RESULT: %s", pkg.uuid)
 				pkg.result = result
 			case <-time.After(time.Second):
 				// SEND TIMEOUT
@@ -277,6 +277,8 @@ func (self *Connection) Reader() error {
 				switch cmd := msg.Data.(type) {
 				case *functions.FuncApplicationCommandHandler:
 					switch data := cmd.Data.(type) {
+					case *commands.CmdAlarm:
+						self.DeliverUpdate(msg.NodeId, msg)
 					case *commands.CmdWakeUp:
 						self.DeliverUpdate(msg.NodeId, msg)
 					case *commands.SwitchBinaryReport:

@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"reflect"
 	"time"
 
 	"github.com/Sirupsen/logrus"
@@ -37,9 +38,15 @@ func (self *Controller) getNodes() (*nodes.List, error) {
 				continue
 			}
 
-			node, basicIdentificationDone := nodes.New((index + 1), self.Connection, self.eventQue)
+			if node := self.Nodes.Get(index + 1); node != nil {
+				node.Setup(self.Connection, self.eventQue)
+				go node.Worker()
+				continue
+			}
+
+			node := nodes.New((index + 1), self.Connection, self.eventQue)
 			self.Nodes.Add(node)
-			<-basicIdentificationDone
+			//<-basicIdentificationDone
 		}
 	default:
 		logrus.Errorf("Got wrong response type: %t", r)
@@ -70,12 +77,18 @@ func (self *Controller) GetNextEvent() chan interface{} {
 }
 
 func (self *Controller) SaveConfigurationToFile() error {
-	return nil
+	controller, err := self.loadConfigurationFromFile()
+	if err == nil {
+		if reflect.DeepEqual(self, controller) {
+			return nil
+		}
+	}
 
 	configFile, err := os.Create(self.filename)
 	if err != nil {
 		logrus.Error("creating config file", err.Error())
 	}
+	defer configFile.Close()
 
 	logrus.Info("Save config: ", self.filename)
 	var out bytes.Buffer
@@ -89,14 +102,8 @@ func (self *Controller) SaveConfigurationToFile() error {
 	return nil
 }
 func (self *Controller) LoadConfigurationFromFile() error {
-	configFile, err := os.Open(self.filename)
+	controller, err := self.loadConfigurationFromFile()
 	if err != nil {
-		return err
-	}
-
-	controller := &Controller{}
-	jsonParser := json.NewDecoder(configFile)
-	if err = jsonParser.Decode(&controller); err != nil {
 		return err
 	}
 
@@ -106,4 +113,19 @@ func (self *Controller) LoadConfigurationFromFile() error {
 	//self.Nodes = controller.Nodes
 
 	return nil
+}
+func (self *Controller) loadConfigurationFromFile() (*Controller, error) {
+	configFile, err := os.Open(self.filename)
+	if err != nil {
+		return nil, err
+	}
+	defer configFile.Close()
+
+	controller := &Controller{}
+	jsonParser := json.NewDecoder(configFile)
+	if err = jsonParser.Decode(&controller); err != nil {
+		return nil, err
+	}
+
+	return controller, nil
 }

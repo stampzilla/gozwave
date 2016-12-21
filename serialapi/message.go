@@ -40,11 +40,11 @@ func Decode(data []byte) (length int, msg *Message) {
 			return -1, nil
 		}
 
-		logrus.Debug("Found SOF")
+		//logrus.Debug("Found SOF")
 
 		return length + 2, CreateMessage(data)
 	case 0x06: // ACK
-		logrus.Debug("Found ACK")
+		//logrus.Debug("Found ACK")
 		return 1, nil
 	case 0x15: // NAK
 		logrus.Warn("Found NAK")
@@ -95,8 +95,7 @@ func CreateMessage(data []byte) *Message {
 		logrus.Warnf("Dropping message function='%s' with data %x (not implemented)", message.Function, data[4:])
 	}
 
-	logrus.Debugf("Message: %+v", message)
-	logrus.Debugf("Message data: %+v", message.Data)
+	logrus.Debugf("Message: %+v Message data: %+v", message, message.Data)
 	return message
 
 	// 1 FrameHeader (type of message)

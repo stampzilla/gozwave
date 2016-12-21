@@ -12,7 +12,7 @@ import (
 	"github.com/stampzilla/gozwave/serialapi"
 )
 
-func New(address int, connection *serialapi.Connection, eventQue chan interface{}) (*Node, chan struct{}) {
+func New(address int, connection *serialapi.Connection, eventQue chan interface{}) *Node {
 	n := &Node{
 		Id:         address,
 		StateBool:  make(map[string]bool),
@@ -21,11 +21,9 @@ func New(address int, connection *serialapi.Connection, eventQue chan interface{
 		eventQue:   eventQue,
 	}
 
-	c := make(chan struct{})
+	go n.Worker()
 
-	go n.Worker(c)
-
-	return n, c
+	return n
 }
 
 type Node struct {
@@ -50,6 +48,11 @@ type Node struct {
 	identified bool
 }
 
+func (n *Node) Setup(connection *serialapi.Connection, eventQue chan interface{}) {
+	n.connection = connection
+	n.eventQue = eventQue
+}
+
 func (n *Node) isAwake() chan struct{} {
 	if n.IsAwake {
 		c := make(chan struct{})
@@ -64,7 +67,7 @@ func (n *Node) isAwake() chan struct{} {
 	return n.awake
 }
 
-func (n *Node) Worker(basicDone chan struct{}) {
+func (n *Node) Worker() {
 
 	updateChan := n.connection.RegisterNode(byte(n.Id))
 	go func() {
@@ -77,6 +80,24 @@ func (n *Node) Worker(basicDone chan struct{}) {
 					switch body := msg.Data.(type) {
 					case *functions.FuncApplicationCommandHandler:
 						switch data := body.Data.(type) {
+						case *commands.CmdAlarm:
+							if data.Status == 0xFF {
+								n.StateBool["alarm"] = true
+								if data.Type != 0 {
+									n.StateFloat["alarm"] = float64(data.Type)
+									n.StateFloat["alarmLastType"] = float64(data.Type)
+								}
+								n.pushEvent(events.NodeUpdated{
+									Address: n.Id,
+								})
+
+								<-time.After(time.Second)
+								n.StateBool["alarm"] = false
+								n.StateFloat["alarm"] = 0
+								n.pushEvent(events.NodeUpdated{
+									Address: n.Id,
+								})
+							}
 						case *commands.CmdWakeUp:
 							logrus.Error("NODE RECEIVED WAKEUP")
 							if n.awake != nil {
@@ -108,32 +129,19 @@ func (n *Node) Worker(basicDone chan struct{}) {
 		}
 	}()
 
-	go n.Identify(basicDone)
-
-	if n.Id != 1 {
-		n.pushEvent(events.NodeDiscoverd{
-			Address: n.Id,
-		})
-	}
-
-	for {
-		select {}
-	}
-}
-func (n *Node) Identify(basicDone chan struct{}) {
-	logrus.Warnf("Started identification on node %d", n.Id)
-	defer logrus.Warnf("Ended identification on node %d", n.Id)
-
-	defer func() {
-		if basicDone != nil {
-			close(basicDone)
-			basicDone = nil
-		}
-	}()
-
 	if n.Id == 1 {
 		return
 	}
+
+	go n.Identify()
+	n.pushEvent(events.NodeDiscoverd{
+		Address: n.Id,
+	})
+}
+
+func (n *Node) Identify() {
+	logrus.Warnf("Started identification on node %d", n.Id)
+	defer logrus.Warnf("Ended identification on node %d", n.Id)
 
 	for {
 		if n.ProtocolInfo == nil {
@@ -149,11 +157,6 @@ func (n *Node) Identify(basicDone chan struct{}) {
 		}
 
 		n.IsAwake = n.ProtocolInfo.Listening
-
-		if basicDone != nil {
-			close(basicDone)
-			basicDone = nil
-		}
 
 		//<-self.Connection.SendRaw([]byte{functions.GetNodeProtocolInfo, byte(index + 1)}) // Request node information
 		//		nodeinfo := self.WaitForGetNodeProtocolInfo()
@@ -278,4 +281,12 @@ func (n *Node) HasCommand(c commands.ZWaveCommand) bool {
 	}
 
 	return false
+}
+
+func (n *Node) IsDeviceClass(generic, specific byte) bool {
+	if n.ProtocolInfo == nil {
+		return false
+	}
+
+	return n.ProtocolInfo.Generic == generic && n.ProtocolInfo.Specific == specific
 }

@@ -1,9 +1,6 @@
 package functions
 
-import (
-	"github.com/Sirupsen/logrus"
-	"github.com/stampzilla/gozwave/commands"
-)
+import "github.com/stampzilla/gozwave/commands"
 
 type FuncApplicationCommandHandler struct {
 	Command commands.ZWaveCommand
@@ -30,13 +27,11 @@ func (self *FuncApplicationCommandHandler) Decode(data []byte) {
 		switch self.Class {
 		case 0x05: // Report
 			self.Data = commands.NewCmdAlarm(data[2:])
-			logrus.Debugf("%+v\n", self.Data)
 		}
 	case commands.ManufacturerSpecific:
 		switch self.Class {
 		case 0x05: // Report
 			self.Data = commands.NewCmdManufacturerSpecific(data[2:])
-			logrus.Debugf("%+v\n", self.Data)
 		}
 	case commands.MultiInstance:
 		switch self.Class {
@@ -47,19 +42,16 @@ func (self *FuncApplicationCommandHandler) Decode(data []byte) {
 		switch self.Class {
 		case 0x05: // Report
 			self.Data = commands.NewCmdSensorMultiLevel(data[2:])
-			logrus.Debugf("%+v\n", self.Data)
 		}
 	case commands.SwitchBinary:
 		switch self.Class {
 		case 0x03: // Report
 			self.Data = commands.NewSwitchBinaryReport(data[2:])
-			logrus.Debugf("%+v\n", self.Data)
 		}
 	case commands.SwitchMultilevel:
 		switch self.Class {
 		case 0x03: // Report
 			self.Data = commands.NewSwitchMultilevelReport(data[2:])
-			logrus.Debugf("%+v\n", self.Data)
 		}
 	case commands.WakeUp:
 		//	self.Node = data[2];
