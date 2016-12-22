@@ -13,7 +13,7 @@ We love any help we can get! If you are interested just fork the lib, make chang
 - [x] Basic communication between controller and lib (serial-api)
 - [x] Get a list of nodes
 - [x] Identify each node and look them up in a device database
-- [ ] Save/Load the identified nodes in a file [#4](https://github.com/stampzilla/gozwave/issues/4)
+- [x] Save/Load the identified nodes in a file [#4](https://github.com/stampzilla/gozwave/issues/4)
 - [ ] List, get and set parameters in a node
 - [x] Implement commands to send to the nodes (Some implemented)
 - [ ] Receive and decode events from sensors
