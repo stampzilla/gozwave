@@ -12,7 +12,7 @@ import (
 func (n *Node) RequestEndpoints() error {
 	// Todo: Send raw messages here
 
-	if n.Device.CommandClasses == nil {
+	if n.Device == nil || n.Device.CommandClasses == nil {
 		n.Endpoints = make([]*Endpoint, 0)
 		return fmt.Errorf("Failed 'RequestEndpoints', no commandclasses exists")
 	}
