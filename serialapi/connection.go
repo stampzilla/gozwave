@@ -31,7 +31,7 @@ type Connection struct {
 
 	ConfigController interfaces.LoadSaveable
 
-	sync.Mutex
+	sync.RWMutex
 }
 
 type sendPackage struct {
@@ -219,6 +219,7 @@ func (self *Connection) Reader() error {
 
 			if l == 1 {
 				for index, c := range self.inFlight {
+					self.RLock()
 					if c.uuid == self.lastCommand {
 						select {
 						case self.lastResult <- incomming[0]:
@@ -237,6 +238,7 @@ func (self *Connection) Reader() error {
 							self.send <- c
 						}
 					}
+					self.RUnlock()
 				}
 			}
 

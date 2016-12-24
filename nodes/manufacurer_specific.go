@@ -31,7 +31,9 @@ func (n *Node) RequestManufacturerSpecific() error {
 		case *functions.FuncApplicationCommandHandler:
 			switch cmd := r.Data.(type) {
 			case *commands.CmdManufacturerSpecific:
+				n.Lock()
 				n.ManufacurerSpecific = cmd
+				n.Unlock()
 				return nil
 			default:
 				spew.Dump("Wrong type: %t", r.Command)

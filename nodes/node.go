@@ -2,6 +2,7 @@ package nodes
 
 import (
 	"strings"
+	"sync"
 	"time"
 
 	"github.com/Sirupsen/logrus"
@@ -46,6 +47,8 @@ type Node struct {
 
 	awake      chan struct{}
 	identified bool
+
+	sync.RWMutex
 }
 
 func (n *Node) Setup(connection *serialapi.Connection, eventQue chan interface{}) {
@@ -68,8 +71,10 @@ func (n *Node) isAwake() chan struct{} {
 }
 
 func (n *Node) Worker() {
-
+	n.RLock()
 	updateChan := n.connection.RegisterNode(byte(n.Id))
+	n.RUnlock()
+
 	go func() {
 		for {
 			select {
@@ -144,7 +149,9 @@ func (n *Node) Identify() {
 	defer logrus.Warnf("Ended identification on node %d", n.Id)
 
 	for {
+		n.RLock()
 		if n.ProtocolInfo == nil {
+			n.RUnlock()
 			err := n.RequestProtocolInfo()
 			if err != nil {
 				<-time.After(time.Second * 10)
@@ -155,14 +162,20 @@ func (n *Node) Identify() {
 			})
 			continue
 		}
+		n.RUnlock()
 
+		n.Lock()
 		n.IsAwake = n.ProtocolInfo.Listening
+		n.Unlock()
 
 		//<-self.Connection.SendRaw([]byte{functions.GetNodeProtocolInfo, byte(index + 1)}) // Request node information
 		//		nodeinfo := self.WaitForGetNodeProtocolInfo()
 
 		// All manufacturer specific information such as vendor, vendors product ID and product type
+		n.RLock()
 		if n.ManufacurerSpecific == nil {
+			n.RUnlock()
+
 			<-n.isAwake()
 			err := n.RequestManufacturerSpecific()
 			if err != nil {
@@ -212,7 +225,9 @@ func (n *Node) Identify() {
 		//}
 
 		// Request node endpoints
+		n.RLock()
 		if n.Endpoints == nil {
+			n.RUnlock()
 			<-n.isAwake()
 			err := n.RequestEndpoints()
 			if err != nil {
@@ -226,7 +241,9 @@ func (n *Node) Identify() {
 			continue
 		}
 
+		n.RLock()
 		if !n.statesOk {
+			n.RUnlock()
 			<-n.isAwake()
 			err := n.RequestStates()
 			if err != nil {
@@ -252,7 +269,10 @@ func (n *Node) Identify() {
 		n.pushEvent(events.NodeUpdated{
 			Address: n.Id,
 		})
+
+		n.Lock()
 		n.identified = true
+		n.Unlock()
 		return
 	}
 }

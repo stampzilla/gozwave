@@ -8,8 +8,11 @@ import (
 )
 
 func (self *Node) RequestStates() error {
+	self.RLock()
+	cc := self.Device.CommandClasses
+	self.RUnlock()
 
-	for _, v := range self.Device.CommandClasses {
+	for _, v := range cc {
 		switch v.ID {
 		case commands.SwitchBinary:
 			<-self.connection.SendRaw([]byte{
@@ -48,6 +51,8 @@ func (self *Node) RequestStates() error {
 		}
 	}
 
+	self.Lock()
 	self.statesOk = true
+	self.RUnlock()
 	return nil
 }

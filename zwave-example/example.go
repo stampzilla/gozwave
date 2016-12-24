@@ -36,11 +36,15 @@ func main() {
 			switch e := event.(type) {
 			case events.NodeDiscoverd:
 				znode := z.Nodes.Get(e.Address)
+				znode.RLock()
 				log.Printf("%#v\n", znode)
+				znode.RUnlock()
 
 			case events.NodeUpdated:
 				znode := z.Nodes.Get(e.Address)
+				znode.RLock()
 				log.Printf("%#v\n", znode)
+				znode.RUnlock()
 			}
 		}
 	}

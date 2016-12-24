@@ -21,7 +21,9 @@ func (n *Node) RequestProtocolInfo() error {
 	if resp != nil {
 		switch r := resp.Data.(type) {
 		case *functions.FuncGetNodeProtocolInfo:
+			n.Lock()
 			n.ProtocolInfo = r
+			n.Unlock()
 			return nil
 		default:
 			return fmt.Errorf("Wrong type: %t", resp.Data)

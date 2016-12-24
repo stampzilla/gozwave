@@ -28,10 +28,13 @@ func (l *List) Add(node *Node) {
 		l.nodes = make(map[int]*Node)
 	}
 
+	node.Lock()
 	node.connection = l.connection
 	for k, _ := range node.Endpoints {
 		node.Endpoints[k].node = node
 	}
+	node.Unlock()
+
 	l.nodes[int(node.Id)] = node
 	l.Unlock()
 }
@@ -40,6 +43,11 @@ func (l List) All() map[int]*Node {
 	l.RLock()
 	defer l.RUnlock()
 
+	for _, v := range l.nodes {
+		v.RLock()
+		defer v.RUnlock()
+	}
+
 	return l.nodes
 }
 
@@ -47,11 +55,18 @@ func (l List) Get(id int) *Node {
 	l.RLock()
 	defer l.RUnlock()
 
+	if l.nodes[id] != nil {
+		l.nodes[id].RLock()
+		defer l.nodes[id].RUnlock()
+	}
+
 	return l.nodes[id]
 }
 
 func (l *List) SetConnection(connection *serialapi.Connection) {
+	l.Lock()
 	l.connection = connection
+	l.Unlock()
 }
 
 func (l List) MarshalJSON() ([]byte, error) {

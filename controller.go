@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"os"
 	"reflect"
+	"sync"
 	"time"
 
 	"github.com/Sirupsen/logrus"
@@ -20,11 +21,15 @@ type Controller struct {
 	eventQue   chan interface{}
 
 	filename string
+
+	sync.RWMutex
 }
 
 func (self *Controller) getNodes() (*nodes.List, error) {
 	if self.eventQue == nil {
+		self.Lock()
 		self.eventQue = make(chan interface{}, 10)
+		self.Unlock()
 	}
 	resp := <-self.Connection.SendRaw([]byte{0x02}, time.Second*5)
 	if resp == nil {
@@ -69,9 +74,16 @@ func (self *Controller) PushEvent(event interface{}) {
 }
 
 func (self *Controller) GetNextEvent() chan interface{} {
+	self.RLock()
 	if self.eventQue == nil {
+		self.RUnlock()
+		self.Lock()
 		self.eventQue = make(chan interface{}, 10)
+		self.Unlock()
+		self.RLock()
 	}
+
+	defer self.RUnlock()
 
 	return self.eventQue
 }

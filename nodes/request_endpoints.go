@@ -11,15 +11,20 @@ import (
 
 func (n *Node) RequestEndpoints() error {
 	// Todo: Send raw messages here
-
+	n.RLock()
 	if n.Device == nil || n.Device.CommandClasses == nil {
+		n.RUnlock()
+		n.Lock()
 		n.Endpoints = make([]*Endpoint, 0)
+		n.Unlock()
 		return fmt.Errorf("Failed 'RequestEndpoints', no commandclasses exists")
 	}
 
 	for _, v := range n.Device.CommandClasses {
 		logrus.Errorf("Request endpoint %d:%x - %s", n.Id, byte(v.ID), v.ID)
 	}
+	n.RUnlock()
+
 	fmt.Println("")
 	fmt.Println("")
 	logrus.Errorf("Request endpoint %d", n.Id)
@@ -43,7 +48,7 @@ func (n *Node) RequestEndpoints() error {
 			case *commands.MultiChannelCmdEndPointReport:
 				//n.ManufacurerSpecific = cmd
 				logrus.Info(cmd.String())
-
+				n.Lock()
 				n.Endpoints = make([]*Endpoint, 0)
 				for i := 1; i < cmd.Endpoints; i++ {
 					n.Endpoints = append(n.Endpoints, &Endpoint{
@@ -56,6 +61,7 @@ func (n *Node) RequestEndpoints() error {
 						node: n,
 					})
 				}
+				n.Unlock()
 				return nil
 			default:
 				logrus.Errorf("Wrong type: %t", r.Command)
