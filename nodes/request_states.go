@@ -53,6 +53,6 @@ func (self *Node) RequestStates() error {
 
 	self.Lock()
 	self.statesOk = true
-	self.RUnlock()
+	self.Unlock()
 	return nil
 }

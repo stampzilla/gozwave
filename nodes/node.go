@@ -82,6 +82,7 @@ func (n *Node) Worker() {
 				//logrus.Errorf("Node received update: %T", update)
 				switch msg := update.(type) {
 				case *serialapi.Message:
+					n.Lock()
 					switch body := msg.Data.(type) {
 					case *functions.FuncApplicationCommandHandler:
 						switch data := body.Data.(type) {
@@ -129,6 +130,7 @@ func (n *Node) Worker() {
 							})
 						}
 					}
+					n.Unlock()
 				}
 			}
 		}
@@ -139,9 +141,12 @@ func (n *Node) Worker() {
 	}
 
 	go n.Identify()
+
+	n.RLock()
 	n.pushEvent(events.NodeDiscoverd{
 		Address: n.Id,
 	})
+	n.RUnlock()
 }
 
 func (n *Node) Identify() {
@@ -157,9 +162,12 @@ func (n *Node) Identify() {
 				<-time.After(time.Second * 10)
 				continue
 			}
+
+			n.RLock()
 			n.pushEvent(events.NodeUpdated{
 				Address: n.Id,
 			})
+			n.RUnlock()
 			continue
 		}
 		n.RUnlock()
@@ -183,13 +191,16 @@ func (n *Node) Identify() {
 				continue
 			}
 
+			n.Lock()
 			n.Device = database.New(n.ManufacurerSpecific.Manufacturer, n.ManufacurerSpecific.Type, n.ManufacurerSpecific.Id)
 
 			n.pushEvent(events.NodeUpdated{
 				Address: n.Id,
 			})
+			n.Unlock()
 			continue
 		}
+		n.RUnlock()
 
 		// Get node version
 		//resp := <-n.connection.SendRaw([]byte{
@@ -232,14 +243,17 @@ func (n *Node) Identify() {
 			err := n.RequestEndpoints()
 			if err != nil {
 				<-time.After(time.Second * 10)
-				//continue
+				continue
 			}
 
+			n.RLock()
 			n.pushEvent(events.NodeUpdated{
 				Address: n.Id,
 			})
+			n.RUnlock()
 			continue
 		}
+		n.RUnlock()
 
 		n.RLock()
 		if !n.statesOk {
@@ -252,6 +266,7 @@ func (n *Node) Identify() {
 			}
 			continue
 		}
+		n.RUnlock()
 
 		//<-self.Connection.SendRaw([]byte{functions.IsFailedNode, byte(index + 1)}) // Request is failed node
 		//	<-self.SendRaw([]byte{0xa0, byte(index + 1)}) // Request ?
@@ -266,9 +281,11 @@ func (n *Node) Identify() {
 		// If association groups are available the gateway will always put its own Node ID into these association groups in order to be informed about status changes and to be prepared for using associations for scene switching
 		// The user can change all values. However it needs to be clear that particularly removing the gateways Node ID from the association groups may cause malfunctions of the gateway.
 
+		n.RLock()
 		n.pushEvent(events.NodeUpdated{
 			Address: n.Id,
 		})
+		n.RUnlock()
 
 		n.Lock()
 		n.identified = true
@@ -283,10 +300,12 @@ func (self *Node) pushEvent(event interface{}) {
 	default:
 	}
 
-	switch event.(type) {
-	case events.NodeUpdated:
-		self.connection.ConfigController.SaveConfigurationToFile()
-	}
+	go func() {
+		switch event.(type) {
+		case events.NodeUpdated:
+			self.connection.ConfigController.SaveConfigurationToFile()
+		}
+	}()
 }
 
 func (n *Node) HasCommand(c commands.ZWaveCommand) bool {
