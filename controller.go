@@ -10,30 +10,34 @@ import (
 	"time"
 
 	"github.com/Sirupsen/logrus"
+	"github.com/stampzilla/gozwave/commands"
+	"github.com/stampzilla/gozwave/events"
 	"github.com/stampzilla/gozwave/functions"
 	"github.com/stampzilla/gozwave/nodes"
-	"github.com/stampzilla/gozwave/serialapi"
 )
 
 type Controller struct {
 	Nodes      *nodes.List
-	Connection *serialapi.Connection `json:"-"`
+	Connection *Connection `json:"-"`
 	eventQue   chan interface{}
 
-	filename string
+	filename        string
+	triggerFileSave chan struct{}
 
 	sync.RWMutex
 }
 
 func (self *Controller) getNodes() (*nodes.List, error) {
-	if self.eventQue == nil {
-		self.Lock()
-		self.eventQue = make(chan interface{}, 10)
-		self.Unlock()
+	t, err := self.Connection.WriteWithTimeout(functions.NewRaw([]byte{0x02}), time.Second*5)
+
+	if err != nil {
+		return nil, err
 	}
-	resp := <-self.Connection.SendRaw([]byte{0x02}, time.Second*5)
+
+	resp := <-t
+
 	if resp == nil {
-		return nil, fmt.Errorf("Send failed, timeut?")
+		return nil, fmt.Errorf("Timeout or invalid response")
 	}
 
 	switch r := resp.Data.(type) {
@@ -43,15 +47,14 @@ func (self *Controller) getNodes() (*nodes.List, error) {
 				continue
 			}
 
-			if node := self.Nodes.Get(index + 1); node != nil {
-				node.Setup(self.Connection, self.eventQue)
-				go node.Worker()
+			//skip first node (controller)
+			if index == 0 {
 				continue
 			}
 
-			node := nodes.New((index + 1), self.Connection, self.eventQue)
-			self.Nodes.Add(node)
-			//<-basicIdentificationDone
+			node := self.Nodes.Get(index + 1)
+			node = self.initNode(index+1, node)
+			go node.Identify()
 		}
 	default:
 		logrus.Errorf("Got wrong response type: %t", r)
@@ -62,30 +65,60 @@ func (self *Controller) getNodes() (*nodes.List, error) {
 	return self.Nodes, nil
 }
 
-func (self *Controller) PushEvent(event interface{}) {
-	if self.eventQue == nil {
-		self.eventQue = make(chan interface{}, 10)
+func (self *Controller) initNode(id int, node *nodes.Node) *nodes.Node {
+	if node != nil {
+		return node
 	}
 
+	node = nodes.New(id)
+	self.Nodes.Add(node)
+	self.pushEvent(events.NodeDiscoverd{
+		Address: node.Id,
+	})
+
+	node.Setup(self.Connection, self.pushEvent)
+	return node
+}
+
+func (self *Controller) pushEvent(event interface{}) {
 	select {
 	case self.eventQue <- event:
 	default:
+	}
+
+	go func() {
+		switch event.(type) {
+		case events.NodeUpdated:
+			self.triggerFileSave <- struct{}{}
+		}
+	}()
+}
+
+func (self *Controller) saveDebouncer() {
+	<-self.triggerFileSave
+	for {
+		select {
+		case <-self.triggerFileSave:
+		case <-time.After(time.Second * 10):
+			self.SaveConfigurationToFile()
+			<-self.triggerFileSave
+		}
 	}
 }
 
 func (self *Controller) GetNextEvent() chan interface{} {
 	self.RLock()
-	if self.eventQue == nil {
-		self.RUnlock()
-		self.Lock()
-		self.eventQue = make(chan interface{}, 10)
-		self.Unlock()
-		self.RLock()
-	}
-
 	defer self.RUnlock()
 
 	return self.eventQue
+}
+
+func (c *Controller) DeliverReportToNode(node byte, report commands.Report) {
+	n := c.Nodes.Get(int(node))
+	if n == nil {
+		return
+	}
+	n.ProcessEvent(report)
 }
 
 func (self *Controller) SaveConfigurationToFile() error {
@@ -120,7 +153,11 @@ func (self *Controller) LoadConfigurationFromFile() error {
 	}
 
 	for _, v := range controller.Nodes.All() {
+		v.Setup(self.Connection, self.pushEvent)
 		self.Nodes.Add(v)
+		self.pushEvent(events.NodeDiscoverd{
+			Address: v.Id,
+		})
 	}
 	//self.Nodes = controller.Nodes
 

@@ -1,6 +1,7 @@
 package commands
 
 type SwitchMultilevelReport struct {
+	*report
 	node  byte
 	Level byte
 	data  []byte

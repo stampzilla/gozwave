@@ -2,14 +2,14 @@ package commands
 
 import "fmt"
 
-type CmdWakeUp struct {
-	data []byte
+type WakeUpReport struct {
+	*report
 }
 
-func NewWakeUp(data []byte) *CmdWakeUp {
-	return &CmdWakeUp{data: data}
+func NewWakeUpReport() *WakeUpReport {
+	return &WakeUpReport{}
 }
 
-func (self *CmdWakeUp) String() string {
-	return fmt.Sprintf("WakeUp data: %x", self.data)
+func (self *WakeUpReport) String() string {
+	return fmt.Sprintf("WakeUp")
 }

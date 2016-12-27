@@ -3,8 +3,8 @@ package nodes
 import (
 	"time"
 
+	"github.com/davecgh/go-spew/spew"
 	"github.com/stampzilla/gozwave/commands"
-	"github.com/stampzilla/gozwave/functions"
 )
 
 func (self *Node) RequestStates() error {
@@ -15,39 +15,40 @@ func (self *Node) RequestStates() error {
 	for _, v := range cc {
 		switch v.ID {
 		case commands.SwitchBinary:
-			<-self.connection.SendRaw([]byte{
-				functions.SendData, // Function
-				byte(self.Id),      // Node id
-				0x02,               // Length
+			cmd := commands.NewRaw([]byte{
 				commands.SwitchBinary, // Command class
 				0x02, // Command: GET
 				0x25, // TransmitOptions?
 				//0x23, // Callback?
-			}, time.Second*2)
+			})
+			cmd.SetNode(self.Id)
+			self.connection.Write(cmd)
 		case commands.SwitchMultilevel:
-			<-self.connection.SendRaw([]byte{
-				functions.SendData, // Function
-				byte(self.Id),      // Node id
-				0x02,               // Length
+			cmd := commands.NewRaw([]byte{
 				commands.SwitchMultilevel, // Command class
 				0x02, // Command: GET
 				0x25, // TransmitOptions?
 				//0x23, // Callback?
-			}, time.Second*2)
+			})
+			cmd.SetNode(self.Id)
+			self.connection.Write(cmd)
 		case commands.SensorMultiLevel:
-			//<-time.After(time.Second * 10)
-			<-self.connection.SendRawAndWaitForResponse([]byte{
-				functions.SendData, // Function
-				byte(self.Id),      // Node id
-				0x02,               // Length
+			cmd := commands.NewRaw([]byte{
 				commands.SensorMultiLevel, // Command class
 				0x01, // Command: SupportedGet
 				0x25, // TransmitOptions?
 				//0x23, // Callback?
-			}, time.Second*2, 0x02) // Wait for SupportedReport (0x02)
+			})
+			cmd.SetNode(self.Id)
+			t, _ := self.connection.WriteAndWaitForReport(cmd, time.Second*2, 0x02) // Wait for SupportedReport (0x02)
+
+			report := <-t
+			//for k, v := range report.sensors {
+			// Request value for each sensor endpoint
+			//}
 
 			//logrus.Errorf("Sensors supportedget:")
-			//spew.Dump(resp)
+			spew.Dump(report)
 		}
 	}
 

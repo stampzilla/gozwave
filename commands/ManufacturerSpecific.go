@@ -8,15 +8,15 @@ import (
 	"github.com/Sirupsen/logrus"
 )
 
-type CmdManufacturerSpecific struct {
+type ManufacturerSpecificReport struct {
+	*report
 	Manufacturer string `json:"manufacturer"`
 	Type         string `json:"type"`
 	Id           string `json:"id"`
 }
 
-func NewCmdManufacturerSpecific(data []byte) *CmdManufacturerSpecific {
+func NewManufacturerSpecificReport(data []byte) *ManufacturerSpecificReport {
 	if len(data) != 6 {
-
 		logrus.Warn("Failed to decode ManufacturerSpecific: Wrong length")
 		return nil
 	}
@@ -36,7 +36,7 @@ func NewCmdManufacturerSpecific(data []byte) *CmdManufacturerSpecific {
 		return nil
 	}
 
-	ret := &CmdManufacturerSpecific{}
+	ret := &ManufacturerSpecificReport{}
 
 	ret.Manufacturer = fmt.Sprintf("%04x", ms.Manufacturer)
 	ret.Type = fmt.Sprintf("%04x", ms.Type)
@@ -45,6 +45,6 @@ func NewCmdManufacturerSpecific(data []byte) *CmdManufacturerSpecific {
 	return ret
 }
 
-func (ms *CmdManufacturerSpecific) String() string {
+func (ms *ManufacturerSpecificReport) String() string {
 	return fmt.Sprintf("%s:%s:%s", ms.Manufacturer, ms.Type, ms.Id)
 }

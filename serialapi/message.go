@@ -13,9 +13,26 @@ type Message struct {
 	Function    functions.ZWaveFunction
 	NodeId      byte
 
-	Data interface{}
+	startByte byte
+	Data      interface{}
 }
 
+// IsACK checks if message is ACK type
+func (m *Message) IsACK() bool {
+	return m.startByte == 0x06
+}
+
+// IsNAK checks if message is NAK type
+func (m *Message) IsNAK() bool {
+	return m.startByte == 0x15
+}
+
+// IsCAN checks if message is CANCEL type
+func (m *Message) IsCAN() bool {
+	return m.startByte == 0x18
+}
+
+// Decode decodes serialapi raw data
 func Decode(data []byte) (length int, msg *Message) {
 	// SOF	0x01	1	Start Of Frame
 	// ACK	0x06	6	Message Ack
@@ -42,26 +59,16 @@ func Decode(data []byte) (length int, msg *Message) {
 
 		//logrus.Debug("Found SOF")
 
-		return length + 2, CreateMessage(data)
-	case 0x06: // ACK
-		//logrus.Debug("Found ACK")
-		return 1, nil
-	case 0x15: // NAK
-		logrus.Warn("Found NAK")
-		return 1, nil
-	case 0x18: // CAN
-		logrus.Warn("Found CAN")
-		return 1, nil
-	default:
-		return -1, nil // Not a valid start char
+		return length + 2, NewMessage(data)
+	case 0x06, 0x15, 0x18: // ACK, NAC, CAN
+		return 1, NewMessage(data)
 	}
-
-	return
+	return -1, nil // Not a valid start char
 }
 
 func generateChecksum(data []byte) byte {
-	var offset int = 0
-	var ret byte = data[offset]
+	var offset int
+	ret := data[offset]
 	for i := offset + 1; i < len(data)-1; i++ {
 		// Xor bytes
 		ret ^= data[i]
@@ -71,8 +78,29 @@ func generateChecksum(data []byte) byte {
 	return ret
 }
 
-func CreateMessage(data []byte) *Message {
+func CompileMessage(data []byte) []byte {
+	// Compile message
+	msg := append([]byte{0x00, 0x00}, data...)
+	msg = append(msg, 0x00)
+
+	// Add length
+	msg[0] = byte(len(msg) - 1)
+
+	// Add checksum
+	msg[len(msg)-1] = generateChecksum(msg)
+
+	// Add header
+	msg = append([]byte{0x01}, msg...)
+
+	return msg
+}
+
+func NewMessage(data []byte) *Message {
 	message := &Message{}
+	message.startByte = data[0]
+	if len(data) <= 1 {
+		return message
+	}
 	message.Length = data[1]
 	message.MessageType = data[2]
 	message.Function = functions.ZWaveFunction(data[3])
@@ -123,5 +151,4 @@ func CreateMessage(data []byte) *Message {
 	//AutoRoute = 0x04,
 	//ForceRoute = 0x08
 
-	return nil
 }

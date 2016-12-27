@@ -4,42 +4,37 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/davecgh/go-spew/spew"
 	"github.com/stampzilla/gozwave/commands"
-	"github.com/stampzilla/gozwave/functions"
 )
 
 type ManufacurerSpecific struct {
 }
 
-func (n *Node) RequestManufacturerSpecific() error {
-	// Todo: Send raw messages here
+func (n *Node) RequestManufacturerSpecific() (*commands.ManufacturerSpecificReport, error) {
+	cmd := commands.NewRaw(
+		[]byte{
+			commands.ManufacturerSpecific, // Command
+			0x04, // MANUFACTURER_SPECIFIC_GET
+			0x00,
+			//0x05, // TransmitOptions?
+			//0x23, // Callback?
+		})
 
-	resp := <-n.connection.SendRawAndWaitForResponse([]byte{
-		functions.SendData, // Function
-		byte(n.Id),         // Node id
-		0x02,               // Length
-		commands.ManufacturerSpecific, // Command
-		0x04, // MANUFACTURER_SPECIFIC_GET
-		0x00,
-		//0x05, // TransmitOptions?
-		//0x23, // Callback?
-	}, time.Second*10, 0x05) // Request node information
+	cmd.SetNode(n.Id)
 
-	if resp != nil {
-		switch r := resp.Data.(type) {
-		case *functions.FuncApplicationCommandHandler:
-			switch cmd := r.Data.(type) {
-			case *commands.CmdManufacturerSpecific:
-				n.Lock()
-				n.ManufacurerSpecific = cmd
-				n.Unlock()
-				return nil
-			default:
-				spew.Dump("Wrong type: %t", r.Command)
-			}
-		}
+	t, err := n.connection.WriteAndWaitForReport(cmd, time.Second*10, 0x05) // Request node information
+	if err != nil {
+		return nil, err
 	}
 
-	return fmt.Errorf("Failed to get ManufacurerSpecific")
+	report := <-t
+
+	switch cmd := report.(type) {
+	case *commands.ManufacturerSpecificReport:
+		return cmd, nil
+	default:
+		return nil, fmt.Errorf("ManufacurerSpecific: Wrong report type: %t", report)
+	}
+
+	return nil, fmt.Errorf("Failed to get ManufacurerSpecific")
 }

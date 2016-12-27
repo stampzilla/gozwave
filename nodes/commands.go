@@ -1,8 +1,6 @@
 package nodes
 
 import (
-	"time"
-
 	"github.com/stampzilla/gozwave/commands"
 	"github.com/stampzilla/gozwave/interfaces"
 )
@@ -27,7 +25,7 @@ func (n *Node) On() {
 		return
 	}
 
-	n.connection.Send(send, time.Second)
+	n.connection.Write(send)
 }
 
 func (n *Node) Off() {
@@ -50,7 +48,7 @@ func (n *Node) Off() {
 		return
 	}
 
-	n.connection.Send(send, time.Second)
+	n.connection.Write(send)
 }
 
 func (n *Node) Level(value float64) {
@@ -67,5 +65,5 @@ func (n *Node) Level(value float64) {
 		return
 	}
 
-	n.connection.Send(send, time.Second)
+	n.connection.Write(send)
 }

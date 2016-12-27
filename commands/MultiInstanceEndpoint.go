@@ -9,6 +9,7 @@ import (
 )
 
 type MultiChannelCmdEndPointReport struct {
+	*report
 	Dynamic   bool `json:"dynamic"`
 	Identical bool `json:"identical"`
 	Endpoints int

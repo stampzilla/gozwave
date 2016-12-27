@@ -10,19 +10,18 @@ import (
 	"github.com/stampzilla/gozwave/database"
 	"github.com/stampzilla/gozwave/events"
 	"github.com/stampzilla/gozwave/functions"
-	"github.com/stampzilla/gozwave/serialapi"
+	"github.com/stampzilla/gozwave/interfaces"
 )
 
-func New(address int, connection *serialapi.Connection, eventQue chan interface{}) *Node {
+func New(address int) *Node {
 	n := &Node{
-		Id:         address,
-		StateBool:  make(map[string]bool),
-		StateFloat: make(map[string]float64),
-		connection: connection,
-		eventQue:   eventQue,
+		Id:            address,
+		StateBool:     make(map[string]bool),
+		StateFloat:    make(map[string]float64),
+		pushEventFunc: func(interface{}) {},
 	}
 
-	go n.Worker()
+	//go n.Worker()
 
 	return n
 }
@@ -32,7 +31,7 @@ type Node struct {
 	IsAwake bool `json:"is_awake"`
 
 	ProtocolInfo        *functions.FuncGetNodeProtocolInfo
-	ManufacurerSpecific *commands.CmdManufacturerSpecific
+	ManufacurerSpecific *commands.ManufacturerSpecificReport
 
 	Device *database.Device
 
@@ -42,8 +41,8 @@ type Node struct {
 	StateFloat map[string]float64
 	statesOk   bool
 
-	connection *serialapi.Connection
-	eventQue   chan interface{}
+	connection    interfaces.Writer
+	pushEventFunc func(interface{})
 
 	awake      chan struct{}
 	identified bool
@@ -51,9 +50,12 @@ type Node struct {
 	sync.RWMutex
 }
 
-func (n *Node) Setup(connection *serialapi.Connection, eventQue chan interface{}) {
+//TODO not use empty interface
+//type ProcessEventFunc func(commands.Report)
+
+func (n *Node) Setup(connection interfaces.Writer, pushEventFunc func(interface{})) {
 	n.connection = connection
-	n.eventQue = eventQue
+	n.pushEventFunc = pushEventFunc
 }
 
 func (n *Node) isAwake() chan struct{} {
@@ -70,83 +72,52 @@ func (n *Node) isAwake() chan struct{} {
 	return n.awake
 }
 
-func (n *Node) Worker() {
-	n.RLock()
-	updateChan := n.connection.RegisterNode(byte(n.Id))
-	n.RUnlock()
-
-	go func() {
-		for {
-			select {
-			case update := <-updateChan:
-				//logrus.Errorf("Node received update: %T", update)
-				switch msg := update.(type) {
-				case *serialapi.Message:
-					n.Lock()
-					switch body := msg.Data.(type) {
-					case *functions.FuncApplicationCommandHandler:
-						switch data := body.Data.(type) {
-						case *commands.CmdAlarm:
-							if data.Status == 0xFF {
-								n.StateBool["alarm"] = true
-								if data.Type != 0 {
-									n.StateFloat["alarm"] = float64(data.Type)
-									n.StateFloat["alarmLastType"] = float64(data.Type)
-								}
-								n.pushEvent(events.NodeUpdated{
-									Address: n.Id,
-								})
-
-								<-time.After(time.Second)
-								n.StateBool["alarm"] = false
-								n.StateFloat["alarm"] = 0
-								n.pushEvent(events.NodeUpdated{
-									Address: n.Id,
-								})
-							}
-						case *commands.CmdWakeUp:
-							logrus.Error("NODE RECEIVED WAKEUP")
-							if n.awake != nil {
-								close(n.awake)
-								n.awake = nil
-							}
-						case *commands.SwitchBinaryReport:
-							n.StateBool["on"] = data.Status
-							n.pushEvent(events.NodeUpdated{
-								Address: n.Id,
-							})
-						case *commands.SwitchMultilevelReport:
-							n.StateBool["on"] = data.Level > 0
-							n.StateFloat["level"] = float64(data.Level)
-							n.pushEvent(events.NodeUpdated{
-								Address: n.Id,
-							})
-						case *commands.CmdSensorMultiLevel:
-							//n.StateFloat[data.TypeString+" ("+data.Unit+")"] = data.Value
-							key := strings.ToLower(data.TypeString + "_" + data.Unit)
-							n.StateFloat[key] = data.Value
-							n.pushEvent(events.NodeUpdated{
-								Address: n.Id,
-							})
-						}
-					}
-					n.Unlock()
-				}
+func (n *Node) ProcessEvent(event commands.Report) {
+	switch data := event.(type) {
+	case *commands.AlarmReport:
+		if data.Status == 0xFF {
+			n.StateBool["alarm"] = true
+			if data.Type != 0 {
+				n.StateFloat["alarm"] = float64(data.Type)
+				n.StateFloat["alarmLastType"] = float64(data.Type)
 			}
-		}
-	}()
+			n.pushEvent(events.NodeUpdated{
+				Address: n.Id,
+			})
 
-	if n.Id == 1 {
-		return
+			<-time.After(time.Second)
+			n.StateBool["alarm"] = false
+			n.StateFloat["alarm"] = 0
+			n.pushEvent(events.NodeUpdated{
+				Address: n.Id,
+			})
+		}
+	case *commands.WakeUpReport:
+		logrus.Error("NODE RECEIVED WAKEUP")
+		if n.awake != nil {
+			close(n.awake)
+			n.awake = nil
+		}
+	case *commands.SwitchBinaryReport:
+		n.StateBool["on"] = data.Status
+		n.pushEvent(events.NodeUpdated{
+			Address: n.Id,
+		})
+	case *commands.SwitchMultilevelReport:
+		n.StateBool["on"] = data.Level > 0
+		n.StateFloat["level"] = float64(data.Level)
+		n.pushEvent(events.NodeUpdated{
+			Address: n.Id,
+		})
+	case *commands.SensorMultiLevelReport:
+		//n.StateFloat[data.TypeString+" ("+data.Unit+")"] = data.Value
+		key := strings.ToLower(data.TypeString + "_" + data.Unit)
+		n.StateFloat[key] = data.Value
+		n.pushEvent(events.NodeUpdated{
+			Address: n.Id,
+		})
 	}
 
-	go n.Identify()
-
-	n.RLock()
-	n.pushEvent(events.NodeDiscoverd{
-		Address: n.Id,
-	})
-	n.RUnlock()
 }
 
 func (n *Node) Identify() {
@@ -154,53 +125,46 @@ func (n *Node) Identify() {
 	defer logrus.Warnf("Ended identification on node %d", n.Id)
 
 	for {
-		n.RLock()
 		if n.ProtocolInfo == nil {
-			n.RUnlock()
-			err := n.RequestProtocolInfo()
+			resp, err := n.RequestProtocolInfo()
 			if err != nil {
+				logrus.Errorf("Node ident: Failed RequestProtocolInfo: %s", err.Error())
 				<-time.After(time.Second * 10)
 				continue
 			}
 
-			n.RLock()
+			logrus.Errorf("Node ident: Done RequestProtocolInfo")
+			n.Lock()
+			n.ProtocolInfo = resp
+			n.IsAwake = resp.Listening
 			n.pushEvent(events.NodeUpdated{
 				Address: n.Id,
 			})
-			n.RUnlock()
-			continue
+			n.Unlock()
 		}
-		n.RUnlock()
-
-		n.Lock()
-		n.IsAwake = n.ProtocolInfo.Listening
-		n.Unlock()
 
 		//<-self.Connection.SendRaw([]byte{functions.GetNodeProtocolInfo, byte(index + 1)}) // Request node information
 		//		nodeinfo := self.WaitForGetNodeProtocolInfo()
 
 		// All manufacturer specific information such as vendor, vendors product ID and product type
-		n.RLock()
 		if n.ManufacurerSpecific == nil {
-			n.RUnlock()
-
 			<-n.isAwake()
-			err := n.RequestManufacturerSpecific()
+			resp, err := n.RequestManufacturerSpecific()
 			if err != nil {
+				logrus.Errorf("Node ident: Failed ManufacurerSpecific: %s", err.Error())
 				<-time.After(time.Second * 10)
 				continue
 			}
 
+			logrus.Errorf("Node ident: Done ManufacurerSpecific")
 			n.Lock()
+			n.ManufacurerSpecific = resp
 			n.Device = database.New(n.ManufacurerSpecific.Manufacturer, n.ManufacurerSpecific.Type, n.ManufacurerSpecific.Id)
-
 			n.pushEvent(events.NodeUpdated{
 				Address: n.Id,
 			})
 			n.Unlock()
-			continue
 		}
-		n.RUnlock()
 
 		// Get node version
 		//resp := <-n.connection.SendRaw([]byte{
@@ -295,17 +259,7 @@ func (n *Node) Identify() {
 }
 
 func (self *Node) pushEvent(event interface{}) {
-	select {
-	case self.eventQue <- event:
-	default:
-	}
-
-	go func() {
-		switch event.(type) {
-		case events.NodeUpdated:
-			self.connection.ConfigController.SaveConfigurationToFile()
-		}
-	}()
+	self.pushEventFunc(event)
 }
 
 func (n *Node) HasCommand(c commands.ZWaveCommand) bool {

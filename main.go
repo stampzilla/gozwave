@@ -7,25 +7,25 @@ import (
 
 	"github.com/Sirupsen/logrus"
 	"github.com/stampzilla/gozwave/nodes"
-	"github.com/stampzilla/gozwave/serialapi"
 )
 
 func Connect(port string, filename string) (*Controller, error) {
 
 	c := &Controller{
-		Nodes:      nodes.NewList(),
-		Connection: serialapi.NewConnection(),
-		filename:   filename,
+		Nodes:           nodes.NewList(),
+		Connection:      NewConnection(),
+		filename:        filename,
+		eventQue:        make(chan interface{}, 10),
+		triggerFileSave: make(chan struct{}),
 	}
 
 	c.Connection.Name = port
 	c.Connection.Baud = 115200
-	c.Connection.ConfigController = c
+	c.Connection.reportCallback = c.DeliverReportToNode
 	connected := make(chan error)
 
 	//spew.Dump(c)
 
-	c.Nodes.SetConnection(c.Connection)
 	if filename != "" {
 		c.LoadConfigurationFromFile()
 	}
@@ -41,6 +41,7 @@ func Connect(port string, filename string) (*Controller, error) {
 	err := <-connected
 
 	go c.getNodes()
+	go c.saveDebouncer()
 
 	return c, err
 }
