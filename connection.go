@@ -15,7 +15,7 @@ import (
 )
 
 type Connection struct {
-	ReadWriteCloser io.ReadWriteCloser
+	readWriteCloser io.ReadWriteCloser
 	portOpener      PortOpener
 	Connected       bool
 
@@ -111,7 +111,7 @@ func (self *Connection) Connect(connectChan chan error) (err error) {
 		self.Connected = false
 	}()
 
-	self.ReadWriteCloser, err = self.portOpener.Open()
+	self.readWriteCloser, err = self.portOpener.Open()
 
 	if err != nil {
 		select {
@@ -152,7 +152,7 @@ func (self *Connection) Writer() {
 			}
 
 			logrus.Debugf("Write: %x", pkg.message)
-			self.ReadWriteCloser.Write(pkg.message)
+			self.readWriteCloser.Write(pkg.message)
 			self.Unlock()
 
 			select {
@@ -173,10 +173,10 @@ func (self *Connection) Reader() error {
 	for {
 		buf := make([]byte, 128)
 
-		n, err := self.ReadWriteCloser.Read(buf)
+		n, err := self.readWriteCloser.Read(buf)
 		if err != nil {
 			logrus.Error("Serial read failed: ", err)
-			self.ReadWriteCloser.Close()
+			self.readWriteCloser.Close()
 			return err
 		}
 
@@ -262,7 +262,7 @@ func (self *Connection) Reader() error {
 			logrus.Debugf("Recived: %x", incomming)
 			incomming = incomming[l:]
 			if l > 1 {
-				self.ReadWriteCloser.Write([]byte{0x06}) // Send ACK to stick
+				self.readWriteCloser.Write([]byte{0x06}) // Send ACK to stick
 			}
 
 		}
