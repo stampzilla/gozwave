@@ -27,6 +27,16 @@ type Controller struct {
 	sync.RWMutex
 }
 
+func NewController() *Controller {
+	c := &Controller{
+		Nodes:           nodes.NewList(),
+		Connection:      NewConnection(),
+		eventQue:        make(chan interface{}, 10),
+		triggerFileSave: make(chan struct{}),
+	}
+	return c
+}
+
 func (self *Controller) getNodes() (*nodes.List, error) {
 	t, err := self.Connection.WriteWithTimeout(functions.NewRaw([]byte{0x02}), time.Second*5)
 
