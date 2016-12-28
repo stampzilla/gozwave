@@ -34,7 +34,7 @@ func Test_Decode(t *testing.T) {
 			data = append(data, dhex...)
 		}
 
-		msg := CreateMessage(data)
+		msg := NewMessage(data)
 		fmt.Printf("%+v\n\n", msg.Data)
 	}
 
