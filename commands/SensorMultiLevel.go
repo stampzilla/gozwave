@@ -46,7 +46,8 @@ const (
 	Moisture
 )
 
-type CmdSensorMultiLevel struct {
+type SensorMultiLevelReport struct {
+	*report
 	Type       byte
 	Size       byte
 	Scale      byte
@@ -58,8 +59,8 @@ type CmdSensorMultiLevel struct {
 	data []byte
 }
 
-func NewCmdSensorMultiLevel(data []byte) *CmdSensorMultiLevel {
-	sml := &CmdSensorMultiLevel{data: data}
+func NewSensorMultiLevelReport(data []byte) *SensorMultiLevelReport {
+	sml := &SensorMultiLevelReport{data: data}
 
 	sml.Type = data[0]
 	sml.Size = (data[1] & 0x07)              // Size
@@ -89,7 +90,7 @@ func NewCmdSensorMultiLevel(data []byte) *CmdSensorMultiLevel {
 	}
 
 	if err != nil {
-		logrus.Warn("Failed to decode CmdSensorMultiLevel: %s", err)
+		logrus.Warn("Failed to decode SensorMultiLevelReport: %s", err)
 		return nil
 	}
 

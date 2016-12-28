@@ -2,7 +2,8 @@ package commands
 
 import "fmt"
 
-type CmdAlarm struct {
+type AlarmReport struct {
+	*report
 	Type           byte
 	Level          byte
 	SensorSourceId byte
@@ -13,8 +14,8 @@ type CmdAlarm struct {
 	data []byte
 }
 
-func NewCmdAlarm(data []byte) *CmdAlarm {
-	alarm := &CmdAlarm{data: data}
+func NewAlarmReport(data []byte) *AlarmReport {
+	alarm := &AlarmReport{data: data}
 
 	if len(data) >= 2 {
 		alarm.Type = data[0]
@@ -35,7 +36,7 @@ func NewCmdAlarm(data []byte) *CmdAlarm {
 	return alarm
 }
 
-func (self *CmdAlarm) String() string {
+func (self *AlarmReport) String() string {
 	if len(self.data) >= 6 {
 		return fmt.Sprintf("Alarm: type=%d, level=%d, sensorSrcID=%d, type:%s event:%d, status=%d",
 			self.Type, self.Level, self.SensorSourceId, self.SensorType, self.Event, self.Status)

@@ -1,4 +1,4 @@
-package serialapi
+package gozwave
 
 type Event interface {
 }

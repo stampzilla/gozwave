@@ -1,6 +1,7 @@
 package commands
 
 type SwitchBinaryReport struct {
+	*report
 	node   byte
 	Status bool
 	data   []byte

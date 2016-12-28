@@ -1,13 +1,11 @@
 package commands
 
-import "github.com/stampzilla/gozwave/interfaces"
-
 type MultiChannelEncap struct {
-	msg      interfaces.Encodable
+	msg      []byte
 	endpoint int
 }
 
-func NewMultiChannelEncap(msg interfaces.Encodable, endpoint int) *MultiChannelEncap {
+func NewMultiChannelEncap(msg []byte, endpoint int) *MultiChannelEncap {
 	return &MultiChannelEncap{
 		msg:      msg,
 		endpoint: endpoint,
@@ -15,7 +13,7 @@ func NewMultiChannelEncap(msg interfaces.Encodable, endpoint int) *MultiChannelE
 }
 
 func (self *MultiChannelEncap) Encode() []byte {
-	msg := self.msg.Encode()
+	msg := self.msg
 
 	ret := []byte{
 		msg[0],     // serialapi function

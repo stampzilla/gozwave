@@ -7,7 +7,7 @@ type FuncApplicationCommandHandler struct {
 	Class   byte // Command Class
 	Node    byte
 
-	Data interface{}
+	Data commands.Report
 }
 
 func NewApplicationCommandHandler(data []byte) *FuncApplicationCommandHandler {
@@ -22,16 +22,15 @@ func (self *FuncApplicationCommandHandler) Decode(data []byte) {
 	self.Class = data[1]
 
 	switch self.Command {
-	case commands.Basic:
 	case commands.Alarm:
 		switch self.Class {
 		case 0x05: // Report
-			self.Data = commands.NewCmdAlarm(data[2:])
+			self.Data = commands.NewAlarmReport(data[2:])
 		}
 	case commands.ManufacturerSpecific:
 		switch self.Class {
 		case 0x05: // Report
-			self.Data = commands.NewCmdManufacturerSpecific(data[2:])
+			self.Data = commands.NewManufacturerSpecificReport(data[2:])
 		}
 	case commands.MultiInstance:
 		switch self.Class {
@@ -41,7 +40,7 @@ func (self *FuncApplicationCommandHandler) Decode(data []byte) {
 	case commands.SensorMultiLevel:
 		switch self.Class {
 		case 0x05: // Report
-			self.Data = commands.NewCmdSensorMultiLevel(data[2:])
+			self.Data = commands.NewSensorMultiLevelReport(data[2:])
 		}
 	case commands.SwitchBinary:
 		switch self.Class {
@@ -55,8 +54,12 @@ func (self *FuncApplicationCommandHandler) Decode(data []byte) {
 		}
 	case commands.WakeUp:
 		//	self.Node = data[2];
-		self.Data = commands.NewWakeUp(data[2:])
-	default:
-		self.Data = data
+		self.Data = commands.NewWakeUpReport()
+		//default:
+		//self.Data = data
+	}
+
+	if report, ok := self.Data.(commands.Report); ok && report != nil {
+		report.SetNode(self.Node)
 	}
 }

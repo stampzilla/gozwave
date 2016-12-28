@@ -1,8 +1,6 @@
 package nodes
 
 import (
-	"time"
-
 	"github.com/Sirupsen/logrus"
 	"github.com/stampzilla/gozwave/commands"
 	"github.com/stampzilla/gozwave/database"
@@ -32,9 +30,9 @@ func (n *Node) Endpoint(id int) *Endpoint {
 	return n.Endpoints[id]
 }
 
-func (e *Endpoint) Send(msg interfaces.Encodable, timeout time.Duration) {
+func (e *Endpoint) Write(msg interfaces.Encodable) {
 	logrus.Debugf("Send to endpoint %d ", e.Id)
-	e.node.connection.Send(commands.NewMultiChannelEncap(msg, e.Id), timeout)
+	e.node.connection.Write(commands.NewMultiChannelEncap(msg.Encode(), e.Id))
 }
 
 func (e *Endpoint) On() {
@@ -57,7 +55,7 @@ func (e *Endpoint) On() {
 		return
 	}
 
-	e.Send(send, time.Second)
+	e.Write(send)
 }
 
 func (e *Endpoint) Off() {
@@ -80,7 +78,7 @@ func (e *Endpoint) Off() {
 		return
 	}
 
-	e.Send(send, time.Second)
+	e.Write(send)
 }
 
 func (e *Endpoint) Level(value float64) {
@@ -97,5 +95,5 @@ func (e *Endpoint) Level(value float64) {
 		return
 	}
 
-	e.Send(send, time.Second)
+	e.Write(send)
 }

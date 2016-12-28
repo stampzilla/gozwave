@@ -4,13 +4,11 @@ import (
 	"encoding/json"
 	"strconv"
 	"sync"
-
-	"github.com/stampzilla/gozwave/serialapi"
 )
 
 type List struct {
-	nodes      map[int]*Node
-	connection *serialapi.Connection
+	nodes map[int]*Node
+	//connection *serialapi.Connection
 
 	sync.RWMutex
 }
@@ -29,7 +27,7 @@ func (l *List) Add(node *Node) {
 	}
 
 	node.Lock()
-	node.connection = l.connection
+	//node.connection = l.connection
 	for k, _ := range node.Endpoints {
 		node.Endpoints[k].node = node
 	}
@@ -63,11 +61,11 @@ func (l List) Get(id int) *Node {
 	return l.nodes[id]
 }
 
-func (l *List) SetConnection(connection *serialapi.Connection) {
-	l.Lock()
-	l.connection = connection
-	l.Unlock()
-}
+//func (l *List) SetConnection(connection *serialapi.Connection) {
+//l.Lock()
+////l.connection = connection
+//l.Unlock()
+//}
 
 func (l List) MarshalJSON() ([]byte, error) {
 	s := make(map[string]*Node)

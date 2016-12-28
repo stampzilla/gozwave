@@ -1,4 +1,4 @@
-package serialapi
+package gozwave
 
 import (
 	"io"
@@ -11,14 +11,13 @@ import (
 	"github.com/stampzilla/gozwave/commands"
 	"github.com/stampzilla/gozwave/functions"
 	"github.com/stampzilla/gozwave/interfaces"
-	"github.com/tarm/serial"
+	"github.com/stampzilla/gozwave/serialapi"
 )
 
 type Connection struct {
-	Name      string
-	Baud      int
-	port      io.ReadWriteCloser
-	Connected bool
+	readWriteCloser io.ReadWriteCloser
+	portOpener      PortOpener
+	Connected       bool
 
 	// Keep track of requests wating a response
 	inFlight    map[string]*sendPackage
@@ -27,9 +26,7 @@ type Connection struct {
 	lastCommand string // Uuid of last sent command
 	lastResult  chan byte
 
-	callback byte
-
-	ConfigController interfaces.LoadSaveable
+	reportCallback func(byte, commands.Report)
 
 	sync.RWMutex
 }
@@ -39,20 +36,23 @@ type sendPackage struct {
 	uuid    string
 	result  byte // ACK, NAC, CAN
 
-	function     byte
-	commandclass byte
-	command      byte
-	node         byte
+	function       byte
+	commandclass   byte
+	expectedReport byte
+	node           byte
 
-	returnChan chan *Message
+	timeout time.Duration
+
+	returnChan chan *serialapi.Message
 }
 
 func NewConnection() *Connection {
 	z := &Connection{
-		inFlight:    make(map[string]*sendPackage),
-		updateChans: make(map[string]chan interface{}),
-		send:        make(chan *sendPackage),
-		lastResult:  make(chan byte),
+		inFlight:       make(map[string]*sendPackage),
+		updateChans:    make(map[string]chan interface{}),
+		send:           make(chan *sendPackage),
+		lastResult:     make(chan byte),
+		reportCallback: func(byte, commands.Report) {},
 	}
 	return z
 }
@@ -67,82 +67,51 @@ func (self *Connection) RegisterNode(address byte) chan interface{} {
 	return c
 }
 
-func (self *Connection) Send(data interfaces.Encodable, timeout time.Duration) chan *Message {
-	return self.SendRaw(data.Encode(), timeout)
+func (conn *Connection) Write(msg interfaces.Encodable) error {
+	pkg := newSendPackage(msg.Encode())
+	conn.send <- pkg
+	return nil
 }
+func (conn *Connection) WriteWithTimeout(msg interfaces.Encodable, t time.Duration) (<-chan *serialapi.Message, error) {
+	pkg := newSendPackage(msg.Encode())
+	pkg.returnChan = make(chan *serialapi.Message)
+	pkg.timeout = t
 
-func (self *Connection) SendRaw(data []byte, timeout time.Duration) chan *Message {
-	return self.SendRawAndWaitForResponse(data, timeout, 0)
+	conn.send <- pkg
+
+	return pkg.returnChan, nil
 }
+func (conn *Connection) WriteAndWaitForReport(msg interfaces.Encodable, t time.Duration, er byte) (<-chan commands.Report, error) {
+	pkg := newSendPackage(msg.Encode())
+	returnChan := make(chan commands.Report)
+	pkg.returnChan = make(chan *serialapi.Message)
+	pkg.timeout = t
+	pkg.expectedReport = er
 
-func (self *Connection) SendRawAndWaitForResponse(data []byte, timeout time.Duration, command byte) chan *Message {
-	returnChan := make(chan *Message)
+	conn.send <- pkg
 
-	// Compile message
-	msg := append([]byte{0x00, 0x00}, data...)
-	msg = append(msg, 0x00)
-
-	// Add length
-	msg[0] = byte(len(msg) - 1)
-
-	// Add checksum
-	msg[len(msg)-1] = generateChecksum(msg)
-
-	// Add header
-	msg = append([]byte{0x01}, msg...)
-
-	uuid := uuid.New()
-	//logrus.Infof("Sending: %s", strings.TrimSpace(hex.Dump(msg)))
-	pkg := &sendPackage{
-		message:    msg,
-		uuid:       uuid,
-		returnChan: returnChan,
-	}
-
-	if len(data) > 0 {
-		pkg.function = data[0]
-	}
-	if len(data) > 1 {
-		pkg.node = data[1]
-	}
-	if len(data) > 4 {
-		pkg.commandclass = data[3]
-
-		if command != 0 {
-			pkg.command = command
-		}
-	}
-
-	self.send <- pkg
-
-	// Timeout
 	go func() {
-		<-time.After(timeout)
-		self.Lock()
-		for index, c := range self.inFlight {
-			if index == uuid {
-				logrus.Warnf("TIMEOUT: %s - %#v", uuid, c)
-				delete(self.inFlight, uuid)
-				close(c.returnChan)
-				c.returnChan = nil
+		defer close(returnChan)
+		for msg := range pkg.returnChan {
+			if f, ok := msg.Data.(*functions.FuncApplicationCommandHandler); ok {
+				returnChan <- f.Data
+				return
 			}
+
+			logrus.Errorf("WriteAndWaitForReport: Received wrong type: %t", msg)
 		}
-		self.Unlock()
 	}()
 
-	return returnChan
+	return returnChan, nil
 }
 
 func (self *Connection) Connect(connectChan chan error) (err error) {
 	defer func() {
-		logrus.Error("Disonnected\n\n")
+		logrus.Error("Disonnected")
 		self.Connected = false
 	}()
 
-	self.Lock()
-	c := &serial.Config{Name: self.Name, Baud: self.Baud}
-	self.port, err = serial.OpenPort(c)
-	self.Unlock()
+	self.readWriteCloser, err = self.portOpener.Open()
 
 	if err != nil {
 		select {
@@ -154,7 +123,7 @@ func (self *Connection) Connect(connectChan chan error) (err error) {
 
 	go func() {
 		<-time.After(time.Millisecond * 200)
-		logrus.Debug("Connected\n\n")
+		logrus.Debug("Connected")
 		select {
 		case connectChan <- nil:
 		default:
@@ -167,20 +136,27 @@ func (self *Connection) Connect(connectChan chan error) (err error) {
 }
 
 func (self *Connection) Writer() {
+	logrus.Infof("Starting send worker")
 	for {
 		<-time.After(time.Millisecond * 50)
 		select {
 		case pkg := <-self.send:
 			self.Lock()
-			logrus.Infof("Sending: %x", pkg.message)
+			self.lastCommand = ""
+
 			self.inFlight[pkg.uuid] = pkg
-			self.port.Write(pkg.message)
 			self.lastCommand = pkg.uuid
+
+			if pkg.timeout != 0 { // Only add the message to the inflight list if someone is waiting for an response
+				go self.timeoutWorker(pkg)
+			}
+
+			logrus.Debugf("Write: %x", pkg.message)
+			self.readWriteCloser.Write(pkg.message)
 			self.Unlock()
 
 			select {
 			case result := <-self.lastResult:
-				//logrus.Infof("RESULT: %s", pkg.uuid)
 				pkg.result = result
 			case <-time.After(time.Second):
 				// SEND TIMEOUT
@@ -197,10 +173,10 @@ func (self *Connection) Reader() error {
 	for {
 		buf := make([]byte, 128)
 
-		n, err := self.port.Read(buf)
+		n, err := self.readWriteCloser.Read(buf)
 		if err != nil {
 			logrus.Error("Serial read failed: ", err)
-			self.port.Close()
+			self.readWriteCloser.Close()
 			return err
 		}
 
@@ -215,7 +191,7 @@ func (self *Connection) Reader() error {
 		age = time.Now()
 
 		for len(incomming) > 0 {
-			l, msg := Decode(incomming)
+			l, msg := serialapi.Decode(incomming)
 
 			if l == 1 {
 				for index, c := range self.inFlight {
@@ -223,19 +199,21 @@ func (self *Connection) Reader() error {
 					if c.uuid == self.lastCommand {
 						select {
 						case self.lastResult <- incomming[0]:
-						default:
+						case <-time.After(time.Millisecond * 50):
 						}
 
-						if incomming[0] == 0x15 { // NAK - request failed
+						if msg.IsNAK() {
 							logrus.Warnf("Command failed: %s - %#v", c.uuid, c)
 							delete(self.inFlight, index)
 							close(c.returnChan)
 							c.returnChan = nil
 						}
 
-						if incomming[0] == 0x18 { // CAN - resend request
-							<-time.After(time.Millisecond * 100)
-							self.send <- c
+						if msg.IsCAN() {
+							go func() {
+								<-time.After(time.Millisecond * 100)
+								self.send <- c
+							}()
 						}
 					}
 					self.RUnlock()
@@ -275,31 +253,16 @@ func (self *Connection) Reader() error {
 				self.Unlock()
 			}
 
-			if msg != nil {
-				switch cmd := msg.Data.(type) {
-				case *functions.FuncApplicationCommandHandler:
-					switch data := cmd.Data.(type) {
-					case *commands.CmdAlarm:
-						self.DeliverUpdate(msg.NodeId, msg)
-					case *commands.CmdWakeUp:
-						self.DeliverUpdate(msg.NodeId, msg)
-					case *commands.SwitchBinaryReport:
-						self.DeliverUpdate(msg.NodeId, msg)
-					case *commands.SwitchMultilevelReport:
-						self.DeliverUpdate(msg.NodeId, msg)
-					case *commands.CmdSensorMultiLevel:
-						self.DeliverUpdate(msg.NodeId, msg)
-					default:
-						logrus.Infof("!DeliverUpdate: %T", data)
-					}
-				}
+			if cmd, ok := msg.Data.(*functions.FuncApplicationCommandHandler); ok {
+				// Deliver the update to the parent
+				go self.reportCallback(msg.NodeId, cmd.Data)
 			}
 
 			//logrus.Infof("Recived: %s", strings.TrimSpace(hex.Dump(incomming)))
-			logrus.Infof("Recived: %x", incomming)
+			logrus.Debugf("Recived: %x", incomming)
 			incomming = incomming[l:]
 			if l > 1 {
-				self.port.Write([]byte{0x06}) // Send ACK to stick
+				self.readWriteCloser.Write([]byte{0x06}) // Send ACK to stick
 			}
 
 		}
@@ -318,6 +281,25 @@ func (self *Connection) DeliverUpdate(id byte, msg interface{}) {
 			}
 		}()
 	}
+}
+
+func newSendPackage(data []byte) *sendPackage {
+	pkg := &sendPackage{
+		message: serialapi.CompileMessage(data),
+		uuid:    uuid.New(),
+	}
+
+	if len(data) > 0 {
+		pkg.function = data[0]
+	}
+	if len(data) > 1 {
+		pkg.node = data[1]
+	}
+	if len(data) > 4 {
+		pkg.commandclass = data[3]
+	}
+
+	return pkg
 }
 
 func (c *sendPackage) Match(incomming []byte) bool {
@@ -342,22 +324,27 @@ func (c *sendPackage) Match(incomming []byte) bool {
 		//logrus.Warnf("Skipping pkg %s, commandclass %x is not %x", c.uuid, c.commandclass, incomming[7])
 		return false
 	}
-	if !MatchByteAt(incomming, c.command, 8) {
-		logrus.Errorf("Skipping pkg %s, command %x is not %x", c.uuid, c.command, incomming[8])
+	if !MatchByteAt(incomming, c.expectedReport, 8) {
+		logrus.Errorf("Skipping pkg %s, expectedReport %x is not %x", c.uuid, c.expectedReport, incomming[8])
 		return false
 	}
 
-	//if len(incomming) > 5 && c.node != 0 && c.node != incomming[5] {
-	//return false
-	//}
-	//if len(incomming) > 7 && c.commandclass != 0 && c.commandclass != incomming[7] {
-	//return false
-	//}
-	//if len(incomming) > 8 && c.command != 0 && c.command != incomming[8] {
-	//return false
-	//}
-
 	return true
+}
+
+func (conn *Connection) timeoutWorker(sp *sendPackage) {
+	<-time.After(sp.timeout)
+
+	conn.Lock()
+	for index, c := range conn.inFlight {
+		if index == sp.uuid {
+			logrus.Warnf("TIMEOUT: %s", sp.uuid)
+			delete(conn.inFlight, sp.uuid)
+			close(c.returnChan)
+			c.returnChan = nil
+		}
+	}
+	conn.Unlock()
 }
 
 func MatchByteAt(message []byte, b byte, position int) bool {
