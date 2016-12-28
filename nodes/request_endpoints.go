@@ -19,9 +19,9 @@ func (n *Node) RequestEndpoints() error {
 		return fmt.Errorf("Failed 'RequestEndpoints', no commandclasses exists")
 	}
 
-	for _, v := range n.Device.CommandClasses {
-		logrus.Errorf("Request endpoint %d:%x - %s", n.Id, byte(v.ID), v.ID)
-	}
+	//for _, v := range n.Device.CommandClasses {
+	//logrus.Errorf("Request endpoint %d:%x - %s", n.Id, byte(v.ID), v.ID)
+	//}
 	n.RUnlock()
 
 	cmd := commands.NewRaw(
@@ -36,18 +36,18 @@ func (n *Node) RequestEndpoints() error {
 
 	fmt.Println("")
 	fmt.Println("")
-	logrus.Errorf("Request endpoint %d", n.Id)
+	logrus.Debugf("Request endpoint %d", n.Id)
 
 	t, _ := n.connection.WriteAndWaitForReport(cmd, time.Second*2, 0x08) // Request node information
 	report := <-t
 
-	logrus.Errorf("Request endpoint %d report: %#v", n.Id, report)
+	logrus.Debugf("Request endpoint %d report: %#v", n.Id, report)
 
 	if report != nil {
 		switch cmd := report.(type) {
 		case *commands.MultiChannelCmdEndPointReport:
 			//n.ManufacurerSpecific = cmd
-			logrus.Info(cmd.String())
+			logrus.Debug(cmd.String())
 			n.Lock()
 			n.Endpoints = make([]*Endpoint, 0)
 			for i := 1; i < cmd.Endpoints; i++ {

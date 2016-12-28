@@ -120,7 +120,7 @@ func NewMessage(data []byte) *Message {
 		if len(data) > 5 {
 			message.Data = data[5:]
 		}
-		logrus.Warnf("Dropping message function='%s' with data %x (not implemented)", message.Function, data[4:])
+		logrus.Debugf("Dropping message function='%s' with data %x (not implemented)", message.Function, data[4:])
 	}
 
 	logrus.Debugf("Message: %+v Message data: %+v", message, message.Data)

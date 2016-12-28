@@ -100,82 +100,16 @@ func (conn *Connection) WriteAndWaitForReport(msg interfaces.Encodable, t time.D
 				return
 			}
 
-			logrus.Errorf("Received wrong type: %t", msg)
+			logrus.Errorf("WriteAndWaitForReport: Received wrong type: %t", msg)
 		}
 	}()
 
 	return returnChan, nil
 }
 
-/*func (self *Connection) Send(data interfaces.Encodable, timeout time.Duration) chan *Message {
-	return self.SendRaw(data.Encode(), timeout)
-}
-
-func (self *Connection) SendRaw(data []byte, timeout time.Duration) chan *Message {
-	return self.SendRawAndWaitForResponse(data, timeout, 0)
-}
-
-func (self *Connection) SendRawAndWaitForResponse(data []byte, timeout time.Duration, command byte) chan *Message {
-	returnChan := make(chan *Message)
-
-	// Compile message
-	msg := append([]byte{0x00, 0x00}, data...)
-	msg = append(msg, 0x00)
-
-	// Add length
-	msg[0] = byte(len(msg) - 1)
-
-	// Add checksum
-	msg[len(msg)-1] = generateChecksum(msg)
-
-	// Add header
-	msg = append([]byte{0x01}, msg...)
-
-	uuid := uuid.New()
-	//logrus.Infof("Sending: %s", strings.TrimSpace(hex.Dump(msg)))
-	pkg := &sendPackage{
-		message:    msg,
-		uuid:       uuid,
-		returnChan: returnChan,
-	}
-
-	if len(data) > 0 {
-		pkg.function = data[0]
-	}
-	if len(data) > 1 {
-		pkg.node = data[1]
-	}
-	if len(data) > 4 {
-		pkg.commandclass = data[3]
-
-		if command != 0 {
-			pkg.command = command
-		}
-	}
-
-	self.send <- pkg
-
-	// Timeout
-	go func() {
-		<-time.After(timeout)
-		self.Lock()
-		for index, c := range self.inFlight {
-			if index == uuid {
-				logrus.Warnf("TIMEOUT: %s - %#v", uuid, c)
-				delete(self.inFlight, uuid)
-				close(c.returnChan)
-				c.returnChan = nil
-			}
-		}
-		self.Unlock()
-	}()
-
-	return returnChan
-}*/
-
 func (self *Connection) Connect(connectChan chan error) (err error) {
 	defer func() {
-		logrus.Error("Disonnected\n\n")
+		logrus.Error("Disonnected")
 		self.Connected = false
 	}()
 
@@ -194,7 +128,7 @@ func (self *Connection) Connect(connectChan chan error) (err error) {
 
 	go func() {
 		<-time.After(time.Millisecond * 200)
-		logrus.Debug("Connected\n\n")
+		logrus.Debug("Connected")
 		select {
 		case connectChan <- nil:
 		default:
@@ -212,8 +146,6 @@ func (self *Connection) Writer() {
 		<-time.After(time.Millisecond * 50)
 		select {
 		case pkg := <-self.send:
-			logrus.Infof("Sending: %x", pkg.message)
-
 			self.Lock()
 			self.lastCommand = ""
 
@@ -224,17 +156,14 @@ func (self *Connection) Writer() {
 				go self.timeoutWorker(pkg)
 			}
 
-			logrus.Infof("Write: %x", pkg.message)
+			logrus.Debugf("Write: %x", pkg.message)
 			self.port.Write(pkg.message)
 			self.Unlock()
 
 			select {
 			case result := <-self.lastResult:
-				//logrus.Infof("RESULT: %s", pkg.uuid)
-				logrus.Infof("Send result: %x, %s", pkg.message, result)
 				pkg.result = result
 			case <-time.After(time.Second):
-				logrus.Infof("Send timeout: %x", pkg.message)
 				// SEND TIMEOUT
 			}
 			self.lastCommand = ""
@@ -267,7 +196,6 @@ func (self *Connection) Reader() error {
 		age = time.Now()
 
 		for len(incomming) > 0 {
-			logrus.Warnf("Try to decode: %x", incomming)
 			l, msg := serialapi.Decode(incomming)
 
 			if l == 1 {
@@ -279,7 +207,6 @@ func (self *Connection) Reader() error {
 						case <-time.After(time.Millisecond * 50):
 						}
 
-						logrus.Warnf("Command result!?: %s - %#v", c.uuid, c)
 						if msg.IsNAK() {
 							logrus.Warnf("Command failed: %s - %#v", c.uuid, c)
 							delete(self.inFlight, index)
@@ -334,17 +261,10 @@ func (self *Connection) Reader() error {
 			if cmd, ok := msg.Data.(*functions.FuncApplicationCommandHandler); ok {
 				// Deliver the update to the parent
 				go self.reportCallback(msg.NodeId, cmd.Data)
-
-				//self.DeliverUpdate(msg.NodeId, cmd.Data)
-				//go self.eventCallback(msg.NodeId, cmd.Data);
 			}
 
-			//switch cmd := msg.Data.(type) {
-			//case *functions.FuncApplicationCommandHandler:
-			//}
-
 			//logrus.Infof("Recived: %s", strings.TrimSpace(hex.Dump(incomming)))
-			logrus.Infof("Recived: %x", incomming)
+			logrus.Debugf("Recived: %x", incomming)
 			incomming = incomming[l:]
 			if l > 1 {
 				self.port.Write([]byte{0x06}) // Send ACK to stick
@@ -413,16 +333,6 @@ func (c *sendPackage) Match(incomming []byte) bool {
 		logrus.Errorf("Skipping pkg %s, expectedReport %x is not %x", c.uuid, c.expectedReport, incomming[8])
 		return false
 	}
-
-	//if len(incomming) > 5 && c.node != 0 && c.node != incomming[5] {
-	//return false
-	//}
-	//if len(incomming) > 7 && c.commandclass != 0 && c.commandclass != incomming[7] {
-	//return false
-	//}
-	//if len(incomming) > 8 && c.command != 0 && c.command != incomming[8] {
-	//return false
-	//}
 
 	return true
 }

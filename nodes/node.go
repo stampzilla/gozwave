@@ -121,8 +121,8 @@ func (n *Node) ProcessEvent(event commands.Report) {
 }
 
 func (n *Node) Identify() {
-	logrus.Warnf("Started identification on node %d", n.Id)
-	defer logrus.Warnf("Ended identification on node %d", n.Id)
+	logrus.Infof("Started identification on node %d", n.Id)
+	defer logrus.Infof("Ended identification on node %d", n.Id)
 
 	for {
 		if n.ProtocolInfo == nil {
@@ -133,7 +133,6 @@ func (n *Node) Identify() {
 				continue
 			}
 
-			logrus.Errorf("Node ident: Done RequestProtocolInfo")
 			n.Lock()
 			n.ProtocolInfo = resp
 			n.IsAwake = resp.Listening
@@ -156,7 +155,6 @@ func (n *Node) Identify() {
 				continue
 			}
 
-			logrus.Errorf("Node ident: Done ManufacurerSpecific")
 			n.Lock()
 			n.ManufacurerSpecific = resp
 			n.Device = database.New(n.ManufacurerSpecific.Manufacturer, n.ManufacurerSpecific.Type, n.ManufacurerSpecific.Id)

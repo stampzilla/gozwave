@@ -22,7 +22,7 @@ func (n *Node) RequestProtocolInfo() (*functions.FuncGetNodeProtocolInfo, error)
 
 	resp := <-t
 
-	logrus.Infof("RESP: %#v", resp)
+	logrus.Debugf("RequestProtocolInfo RESP: %#v", resp)
 
 	if resp != nil {
 		switch r := resp.Data.(type) {
