@@ -29,14 +29,11 @@ func (n *Node) Endpoint(id int) *Endpoint {
 		return nil
 	}
 
-	logrus.Errorf("Get endpoint %d in %#v", id, n.Endpoints)
-
 	return n.Endpoints[id]
 }
 
 func (e *Endpoint) Send(msg interfaces.Encodable, timeout time.Duration) {
-
-	logrus.Errorf("Send to endpoint %d ", e.Id)
+	logrus.Debugf("Send to endpoint %d ", e.Id)
 	e.node.connection.Send(commands.NewMultiChannelEncap(msg, e.Id), timeout)
 }
 
