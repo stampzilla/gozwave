@@ -169,14 +169,13 @@ var outputfile string
 var databaseDir string
 var packageName string
 
-func init() {
+func main() {
 	flag.StringVar(&outputfile, "file", "", "Output file")
 	flag.StringVar(&databaseDir, "databasedir", "./database", "Directory with xml files")
 	flag.StringVar(&packageName, "package", "devices", "Package name of generated code")
-	flag.Parse()
-}
 
-func main() {
+	flag.Parse()
+
 	devices := &templates{
 		Package: packageName,
 	}

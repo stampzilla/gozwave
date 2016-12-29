@@ -13,12 +13,10 @@ import (
 
 var file string
 
-func init() {
+func main() {
 	flag.StringVar(&file, "file", "", "File to decode")
 	flag.Parse()
-}
 
-func main() {
 	if file == "" {
 		log.Fatalln("No file specified. Use -file=")
 		return
