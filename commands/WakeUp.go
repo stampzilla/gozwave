@@ -10,6 +10,6 @@ func NewWakeUpReport() *WakeUpReport {
 	return &WakeUpReport{}
 }
 
-func (self *WakeUpReport) String() string {
+func (wr *WakeUpReport) String() string {
 	return fmt.Sprintf("WakeUp")
 }

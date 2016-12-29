@@ -36,11 +36,11 @@ func NewAlarmReport(data []byte) *AlarmReport {
 	return alarm
 }
 
-func (self *AlarmReport) String() string {
-	if len(self.data) >= 6 {
+func (alarm *AlarmReport) String() string {
+	if len(alarm.data) >= 6 {
 		return fmt.Sprintf("Alarm: type=%d, level=%d, sensorSrcID=%d, type:%s event:%d, status=%d",
-			self.Type, self.Level, self.SensorSourceId, self.SensorType, self.Event, self.Status)
+			alarm.Type, alarm.Level, alarm.SensorSourceId, alarm.SensorType, alarm.Event, alarm.Status)
 	}
-	return fmt.Sprintf("Alarm: type=%d level=%d", self.Type, self.Level)
+	return fmt.Sprintf("Alarm: type=%d level=%d", alarm.Type, alarm.Level)
 
 }

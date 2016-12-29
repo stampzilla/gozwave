@@ -7,10 +7,10 @@ import (
 	"github.com/stampzilla/gozwave/commands"
 )
 
-func (self *Node) RequestStates() error {
-	self.RLock()
-	cc := self.Device.CommandClasses
-	self.RUnlock()
+func (n *Node) RequestStates() error {
+	n.RLock()
+	cc := n.Device.CommandClasses
+	n.RUnlock()
 
 	for _, v := range cc {
 		switch v.ID {
@@ -21,8 +21,8 @@ func (self *Node) RequestStates() error {
 				0x25, // TransmitOptions?
 				//0x23, // Callback?
 			})
-			cmd.SetNode(self.Id)
-			self.connection.Write(cmd)
+			cmd.SetNode(n.Id)
+			n.connection.Write(cmd)
 		case commands.SwitchMultilevel:
 			cmd := commands.NewRaw([]byte{
 				commands.SwitchMultilevel, // Command class
@@ -30,8 +30,8 @@ func (self *Node) RequestStates() error {
 				0x25, // TransmitOptions?
 				//0x23, // Callback?
 			})
-			cmd.SetNode(self.Id)
-			self.connection.Write(cmd)
+			cmd.SetNode(n.Id)
+			n.connection.Write(cmd)
 		case commands.SensorMultiLevel:
 			cmd := commands.NewRaw([]byte{
 				commands.SensorMultiLevel, // Command class
@@ -39,8 +39,8 @@ func (self *Node) RequestStates() error {
 				0x25, // TransmitOptions?
 				//0x23, // Callback?
 			})
-			cmd.SetNode(self.Id)
-			t, _ := self.connection.WriteAndWaitForReport(cmd, time.Second*2, 0x02) // Wait for SupportedReport (0x02)
+			cmd.SetNode(n.Id)
+			t, _ := n.connection.WriteAndWaitForReport(cmd, time.Second*2, 0x02) // Wait for SupportedReport (0x02)
 
 			report := <-t
 			//for k, v := range report.sensors {
@@ -52,8 +52,8 @@ func (self *Node) RequestStates() error {
 		}
 	}
 
-	self.Lock()
-	self.statesOk = true
-	self.Unlock()
+	n.Lock()
+	n.statesOk = true
+	n.Unlock()
 	return nil
 }

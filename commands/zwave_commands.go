@@ -153,10 +153,10 @@ const (
 	Mark                            = 0xE
 )
 
-func (self ZWaveCommand) String() string {
+func (cmd ZWaveCommand) String() string {
 
 	str := ""
-	switch self {
+	switch cmd {
 	case 0x20:
 		str = "Basic"
 	case 0x21:

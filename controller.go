@@ -37,8 +37,8 @@ func NewController() *Controller {
 	return c
 }
 
-func (self *Controller) getNodes() (*nodes.List, error) {
-	t, err := self.Connection.WriteWithTimeout(functions.NewRaw([]byte{0x02}), time.Second*5)
+func (c *Controller) getNodes() (*nodes.List, error) {
+	t, err := c.Connection.WriteWithTimeout(functions.NewRaw([]byte{0x02}), time.Second*5)
 
 	if err != nil {
 		return nil, err
@@ -62,65 +62,63 @@ func (self *Controller) getNodes() (*nodes.List, error) {
 				continue
 			}
 
-			node := self.Nodes.Get(index + 1)
-			node = self.initNode(index+1, node)
+			node := c.Nodes.Get(index + 1)
+			node = c.initNode(index+1, node)
 			go node.Identify()
 		}
 	default:
 		logrus.Errorf("Got wrong response type: %t", r)
 	}
 
-	//spew.Dump(self)
-
-	return self.Nodes, nil
+	return c.Nodes, nil
 }
 
-func (self *Controller) initNode(id int, node *nodes.Node) *nodes.Node {
+func (c *Controller) initNode(id int, node *nodes.Node) *nodes.Node {
 	if node != nil {
 		return node
 	}
 
 	node = nodes.New(id)
-	self.Nodes.Add(node)
-	self.pushEvent(events.NodeDiscoverd{
+	c.Nodes.Add(node)
+	c.pushEvent(events.NodeDiscoverd{
 		Address: node.Id,
 	})
 
-	node.Setup(self.Connection, self.pushEvent)
+	node.Setup(c.Connection, c.pushEvent)
 	return node
 }
 
-func (self *Controller) pushEvent(event interface{}) {
+func (c *Controller) pushEvent(event interface{}) {
 	select {
-	case self.eventQue <- event:
+	case c.eventQue <- event:
 	default:
 	}
 
 	go func() {
 		switch event.(type) {
 		case events.NodeUpdated:
-			self.triggerFileSave <- struct{}{}
+			c.triggerFileSave <- struct{}{}
 		}
 	}()
 }
 
-func (self *Controller) saveDebouncer() {
-	<-self.triggerFileSave
+func (c *Controller) saveDebouncer() {
+	<-c.triggerFileSave
 	for {
 		select {
-		case <-self.triggerFileSave:
+		case <-c.triggerFileSave:
 		case <-time.After(time.Second * 10):
-			self.SaveConfigurationToFile()
-			<-self.triggerFileSave
+			c.SaveConfigurationToFile()
+			<-c.triggerFileSave
 		}
 	}
 }
 
-func (self *Controller) GetNextEvent() chan interface{} {
-	self.RLock()
-	defer self.RUnlock()
+func (c *Controller) GetNextEvent() chan interface{} {
+	c.RLock()
+	defer c.RUnlock()
 
-	return self.eventQue
+	return c.eventQue
 }
 
 func (c *Controller) DeliverReportToNode(node byte, report commands.Report) {
@@ -131,23 +129,23 @@ func (c *Controller) DeliverReportToNode(node byte, report commands.Report) {
 	n.ProcessEvent(report)
 }
 
-func (self *Controller) SaveConfigurationToFile() error {
-	controller, err := self.loadConfigurationFromFile()
+func (c *Controller) SaveConfigurationToFile() error {
+	controller, err := c.loadConfigurationFromFile()
 	if err == nil {
-		if reflect.DeepEqual(self, controller) {
+		if reflect.DeepEqual(c, controller) {
 			return nil
 		}
 	}
 
-	configFile, err := os.Create(self.filename)
+	configFile, err := os.Create(c.filename)
 	if err != nil {
 		logrus.Error("creating config file", err.Error())
 	}
 	defer configFile.Close()
 
-	logrus.Info("Save config: ", self.filename)
+	logrus.Info("Save config: ", c.filename)
 	var out bytes.Buffer
-	b, err := json.MarshalIndent(self, "", "\t")
+	b, err := json.MarshalIndent(c, "", "\t")
 	if err != nil {
 		logrus.Error("error marshal json", err)
 	}
@@ -156,25 +154,24 @@ func (self *Controller) SaveConfigurationToFile() error {
 
 	return nil
 }
-func (self *Controller) LoadConfigurationFromFile() error {
-	controller, err := self.loadConfigurationFromFile()
+func (c *Controller) LoadConfigurationFromFile() error {
+	controller, err := c.loadConfigurationFromFile()
 	if err != nil {
 		return err
 	}
 
 	for _, v := range controller.Nodes.All() {
-		v.Setup(self.Connection, self.pushEvent)
-		self.Nodes.Add(v)
-		self.pushEvent(events.NodeDiscoverd{
+		v.Setup(c.Connection, c.pushEvent)
+		c.Nodes.Add(v)
+		c.pushEvent(events.NodeDiscoverd{
 			Address: v.Id,
 		})
 	}
-	//self.Nodes = controller.Nodes
 
 	return nil
 }
-func (self *Controller) loadConfigurationFromFile() (*Controller, error) {
-	configFile, err := os.Open(self.filename)
+func (c *Controller) loadConfigurationFromFile() (*Controller, error) {
+	configFile, err := os.Open(c.filename)
 	if err != nil {
 		return nil, err
 	}

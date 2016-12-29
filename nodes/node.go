@@ -256,8 +256,8 @@ func (n *Node) Identify() {
 	}
 }
 
-func (self *Node) pushEvent(event interface{}) {
-	self.pushEventFunc(event)
+func (n *Node) pushEvent(event interface{}) {
+	n.pushEventFunc(event)
 }
 
 func (n *Node) HasCommand(c commands.ZWaveCommand) bool {
