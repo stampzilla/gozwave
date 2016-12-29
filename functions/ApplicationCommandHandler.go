@@ -17,49 +17,49 @@ func NewApplicationCommandHandler(data []byte) *FuncApplicationCommandHandler {
 	return f
 }
 
-func (self *FuncApplicationCommandHandler) Decode(data []byte) {
-	self.Command = commands.ZWaveCommand(data[0])
-	self.Class = data[1]
+func (a *FuncApplicationCommandHandler) Decode(data []byte) {
+	a.Command = commands.ZWaveCommand(data[0])
+	a.Class = data[1]
 
-	switch self.Command {
+	switch a.Command {
 	case commands.Alarm:
-		switch self.Class {
+		switch a.Class {
 		case 0x05: // Report
-			self.Data = commands.NewAlarmReport(data[2:])
+			a.Data = commands.NewAlarmReport(data[2:])
 		}
 	case commands.ManufacturerSpecific:
-		switch self.Class {
+		switch a.Class {
 		case 0x05: // Report
-			self.Data = commands.NewManufacturerSpecificReport(data[2:])
+			a.Data = commands.NewManufacturerSpecificReport(data[2:])
 		}
 	case commands.MultiInstance:
-		switch self.Class {
+		switch a.Class {
 		case 0x08: // MultiChannelCmd_EndPointReport
-			self.Data = commands.NewMultiChannelCmdEndPointReport(data[2:])
+			a.Data = commands.NewMultiChannelCmdEndPointReport(data[2:])
 		}
 	case commands.SensorMultiLevel:
-		switch self.Class {
+		switch a.Class {
 		case 0x05: // Report
-			self.Data = commands.NewSensorMultiLevelReport(data[2:])
+			a.Data = commands.NewSensorMultiLevelReport(data[2:])
 		}
 	case commands.SwitchBinary:
-		switch self.Class {
+		switch a.Class {
 		case 0x03: // Report
-			self.Data = commands.NewSwitchBinaryReport(data[2:])
+			a.Data = commands.NewSwitchBinaryReport(data[2:])
 		}
 	case commands.SwitchMultilevel:
-		switch self.Class {
+		switch a.Class {
 		case 0x03: // Report
-			self.Data = commands.NewSwitchMultilevelReport(data[2:])
+			a.Data = commands.NewSwitchMultilevelReport(data[2:])
 		}
 	case commands.WakeUp:
-		//	self.Node = data[2];
-		self.Data = commands.NewWakeUpReport()
+		//	a.Node = data[2];
+		a.Data = commands.NewWakeUpReport()
 		//default:
-		//self.Data = data
+		//a.Data = data
 	}
 
-	if report, ok := self.Data.(commands.Report); ok && report != nil {
-		report.SetNode(self.Node)
+	if report, ok := a.Data.(commands.Report); ok && report != nil {
+		report.SetNode(a.Node)
 	}
 }

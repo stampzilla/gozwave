@@ -12,17 +12,17 @@ func NewMultiChannelEncap(msg []byte, endpoint int) *MultiChannelEncap {
 	}
 }
 
-func (self *MultiChannelEncap) Encode() []byte {
-	msg := self.msg
+func (m *MultiChannelEncap) Encode() []byte {
+	msg := m.msg
 
 	ret := []byte{
 		msg[0],     // serialapi function
 		msg[1],     // node id
 		msg[2] + 4, // length
 		MultiInstance,
-		0x0d,                // MultiChannelCmd_Encap
-		0x01,                // Length
-		byte(self.endpoint), // Endpoint
+		0x0d,             // MultiChannelCmd_Encap
+		0x01,             // Length
+		byte(m.endpoint), // Endpoint
 	}
 
 	ret = append(ret, msg[3:]...)

@@ -57,12 +57,12 @@ func NewConnection() *Connection {
 	return z
 }
 
-func (self *Connection) RegisterNode(address byte) chan interface{} {
+func (conn *Connection) RegisterNode(address byte) chan interface{} {
 	c := make(chan interface{})
 
-	self.Lock()
-	self.updateChans[strconv.Itoa(int(address))] = c
-	self.Unlock()
+	conn.Lock()
+	conn.updateChans[strconv.Itoa(int(address))] = c
+	conn.Unlock()
 
 	return c
 }
@@ -105,13 +105,13 @@ func (conn *Connection) WriteAndWaitForReport(msg interfaces.Encodable, t time.D
 	return returnChan, nil
 }
 
-func (self *Connection) Connect(connectChan chan error) (err error) {
+func (conn *Connection) Connect(connectChan chan error) (err error) {
 	defer func() {
 		logrus.Error("Disonnected")
-		self.Connected = false
+		conn.Connected = false
 	}()
 
-	self.readWriteCloser, err = self.portOpener.Open()
+	conn.readWriteCloser, err = conn.portOpener.Open()
 
 	if err != nil {
 		select {
@@ -128,55 +128,55 @@ func (self *Connection) Connect(connectChan chan error) (err error) {
 		case connectChan <- nil:
 		default:
 		}
-		self.Connected = true
+		conn.Connected = true
 	}()
 
-	go self.Writer()
-	return self.Reader()
+	go conn.Writer()
+	return conn.Reader()
 }
 
-func (self *Connection) Writer() {
+func (conn *Connection) Writer() {
 	logrus.Infof("Starting send worker")
 	for {
 		<-time.After(time.Millisecond * 50)
 		select {
-		case pkg := <-self.send:
-			self.Lock()
-			self.lastCommand = ""
+		case pkg := <-conn.send:
+			conn.Lock()
+			conn.lastCommand = ""
 
-			self.inFlight[pkg.uuid] = pkg
-			self.lastCommand = pkg.uuid
+			conn.inFlight[pkg.uuid] = pkg
+			conn.lastCommand = pkg.uuid
 
 			if pkg.timeout != 0 { // Only add the message to the inflight list if someone is waiting for an response
-				go self.timeoutWorker(pkg)
+				go conn.timeoutWorker(pkg)
 			}
 
 			logrus.Debugf("Write: %x", pkg.message)
-			self.readWriteCloser.Write(pkg.message)
-			self.Unlock()
+			conn.readWriteCloser.Write(pkg.message)
+			conn.Unlock()
 
 			select {
-			case result := <-self.lastResult:
+			case result := <-conn.lastResult:
 				pkg.result = result
 			case <-time.After(time.Second):
 				// SEND TIMEOUT
 			}
-			self.lastCommand = ""
+			conn.lastCommand = ""
 		}
 	}
 }
 
-func (self *Connection) Reader() error {
+func (conn *Connection) Reader() error {
 	incomming := make([]byte, 0)
 	age := time.Now()
 
 	for {
 		buf := make([]byte, 128)
 
-		n, err := self.readWriteCloser.Read(buf)
+		n, err := conn.readWriteCloser.Read(buf)
 		if err != nil {
 			logrus.Error("Serial read failed: ", err)
-			self.readWriteCloser.Close()
+			conn.readWriteCloser.Close()
 			return err
 		}
 
@@ -194,17 +194,17 @@ func (self *Connection) Reader() error {
 			l, msg := serialapi.Decode(incomming)
 
 			if l == 1 {
-				for index, c := range self.inFlight {
-					self.RLock()
-					if c.uuid == self.lastCommand {
+				for index, c := range conn.inFlight {
+					conn.RLock()
+					if c.uuid == conn.lastCommand {
 						select {
-						case self.lastResult <- incomming[0]:
+						case conn.lastResult <- incomming[0]:
 						case <-time.After(time.Millisecond * 50):
 						}
 
 						if msg.IsNAK() {
 							logrus.Warnf("Command failed: %s - %#v", c.uuid, c)
-							delete(self.inFlight, index)
+							delete(conn.inFlight, index)
 							close(c.returnChan)
 							c.returnChan = nil
 						}
@@ -212,11 +212,11 @@ func (self *Connection) Reader() error {
 						if msg.IsCAN() {
 							go func() {
 								<-time.After(time.Millisecond * 100)
-								self.send <- c
+								conn.send <- c
 							}()
 						}
 					}
-					self.RUnlock()
+					conn.RUnlock()
 				}
 			}
 
@@ -233,8 +233,8 @@ func (self *Connection) Reader() error {
 			}
 
 			if l > 1 { // A message was received
-				self.Lock()
-				for index, c := range self.inFlight {
+				conn.Lock()
+				for index, c := range conn.inFlight {
 					if !c.Match(incomming) {
 						continue
 					}
@@ -248,21 +248,21 @@ func (self *Connection) Reader() error {
 						close(c.returnChan)
 						c.returnChan = nil
 					}
-					delete(self.inFlight, index)
+					delete(conn.inFlight, index)
 				}
-				self.Unlock()
+				conn.Unlock()
 			}
 
 			if cmd, ok := msg.Data.(*functions.FuncApplicationCommandHandler); ok {
 				// Deliver the update to the parent
-				go self.reportCallback(msg.NodeId, cmd.Data)
+				go conn.reportCallback(msg.NodeId, cmd.Data)
 			}
 
 			//logrus.Infof("Recived: %s", strings.TrimSpace(hex.Dump(incomming)))
 			logrus.Debugf("Recived: %x", incomming)
 			incomming = incomming[l:]
 			if l > 1 {
-				self.readWriteCloser.Write([]byte{0x06}) // Send ACK to stick
+				conn.readWriteCloser.Write([]byte{0x06}) // Send ACK to stick
 			}
 
 		}
@@ -270,9 +270,9 @@ func (self *Connection) Reader() error {
 
 }
 
-func (self *Connection) DeliverUpdate(id byte, msg interface{}) {
+func (conn *Connection) DeliverUpdate(id byte, msg interface{}) {
 	logrus.Infof("DeliverUpdate: %T", msg)
-	c, ok := self.updateChans[strconv.Itoa(int(id))]
+	c, ok := conn.updateChans[strconv.Itoa(int(id))]
 	if ok {
 		go func() {
 			select {
