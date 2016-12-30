@@ -2,7 +2,6 @@ package gozwave
 
 import (
 	"io"
-	"strconv"
 	"sync"
 	"time"
 
@@ -21,7 +20,6 @@ type Connection struct {
 
 	// Keep track of requests wating a response
 	inFlight    map[string]*sendPackage
-	updateChans map[string]chan interface{}
 	send        chan *sendPackage
 	lastCommand string // Uuid of last sent command
 	lastResult  chan byte
@@ -49,22 +47,11 @@ type sendPackage struct {
 func NewConnection() *Connection {
 	z := &Connection{
 		inFlight:       make(map[string]*sendPackage),
-		updateChans:    make(map[string]chan interface{}),
 		send:           make(chan *sendPackage),
 		lastResult:     make(chan byte),
 		reportCallback: func(byte, commands.Report) {},
 	}
 	return z
-}
-
-func (conn *Connection) RegisterNode(address byte) chan interface{} {
-	c := make(chan interface{})
-
-	conn.Lock()
-	conn.updateChans[strconv.Itoa(int(address))] = c
-	conn.Unlock()
-
-	return c
 }
 
 func (conn *Connection) Write(msg interfaces.Encodable) error {
@@ -136,7 +123,6 @@ func (conn *Connection) Connect(connectChan chan error) (err error) {
 }
 
 func (conn *Connection) Writer() {
-	logrus.Infof("Starting send worker")
 	for {
 		<-time.After(time.Millisecond * 50)
 		select {
@@ -227,7 +213,7 @@ func (conn *Connection) Reader() error {
 
 			if l == -1 { // Invalid checksum
 				incomming = incomming[1:] // Remove first char and try again
-				logrus.Infof("Removing first byte, buffer len=%d", len(incomming))
+				logrus.Debugf("Removing first byte, buffer len=%d", len(incomming))
 
 				continue
 			}
@@ -268,19 +254,6 @@ func (conn *Connection) Reader() error {
 		}
 	}
 
-}
-
-func (conn *Connection) DeliverUpdate(id byte, msg interface{}) {
-	logrus.Infof("DeliverUpdate: %T", msg)
-	c, ok := conn.updateChans[strconv.Itoa(int(id))]
-	if ok {
-		go func() {
-			select {
-			case c <- msg:
-			case <-time.After(time.Second):
-			}
-		}()
-	}
 }
 
 func newSendPackage(data []byte) *sendPackage {
