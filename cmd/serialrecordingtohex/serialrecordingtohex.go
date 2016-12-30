@@ -14,9 +14,15 @@ import (
 )
 
 var file string
+var short bool
+var read bool
+var write bool
 
 func main() {
 	flag.StringVar(&file, "file", "", "File to decode")
+	flag.BoolVar(&short, "short", false, "Exclude timestamp, direction and writes")
+	flag.BoolVar(&read, "read", true, "Include reads")
+	flag.BoolVar(&write, "write", true, "Include writes")
 	flag.Parse()
 
 	if file == "" {
@@ -73,6 +79,17 @@ func main() {
 	// Sort the rows and print them out
 	sort.Sort(combinedRows)
 	for _, v := range combinedRows {
+		if v.Direction.IsRead() && !read {
+			continue
+		}
+		if v.Direction.IsWrite() && !write {
+			continue
+		}
+
+		if short {
+			fmt.Printf("%x\n", v.Data)
+			continue
+		}
 		fmt.Printf("%s: %s - %x\n", v.Timestamp, v.Direction, v.Data)
 	}
 }

@@ -51,8 +51,8 @@ func Decode(data []byte) (length int, msg *Message) {
 
 		checksum := data[length+1]
 		checksumData := append(data[1:length+1], byte(0x00))
-		if checksum != generateChecksum(checksumData) {
-			logrus.Errorf("Invalid checksum, is %b should be %b, (len=%d)", checksum, generateChecksum(checksumData), length)
+		if checksum != GenerateChecksum(checksumData) {
+			logrus.Errorf("Invalid checksum, is %b should be %x, (len=%d)", checksum, GenerateChecksum(checksumData), length)
 			logrus.Debug(hex.Dump(checksumData))
 			return -1, nil
 		}
@@ -66,7 +66,7 @@ func Decode(data []byte) (length int, msg *Message) {
 	return -1, nil // Not a valid start char
 }
 
-func generateChecksum(data []byte) byte {
+func GenerateChecksum(data []byte) byte {
 	var offset int
 	ret := data[offset]
 	for i := offset + 1; i < len(data)-1; i++ {
@@ -87,7 +87,7 @@ func CompileMessage(data []byte) []byte {
 	msg[0] = byte(len(msg) - 1)
 
 	// Add checksum
-	msg[len(msg)-1] = generateChecksum(msg)
+	msg[len(msg)-1] = GenerateChecksum(msg)
 
 	// Add header
 	msg = append([]byte{0x01}, msg...)

@@ -1,32 +1,49 @@
 package gozwave
 
 import (
+	"encoding/hex"
 	"io"
 	"log"
+	"testing"
 )
 
 // generate with impl 'm *mockSerial' io.ReadWriteCloser
 type mockSerial struct {
-	sendToRead chan []byte
-	writeLog   [][]byte
+	sendToRead   chan string
+	getFromWrite chan []byte
+	writeLog     [][]byte
+	errorLog     []error
 }
 
 func newMockSerial() *mockSerial {
 	return &mockSerial{
-		sendToRead: make(chan []byte),
+		sendToRead:   make(chan string),
+		getFromWrite: make(chan []byte),
 	}
 }
 
 func (m *mockSerial) Read(p []byte) (n int, err error) {
 	data := <-m.sendToRead
-	n = copy(p, data)
-	log.Printf("%x", p)
-	return len(p), nil
+
+	bytes, err := hex.DecodeString(data)
+	if err != nil {
+		m.errorLog = append(m.errorLog, err)
+		return 0, err
+	}
+
+	n = copy(p, bytes)
+	if testing.Verbose() {
+		log.Printf("MOCK read  %x", p[:n])
+	}
+	return n, nil
 }
 
 func (m *mockSerial) Write(p []byte) (n int, err error) {
-	log.Printf("Writing %x\n", p)
+	if testing.Verbose() {
+		log.Printf("MOCK write %x\n", p)
+	}
 	m.writeLog = append(m.writeLog, p)
+	m.getFromWrite <- p
 	return len(p), nil
 }
 
