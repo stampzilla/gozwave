@@ -44,13 +44,13 @@ func reply(t *testing.T, c chan []byte, w chan string) {
 		case v := <-c:
 			s := fmt.Sprintf("%x", v) // Encode to hex string
 
-			// Keep a count of how many times we have received each message
-			if _, ok := reads[s]; !ok {
-				reads[s] = 0
-			}
-			reads[s]++
-
 			if r, ok := replies[s]; ok {
+				// Keep a count of how many times we have received each message
+				if _, ok := reads[s]; !ok {
+					reads[s] = 0
+				}
+				reads[s]++
+
 				for _, rep := range r {
 					w <- rep // Send the response
 				}
