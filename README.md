@@ -7,7 +7,8 @@ Sigmadesigns have released some of the zwave documentation and it can be found h
 This library is in the early development state and is not ready for production in any way. The api is subject to changes and we will probably redesign it a couple of times before its ready.
 
 ## Contribute
-We love any help we can get! If you are interested just fork the lib, make changes and send ous a pull request. 
+We love any help we can get! If you are interested just fork the lib, make changes and send ous a pull request.
+We have a slack chat room on https://gophers.slack.com/messages/gozwave/ you can get invite on https://invite.slack.golangbridge.org/
 
 ## TODO
 - [x] Basic communication between controller and lib (serial-api)
