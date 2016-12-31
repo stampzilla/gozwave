@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestNew(t *testing.T) {
+func TestWakeUp(t *testing.T) {
 	w, err := NewWakeUp()
 
 	assert.NoError(t, err)

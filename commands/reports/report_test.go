@@ -12,7 +12,7 @@ type row struct {
 	expected interface{}
 }
 
-func TestNewWakeUp(t *testing.T) {
+func TestNew(t *testing.T) {
 	m := map[commands.ZWaveCommand]map[byte]row{
 		commands.Alarm: map[byte]row{
 			0x05: row{[]byte{0x00, 0x00}, &Alarm{}},
@@ -44,4 +44,20 @@ func TestNewWakeUp(t *testing.T) {
 			assert.IsType(t, e.expected, r)
 		}
 	}
+}
+
+func TestNewNoData(t *testing.T) {
+	r, err := New(commands.ZWaveCommand(0), byte(0), []byte{})
+
+	assert.Error(t, err)
+	assert.Nil(t, r)
+}
+
+func TestReport(t *testing.T) {
+	r, err := New(commands.WakeUp, byte(0), []byte{})
+
+	r.SetNode(5)
+
+	assert.NoError(t, err)
+	assert.NotNil(t, r)
 }
