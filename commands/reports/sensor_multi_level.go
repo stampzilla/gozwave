@@ -63,10 +63,18 @@ type SensorMultiLevel struct {
 func NewSensorMultiLevel(data []byte) (*SensorMultiLevel, error) {
 	sml := &SensorMultiLevel{data: data}
 
+	if len(data) < 2 {
+		return nil, fmt.Errorf("To short, expected at least 2 bytes, got %d", len(data))
+	}
+
 	sml.ValueType = ZWaveSensorType(data[0])
-	sml.Size = (data[1] & 0x07)              // Size
-	sml.Scale = (data[1] & 0x18) >> 0x03     // Scale
-	sml.Precision = (data[1] & 0xE0) >> 0x05 // Precision
+	sml.Size = (data[1] & 0x07)              // Size (3 bits)
+	sml.Scale = (data[1] & 0x18) >> 0x03     // Scale (2 bits)
+	sml.Precision = (data[1] & 0xE0) >> 0x05 // Precision (3 bits)
+
+	if len(data) < 2+int(sml.Size) {
+		return nil, fmt.Errorf("To short, expected at least %d bytes, got %d", (2 + sml.Size), len(data))
+	}
 
 	buf := bytes.NewReader(data[2:])
 	var err error
@@ -82,10 +90,6 @@ func NewSensorMultiLevel(data []byte) (*SensorMultiLevel, error) {
 		sml.Value = float64(val)
 	case 4:
 		val := int32(0)
-		err = binary.Read(buf, binary.BigEndian, &val)
-		sml.Value = float64(val)
-	case 8:
-		val := int64(0)
 		err = binary.Read(buf, binary.BigEndian, &val)
 		sml.Value = float64(val)
 	}
@@ -338,5 +342,5 @@ func NewSensorMultiLevel(data []byte) (*SensorMultiLevel, error) {
 }
 
 func (sml SensorMultiLevel) String() string {
-	return fmt.Sprintf("%f %s", sml.Value, sml.TypeString)
+	return fmt.Sprintf("%f %s %s", sml.Value, sml.TypeString, sml.Unit)
 }
