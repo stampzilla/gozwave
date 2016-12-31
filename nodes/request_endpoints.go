@@ -46,7 +46,7 @@ func (n *Node) RequestEndpoints() error {
 
 	if report != nil {
 		switch cmd := report.(type) {
-		case *reports.MultiChannelEndPoints:
+		case *reports.MultiChannelEndpoints:
 			//n.ManufacurerSpecific = cmd
 			logrus.Debug(cmd.String())
 			n.Lock()
