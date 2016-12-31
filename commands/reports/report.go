@@ -8,6 +8,7 @@ import (
 
 type Report interface {
 	SetNode(byte)
+	String() string
 }
 
 type report struct {
