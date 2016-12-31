@@ -60,5 +60,5 @@ func New(c commands.ZWaveCommand, class byte, data []byte) (Report, error) {
 		return NewWakeUp()
 	}
 
-	return nil, fmt.Errorf("Unknown command (%x) / command class (%x)", c, class)
+	return nil, fmt.Errorf("Unknown command (%x - %s) / command class (%x)", byte(c), c, class)
 }
