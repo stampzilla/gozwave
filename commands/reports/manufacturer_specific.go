@@ -20,9 +20,9 @@ func NewManufacturerSpecific(data []byte) (*ManufacturerSpecific, error) {
 	}
 
 	type aliasCmdManufacturerSpecific struct {
-		manufacturer uint16
-		t            uint16
-		id           uint16
+		Manufacturer uint16
+		Type         uint16
+		ID           uint16
 	}
 
 	ms := &aliasCmdManufacturerSpecific{}
@@ -35,13 +35,13 @@ func NewManufacturerSpecific(data []byte) (*ManufacturerSpecific, error) {
 
 	ret := &ManufacturerSpecific{}
 
-	ret.Manufacturer = fmt.Sprintf("%04x", ms.manufacturer)
-	ret.Type = fmt.Sprintf("%04x", ms.t)
-	ret.ID = fmt.Sprintf("%04x", ms.id)
+	ret.Manufacturer = fmt.Sprintf("%04x", ms.Manufacturer)
+	ret.Type = fmt.Sprintf("%04x", ms.Type)
+	ret.ID = fmt.Sprintf("%04x", ms.ID)
 
 	return ret, nil
 }
 
 func (ms *ManufacturerSpecific) String() string {
-	return fmt.Sprintf("%s:%s:%s", ms.Manufacturer, ms.Type, ms.ID)
+	return fmt.Sprintf("manufacturerSpecific manufacturer:%s type:%s id:%s (%s:%s:%s)", ms.Manufacturer, ms.Type, ms.ID, ms.Manufacturer, ms.Type, ms.ID)
 }

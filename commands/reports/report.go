@@ -39,7 +39,7 @@ func New(c commands.ZWaveCommand, class byte, data []byte) (Report, error) {
 	case commands.MultiInstance:
 		switch class {
 		case 0x08: // MultiChannelCmd_EndPointReport
-			return NewMultiChannelEndPoints(data)
+			return NewMultiChannelEndpoints(data)
 		}
 	case commands.SensorMultiLevel:
 		switch class {
