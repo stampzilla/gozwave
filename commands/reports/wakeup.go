@@ -12,5 +12,5 @@ func NewWakeUp() (*WakeUp, error) {
 }
 
 func (wr *WakeUp) String() string {
-	return fmt.Sprintf("WakeUp")
+	return fmt.Sprintf("wakeup")
 }

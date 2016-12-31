@@ -1,6 +1,7 @@
 package reports
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -11,7 +12,9 @@ func TestSwitchBinaryNoData(t *testing.T) {
 
 	assert.NoError(t, err)
 	assert.IsType(t, &SwitchBinary{}, w)
+	assert.Implements(t, (*fmt.Stringer)(nil), w)
 	assert.Equal(t, w.Status, false)
+	assert.Equal(t, w.String(), "status: false")
 }
 
 func TestSwitchBinaryFalse(t *testing.T) {
@@ -19,7 +22,9 @@ func TestSwitchBinaryFalse(t *testing.T) {
 
 	assert.NoError(t, err)
 	assert.IsType(t, &SwitchBinary{}, w)
+	assert.Implements(t, (*fmt.Stringer)(nil), w)
 	assert.Equal(t, w.Status, false)
+	assert.Equal(t, w.String(), "status: false")
 }
 
 func TestSwitchBinaryTrue(t *testing.T) {
@@ -27,5 +32,7 @@ func TestSwitchBinaryTrue(t *testing.T) {
 
 	assert.NoError(t, err)
 	assert.IsType(t, &SwitchBinary{}, w)
+	assert.Implements(t, (*fmt.Stringer)(nil), w)
 	assert.Equal(t, w.Status, true)
+	assert.Equal(t, w.String(), "status: true")
 }

@@ -1,6 +1,7 @@
 package reports
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -11,4 +12,6 @@ func TestNewWakeUp(t *testing.T) {
 
 	assert.NoError(t, err)
 	assert.IsType(t, &WakeUp{}, w)
+	assert.Implements(t, (*fmt.Stringer)(nil), w)
+	assert.Equal(t, w.String(), "wakeup")
 }

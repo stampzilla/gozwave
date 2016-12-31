@@ -21,5 +21,5 @@ func NewSwitchBinary(data []byte) (*SwitchBinary, error) {
 }
 
 func (sb *SwitchBinary) String() string {
-	return fmt.Sprintf("Status: %t", sb.Status)
+	return fmt.Sprintf("status: %t", sb.Status)
 }

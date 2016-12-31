@@ -18,10 +18,12 @@ type Alarm struct {
 func NewAlarm(data []byte) (*Alarm, error) {
 	a := &Alarm{data: data}
 
-	if len(data) >= 2 {
-		a.Type = data[0]
-		a.Level = data[1]
+	if len(data) < 2 {
+		return nil, fmt.Errorf("To short, expected at least 2 byte")
 	}
+
+	a.Type = data[0]
+	a.Level = data[1]
 
 	if len(data) >= 6 {
 		a.SensorSourceID = data[2]
@@ -39,9 +41,9 @@ func NewAlarm(data []byte) (*Alarm, error) {
 
 func (a *Alarm) String() string {
 	if len(a.data) >= 6 {
-		return fmt.Sprintf("Alarm: type=%x, level=%x, sensorSrcID=%x, type:%x event:%x, status=%x",
-			a.Type, a.Level, a.SensorSourceID, a.SensorType, a.Event, a.Status)
+		return fmt.Sprintf("alarm type:%x level:%x sensorSrcID:%x status:%x sensorType:%x event:%x",
+			a.Type, a.Level, a.SensorSourceID, a.Status, a.SensorType, a.Event)
 	}
-	return fmt.Sprintf("Alarm: type=%x level=%x", a.Type, a.Level)
+	return fmt.Sprintf("alarm type:%x level:%x", a.Type, a.Level)
 
 }

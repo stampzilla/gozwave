@@ -20,5 +20,5 @@ func NewSwitchMultilevel(data []byte) (*SwitchMultilevel, error) {
 }
 
 func (sm SwitchMultilevel) String() string {
-	return fmt.Sprintf("Level: %d", sm.Level)
+	return fmt.Sprintf("level: %d", sm.Level)
 }
