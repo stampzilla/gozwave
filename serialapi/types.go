@@ -1,4 +1,4 @@
-package functions
+package serialapi
 
 type ZWaveFunction byte
 

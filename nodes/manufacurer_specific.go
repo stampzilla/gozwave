@@ -5,12 +5,13 @@ import (
 	"time"
 
 	"github.com/stampzilla/gozwave/commands"
+	"github.com/stampzilla/gozwave/commands/reports"
 )
 
 type ManufacurerSpecific struct {
 }
 
-func (n *Node) RequestManufacturerSpecific() (*commands.ManufacturerSpecificReport, error) {
+func (n *Node) RequestManufacturerSpecific() (*reports.ManufacturerSpecific, error) {
 	cmd := commands.NewRaw(
 		[]byte{
 			commands.ManufacturerSpecific, // Command
@@ -30,7 +31,7 @@ func (n *Node) RequestManufacturerSpecific() (*commands.ManufacturerSpecificRepo
 	report := <-t
 
 	switch cmd := report.(type) {
-	case *commands.ManufacturerSpecificReport:
+	case *reports.ManufacturerSpecific:
 		return cmd, nil
 	default:
 		return nil, fmt.Errorf("ManufacurerSpecific: Wrong report type: %t", report)

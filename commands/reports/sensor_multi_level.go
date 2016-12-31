@@ -1,14 +1,14 @@
-package commands
+package reports
 
 import (
 	"bytes"
 	"encoding/binary"
+	"fmt"
 	"math"
 	"strconv"
-
-	"github.com/Sirupsen/logrus"
 )
 
+// ZWaveSensorType describes the sensor type in a sensormultilevel report
 type ZWaveSensorType byte
 
 const (
@@ -46,23 +46,24 @@ const (
 	Moisture
 )
 
-type SensorMultiLevelReport struct {
+// SensorMultiLevel is a report that zwave nodes send with information about sensor data
+type SensorMultiLevel struct {
 	*report
-	Type       byte
-	Size       byte
-	Scale      byte
-	Precision  byte
-	Value      float64
-	TypeString string
-	Unit       string
+	ValueType  ZWaveSensorType `json:"value_type"`
+	Size       byte            `json:"size"`
+	Scale      byte            `json:"scale"`
+	Precision  byte            `json:"precision"`
+	Value      float64         `json:"value"`
+	TypeString string          `json:"type_string"`
+	Unit       string          `json:"unit"`
 
 	data []byte
 }
 
-func NewSensorMultiLevelReport(data []byte) *SensorMultiLevelReport {
-	sml := &SensorMultiLevelReport{data: data}
+func NewSensorMultiLevel(data []byte) (*SensorMultiLevel, error) {
+	sml := &SensorMultiLevel{data: data}
 
-	sml.Type = data[0]
+	sml.ValueType = ZWaveSensorType(data[0])
 	sml.Size = (data[1] & 0x07)              // Size
 	sml.Scale = (data[1] & 0x18) >> 0x03     // Scale
 	sml.Precision = (data[1] & 0xE0) >> 0x05 // Precision
@@ -90,15 +91,14 @@ func NewSensorMultiLevelReport(data []byte) *SensorMultiLevelReport {
 	}
 
 	if err != nil {
-		logrus.Warn("Failed to decode SensorMultiLevelReport: %s", err)
-		return nil
+		return nil, fmt.Errorf("Failed to decode SensorMultiLevelReport: %s", err)
 	}
 
 	if sml.Precision > 0 {
 		sml.Value /= math.Pow(10, float64(sml.Precision))
 	}
 
-	switch sml.Type {
+	switch sml.ValueType {
 	case Temperature:
 		sml.TypeString = "Temperature"
 		switch sml.Scale {
@@ -331,8 +331,12 @@ func NewSensorMultiLevelReport(data []byte) *SensorMultiLevelReport {
 			sml.Unit = "water activity"
 		}
 	default:
-		sml.TypeString = "Unknown (" + strconv.Itoa(int(sml.Type)) + ")"
+		sml.TypeString = "Unknown (" + strconv.Itoa(int(sml.ValueType)) + ")"
 	}
 
-	return sml
+	return sml, nil
+}
+
+func (sml SensorMultiLevel) String() string {
+	return fmt.Sprintf("%f %s", sml.Value, sml.TypeString)
 }

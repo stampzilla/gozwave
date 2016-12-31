@@ -6,6 +6,7 @@ import (
 
 	"github.com/Sirupsen/logrus"
 	"github.com/stampzilla/gozwave/commands"
+	"github.com/stampzilla/gozwave/commands/reports"
 )
 
 func (n *Node) RequestEndpoints() error {
@@ -45,7 +46,7 @@ func (n *Node) RequestEndpoints() error {
 
 	if report != nil {
 		switch cmd := report.(type) {
-		case *commands.MultiChannelCmdEndPointReport:
+		case *reports.MultiChannelEndPoints:
 			//n.ManufacurerSpecific = cmd
 			logrus.Debug(cmd.String())
 			n.Lock()

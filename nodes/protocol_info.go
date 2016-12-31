@@ -5,13 +5,13 @@ import (
 	"time"
 
 	"github.com/Sirupsen/logrus"
-	"github.com/stampzilla/gozwave/functions"
+	"github.com/stampzilla/gozwave/serialapi"
 )
 
-func (n *Node) RequestProtocolInfo() (*functions.FuncGetNodeProtocolInfo, error) {
-	cmd := functions.NewRaw(
+func (n *Node) RequestProtocolInfo() (*serialapi.FuncGetNodeProtocolInfo, error) {
+	cmd := serialapi.NewRaw(
 		[]byte{
-			functions.GetNodeProtocolInfo, // Function
+			serialapi.GetNodeProtocolInfo, // Function
 			byte(n.Id),                    // Node id
 		})
 
@@ -26,7 +26,7 @@ func (n *Node) RequestProtocolInfo() (*functions.FuncGetNodeProtocolInfo, error)
 
 	if resp != nil {
 		switch r := resp.Data.(type) {
-		case *functions.FuncGetNodeProtocolInfo:
+		case *serialapi.FuncGetNodeProtocolInfo:
 			return r, nil
 		default:
 			return nil, fmt.Errorf("Wrong type: %t", resp.Data)

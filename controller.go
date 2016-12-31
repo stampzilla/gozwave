@@ -10,10 +10,10 @@ import (
 	"time"
 
 	"github.com/Sirupsen/logrus"
-	"github.com/stampzilla/gozwave/commands"
+	"github.com/stampzilla/gozwave/commands/reports"
 	"github.com/stampzilla/gozwave/events"
-	"github.com/stampzilla/gozwave/functions"
 	"github.com/stampzilla/gozwave/nodes"
+	"github.com/stampzilla/gozwave/serialapi"
 )
 
 type Controller struct {
@@ -38,7 +38,7 @@ func NewController() *Controller {
 }
 
 func (c *Controller) getNodes() (*nodes.List, error) {
-	t, err := c.Connection.WriteWithTimeout(functions.NewRaw([]byte{0x02}), time.Second*5)
+	t, err := c.Connection.WriteWithTimeout(serialapi.NewRaw([]byte{0x02}), time.Second*5)
 
 	if err != nil {
 		return nil, err
@@ -51,7 +51,7 @@ func (c *Controller) getNodes() (*nodes.List, error) {
 	}
 
 	switch r := resp.Data.(type) {
-	case *functions.FuncDiscoveryNodes:
+	case *serialapi.DiscoverdNodes:
 		for index, active := range r.ActiveNodes {
 			if !active {
 				continue
@@ -121,7 +121,7 @@ func (c *Controller) GetNextEvent() chan interface{} {
 	return c.eventQue
 }
 
-func (c *Controller) DeliverReportToNode(node byte, report commands.Report) {
+func (c *Controller) DeliverReportToNode(node byte, report reports.Report) {
 	n := c.Nodes.Get(int(node))
 	if n == nil {
 		return

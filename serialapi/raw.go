@@ -1,4 +1,4 @@
-package functions
+package serialapi
 
 // Raw binary data type
 type Raw []byte

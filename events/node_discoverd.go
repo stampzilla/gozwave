@@ -1,9 +1,9 @@
 package events
 
-import "github.com/stampzilla/gozwave/functions"
+import "github.com/stampzilla/gozwave/serialapi"
 
 type NodeDiscoverd struct {
 	Address int
 
-	functions.FuncGetNodeProtocolInfo
+	serialapi.FuncGetNodeProtocolInfo
 }
