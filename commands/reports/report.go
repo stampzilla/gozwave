@@ -50,12 +50,24 @@ func New(c commands.ZWaveCommand, class byte, data []byte) (Report, error) {
 	case commands.SwitchBinary:
 		switch class {
 		case 0x03: // Report
-			return NewSwitchBinary(data)
+			switch len(data) {
+			case 1:
+				return NewSwitchBinaryV1(data)
+			case 3:
+				return NewSwitchBinaryV2(data)
+			}
 		}
 	case commands.SwitchMultilevel:
 		switch class {
 		case 0x03: // Report
-			return NewSwitchMultilevel(data)
+			switch len(data) {
+			case 1:
+				return NewSwitchMultilevelV1(data)
+			// V2 reports is same as V1
+			// V3 reports is depreciated and is not recomended to implement by sigma designs
+			case 3:
+				return NewSwitchMultilevelV4(data)
+			}
 		}
 	case commands.WakeUp:
 		return NewWakeUp()

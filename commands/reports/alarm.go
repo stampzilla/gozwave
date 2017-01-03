@@ -2,6 +2,7 @@ package reports
 
 import "fmt"
 
+//Alarm reports are sent from a node as an event. Is typicaly used for motion sensors and such to notify when motion is detected.
 type Alarm struct {
 	*report
 	Type           byte `json:"type_"`
@@ -14,7 +15,7 @@ type Alarm struct {
 	data []byte
 }
 
-// NewAlarm creates a new alarm report. Alarm reports are sent from a node as an event. Is typicaly used for motion sensors and such to notify when motion is detected.
+// NewAlarm creates a new alarm report.
 func NewAlarm(data []byte) (*Alarm, error) {
 	a := &Alarm{data: data}
 

@@ -7,41 +7,59 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-type row struct {
-	data     []byte
-	expected interface{}
-}
-
 func TestNew(t *testing.T) {
-	m := map[commands.ZWaveCommand]map[byte]row{
-		commands.Alarm: map[byte]row{
-			0x05: row{[]byte{0x00, 0x00}, &Alarm{}},
+	type row struct {
+		data     []byte
+		expected interface{}
+	}
+
+	m := map[commands.ZWaveCommand]map[byte][]row{
+		commands.Alarm: map[byte][]row{
+			0x05: []row{
+				row{[]byte{0x00, 0x00}, &Alarm{}},
+			},
 		},
-		commands.ManufacturerSpecific: map[byte]row{
-			0x05: row{[]byte{0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, &ManufacturerSpecific{}},
+		commands.ManufacturerSpecific: map[byte][]row{
+			0x05: []row{
+				row{[]byte{0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, &ManufacturerSpecific{}},
+			},
 		},
-		commands.MultiInstance: map[byte]row{
-			0x08: row{[]byte{0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, &MultiChannelEndpoints{}},
+		commands.MultiInstance: map[byte][]row{
+			0x08: []row{
+				row{[]byte{0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, &MultiChannelEndpoints{}},
+			},
 		},
-		commands.SensorMultiLevel: map[byte]row{
-			0x05: row{[]byte{0x00, 0x00}, &SensorMultiLevel{}},
+		commands.SensorMultiLevel: map[byte][]row{
+			0x05: []row{
+				row{[]byte{0x00, 0x00}, &SensorMultiLevel{}},
+			},
 		},
-		commands.SwitchBinary: map[byte]row{
-			0x03: row{[]byte{0x00, 0x00}, &SwitchBinary{}},
+		commands.SwitchBinary: map[byte][]row{
+			0x03: []row{
+				row{[]byte{0x00}, &SwitchBinaryV1{}},
+				row{[]byte{0x00, 0x00, 0x00}, &SwitchBinaryV2{}},
+			},
 		},
-		commands.SwitchMultilevel: map[byte]row{
-			0x03: row{[]byte{0x00, 0x00}, &SwitchMultilevel{}},
+		commands.SwitchMultilevel: map[byte][]row{
+			0x03: []row{
+				row{[]byte{0x00}, &SwitchMultilevelV1{}},
+				row{[]byte{0x00, 0x00, 0x00}, &SwitchMultilevelV4{}},
+			},
 		},
-		commands.WakeUp: map[byte]row{
-			0x00: row{[]byte{}, &WakeUp{}},
+		commands.WakeUp: map[byte][]row{
+			0x00: []row{
+				row{[]byte{}, &WakeUp{}},
+			},
 		},
 	}
 	for command, v := range m {
-		for class, e := range v {
-			r, err := New(command, class, []byte(e.data))
+		for class, row := range v {
+			for _, e := range row {
+				r, err := New(command, class, []byte(e.data))
 
-			assert.NoError(t, err)
-			assert.IsType(t, e.expected, r)
+				assert.NoError(t, err)
+				assert.IsType(t, e.expected, r)
+			}
 		}
 	}
 }

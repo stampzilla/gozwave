@@ -6,6 +6,7 @@ import (
 	"fmt"
 )
 
+// ManufacturerSpecific reports are used to identify the manufacturer, model and version of a product.
 type ManufacturerSpecific struct {
 	*report
 	Manufacturer string `json:"manufacturer"`
@@ -13,7 +14,7 @@ type ManufacturerSpecific struct {
 	ID           string `json:"id"`
 }
 
-// NewManufacturerSpecific decodes and returns a manufacureSpecific report. This report is used to identify the manufacturer, model and version of a product.
+// NewManufacturerSpecific decodes and returns a manufacureSpecific report.
 func NewManufacturerSpecific(data []byte) (*ManufacturerSpecific, error) {
 	if len(data) != 6 {
 		return nil, fmt.Errorf("Failed to decode ManufacturerSpecific: Wrong length")

@@ -46,7 +46,7 @@ const (
 	Moisture
 )
 
-// SensorMultiLevel is a report that zwave nodes send with information about sensor data
+// SensorMultiLevel is send from a zwave multilevel sensor to advertise a sensor reading
 type SensorMultiLevel struct {
 	*report
 	ValueType  ZWaveSensorType `json:"value_type"`
@@ -60,6 +60,7 @@ type SensorMultiLevel struct {
 	data []byte
 }
 
+// NewSensorMultiLevel decodes raw binary data in to a SensorMultiLevel
 func NewSensorMultiLevel(data []byte) (*SensorMultiLevel, error) {
 	sml := &SensorMultiLevel{data: data}
 
