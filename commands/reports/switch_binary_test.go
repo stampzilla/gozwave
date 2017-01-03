@@ -46,7 +46,7 @@ func TestSwitchBinaryV2False(t *testing.T) {
 	assert.IsType(t, w, &SwitchBinaryV2{})
 	assert.Equal(t, w.CurrentValue, false)
 	assert.Equal(t, w.TargetValue, true)
-	assert.Equal(t, w.String(), "current:false target:true duration:0")
+	assert.Equal(t, w.String(), "current:false target:true duration:"+time.Duration(0).String())
 
 	d, err := w.Duration.Duration()
 	assert.NoError(t, err)

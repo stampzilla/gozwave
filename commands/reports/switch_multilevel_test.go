@@ -2,6 +2,7 @@ package reports
 
 import (
 	"testing"
+	"time"
 
 	"github.com/stretchr/testify/assert"
 )
@@ -57,7 +58,7 @@ func TestSwitchMultilevelV40(t *testing.T) {
 	assert.IsType(t, w, &SwitchMultilevelV4{})
 	assert.Equal(t, w.CurrentValue, 0.0)
 	assert.Equal(t, w.Valid, true)
-	assert.Equal(t, w.String(), "current:0.000000 target:100.000000 duration:0")
+	assert.Equal(t, w.String(), "current:0.000000 target:100.000000 duration:"+time.Duration(0).String())
 }
 
 func TestSwitchMultilevelV4100(t *testing.T) {
@@ -73,7 +74,7 @@ func TestSwitchMultilevelV4100(t *testing.T) {
 }
 
 func TestSwitchMultilevelV4Unknown(t *testing.T) {
-	w, err := NewSwitchMultilevelV4([]byte{0xFE, 0x00, 0x00})
+	w, err := NewSwitchMultilevelV4([]byte{0xFE, 0x00, 0x01})
 
 	assert.NoError(t, err)
 	assert.IsType(t, w, &SwitchMultilevelV4{})
@@ -81,11 +82,11 @@ func TestSwitchMultilevelV4Unknown(t *testing.T) {
 	assert.Equal(t, w.TargetValue, 0.0)
 	assert.Equal(t, w.Valid, false)
 	assert.Equal(t, w.TargetValid, true)
-	assert.Equal(t, w.String(), "current:unknown target:0.000000 duration:0")
+	assert.Equal(t, w.String(), "current:unknown target:0.000000 duration:1s")
 }
 
 func TestSwitchMultilevelV4UnknownTarget(t *testing.T) {
-	w, err := NewSwitchMultilevelV4([]byte{0x00, 0xFE, 0x00})
+	w, err := NewSwitchMultilevelV4([]byte{0x00, 0xFE, 0x01})
 
 	assert.NoError(t, err)
 	assert.IsType(t, w, &SwitchMultilevelV4{})
@@ -93,5 +94,5 @@ func TestSwitchMultilevelV4UnknownTarget(t *testing.T) {
 	assert.Equal(t, w.TargetValue, 100.0)
 	assert.Equal(t, w.Valid, true)
 	assert.Equal(t, w.TargetValid, false)
-	assert.Equal(t, w.String(), "current:0.000000 target:unknown duration:0")
+	assert.Equal(t, w.String(), "current:0.000000 target:unknown duration:1s")
 }
