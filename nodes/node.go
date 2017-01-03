@@ -99,14 +99,25 @@ func (n *Node) ProcessEvent(event reports.Report) {
 			close(n.awake)
 			n.awake = nil
 		}
-	case *reports.SwitchBinary:
-		n.StateBool["on"] = data.Status
+	case *reports.SwitchBinaryV1:
+		n.StateBool["on"] = data.CurrentValue
 		n.pushEvent(events.NodeUpdated{
 			Address: n.Id,
 		})
-	case *reports.SwitchMultilevel:
-		n.StateBool["on"] = data.Level > 0
-		n.StateFloat["level"] = float64(data.Level)
+	case *reports.SwitchBinaryV2:
+		n.StateBool["on"] = data.CurrentValue
+		n.pushEvent(events.NodeUpdated{
+			Address: n.Id,
+		})
+	case *reports.SwitchMultilevelV1:
+		n.StateBool["on"] = data.CurrentValue > 0
+		n.StateFloat["level"] = float64(data.CurrentValue)
+		n.pushEvent(events.NodeUpdated{
+			Address: n.Id,
+		})
+	case *reports.SwitchMultilevelV4:
+		n.StateBool["on"] = data.CurrentValue > 0
+		n.StateFloat["level"] = float64(data.CurrentValue)
 		n.pushEvent(events.NodeUpdated{
 			Address: n.Id,
 		})
