@@ -2,14 +2,12 @@ package gozwave
 
 import (
 	"io"
-	"strconv"
 	"sync"
 	"time"
 
 	"github.com/Sirupsen/logrus"
 	"github.com/pborman/uuid"
-	"github.com/stampzilla/gozwave/commands"
-	"github.com/stampzilla/gozwave/functions"
+	"github.com/stampzilla/gozwave/commands/reports"
 	"github.com/stampzilla/gozwave/interfaces"
 	"github.com/stampzilla/gozwave/serialapi"
 )
@@ -21,12 +19,11 @@ type Connection struct {
 
 	// Keep track of requests wating a response
 	inFlight    map[string]*sendPackage
-	updateChans map[string]chan interface{}
 	send        chan *sendPackage
 	lastCommand string // Uuid of last sent command
 	lastResult  chan byte
 
-	reportCallback func(byte, commands.Report)
+	reportCallback func(byte, reports.Report)
 
 	sync.RWMutex
 }
@@ -49,22 +46,11 @@ type sendPackage struct {
 func NewConnection() *Connection {
 	z := &Connection{
 		inFlight:       make(map[string]*sendPackage),
-		updateChans:    make(map[string]chan interface{}),
 		send:           make(chan *sendPackage),
 		lastResult:     make(chan byte),
-		reportCallback: func(byte, commands.Report) {},
+		reportCallback: func(byte, reports.Report) {},
 	}
 	return z
-}
-
-func (conn *Connection) RegisterNode(address byte) chan interface{} {
-	c := make(chan interface{})
-
-	conn.Lock()
-	conn.updateChans[strconv.Itoa(int(address))] = c
-	conn.Unlock()
-
-	return c
 }
 
 func (conn *Connection) Write(msg interfaces.Encodable) error {
@@ -81,9 +67,9 @@ func (conn *Connection) WriteWithTimeout(msg interfaces.Encodable, t time.Durati
 
 	return pkg.returnChan, nil
 }
-func (conn *Connection) WriteAndWaitForReport(msg interfaces.Encodable, t time.Duration, er byte) (<-chan commands.Report, error) {
+func (conn *Connection) WriteAndWaitForReport(msg interfaces.Encodable, t time.Duration, er byte) (<-chan reports.Report, error) {
 	pkg := newSendPackage(msg.Encode())
-	returnChan := make(chan commands.Report)
+	returnChan := make(chan reports.Report)
 	pkg.returnChan = make(chan *serialapi.Message)
 	pkg.timeout = t
 	pkg.expectedReport = er
@@ -93,8 +79,8 @@ func (conn *Connection) WriteAndWaitForReport(msg interfaces.Encodable, t time.D
 	go func() {
 		defer close(returnChan)
 		for msg := range pkg.returnChan {
-			if f, ok := msg.Data.(*functions.FuncApplicationCommandHandler); ok {
-				returnChan <- f.Data
+			if f, ok := msg.Data.(*serialapi.FuncApplicationCommandHandler); ok {
+				returnChan <- f.Report
 				return
 			}
 
@@ -136,7 +122,6 @@ func (conn *Connection) Connect(connectChan chan error) (err error) {
 }
 
 func (conn *Connection) Writer() {
-	logrus.Infof("Starting send worker")
 	for {
 		<-time.After(time.Millisecond * 50)
 		select {
@@ -227,7 +212,7 @@ func (conn *Connection) Reader() error {
 
 			if l == -1 { // Invalid checksum
 				incomming = incomming[1:] // Remove first char and try again
-				logrus.Infof("Removing first byte, buffer len=%d", len(incomming))
+				logrus.Debugf("Removing first byte, buffer len=%d", len(incomming))
 
 				continue
 			}
@@ -253,9 +238,11 @@ func (conn *Connection) Reader() error {
 				conn.Unlock()
 			}
 
-			if cmd, ok := msg.Data.(*functions.FuncApplicationCommandHandler); ok {
-				// Deliver the update to the parent
-				go conn.reportCallback(msg.NodeId, cmd.Data)
+			if msg != nil {
+				if cmd, ok := msg.Data.(*serialapi.FuncApplicationCommandHandler); ok {
+					// Deliver the update to the parent
+					go conn.reportCallback(msg.NodeID, cmd.Report)
+				}
 			}
 
 			//logrus.Infof("Recived: %s", strings.TrimSpace(hex.Dump(incomming)))
@@ -268,19 +255,6 @@ func (conn *Connection) Reader() error {
 		}
 	}
 
-}
-
-func (conn *Connection) DeliverUpdate(id byte, msg interface{}) {
-	logrus.Infof("DeliverUpdate: %T", msg)
-	c, ok := conn.updateChans[strconv.Itoa(int(id))]
-	if ok {
-		go func() {
-			select {
-			case c <- msg:
-			case <-time.After(time.Second):
-			}
-		}()
-	}
 }
 
 func newSendPackage(data []byte) *sendPackage {
@@ -303,15 +277,15 @@ func newSendPackage(data []byte) *sendPackage {
 }
 
 func (c *sendPackage) Match(incomming []byte) bool {
-	//if len(incomming) > 3 && c.function != 0 && c.function != incomming[3] && !(c.function == functions.SendData && incomming[3] == 0x04) {
+	//if len(incomming) > 3 && c.function != 0 && c.function != incomming[3] && !(c.function == serialapi.SendData && incomming[3] == 0x04) {
 
 	// SerialAPI specific
-	if !MatchByteAt(incomming, c.function, 3) && !(c.function == functions.SendData && MatchByteAt(incomming, functions.ApplicationCommandHandler, 3)) {
+	if !MatchByteAt(incomming, c.function, 3) && !(c.function == serialapi.SendData && MatchByteAt(incomming, serialapi.ApplicationCommandHandler, 3)) {
 		//logrus.Warnf("Skipping pkg %s, function %x != %x", c.uuid, c.function, incomming[3])
 		return false
 	}
 
-	if c.function == functions.GetNodeProtocolInfo {
+	if c.function == serialapi.GetNodeProtocolInfo {
 		return true
 	}
 

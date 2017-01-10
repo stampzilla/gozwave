@@ -7,10 +7,11 @@ import (
 
 	"github.com/Sirupsen/logrus"
 	"github.com/stampzilla/gozwave/commands"
+	"github.com/stampzilla/gozwave/commands/reports"
 	"github.com/stampzilla/gozwave/database"
 	"github.com/stampzilla/gozwave/events"
-	"github.com/stampzilla/gozwave/functions"
 	"github.com/stampzilla/gozwave/interfaces"
+	"github.com/stampzilla/gozwave/serialapi"
 )
 
 func New(address int) *Node {
@@ -30,8 +31,8 @@ type Node struct {
 	Id      int  `json:"id"`
 	IsAwake bool `json:"is_awake"`
 
-	ProtocolInfo        *functions.FuncGetNodeProtocolInfo
-	ManufacurerSpecific *commands.ManufacturerSpecificReport
+	ProtocolInfo        *serialapi.FuncGetNodeProtocolInfo
+	ManufacurerSpecific *reports.ManufacturerSpecific
 
 	Device *database.Device
 
@@ -72,9 +73,9 @@ func (n *Node) isAwake() chan struct{} {
 	return n.awake
 }
 
-func (n *Node) ProcessEvent(event commands.Report) {
+func (n *Node) ProcessEvent(event reports.Report) {
 	switch data := event.(type) {
-	case *commands.AlarmReport:
+	case *reports.Alarm:
 		if data.Status == 0xFF {
 			n.StateBool["alarm"] = true
 			if data.Type != 0 {
@@ -92,24 +93,35 @@ func (n *Node) ProcessEvent(event commands.Report) {
 				Address: n.Id,
 			})
 		}
-	case *commands.WakeUpReport:
+	case *reports.WakeUp:
 		logrus.Error("NODE RECEIVED WAKEUP")
 		if n.awake != nil {
 			close(n.awake)
 			n.awake = nil
 		}
-	case *commands.SwitchBinaryReport:
-		n.StateBool["on"] = data.Status
+	case *reports.SwitchBinaryV1:
+		n.StateBool["on"] = data.CurrentValue
 		n.pushEvent(events.NodeUpdated{
 			Address: n.Id,
 		})
-	case *commands.SwitchMultilevelReport:
-		n.StateBool["on"] = data.Level > 0
-		n.StateFloat["level"] = float64(data.Level)
+	case *reports.SwitchBinaryV2:
+		n.StateBool["on"] = data.CurrentValue
 		n.pushEvent(events.NodeUpdated{
 			Address: n.Id,
 		})
-	case *commands.SensorMultiLevelReport:
+	case *reports.SwitchMultilevelV1:
+		n.StateBool["on"] = data.CurrentValue > 0
+		n.StateFloat["level"] = float64(data.CurrentValue)
+		n.pushEvent(events.NodeUpdated{
+			Address: n.Id,
+		})
+	case *reports.SwitchMultilevelV4:
+		n.StateBool["on"] = data.CurrentValue > 0
+		n.StateFloat["level"] = float64(data.CurrentValue)
+		n.pushEvent(events.NodeUpdated{
+			Address: n.Id,
+		})
+	case *reports.SensorMultiLevel:
 		//n.StateFloat[data.TypeString+" ("+data.Unit+")"] = data.Value
 		key := strings.ToLower(data.TypeString + "_" + data.Unit)
 		n.StateFloat[key] = data.Value
@@ -142,7 +154,7 @@ func (n *Node) Identify() {
 			n.Unlock()
 		}
 
-		//<-self.Connection.SendRaw([]byte{functions.GetNodeProtocolInfo, byte(index + 1)}) // Request node information
+		//<-self.Connection.SendRaw([]byte{serialapi.GetNodeProtocolInfo, byte(index + 1)}) // Request node information
 		//		nodeinfo := self.WaitForGetNodeProtocolInfo()
 
 		// All manufacturer specific information such as vendor, vendors product ID and product type
@@ -157,7 +169,7 @@ func (n *Node) Identify() {
 
 			n.Lock()
 			n.ManufacurerSpecific = resp
-			n.Device = database.New(n.ManufacurerSpecific.Manufacturer, n.ManufacurerSpecific.Type, n.ManufacurerSpecific.Id)
+			n.Device = database.New(n.ManufacurerSpecific.Manufacturer, n.ManufacurerSpecific.Type, n.ManufacurerSpecific.ID)
 			n.pushEvent(events.NodeUpdated{
 				Address: n.Id,
 			})
@@ -166,7 +178,7 @@ func (n *Node) Identify() {
 
 		// Get node version
 		//resp := <-n.connection.SendRaw([]byte{
-		//functions.SendData, // Function
+		//serialapi.SendData, // Function
 		//byte(n.Id),         // Node id
 		//0x02,               // Length
 		//commands.Version,   // Command
@@ -182,7 +194,7 @@ func (n *Node) Identify() {
 		//logrus.Println("")
 		//logrus.Println("")
 		//resp := <-n.connection.SendRaw([]byte{
-		//functions.SendData,   // Function
+		//serialapi.SendData,   // Function
 		//byte(n.Id),           // Node id
 		//0x04,                 // Length
 		//commands.Association, // Command
@@ -230,7 +242,7 @@ func (n *Node) Identify() {
 		}
 		n.RUnlock()
 
-		//<-self.Connection.SendRaw([]byte{functions.IsFailedNode, byte(index + 1)}) // Request is failed node
+		//<-self.Connection.SendRaw([]byte{serialapi.IsFailedNode, byte(index + 1)}) // Request is failed node
 		//	<-self.SendRaw([]byte{0xa0, byte(index + 1)}) // Request ?
 
 		// All firmware and Z-Wave version information

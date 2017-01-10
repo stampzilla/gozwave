@@ -2,16 +2,17 @@ package serialapi
 
 import (
 	"encoding/hex"
+	"fmt"
 
 	"github.com/Sirupsen/logrus"
-	"github.com/stampzilla/gozwave/functions"
 )
 
+// Message is the decoded message received from the controller
 type Message struct {
 	Length      byte
 	MessageType byte
-	Function    functions.ZWaveFunction
-	NodeId      byte
+	Function    ZWaveFunction
+	NodeID      byte
 
 	startByte byte
 	Data      interface{}
@@ -58,14 +59,24 @@ func Decode(data []byte) (length int, msg *Message) {
 		}
 
 		//logrus.Debug("Found SOF")
+		msg, err := NewMessage(data)
+		if err != nil {
+			logrus.Error(err)
+		}
 
-		return length + 2, NewMessage(data)
+		return length + 2, msg
 	case 0x06, 0x15, 0x18: // ACK, NAC, CAN
-		return 1, NewMessage(data)
+		msg, err := NewMessage(data)
+		if err != nil {
+			logrus.Error(err)
+		}
+
+		return 1, msg
 	}
 	return -1, nil // Not a valid start char
 }
 
+// GenerateChecksum calculates the checksum for a serialapi message
 func GenerateChecksum(data []byte) byte {
 	var offset int
 	ret := data[offset]
@@ -78,6 +89,7 @@ func GenerateChecksum(data []byte) byte {
 	return ret
 }
 
+// CompileMessage is used to calculate length and checksum for messages that are going to be sent to the controller
 func CompileMessage(data []byte) []byte {
 	// Compile message
 	msg := append([]byte{0x00, 0x00}, data...)
@@ -95,36 +107,39 @@ func CompileMessage(data []byte) []byte {
 	return msg
 }
 
-func NewMessage(data []byte) *Message {
+// NewMessage tries to decode a binary message from the controller in to a message struct
+func NewMessage(data []byte) (*Message, error) {
 	message := &Message{}
 	message.startByte = data[0]
 	if len(data) <= 1 {
-		return message
+		return message, nil
 	}
 	message.Length = data[1]
 	message.MessageType = data[2]
-	message.Function = functions.ZWaveFunction(data[3])
+	message.Function = ZWaveFunction(data[3])
 
+	var err error
 	switch message.Function {
-	case functions.ApplicationCommandHandler:
-		message.NodeId = data[5]
+	case ApplicationCommandHandler:
+		message.NodeID = data[5]
 
-		message.Data = functions.NewApplicationCommandHandler(data[7 : 7+data[6]])
-	case functions.DiscoveryNodes:
+		message.Data, err = NewApplicationCommandHandler(data[7 : 7+data[6]])
+	case DiscoveryNodes:
 
-		message.Data = functions.NewDiscoveryNodes(data[7 : 7+data[6]])
-	case functions.GetNodeProtocolInfo:
+		message.Data, err = NewDiscoverdNodes(data[7 : 7+data[6]])
+	case GetNodeProtocolInfo:
 
-		message.Data = functions.NewGetNodeProtocolInfo(data[4:])
+		message.Data, err = NewGetNodeProtocolInfo(data[4:])
 	default:
-		if len(data) > 5 {
-			message.Data = data[5:]
-		}
-		logrus.Debugf("Dropping message function='%s' with data %x (not implemented)", message.Function, data[4:])
+		err = fmt.Errorf("Dropping message function='%s' with data %x (not implemented)", message.Function, data[4:])
+	}
+
+	if err != nil {
+		return nil, err
 	}
 
 	logrus.Debugf("Message: %+v Message data: %+v", message, message.Data)
-	return message
+	return message, err
 
 	// 1 FrameHeader (type of message)
 	// 1 Message length

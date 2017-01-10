@@ -1,14 +1,14 @@
-package commands
+package reports
 
 import (
 	"bytes"
 	"encoding/binary"
+	"fmt"
 	"math"
 	"strconv"
-
-	"github.com/Sirupsen/logrus"
 )
 
+// ZWaveSensorType describes the sensor type in a sensormultilevel report
 type ZWaveSensorType byte
 
 const (
@@ -46,26 +46,36 @@ const (
 	Moisture
 )
 
-type SensorMultiLevelReport struct {
+// SensorMultiLevel is send from a zwave multilevel sensor to advertise a sensor reading
+type SensorMultiLevel struct {
 	*report
-	Type       byte
-	Size       byte
-	Scale      byte
-	Precision  byte
-	Value      float64
-	TypeString string
-	Unit       string
+	ValueType  ZWaveSensorType `json:"value_type"`
+	Size       byte            `json:"size"`
+	Scale      byte            `json:"scale"`
+	Precision  byte            `json:"precision"`
+	Value      float64         `json:"value"`
+	TypeString string          `json:"type_string"`
+	Unit       string          `json:"unit"`
 
 	data []byte
 }
 
-func NewSensorMultiLevelReport(data []byte) *SensorMultiLevelReport {
-	sml := &SensorMultiLevelReport{data: data}
+// NewSensorMultiLevel decodes raw binary data in to a SensorMultiLevel
+func NewSensorMultiLevel(data []byte) (*SensorMultiLevel, error) {
+	sml := &SensorMultiLevel{data: data}
 
-	sml.Type = data[0]
-	sml.Size = (data[1] & 0x07)              // Size
-	sml.Scale = (data[1] & 0x18) >> 0x03     // Scale
-	sml.Precision = (data[1] & 0xE0) >> 0x05 // Precision
+	if len(data) < 2 {
+		return nil, fmt.Errorf("To short, expected at least 2 bytes, got %d", len(data))
+	}
+
+	sml.ValueType = ZWaveSensorType(data[0])
+	sml.Size = (data[1] & 0x07)              // Size (3 bits)
+	sml.Scale = (data[1] & 0x18) >> 0x03     // Scale (2 bits)
+	sml.Precision = (data[1] & 0xE0) >> 0x05 // Precision (3 bits)
+
+	if len(data) < 2+int(sml.Size) {
+		return nil, fmt.Errorf("To short, expected at least %d bytes, got %d", (2 + sml.Size), len(data))
+	}
 
 	buf := bytes.NewReader(data[2:])
 	var err error
@@ -83,22 +93,17 @@ func NewSensorMultiLevelReport(data []byte) *SensorMultiLevelReport {
 		val := int32(0)
 		err = binary.Read(buf, binary.BigEndian, &val)
 		sml.Value = float64(val)
-	case 8:
-		val := int64(0)
-		err = binary.Read(buf, binary.BigEndian, &val)
-		sml.Value = float64(val)
 	}
 
 	if err != nil {
-		logrus.Warn("Failed to decode SensorMultiLevelReport: %s", err)
-		return nil
+		return nil, fmt.Errorf("Failed to decode SensorMultiLevelReport: %s", err)
 	}
 
 	if sml.Precision > 0 {
 		sml.Value /= math.Pow(10, float64(sml.Precision))
 	}
 
-	switch sml.Type {
+	switch sml.ValueType {
 	case Temperature:
 		sml.TypeString = "Temperature"
 		switch sml.Scale {
@@ -331,8 +336,12 @@ func NewSensorMultiLevelReport(data []byte) *SensorMultiLevelReport {
 			sml.Unit = "water activity"
 		}
 	default:
-		sml.TypeString = "Unknown (" + strconv.Itoa(int(sml.Type)) + ")"
+		sml.TypeString = "Unknown (" + strconv.Itoa(int(sml.ValueType)) + ")"
 	}
 
-	return sml
+	return sml, nil
+}
+
+func (sml SensorMultiLevel) String() string {
+	return fmt.Sprintf("%f %s %s", sml.Value, sml.TypeString, sml.Unit)
 }
