@@ -1,6 +1,9 @@
 package main
 
 import (
+	"bytes"
+	"encoding/binary"
+	"encoding/hex"
 	"encoding/xml"
 	"flag"
 	"fmt"
@@ -9,6 +12,7 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"strconv"
 	"strings"
 )
 
@@ -68,6 +72,88 @@ func (dd deviceDescription) EscapedBrandName() string {
 	return removeNewLines(dd.BrandName)
 }
 
+type lang struct {
+	Language string `xml:"lang,attr"`
+	Body     string `xml:",chardata"`
+}
+
+type value struct {
+	From string `xml:"from,attr"`
+	To   string `xml:"to,attr"`
+	Desc []lang `xml:"description>lang"`
+	Unit string `xml:"unit,attr"`
+
+	size int
+}
+
+func (p value) FromDec() string {
+	return strToUint(p.From, p.size)
+}
+func (p value) ToDec() string {
+	return strToUint(p.To, p.size)
+}
+
+func strToUint(str string, size int) string {
+	b, _ := hex.DecodeString(str)
+	buf := bytes.NewReader(b)
+
+	var res int
+
+	switch size {
+	case 1:
+		var i uint8
+		binary.Read(buf, binary.BigEndian, &i)
+		res = int(i)
+	case 2:
+		var i uint16
+		binary.Read(buf, binary.BigEndian, &i)
+		res = int(i)
+	case 4:
+		var i uint32
+		binary.Read(buf, binary.BigEndian, &i)
+		res = int(i)
+	}
+
+	ret := strconv.Itoa(res)
+	return ret
+}
+
+func (p value) EscapedDesc() string {
+	for _, v := range p.Desc {
+		if v.Language == "en" && v.Body != "" {
+			return removeNewLines(v.Body)
+		}
+	}
+
+	return ""
+}
+
+type parameter struct {
+	ID      string `xml:"number,attr"`
+	Name    []lang `xml:"name>lang"`
+	Desc    []lang `xml:"description>lang"`
+	Type    string `xml:"type,attr"`
+	Size    string `xml:"size,attr"`
+	Default string `xml:"default,attr"`
+
+	Values []value `xml:"value"`
+}
+
+func (p parameter) NameCombined() string {
+	for _, v := range p.Name {
+		if v.Language == "en" && v.Body != "" {
+			return removeNewLines(v.Body)
+		}
+	}
+	for _, v := range p.Desc {
+		if v.Language == "en" && v.Body != "" {
+			return removeNewLines(v.Body)
+		}
+	}
+
+	return "Parameter " + p.ID
+}
+
 type zWaveDevice struct {
 	Filename          string
 	Name              string
@@ -76,6 +162,7 @@ type zWaveDevice struct {
 	DeviceData        deviceData        `xml:"deviceData"`
 	DeviceDescription deviceDescription `xml:"deviceDescription"`
 	CommandClasses    []commandClass    `xml:"commandClasses>commandClass"`
+	Parameters        []parameter       `xml:"configParams>configParam"`
 }
 
 var templ = `package {{.Package}}
@@ -92,11 +179,21 @@ type CommandClass struct {
 	NonSecure  bool
 	Version    string 
 }
+type Value struct {
+  From int
+  To int
+  Desc string
+  Unit string
+}
 type parameter struct {
 	ID int
 	Name string
 	Type string
 	Description string
+	Size int
+	Default string
+
+	Values []Value
 }
 type Device struct{
 	Brand string
@@ -152,6 +249,28 @@ func New{{ $value.DeviceData.ManufacturerID.Value }}{{ $value.DeviceData.Product
 				{{- if ne $cmd.Version ""}}
 				Version: "{{$cmd.Version}}",
 				{{- end }}
+			},
+{{- end}}
+		},
+		Parameters: []*parameter{
+{{- range $cmd := $value.Parameters }}
+			&parameter{
+				{{- if ne $cmd.ID ""}}
+				ID: {{$cmd.ID}},
+				{{- end }}
+				Name: "{{$cmd.NameCombined}}",
+				Type: "{{$cmd.Type}}",
+				Size: {{$cmd.Size}},
+				Values: []Value{
+{{- range $value := $cmd.Values }}
+					Value{
+						From: {{$value.FromDec }},
+						To: {{$value.ToDec}},
+						Desc: "{{$value.EscapedDesc}}",
+						Unit: "{{$value.Unit}}",
+					},
+{{- end }}
+				},
 			},
 {{- end}}
 		},
@@ -212,12 +331,22 @@ func main() {
 				dev.DeviceData.ProductType.Value +
 				dev.DeviceData.ProductID.Value
 
+		// Copy the parameter size to each value (used to decode the values)
+		for k, p := range dev.Parameters {
+			s, _ := strconv.Atoi(p.Size)
+			for k2, _ := range p.Values {
+				dev.Parameters[k].Values[k2].size = s
+			}
+		}
+
 		//spew.Dump(dev)
 		//TODO wee need to be more specific in our template above
 		// 135-0115-1000-0001-06-03-16-01-04.xml
 		// 132-0115-1000-0001-06-03-16-01-05.xml
 		// has same ManufacturerID-ProductType-ProductID ?
 		devices.Devices[dev.Name] = dev
+
+		//spew.Dump(dev.Parameters)
 	}
 
 	t := template.New("t")
@@ -229,7 +358,8 @@ func main() {
 	if outputfile == "" {
 		err = t.Execute(os.Stdout, devices)
 	} else {
-		file, err := os.Create(outputfile)
+		var file *os.File
+		file, err = os.Create(outputfile)
 		if err != nil {
 			log.Println(err)
 			return
@@ -248,6 +378,7 @@ func main() {
 }
 
 func removeNewLines(s string) string {
+	s = strings.Replace(s, "\\", `\\`, -1)
 	s = strings.Replace(s, "\n", `\n`, -1)
 	s = strings.Replace(s, "\r", `\n`, -1)
 	return s
