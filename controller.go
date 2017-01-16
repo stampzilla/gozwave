@@ -108,7 +108,9 @@ func (c *Controller) saveDebouncer() {
 		select {
 		case <-c.triggerFileSave:
 		case <-time.After(time.Second * 10):
-			c.SaveConfigurationToFile()
+			if c.filename != "" {
+				c.SaveConfigurationToFile()
+			}
 			<-c.triggerFileSave
 		}
 	}

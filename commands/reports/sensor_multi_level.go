@@ -95,10 +95,6 @@ func NewSensorMultiLevel(data []byte) (*SensorMultiLevel, error) {
 		sml.Value = float64(val)
 	}
 
-	if err != nil {
-		return nil, fmt.Errorf("Failed to decode SensorMultiLevelReport: %s", err)
-	}
-
 	if sml.Precision > 0 {
 		sml.Value /= math.Pow(10, float64(sml.Precision))
 	}
@@ -339,7 +335,7 @@ func NewSensorMultiLevel(data []byte) (*SensorMultiLevel, error) {
 		sml.TypeString = "Unknown (" + strconv.Itoa(int(sml.ValueType)) + ")"
 	}
 
-	return sml, nil
+	return sml, err
 }
 
 func (sml SensorMultiLevel) String() string {

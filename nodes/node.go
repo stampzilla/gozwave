@@ -74,6 +74,9 @@ func (n *Node) isAwake() chan struct{} {
 }
 
 func (n *Node) ProcessEvent(event reports.Report) {
+	n.Lock()
+	defer n.Unlock()
+
 	switch data := event.(type) {
 	case *reports.Alarm:
 		if data.Status == 0xFF {
@@ -85,8 +88,10 @@ func (n *Node) ProcessEvent(event reports.Report) {
 			n.pushEvent(events.NodeUpdated{
 				Address: n.Id,
 			})
+			n.Unlock()
 
 			<-time.After(time.Second)
+			n.Lock()
 			n.StateBool["alarm"] = false
 			n.StateFloat["alarm"] = 0
 			n.pushEvent(events.NodeUpdated{
