@@ -35,16 +35,13 @@ func NewMultiChannelEndpoints(data []byte) (*MultiChannelEndpoints, error) {
 
 	buf := bytes.NewReader(data)
 	err := binary.Read(buf, binary.BigEndian, ms)
-	if err != nil {
-		return nil, fmt.Errorf("failed binary decode: %s (data: %x)", err, data)
-	}
 
 	ret := &MultiChannelEndpoints{}
 	ret.Dynamic = (ms.Bits & 0x80) != 0
 	ret.Identical = (ms.Bits & 0x40) != 0
 	ret.Endpoints = int(ms.Endpoints)
 
-	return ret, nil
+	return ret, err
 }
 
 func (ms *MultiChannelEndpoints) String() string {

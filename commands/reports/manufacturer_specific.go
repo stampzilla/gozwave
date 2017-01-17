@@ -30,9 +30,6 @@ func NewManufacturerSpecific(data []byte) (*ManufacturerSpecific, error) {
 
 	buf := bytes.NewReader(data)
 	err := binary.Read(buf, binary.BigEndian, ms)
-	if err != nil {
-		return nil, fmt.Errorf("Failed to decode ManufacturerSpecific: %s", err)
-	}
 
 	ret := &ManufacturerSpecific{}
 
@@ -40,7 +37,7 @@ func NewManufacturerSpecific(data []byte) (*ManufacturerSpecific, error) {
 	ret.Type = fmt.Sprintf("%04x", ms.Type)
 	ret.ID = fmt.Sprintf("%04x", ms.ID)
 
-	return ret, nil
+	return ret, err
 }
 
 func (ms *ManufacturerSpecific) String() string {
