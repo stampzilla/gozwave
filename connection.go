@@ -176,7 +176,10 @@ func (conn *Connection) Reader() error {
 		age = time.Now()
 
 		for len(incomming) > 0 {
-			l, msg := serialapi.Decode(incomming)
+			l, msg, err := serialapi.Decode(incomming)
+			if err != nil {
+				logrus.Errorf("%s - %d", err.Error(), l)
+			}
 
 			if l == 1 {
 				for index, c := range conn.inFlight {
@@ -221,6 +224,7 @@ func (conn *Connection) Reader() error {
 				conn.Lock()
 				for index, c := range conn.inFlight {
 					if !c.Match(incomming) {
+						logrus.Info("Check match %#v", c)
 						continue
 					}
 
@@ -281,7 +285,7 @@ func (c *sendPackage) Match(incomming []byte) bool {
 
 	// SerialAPI specific
 	if !MatchByteAt(incomming, c.function, 3) && !(c.function == serialapi.SendData && MatchByteAt(incomming, serialapi.ApplicationCommandHandler, 3)) {
-		//logrus.Warnf("Skipping pkg %s, function %x != %x", c.uuid, c.function, incomming[3])
+		logrus.Warnf("Skipping pkg %s, function %x != %x", c.uuid, c.function, incomming[3])
 		return false
 	}
 
@@ -291,11 +295,11 @@ func (c *sendPackage) Match(incomming []byte) bool {
 
 	// Z-wave specific
 	if !MatchByteAt(incomming, c.node, 5) {
-		//logrus.Warnf("Skipping pkg %s, node %x != %x", c.uuid, c.node, incomming[5])
+		logrus.Warnf("Skipping pkg %s, node %x != %x", c.uuid, c.node, incomming[5])
 		return false
 	}
 	if !MatchByteAt(incomming, c.commandclass, 7) {
-		//logrus.Warnf("Skipping pkg %s, commandclass %x is not %x", c.uuid, c.commandclass, incomming[7])
+		logrus.Warnf("Skipping pkg %s, commandclass %x is not %x", c.uuid, c.commandclass, incomming[7])
 		return false
 	}
 	if !MatchByteAt(incomming, c.expectedReport, 8) {

@@ -15,7 +15,7 @@ func NewDiscoverdNodes(data []byte) (*DiscoverdNodes, error) {
 	}
 
 	if len(data) < 6 {
-		return nil, fmt.Errorf("message is to short, should be at least 6 bytes")
+		return nil, fmt.Errorf("wrong length, should be at least 6 bytes got %d", len(data))
 	}
 
 	for index, bits := range data {
