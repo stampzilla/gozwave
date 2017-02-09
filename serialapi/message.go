@@ -1,7 +1,6 @@
 package serialapi
 
 import (
-	"encoding/hex"
 	"fmt"
 
 	"github.com/Sirupsen/logrus"
@@ -34,7 +33,7 @@ func (m *Message) IsCAN() bool {
 }
 
 // Decode decodes serialapi raw data
-func Decode(data []byte) (length int, msg *Message) {
+func Decode(data []byte) (length int, msg *Message, err error) {
 	// SOF	0x01	1	Start Of Frame
 	// ACK	0x06	6	Message Ack
 	// NAK	0x15	21	Message NAK
@@ -43,37 +42,31 @@ func Decode(data []byte) (length int, msg *Message) {
 	switch data[0] {
 	case 0x01: // SOF
 		if len(data) < 2 {
-			return 2, nil
+			return 2, nil, nil
 		}
 		length := int(data[1])
 		if len(data) < length+2 { // Make shure we have the full message
-			return length + 2, nil
+			return length + 2, nil, nil
 		}
 
 		checksum := data[length+1]
 		checksumData := append(data[1:length+1], byte(0x00))
 		if checksum != GenerateChecksum(checksumData) {
-			logrus.Errorf("Invalid checksum, is %b should be %x, (len=%d)", checksum, GenerateChecksum(checksumData), length)
-			logrus.Debug(hex.Dump(checksumData))
-			return -1, nil
+			return -1, nil, fmt.Errorf("Invalid checksum, is 0x%x should be 0x%x, (len=%d)", checksum, GenerateChecksum(checksumData), length)
 		}
 
-		//logrus.Debug("Found SOF")
 		msg, err := NewMessage(data)
-		if err != nil {
-			logrus.Error(err)
-		}
 
-		return length + 2, msg
+		return length + 2, msg, err
 	case 0x06, 0x15, 0x18: // ACK, NAC, CAN
 		msg, err := NewMessage(data)
 		if err != nil {
 			logrus.Error(err)
 		}
 
-		return 1, msg
+		return 1, msg, nil
 	}
-	return -1, nil // Not a valid start char
+	return -1, nil, nil // Not a valid start char
 }
 
 // GenerateChecksum calculates the checksum for a serialapi message

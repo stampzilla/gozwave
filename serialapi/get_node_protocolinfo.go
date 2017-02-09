@@ -16,17 +16,14 @@ type FuncGetNodeProtocolInfo struct {
 	Basic    byte `json:"basic"`
 	Generic  byte `json:"generic"`
 	Specific byte `json:"specific"`
-
-	data []byte
 }
 
 // NewGetNodeProtocolInfo decodes and cretes a funcGetNodeProtocolInfo. It is sent from the controller and contanins all basic information that the controller knows about a node.
 func NewGetNodeProtocolInfo(data []byte) (*FuncGetNodeProtocolInfo, error) {
 	pi := &FuncGetNodeProtocolInfo{}
 
-	pi.data = data
-	if len(data) < 6 {
-		return nil, fmt.Errorf("GetNodeProtocolInfo message is to short, should be at least 6 bytes")
+	if len(data) != 6 {
+		return nil, fmt.Errorf("wrong length, should be 6 bytes got %d", len(data))
 	}
 
 	// Capabilities

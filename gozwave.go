@@ -3,6 +3,7 @@
 package gozwave
 
 import (
+	"fmt"
 	"io"
 	"time"
 
@@ -11,15 +12,15 @@ import (
 )
 
 func ConnectWithCustomPortOpener(port string, filename string, po PortOpener) (*Controller, error) {
+	if po == nil {
+		return nil, fmt.Errorf("portopener is nil")
+	}
+
 	c := NewController()
 	c.filename = filename
 	c.Connection.portOpener = po
 
 	var err error
-
-	if err != nil {
-		logrus.Error(err)
-	}
 
 	c.Connection.reportCallback = c.DeliverReportToNode
 	connected := make(chan error)
@@ -39,6 +40,9 @@ func ConnectWithCustomPortOpener(port string, filename string, po PortOpener) (*
 	}()
 
 	err = <-connected
+	if err != nil {
+		return nil, err
+	}
 
 	go c.getNodes()
 	go c.saveDebouncer()
