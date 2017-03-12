@@ -729,6 +729,8 @@ func New(manufacturerID, productType, productID string) *Device{
 		return New010f04000109() // 351-010f-0400-0109-03-03-2a-01-09.xml | 010f04000109
 	case "010f0400100a":
 		return New010f0400100a() // 665-010f-0400-100a-03-03-2a-02-01.xml | 010f0400100a
+	case "010f04031000":
+		return New010f04031000() // 993-010f-0403-1000.xml | 010f04031000
 	case "010f05010101":
 		return New010f05010101() // 428-010f-0501-0101-03-03-22-03-31.xml | 010f05010101
 	case "010f05010102":
@@ -59350,6 +59352,97 @@ func New010f0400100a() *Device{
 					},
 				},
 			},
+		},
+	}
+}
+func New010f04031000() *Device{
+	return &Device{
+		Brand: "Fibaro",
+		Product: "FGS-213",
+		Description: "\n			\n		",
+
+		ManufacturerID: "010f",
+		ProductType: "0403",
+		ProductID: "1000",
+		CommandClasses: []*CommandClass{
+			&CommandClass{
+				ID: 0x0027,
+			},
+			&CommandClass{
+				ID: 0x0022,
+			},
+			&CommandClass{
+				ID: 0x0059,
+			},
+			&CommandClass{
+				ID: 0x0085,
+				Version: "2",
+			},
+			&CommandClass{
+				ID: 0x0020,
+			},
+			&CommandClass{
+				ID: 0x005b,
+				Version: "2",
+			},
+			&CommandClass{
+				ID: 0x0070,
+			},
+			&CommandClass{
+				ID: 0x0056,
+			},
+			&CommandClass{
+				ID: 0x005a,
+			},
+			&CommandClass{
+				ID: 0x007a,
+				Version: "3",
+			},
+			&CommandClass{
+				ID: 0x0072,
+				Version: "2",
+			},
+			&CommandClass{
+				ID: 0x0032,
+				Version: "3",
+			},
+			&CommandClass{
+				ID: 0x0060,
+				Controlled: "true",
+				Version: "4",
+			},
+			&CommandClass{
+				ID: 0x008E,
+				Version: "3",
+			},
+			&CommandClass{
+				ID: 0x0071,
+				Version: "5",
+			},
+			&CommandClass{
+				ID: 0x0073,
+			},
+			&CommandClass{
+				ID: 0x0075,
+				Version: "2",
+			},
+			&CommandClass{
+				ID: 0x0098,
+			},
+			&CommandClass{
+				ID: 0x0025,
+				Controlled: "true",
+			},
+			&CommandClass{
+				ID: 0x0086,
+				Version: "2",
+			},
+			&CommandClass{
+				ID: 0x005E,
+				Version: "2",
+			},
+		},
+		Parameters: []*parameter{
 		},
 	}
 }
