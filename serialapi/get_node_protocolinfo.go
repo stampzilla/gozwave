@@ -22,8 +22,8 @@ type FuncGetNodeProtocolInfo struct {
 func NewGetNodeProtocolInfo(data []byte) (*FuncGetNodeProtocolInfo, error) {
 	pi := &FuncGetNodeProtocolInfo{}
 
-	if len(data) != 6 {
-		return nil, fmt.Errorf("wrong length, should be 6 bytes got %d", len(data))
+	if len(data) < 6 {
+		return nil, fmt.Errorf("wrong length, should be at least 6 bytes got len %d data: %x", len(data), data)
 	}
 
 	// Capabilities
