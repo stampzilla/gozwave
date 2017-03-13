@@ -318,8 +318,10 @@ func (conn *Connection) timeoutWorker(sp *sendPackage) {
 		if index == sp.uuid {
 			logrus.Warnf("TIMEOUT: %s", sp.uuid)
 			delete(conn.inFlight, sp.uuid)
-			close(c.returnChan)
-			c.returnChan = nil
+			if c.returnChan != nil {
+				close(c.returnChan)
+				c.returnChan = nil
+			}
 		}
 	}
 	conn.Unlock()

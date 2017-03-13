@@ -106,36 +106,42 @@ type ZWaveCommand byte
 //COMMAND_CLASS_NON_INTEROPERABLE	0xF0	240
 
 const (
-	Basic                           = 0x20
-	ControllerReplication           = 0x21
-	ApplicationStatus               = 0x22
-	SwitchBinary                    = 0x25
-	SwitchMultilevel                = 0x26
-	SwitchAll                       = 0x27
-	SwitchToggleBinary              = 0x28
-	SwitchToggleMultilevel          = 0x29
-	SceneActivation                 = 0x2B
-	SceneActuatorConf               = 0x2C
-	SensorBinary                    = 0x30
-	SensorMultiLevel                = 0x31
-	Meter                           = 0x32
-	MeterPulse                      = 0x35
-	ThermostatMode                  = 0x40
-	ThermostatOperatingState        = 0x42
-	ThermostatSetpoint              = 0x43
-	ThermostatFanMode               = 0x44
-	ThermostatFanState              = 0x45
-	ClimateControlSchedule          = 0x46
-	BasicWindowCovering             = 0x50
-	AssociationGRPInfo              = 0x59
-	MultiInstance                   = 0x60
-	Configuration                   = 0x70
+	Basic                    = 0x20
+	ControllerReplication    = 0x21
+	ApplicationStatus        = 0x22
+	SwitchBinary             = 0x25
+	SwitchMultilevel         = 0x26
+	SwitchAll                = 0x27
+	SwitchToggleBinary       = 0x28
+	SwitchToggleMultilevel   = 0x29
+	SceneActivation          = 0x2B
+	SceneActuatorConf        = 0x2C
+	SensorBinary             = 0x30
+	SensorMultiLevel         = 0x31
+	Meter                    = 0x32
+	MeterPulse               = 0x35
+	ThermostatMode           = 0x40
+	ThermostatOperatingState = 0x42
+	ThermostatSetpoint       = 0x43
+	ThermostatFanMode        = 0x44
+	ThermostatFanState       = 0x45
+	ClimateControlSchedule   = 0x46
+	BasicWindowCovering      = 0x50
+	CRC16Encap               = 0x56
+	AssociationGRPInfo       = 0x59
+	DeviceResetLocally       = 0x5a
+	CentralScenev2           = 0x5b
+	ZwavePlusInfov2          = 0x5e
+	MultiInstance            = 0x60
+	Configuration            = 0x70
+	// Alarm maybe rename since 0x71 is called COMMAND_CLASS_NOTIFICATION_V5
 	Alarm                           = 0x71
 	ManufacturerSpecific            = 0x72
 	PowerLevel                      = 0x73
 	Protection                      = 0x75
 	Lock                            = 0x76
 	NodeNaming                      = 0x77
+	FirmwareUpdateMDv3              = 0x7a
 	Battery                         = 0x80
 	Clock                           = 0x81
 	Hail                            = 0x82
@@ -149,6 +155,7 @@ const (
 	MultiCmd                        = 0x8F
 	EnergyProduction                = 0x90
 	ManufacturerProprietary         = 0x91
+	Security                        = 0x98
 	AssociationCommandConfiguration = 0x9b
 	Mark                            = 0xE
 )
