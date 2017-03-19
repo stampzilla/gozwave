@@ -59,6 +59,10 @@ func main() {
 
 		if strings.HasPrefix(text, "#") {
 			tmp := strings.Split(text, "-")
+			if strings.Contains(text, "SPECIFIC_TYPE_NOT_USED") {
+				//TODO skip this for now. Do something smarter if AV control point is needed
+				continue
+			}
 			defs = append(defs, []string{
 				strings.TrimSpace(tmp[len(tmp)-2]),
 				strings.TrimSpace(tmp[len(tmp)-1]),
@@ -223,9 +227,9 @@ func StringToByte(s string) byte {
 }
 
 var templ = `package {{.Package}}
-//import (
-	//"github.com/stampzilla/gozwave/commands"
-//)
+import (
+	"github.com/stampzilla/gozwave/protocol"
+)
 
 var definitions = map[Definition][]*CommandClass{
 {{- range $key, $value := .CommandClasses }}
@@ -239,8 +243,8 @@ var definitions = map[Definition][]*CommandClass{
 		},
 {{- end }}
 	},
-}
 
 {{- end}}
+}
 
 `
