@@ -12,7 +12,7 @@ import (
 func (n *Node) RequestEndpoints() error {
 	// Todo: Send raw messages here
 	n.RLock()
-	if n.Device == nil || n.Device.CommandClasses == nil {
+	if n.CommandClasses == nil {
 		n.RUnlock()
 		n.Lock()
 		n.Endpoints = make([]*Endpoint, 0)
@@ -54,7 +54,7 @@ func (n *Node) RequestEndpoints() error {
 			for i := 1; i < cmd.Endpoints; i++ {
 				n.Endpoints = append(n.Endpoints, &Endpoint{
 					Id:             i,
-					CommandClasses: n.Device.CommandClasses,
+					CommandClasses: n.CommandClasses,
 
 					StateBool:  make(map[string]bool),
 					StateFloat: make(map[string]float64),

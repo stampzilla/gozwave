@@ -167,23 +167,11 @@ type zWaveDevice struct {
 
 var templ = `package {{.Package}}
 
-import (
-	"github.com/stampzilla/gozwave/commands"
-)
-
-type CommandClass struct {
-	ID         commands.ZWaveCommand
-	Controlled string
-	InNIF      string
-	Secure     bool
-	NonSecure  bool
-	Version    string 
-}
 type Value struct {
-  From int
-  To int
-  Desc string
-  Unit string
+	From int64
+	To int64
+	Desc string
+	Unit string
 }
 type parameter struct {
 	ID int
@@ -198,7 +186,7 @@ type parameter struct {
 type Device struct{
 	Brand string
 	Product string
-	Description string 
+	Description string
 
 	CommandClasses []*CommandClass
 	Parameters []*parameter
@@ -334,7 +322,7 @@ func main() {
 		// Copy the parameter size to each value (used to decode the values)
 		for k, p := range dev.Parameters {
 			s, _ := strconv.Atoi(p.Size)
-			for k2, _ := range p.Values {
+			for k2 := range p.Values {
 				dev.Parameters[k].Values[k2].size = s
 			}
 		}

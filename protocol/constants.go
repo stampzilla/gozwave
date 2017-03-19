@@ -1,4 +1,4 @@
-package gozwave
+package protocol
 
 /************ Basic Device Class identifiers **************/
 const BASIC_TYPE_CONTROLLER = 0x01        /*Node is a portable controller */
@@ -144,7 +144,7 @@ const SPECIFIC_TYPE_ROUTING_SENSOR_BINARY = 0x01  /*Routing Binary Sensor*/
 /* Device class - Sensor Multilevel */
 const GENERIC_TYPE_SENSOR_MULTILEVEL = 0x21           /*Multilevel Sensor*/
 const SPECIFIC_TYPE_SENSOR_MULTILEVEL_NOT_USED = 0x00 /*Specific Device Class Not Used*/
-const SPECIFIC_TYPE_ROUTING_SENSOR_MULTILEVEL = 0x01  /*Sensor (Multilevel) Device Type*/
+const SPECIFIC_TYPE_ROUTING_MULTILEVEL_SENSOR = 0x01  /*Sensor (Multilevel) Device Type*/
 const SPECIFIC_TYPE_CHIMNEY_FAN = 0x02                /* Device class Static Controller */
 
 /* Device class - Meter Pulse */

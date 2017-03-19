@@ -34,7 +34,14 @@ type Node struct {
 	ProtocolInfo        *serialapi.FuncGetNodeProtocolInfo
 	ManufacurerSpecific *reports.ManufacturerSpecific
 
-	Device *database.Device
+	//Device *database.Device
+	Brand       string
+	Product     string
+	Description string
+
+	CommandClasses []*database.CommandClass
+	//TODO make public. move to database/types.go and use here
+	//Parameters []*parameter
 
 	Endpoints []*Endpoint
 
@@ -157,7 +164,13 @@ func (n *Node) Identify() {
 				Address: n.Id,
 			})
 			n.Unlock()
+
 		}
+
+		// set basic commandClasses
+		n.Lock()
+		n.CommandClasses = database.GetMandatoryCommandClasses(n.ProtocolInfo.Generic, n.ProtocolInfo.Specific)
+		n.Unlock()
 
 		//<-self.Connection.SendRaw([]byte{serialapi.GetNodeProtocolInfo, byte(index + 1)}) // Request node information
 		//		nodeinfo := self.WaitForGetNodeProtocolInfo()
@@ -174,7 +187,13 @@ func (n *Node) Identify() {
 
 			n.Lock()
 			n.ManufacurerSpecific = resp
-			n.Device = database.New(n.ManufacurerSpecific.Manufacturer, n.ManufacurerSpecific.Type, n.ManufacurerSpecific.ID)
+			dev := database.New(n.ManufacurerSpecific.Manufacturer, n.ManufacurerSpecific.Type, n.ManufacurerSpecific.ID)
+			n.Brand = dev.Brand
+			n.Product = dev.Product
+			n.Description = dev.Description
+			for _, v := range dev.CommandClasses {
+				n.CommandClasses = append(n.CommandClasses, v)
+			}
 			n.pushEvent(events.NodeUpdated{
 				Address: n.Id,
 			})
@@ -278,11 +297,11 @@ func (n *Node) pushEvent(event interface{}) {
 }
 
 func (n *Node) HasCommand(c commands.ZWaveCommand) bool {
-	if n.Device == nil {
+	if n.CommandClasses == nil {
 		return false
 	}
 
-	for _, v := range n.Device.CommandClasses {
+	for _, v := range n.CommandClasses {
 		if v.ID == c {
 			return true
 		}

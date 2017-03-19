@@ -9,7 +9,7 @@ import (
 
 func (n *Node) RequestStates() error {
 	n.RLock()
-	cc := n.Device.CommandClasses
+	cc := n.CommandClasses
 	n.RUnlock()
 
 	for _, v := range cc {
