@@ -1,4 +1,4 @@
-package gozwave
+package protocol
 
 /************ Basic Device Class identifiers **************/
 const BASIC_TYPE_CONTROLLER = 0x01        /*Node is a portable controller */

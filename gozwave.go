@@ -1,4 +1,5 @@
-//go:generate go run generators/database.go -file database/test.go -package database -databasedir ./database
+//go:generate go run generators/database/database.go -file database/test.go -package database -databasedir ./database
+//go:generate go run generators/commandclasses/commandclasses.go -file database/mandatory.go -package database -mandatoryfile ./database/mandatory.txt
 
 package gozwave
 

@@ -1,22 +1,10 @@
 package database
 
-import (
-	"github.com/stampzilla/gozwave/commands"
-)
-
-type CommandClass struct {
-	ID         commands.ZWaveCommand
-	Controlled string
-	InNIF      string
-	Secure     bool
-	NonSecure  bool
-	Version    string 
-}
 type Value struct {
-  From int
-  To int
-  Desc string
-  Unit string
+	From int
+	To int
+	Desc string
+	Unit string
 }
 type parameter struct {
 	ID int
@@ -31,7 +19,7 @@ type parameter struct {
 type Device struct{
 	Brand string
 	Product string
-	Description string 
+	Description string
 
 	CommandClasses []*CommandClass
 	Parameters []*parameter

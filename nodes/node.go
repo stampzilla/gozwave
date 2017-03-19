@@ -157,7 +157,11 @@ func (n *Node) Identify() {
 				Address: n.Id,
 			})
 			n.Unlock()
+
 		}
+
+		// set basic commandClasses
+		cmds := database.GetMandatoryCommandClasses(n.ProtocolInfo.Generic, n.ProtocolInfo.Specific)
 
 		//<-self.Connection.SendRaw([]byte{serialapi.GetNodeProtocolInfo, byte(index + 1)}) // Request node information
 		//		nodeinfo := self.WaitForGetNodeProtocolInfo()
