@@ -3,7 +3,6 @@ package gozwave
 import (
 	"fmt"
 	"io"
-	"log"
 	"os"
 	"testing"
 	"text/tabwriter"
@@ -23,15 +22,16 @@ func TestConnect(t *testing.T) {
 	controller, err := ConnectWithCustomPortOpener("/test", "", mockPO)
 
 	assert.NoError(t, err)
-	log.Println("controller: ", controller)
+	//log.Println("controller: ", controller)
 
 	reply(t, mockPO.mockSerial.getFromWrite, mockPO.mockSerial.sendToRead) // Start up a conversation loop
 
 	// TODO: make something better than a sleep here
-	time.Sleep(10 * time.Millisecond)
+	time.Sleep(100 * time.Millisecond)
 
 	n := controller.Nodes.Get(8)
-	if assert.NotNil(t, n.ProtocolInfo) {
+	assert.NotNil(t, n)
+	if assert.NotNil(t, n.ProtocolInfo()) {
 		assert.Equal(t,
 			serialapi.FuncGetNodeProtocolInfo{
 				Listening: false,
@@ -45,7 +45,7 @@ func TestConnect(t *testing.T) {
 				Generic:   0x40,
 				Specific:  0x0,
 			},
-			*n.ProtocolInfo,
+			*n.ProtocolInfo(),
 		)
 	}
 }
@@ -82,7 +82,7 @@ func reply(t *testing.T, c chan []byte, w chan string) {
 				}
 
 				if len(reads) == len(replies) { // We got all messages expected. Exit the loop
-					<-time.After(time.Second)
+					//<-time.After(time.Second)
 					return
 				}
 				break

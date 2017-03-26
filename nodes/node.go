@@ -31,7 +31,7 @@ type Node struct {
 	Id      int  `json:"id"`
 	IsAwake bool `json:"is_awake"`
 
-	ProtocolInfo        *serialapi.FuncGetNodeProtocolInfo
+	protocolInfo        *serialapi.FuncGetNodeProtocolInfo
 	ManufacurerSpecific *reports.ManufacturerSpecific
 
 	//Device *database.Device
@@ -149,7 +149,7 @@ func (n *Node) Identify() {
 	defer logrus.Infof("Ended identification on node %d", n.Id)
 
 	for {
-		if n.ProtocolInfo == nil {
+		if n.ProtocolInfo() == nil {
 			resp, err := n.RequestProtocolInfo()
 			if err != nil {
 				logrus.Errorf("Node ident: Failed RequestProtocolInfo: %s", err.Error())
@@ -158,18 +158,19 @@ func (n *Node) Identify() {
 			}
 
 			n.Lock()
-			n.ProtocolInfo = resp
+			n.protocolInfo = resp
 			n.IsAwake = resp.Listening
 			n.pushEvent(events.NodeUpdated{
 				Address: n.Id,
 			})
 			n.Unlock()
-
 		}
 
 		// set basic commandClasses
+		classes := database.GetMandatoryCommandClasses(n.ProtocolInfo().Generic, n.ProtocolInfo().Specific)
+
 		n.Lock()
-		n.CommandClasses = database.GetMandatoryCommandClasses(n.ProtocolInfo.Generic, n.ProtocolInfo.Specific)
+		n.CommandClasses = classes
 		n.Unlock()
 
 		//<-self.Connection.SendRaw([]byte{serialapi.GetNodeProtocolInfo, byte(index + 1)}) // Request node information
@@ -313,9 +314,9 @@ func (n *Node) HasCommand(c commands.ZWaveCommand) bool {
 }
 
 func (n *Node) IsDeviceClass(generic, specific byte) bool {
-	if n.ProtocolInfo == nil {
+	if n.ProtocolInfo() == nil {
 		return false
 	}
 
-	return n.ProtocolInfo.Generic == generic && n.ProtocolInfo.Specific == specific
+	return n.ProtocolInfo().Generic == generic && n.ProtocolInfo().Specific == specific
 }
