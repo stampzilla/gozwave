@@ -54,10 +54,11 @@ func reply(t *testing.T, c chan []byte, w chan string) {
 	replies := map[string][]string{
 		"06": []string{},
 		"01030002fe": []string{ // Request discovery nodes
+			"06", // Ack
 			"0125010205001d8000000000000000000000000000000000000000000000000000000000050044", // Answer with node 8 active
 		},
 		"0104004108b2": []string{ // Request node information node 8
-			"06", // ack
+			"06", // Ack
 			"01080141539c0004403c", // Answer with node information
 		},
 	}

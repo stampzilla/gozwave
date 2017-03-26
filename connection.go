@@ -158,16 +158,23 @@ func (conn *Connection) Writer() {
 				go conn.timeoutWorker(pkg)
 			}
 
+			abort := make(chan struct{})
+			go func() {
+				select {
+				case result := <-conn.lastResult:
+					pkg.result = result
+				case <-time.After(time.Second):
+					logrus.Warn("Send timeout")
+					// SEND TIMEOUT
+				}
+				close(abort)
+			}()
+
 			logrus.Debugf("Write: %x", pkg.message)
 			conn.readWriteCloser.Write(pkg.message)
 			conn.Unlock()
 
-			select {
-			case result := <-conn.lastResult:
-				pkg.result = result
-			case <-time.After(time.Second):
-				// SEND TIMEOUT
-			}
+			<-abort
 			conn.lastCommand = ""
 		}
 	}
@@ -227,6 +234,7 @@ func (conn *Connection) Reader() error {
 					}
 					conn.RUnlock()
 				}
+
 			}
 
 			// The message is not compleatly read yet, wait for some more data
