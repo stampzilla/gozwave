@@ -41,6 +41,28 @@ type sendPackage struct {
 	timeout time.Duration
 
 	returnChan chan *serialapi.Message
+	sync.RWMutex
+}
+
+func (sp *sendPackage) Close() {
+	sp.RLock()
+	if sp.returnChan == nil {
+		sp.RUnlock()
+		return
+	}
+	sp.RUnlock()
+
+	sp.Lock()
+	close(sp.returnChan)
+	sp.returnChan = nil
+	sp.Unlock()
+}
+
+func (sp *sendPackage) IsOpen() bool {
+	sp.RLock()
+	defer sp.RUnlock()
+
+	return sp.returnChan != nil
 }
 
 func NewConnection() *Connection {
@@ -136,16 +158,23 @@ func (conn *Connection) Writer() {
 				go conn.timeoutWorker(pkg)
 			}
 
+			abort := make(chan struct{})
+			go func() {
+				select {
+				case result := <-conn.lastResult:
+					pkg.result = result
+				case <-time.After(time.Second):
+					logrus.Warn("Send timeout")
+					// SEND TIMEOUT
+				}
+				close(abort)
+			}()
+
 			logrus.Debugf("Write: %x", pkg.message)
 			conn.readWriteCloser.Write(pkg.message)
 			conn.Unlock()
 
-			select {
-			case result := <-conn.lastResult:
-				pkg.result = result
-			case <-time.After(time.Second):
-				// SEND TIMEOUT
-			}
+			<-abort
 			conn.lastCommand = ""
 		}
 	}
@@ -193,8 +222,7 @@ func (conn *Connection) Reader() error {
 						if msg.IsNAK() {
 							logrus.Warnf("Command failed: %s - %#v", c.uuid, c)
 							delete(conn.inFlight, index)
-							close(c.returnChan)
-							c.returnChan = nil
+							c.Close()
 						}
 
 						if msg.IsCAN() {
@@ -206,6 +234,7 @@ func (conn *Connection) Reader() error {
 					}
 					conn.RUnlock()
 				}
+
 			}
 
 			// The message is not compleatly read yet, wait for some more data
@@ -228,14 +257,14 @@ func (conn *Connection) Reader() error {
 						continue
 					}
 
-					if c.returnChan != nil {
+					if c.IsOpen() {
 						select {
 						case c.returnChan <- msg: // Try to deliver message
-						default:
+						case <-time.After(time.Second):
+							logrus.Warnf("Timeout writing response to requester: %#v", msg)
 						}
 
-						close(c.returnChan)
-						c.returnChan = nil
+						c.Close()
 					}
 					delete(conn.inFlight, index)
 				}
@@ -318,10 +347,7 @@ func (conn *Connection) timeoutWorker(sp *sendPackage) {
 		if index == sp.uuid {
 			logrus.Warnf("TIMEOUT: %s", sp.uuid)
 			delete(conn.inFlight, sp.uuid)
-			if c.returnChan != nil {
-				close(c.returnChan)
-				c.returnChan = nil
-			}
+			c.Close()
 		}
 	}
 	conn.Unlock()

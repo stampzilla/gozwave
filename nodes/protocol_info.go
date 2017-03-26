@@ -8,6 +8,13 @@ import (
 	"github.com/stampzilla/gozwave/serialapi"
 )
 
+func (n *Node) ProtocolInfo() *serialapi.FuncGetNodeProtocolInfo {
+	n.RLock()
+	defer n.RUnlock()
+
+	return n.protocolInfo
+}
+
 func (n *Node) RequestProtocolInfo() (*serialapi.FuncGetNodeProtocolInfo, error) {
 	cmd := serialapi.NewRaw(
 		[]byte{
