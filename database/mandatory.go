@@ -827,6 +827,41 @@ var definitions = map[Definition][]*CommandClass{
 	},
 	Definition{
 		Generic:  protocol.GENERIC_TYPE_SWITCH_MULTILEVEL,
+		Specific: protocol.SPECIFIC_TYPE_CLASS_C_MOTOR_CONTROL,
+	}: []*CommandClass{
+		&CommandClass{
+			ID: 0x5e,
+		},
+		&CommandClass{
+			ID: 0x85,
+		},
+		&CommandClass{
+			ID: 0x59,
+		},
+		&CommandClass{
+			ID: 0x20,
+		},
+		&CommandClass{
+			ID: 0x25,
+		},
+		&CommandClass{
+			ID: 0x5a,
+		},
+		&CommandClass{
+			ID: 0x72,
+		},
+		&CommandClass{
+			ID: 0x26,
+		},
+		&CommandClass{
+			ID: 0x73,
+		},
+		&CommandClass{
+			ID: 0x86,
+		},
+	},
+	Definition{
+		Generic:  protocol.GENERIC_TYPE_SWITCH_MULTILEVEL,
 		Specific: protocol.SPECIFIC_TYPE_FAN_SWITCH,
 	}: []*CommandClass{
 		&CommandClass{

@@ -234,7 +234,7 @@ import (
 var definitions = map[Definition][]*CommandClass{
 {{- range $key, $value := .CommandClasses }}
 	Definition{
-		Generic: protocol.{{ getGeneric $key }},
+		Generic:  protocol.{{ getGeneric $key }},
 		Specific: protocol.{{ getSpecific $key }},
 	}: []*CommandClass{
 {{- range $cmdClass := $value }}

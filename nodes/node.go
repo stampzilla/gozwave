@@ -188,11 +188,13 @@ func (n *Node) Identify() {
 			n.Lock()
 			n.ManufacurerSpecific = resp
 			dev := database.New(n.ManufacurerSpecific.Manufacturer, n.ManufacurerSpecific.Type, n.ManufacurerSpecific.ID)
-			n.Brand = dev.Brand
-			n.Product = dev.Product
-			n.Description = dev.Description
-			for _, v := range dev.CommandClasses {
-				n.CommandClasses = append(n.CommandClasses, v)
+			if dev != nil {
+				n.Brand = dev.Brand
+				n.Product = dev.Product
+				n.Description = dev.Description
+				for _, v := range dev.CommandClasses {
+					n.CommandClasses = append(n.CommandClasses, v)
+				}
 			}
 			n.pushEvent(events.NodeUpdated{
 				Address: n.Id,
