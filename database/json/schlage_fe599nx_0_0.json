@@ -1,0 +1,222 @@
+{
+    "database_id": 403,
+    "label": "FE599NX",
+    "manufacturer_name": "Allegion",
+    "manufacturer_id": "003B",
+    "device_ref": [
+        "634B:504C"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Connected Keypad with Lever",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 2.064,
+    "listening": false,
+    "frequently_listening": true,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 6,
+        "name": "LIB_SLAVE_ROUTING"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_ENTRY_CONTROL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_SECURE_KEYPAD_DOOR_LOCK"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 64,
+                "name": "GENERIC_TYPE_ENTRY_CONTROL"
+            },
+            "specific_class": {
+                "id": 3,
+                "name": "SPECIFIC_TYPE_SECURE_KEYPAD_DOOR_LOCK"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "62",
+                    "name": "DOOR_LOCK",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "lock_door",
+                            "label": "Door Lock",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "63",
+                    "name": "USER_CODE",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_general",
+                            "label": "Alarm",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "76",
+                    "name": "LOCK",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "98",
+                    "name": "SECURITY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Alarm Reports",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

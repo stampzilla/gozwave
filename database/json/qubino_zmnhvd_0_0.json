@@ -1,0 +1,635 @@
+{
+    "database_id": 363,
+    "label": "ZMNHVD",
+    "manufacturer_name": "Goap",
+    "manufacturer_id": "0159",
+    "device_ref": [
+        "0001:0053"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Flush Dimmer 0-10V ",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 4.005,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": null
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 0,
+                "name": null
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "3",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Dimmer",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8E",
+                    "name": "MULTI_INSTANCE_ASSOCIATION",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Input 1 Switch Type",
+            "description": "By this parameter the user can set input based on device type (switch, potentiometer, 0-10V sensor,...)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "mono-stable switch type (push button)"
+                },
+                {
+                    "value": 1,
+                    "label": "Bi-stable switch type"
+                },
+                {
+                    "value": 2,
+                    "label": "Potentiometer"
+                },
+                {
+                    "value": 3,
+                    "label": "Temperature sensor"
+                },
+                {
+                    "value": 4,
+                    "label": "Illumination sensor"
+                },
+                {
+                    "value": 5,
+                    "label": "General purpose sensor"
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "label": "Automatic turning off output after set time",
+            "description": "",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32536,
+            "options": []
+        },
+        {
+            "id": 12,
+            "label": "Automatic turning on output after set time",
+            "description": "",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32535,
+            "options": []
+        },
+        {
+            "id": 21,
+            "label": "Enable\/Disable Double click function",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": []
+        },
+        {
+            "id": 30,
+            "label": "Saving the state of the device after a power failure",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": []
+        },
+        {
+            "id": 52,
+            "label": "Auto or manual selection",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": []
+        },
+        {
+            "id": 53,
+            "label": "PID value inside deadband",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": []
+        },
+        {
+            "id": 54,
+            "label": "PID deadband ",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 55,
+            "label": "Integral sampling time ",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 56,
+            "label": "P parameter",
+            "description": "",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 100,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1000,
+            "options": []
+        },
+        {
+            "id": 57,
+            "label": "I parameter ",
+            "description": "",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1000,
+            "options": []
+        },
+        {
+            "id": 58,
+            "label": "D parameter ",
+            "description": "Available config. parameters (data type is2 Byte DEC):",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1000,
+            "options": []
+        },
+        {
+            "id": 60,
+            "label": "Minimum dimming value ",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 98,
+            "options": []
+        },
+        {
+            "id": 61,
+            "label": "Maximum dimming value ",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 99,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 2,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 65,
+            "label": " Dimming time (soft on\/off)",
+            "description": "",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 100,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 66,
+            "label": "Dimming time when key pressed",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 67,
+            "label": " Ignore start level ",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": []
+        },
+        {
+            "id": 68,
+            "label": "Dimming duration ",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 110,
+            "label": "Temperature sensor offset settings",
+            "description": "",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 32536,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 32536,
+            "options": []
+        },
+        {
+            "id": 120,
+            "label": "Digital temperature sensor reporting",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 140,
+            "label": "Input I1 Sensor reporting ",
+            "description": "",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 140,
+            "options": []
+        },
+        {
+            "id": 141,
+            "label": " Input I1 0-10V reporting threshold",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 143,
+            "label": "Minimum sensor range value ",
+            "description": "",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 20000,
+            "options": []
+        },
+        {
+            "id": 144,
+            "label": "Maximum sensor range value ",
+            "description": "",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 1000,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 20000,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Lifeline Group",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "reserved for communication with the main controller",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": " basic on\/off ",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "triggered at change of the input I1 state and reflecting its state",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "start level change\/stop level change",
+            "max_nodes": 16,
+            "controller": false,
+            "description": " triggered at change of the input I1 state and reflecting its state) up to 16 nodes. Working only when the Parameter no. 1 is set to mono stable switch type.",
+            "overview": ""
+        },
+        {
+            "id": 4,
+            "label": "multilevel set",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "triggered at changes of state\/value of the Flush Dimmer 0-10V",
+            "overview": ""
+        },
+        {
+            "id": 5,
+            "label": " multilevel sensor report",
+            "max_nodes": 16,
+            "controller": false,
+            "description": " triggered at change of analogue sensor",
+            "overview": ""
+        },
+        {
+            "id": 6,
+            "label": " multilevel sensor report",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "triggered at change of temperature sensor",
+            "overview": ""
+        }
+    ]
+}

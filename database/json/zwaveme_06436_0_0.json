@@ -1,0 +1,662 @@
+{
+    "database_id": 50,
+    "label": "06436",
+    "manufacturer_name": "Z-Wave.Me",
+    "manufacturer_id": "0115",
+    "device_ref": [
+        "1000:0003"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Insert blind control",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 2.051,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 7,
+        "name": "LIB_CONTROLLER_BRIDGE"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_MOTOR_MULTIPOSITION"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 3,
+                "name": "SPECIFIC_TYPE_MOTOR_MULTIPOSITION"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "blinds_control",
+                            "label": "Blinds Control",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "75",
+                    "name": "PROTECTION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "82",
+                    "name": "HAIL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "87",
+                    "name": "INDICATOR",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "LED mode",
+            "description": "Set LED indication mode",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Show working state"
+                },
+                {
+                    "value": 2,
+                    "label": "Show idle state"
+                },
+                {
+                    "value": 3,
+                    "label": "Operated by Indicator Command Class"
+                },
+                {
+                    "value": 4,
+                    "label": "Show if not closed"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "Automatically open or close after",
+            "description": "Automatically open or close blind after time",
+            "overview": "<p>If not zero, automatically open or close blind after a user defined time<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "label": "What to do on RF close command",
+            "description": "Defines how to interpret RF Off command.",
+            "overview": "Defines how to interpret RF Off command. Can be used in conjunction with Auto Close function: Ignore - to open the door by motion detectors and close it back after some amount of time: in case of multiple motion detectors each would try to open that would break logics; Open - to open on both On and Off paddle press on the remote and close after some amount of time. Button close click will still work (if button operations are not disabled). Note that Dim Down command will still begin close motion.",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Close"
+                },
+                {
+                    "value": 1,
+                    "label": "Ignore"
+                },
+                {
+                    "value": 2,
+                    "label": "Open"
+                },
+                {
+                    "value": 3,
+                    "label": "Open if closed else close"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "label": "Full close time",
+            "description": "Time in seconds to go from opened to closed state.",
+            "overview": "<p>Time to go from opened to closed state. Used to estimate the current level. Note that in Permanent motion mode the reported value would a be Closed or Opened, while all Basic and Multilevel Set values (1-99, 255) would Open except 0 value that would Close.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 60,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Keep in permanent motion"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "label": "Full open time",
+            "description": "Time in seconds to go from closed to open state.",
+            "overview": "<p>Time to go from closed to open state. This value may differ from Full close time for some blinds due to gravity. Used to estimate the current level. Note that in Permanent motion mode the reported value would a be Closed or Opened, while all Basic and Multilevel Set values (1-99, 255) would Open except 0 value that would Close.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 60,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Keep in permanent motion"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "label": "Node ID of the blocking device",
+            "description": "Id of the device which can block the blinds",
+            "overview": "Id of the device which commands would be interpreted not as Open\/Close, but as block\/unblock. Usefull with door opening detector: if the door is open, block the blind not to break shades while they move.",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 232,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "label": "On which command from blocking node to enable the protection",
+            "description": "Defines which command from blocking device to interpret as closed door and hence, unprotected.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "on On"
+                },
+                {
+                    "value": 1,
+                    "label": "on Off"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "label": "Stop or Revert if opposite button is pressed",
+            "description": "Defines behaviour on open press while closing and vice versa.",
+            "overview": "Defines behaviour on open press while closing and vice versa. To allow Stop behavior when switched by remote, use Stop by Basic",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Stop (by buttons and Binary)"
+                },
+                {
+                    "value": 1,
+                    "label": "Revert"
+                },
+                {
+                    "value": 2,
+                    "label": "Stop (by buttons, Binary and Basic)"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "label": "Invert open and close relays",
+            "description": "Allows exchanging open and close relays if blind control is wired to the motor incorrectly",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No"
+                },
+                {
+                    "value": 1,
+                    "label": "Yes"
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "label": "Typical click timeout",
+            "description": "Typical time used to differentiate click, hold and double and triple clicks in 10ms units",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 50,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 11,
+            "label": "Invert buttons",
+            "description": "\tAllows exchanging the functionality of the buttons",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No"
+                },
+                {
+                    "value": 1,
+                    "label": "Yes"
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "label": "Switch by buttons",
+            "description": "Local operations by buttons will\/will not\/ switch the load",
+            "overview": "If disabled, the local operations by buttons will not switch the load, but only send commands to On\/Off association group. In this mode buttons are not linked with the switch anymore. They can be used separately: buttons to control remote device, switch will operate by RF commands only.",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No"
+                },
+                {
+                    "value": 1,
+                    "label": "By single press and hold"
+                },
+                {
+                    "value": 2,
+                    "label": "By double press and hold"
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "label": "Action on button single press or hold",
+            "description": "Defines which command should be sent on button single press or hold.",
+            "overview": "Defines which command should be sent on button single press or hold. Basic and Scene Activation commands are sent to Association group. Use Scene Controller Conf to set up Scene ID for Scene Activation. Switch All commands are sent broadcast.",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 4,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Switch On\/Off (send Basic Set)"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch All"
+                },
+                {
+                    "value": 3,
+                    "label": "Send Scenes"
+                },
+                {
+                    "value": 4,
+                    "label": "Switch On\/Off and Dim (send Basic Set and Switch Multilevel)"
+                },
+                {
+                    "value": 5,
+                    "label": "Send Preconfigured Scenes"
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "label": "Action on button double press or hold",
+            "description": "Defines which command should be sent on button double press or press-hold.",
+            "overview": "Defines which command should be sent on button double press or press-hold. Basic and Scene Activation commands are sent to Association group. Use Scene Controller Conf to set up Scene ID for Scene Activation. Switch All commands are sent broadcast. If not disabled, the device will wait for a click timeout to see if the second click would be pressed. This will introduce a small delay for single click commands",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Switch On\/Off (send Basic Set)"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch All"
+                },
+                {
+                    "value": 3,
+                    "label": "Send Scenes"
+                },
+                {
+                    "value": 4,
+                    "label": "Switch On\/Off (send Basic Set)Switch On\/Off and Dim (send Basic Set an"
+                },
+                {
+                    "value": 5,
+                    "label": "Send Preconfigured Scenes"
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "label": "Send the following Switch All commands",
+            "description": "Defines what to do when a Switch All command arrives.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Switch off only"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch on only"
+                },
+                {
+                    "value": 255,
+                    "label": "Switch all on and off"
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "label": "What to do on button Down press",
+            "description": "Defines how to interpret button Down press. Depends on 'Switch by buttons' parameter.",
+            "overview": "Defines how to interpret button Down press. Depends on \"Switch by buttons\" parameter. If not Disabled this parameter will affect the action selected by the latter parameter. Can be used in conjunction with Auto Off function.",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Close"
+                },
+                {
+                    "value": 1,
+                    "label": "Open if closed else close"
+                },
+                {
+                    "value": 2,
+                    "label": "Open"
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "label": "Action on Auto open or close function",
+            "description": "Defines the action to perform upon auto open or auto close.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Close blinds"
+                },
+                {
+                    "value": 1,
+                    "label": "Open blinds"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Single press and hold of up\/down buttons",
+            "max_nodes": 8,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Double press and press-hold of up\/down buttons",
+            "max_nodes": 8,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "Send Reports on blind state change",
+            "max_nodes": 8,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

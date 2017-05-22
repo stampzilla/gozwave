@@ -1,0 +1,632 @@
+{
+    "database_id": 252,
+    "label": "DCH-Z110",
+    "manufacturer_name": "D-Link",
+    "manufacturer_id": "0108",
+    "device_ref": [
+        "0002:000E"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Door & Window Sensor",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.095,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SENSOR_NOTIFICATION"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_NOTIFICATION_SENSOR"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 7,
+                "name": "GENERIC_TYPE_SENSOR_NOTIFICATION"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_NOTIFICATION_SENSOR"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "30",
+                    "name": "SENSOR_BINARY",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_door",
+                            "label": "Door \/ Window Status",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "5",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_luminance",
+                            "label": "Sensor (luminance)",
+                            "config": [
+                                "type=LUMINANCE"
+                            ]
+                        },
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Sensor (temperature)",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "4",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_general",
+                            "label": "Alarm",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "7A",
+                    "name": "FIRMWARE_UPDATE_MD",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8F",
+                    "name": "MULTI_CMD",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "98",
+                    "name": "SECURITY",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 2,
+            "label": "Basic Set Level",
+            "description": "Setting the BASIC command value to turn on the light.",
+            "overview": "<ul>\r\n<li>0: Turn off the light.<\/li>\r\n<li>1 - 100: For dimmers 1 to 100 means the light level.<\/li>\r\n<li>255: Turns on the light. (Default)\u00a0<\/li>\r\n<\/ul>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Off"
+                },
+                {
+                    "value": 255,
+                    "label": "On"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "label": "PIR Sensitivity",
+            "description": "Set the sensitivity for the PIR (Passive Infrared Sensor).",
+            "overview": "<ul>\r\n<li>0 = Disable the PIR motion detection.<\/li>\r\n<li>1 - 99 = 1 means the lowest sensitivity, 99 means the highest sensitivity<\/li>\r\n<\/ul>\r\n<p>High sensitivity means de<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 70,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 99,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "label": "Light Threshold",
+            "description": "Set the illumination threshold to turn on the light. ",
+            "overview": "<p>When the event triggers and the environment illumination is lower than the threshold, the device will turn on the light.<\/p>\r\n<ul>\r\n<li>0 = Turn off illumination detected function and never turn<\/li>\r\n<\/ul>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 100,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "label": "Operation Mode",
+            "description": "Parameter to set the Operation Mode.\t\t\t\tBit 0: Reserved.\t\t\t\tBit 1: 1 means enable test mode; 0 means normal mode. Notice: Ignored if DIP Switch is not set to Customer Mode.\t\t\t\tBit 2: Disable the door\/window function. 1",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": [
+                {
+                    "value": 10,
+                    "label": "Preset: Celsius and LED on = Bits: 00001010 = 10"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "label": "Multi-Sensor Function Switch",
+            "description": "Parameter to set the sensor functions.<br\/>\r\n\t\t\t\t<ul><li>Bit 0: Disable magnetic integrate illumination to turn on the lighting nodes in the association group 2. 1: Disable, 0: Enable<\/li>\r\n\t\t\t\t<li>Bit 1: Disable PIR integrate Illumination to turn on the ",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 4,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 7,
+            "label": "Customer Function",
+            "description": "Parameter to set the Customer Function.",
+            "overview": "<p>l<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 4,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": [
+                {
+                    "value": 20,
+                    "label": "Preset: PIR Super Sensitivity and Binary Report = Bits: 00010100 = 20"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "label": "Disable send of BASIC OFF after door closed",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000008",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Enable"
+                },
+                {
+                    "value": 1,
+                    "label": "Disable"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "label": "Notification Type",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000010",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Notification Report"
+                },
+                {
+                    "value": 1,
+                    "label": "Sensor Binary Report"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "label": "Disable Multi CC in auto report",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000020",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Enable"
+                },
+                {
+                    "value": 1,
+                    "label": "Disable"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "label": "Disable to report battery state when the device triggered",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000040",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Enable"
+                },
+                {
+                    "value": 1,
+                    "label": "Disable"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "label": "PIR Re-Detect Interval Time",
+            "description": "In the normal mode, after the PIR motion detected, setting the re-detect time. 8 seconds per tick, default is 3 (24 seconds).<br\/>\n\n\t\t\t\t<ul><li>1 - 127 = Number of ticks. 8 seconds per tick, default value is 3 (24 seconds).<\/li><\/ul>",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 9,
+            "label": "Turn Off Light Time",
+            "description": "After turn on the light, setting the delay time to turn off the light when the PIR motion is not detected.<br\/>\r\n\t\t\t\t<ul><li>0 = Never send turn off light command.<\/li>\r\n\t\t\t\t<li>1 - 127 = Number of ticks. 8 seconds per tick, default value is 4 (32 seconds",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 4,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 10,
+            "label": "Auto Report Battery Time",
+            "description": "The interval time for auto reporting the battery level.<br\/>\r\n\t\t\t\t<ul><li>0 = Turn off auto report battery.<\/li>\r\n\t\t\t\t<li>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.<\/li><\/ul>",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 12,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 11,
+            "label": "Auto Report Door\/Window State Time",
+            "description": "The interval time for auto reporting the door\/window state.<br\/>\r\n\t\t\t\t<ul><li>0 = Turn off auto report door\/window state.<\/li>\r\n\t\t\t\t<li>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.<\/li><\/ul>",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 12,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 12,
+            "label": "Auto Report Illumination Time",
+            "description": "The Interval time for auto reporting the illumination state.<br\/>\r\n\t\t\t\t<il><li>0 = Turn off auto report illumination.<\/li>\r\n\t\t\t\t<li>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.<\/li><\/ul>",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 12,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 13,
+            "label": "Auto Report Temperature Time",
+            "description": "The interval time for auto reporting the temperature state.<br\/>\r\n\t\t\t\t<ul><li>0 = Turn off auto report temperature.<\/li>\r\n\t\t\t\t<li>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.<\/li><\/ul>",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 12,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 20,
+            "label": "Auto Report Tick Interval",
+            "description": "The interval time for each auto report tick. Setting this configuration will effect configuration No.10, No.11, No.12 and No.13.\t\t\t\t0 = Turn off all auto report functions.\t\t\t\t1-255 = Interval time for each tick. Default is 30. Unit is in minutes",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 30,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 21,
+            "label": "Temperature Differential Report",
+            "description": "The temperature differential to report. The unit is Fahrenheit. When enabled, the device will measure the temperature every minute and when the temperature is over 140 degree Fahrenheit, it will continuesly report. Enabling this functionality will cause s",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 22,
+            "label": "Illumination Differential Report",
+            "description": "The illumination differential to report. The unit is percentage. When enabled, the device will measure every minute. Enabling this functionality will cause some issue. Please check the \u201cIllumination Report\u201d section of the Multisensor manual.<br\/>\r\n\t\t\t\t<ul",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 99,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Reports",
+            "max_nodes": 8,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Light Control",
+            "max_nodes": 8,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

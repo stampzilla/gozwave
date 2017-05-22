@@ -1,0 +1,398 @@
+{
+    "database_id": 584,
+    "label": "ZSE09",
+    "manufacturer_name": "Zooz",
+    "manufacturer_id": "027A",
+    "device_ref": [
+        "0083:0003"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Zooz Z-Wave Motion and Light Mini Sensor",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 4.033,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": false,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SENSOR_NOTIFICATION"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_NOTIFICATION_SENSOR"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 7,
+                "name": "GENERIC_TYPE_SENSOR_NOTIFICATION"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_NOTIFICATION_SENSOR"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_binary",
+                            "label": "sensor_binary",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "30",
+                    "name": "SENSOR_BINARY",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_binary",
+                            "label": "sensor_binary",
+                            "config": []
+                        },
+                        {
+                            "type": "alarm_motion",
+                            "label": "alarm_motion",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "7",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_luminance",
+                            "label": "sensor_luminance",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Motion Sensitivity",
+            "description": "8 = high; 255 = low ",
+            "overview": "<p>Adjust detection by choosing a value from 8 to 255, where 8 stands for high sensitivity level (detection of the smallest movement) and 255 stands for very low sensitivity level<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 12,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 8,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 2,
+            "label": "Trigger ON Duration",
+            "description": "delay after motion before turning OFF ",
+            "overview": "<p>Set the duration (in seconds) you want the associated device to stay ON for after being triggered by the sensor before it automatically turns OFF. Must be greater than value set in parameter 6.<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 30,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 5,
+            "value_max": 600,
+            "options": []
+        },
+        {
+            "id": 3,
+            "label": "Trigger Action",
+            "description": "Brightness to turn on the associated device 1-99, 255=ON",
+            "overview": "<p>You can choose if your Mini Sensor turns an associated device on or off when sending the BASIC SET command. Use value 0 to turn the associated device OFF and value 255 to turn it ON. Adjust brightness level for a Z-Wave dimmer (Multilevel switch) by putting in any value between 1 and 99.\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 4,
+            "label": "Motion Detection",
+            "description": "255=Motion Detection Enabled",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 5,
+            "label": "Light Trigger Level",
+            "description": "Max Light level which enables motion trigger",
+            "overview": "<p>Set your light sensor as a secondary trigger for associated devices. If light level in a room falls beyond the set point and motion is detected, the Mini Sensor will send BASIC_SET command to associated devices to turn ON. The number entered as the value corresponds to the number of LUX. By default, if motion has been detected by your Mini Sensor, the associated device will turn ON if light level last reported by the sensor is under 100 LUX.\u00a0<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 100,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1000,
+            "options": []
+        },
+        {
+            "id": 6,
+            "label": "Motion Trigger Interval",
+            "description": "Minimum time between motion triggers.",
+            "overview": "<p>Adjust the time (in seconds) when motion is reported again after initial trigger. By default, with continued motion, the Mini Sensor will report motion again 8 seconds after it's last detection. The value set for this parameter can NOT be greater than value set in parameter 2. NOTE: Small interval will increase activity and decrease battery life.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 8,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 8,
+            "options": []
+        },
+        {
+            "id": 7,
+            "label": "Light Polling Interval",
+            "description": "Interval between light level reporting",
+            "overview": "<p>Decide how often (in seconds) you want the Mini Sensor to report light level to the controller and associated devices. By default, the Mini Sensor will report light level values every 3 minutes. The value set for this parameter can NOT be greater than the wake-up interval. NOTE: Small interval will increase activity and decrease battery life.<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 180,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 60,
+            "value_max": 360000,
+            "options": []
+        },
+        {
+            "id": 8,
+            "label": "Light Trigger",
+            "description": "255=enable Light sensor",
+            "overview": "<p>Use this parameter to enable and disable the light sensor as secondary trigger. If this feature is enabled, the Mini Sensor will activate associated devices based on motion AND light level set in parameter 5<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 9,
+            "label": "Light Report",
+            "description": "Light level change to be reported.",
+            "overview": "<p>Choose light level (in LUX) change to be reported by the Mini Sensor to the controller. By default, the sensor will report any change of 100 LUX or more.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 10,
+            "label": "LED Notifications",
+            "description": "0=disable, 1=enable",
+            "overview": "<p>Use this parameter to turn LED notifications on or off for motion detection.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Status to controller",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "",
+            "overview": "<p>lifeline communication of motion \/ no motion and light level status to Z-Wave controller. Supported command classes: NOTIFICATION_REPORT_V4 SENSOR_BINARY_REPORT_V2 SENSOR_MULTILEVEL_REPORT_V7 BATTERY_REPORT DEVICE_RESET_LOCALLY_NOTIFICATION<\/p>"
+        },
+        {
+            "id": 2,
+            "label": "BASIC",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "BASIC_SET Trigger associated devices ",
+            "overview": "<p>control command communication to associated Z-Wave devices in the network. Use parameters 2, 3, 5, and 8 to configure this group\u2019s settings. Supported command classes: BASIC_SET\u00a0<\/p>"
+        },
+        {
+            "id": 3,
+            "label": "Notification Reports",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "NOTIFICATION_REPORT_V4",
+            "overview": "<p>notifications to Z-Wave devices associated in this group. Supported command classes: NOTIFICATION_REPORT_V4<\/p>"
+        },
+        {
+            "id": 4,
+            "label": "SENSOR BINARY",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "SENSOR_BINARY_REPORT_V2",
+            "overview": "<p>notifications to Z-Wave devices associated in this group. Supported command classes: SENSOR_BINARY_REPORT_V2<\/p>"
+        }
+    ]
+}

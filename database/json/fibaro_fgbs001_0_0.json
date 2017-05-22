@@ -1,0 +1,798 @@
+{
+    "database_id": 126,
+    "label": "FGBS001",
+    "manufacturer_name": "Fibargroup",
+    "manufacturer_id": "010F",
+    "device_ref": [
+        "0501:0102",
+        "0501:1002",
+        "0501:2002",
+        "0501:3002"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Universal Binary Sensor",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.052,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SENSOR_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_ROUTING_SENSOR_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 32,
+                "name": "GENERIC_TYPE_SENSOR_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_ROUTING_SENSOR_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "2B",
+                    "name": "SCENE_ACTIVATION",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "scene_number",
+                            "label": "Scene Number",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "30",
+                    "name": "SENSOR_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "60",
+                    "name": "MULTI_INSTANCE",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 32,
+                "name": "GENERIC_TYPE_SENSOR_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_ROUTING_SENSOR_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "30",
+                    "name": "SENSOR_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_binary",
+                            "label": "Binary Sensor 1",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "9C",
+                    "name": "SENSOR_ALARM",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": false,
+                    "config": "NOGETSUPPORTED",
+                    "channels": [
+                        {
+                            "type": "alarm_general",
+                            "label": "Alarm 1",
+                            "config": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 32,
+                "name": "GENERIC_TYPE_SENSOR_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_ROUTING_SENSOR_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "30",
+                    "name": "SENSOR_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_binary",
+                            "label": "Binary Sensor 2",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "9C",
+                    "name": "SENSOR_ALARM",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "NOGETSUPPORTED",
+                    "channels": [
+                        {
+                            "type": "alarm_general",
+                            "label": "Alarm 2",
+                            "config": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 33,
+                "name": "GENERIC_TYPE_SENSOR_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_ROUTING_SENSOR_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Temperature 1",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 33,
+                "name": "GENERIC_TYPE_SENSOR_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_ROUTING_SENSOR_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Temperature 2",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 33,
+                "name": "GENERIC_TYPE_SENSOR_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_ROUTING_SENSOR_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Temperature 3",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 33,
+                "name": "GENERIC_TYPE_SENSOR_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_ROUTING_SENSOR_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Temperature 4",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "IN1 Alarm Cancellation Delay",
+            "description": "Input I alarm cancellation delay.",
+            "overview": "<p>Additional delay after an alarm from input IN1 has ceased. The parameter allows you to specify additional time, after which the input no. 1 alarm is cancelled once its violation has ceased.<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 2,
+            "label": "IN2 Alarm Cancellation Delay",
+            "description": "Input 2 alarm cancellation delay. ",
+            "overview": "<p>Additional delay after an alarm from input IN2 has ceased. The parameter allows you to specify additional time, after which the input no. 2 alarm is cancelled once its violation has ceased.<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 3,
+            "label": "Type of input no. 1",
+            "description": "Type of input no. 1, what the input 1 will report if no contact is made",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "NO (Normal Open)"
+                },
+                {
+                    "value": 1,
+                    "label": "NC (Normal Close)"
+                },
+                {
+                    "value": 2,
+                    "label": "MONOSTABLE"
+                },
+                {
+                    "value": 3,
+                    "label": "BISTABLE"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "label": "Type of input no. 2",
+            "description": "Type of input no. 2, what the input 2 will report if no contact is made",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "NO (Normal Open)"
+                },
+                {
+                    "value": 1,
+                    "label": "NC (Normal Close)"
+                },
+                {
+                    "value": 2,
+                    "label": "MONOSTABLE"
+                },
+                {
+                    "value": 3,
+                    "label": "BISTABLE"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "label": "Type of transmitted control frame for association group 1",
+            "description": "Type of transmitted control frame for association group 1.",
+            "overview": "<p>Activated via input IN1. The parameter allows to specify the type of alarm frame or to force transmission of control commands (BASIC_SET)<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "ALARM GENERIC"
+                },
+                {
+                    "value": 1,
+                    "label": "ALARM SMOKE"
+                },
+                {
+                    "value": 2,
+                    "label": "ALARM CO"
+                },
+                {
+                    "value": 3,
+                    "label": "ALARM CO2"
+                },
+                {
+                    "value": 4,
+                    "label": "ALARM HEAT"
+                },
+                {
+                    "value": 5,
+                    "label": "ALARM WATER"
+                },
+                {
+                    "value": 255,
+                    "label": "BASIC_SET"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "label": "Type of transmitted control frame for association group 2",
+            "description": "Type of transmitted control frame for association group 2",
+            "overview": "<p>Activated via input IN2. The parameter allows to specify the type of alarm frame or to force transmission of control commands (BASIC_SET)<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "ALARM GENERIC"
+                },
+                {
+                    "value": 1,
+                    "label": "ALARM SMOKE"
+                },
+                {
+                    "value": 2,
+                    "label": "ALARM CO"
+                },
+                {
+                    "value": 3,
+                    "label": "ALARM CO2"
+                },
+                {
+                    "value": 4,
+                    "label": "ALARM HEAT"
+                },
+                {
+                    "value": 5,
+                    "label": "ALARM WATER"
+                },
+                {
+                    "value": 255,
+                    "label": "BASIC_SET"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "label": "Forced Level of Dimming group 1",
+            "description": "Value of the parameter specifying the forced levels. ",
+            "overview": "<p>Value of the parameter specifying the forced levels of dimming \/ opening sun blinds when comes 'switch on' \/ 'open' command to devices from association group no. 1.&lt;BR\/&gt;In the case of alarm frames the alarm priority is specified.<\/p> <p>Possible parameter settings: (1 \u2013 99) and 255<br \/>Value of 255 makes it possible to activate the device when using<br \/>the Dimmer module it means activating the device and setting it to<br \/>the previous stored condition, e.g. when Dimmer is set to 30%, then<br \/>deactivated, and then reactivated using command 255, it will<br \/>automatically be set to the previous condition, i.e. 30%. <\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 8,
+            "label": "Forced Level of Dimming group 2",
+            "description": "Value of the parameter specifying forced levels.",
+            "overview": "<p>Value of the parameter specifying the forced level of dimming \/<br \/>opening sun blinds when comes \u201cswitch on\u201d \/ \u201dopen\u201d command to<br \/>devices from association group no. 2.<br \/>In the case of alarm frames the alarm priority is specified.<br \/>Default value: 255<br \/>Possible parameter settings:<br \/>(1 \u2013 99) and 255<br \/>Value of 255 makes it possible to activate the device; when using of<br \/>the Dimmer module it means activating the device and setting it to<br \/>the previous stored condition, e.g. when Dimmer is set to 30%, then<br \/>deactivated, and then reactivated using command 255, it will<br \/>automatically be set to the previous condition, i.e. 30%. <\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 9,
+            "label": "Deactivate transmission of frame canceling alarm",
+            "description": "Deactivating transmission of the frame cancelling the alarm",
+            "overview": "<p>or the<br \/>control frame deactivating the device (Basic). It allows for disabling<br \/>the deactivation function or the alarm cancellation function for<br \/>devices associated with the appropriate input of the Fibaro Sensor.<br \/>Default value: 0, in the case of association group no. 1 and 2 the<br \/>information is sent<br \/>Possible parameter settings:<br \/>0 \u2013 in the case of association group no. 1 and 2 the information is<br \/>sent<br \/>1 \u2013 in the case of association group no. 1 the information is sent. In<br \/>the case of association group no. 2 the information is not sent.<br \/>2 \u2013 in the case of association group no. 1 the information is not<br \/>sent. In the case of association group no. 2 the information is sent.<br \/>NOTE: Information concerning alarm violation or activation<br \/>commands for devices from association groups are always<br \/>sent. <\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Groups 1 and 2 sent"
+                },
+                {
+                    "value": 1,
+                    "label": "Group 1 sent, Group 2 not sent."
+                },
+                {
+                    "value": 2,
+                    "label": "Group 1 not sent, Group 2 sent."
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "label": "Interval between successive readings of temperature sensors",
+            "description": "Interval between successive readings of temperature",
+            "overview": "<p>\u00a0from all sensors connected to the device in seconds. Note: taking temperature readings from the sensor does not result in sending a temperature condition report to the central hub.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 20,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 11,
+            "label": "Interval betw. forcing to send report concerning the temp.",
+            "description": "The forced report is sent immediately after",
+            "overview": "<p>\u00a0the next reading of temperature from the sensor, irrespective of the settings<br \/>of parameter no. 12.<br \/>Default value: 200 s<br \/>Possible parameter settings:<br \/>0 \u2013 255 s<br \/>0 \u2013 deactivating the function<br \/>Note: Frequent sending of temperature condition reports is<br \/>reasonable when the sensor is located somewhere where can<br \/>occure rapid changes of ambient temperature. In other cases<br \/>it is recommended to leave the parameter set to the default<br \/>value.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 200,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 12,
+            "label": "Insensitiveness to temperature changes.",
+            "description": "This is the maximum acceptable difference between",
+            "overview": "<p>\u00a0the last reported temperature and the current temperature taken from the sensor. If the temperatures differ by the set value or more, then a report with the current temperature value is sent to the device<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 8,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 13,
+            "label": "Transmitting the alarm or control frame broadcast mode",
+            "description": "Transmitting the alarm or control frame in 'broadcast' mode",
+            "overview": "<p>\u00a0(i.e. to all devices within range), information sent in this mode is not repeated by the mesh network.&lt;BR\/&gt;&lt;B&gt;NOTE:&lt;\/B&gt; If the broadcast mode of information transmission is activated for a given channel, then transmission of<br \/>information in \u201csinglecast\u201d mode to devices assigned to the<br \/>association group of this channel is deactivated. <\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "IN1 and IN2 Broadcast inactive"
+                },
+                {
+                    "value": 1,
+                    "label": "IN1 broadcast mode active, Sensor 2 broadcast mode inactive"
+                },
+                {
+                    "value": 2,
+                    "label": "IN1 broadcast mode inactive, Sensor 2 broadcast mode active"
+                },
+                {
+                    "value": 3,
+                    "label": "INI and IN2 broadcast mode active"
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "label": "Scene activation",
+            "description": "Enable\/Disable scene functionality. ",
+            "overview": "<p>The device offers the possibility of sending commands compatible with Command class scene activation. Information is sent to devices assigned to association group no. 3.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Scenes disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Scenes enabled"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Input 1",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Input 2",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "Controller Updates",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "Reports on the condition of the device",
+            "overview": ""
+        }
+    ]
+}

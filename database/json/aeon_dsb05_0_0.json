@@ -1,0 +1,387 @@
+{
+    "database_id": 71,
+    "label": "DSB05",
+    "manufacturer_name": "AEON Labs",
+    "manufacturer_id": "0086",
+    "device_ref": [
+        "0002:0005"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "4 in One MultiSensor",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.028,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": false,
+    "library_type": {
+        "id": 7,
+        "name": "LIB_CONTROLLER_BRIDGE"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SENSOR_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_ROUTING_SENSOR_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 32,
+                "name": "GENERIC_TYPE_SENSOR_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_ROUTING_SENSOR_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "30",
+                    "name": "SENSOR_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_binary",
+                            "label": "Binary Sensor",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "5",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "NOGET",
+                    "channels": [
+                        {
+                            "type": "sensor_relhumidity",
+                            "label": "Sensor (relative humidity)",
+                            "config": [
+                                "type=RELATIVE_HUMIDITY"
+                            ]
+                        },
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Sensor (temperature)",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        },
+                        {
+                            "type": "sensor_luminance",
+                            "label": "Sensor (luminance)",
+                            "config": [
+                                "type=LUMINANCE"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 2,
+            "label": "Wake up for 10 minutes when batteries are inserted",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "disable (default)"
+                },
+                {
+                    "value": 1,
+                    "label": "enable"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "label": "On time",
+            "description": "On time before sending off command",
+            "overview": "<p>How long should the device associated to multi sensor keep state On before sending it Off command (if the value is bigger than 255, the value would be rounded to next integer in minutes)<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 240,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 15300,
+            "options": []
+        },
+        {
+            "id": 4,
+            "label": "Motion sensor",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Enabled"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "label": "Command to send when movement",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Send Basic Set"
+                },
+                {
+                    "value": 2,
+                    "label": "send Sensor Binary report"
+                }
+            ]
+        },
+        {
+            "id": 101,
+            "label": "Which reports to send to group 1",
+            "description": "Group 1 automatic report list",
+            "overview": "<p>The value is a combination number made up of the sum of the values for the individual sensors and battery.<\/p> <p>The sensors have the values:<\/p> <p>Temperature=32<\/p> <p>Humidity=64<\/p> <p>Lightlevel=128<\/p> <p>Battery=1\u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0<\/p> <p>Therefore if you want all sensors and the battery report set this value to <strong>225<\/strong> (recommended)<\/p>",
+            "size": 4,
+            "bitmask": "000000FF",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 225,
+            "options": []
+        },
+        {
+            "id": 102,
+            "label": "Which reports to send to group 2",
+            "description": "Group 2 automatic report list",
+            "overview": "<p>The value is a combination number made up of the sum of the values for the individual sensors and battery.<\/p>\r\n<p>The sensors have the values:<\/p>\r\n<p>Temperature=32<\/p>\r\n<p>Humidity=64<\/p>\r\n<p>Lightlevel=128<\/p>\r\n<p>Battery=1\u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0<\/p>\r\n<p>Therefore if you want all sensors and the battery report set this value to 225<\/p>",
+            "size": 4,
+            "bitmask": "000000FF",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 225,
+            "options": []
+        },
+        {
+            "id": 103,
+            "label": "Which reports to send to group 3",
+            "description": "Group 3 automatic report list",
+            "overview": "<p>The value is a combination number made up of the sum of the values for the individual sensors and battery.<\/p>\r\n<p>The sensors have the values:<\/p>\r\n<p>Temperature=32<\/p>\r\n<p>Humidity=64<\/p>\r\n<p>Lightlevel=128<\/p>\r\n<p>Battery=1\u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0<\/p>\r\n<p>Therefore if you want all sensors and the battery report set this value to 225<\/p>",
+            "size": 4,
+            "bitmask": "000000FF",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 225,
+            "options": []
+        },
+        {
+            "id": 111,
+            "label": "Interval to send out reports of group 1",
+            "description": "",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 720,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 2678400,
+            "options": []
+        },
+        {
+            "id": 112,
+            "label": "Interval to send out reports of group 2",
+            "description": "",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 720,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 2678400,
+            "options": []
+        },
+        {
+            "id": 113,
+            "label": "Interval to send out reports of group 3",
+            "description": "",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 720,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 2678400,
+            "options": []
+        },
+        {
+            "id": 255,
+            "label": "Reset to the default Configuration of all parameters",
+            "description": "Set to 1 to reset to factory default",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": true,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Group 1 devices",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "",
+            "overview": "<p>Devices to be switched on when motion detected and off after on time<\/p>"
+        }
+    ]
+}

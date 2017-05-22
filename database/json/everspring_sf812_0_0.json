@@ -1,0 +1,178 @@
+{
+    "database_id": 33,
+    "label": "SF812",
+    "manufacturer_name": "Everspring",
+    "manufacturer_id": "0060",
+    "device_ref": [
+        "000D:0001"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Smoke Sensor",
+    "overview": "<p>The photoelectric Smoke Detector is a Z-WaveTM enabled device which is fully<br \/>compatible with any Z-WaveTM enabled network. Z-WaveTM enabled devices<br \/>displaying the Z-WaveTM logo can also be used with it regardless of the<br \/>manufacturer, and ours can also be used in other manufacturer\u2019s Z-WaveTM<br \/>enabled networks. Inclusion of this detector on other manufacturer\u2019s Wireless<br \/>Controller menu allows remote operation of connected modules when the<br \/>detector is triggered.<br \/>The detector is designed to sense smoke that comes into the detector chamber.<br \/>It does not sense gas, heat, or flame. The working principle is when the smoke<br \/>detector detects a certain density of smoke, the horn of smoke detector will<br \/>sound and in the meantime, the detector will emit the signals to the associated<br \/>devices for further execution. It can provide precious time for you and your<br \/>family to escape before a fire spreads.<\/p>",
+    "inclusion": "<p>Pressing link key three times within 1.5 second will enter inclusion mode. The Detector will stay \u201cawake\u201d for 10 minutes to allow time for setting and device status enquiring.<\/p>",
+    "exclusion": "<p>Pressing link key three times within 1.5 second will enter exclusion mode. The Detector will stay \u201cawake\u201d for 10 minutes to allow time for setting and device status enquiring.<\/p>",
+    "wakeup": "",
+    "protocol_version": 2.064,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": false,
+    "library_type": {
+        "id": 7,
+        "name": "LIB_CONTROLLER_BRIDGE"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SENSOR_ALARM"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_ROUTING_SMOKE_SENSOR"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 161,
+                "name": "GENERIC_TYPE_SENSOR_ALARM"
+            },
+            "specific_class": {
+                "id": 7,
+                "name": "SPECIFIC_TYPE_ROUTING_SMOKE_SENSOR"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_tamper",
+                            "label": "Alarm (tamper)",
+                            "config": [
+                                "type=SMOKE"
+                            ]
+                        },
+                        {
+                            "type": "alarm_battery",
+                            "label": "Alarm (Low battery)",
+                            "config": [
+                                "type=POWER_MANAGEMENT"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "9C",
+                    "name": "SENSOR_ALARM",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_smoke",
+                            "label": "Alarm (smoke)",
+                            "config": [
+                                "type=SMOKE"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "parameters": [],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Alarm notifications",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

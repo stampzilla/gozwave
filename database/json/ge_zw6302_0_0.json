@@ -1,0 +1,290 @@
+{
+    "database_id": 447,
+    "label": "ZW6302",
+    "manufacturer_name": "Jasco Products",
+    "manufacturer_id": "0063",
+    "device_ref": [
+        "4953:3133"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Portable Smart Motion Sensor",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 4.024,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SENSOR_NOTIFICATION"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_NOTIFICATION_SENSOR"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 7,
+                "name": "GENERIC_TYPE_SENSOR_NOTIFICATION"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_NOTIFICATION_SENSOR"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "30",
+                    "name": "SENSOR_BINARY",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_binary",
+                            "label": "Binary Sensor",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_general",
+                            "label": "Alarm",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 13,
+            "label": "Motion Sensor",
+            "description": "Motion Sensor",
+            "overview": "<p>Detect Motion<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 3,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Low Sensitivity"
+                },
+                {
+                    "value": 2,
+                    "label": "Medium Sensitivity"
+                },
+                {
+                    "value": 3,
+                    "label": "High Sensitivity"
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "label": "PIR Timeout Duration",
+            "description": "PIR Timeout Duration",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 60,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 60,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "1 min to 60 min"
+                },
+                {
+                    "value": 255,
+                    "label": "5 seconds"
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "label": "Basic Set, Notification and Basic Report",
+            "description": "Basic Set, Notification and Basic Report",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Motion Sensor will send out Notification"
+                },
+                {
+                    "value": 2,
+                    "label": "Motion Sensor will send out Basic Set"
+                },
+                {
+                    "value": 3,
+                    "label": "Motion Sensor will sendout Basic Report"
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "label": "Enable & Disable the LED indication when PIR is triggered",
+            "description": "Enable & Disable the LED indication when PIR is triggered",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                },
+                {
+                    "value": 1,
+                    "label": "Enable"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "ZW6302",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "Portable Smart Motion Sensor",
+            "overview": "<p><span style=\"color: #6d6e71; font-family: Ubuntu, Arial, Helvetica, sans-serif; font-size: 12.800000190734863px; text-align: center;\">Group 1 supports Z-Wave Plus lifeline communication and notification. lifeline association only supports the \"manual reset\" event and notification report, however it can be changed to send basic set with notification and basic report with notification. See programming instructions.<\/span><\/p>"
+        }
+    ]
+}

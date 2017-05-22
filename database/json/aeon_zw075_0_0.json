@@ -1,0 +1,572 @@
+{
+    "database_id": 83,
+    "label": "ZW075",
+    "manufacturer_name": "AEON Labs",
+    "manufacturer_id": "0086",
+    "device_ref": [
+        "0003:004B",
+        "0203:004B"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Smart Energy Switch 3rd Edition",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.083,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "22",
+                    "name": "APPLICATION_STATUS",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "2B",
+                    "name": "SCENE_ACTIVATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "30",
+                    "name": "SENSOR_BINARY",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_current",
+                            "label": "Electric meter (amps)",
+                            "config": [
+                                "type=E_A"
+                            ]
+                        },
+                        {
+                            "type": "meter_voltage",
+                            "label": "Electric meter (volts)",
+                            "config": [
+                                "type=E_V"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        },
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh)",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "56",
+                    "name": "CRC_16_ENCAP",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 2,
+            "label": "Blinking Behaviour",
+            "description": "The LSB defines the total time the device need to blink.\t\t\t\tThe value if set in seconds. 1 - 255 The MSB defines the on\/off interval of the blinking.\t\t\t\tThe unit is 0.1 s. This is a double byte value. ",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 3,
+            "label": "Current Overload Protection",
+            "description": "Load will be closed when the Current over runs<br> \r\n\t\t\t(US: 15.5A, other country: 16.2A) for more than 2 minutes.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Enabled"
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "label": "Output Load Status",
+            "description": "Configure the output load status after re\u2010power on.\r\n\t\t\t",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Last Status"
+                },
+                {
+                    "value": 1,
+                    "label": "Always On"
+                },
+                {
+                    "value": 2,
+                    "label": "Always Off"
+                }
+            ]
+        },
+        {
+            "id": 80,
+            "label": "Notification on Status Change",
+            "description": "Enable device to send notification to associated devices (Group 1)<br>\r\n\t\t\t\twhen the state of Micro Smart Switch's load changed. DEFAULT is Disable",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                },
+                {
+                    "value": 1,
+                    "label": "Hail CC Sent"
+                },
+                {
+                    "value": 2,
+                    "label": "Basic CC Report Sent"
+                }
+            ]
+        },
+        {
+            "id": 81,
+            "label": "Configure the state of red LED ",
+            "description": "Enable the device to send notification to associated devices (Group 1)<br> \r\n\t\t\t\twhen the state of the Micro Smart Switch's load changed",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "The LED will follow the status of its load"
+                },
+                {
+                    "value": 1,
+                    "label": "Switch off after 5 seconds"
+                }
+            ]
+        },
+        {
+            "id": 90,
+            "label": "Enables\/disables parameter 91\/92",
+            "description": "Parameter to Enable\/Disable automated sending of a Report <br> \r\n\t\t\ttriggered by minimal change of value.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                },
+                {
+                    "value": 1,
+                    "label": "Enable"
+                }
+            ]
+        },
+        {
+            "id": 91,
+            "label": "Minimum Change to send Report (Watt)",
+            "description": "The value represents the minimum change in Wattage <br>\r\n\t\t\t\tfor a Report to be sent. Range is 0 - 32000",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 25,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32000,
+            "options": []
+        },
+        {
+            "id": 92,
+            "label": "Minimum Change to send Report (%)",
+            "description": "The value represents the minimum change in Wattage <br>\r\n\t\t\t\tPercent for a report to be sent. Range is 0 to 100%",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 100,
+            "label": "Set 101\u2010103 to default",
+            "description": "Parameter to Enable\/Disable automated sending of a Report <br> \r\n\t\t\ttriggered by minimal change of value.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Set to Default"
+                },
+                {
+                    "value": 1,
+                    "label": "Nothing"
+                }
+            ]
+        },
+        {
+            "id": 101,
+            "label": "Report type to send to Group 1",
+            "description": "The value is a combination number <br> \r\n\t\t\t\tmade up of the sum of the values for the individual parameters. <br>\r\n\t\t\t\tThe parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1. <br>\r\n\t\t\t\tTherefore if you want all parameters sending regular r",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 4,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 102,
+            "label": "Report type to send to Group 2",
+            "description": "The value is a combination number <br>\r\n\t\t\t\tmade up of the sum of the values for the individual parameters. <br>\r\n\t\t\t\tThe parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1. <br>\r\n\t\t\t\tTherefore if you want all parameters sending regular re",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 8,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 103,
+            "label": "Report type to send to Group 3",
+            "description": "The value is a combination number <br>\r\n\t\t\t\tmade up of the sum of the values for the individual parameters. <br>\r\n\t\t\t\tThe parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1. <br>\r\n\t\t\t\tTherefore if you want all parameters sending regular re",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 111,
+            "label": "Interval to send out reports to Group 1",
+            "description": "Defines the time interval when the defined report of Reporting Group 1 is sent out. <br>\r\n\t\t\t\t0 s - 65535 s - Interval",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 720,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 112,
+            "label": "Interval to send out reports of group 2",
+            "description": "Defines the time interval when the defined report of Reporting Group 1 is sent out. <br>\r\n\t\t\t\t0 s - 65535 s - Interval",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 720,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 113,
+            "label": "Interval to send out reports of group 3",
+            "description": "Defines the time interval when the defined report of Reporting Group 1 is sent out. <br>\r\n\t\t\t\t0 s - 65535 s - Interval",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 65535,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 252,
+            "label": "Enable\/disable Configuration Lock",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                },
+                {
+                    "value": 1,
+                    "label": "Enable"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Group 1",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Group 2",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

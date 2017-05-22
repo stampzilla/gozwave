@@ -1,0 +1,429 @@
+{
+    "database_id": 94,
+    "label": "CT30",
+    "manufacturer_name": "Radio Thermostat Company of America (RTC)",
+    "manufacturer_id": "0098",
+    "device_ref": [
+        "0001:001E",
+        "1E10:0158",
+        "1E12:015E",
+        "3200:015E",
+        "1E12:015C",
+        "0000:0000"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Z-Wave Thermostat",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 2.078,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_THERMOSTAT"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_THERMOSTAT_GENERAL_V2"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 8,
+                "name": "GENERIC_TYPE_THERMOSTAT"
+            },
+            "specific_class": {
+                "id": 6,
+                "name": "SPECIFIC_TYPE_THERMOSTAT_GENERAL_V2"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Sensor (temperature)",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "40",
+                    "name": "THERMOSTAT_MODE",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "thermostat_mode",
+                            "label": "Thermostat mode",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "42",
+                    "name": "THERMOSTAT_OPERATING_STATE",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "thermostat_state",
+                            "label": "Operating State",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "43",
+                    "name": "THERMOSTAT_SETPOINT",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "thermostat_setpoint",
+                            "label": "Setpoint (cooling)",
+                            "config": [
+                                "type=COOLING"
+                            ]
+                        },
+                        {
+                            "type": "thermostat_setpoint",
+                            "label": "Setpoint (heating)",
+                            "config": [
+                                "type=HEATING"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "44",
+                    "name": "THERMOSTAT_FAN_MODE",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "thermostat_fanmode",
+                            "label": "Thermostat fan mode",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "81",
+                    "name": "CLOCK",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "time_offset",
+                            "label": "Clock Time Offset",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "87",
+                    "name": "INDICATOR",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Temperature Reporting Threshold",
+            "description": "Sets the reporting threshold for changes in the ambient temperature as detected by the thermostat.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "0.5 \ufffdF"
+                },
+                {
+                    "value": 2,
+                    "label": "1.0 \ufffdF"
+                },
+                {
+                    "value": 3,
+                    "label": "1.5 \ufffdF"
+                },
+                {
+                    "value": 4,
+                    "label": "2.0 \ufffdF"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "label": "Utility Lock Enable\/Disable",
+            "description": "The Utility Lock Configuration Set command enables or disables the utility lock. If the utility lock is enabled, the setpoint cannot be modified directly via the thermostat screen.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Utility lock disable"
+                },
+                {
+                    "value": 1,
+                    "label": "Utility lock enable"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "label": "Humidity Reporting Threshold",
+            "description": "The Humidity Threshold Configuration Set Command sets the reporting threshold for changes in the relative humidity as detected by the thermostat.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "3% RH"
+                },
+                {
+                    "value": 2,
+                    "label": "5% RH"
+                },
+                {
+                    "value": 3,
+                    "label": "10%RH"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "label": "Auxiliary\/Emergency",
+            "description": "The Auxiliary\/Emergency configuration command enables or disables auxiliary \/ emergency heating in the thermostat. Auxiliary \/ emergency heating is only available if the thermostat is configured in heat pump mode and with at least one stage of auxiliary h",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Auxiliary\/Emergency heat disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Auxiliary\/Emergency heat enable"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "label": "Thermostat Swing Temperature",
+            "description": "The Thermostat Swing Temperature configuration command sets swing temperature on the thermostat. The swing temperature is applied to the setpoint to determine when the thermostat will turn on the HVAC system. If the thermostat is heating, the swing temper",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "0.05F"
+                },
+                {
+                    "value": 2,
+                    "label": "0.1F"
+                },
+                {
+                    "value": 8,
+                    "label": "4F"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "label": "Thermostat Diff Temperature",
+            "description": "The Thermostat Differential Temperature configuration command sets the differential temperature for multi-stage HVAC systems. The differential temperature delta defines when the thermostat will turn on additional stages. There are two differential tempera",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 4,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 4,
+                    "label": "2.0 F"
+                },
+                {
+                    "value": 8,
+                    "label": "4.0 F"
+                },
+                {
+                    "value": 12,
+                    "label": "6.0 F"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Group 1",
+            "max_nodes": 2,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

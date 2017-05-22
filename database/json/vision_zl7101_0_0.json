@@ -1,0 +1,119 @@
+{
+    "database_id": 371,
+    "label": "ZL7101",
+    "manufacturer_name": "Vision Security",
+    "manufacturer_id": "0109",
+    "device_ref": [
+        "2008:0801"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Lamp Dimmer Module",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 2.064,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": false,
+    "beaming": false,
+    "library_type": {
+        "id": 7,
+        "name": "LIB_CONTROLLER_BRIDGE"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Dimmer",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "75",
+                    "name": "PROTECTION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [],
+    "associations": []
+}

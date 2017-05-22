@@ -1,0 +1,174 @@
+{
+    "database_id": 462,
+    "label": "507001",
+    "manufacturer_name": "Merten",
+    "manufacturer_id": "007A",
+    "device_ref": [
+        "8001:8001"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Switch Wall Insert 1 Gang",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 2.027,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": false,
+    "library_type": {
+        "id": 6,
+        "name": "LIB_SLAVE_ROUTING"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "28",
+                    "name": "SWITCH_TOGGLE_BINARY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "75",
+                    "name": "PROTECTION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [],
+    "associations": []
+}

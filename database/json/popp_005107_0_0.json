@@ -1,0 +1,321 @@
+{
+    "database_id": 367,
+    "label": "005107",
+    "manufacturer_name": "Popp & Co",
+    "manufacturer_id": "0154",
+    "device_ref": [
+        "0000:0000"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Solar Powered Outdoor Siren",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 4.005,
+    "listening": false,
+    "frequently_listening": true,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_SIREN"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 5,
+                "name": "SPECIFIC_TYPE_SIREN"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "30",
+                    "name": "SENSOR_BINARY",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_binary",
+                            "label": "Binary Sensor",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "5",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Sensor (temperature)",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_general",
+                            "label": "Alarm",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Siren  triggering mode",
+            "description": "Sets the tamper triggering mode when removed from the holder",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Siren  triggering mode"
+                },
+                {
+                    "value": 1,
+                    "label": "Siren  triggering mode"
+                },
+                {
+                    "value": 2,
+                    "label": "Siren  triggering mode"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "Temperature adjustments",
+            "description": "Temperature correction with positive and negative offset values",
+            "overview": "<p>Temperature correction. For positive value 10 = 1 \u00b0C, for negative value x = 256 -\u00a0 (T\u00b0C * 10).<\/p> <p>Example, if need shift -2.6\u00b0C, value calculate: 256 - \u00a0(2.6 * 10) = 230.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Temperature adjustments"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "label": "Send unsolicited  temperature report",
+            "description": "Threshold temperature to send unsolicited report. 10 = 1\u00b0C",
+            "overview": "In 0.1\u00b0C (Default 10)",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 4,
+            "label": "Send unsolicited  temperature report after N wake up",
+            "description": "Send unsolicited  temperature report after N wake up",
+            "overview": "<p>Send unsolicited\u00a0 temperature report after N wake up<\/p> <p>If the value is set, after N wake up number (measurement is every 4 minutes) the\u00a0 temperature report will be sent.<\/p> <p>By default it's 15 = every 1 hour<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 15,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Send unsolicited  temperature report after N wake up"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "label": "Switch mode ",
+            "description": "Switch mode : siren only, flash only, flash + siren",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Switch mode"
+                },
+                {
+                    "value": 1,
+                    "label": "Switch mode"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch mode"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Lifeline",
+            "max_nodes": 10,
+            "controller": true,
+            "description": "Lifeline (max. nodes in group: 10)",
+            "overview": ""
+        }
+    ]
+}

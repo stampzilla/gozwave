@@ -1,0 +1,191 @@
+{
+    "database_id": 587,
+    "label": "CSZ1",
+    "manufacturer_name": "Graber",
+    "manufacturer_id": "026E",
+    "device_ref": [
+        "4353:5A31"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Cellular Shade Radio Z-Wave",
+    "overview": "<p>See\u00a0http:\/\/products.z-wavealliance.org\/products\/1749<\/p>",
+    "inclusion": "<ol><li>Put Primary Controller into\u00a0Inclusion Mode<\/li> <li>Press and Hold Shade Programming Button for &gt;2 seconds<\/li> <\/ol>",
+    "exclusion": "<ol><li>Put Primary Controller into\u00a0Exclusion Mode<\/li> <li>Press and Hold Shade Programming Button for &gt;2 seconds<\/li> <\/ol>",
+    "wakeup": "<p>The Wakeup command class should be configured by a hub when the remote is joined to a Z-Wave network. A WAKE_UP_INTERVAL_SET command should configure the NodeID at a minimum. The Wakeup interval can be configured to any value from 6 minutes to 25 hours. Recommendation is to leave the interval at the default of 12 hours to maximize battery life. The remote will wake up every WakeUpInterval and send a WakeUp Notification command as well as a battery report to the NodeID assigned with the Interval Set command. The WakeUp Notification will be sent within a few minutes of power being applied to the remote and then once every Wake Up Interval. A Wakeup Interval Capabilities command will inform the hub of the default, minimum, maximum and step size of the Wake Up interval.<\/p>",
+    "protocol_version": 4.033,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": false,
+    "beaming": false,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_CLASS_C_MOTOR_CONTROL"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 7,
+                "name": "SPECIFIC_TYPE_CLASS_C_MOTOR_CONTROL"
+            },
+            "commandclasses": [
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Dimmer",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "7A",
+                    "name": "FIRMWARE_UPDATE_MD",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [],
+    "associations": []
+}

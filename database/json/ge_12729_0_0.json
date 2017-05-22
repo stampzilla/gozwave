@@ -1,0 +1,271 @@
+{
+    "database_id": 319,
+    "label": "12729",
+    "manufacturer_name": "Jasco Products",
+    "manufacturer_id": "0063",
+    "device_ref": [
+        "4944:3033"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "In-Wall Smart Dimmer",
+    "overview": "",
+    "inclusion": "<p>1. Follow the instructions for your Z-wave certified controller to include a device to the Z-wave network.<\/p>\n<p>2. Once the controller is ready to include your device, press up and release the toggle switch to include it in the network.<\/p>\n<p>Note: Your controller may need to be within 10 feet of the device to be included.<\/p>\n<p>3. Once your controller has confirmed that the device has been included, refresh the Z-wave network to optimize performance.<\/p>",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.067,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 7,
+        "name": "LIB_CONTROLLER_BRIDGE"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Dimmer",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "77",
+                    "name": "NODE_NAMING",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 4,
+            "label": "Invert Switch",
+            "description": "Invert the ON\/OFF Switch State.",
+            "overview": "<p>If the switch is accidentally installed upside down with \u201cOn\u201d at the bottom and \u201cOff\u201d at the top, the default On\/Off rocker settings can be reversed by changing parameter 4\u2019s value to \u201c1\u201d.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No"
+                },
+                {
+                    "value": 1,
+                    "label": "Yes"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "label": "On\/Off Command Dim Step",
+            "description": "Indicates how many levels the dimmer will change for each dimming step.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 8,
+            "label": "On\/Off Command Dim Rate",
+            "description": "This sets how often the dim level will change.",
+            "overview": "<p>The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is \u201c3\u201d. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 9,
+            "label": "Local Control Dim Step",
+            "description": "Indicates how many levels the dimmer will change for each dimming step.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 10,
+            "label": "Local Control Dim Rate",
+            "description": "This sets how often the dim level will change.",
+            "overview": "<p>The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is \u201c3\u201d. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 11,
+            "label": "ALL ON\/ALL OFF Dim Step",
+            "description": "Indicates how many levels the dimmer will change for each dimming step.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 12,
+            "label": "ALL ON\/ALL OFF Dim Rate",
+            "description": "This sets how often the dim level will change.",
+            "overview": "<p>The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is \u201c3\u201d. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        }
+    ],
+    "associations": []
+}

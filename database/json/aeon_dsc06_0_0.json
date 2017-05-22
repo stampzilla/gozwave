@@ -1,0 +1,526 @@
+{
+    "database_id": 75,
+    "label": "DSC06",
+    "manufacturer_name": "AEON Labs",
+    "manufacturer_id": "0086",
+    "device_ref": [
+        "0003:0006"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Smart Energy Switch",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 2.078,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_power",
+                            "label": "Sensor (power)",
+                            "config": [
+                                "type=POWER"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "NOGET",
+                    "channels": [
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh)",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Multilevel Sensor Report Content",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Power"
+                },
+                {
+                    "value": 1,
+                    "label": "Voltage"
+                }
+            ]
+        },
+        {
+            "id": 80,
+            "label": "Automatic Notifications",
+            "description": "Enable or disable automatic notifications",
+            "overview": "<p>Enables automatic notifications to associated devices whenever there is a state change<\/p> (0=nothing, 1=hail CC, 2=basic CC report)",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Nothing"
+                },
+                {
+                    "value": 1,
+                    "label": "Hail"
+                },
+                {
+                    "value": 2,
+                    "label": "Basic CC Report"
+                }
+            ]
+        },
+        {
+            "id": 90,
+            "label": "Enable\/disable Parameter 91 and 92",
+            "description": "Enables\/disables parameter 91 and 92 below",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                },
+                {
+                    "value": 1,
+                    "label": "Enable"
+                }
+            ]
+        },
+        {
+            "id": 91,
+            "label": "Minimum change in wattage",
+            "description": "Minimum change in wattage to trigger event",
+            "overview": "<p>The value here represents minimum change in wattage (in terms of wattage) for a REPORT to be sent.<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 50,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 92,
+            "label": "Minimum change in wattage %",
+            "description": "Minimum change in wattage % to trigger event",
+            "overview": "<p>The value here represents minimum change in wattage percent (in terms of percentage) for a REPORT to be sent.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 100,
+            "label": "Set 100 to 103 to default",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": true,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Reset"
+                }
+            ]
+        },
+        {
+            "id": 101,
+            "label": "Group 1 report",
+            "description": "",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 8,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "None"
+                },
+                {
+                    "value": 2,
+                    "label": "Multisensor Report"
+                },
+                {
+                    "value": 4,
+                    "label": "Meter Report (Watts)"
+                },
+                {
+                    "value": 8,
+                    "label": "Meter Report (kWh)"
+                },
+                {
+                    "value": 12,
+                    "label": "Meter Report Watts and kWh"
+                }
+            ]
+        },
+        {
+            "id": 102,
+            "label": "Group 2 report",
+            "description": "",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "None"
+                },
+                {
+                    "value": 2,
+                    "label": "Multisensor Report"
+                },
+                {
+                    "value": 4,
+                    "label": "Meter Report (Watts)"
+                },
+                {
+                    "value": 8,
+                    "label": "Meter Report (kWh)"
+                },
+                {
+                    "value": 12,
+                    "label": "Meter Report Watts and kWh"
+                }
+            ]
+        },
+        {
+            "id": 103,
+            "label": "Group 3 report",
+            "description": "",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "None"
+                },
+                {
+                    "value": 2,
+                    "label": "Multisensor Report"
+                },
+                {
+                    "value": 4,
+                    "label": "Meter Report (Watts)"
+                },
+                {
+                    "value": 8,
+                    "label": "Meter Report (kWh)"
+                },
+                {
+                    "value": 12,
+                    "label": "Meter Report Watts and kWh"
+                }
+            ]
+        },
+        {
+            "id": 110,
+            "label": "Set 111 to 113 to default",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": true,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Reset"
+                }
+            ]
+        },
+        {
+            "id": 111,
+            "label": "Interval Group 1",
+            "description": "The time interval (in seconds) for sending report to Group 1",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 600,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 112,
+            "label": "Interval Group 2",
+            "description": "The time interval (in seconds) for sending report to Group 2",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 600,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 113,
+            "label": "Interval Group 3",
+            "description": "The time interval (in seconds) for sending report to Group 3",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 600,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 254,
+            "label": "Device Tag",
+            "description": "",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 255,
+            "label": "Device Reset",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": true,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Reset"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Status Reports",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

@@ -1,0 +1,429 @@
+{
+    "database_id": 13,
+    "label": "WT00Z-1",
+    "manufacturer_name": "Linear Corp",
+    "manufacturer_id": "014F",
+    "device_ref": [
+        "5457:3033"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "3-Way Wall Accessory Switch",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 0,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": false,
+    "beaming": false,
+    "library_type": {
+        "id": 0,
+        "name": "Unknown"
+    },
+    "basic_class": {
+        "id": 0,
+        "name": null
+    },
+    "generic_class": {
+        "id": 0,
+        "name": null
+    },
+    "specific_class": {
+        "id": 0,
+        "name": "SPECIFIC_TYPE_NOT_USED"
+    },
+    "endpoints": [],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Dim Start Level",
+            "description": "Set Ignore Start Level Bit When Transmitting Dim Commands ",
+            "overview": "<p>The WT00Z-1 can send Dim commands to Z-Wave enabled dimmers.The Dim command has a start level embedded in it. A dimmer receivingthis command will start dimming from that start level. However, thecommand can be sent so that the dimmer ignores the start level andinstead starts dimming from its current level. By default, the WT00Z-1sends the command so that the dimmer will start dimming from itscurrent dim level rather than the\u00a0start level embedded in the\u00a0command.To change this, simply set the\u00a0con\ufb01guration parameter to 0.<\/p> <p><b>\u2022\u00a0Parameter\u00a0No:\u00a01\u2022\u00a0<\/b><\/p> <p><b>Length:\u00a01\u00a0Byte\u2022\u00a0<\/b><\/p> <p><b>Valid\u00a0Values =\u00a00 or\u00a01 (default 1)<\/b><\/p> <p><b>NOTE:<\/b><\/p> <p>Any ACT Z-Wave enabled dimmers have the con\ufb01guration optionto ignore the start level no matter how you con\ufb01gure the WT00Z-1<\/p> \u00a0",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Use Start Level"
+                },
+                {
+                    "value": 1,
+                    "label": "Ignore Start Level"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "Suspend Group 4",
+            "description": "Suspend Group 4",
+            "overview": "<p>You may wish to disable transmitting commands to Z-Wave devices that are in Group 4 without \u201cun-associating\u201d those devices from the group. Setting parameter 2 to\u00a0the value of 1\u00a0will stop the WT00Z-1\u00a0from transmitting to devices that are \u201cassociated\u201d into Group 4.<\/p> <p><b>\u2022\u00a0Parameter\u00a0No:\u00a02\u2022<\/b><\/p> <p><b>\u00a0Length:\u00a01\u00a0<\/b><\/p> <p><b>Byte\u2022\u00a0Valid\u00a0Values =\u00a00 or\u00a01 (default 0<\/b><\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Enable Group 4"
+                },
+                {
+                    "value": 1,
+                    "label": "Disable Group 4"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "label": "Night Light",
+            "description": "Relationship between LED and status of devices in Group 1",
+            "overview": "<p>The LED on the WT00Z-1 will by default, turn ON\u00a0when the status of the devices in Group 1\u00a0is ON. To make the LED turn ON when\u00a0the status of Group 1 is OFF set this parameter to a value of 1.<\/p> <p><b>Parameter\u00a0No:\u00a03\u2022\u00a0<\/b><\/p> <p><b>Length:\u00a01\u00a0Byte\u2022\u00a0<\/b><\/p> <p><b>Valid\u00a0Values =\u00a00 or\u00a01 (default 0<\/b><\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "On when load is on"
+                },
+                {
+                    "value": 1,
+                    "label": "On when load is off"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "label": "Invert Switch",
+            "description": "Setting the relationship between the top of the transmitter to ON or OFF",
+            "overview": "<p>To change the top of the transmitter to OFF and the bottom of the transmitter to ON, set parameter 4 to 1. <\/p> <p>To change back to original settings, set this parameter to the value of 0.<\/p> <p><b>Parameter\u00a0No:\u00a04<\/b><\/p> <p><b>Length:\u00a01\u00a0Byte<\/b><\/p> <p><b>Valid\u00a0Values =\u00a00 or\u00a01 (default 0)<\/b><\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Top-ON, Bottom-OFF "
+                },
+                {
+                    "value": 1,
+                    "label": "Bottom-ON, Top-OFF"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "label": "Ignore start level when recieving dim commands",
+            "description": "Ignore start level when recieving dim commands",
+            "overview": "<p>The WT00Z-1 can send Dim commands to Z-Wave enabled dimmers. The Dim command has a start level embedded in it. A dimmer receiving this command will start dimming from that start level. However, the command can be sent so that the dimmer ignores the start level and instead start dimming from its current level. By default, the WT00Z-1 sends the command so that the dimmer will start dimming from its current dim level rather then the\u00a0start level embedded in the\u00a0command. To change this, simply set the\u00a0con\ufb01guration parameter to 0.<\/p> <p><b>Parameter\u00a0No:\u00a05\u2022<\/b><\/p> <p><b>Length:\u00a01\u00a0Byte<\/b><\/p> <p><b>Valid\u00a0Values =\u00a00 or\u00a01 (default 1<\/b><\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Use start level"
+                },
+                {
+                    "value": 1,
+                    "label": "Ignore start level"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "label": "ON\/OFF dim rate",
+            "description": "dim step parameter valid values: 1-99",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 8,
+            "label": "ON\/OFF dim rate",
+            "description": "dim timer parameter valid values: 1-255",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 9,
+            "label": "Local control dim rate",
+            "description": "dim step parameter valid values: 1-99",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 10,
+            "label": "Local control dim rate",
+            "description": "dim timer parameter valid values: 1-255",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 11,
+            "label": "ALL ON\/ ALL OFF dim rate",
+            "description": "dim step parameter valid values: 1-99",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 12,
+            "label": "ALL ON\/ ALL OFF dim rate",
+            "description": "dim timer parameter valid values: 1-255",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 13,
+            "label": "Disable group 4 during a dim command",
+            "description": "Disable group 4 during a dim command",
+            "overview": "<p>After the WT00Z-1 is commanded to stop dimming when dimming because of the DIM START command, it will then command the Z-Wave devices that are in Group 4 to its new level. To prevent the WT00Z-1 from commanding the Z-Wave devices in Group\u00a04 during this particular occurrence, set Parameter 13 to the value of 1.<\/p> <p><b>Parameter\u00a013<\/b><\/p> <p><b>Length:\u00a01\u00a0Byte<\/b><\/p> <p><b>Valid\u00a0Values =\u00a00 or\u00a01 (default 0<\/b><\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Enable"
+                },
+                {
+                    "value": 1,
+                    "label": "Disable"
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "label": "Enable Shade Control Group 2",
+            "description": "The switch can control shade control devices if this\r\n\t\t\t\tparameter is set to 1.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                },
+                {
+                    "value": 1,
+                    "label": "Enable"
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "label": "Enable Shade Control Group 3",
+            "description": "The switch can control shade control devices if this\r\n\t\t\t\tparameter is set to 1.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                },
+                {
+                    "value": 1,
+                    "label": "Enable"
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "label": "Enable Shade Control Group 1",
+            "description": "The switch can control shade control devices if this\r\n\t\t\t\tparameter is set to 1.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                },
+                {
+                    "value": 1,
+                    "label": "Enable"
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "label": "LED Transmission Indication",
+            "description": "LED Transmission Indication",
+            "overview": "<p>The WT00Z-1 will \ufb02icker its LED when it is transmitting to any of its 4 groups. This \ufb02ickering can be set to not \ufb02icker at all (set to 0), to \ufb02icker the entire time it is transmitting (set to 1), or to \ufb02icker for only 1 second when it begins transmitting (set\u00a0to 2). By default, the WT00Z-1 is set to \ufb02icker for only 1 second.<\/p> <p><b>Parameter\u00a019<\/b><\/p> <p><b>Length:\u00a01\u00a0Byte<\/b><\/p> <p><b>Valid\u00a0Values =\u00a00 ,\u00a01, 2\u00a0(default 2)<\/b><\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable Flicker"
+                },
+                {
+                    "value": 1,
+                    "label": "Flicker while transmitting"
+                },
+                {
+                    "value": 2,
+                    "label": "Flicker for 1 second"
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "label": "Poll: minutes",
+            "description": "Frequency that WT00Z-1 will poll first node in Group 1",
+            "overview": "<p>The WT00Z-1 will poll the \ufb01rst node in Group 1 in order to keep itself synchronized with the group if this con\ufb01guration parameter is set to 1. How often it will poll\u00a0is con\ufb01gured using this parameter.<\/p> <p><b>Parameter\u00a020<\/b><\/p> <p><b>Length:\u00a01\u00a0Byte<\/b><\/p> <p><b>Valid\u00a0Values =\u00a01 through 255\u00a0(default: 2)<\/b><\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 21,
+            "label": "Poll first node in group 1",
+            "description": "Activate\/Deactivate polling of first node in Group 1",
+            "overview": "<p>The WT00Z-1 will poll the \ufb01rst node in Group 1 in order to keep itself synchronized with the group if this\u00a0con\ufb01guration parameter is set to 1.<\/p> <p><b>Parameter\u00a021<\/b><\/p> <p><b>Length:\u00a01\u00a0Byte<\/b><\/p> <p><b>Valid\u00a0Values =\u00a00 ,\u00a01 (default 0)<\/b><\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Do not poll first node in group"
+                },
+                {
+                    "value": 1,
+                    "label": "Poll first node in group"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Associating Group 1",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": "<p><span style=\"font-size: 11.0pt; line-height: 107%; font-family: 'Helvetica',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #231f20; border: none windowtext 1.0pt; mso-border-alt: none windowtext 0cm; padding: 0cm; mso-ansi-language: EN-GB; mso-fareast-language: EN-GB; mso-bidi-language: AR-SA;\">Nodes in this group are turned ON by tapping the top of the paddle or OFF by tapping the bottom of the paddle. Nodes associated into this group are dimmed by pressing and holding the bottom of the paddle until the desired dim level is reached or brightened by pressing and holding the top of the paddle until\u00a0the desired level is reached. The LED on\u00a0the WT00Z-1 will indicate\u00a0the status of\u00a0this group ONLY.<\/span><\/p>"
+        },
+        {
+            "id": 2,
+            "label": "Associating Group 2",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": "<p class=\"MsoNormal\" style=\"text-align: left;\"><span class=\"a\"><span lang=\"EN-US\" style=\"font-family: Helvetica, sans-serif; color: #231f20; border: 1pt none windowtext; padding: 0cm; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;\">Nodes in this group are turned ON by tapping the top of the paddle\u00a0<\/span><span style=\"word-spacing: 17px;\">twice or OFF by tapping the bottom of the paddle twice. Nodes<\/span><span style=\"word-spacing: 7px;\"> associated into this group are dimmed by tapping the bottom of the<\/span><span style=\"word-spacing: 3px;\"> paddle once and then pressing and holding the bottom of the paddle<\/span><span style=\"word-spacing: 1px;\"> until the desired dim level is reached or brightened by tapping the top<\/span><span style=\"word-spacing: -3px;\">\u00a0 of \u00a0the \u00a0paddle \u00a0once \u00a0then \u00a0pressing and holding the top of the paddle \u00a0until<\/span><span style=\"word-spacing: -2px;\"> the desire level is reached<\/span><\/span><\/p>"
+        },
+        {
+            "id": 3,
+            "label": "Associating Group 3",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": "<p><span class=\"a\"><span lang=\"EN-US\" style=\"font-size: 11pt; line-height: 107%; font-family: Helvetica, sans-serif; color: #231f20; border: 1pt none windowtext; padding: 0cm; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;\">Nodes in this group are turned ON by tapping the top of the paddle<\/span><span style=\"word-spacing: 5px;\"> three times or OFF by tapping the bottom of the paddle three times.<\/span><span style=\"word-spacing: 5px;\"> Nodes associated into this group are dimmed by tapping the bottom<\/span><span style=\"word-spacing: 5px;\"> of the paddle twice and then pressing and holding the bottom of the<\/span><span style=\"word-spacing: 2px;\"> paddle until the desired dim level is reached or brightened by tapping<\/span><span style=\"word-spacing: 6px;\"> the top of the paddle twice then pressing and holding the top of the<\/span><span style=\"word-spacing: -2px;\"> paddle until the desired level is reached<\/span><\/span><\/p>"
+        },
+        {
+            "id": 4,
+            "label": "Associating Group 4",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": "<p class=\"MsoNormal\"><span class=\"a\"><span lang=\"EN-US\" style=\"font-family: Helvetica, sans-serif; color: #231f20; border: 1pt none windowtext; padding: 0cm; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;\">Nodes in this group are turned ON<\/span><\/span><span class=\"apple-converted-space\"><span lang=\"EN-US\" style=\"font-family: Helvetica, sans-serif; color: #231f20; border: 1pt none windowtext; padding: 0cm; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;\">\u00a0<\/span><span lang=\"EN-US\" style=\"font-family: Helvetica, sans-serif; color: #231f20; border: 1pt none windowtext; padding: 0cm; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;\">or OFF or set to a<\/span><\/span><span class=\"apple-converted-space\"><span lang=\"EN-US\" style=\"font-family: Helvetica, sans-serif; color: #231f20; border: 1pt none windowtext; padding: 0cm; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;\">\u00a0<\/span><span lang=\"EN-US\" style=\"font-family: Helvetica, sans-serif; color: #231f20; border: 1pt none windowtext; padding: 0cm; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;\">speci\ufb01c dim level<\/span><span style=\"word-spacing: 2px;\"> <span style=\"letter-spacing: -.75pt;\">when the WT00Z-1 is controlled remotely. You can place up to 5 nodes<\/span> in each group. If controlling dimmers, for best results, associate the<\/span><span style=\"word-spacing: -2px;\"> dimmers into the group \ufb01rst<\/span><\/span><\/p>"
+        }
+    ]
+}

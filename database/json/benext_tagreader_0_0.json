@@ -1,0 +1,305 @@
+{
+    "database_id": 444,
+    "label": "Tag Reader",
+    "manufacturer_name": "BeNext",
+    "manufacturer_id": "008A",
+    "device_ref": [
+        "0007:0101"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Tag Reader",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.042,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_ENTRY_CONTROL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": null
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 64,
+                "name": "GENERIC_TYPE_ENTRY_CONTROL"
+            },
+            "specific_class": {
+                "id": 0,
+                "name": null
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "63",
+                    "name": "USER_CODE",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_burglar",
+                            "label": "Alarm (burglar)",
+                            "config": [
+                                "type=BURGLAR"
+                            ]
+                        },
+                        {
+                            "type": "notification_access_control",
+                            "label": "Alarm (access)",
+                            "config": [
+                                "type=ACCESS_CONTROL"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "76",
+                    "name": "LOCK",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Set to Default",
+            "description": "Set all configuration values to default values (factory settings)",
+            "overview": "<p>If the Value is set to 0xFF (255) this device will return to factory settings.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 2,
+            "label": "Feedback time",
+            "description": "the time the beep goes to off",
+            "overview": "<p>0x00 = Off, 0xFF = endless<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 15,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 3,
+            "label": "Feedback time-out",
+            "description": "waiting for the wake-up-no-more command",
+            "overview": "<p>Too configure the time-out, waiting on the wakeup_no_more_information command before the error sound starts automatically. The error sound is set to 8 short beeps.<\/p> <p>0x00 = off<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 4,
+            "label": "feedback beeps per second",
+            "description": "Amount of beeps a second",
+            "overview": "<p>To set the amount of beeps per second, every beep is around 10ms.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 5,
+            "options": []
+        },
+        {
+            "id": 5,
+            "label": "Mode ",
+            "description": "To configure mode",
+            "overview": "<p>Mode 1 =\u00a0 normal working mode<\/p> <p>Mode 3 = z-wave chip is always on to be asked for information, for example version or manufacturer ID.<\/p> <p>Any other value will be reported after a GET, but will be seen as a mode 1.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 6,
+            "label": "RFID circuit start-up time",
+            "description": "The time the RFID will be started after pressing \"home\" or \"away\"",
+            "overview": "<p>0x64 (100 * 10 ms = 1 s)<\/p> <p>The time (*10 ms) the RFID circuit waits to start after \"home\" or \"away\" has been pressed.<\/p> <p>the time *10 miliseconds, minimum = 0 seconds, max = 2,55 seconds. If the value is not in the allowed size the frame will be ignored.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 100,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Association group 1",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "Link devices to the tag reader",
+            "overview": "<p>This class can be used to link other devices to the tag reader. These devices also get the burglar frame send to them.<\/p>"
+        }
+    ]
+}

@@ -1,0 +1,812 @@
+{
+    "database_id": 349,
+    "label": "FGGC001",
+    "manufacturer_name": "Fibargroup",
+    "manufacturer_id": "010F",
+    "device_ref": [
+        "0D01:1000",
+        "0D01:3000"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Fibaro Swipe Scene Controller",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 4.005,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_WALL_CONTROLLER"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_BASIC_WALL_CONTROLLER"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 24,
+                "name": "GENERIC_TYPE_WALL_CONTROLLER"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_BASIC_WALL_CONTROLLER"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "56",
+                    "name": "CRC_16_ENCAP",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5B",
+                    "name": "CENTRAL_SCENE",
+                    "version": "2",
+                    "nif": true,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "scene_number",
+                            "label": "Scene Number",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "7A",
+                    "name": "FIRMWARE_UPDATE_MD",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8E",
+                    "name": "MULTI_INSTANCE_ASSOCIATION",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "98",
+                    "name": "SECURITY",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Device Orientation",
+            "description": "Parameter determines orientation of the Swipe in relation to its default position.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 3,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Default Orientation"
+                },
+                {
+                    "value": 1,
+                    "label": "180\u00b0 rotation"
+                },
+                {
+                    "value": 2,
+                    "label": "90\u00b0 clockwise rotation"
+                },
+                {
+                    "value": 3,
+                    "label": "90\u00b0 counter-clockwise rotation"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "Buzzer - acoustic signal settings",
+            "description": "Acoustic signalling of gestures detection.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Gestures detection is not signalled"
+                },
+                {
+                    "value": 1,
+                    "label": "Gestures detection is signalled"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "label": " LED diode - visual indicator settings",
+            "description": "Visual indication of gestures detection",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Gestures detection is not indicated"
+                },
+                {
+                    "value": 1,
+                    "label": " Gestures detection is indicated"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "label": "Buzzer - signalling result of gesture recognition",
+            "description": "Acoustic signalling of gesture recognition result (using the built-in buzzer).",
+            "overview": "<p>Parameter 4 is relevant only if parameter 2 is set to 1.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 3,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Only successful recognition is signalled"
+                },
+                {
+                    "value": 2,
+                    "label": "Only failed recognition is signalled"
+                },
+                {
+                    "value": 3,
+                    "label": "Successful and failed recognition is signalled"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "label": "Powering mode - interval of updating the current mode",
+            "description": "This parameter determines how often the device checks if the USB power supply is connected and updates powering mode if needed.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 4,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1080,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Powering mode is not updated"
+                },
+                {
+                    "value": 1,
+                    "label": "Time interval (in minutes)"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "label": "Power saving mode (battery mode)",
+            "description": "This parameter determines operation of gesture detection when battery powered.",
+            "overview": "<p>When Standby Mode is selected, hold gesture must be performed to exit power saving mode and reactivate normal gesture recognition. The device in Standby Mode consumes the least battery life.<\/p> <p>When Simple Mode mode is selected, gesture recognition is always active, but only slowly performed gestures will be recognized properly (high battery consumption).<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Standby mode"
+                },
+                {
+                    "value": 1,
+                    "label": "Simple mode"
+                },
+                {
+                    "value": 2,
+                    "label": "Swipe does not enter power saving mode"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "label": "Hold gesture to enter the menu",
+            "description": "This parameter allows to choose if the menu can be entered using the Hold gesture.",
+            "overview": "<p>After disabling the Hold gesture in parameter 7, menu can be entered by using the B-button only!<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Hold gesture to enter the menu enabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Hold gesture to enter the menu disabled"
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "label": "Scenes sent to the controller",
+            "description": "Defines which actions result in sending scenes to 1st \u201cLifeline\u201d group. ",
+            "overview": "<p>Parameter 10 values may be combined, e.g. 1+2=3 means that scenes for flick UP and DOWN are enabled.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 15,
+            "read_only": true,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 63,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Scenes for flick UP gesture enabled"
+                },
+                {
+                    "value": 2,
+                    "label": "Scenes for flick DOWN gesture enabled"
+                },
+                {
+                    "value": 4,
+                    "label": "Scenes for flick LEFT gesture enabled"
+                },
+                {
+                    "value": 8,
+                    "label": "Scenes for flick RIGHT gesture enabled"
+                },
+                {
+                    "value": 16,
+                    "label": "Scenes for clockwise circular gesture enabled"
+                },
+                {
+                    "value": 32,
+                    "label": "Scenes for counter-clockwise circular gesture enabled"
+                },
+                {
+                    "value": 63,
+                    "label": "All commands enabled"
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "label": "Associations in Z-Wave network security mode",
+            "description": "Parameter defines how commands are sent in specified association groups: as secure or non-secure. Parameter is active only in Z-Wave network security mode. It does not apply to 1st \u201cLifeline\u201d association group.",
+            "overview": "<p>Parameter 11 values may be combined, e.g. 1+2=3 means that 2nd &amp; 3rd group are sent as secure.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 31,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 31,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "2nd group \u201dFlick UP\u201d sent as secure"
+                },
+                {
+                    "value": 2,
+                    "label": "3rd group \u201dFlick DOWN\u201d sent as secure"
+                },
+                {
+                    "value": 4,
+                    "label": "4th group \"Flick LEFT\u201d sent as secure"
+                },
+                {
+                    "value": 8,
+                    "label": "5th group \"Flick RIGHT\u201d sent as secure"
+                },
+                {
+                    "value": 16,
+                    "label": "6th group \"Circular AirWheel\u201d sent as secure"
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "label": "Control mode of 2nd - 5th \"Flick UP\/DOWN\/LEFT\/RIGHT\u201d association groups and scenes",
+            "description": "Parameter allows to choose control mode for 2nd-5th groups and scenes.",
+            "overview": "<p>By default, Toggle Mode is active, meaning that a single flick turns ON the group and the same flick turns it OFF, doubled flicks are inactive.<\/p> <p>After disabling Toggle Mode a single flick will turn the device ON and the same flick doubled will turn it OFF.<\/p> <p>Parameter 12 values may be combined, e.g. 1+2=3 means that 2nd &amp; 3rd group are selected.<\/p> <p><strong>N.B.\u00a0Disabling Toggle Mode will introduce delay when performing single gestures.<\/strong><\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 15,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 15,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Toggle Mode enabled for 2nd association group"
+                },
+                {
+                    "value": 2,
+                    "label": "Toggle Mode enabled for 3rd association group"
+                },
+                {
+                    "value": 4,
+                    "label": "Toggle Mode enabled for 4th association group"
+                },
+                {
+                    "value": 8,
+                    "label": "Toggle Mode enabled for 5th association group"
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "label": "Rate of smooth level control",
+            "description": "Parameter allows to choose how long the hand has to be held near the center of the pad after \"AirWheel\" gesture for the associated devices to reach their maximum\/minimum level.",
+            "overview": "<p>Available settings:<\/p> <p>0-10 - duration in seconds<\/p> <p>255 - default settings of controlled devices<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 20,
+            "label": "SWITCH ON control frame value for FLICK UP gesture",
+            "description": "This parameter allows to set value sent in SWITCH ON command frame to the association group.",
+            "overview": "<p>Commands sent to association group for turn ON\/OFF can be adjusted in parameters 20-27.<\/p> <p>0 - turning off associated devices<\/p> <p>1-99 - forcing level of associated devices<\/p> <p>255 - setting associated devices to the last remembered state or turning them on<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 21,
+            "label": "SWITCH OFF control frame value for FLICK UP gesture",
+            "description": "This parameter allows to set value sent in SWITCH OFF command frame to the association group.",
+            "overview": "<p>Commands sent to association group for turn ON\/OFF can be adjusted in parameters 20-27.<\/p> <p>0 - turning off associated devices<\/p> <p>1-99 - forcing level of associated devices<\/p> <p>255 - setting associated devices to the last remembered state or turning them on<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 22,
+            "label": "SWITCH ON control frame value for FLICK DOWN gesture",
+            "description": "This parameter allows to set value sent in SWITCH ON command frame to the association group.",
+            "overview": "<p>Commands sent to association group for turn ON\/OFF can be adjusted in parameters 20-27.<\/p> <p>0 - turning off associated devices<\/p> <p>1-99 - forcing level of associated devices<\/p> <p>255 - setting associated devices to the last remembered state or turning them on<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 23,
+            "label": "SWITCH OFF control frame value for FLICK DOWN gesture",
+            "description": "This parameter allows to set value sent in SWITCH OFF command frame to the association group.",
+            "overview": "<p>Commands sent to association group for turn ON\/OFF can be adjusted in parameters 20-27.<\/p> <p>0 - turning off associated devices<\/p> <p>1-99 - forcing level of associated devices<\/p> <p>255 - setting associated devices to the last remembered state or turning them on<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 24,
+            "label": "SWITCH ON control frame value for FLICK LEFT gesture",
+            "description": "This parameter allows to set value sent in SWITCH ON command frame to the association group.",
+            "overview": "<p>Commands sent to association group for turn ON\/OFF can be adjusted in parameters 20-27.<\/p> <p>0 - turning off associated devices<\/p> <p>1-99 - forcing level of associated devices<\/p> <p>255 - setting associated devices to the last remembered state or turning them on<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 25,
+            "label": "SWITCH OFF control frame value for FLICK LEFT gesture",
+            "description": "This parameter allows to set value sent in SWITCH OFF command frame to the association group.",
+            "overview": "<p>Commands sent to association group for turn ON\/OFF can be adjusted in parameters 20-27.<\/p> <p>0 - turning off associated devices<\/p> <p>1-99 - forcing level of associated devices<\/p> <p>255 - setting associated devices to the last remembered state or turning them on<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 26,
+            "label": "SWITCH ON control frame value for FLICK RIGHT gesture",
+            "description": "This parameter allows to set value sent in SWITCH ON command frame to the association group.",
+            "overview": "<p>Commands sent to association group for turn ON\/OFF can be adjusted in parameters 20-27.<\/p> <p>0 - turning off associated devices<\/p> <p>1-99 - forcing level of associated devices<\/p> <p>255 - setting associated devices to the last remembered state or turning them on<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 27,
+            "label": "SWITCH OFF control frame value for FLICK RIGHT gesture",
+            "description": "This parameter allows to set value sent in SWITCH OFF command frame to the association group.",
+            "overview": "<p>Commands sent to association group for turn ON\/OFF can be adjusted in parameters 20-27.<\/p> <p>0 - turning off associated devices<\/p> <p>1-99 - forcing level of associated devices<\/p> <p>255 - setting associated devices to the last remembered state or turning them on<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 30,
+            "label": "Sequence learning mode",
+            "description": "Parameter activated by the main Z-Wave controller. Change its value to launch sequence learning procedure for the desired slot.",
+            "overview": "<p>0 - learning mode disabled<\/p> <p>1-6 - launch sequence learning for selected slot<\/p> <p><strong>N.B.\u00a0Sequences do not allow to use same gestures next to each other<\/strong><\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 6,
+            "options": []
+        },
+        {
+            "id": 31,
+            "label": "1st gestures sequence (SLOT 1)",
+            "description": "Value containing sequence of gestures.",
+            "overview": "<p>User can create sequences of two or three gestures to expand number of possible actions. Every sequence is saved in its advanced parameter (no. 31-36) with 16 bits, every basic gesture is identified with 4 bits.<\/p> Gesture Value Empty 0 ^ 1 v 2 &lt; 3 &gt; 4 <h4>Rules of creating sequences:<\/h4> <p>\u2022 Maximum of six sequences can be created.<\/p> <p>\u2022 Each sequence must be unique.<\/p> <p>\u2022 Sequence can consist of two or three basic gestures (left, right, up<\/p> <p>or down).<\/p> <p>\u2022 Two identical gestures cannot be used next to each other<\/p> <p>To manually create or edit a sequence slot:<\/p> <p>1. Calculate new value of parameter using table and formula:<\/p> <p>Value of parameter = 256 * Value of first gesture + 16 * Value of second gesture + Value of third gesture<\/p> <p>2. Change the value of corresponding parameter (parameters 31 to 36 for slots 1 to 6).<\/p> <p><strong>N.B. Setting parameter to 0 will delete the sequence.<\/strong><\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1076,
+            "options": []
+        },
+        {
+            "id": 32,
+            "label": "2nd gestures sequence (SLOT 2)",
+            "description": "Value containing sequence of gestures.",
+            "overview": "<p>User can create sequences of two or three gestures to expand number of possible actions. Every sequence is saved in its advanced parameter (no. 31-36) with 16 bits, every basic gesture is identified with 4 bits.<\/p> <p>Gesture Value<\/p> <p>Empty 0<\/p> <p>^ 1<\/p> <p>v 2<\/p> <p>&lt; 3<\/p> <p>&gt; 4<\/p> <p>Rules of creating sequences:<\/p> <p>\u2022 Maximum of six sequences can be created.<\/p> <p>\u2022 Each sequence must be unique.<\/p> <p>\u2022 Sequence can consist of two or three basic gestures (left, right, up<\/p> <p>or down).<\/p> <p>\u2022 Two identical gestures cannot be used next to each other<\/p> <p>To manually create or edit a sequence slot:<\/p> <p>1. Calculate new value of parameter using table and formula:<\/p> <p>Value of parameter = 256 * Value of first gesture + 16 * Value of second gesture + Value of third gesture<\/p> <p>2. Change the value of corresponding parameter (parameters 31 to 36 for slots 1 to 6).<\/p> <p><strong>N.B. Setting parameter to 0 will delete the sequence.<\/strong><\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1076,
+            "options": []
+        },
+        {
+            "id": 33,
+            "label": "3rd gestures sequence (SLOT 3)",
+            "description": "Value containing sequence of gestures.",
+            "overview": "<p>User can create sequences of two or three gestures to expand number of possible actions. Every sequence is saved in its advanced parameter (no. 31-36) with 16 bits, every basic gesture is identified with 4 bits.<\/p> <p>Gesture Value<\/p> <p>Empty 0<\/p> <p>^ 1<\/p> <p>v 2<\/p> <p>&lt; 3<\/p> <p>&gt; 4<\/p> <p>Rules of creating sequences:<\/p> <p>\u2022 Maximum of six sequences can be created.<\/p> <p>\u2022 Each sequence must be unique.<\/p> <p>\u2022 Sequence can consist of two or three basic gestures (left, right, up<\/p> <p>or down).<\/p> <p>\u2022 Two identical gestures cannot be used next to each other<\/p> <p>To manually create or edit a sequence slot:<\/p> <p>1. Calculate new value of parameter using table and formula:<\/p> <p>Value of parameter = 256 * Value of first gesture + 16 * Value of second gesture + Value of third gesture<\/p> <p>2. Change the value of corresponding parameter (parameters 31 to 36 for slots 1 to 6).<\/p> <p><strong>N.B. Setting parameter to 0 will delete the sequence.<\/strong><\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1076,
+            "options": []
+        },
+        {
+            "id": 34,
+            "label": "4th gestures sequence (SLOT 4)",
+            "description": "Value containing sequence of gestures.",
+            "overview": "<p>User can create sequences of two or three gestures to expand number of possible actions. Every sequence is saved in its advanced parameter (no. 31-36) with 16 bits, every basic gesture is identified with 4 bits.<\/p> <p>Gesture Value<\/p> <p>Empty 0<\/p> <p>^ 1<\/p> <p>v 2<\/p> <p>&lt; 3<\/p> <p>&gt; 4<\/p> <p>Rules of creating sequences:<\/p> <p>\u2022 Maximum of six sequences can be created.<\/p> <p>\u2022 Each sequence must be unique.<\/p> <p>\u2022 Sequence can consist of two or three basic gestures (left, right, up<\/p> <p>or down).<\/p> <p>\u2022 Two identical gestures cannot be used next to each other<\/p> <p>To manually create or edit a sequence slot:<\/p> <p>1. Calculate new value of parameter using table and formula:<\/p> <p>Value of parameter = 256 * Value of first gesture + 16 * Value of second gesture + Value of third gesture<\/p> <p>2. Change the value of corresponding parameter (parameters 31 to 36 for slots 1 to 6).<\/p> <p><strong>N.B. Setting parameter to 0 will delete the sequenc<\/strong>e.<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1076,
+            "options": []
+        },
+        {
+            "id": 35,
+            "label": "5th gestures sequence (SLOT 5)",
+            "description": "Value containing sequence of gestures.",
+            "overview": "<p>User can create sequences of two or three gestures to expand number of possible actions. Every sequence is saved in its advanced parameter (no. 31-36) with 16 bits, every basic gesture is identified with 4 bits.<\/p> <p>Gesture Value<\/p> <p>Empty 0<\/p> <p>^ 1<\/p> <p>v 2<\/p> <p>&lt; 3<\/p> <p>&gt; 4<\/p> <p>Rules of creating sequences:<\/p> <p>\u2022 Maximum of six sequences can be created.<\/p> <p>\u2022 Each sequence must be unique.<\/p> <p>\u2022 Sequence can consist of two or three basic gestures (left, right, up<\/p> <p>or down).<\/p> <p>\u2022 Two identical gestures cannot be used next to each other<\/p> <p>To manually create or edit a sequence slot:<\/p> <p>1. Calculate new value of parameter using table and formula:<\/p> <p>Value of parameter = 256 * Value of first gesture + 16 * Value of second gesture + Value of third gesture<\/p> <p>2. Change the value of corresponding parameter (parameters 31 to 36 for slots 1 to 6).<\/p> <p><strong>N.B. Setting parameter to 0 will delete the sequence.<\/strong><\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1076,
+            "options": []
+        },
+        {
+            "id": 36,
+            "label": "6th gestures sequence (SLOT 6)",
+            "description": "Value containing sequence of gestures.",
+            "overview": "<p>User can create sequences of two or three gestures to expand number of possible actions. Every sequence is saved in its advanced parameter (no. 31-36) with 16 bits, every basic gesture is identified with 4 bits.<\/p> <p>Gesture Value<\/p> <p>Empty 0<\/p> <p>^ 1<\/p> <p>v 2<\/p> <p>&lt; 3<\/p> <p>&gt; 4<\/p> <p>Rules of creating sequences:<\/p> <p>\u2022 Maximum of six sequences can be created.<\/p> <p>\u2022 Each sequence must be unique.<\/p> <p>\u2022 Sequence can consist of two or three basic gestures (left, right, up<\/p> <p>or down).<\/p> <p>\u2022 Two identical gestures cannot be used next to each other<\/p> <p>To manually create or edit a sequence slot:<\/p> <p>1. Calculate new value of parameter using table and formula:<\/p> <p>Value of parameter = 256 * Value of first gesture + 16 * Value of second gesture + Value of third gesture<\/p> <p>2. Change the value of corresponding parameter (parameters 31 to 36 for slots 1 to 6).<\/p> <p><strong>N.B. Setting parameter to 0 will delete the sequence.<\/strong><\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1076,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Lifeline",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "",
+            "overview": "<p>\u00a0Reports the device status and allows for assigning single device only (main controller by default).<\/p>"
+        },
+        {
+            "id": 2,
+            "label": "Flick up gesture",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": "<p>Association ensures direct transfer of control commands between devices, is performed without participation of the main controller and requires associated device to be in the direct range.<\/p>\r\n<p>The Swipe in 2nd to 6th group allows to control 5 regular or multichannel devices per an association group, with the exception of \u201cLifeLine\u201d that is reserved solely for the controller and hence only 1 node can be assigned.<\/p>\r\n<p>It is not recommended to associate more than 10 devices in general, as the response time to control commands depends on the number of associated devices. In extreme cases, system response may be delayed.<\/p>\r\n<p>By default 2nd-5th association groups are set to toggle mode - \u00a0single gesture will reverse state of the association group (turns ON when it\u2019s OFF, turns OFF when it\u2019s ON). Can be modified via \u00a0parameter 12.<\/p>\r\n<p>States of the association groups are affected only by assigned gestures. Changing state of associated device by other means will not update remembered state of association group.<\/p>"
+        },
+        {
+            "id": 3,
+            "label": "Flick down gesture",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": "<p>Association ensures direct transfer of control commands between devices, is performed without participation of the main controller and requires associated device to be in the direct range.<\/p>\r\n<p>The Swipe in 2nd to 6th group allows to control 5 regular or multichannel devices per an association group, with the exception of \u201cLifeLine\u201d that is reserved solely for the controller and hence only 1 node can be assigned.<\/p>\r\n<p>It is not recommended to associate more than 10 devices in general, as the response time to control commands depends on the number of associated devices. In extreme cases, system response may be delayed.<\/p>\r\n<p>By default 2nd-5th association groups are set to toggle mode - \u00a0single gesture will reverse state of the association group (turns ON when it\u2019s OFF, turns OFF when it\u2019s ON). Can be modified via \u00a0parameter 12.<\/p>\r\n<p>States of the association groups are affected only by assigned gestures. Changing state of associated device by other means will not update remembered state of association group.<\/p>"
+        },
+        {
+            "id": 4,
+            "label": "Flick left gesture",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": "<p>Association ensures direct transfer of control commands between devices, is performed without participation of the main controller and requires associated device to be in the direct range.<\/p>\r\n<p>The Swipe in 2nd to 6th group allows to control 5 regular or multichannel devices per an association group, with the exception of \u201cLifeLine\u201d that is reserved solely for the controller and hence only 1 node can be assigned.<\/p>\r\n<p>It is not recommended to associate more than 10 devices in general, as the response time to control commands depends on the number of associated devices. In extreme cases, system response may be delayed.<\/p>\r\n<p>By default 2nd-5th association groups are set to toggle mode - \u00a0single gesture will reverse state of the association group (turns ON when it\u2019s OFF, turns OFF when it\u2019s ON). Can be modified via \u00a0parameter 12.<\/p>\r\n<p>States of the association groups are affected only by assigned gestures. Changing state of associated device by other means will not update remembered state of association group.<\/p>"
+        },
+        {
+            "id": 5,
+            "label": "Flick right gesture",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": "<p>Association ensures direct transfer of control commands between devices, is performed without participation of the main controller and requires associated device to be in the direct range.<\/p>\r\n<p>The Swipe in 2nd to 6th group allows to control 5 regular or multichannel devices per an association group, with the exception of \u201cLifeLine\u201d that is reserved solely for the controller and hence only 1 node can be assigned.<\/p>\r\n<p>It is not recommended to associate more than 10 devices in general, as the response time to control commands depends on the number of associated devices. In extreme cases, system response may be delayed.<\/p>\r\n<p>By default 2nd-5th association groups are set to toggle mode - \u00a0single gesture will reverse state of the association group (turns ON when it\u2019s OFF, turns OFF when it\u2019s ON). Can be modified via \u00a0parameter 12.<\/p>\r\n<p>States of the association groups are affected only by assigned gestures. Changing state of associated device by other means will not update remembered state of association group.<\/p>"
+        },
+        {
+            "id": 6,
+            "label": "Circular Airwheel",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": "<p>Association ensures direct transfer of control commands between devices, is performed without participation of the main controller and requires associated device to be in the direct range.<\/p>\r\n<p>The Swipe in 2nd to 6th group allows to control 5 regular or multichannel devices per an association group, with the exception of \u201cLifeLine\u201d that is reserved solely for the controller and hence only 1 node can be assigned.<\/p>\r\n<p>It is not recommended to associate more than 10 devices in general, as the response time to control commands depends on the number of associated devices. In extreme cases, system response may be delayed.<\/p>\r\n<p>By default 2nd-5th association groups are set to toggle mode - \u00a0single gesture will reverse state of the association group (turns ON when it\u2019s OFF, turns OFF when it\u2019s ON). Can be modified via \u00a0parameter 12.<\/p>\r\n<p>States of the association groups are affected only by assigned gestures. Changing state of associated device by other means will not update remembered state of association group.<\/p>"
+        }
+    ]
+}

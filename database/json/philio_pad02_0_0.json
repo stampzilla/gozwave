@@ -1,0 +1,353 @@
+{
+    "database_id": 579,
+    "label": "PAD02",
+    "manufacturer_name": "Philio Technology Corp",
+    "manufacturer_id": "013C",
+    "device_ref": [
+        "0005:0031"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Dimmer Socket",
+    "overview": "<p>PAD02 is an E27(EU)\/ E26(US) Edison screw based lamp socket, which provides electrical connection to the E14(EU)\/ E12(US) Edison screw based lamps and \u00a0support it in the lighting fixture. The use of socket allows lamps to be safely and \u00a0conveniently replaced. You can On\/Off the light by pressing the button briefly, \u00a0or a long pressing to control the brightness of dimmable lightbulb. This dimmer is a transceiver which is a security enabled device which based on \u00a0Z-Wave Plus technology, and it is fully compatible with any Z-WaveTM enabled \u00a0network. Since PAD02 supports Security Command Class, it can learn with \u00a0Secured controller. Its functionality and supported command classes is identical when included as a secure and non-secure device.<\/p> <p><strong>LED Indication<\/strong><\/p> <p>To distinguish what mode the switch is in, view from the LED for identification.\u00a0<\/p> <p>Normal - \u00a0Whenever we switch On and off of the PAD02 by On\/Off button or RF command, the LED will lights up when switch on; whereas LED off when switch off.<\/p> <p>No node ID - Under normal operation, when the Switch has not been allocated a node ID, the LED flashes on and off alternately at 2-second intervals. By pressing On\/Off button, it will stop flashing temporarily.<\/p> <p>Learning - When PAD02 is in learning mode, LED flashes on and off alternately and repeatedly at 0.5 second intervals.\u00a0<\/p>",
+    "inclusion": "<p>In the front casing, there is an on\/off button with LED indicator below which is used to switch on and off or carries out inclusion, exclusion, reset or association. When first power applied, its LED flashes on and off alternately and repeatedly at 0.5 second intervals. It implies that it has not been assigned a node ID and start auto inclusion.\u00a0<\/p> <p><strong>Auto Inclusion<\/strong><\/p> <p>The function of auto inclusion will be executed as long as the dimmer does not have Node ID and just connect the switch to main power. Note: Auto inclusion timeout is 2 minute during which the node information of explorer frame will be emitted once every several seconds. Unlike \u201cinclusion\u201d function as shown in the table below, the execution of auto inclusion is free from pressing the On\/Off button on the dimmer.\u00a0<\/p> <p><strong>Inclusion procedure<\/strong><\/p> <p>1. Put your Z-Wave controller into inclusion mode by following the instructions provided by the controller manufacturer.\u00a0<\/p> <p>2. \u00a0Pressing Include button of PAD02 three times within 2 seconds will enter inclusion mode.\u00a0<\/p> <p>Note:\u00a0One press one flash LED\u00a0<\/p>",
+    "exclusion": "<p>1. Put your Z-Wave controller into exclusion mode by following the instructions provided by the controller manufacturer.\u00a0<\/p> <p>2. Pressing Include button of PAD02 three times within 2 seconds will enter exclusion mode.\u00a0<\/p> <p>Note:\u00a0One press one flash LED.<\/p> <p>Result: Node ID has been excluded. 0.5s On, 0.5s Off (Enter auto inclusion).<\/p>",
+    "wakeup": "",
+    "protocol_version": 4.5,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "2",
+                    "nif": true,
+                    "basic": true,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Dimmer",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "2B",
+                    "name": "SCENE_ACTIVATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "scene_number",
+                            "label": "Scene Number",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "2C",
+                    "name": "SCENE_ACTUATOR_CONF",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_general",
+                            "label": "Alarm",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "7A",
+                    "name": "FIRMWARE_UPDATE_MD",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "98",
+                    "name": "SECURITY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Mode of  Switch Off  function",
+            "description": "Switch button mode (enabled\/disabled).",
+            "overview": "<p>When the mode of switch On\/Off is set to 0, any command of switch off will be disabled and the On\/Off function of include button will be disabled.<\/p> <p>The default setting is enable mode.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Enabled"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "LED indication mode",
+            "description": "LED mode: 1 is show switch state. 2 is night mode (opposite).",
+            "overview": "<p>LED indication mode :<\/p> <p>1 Show Switch State:When switch is on, LED is on. When switch is off, LED is off. This is\u00a0default setting.<\/p> <p>2 Show Night mode:When switch is on, LED is off. When switch is off, LED is on.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Show current switch state"
+                },
+                {
+                    "value": 2,
+                    "label": "Night mode (opposite)"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "label": "Auto off timer",
+            "description": "Automatic OFF after given time.",
+            "overview": "<p>Whenever DEVICE switches to on, the auto off timer begin to count down. After the timer decrease to zero, it will switch to off automatically. However if Auto off timer is set as 0, the auto off function will be disabled. The default setting is 0 (function disabled).<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32767,
+            "options": []
+        },
+        {
+            "id": 4,
+            "label": "RF off command mode",
+            "description": "How to interpret OFF command.",
+            "overview": "<p>Whenever a switch off command, BASIC_SET \u3001BINARY_SWITCH_SET \u3001SWITCH_ALL_OFF, is received, it could be interpreted as 4 variety of commands:<\/p> <p>0: Switch Off:It switches to OFF state. This is default setting.<\/p> <p>1: Ignore:The switch off command will be ignored.<\/p> <p>2: Switch Toggle:It switches to the inverse of current state.<\/p> <p>3: Switch On:It switches to ON state.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 3,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Switch off"
+                },
+                {
+                    "value": 1,
+                    "label": "Ignore"
+                },
+                {
+                    "value": 2,
+                    "label": "Toggle Switch"
+                },
+                {
+                    "value": 3,
+                    "label": "Switch On"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Group 1",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "Where to send ALARM_REPORT and DEVICE_RESET_LOCALLY_NOTIFICATION",
+            "overview": "<p>The dimmer can be set to send reports to associated Z-Wave devices. It supports one association group with one node support for Grouping 1. For group 1, the dimmer\u00a0will report ALARM_REPORT and DEVICE_RESET_LOCALLY_NOTIFICATION.<\/p>"
+        }
+    ]
+}

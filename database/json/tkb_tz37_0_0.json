@@ -1,0 +1,489 @@
+{
+    "database_id": 562,
+    "label": "TZ37",
+    "manufacturer_name": "TKB Home",
+    "manufacturer_id": "0118",
+    "device_ref": [
+        "0311:0203"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Z-Wave TKB Double Relay Wall Switch",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 4.005,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "2B",
+                    "name": "SCENE_ACTIVATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "scene_number",
+                            "label": "Scene Number",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "2C",
+                    "name": "SCENE_ACTUATOR_CONF",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "60",
+                    "name": "MULTI_INSTANCE",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "7A",
+                    "name": "FIRMWARE_UPDATE_MD",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 1",
+                            "config": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 2",
+                            "config": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Night light",
+            "description": "Configure LED to reflect load's status",
+            "overview": "<p>The LED on the switch will by default turn ON when the load attached is turned OFF. To make the LED turn ON when the load attached is turned ON, alter this configuration parameter.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                },
+                {
+                    "value": 1,
+                    "label": "Enable"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "Memory Function",
+            "description": "Toggles the Switch's memory function ",
+            "overview": "<p>This will turn the Switch's memory function ON\/OFF<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Off"
+                },
+                {
+                    "value": 1,
+                    "label": "On"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "label": "Invert switch",
+            "description": "Inverts switch's top\/bottom ",
+            "overview": "<p><strong>If you invert the switches and also install the product upside down, remember the load will now be controlled by the right, not the left switch.\u00a0<\/strong><\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Default"
+                },
+                {
+                    "value": 1,
+                    "label": "Invert"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "label": "LED transmission indication",
+            "description": "LED flickers when transmitting data to any group",
+            "overview": "<p>Determines whether the\u00a0switch's LED will flicker when it is transmitting to any of its\u00a04 groups\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No indication"
+                },
+                {
+                    "value": 1,
+                    "label": "Temporary Indication"
+                },
+                {
+                    "value": 2,
+                    "label": "Continuous Indication"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "label": "Don't transmit to Group 4",
+            "description": "Disables transmitting to Group 4",
+            "overview": "<p>Disable transmitting commands to Z-Wave devices that are in Group 4 without \u201cdisassociating\u201d those devices from from the group.\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Transmit to Group 4"
+                },
+                {
+                    "value": 1,
+                    "label": "Don't transmit to Group 4"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Lifeline",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "",
+            "overview": "<p>If you associate a Z-Wave device into Group 1, you can turn that device:<\/p>\r\n<div title=\"Page 7\">\r\n<ul>\r\n<li>ON and OFF by tapping the top or bottom of the right switch<\/li>\r\n<li>Brighten or dim devices by pushing and holding the top of the right switch<\/li>\r\n<li>Dim by pushing and holding the bottom of the right switch.<\/li>\r\n<\/ul>\r\n<p>The load attached to the switch is not affected. The LED on the right switch will indicate the status of Group 1.<\/p>\r\n<p>Group 1 will be polled at a specific interval and the LED on the right switch will indicate the status of Group 1. <br \/>The polling interval can be configured.<\/p>\r\n<p>The Group1 name is lifeline(Profile MSB=0x00,Profile LSB=0x01)<\/p>\r\n<\/div>"
+        },
+        {
+            "id": 2,
+            "label": "On\/Off Dimmer 1",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "Use the Left Switch to control a group",
+            "overview": "<p>If you associate a Z-Wave device into Group 2, you can:<\/p>\r\n<div title=\"Page 7\">\r\n<div>\r\n<div>\r\n<div>\r\n<ul>\r\n<li>Turn that device ON or OFF by tapping the top or bottom of the left switch twice.<\/li>\r\n<li>You can brighten or dim devices by:\r\n<ul>\r\n<li>Tapping the switch once<\/li>\r\n<li>Then push and hold the top or bottom of the left switch.<\/li>\r\n<\/ul>\r\n<\/li>\r\n<\/ul>\r\n<p>The load attached to the switch is not affected.\u00a0The LED on the left switch will indicate the status of Group 2.<\/p>\r\n<p>Group 2 will be polled at a specific interval and the LED on the left switch will indicate the status of Group 2. The polling interval can be configured. The Group2 name is On \/Off Dimmer 1(Profile MSB=0x20,Profile LSB=0x01).<\/p>\r\n<\/div>\r\n<\/div>\r\n<\/div>\r\n<\/div>"
+        },
+        {
+            "id": 3,
+            "label": "On\/Off dimmer 2 ",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "Control Group using right switch",
+            "overview": "<p>\u00a0If you associate a Z-Wave device into Group 3, you can:<\/p>\r\n<div title=\"Page 7\">\r\n<ul>\r\n<li>Turn that device ON or OFF by tapping the top or bottom of the righ switch twice.<\/li>\r\n<li>Brighten or dim devices by:\r\n<ul>\r\n<li>Tapping the switch once<\/li>\r\n<li>Then push and hold the top or bottom of the righ switch.<\/li>\r\n<\/ul>\r\n<\/li>\r\n<\/ul>\r\n<p>The load attached to the switch is not affected.<\/p>\r\n<p>The Group3 name is On\/Off dimmer 2 (Profile MSB= 0x20,Profile LSB=0x02).<\/p>\r\n<\/div>"
+        },
+        {
+            "id": 4,
+            "label": "Wireless",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "Switch state controls group",
+            "overview": "<p>If you associate a Z-Wave device into Group 4, that device will be commanded to turn on or off when the switch is commanded to turn on or off<\/p>\r\n<div title=\"Page 7\">\r\n<div>\r\n<div>\r\n<div>\r\n<p>Caution: The switch will not transmit to Z-Wave devices in Group 4 if it is already in the state that the Z-Wave command commanded it to.<\/p>\r\n<p>A note about dimming, if you combine Z-Wave enabled dimmers and other types of Z-Wave devices in a group, place a Z-Wave enabled dimmer into the empty group first to ensure that the dimming operates correctly.<\/p>\r\n<p>The Group4 name is wireless.(Profile MSB=0x20, Profile LSB=0x03)\u00a0<\/p>\r\n<\/div>\r\n<\/div>\r\n<\/div>\r\n<\/div>"
+        }
+    ]
+}

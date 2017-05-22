@@ -1,0 +1,221 @@
+{
+    "database_id": 449,
+    "label": "010101",
+    "manufacturer_name": "Danfoss",
+    "manufacturer_id": "0002",
+    "device_ref": [
+        "0115:A010"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Popp Wireless Thermostatic Valve TRV",
+    "overview": "",
+    "inclusion": "<p>Short push middle button<\/p>",
+    "exclusion": "",
+    "wakeup": "<p>Short push middle button<\/p>",
+    "protocol_version": 3.067,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 6,
+        "name": "LIB_SLAVE_ROUTING"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_THERMOSTAT"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_SETPOINT_THERMOSTAT"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 8,
+                "name": "GENERIC_TYPE_THERMOSTAT"
+            },
+            "specific_class": {
+                "id": 4,
+                "name": "SPECIFIC_TYPE_SETPOINT_THERMOSTAT"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "6",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Sensor (temperature)",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "43",
+                    "name": "THERMOSTAT_SETPOINT",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "thermostat_setpoint",
+                            "label": "Setpoint (heating)",
+                            "config": [
+                                "type=HEATING"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "46",
+                    "name": "CLIMATE_CONTROL_SCHEDULE",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "75",
+                    "name": "PROTECTION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "81",
+                    "name": "CLOCK",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "time_offset",
+                            "label": "Clock Time Offset",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8F",
+                    "name": "MULTI_CMD",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Target for Wakeup and Override Notifications",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

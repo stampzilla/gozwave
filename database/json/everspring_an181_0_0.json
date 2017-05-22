@@ -1,0 +1,437 @@
+{
+    "database_id": 306,
+    "label": "AN181",
+    "manufacturer_name": "Everspring",
+    "manufacturer_id": "0060",
+    "device_ref": [
+        "0004:0006",
+        "0004:0007"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Mini Plug Switch with Metering (Gen5)",
+    "overview": "<p>The Metering Plug is designed to control the on\/off status appliances load in your house. For metering the unit can detect up to 10485.75kW*h and can support wattage, voltage, ampere, and PF detection. The unit can also detect overload upon which the unit will switch off relay and keep LED flashing until power is off and re-applied. At 220-240V voltage, this Plug can support up to 2500W resistive.\u00a0<\/p>",
+    "inclusion": "<p>Press the link key three times within 1.5 seconds to put the unit into inclusion mode.<\/p>",
+    "exclusion": "<p>Press the link key three times within 1.5 seconds to put the unit into exclusion mode.<\/p>",
+    "wakeup": "",
+    "protocol_version": 3.095,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "22",
+                    "name": "APPLICATION_STATUS",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh)",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        },
+                        {
+                            "type": "meter_current",
+                            "label": "Electric meter (amps)",
+                            "config": [
+                                "type=E_A"
+                            ]
+                        },
+                        {
+                            "type": "meter_powerfactor",
+                            "label": "Electric meter (power factor)",
+                            "config": [
+                                "type=E_Power_Factor"
+                            ]
+                        },
+                        {
+                            "type": "meter_voltage",
+                            "label": "Electric meter (volts)",
+                            "config": [
+                                "type=E_V"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "3",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_general",
+                            "label": "Alarm",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "7A",
+                    "name": "FIRMWARE_UPDATE_MD",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Command value",
+            "description": "Set Basic Set Command value to be sent to group 2 when switch is turned on",
+            "overview": "<p>Meaningful range is 0-99 &amp; 255 where<\/p>\r\n<p>0\u00a0= No command will be sent<br \/>1-99 = Turn on switches and dimmers listening to Group 2 to indicated % level (ON for switches)<br \/>255 = Turn on switches and dimmers (full power) listening to Group 2<\/p>\r\n<p>Command will be sent if the mini plug is\u00a0turned on\u00a0via the button or if it receives a remote command.<\/p>\r\n<p>Basic Set Command = 0 (Off) will be sent to Group 2 only if the button is used to turn off the mini plug,\u00a0not when the mini plug is turned off via remote command.<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 99,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No Basic Set Command will be sent"
+                },
+                {
+                    "value": 255,
+                    "label": "Basic Set Command ON will be sent"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "Delaying time",
+            "description": "Set the delaying time to report to Group 1 in seconds",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 3,
+            "value_max": 25,
+            "options": []
+        },
+        {
+            "id": 3,
+            "label": "Remember status",
+            "description": "Set whether to remember the last status",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Do not remember"
+                },
+                {
+                    "value": 1,
+                    "label": "Remember"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "label": "Interval for wattage auto report",
+            "description": "Set the interval for wattage auto report in minutes",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 32767,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Does not report automatically"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "label": "Interval for kW*h auto report",
+            "description": "Set the interval for kW*h auto report in minutes",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 60,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 32767,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Does not report automatically"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "label": "Auto report load surpasses value",
+            "description": "Auto report when load surpasses the set value of wattage",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 2500,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Does not report automatically"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "label": "Auto report change percentage",
+            "description": "Auto report when the change of wattage surpasses the set percentage",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 100,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Does not report automatically"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Target for automatic reports",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "Binary Switch Report, Notification Report, Device Reset Locally Notification, Meter Report",
+            "overview": "<p>When powered on, the device will send (Notification Type = 0x08, Event = 0x01) to the node of Group 1. When overload occurs, the device will send (Notification Type = 0x08, Event = 0x08) to the node of Group 1.<\/p>"
+        },
+        {
+            "id": 2,
+            "label": "Basic Set",
+            "max_nodes": 4,
+            "controller": false,
+            "description": "Basic Set, Control:key1, On\/Off control (Button1)",
+            "overview": ""
+        }
+    ]
+}

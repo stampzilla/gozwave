@@ -1,0 +1,701 @@
+{
+    "database_id": 81,
+    "label": "DSC17",
+    "manufacturer_name": "AEON Labs",
+    "manufacturer_id": "0086",
+    "device_ref": [
+        "0003:0011"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Micro Double Smart Switch",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 2.078,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 7,
+        "name": "LIB_CONTROLLER_BRIDGE"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "3",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_power",
+                            "label": "Sensor (power)",
+                            "config": [
+                                "type=POWER"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        },
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh)",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_reset",
+                            "label": "Reset Meter",
+                            "config": [
+                                "reset=true"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "60",
+                    "name": "MULTI_INSTANCE",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 1",
+                            "config": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 2",
+                            "config": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 2,
+            "label": "Blink",
+            "description": "This is a double byte value.",
+            "overview": "<p>This is a double byte value. The LSB defines the total time the device need to blink. The value is set in seconds. The MSB defines the on\/off interval of the blinking. The unit is 0.1 s.<\/p> <p>Configuration Value 1 is to Specify the time that Micro Double SES need blink, The unit is Second; Configuration Value 2 is to Specify the Cycle of on\/off, the unit of it is 0.1 second. For example: if we set Configuration Value 1 to '15',Configuration Value 2 to '10',then Micro Double SES will open 0.5 second, close 0.5 second, and repeat for 14 times.\u00a0<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 3,
+            "label": "Current Overload Protection",
+            "description": "Load current>=10.A,2 minutes later ,automatic turn off the load",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Enabled"
+                }
+            ]
+        },
+        {
+            "id": 80,
+            "label": "Notification on Status Change",
+            "description": "Enables automatic notifications to associated devices ",
+            "overview": "<p>Parameter to Enable to send notification to associated devices (Group 1) when the state of Micro Smart Switch's load changed<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "nothing"
+                },
+                {
+                    "value": 1,
+                    "label": "Hail CC Sent"
+                },
+                {
+                    "value": 2,
+                    "label": "Basic CC Report Sent"
+                }
+            ]
+        },
+        {
+            "id": 90,
+            "label": "Enables\/disables parameter 91 and 92 ",
+            "description": "Automated sending of a Report triggered by minimal change of value.",
+            "overview": "<p>Parameter to Enable\/Disable automated sending of a Report triggered by minimal change of value.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Deavtivate"
+                },
+                {
+                    "value": 1,
+                    "label": "Activate"
+                }
+            ]
+        },
+        {
+            "id": 91,
+            "label": "Minimum Change to send Report (Watt)",
+            "description": "The value represents the minimum change in Watts for a Report to be sent",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 50,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 92,
+            "label": "Minimum Change to send Report (%)",
+            "description": "The value represents the min. change in Watts Percent for a report to be sent",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 100,
+            "label": "Set 101-103 to default.",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": true,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Enabled"
+                }
+            ]
+        },
+        {
+            "id": 101,
+            "label": "Automatic reports for group 1",
+            "description": "Which reports need to send automatically in timing intervals for group 1",
+            "overview": "<p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.<\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 15,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Voltage"
+                },
+                {
+                    "value": 2,
+                    "label": "Current"
+                },
+                {
+                    "value": 4,
+                    "label": "Wattage"
+                },
+                {
+                    "value": 8,
+                    "label": "kWh"
+                },
+                {
+                    "value": 15,
+                    "label": "All Values"
+                }
+            ]
+        },
+        {
+            "id": 102,
+            "label": "Automatic reports for group 2",
+            "description": "Which reports need to send automatically in timing intervals for group 2",
+            "overview": "<p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.<\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 15,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Voltage"
+                },
+                {
+                    "value": 2,
+                    "label": "Current"
+                },
+                {
+                    "value": 4,
+                    "label": "Wattage"
+                },
+                {
+                    "value": 8,
+                    "label": "kWh"
+                },
+                {
+                    "value": 15,
+                    "label": "All Values"
+                }
+            ]
+        },
+        {
+            "id": 103,
+            "label": "Automatic reports for group 3",
+            "description": "Which reports need to send automatically in timing intervals for group 3",
+            "overview": "<p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.<\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 15,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Voltage"
+                },
+                {
+                    "value": 2,
+                    "label": "Current"
+                },
+                {
+                    "value": 4,
+                    "label": "Wattage"
+                },
+                {
+                    "value": 8,
+                    "label": "kWh"
+                },
+                {
+                    "value": 15,
+                    "label": "All Values"
+                }
+            ]
+        },
+        {
+            "id": 110,
+            "label": "Set 111-113 to default.",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": true,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Enabled"
+                }
+            ]
+        },
+        {
+            "id": 111,
+            "label": "Interval to send out reports of group 1",
+            "description": "",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 600,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 2678400,
+            "options": []
+        },
+        {
+            "id": 112,
+            "label": "Interval to send out reports of group 2",
+            "description": "",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 600,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 2678400,
+            "options": []
+        },
+        {
+            "id": 113,
+            "label": "Interval to send out reports of group 3",
+            "description": "",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 600,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 2678400,
+            "options": []
+        },
+        {
+            "id": 120,
+            "label": "Set External Switch\/Button Control mode",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Momentary button mode"
+                },
+                {
+                    "value": 1,
+                    "label": "2-state switch mode"
+                },
+                {
+                    "value": 255,
+                    "label": "Unidentified mode"
+                }
+            ]
+        },
+        {
+            "id": 255,
+            "label": "Reset to the default Configuration.",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Enabled"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Group 1",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Group 2",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "Group 3",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

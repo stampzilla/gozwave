@@ -1,0 +1,180 @@
+{
+    "database_id": 204,
+    "label": "ZXT-120AU",
+    "manufacturer_name": "Remotec",
+    "manufacturer_id": "5254",
+    "device_ref": [
+        "0102:8377"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Remotec ZXT-120 AC IR Remote",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 0,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": false,
+    "beaming": false,
+    "library_type": {
+        "id": 0,
+        "name": "Unknown"
+    },
+    "basic_class": {
+        "id": 0,
+        "name": null
+    },
+    "generic_class": {
+        "id": 0,
+        "name": null
+    },
+    "specific_class": {
+        "id": 0,
+        "name": "SPECIFIC_TYPE_NOT_USED"
+    },
+    "endpoints": [],
+    "parameters": [
+        {
+            "id": 25,
+            "label": "Indicate a location for IR code learning and start learning",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 22,
+            "options": []
+        },
+        {
+            "id": 26,
+            "label": "(Read Only) Learning status register",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 4,
+            "options": []
+        },
+        {
+            "id": 27,
+            "label": "IR code number for built-in code library",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 28,
+            "label": "External IR Emitter power level",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": -1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": -1,
+                    "label": "High power mode"
+                },
+                {
+                    "value": 0,
+                    "label": "Normal power mode"
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "label": "Surround IR control",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": -1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": -1,
+                    "label": "Enable Surround IR Emitters"
+                },
+                {
+                    "value": 0,
+                    "label": "Disable Surround IR Emitters"
+                }
+            ]
+        },
+        {
+            "id": 33,
+            "label": "AC function Swing control",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Swing Off"
+                },
+                {
+                    "value": 1,
+                    "label": "Swing Auto"
+                }
+            ]
+        },
+        {
+            "id": 35,
+            "label": "(Read Only) Learn location status. Bitmask.",
+            "description": "",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 37,
+            "label": "Sensor temperature compensation",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        }
+    ],
+    "associations": []
+}

@@ -1,0 +1,702 @@
+{
+    "database_id": 413,
+    "label": "FGRM222",
+    "manufacturer_name": "Fibargroup",
+    "manufacturer_id": "010F",
+    "device_ref": [
+        "0301:1001",
+        "0302:1000",
+        "0302:3000"
+    ],
+    "version_min": 24.24,
+    "version_max": 255.255,
+    "decription": "Roller Shutter",
+    "overview": "<p>The device allows for controlling motors of roller blinds, awnings, venetian blinds, gates and others, which are single phase AC powered.<\/p>",
+    "inclusion": "<p>Fibaro Roller Shutter may be included into the Z-Wave network via the B-button or a push button connected to the S1 terminal. In addition, the module may be included in auto inclusion mode, by simply connecting the power supply.<\/p> <p>Automatic Z-Wave network inclusion:<\/p> <ol><li>Make sure the power supply is disconnected and a Roller Shutter is located within a direct Z-Wave network\u2019s main controller communication range.<\/li> <li>Set the main controller into the learn mode (see main controllers operating manual).<\/li> <li>Connect the power supply to include the Roller Shutter in auto inclusion mode. 4) Fibaro Roller Shutter will be automatically detected and included into the Z-Wave network.<\/li> <\/ol><p>To disable the auto inclusion mode, press the B-button briefly, after connecting the module to the power supply.<\/p> <p>Manual Z-Wave network inclusion:\u00a0<\/p> <ol><li>Connect the power supply.<\/li> <li>Set the main controller into the learn mode (see main controllers operating manual).<\/li> <li>Triple click the B-button or a push button connected to the S1 terminal.<\/li> <li>Fibaro Roller Shutter will be detected and included into the Z-Wave network.<\/li> <\/ol>",
+    "exclusion": "<ol><li>Make sure the module is connected to the power supply.<\/li> <li>Set the main controller into the learn mode (see main controllers operating manual).<\/li> <li>Triple click the B-button or a push button connected to the S1 terminal.<\/li> <\/ol>",
+    "wakeup": "<p>device has mains power, doesn't sleep.<\/p>",
+    "protocol_version": 3.052,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_CLASS_B_MOTOR_CONTROL"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 6,
+                "name": "SPECIFIC_TYPE_CLASS_B_MOTOR_CONTROL"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "3",
+                    "nif": true,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "blinds_control",
+                            "label": "Blinds Control",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "2B",
+                    "name": "SCENE_ACTIVATION",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "scene_number",
+                            "label": "Scene Number",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_power",
+                            "label": "Sensor (power)",
+                            "config": [
+                                "type=POWER"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        },
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh)",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "75",
+                    "name": "PROTECTION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8E",
+                    "name": "MULTI_INSTANCE_ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "91",
+                    "name": "MANUFACTURER_PROPRIETARY",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 3,
+            "label": "Reports type",
+            "description": "value should be set to 1 if the module operates in Venetian Blind mode.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Blind position using Z-Wave Command"
+                },
+                {
+                    "value": 1,
+                    "label": "Blind position via Fibar Command"
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "label": "Roller Shutter operating modes",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 4,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Roller Blind Mode, without positioning"
+                },
+                {
+                    "value": 1,
+                    "label": "Roller Blind Mode, with positioning"
+                },
+                {
+                    "value": 2,
+                    "label": "Venetian Blind Mode, with positioning"
+                },
+                {
+                    "value": 3,
+                    "label": "Gate Mode, without positioning"
+                },
+                {
+                    "value": 4,
+                    "label": "Gate Mode, with positioning"
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "label": "Turning time\/ delay time",
+            "description": "depending on mode, turning time or delay time",
+            "overview": "<p>In Venetian Blind mode (parameter 10 set to 2) the parameter determines time of full turn of the lamellas.<\/p> <p>In Gate Mode (parameter 10 set to 3 or 4) the parameter defines the delay time after which an open gate starts closing.Type range<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 150,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 13,
+            "label": "Lamellas positioning mode",
+            "description": "Parameter influences the lamellas positioning in venetian blind mode",
+            "overview": "<p>Parameter influences the lamellas positioning in venetian blind mode (parameter 10 set to 2)<\/p> <p>Set slats back to previous position. In Venetian Blind Mode (parameter 10 set to 2) the parameter influences slats positioning in various situations. In any other operating mode the parameter value is irrelevant. <br \/>0 - Slats return to previously set position only in case of the main controller operation. <br \/>1 - Slats return to previously set position in case of the main controller operation, momentary switch operation, or when the limit switch is reached. <br \/>2 - Slats return to previously set position in case of the main controller operation, momentary switch operation, when the limit switch is reached or after receiving a \u201cSTOP\u201d control frame (Switch Multilevel Stop).<\/p> <p>Default setting: 1 Parameter size: 1 [byte]<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "only in case of the main controller operation"
+                },
+                {
+                    "value": 1,
+                    "label": "default - controller+switchlimit"
+                },
+                {
+                    "value": 2,
+                    "label": "like 1 + STOP control frame"
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "label": "Switch type",
+            "description": "either Toggle switches or a single, momentary switch.",
+            "overview": "<p>14. Switch type. The parameter settings are relevant for Roller Blind Mode and Venetian Blind Mode (parameter 10 set to 0, 1, 2). 0 - Momentary switches 1 - Toggle switches 2 - Single, momentary switch. (The switch should be connected to S1 terminal) Default setting: 0 Parameter size: 1 [byte]<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Momentary switches"
+                },
+                {
+                    "value": 1,
+                    "label": "Toggle switches"
+                },
+                {
+                    "value": 2,
+                    "label": "Single, momentary switch."
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "label": "Delay time after S2",
+            "description": "delay till auto turned off or auto gate close",
+            "overview": "<p>17. In Roller Blind Mode or Venetian Blind mode (parameter 10 set to 0, 1, 2) the parameter determines when the Roller Shutter relays are turned off after reaching a limit switch. In Gate Mode (parameter 10 set to 3 or 4) the parameter determines a time period after which a gate will start closing after a S2 contact has been disconnected. In this mode, time to turn off the Roller Shutter relays after reaching a limit switch is set to 3 seconds and cannot be modified.<\/p> <p>Value of 0 means the gate will note close automatically. <br \/>Available settings: 0 - 255 (0,1-25,5s). <br \/>Default setting: 10 (1s). <br \/>Parameter size: 1 [byte]<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 18,
+            "label": "Motor operation detection",
+            "description": "Power threshold to be interpreted as reaching a limit switch.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 22,
+            "label": "Motor operation time",
+            "description": "Time period for the motor to continue operation.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 29,
+            "label": "Forced Roller Shutter calibration",
+            "description": "set to 1 will enter calibration mode",
+            "overview": "<p>29. Forced Roller Shutter calibration. By modifying the parameters setting from 0 to 1 a Roller Shutter enters the calibration mode. The parameter relevant only if a Roller Shutter is set to work in positioning mode (parameter 10 set to 1, 2 or 4). 1 - Start calibration process Default setting: 0 Parameter size: 1 [byte]<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Deactivated"
+                },
+                {
+                    "value": 1,
+                    "label": "Start calibration process"
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "label": "Response to General Alarm",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No response to alarm frames"
+                },
+                {
+                    "value": 1,
+                    "label": "Open Blind"
+                },
+                {
+                    "value": 2,
+                    "label": "Close Blind"
+                }
+            ]
+        },
+        {
+            "id": 31,
+            "label": "Response to Water Flood Alarm",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No response to alarm frames"
+                },
+                {
+                    "value": 1,
+                    "label": "Open Blind"
+                },
+                {
+                    "value": 2,
+                    "label": "Close Blind"
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "label": "Response to Smoke, CO, CO2 Alarm",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No response to alarm frames"
+                },
+                {
+                    "value": 1,
+                    "label": "Open Blind"
+                },
+                {
+                    "value": 2,
+                    "label": "Close Blind"
+                }
+            ]
+        },
+        {
+            "id": 33,
+            "label": "Response to Temperature Alarm",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No response to alarm frames"
+                },
+                {
+                    "value": 1,
+                    "label": "Open Blind"
+                },
+                {
+                    "value": 2,
+                    "label": "Close Blind"
+                }
+            ]
+        },
+        {
+            "id": 35,
+            "label": "Managing lamellas in response to alarm",
+            "description": "0 no change, 1 extreme position",
+            "overview": "<p>35. Managing slats in response to alarm. In Venetian Blind Mode (parameter 10 set to 2), the parameter determines how the slats will react upon alarm detection. In any other modes, the parameter value is not relevant. 0 - Do not change slats position - slats return to the last set position. 1 - Set slats to their extreme position. Default setting: 1 Parameter size: 1 [byte]<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Do not change lamellas position"
+                },
+                {
+                    "value": 1,
+                    "label": "Set lamellas to their extreme position"
+                }
+            ]
+        },
+        {
+            "id": 40,
+            "label": "Power reports",
+            "description": "change that needs to occur  to trigger the power report",
+            "overview": "<p>40. Power reports. Power level change that will result in new power value report being sent. The parameter defines a change that needs to occur in order to trigger the report. The value is a percentage of the previous report. Power report threshold available settings: 1-100 (1-100%). Value of 0 means the reports are turned off. Default setting: 10 (10%). Parameter size: 1 [byte]<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 42,
+            "label": "Periodic power or energy reports",
+            "description": "Time to the next report. Value of 0 means the reports are turned off.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 3600,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65534,
+            "options": []
+        },
+        {
+            "id": 43,
+            "label": "Energy reports",
+            "description": " Energy threshold to trigger report",
+            "overview": "<p>43. Energy reports. Energy level change which will result in new energy value report being sent. The parameter defines a change that needs to occur in order to trigger the report. Energy threshold available settings: 1-254 (0,01 - 2,54kWh). Value of 0 means the reports are turned off. Default setting 10 (0,1kWh). Parameter size: 1 [byte]<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 254,
+            "options": []
+        },
+        {
+            "id": 44,
+            "label": "Self-measurement",
+            "description": "if power and energy reports are to sent to the main controller",
+            "overview": "<p>44. Self-measurement. A Roller Shutter may include power and energy used by itself in reports sent to the main controller.<br \/>0 - Self-measurement inactive. <br \/>1 - Self-measurement active. <br \/>Default setting: 0 <br \/>Parameter size: 1 [byte]\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Activated"
+                }
+            ]
+        },
+        {
+            "id": 50,
+            "label": "Scenes\/ Associations activation",
+            "description": "whether scenes or associations are activated by the switch keys",
+            "overview": "<p>SCENES AND ASSOCIATIONS SETTINGS: <br \/>50. Scenes \/ Associations activation. Parameter determines whether scenes or associations are activated by the switch keys. <br \/>0 - Associations activation <br \/>1 - Scenes activation <br \/>Default setting: 0 <br \/>Parameter size: 1 [byte]<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Associations Active"
+                },
+                {
+                    "value": 1,
+                    "label": "Scenes Active"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Momentary click",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Momentary hold",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "Controller Updates",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

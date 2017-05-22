@@ -1,0 +1,739 @@
+{
+    "database_id": 264,
+    "label": "GWPN5",
+    "manufacturer_name": "GreenWave Reality Inc.",
+    "manufacturer_id": "0099",
+    "device_ref": [
+        "0003:0003"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Multi-socket PowerNode (5-plug)",
+    "overview": "<p>This Configuration is for the 6 plug version of the PowerNode.<\/p>",
+    "inclusion": "<p>On the PowerNode, press and hold the <strong>sync<\/strong> button for approximately one second until the activity indicator displays a clockwise rotating pattern. This indicates the PowerNode is attempting inclusion. During this process, verify that the Gateway activity indicator still displays a clockwise rotating pattern.<\/p>\n<p>After a few seconds, the rotating pattern on both the PowerNode and the Gateway stops. All bars turn green forming a circle for several seconds. This indicates a successful inclusion.<\/p>\n<p>If all bars on the activity indicator start flashing instead of forming a solid circle, then the PowerNode inclusion process has failed, and you must start the sync process again. If syncing continually fails even though the PowerNode is close to the Gateway, then it may be an indication of a hardware fault, and the PowerNode might need replacing.<\/p>",
+    "exclusion": "<p>On the PowerNode, press and hold the <strong>Sync<\/strong> button for approximately one second until the PowerNode activity indicator begins to display a counter-clockwise rotating pattern. The PowerNode is attempting exclusion.<\/p>",
+    "wakeup": "",
+    "protocol_version": 3.041,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        },
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh)",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "56",
+                    "name": "CRC_16_ENCAP",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "60",
+                    "name": "MULTI_INSTANCE",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_general",
+                            "label": "Alarm",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 1",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts) 1",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        },
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh) 1",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 2",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts) 2",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        },
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh) 2",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 3",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts) 3",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        },
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh) 3",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 4",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts) 4",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        },
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh) 4",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 5",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts) 5",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        },
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh) 5",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 0,
+            "label": "Min. variation of load current",
+            "description": "Minimum variation in load current before a message is sent.",
+            "overview": "<p>Value in percent (30 =&gt; 30%)<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 1,
+            "label": "No communication light",
+            "description": "Minutes after which the device will flash if controller communicate is lost",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 2,
+            "label": "Wheel position",
+            "description": "\tWheel position on the GreenWave device (read-only)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 128,
+                    "label": "Black"
+                },
+                {
+                    "value": 129,
+                    "label": "Green"
+                },
+                {
+                    "value": 130,
+                    "label": "Dark Blue"
+                },
+                {
+                    "value": 131,
+                    "label": "Red"
+                },
+                {
+                    "value": 132,
+                    "label": "Yellow"
+                },
+                {
+                    "value": 133,
+                    "label": "Purple"
+                },
+                {
+                    "value": 134,
+                    "label": "Orange"
+                },
+                {
+                    "value": 135,
+                    "label": "Light Blue"
+                },
+                {
+                    "value": 136,
+                    "label": "Pink"
+                },
+                {
+                    "value": 137,
+                    "label": "Locked"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "label": "Power-on state",
+            "description": "Default state after power loss",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "All OFF"
+                },
+                {
+                    "value": 1,
+                    "label": "Remember last state"
+                },
+                {
+                    "value": 2,
+                    "label": "All ON"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "label": "LED for network  error",
+            "description": "If the LED should indicate a network error by flashing or not",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable the LED for network error"
+                },
+                {
+                    "value": 1,
+                    "label": "Enable the LED for network error"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Wheel position change",
+            "max_nodes": 1,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Current leakage on relay",
+            "max_nodes": 1,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "Power level change",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "The new power reading is sent if the delta of the change is greater than the defined minimum variation",
+            "overview": ""
+        },
+        {
+            "id": 4,
+            "label": "Over-current detection",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

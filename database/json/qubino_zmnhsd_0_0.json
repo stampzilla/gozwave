@@ -1,0 +1,547 @@
+{
+    "database_id": 324,
+    "label": "ZMNHSD",
+    "manufacturer_name": "Goap",
+    "manufacturer_id": "0159",
+    "device_ref": [
+        "0001:0052"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "DIN Rail Dimmer",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 4.005,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "3",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Dimmer",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh)",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Input switch type",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "0 - Mono-stable switch type (push button)"
+                },
+                {
+                    "value": 1,
+                    "label": "1 - Bi-stable switch type"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "label": "Working mode",
+            "description": "With this parameter it is possible to change the module presentation on the user interface.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Dimmer"
+                },
+                {
+                    "value": 1,
+                    "label": "Switch"
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "label": "Activate \/ deactivate functions ALL ON \/ ALL OFF",
+            "description": "DIN dimmer module responds to commands ALL ON \/ ALL OFF that may be sent by\t\t\t\tthe main controller or by other controller belonging to the system.\t\t\t",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "ALL ON is not active, ALL OFF is not active"
+                },
+                {
+                    "value": 1,
+                    "label": "ALL ON is not active, ALL OFF active"
+                },
+                {
+                    "value": 2,
+                    "label": "ALL ON active, ALL OFF is not active"
+                },
+                {
+                    "value": 255,
+                    "label": "ALL ON active, ALL OFF active"
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "label": "Automatic turning off output after set time",
+            "description": "",
+            "overview": "<ul><li>0 - Auto OFF disabled<\/li> <li>1 \u2013 32536 = 1 second \u2013 32536 seconds Auto OFF enabled with defined time, step is 1 second.<\/li> <\/ul>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32536,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Auto off DISABLED"
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "label": "Automatic turning on output after set time",
+            "description": "",
+            "overview": "<ul><li>0 - Auto ON disabled<\/li> <li>1 \u2013 32536 = 1 second \u2013 32536 seconds Auto ON enabled with defined time, step is 1 second.<\/li> <\/ul>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32536,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Auto on DISABLED"
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "label": "Enable \/ Disable Double click function",
+            "description": "\r\n\t\t\t\tIf Double click function is enabled, a fast double click on the push button\r\n\t\t\t\twill set dimming power at maximum dimming value.\r\n\t\t\t",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "0 - double click disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "1 - double click enabled"
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "label": "Saving the state of the device after a power failure",
+            "description": "If state saving is enabled, DIN dimmer module saves its state before\t\t\t\tpower failure (it returns to the last position saved before a power failure).\t\t\t\tIf state saving is disabled, DIN dimmer module does not save the state after a powe",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "0 - Save state enabled"
+                },
+                {
+                    "value": 1,
+                    "label": "1 - Save state disabled"
+                }
+            ]
+        },
+        {
+            "id": 40,
+            "label": "Power reporting in watts on power change",
+            "description": "Set value means percentage, set value from 0 - 100 = 0% - 100%.\t\t\t\tDefault value is 5.\t\t\t\t0 \u2013 Reporting Disabled\t\t\t\t1 \u2013 100 = 1% - 100% Reporting enabled. Power report is sent (push) only when actual power in Watts in real time changes for more than set p",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 42,
+            "label": "Power reporting in Watts by time interval",
+            "description": "Set value means time interval (0 \u2013 32767) in seconds, when power report is sent.",
+            "overview": "<ul><li>0 \u2013 reporting disabled<\/li> <li>1 \u2013 32767 = 1 second \u2013 32767 seconds. Reporting enabled. Power report is sent with time interval set by entered<\/li> <\/ul>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 300,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32767,
+            "options": []
+        },
+        {
+            "id": 60,
+            "label": "Minimum dimming value",
+            "description": "",
+            "overview": "<ul><li>1-98 = 1% \u2013 98%, step is 1%. Minimum dimming value is set by entered value.<\/li> <\/ul><p>NOTE: The minimum level may not be higher than the maximum level! 1% min. dimming value is defined by Z- Wave multilevel device class.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 98,
+            "options": []
+        },
+        {
+            "id": 61,
+            "label": "Maximum dimming value",
+            "description": "",
+            "overview": "<ul><li>2-99 = 2% \u2013 99%, step is 1%. Maximum dimming value is set by entered value.<\/li> <\/ul><p>NOTE: The maximum level may not be lower than the minimum level! 99% max. dimming value is defined by Z- Wave multilevel device class.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 99,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 2,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 65,
+            "label": "Dimming time (soft on\/off)",
+            "description": "\r\n\t\t\t\tSet value means time of moving the Dimmer between min. and max. dimming\r\n\t\t\t\tvalues by short press of push button I1 or controlled through UI (BasicSet).\r\n\t\t\t\t<ul><li>default value 100 = 1s<\/li>\r\n\t\t\t\t<li>1 - 255 = 100 mseconds \u2013 25500 mseconds (25.5",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 100,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 66,
+            "label": "Dimming time when key pressed",
+            "description": "Time to moving the Dimmer between min. and max values (in seconds).",
+            "overview": "<ul><li>default value 3 = 3s<\/li> <li>1- 255 = 1 second \u2013 255 seconds.<\/li> <\/ul>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 67,
+            "label": "Ignore start level",
+            "description": "\r\n\t\t\t\tThis parameter is used with association group 3.\r\n\t\t\t\tA receiving device SHOULD respect the start level if the Ignore Start Level bit is 0. \r\n\t\t\t\tA receiving device MUST ignore the start level if the Ignore Start Level bit is 1.\r\n\t\t\t",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "0 - respect start level"
+                },
+                {
+                    "value": 1,
+                    "label": "1 - ignore start level"
+                }
+            ]
+        },
+        {
+            "id": 68,
+            "label": "Dimming duration",
+            "description": "This parameter is used with association group 3.",
+            "overview": "<p>The Duration field MUST specify the time that the transition should take from the current value to the new target value. A supporting device SHOULD respect the specified Duration value.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 110,
+            "label": "Temperature sensor offset settings",
+            "description": "Set value is added or subtracted to actual measured\r\n\t\t\t\tvalue by sensor. Available configuration parameters:\r\n\t\t\t\t<ul><li>default value 32536<\/li>\r\n\t\t\t\t<li>32536 \u2013 offset is 0.0C<\/li>\r\n\t\t\t\t<li>From 1 to 100 \u2013 value from 0.1 \u00b0C to 10.0 \u00b0C is\r\n\t\t\t\tadded to",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 32536,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 32536,
+            "options": []
+        },
+        {
+            "id": 120,
+            "label": "Digital temperature sensor reporting",
+            "description": "If digital temperature sensor is connected, module\r\n\t\t\t\treports measured temperature on temperature change defined\r\n\t\t\t\tby this parameter. Available configuration parameters:\r\n\t\t\t\t<ul><li>default value 5 = 0.5\u00b0C<\/li>\r\n\t\t\t\t<li>0 \u2013 Reporting disabled<\/li>\r\n",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Controller Updates",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "I1 basic on\/off",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "I1 start\/stop level change",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 4,
+            "label": "Multilevel set",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 5,
+            "label": "Multilevel sensor report",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

@@ -1,0 +1,299 @@
+{
+    "database_id": 293,
+    "label": "TZ08",
+    "manufacturer_name": "TKB Home",
+    "manufacturer_id": "0118",
+    "device_ref": [
+        "0001:0006"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Rollershutter Controller",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.041,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": false,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_CLASS_C_MOTOR_CONTROL"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 7,
+                "name": "SPECIFIC_TYPE_CLASS_C_MOTOR_CONTROL"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Dimmer",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "2B",
+                    "name": "SCENE_ACTIVATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_current",
+                            "label": "Electric meter (amps)",
+                            "config": [
+                                "type=E_A"
+                            ]
+                        },
+                        {
+                            "type": "meter_voltage",
+                            "label": "Electric meter (volts)",
+                            "config": [
+                                "type=E_V"
+                            ]
+                        },
+                        {
+                            "type": "meter_powerfactor",
+                            "label": "Electric meter (power factor)",
+                            "config": [
+                                "type=E_Power_Factor"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        },
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh)",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_general",
+                            "label": "Alarm",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Watt meter report period",
+            "description": "",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 720,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 32767,
+            "options": []
+        },
+        {
+            "id": 2,
+            "label": "KWh meter report period",
+            "description": "",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 6,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 32767,
+            "options": []
+        },
+        {
+            "id": 3,
+            "label": "Watt load caution threshold",
+            "description": "",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 1100,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 10,
+            "value_max": 1100,
+            "options": []
+        },
+        {
+            "id": 4,
+            "label": "KWh load caution threshold",
+            "description": "",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 10000,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 10000,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Group 1",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

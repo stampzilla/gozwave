@@ -1,0 +1,466 @@
+{
+    "database_id": 397,
+    "label": "Power Plug",
+    "manufacturer_name": "Shenzhen Neo Electronics Co., Ltd",
+    "manufacturer_id": "0258",
+    "device_ref": [
+        "0003:1087"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Metered Wall Plug Switch",
+    "overview": "<p>This Plug provides line voltage, current load, power consumption and energy<\/p> <p>consumption measuring.\u00a0<\/p> <p><strong>Voltage<\/strong> \u2013 The Supply Power Voltage For Plug.<\/p> <p><strong>Current<\/strong> \u2013 The Current for the Electric Device Connect to Plug Consumption.<\/p> <p><strong>Power<\/strong> \u2013 Power Consumed by an Electric Device in an instant, unit: Watt (W).<\/p> <p><strong>Energy<\/strong> \u2013 Energy Consumed by an Electric Device through a Time Period. Most<\/p> <p>commonly measured in Kilowatt-hours (kWh). One kilowatt-hour is Equal to One<\/p> <p>Kilowatt of Power Consumed over a Period of One Hour, 1kWh = 1000Wh.0Wh.<\/p>",
+    "inclusion": "<p>1. Make sure the sensor is powered.<\/p> <p>2. Set Z\u2010Wave controller or Z\u2010Wave gateway into inclusion mode (Refer to the controller or<\/p> <p>gateway operating manual)<\/p> <p>3. Press the button three times within 1.5 second, the device will enter inclusion mode. And the<\/p> <p>LED will flash on and off with green alternately five times within 2 seconds.<\/p>",
+    "exclusion": "<p>1. Make sure the sensor is powered.<\/p> <p>2. Set Z\u2010Wave controller or Z\u2010Wave gateway into exclusion mode (Refer to the controller or<\/p> <p>gateway operating manual)<\/p> <p>3. Press the button three times within 1.5 second, the device will enter exclusion mode. And<\/p> <p>the LED will flash on and off with yellow alternately five times within 2 seconds.<\/p>",
+    "wakeup": "",
+    "protocol_version": 4.005,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_current",
+                            "label": "Electric meter (amps)",
+                            "config": [
+                                "type=E_A"
+                            ]
+                        },
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh)",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        },
+                        {
+                            "type": "meter_voltage",
+                            "label": "Electric meter (volts)",
+                            "config": [
+                                "type=E_V"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "3",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_power",
+                            "label": "Alarm (power)",
+                            "config": [
+                                "type=POWER_MANAGEMENT"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Meter Report Enable",
+            "description": "This parameter defines Disable\/Enable meter report measure data to controller.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable Report"
+                },
+                {
+                    "value": 1,
+                    "label": "Enable Report"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "Meter Report Interval",
+            "description": "This parameter defines interval time (in seconds) that Meter report data to main controller.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 300,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 3,
+            "label": "Maxium over-load current",
+            "description": "This parameter defines maximum current the plug can provide to load that be connected to plug. If the current consumed by load greater than maximum current, the plug will cut off power and send alarm.",
+            "overview": "<p>send Alarm NOTIFICATION_EVENT_POWER_MANAGEMENT_OVER_LOAD_DETECTED to associated<\/p> <p>devices in lifeline. Red Led will blink every seconds until current is normal (less than Parameter<\/p> <p>#3). You must remove the loader and turn on the Plug (press the button once) to enable current<\/p> <p>monitor and clear NOTIFICATION ALARM.<\/p> <p>This parameter value must be great than #4. If user set this parameter to default by Configure CC,<\/p> <p>the parameter #4 will be set to default value.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 13,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 16,
+            "options": []
+        },
+        {
+            "id": 4,
+            "label": "Maximum alarm current",
+            "description": "Defines maximum current, if the current plug provide to load great than this parameter, the plug will send over-current notification to main controller and the LED will be turn RED, but plug cannot cut-off power. Value must be less than parameter 3#. ",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 12,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 15,
+            "options": []
+        },
+        {
+            "id": 5,
+            "label": "LED enable",
+            "description": "This parameter defines the LED indication Function ON\/OFF.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable LED indication Function"
+                },
+                {
+                    "value": 1,
+                    "label": "Enable LED indication Function"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "label": "Power Report Threshold",
+            "description": "How much the power consumed must change to be reported. If the rate of power consumed change ratio is greater than this parameter, the plug will report the results, voltage, current, power and energy.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 7,
+            "label": "Remember Relay ON\/OFF status after power failure.",
+            "description": " Define how will the Plug react after the power supply is back on.  0 = will be off after the power supply is reconnected.  Others = remember relay status",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Don\u2019t Remember, the relay will keep OFF when Plug Supply Power."
+                },
+                {
+                    "value": 1,
+                    "label": "Remember the Relay Status."
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "label": "Plug Time switch Function",
+            "description": "Defines if the timer function is enabled\/disabled to switch the Plug OFF after the time period, which is defined in parameter 9#.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Time switch Disable"
+                },
+                {
+                    "value": 1,
+                    "label": "Time switch Enable"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "label": "Time switch Period",
+            "description": "This parameter defines the time after the plug is switched off. If Parameter 8# is set to \u20181\u2019, and relay is turn ON, the relay will be turn OFF after delay this parameter.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 150,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 10,
+            "label": "Button On\/Off Enable",
+            "description": "If this parameter is set to \u20181\u2019, users can turn on and off the wall plug by pressing the button on the top of the wall plug.If this parameter is set to \u20180\u2019, the wall plug cannot be turned on and off by pressing the button.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable Button"
+                },
+                {
+                    "value": 1,
+                    "label": "Enable Button"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Group 1",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "is assigned to Plugs status - On\/Off. Allows for receiving control command from trigger devices whenever the Plug is turned On or Off.",
+            "overview": "<p>NOTIFICATION_REPORT_V4<\/p>\r\n<p>METER_REPORT_V4<\/p>\r\n<p>SWITCH_BINARY_REPORT<\/p>\r\n<p>DEVICE_RESET_LOCALLY_NOTIFICATION<\/p>"
+        },
+        {
+            "id": 2,
+            "label": "Group 2",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "Sending control commands to associated devices. If current load is over the max current defined in parameter #3, the Plug will send a BASIC_SET (0xFF) to associated devices. When current load is normal, plug will send a BASIC_SET (0x00).",
+            "overview": "<p>BASIC_SET<\/p>"
+        },
+        {
+            "id": 3,
+            "label": "Group 3",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "Send Notification to associated devices.",
+            "overview": "<p>NOTIFICATION_REPORT_V4<\/p>"
+        }
+    ]
+}

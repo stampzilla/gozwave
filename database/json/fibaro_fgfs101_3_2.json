@@ -1,0 +1,682 @@
+{
+    "database_id": 392,
+    "label": "FGFS101",
+    "manufacturer_name": "Fibargroup",
+    "manufacturer_id": "010F",
+    "device_ref": [
+        "0B00:1001",
+        "0B01:1002",
+        "0B01:2002"
+    ],
+    "version_min": 3.2,
+    "version_max": 23,
+    "decription": "Flood Sensor",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 4.005,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SENSOR_NOTIFICATION"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_NOTIFICATION_SENSOR"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 7,
+                "name": "GENERIC_TYPE_SENSOR_NOTIFICATION"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_NOTIFICATION_SENSOR"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "22",
+                    "name": "APPLICATION_STATUS",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "30",
+                    "name": "SENSOR_BINARY",
+                    "version": "0",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_binary",
+                            "label": "Binary Sensor",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "5",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Sensor (temperature)",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "56",
+                    "name": "CRC_16_ENCAP",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "3",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_burglar",
+                            "label": "Alarm (burglar)",
+                            "config": [
+                                "type=BURGLAR"
+                            ]
+                        },
+                        {
+                            "type": "alarm_flood",
+                            "label": "Alarm (flood)",
+                            "config": [
+                                "type=FLOOD"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "7A",
+                    "name": "FIRMWARE_UPDATE_MD",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8E",
+                    "name": "MULTI_INSTANCE_ASSOCIATION",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "98",
+                    "name": "SECURITY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "9C",
+                    "name": "SENSOR_ALARM",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_general",
+                            "label": "Alarm (general)",
+                            "config": [
+                                "type=GENERAL"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Alarm cancellation delay",
+            "description": "Time in seconds that the flood state is retained after flooding event",
+            "overview": "<p>Determines time period (in seconds) by which a Flood Sensor will retain the flood state after the flooding itself has ceased. The sensor will keep on reporting flooding to the main controller. This parameter setting does not affect acoustic and visual ala<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 3600,
+            "options": []
+        },
+        {
+            "id": 2,
+            "label": "Select alarm type (visual\/acoustic)",
+            "description": "This parameter allows for deactivation visual and acoustic alarm.",
+            "overview": "<p>This parameter allows for deactivation visual and acoustic alarm.<\/p> <p>Available settings:<\/p> <p>0 \u2013 acoustic and visual alarms inactive<\/p> <p>1 \u2013 acoustic alarm inactive, visual alarm active<\/p> <p>2 \u2013 acoustic alarm active, visual alarm inactive<\/p> <p>3 \u2013 acoustic and visual alarms active<\/p> <p>Parameter allows for increasing a battery life. Setting changes will not affect the sensor\u2019s communication with the main controller \u2013 commands to association groups, alarms and reports will still be sent.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": true,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 3,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Acoustic and visual alarms inactive"
+                },
+                {
+                    "value": 1,
+                    "label": "Acoustic alarm inactive, visual alarm active"
+                },
+                {
+                    "value": 2,
+                    "label": "Acoustic alarm active, visual alarm inactive"
+                },
+                {
+                    "value": 3,
+                    "label": "Acoustic and visual alarms active"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "label": "Requested dimming level to 2nd assoc. group",
+            "description": "\u201cOn\u201d level to be sent to devices from 2nd association group on flood event",
+            "overview": "<p>Requested dimming level \/ roller blind opening level when sending turn on \/ open command to 2nd association group devices.<\/p> <p>Available settings:<br \/><strong>1-99<\/strong> \u2013 requested level<br \/><strong>255<\/strong> \u2013 turn a device on<\/p> <p>Determines the requested \u201con\u201d level to be sent to devices from 2nd association group upon flood event. The value of 255 allows for turning a device on. In case of a Dimmer it means turning it on with the last memorized state, e.g. Dimmer set to 30% and turned off, turned on again using 255 command is turned on with last state i.e. 30%.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 9,
+            "label": "Device off and alarm cancellations",
+            "description": "Enable\/disable device off\/alarm cancellation updates to 2nd\/3rd assoc groups",
+            "overview": "<p>Deactivate turning off devices in 2nd association group &amp; alarm cancellation in 3rd group<\/p> <p>This setting decides whether device turn off commands and alarm cancellation notifications will be sent to devices in 2nd and 3rd association groups (respectively).<\/p> <p>Setting the parameter\u2019s value to 0 disables sending these two commands to associated devices. This means that these devices WILL NOT be informed when the flooding has ceased. It is still possible to cancel alarms in 3rd association group by choosing second (green) menu position.<\/p> <p>Available settings:<br \/><strong>0<\/strong> \u2013 alarm (flooding) cancellation inactive<br \/><strong>1<\/strong> \u2013 alarm (flooding) cancellation active<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Alarm (flooding) cancellation inactive"
+                },
+                {
+                    "value": 1,
+                    "label": "Alarm (flooding) cancellation active"
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "label": "Temperature measurement interval",
+            "description": "Seconds between consecutive measurements of battery level\/temperature",
+            "overview": "<p>Time interval (in seconds) between consecutive measurements of battery level and temperature (done by built-in temperature sensor). If the temperature differs from previously reported by a value determined in parameter 12, it will be reported to the Z-Wave controller. In battery mode more significant battery level changes will be reported. Short time intervals mean more frequent communication, which results in shortened battery life. After consecutive FAILED and SUCCESSFUL communication attempts, the Sensor will go to standby mode.<\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 300,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 12,
+            "label": "Temperature measurement hysteresis",
+            "description": "Minimum change in temperature value for report to be sent to controller",
+            "overview": "<p>Determines a minimum temperature change value (insensitivity level), resulting in a temperature report being sent to the main controller, according to the Parameter 10 settings.<\/p> <p>Available settings:\u00a0<strong>1 \u2013 1 000<\/strong>\u00a0(each 0.01\u00b0C)<br \/>Default setting:\u00a0<strong>50<\/strong>\u00a0(0.5\u00b0C)<br \/>Parameter size:\u00a0<strong>2 [bytes]<\/strong><\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 50,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 1000,
+            "options": []
+        },
+        {
+            "id": 50,
+            "label": "Low temperature alarm threshold",
+            "description": "Temperature value below which visual indicator blinks",
+            "overview": "<p>The parameter stores a temperature value, below which visual indicator blinks with a colour determined by a parameter 61 settings. By default the visual indicator blinks blue.<\/p> <p>Available settings:\u00a0<strong>-10 000 to +10 000<\/strong>\u00a0(each 0.01\u00b0C)<br \/>Default setting:\u00a0<strong>1 500<\/strong>\u00a0(15.00\u00b0C)<br \/>Parameter size:\u00a0<strong>2 [bytes]<\/strong><\/p> <p>The main controller does not interpret negative numbers as decimals. That\u2019s why read value may be different than entered. Negative numbers are coded in U2 standard.<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 1500,
+            "read_only": false,
+            "write_only": false,
+            "value_min": -10000,
+            "value_max": 10000,
+            "options": []
+        },
+        {
+            "id": 51,
+            "label": "High temperature alarm threshold",
+            "description": "Temperature value above which visual indicator blinks",
+            "overview": "<p>Available settings:\u00a0<strong>-10 000 to +10 000<\/strong>\u00a0(each 0.01\u00b0C)<br \/>Default setting:\u00a0<strong>3 500<\/strong>\u00a0(35\u00b0C)<br \/>Parameter size:\u00a0<strong>2 [bytes]<\/strong><\/p> <p>The parameter stores a temperature value, above which visual indicator blinks with a colour determined by the parameter 62 settings. By default the visual indicator blinks red.<\/p> <p>The main controller does not interpret negative numbers as decimals. That\u2019s why read value may be different than entered. Negative numbers are coded in U2 standard.<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 3500,
+            "read_only": false,
+            "write_only": false,
+            "value_min": -10000,
+            "value_max": 10000,
+            "options": []
+        },
+        {
+            "id": 61,
+            "label": "Low temperature alarm indicator colour",
+            "description": "Parameter stores RGB colour value.",
+            "overview": "<p>A main controller interprets colours as a sum of it component colours value. Each colours value is a number from 0 to 255.<\/p> <p>Example:<\/p> <p>Indicated colour = 65536 * RED value + 256 * GREEN value + BLUE value<\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 16777215,
+            "options": []
+        },
+        {
+            "id": 62,
+            "label": "High temperature alarm indicator colour",
+            "description": "Parameter stores RGB colour value.",
+            "overview": "<p>Parameter stores RGB colour value.<\/p> <p>Available settings:\u00a0<strong>0 \u2013 16777215<\/strong><br \/>Default setting:\u00a0<strong>16711680<\/strong>\u00a0(red 0x00FF0000)<br \/>Parameter size:\u00a0<strong>4 [bytes]<\/strong><\/p> <p>A main controller interprets colours as a sum of it component colours value. Each colours value is a number from 0 to 255.<\/p> <p>Example:<br \/>Indicated colour = 65536 * RED value + 256 * GREEN value + BLUE value<\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 16711680,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 16777215,
+            "options": []
+        },
+        {
+            "id": 63,
+            "label": "Visual temperature indicator",
+            "description": "Enable or disable visual temperature indicator via device's LED",
+            "overview": "<p>Parameter determines visual indicator\u2019s operation. Setting to 0 turns the temperature LED indication off, saving battery life.<\/p> <p>Available settings:<br \/><strong>0<\/strong>\u00a0\u2013\u00a0visual indicator does not indicate the temperature<br \/><strong>1<\/strong>\u00a0\u2013 visual indicator indicates the temperature (blink) every Temperature Measurement Interval (parameter 10, constant current and battery) and Wake Up Interval (battery mode)<br \/><strong>2<\/strong>\u00a0\u2013 visual indicator indicates the temperature continuously, only in constant power mode<br \/>Default setting:\u00a0<strong>2<\/strong><br \/>Parameter size:\u00a0<strong>1 [byte]<\/strong><\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Visual indicator does not indicate the temperature"
+                },
+                {
+                    "value": 1,
+                    "label": "Indicator at every temperature measurement and wake up"
+                },
+                {
+                    "value": 2,
+                    "label": "Visual indicator indicates the temperature continuously"
+                }
+            ]
+        },
+        {
+            "id": 73,
+            "label": "Temperature measurement compensation",
+            "description": "Offset to current temperature to account temperature difference",
+            "overview": "<p>Available settings:\u00a0<strong>-10 000 to +10 000<\/strong><br \/>Default setting:\u00a0<strong>0<\/strong>\u00a0(0.00\u00b0C)<br \/>Parameter size:\u00a0<strong>2 [bytes]<\/strong><\/p> <p>Parameter stores a temperature value to be added to or deducted from the current temperature measured by internal temperature sensor in order to compensate the difference between air temperature and temperature at the floor level.<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": -10000,
+            "value_max": 10000,
+            "options": []
+        },
+        {
+            "id": 74,
+            "label": "Alarm frame for movement\/tamper",
+            "description": "Movement\/tamper alarm sent to 1st & 4th assoc. group",
+            "overview": "<p>Available settings:<\/p> <p><strong>0<\/strong>\u00a0\u2013 tamper alarms inactive<br \/><strong>1<\/strong>\u00a0\u2013 button tamper alarm active<br \/><strong>2<\/strong>\u00a0\u2013 movement tamper alarm active<br \/><strong>3<\/strong>\u00a0\u2013 button and movement tampers alarm active<br \/>Default setting:\u00a0<strong>2<\/strong><br \/>Parameter size:\u00a0<strong>1 [byte]<\/strong><\/p> <p>The device is able to report tamper alarms resulting from sensor\u2019s tilt\/movement or TMP button state change (e.g. taking off the top cover).<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 3,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Tamper alarm inactive"
+                },
+                {
+                    "value": 1,
+                    "label": "Button tamper alarm active"
+                },
+                {
+                    "value": 2,
+                    "label": "Movement tamper alarm active"
+                },
+                {
+                    "value": 3,
+                    "label": "Button and movement tampers alarm active"
+                }
+            ]
+        },
+        {
+            "id": 75,
+            "label": "Alarms signalization duration",
+            "description": "Turn off alarm after given timeout",
+            "overview": "<p>The device is capable of automatically turning off alarm signalization after a certain amount of time. Long lasting alarm may reduce battery life, when constantly signalized.<\/p> <p>Available settings:<br \/><strong>0<\/strong>\u00a0\u2013 alarms active indefinitely<br \/><strong>1-65535<\/strong>\u00a0\u2013 time in seconds<br \/>Default setting:\u00a0<strong>0<\/strong><br \/>Parameter size:\u00a0<strong>4\u00a0[bytes]<\/strong><\/p> <p>The parameter determines time after which alarm will become \u201cquiet\u201d \u2013 still active but the device will go into battery saving mode. Visual or acoustic alarm will be reactivated after time specified in the parameter 76. When alarm status ceases, alarm will be turned off immediately.<\/p> <p>The value of 0 means visual and acoustic alarms are active indefinitely. In battery power mode the Sensor will never go to sleep which may shorten battery life significantly.<\/p> <p>The parameter is ignored when Parameter 2 is set to 0.<\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 76,
+            "label": "Alarm signalization reactivation period",
+            "description": "Time period after which an alarm will be turned back on",
+            "overview": "<p>Parameter determines a time period after which an alarm will be turned back on (in case it was turned off by parameter 75 setting). It will also resend commands to 2nd and 3rd association groups as if the alarm was detected again.<\/p> <p>Available settings:<br \/><strong>0<\/strong>\u00a0\u2013 alarm reactivation inactive<br \/><strong>1-65535<\/strong>\u00a0\u2013 time in seconds<br \/>Default setting:\u00a0<strong>0<\/strong><br \/>Parameter size:\u00a0<strong>4\u00a0[bytes]<\/strong><\/p> <p>In case a time period set in parameter 76 is shorter than the one specified in parameter 75, the device will not quiet the alarm, it will remain active.<\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 77,
+            "label": "Flood sensor functionality turned off",
+            "description": "Allows the internal flood sensor to be turned off.",
+            "overview": "<p>Allows to turn off the internal flood sensor. Tamper and built in temperature sensor will remain active.<\/p> <p>Available settings:<br \/><strong>0<\/strong>\u00a0\u2013 Default flood sensor operation (flood detection, reactions)<br \/><strong>1<\/strong>\u00a0\u2013 Built-in flood sensor TURNED OFF (does not change its state in the main controller, does not send alarm notifications nor turn on\/off commands to 2nd\/3rd association groups with flood state changes. Always visible in the main controller as turned off)<br \/>Default setting:\u00a0<strong>0<\/strong><br \/>Parameter size:\u00a0<strong>1 [byte]<\/strong><\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Default flood sensor operation (flood detection, reactions)"
+                },
+                {
+                    "value": 1,
+                    "label": "Built-in flood sensor TURNED OFF"
+                }
+            ]
+        },
+        {
+            "id": 78,
+            "label": "Associations in Z-Wave network security mode",
+            "description": "Defines whether commands are sent as secure or non-secure",
+            "overview": "<p>This parameter defines how commands are sent in specified association groups: as secure or non-secure. Parameter is active only in Z-Wave network security mode. It does not apply to 1st \u201cLifeline \u201cgroup.<\/p> <p>Available settings:<br \/><strong>0<\/strong>\u00a0\u2013 none of the groups sent as secure<br \/><strong>1<\/strong>\u00a0\u2013 2nd group \u201dControl\u201d sent as secure<br \/><strong>2<\/strong>\u00a0\u2013 3rd group \u201dAlarm\u201d sent as secure<br \/><strong>4<\/strong>\u00a0\u2013 4th group \u201eTamper\u201d sent as secure<br \/>Default setting:\u00a0<strong>7<\/strong><br \/>Parameter size:\u00a0<strong>1 [byte]<\/strong><\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 7,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 7,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "None of the groups are sent as secure"
+                },
+                {
+                    "value": 1,
+                    "label": "2nd group \u201dControl\u201d sent as secure"
+                },
+                {
+                    "value": 2,
+                    "label": "3rd group \u201dAlarm\u201d sent as secure"
+                },
+                {
+                    "value": 3,
+                    "label": "4th group \"Tamper\u201d sent as secure"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Lifeline",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "Reports the device status and allows for assigning single device only (main controller by default)",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Flood Control",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "Devices in this group will be switched on or off when flood status changes (done via BASIC SET command frames)",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "Flood Alarm",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "Assigned to the device status \u2013 devices in this group will receive notification about flood detection or cancellation. Useful for devices that can trigger alarms.",
+            "overview": ""
+        },
+        {
+            "id": 4,
+            "label": "Tamper Alarm",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "Assigned to the TMP button and tilt sensor \u2013 devices in this group will receive a notification when the sensor is moved or the cover is taken off (which normally holds the button). Useful for devices that can trigger alarms. Functionality can be altered b",
+            "overview": ""
+        }
+    ]
+}

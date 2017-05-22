@@ -1,0 +1,340 @@
+{
+    "database_id": 21,
+    "label": "SCSC-17",
+    "manufacturer_name": "Horstmann Controls Limited",
+    "manufacturer_id": "0059",
+    "device_ref": [
+        "0004:0001"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "7 Day Room Thermostat",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.067,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": false,
+    "beaming": true,
+    "library_type": {
+        "id": 2,
+        "name": "LIB_CONTROLLER"
+    },
+    "basic_class": {
+        "id": 1,
+        "name": "BASIC_TYPE_CONTROLLER"
+    },
+    "generic_class": {
+        "id": 1,
+        "name": "GENERIC_TYPE_THERMOSTAT"
+    },
+    "specific_class": {
+        "id": 1,
+        "name": null
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 1,
+                "name": "BASIC_TYPE_CONTROLLER"
+            },
+            "generic_class": {
+                "id": 8,
+                "name": "GENERIC_TYPE_THERMOSTAT"
+            },
+            "specific_class": {
+                "id": 0,
+                "name": null
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Sensor (temperature)",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "40",
+                    "name": "THERMOSTAT_MODE",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "thermostat_mode",
+                            "label": "Thermostat mode",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "42",
+                    "name": "THERMOSTAT_OPERATING_STATE",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "thermostat_state",
+                            "label": "Operating State",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "43",
+                    "name": "THERMOSTAT_SETPOINT",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "thermostat_setpoint",
+                            "label": "Setpoint (heating)",
+                            "config": [
+                                "type=HEATING"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "53",
+                    "name": "SCHEDULE",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8A",
+                    "name": "TIME",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Temperature Scale",
+            "description": "Controls the temperature sensor scale",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Celsius"
+                },
+                {
+                    "value": 255,
+                    "label": "Kelvin"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "Lower temperature limit",
+            "description": "Defines the minimum temperature. Steps are 1C",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 3,
+            "label": "Upper temperature limit",
+            "description": "Defines the maximum temperature. Steps are 1C",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 4,
+            "label": "Delta T",
+            "description": "Defines the temperature steps of the heating control value is 0.1 \u00b0\u0421.<BR \/>1 0.1 \u030aC \/ \u030aF - 50 0.1 \u030aC \/ \u030aF",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Reports",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Control",
+            "max_nodes": 4,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

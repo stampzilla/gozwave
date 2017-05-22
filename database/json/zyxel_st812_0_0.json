@@ -1,0 +1,202 @@
+{
+    "database_id": 327,
+    "label": "ST812",
+    "manufacturer_name": "ZyXEL",
+    "manufacturer_id": "0135",
+    "device_ref": [
+        "000B:0001"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Flood sensor",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 2.064,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 7,
+        "name": "LIB_CONTROLLER_BRIDGE"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SENSOR_ALARM"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_ROUTING_ALARM_SENSOR"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 161,
+                "name": "GENERIC_TYPE_SENSOR_ALARM"
+            },
+            "specific_class": {
+                "id": 2,
+                "name": "SPECIFIC_TYPE_ROUTING_ALARM_SENSOR"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "9C",
+                    "name": "SENSOR_ALARM",
+                    "version": "1",
+                    "nif": true,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_flood",
+                            "label": "Alarm (flood)",
+                            "config": [
+                                "type=FLOOD"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Basic Level Set",
+            "description": "The value sent with Basic commands in case of detected flood",
+            "overview": "<p>0 = Off<\/p>\r\n<p>1-99 = On (Binary Switch Device),\u00a0\u00a0Dim Level (Multilevel Switch Device)<\/p>\r\n<p>\u00a0<\/p>\r\n<p>\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 99,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 99,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "OFF"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Power applied and Sensor Alarm",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "",
+            "overview": "<p>The Detector will send ALARM_REPORT command to the nodes of Group 1 to inform the devices that the Detector is powered up.<\/p>\r\n<p>ALARM_REPORT Command: [Command Class Alarm, Alarm Type = 0x02, Alarm Level = 0x01]<\/p>\r\n<p>The second type for Group 1 is SENSOR_ALARM_REPORT.\u00a0 255 = Alarm, 00 = Event clear.<\/p>\r\n<p>The third type for Group 1 is ALARM_REPORT type 0x01, Low battery<\/p>"
+        },
+        {
+            "id": 2,
+            "label": "Device control",
+            "max_nodes": 3,
+            "controller": false,
+            "description": "Group to send trigger value to",
+            "overview": "<p>Will send values of 0-99 to devices in Group 2.\u00a0 Set the value to send in Parameter 1.<\/p>"
+        }
+    ]
+}

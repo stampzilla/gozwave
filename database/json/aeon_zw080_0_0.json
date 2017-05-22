@@ -1,0 +1,359 @@
+{
+    "database_id": 90,
+    "label": "ZW080",
+    "manufacturer_name": "AEON Labs",
+    "manufacturer_id": "0086",
+    "device_ref": [
+        "0004:0050",
+        "0104:0050",
+        "0204:0050"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Siren Gen5",
+    "overview": "<p>Update command classes -:<br \/>METER:5 :: ADD<br \/>METER:6 :: ADD<\/p>",
+    "inclusion": "<p>1. Install Siren, and plug it into the socket of AC Power.<br \/>2. Let the primary controller into inclusion mode (If you don\u2019t know how to do this, please refer to its manual).<br \/>3. Press the Action Button.<br \/>4. If the Learning is failed, please repeat the process from step 2.<\/p>",
+    "exclusion": "<p>1. Install Siren, and plug it into the socket of AC Power.<br \/>2. Let the primary controller into exclusion mode (If you don\u2019t know how to do this, refer to its manual). 3. Press the Action Button.<br \/>4. If the remove is failed, please repeat the process from step 2.<\/p>\n<p>Note: If Siren is removed from Z\u2010wave network, it will be reset to factory default.<\/p>",
+    "wakeup": "",
+    "protocol_version": 3.092,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_SIREN"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 5,
+                "name": "SPECIFIC_TYPE_SIREN"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "2B",
+                    "name": "SCENE_ACTIVATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "2C",
+                    "name": "SCENE_ACTUATOR_CONF",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "config_decimal",
+                            "label": "Sound and Volume",
+                            "config": [
+                                "parameter=37"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "7A",
+                    "name": "FIRMWARE_UPDATE_MD",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "98",
+                    "name": "SECURITY",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 37,
+            "label": "Siren Sound",
+            "description": "",
+            "overview": "",
+            "size": 2,
+            "bitmask": "000000FF",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 5,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Do not change the current Siren sound"
+                },
+                {
+                    "value": 1,
+                    "label": "Siren sound 1 is selected"
+                },
+                {
+                    "value": 2,
+                    "label": "Siren sound 2 is selected"
+                },
+                {
+                    "value": 3,
+                    "label": "Siren sound 3 is selected"
+                },
+                {
+                    "value": 4,
+                    "label": "Siren sound 4 is selected"
+                },
+                {
+                    "value": 5,
+                    "label": "Siren sound 5 is selected"
+                }
+            ]
+        },
+        {
+            "id": 37,
+            "label": "Siren Volume",
+            "description": "",
+            "overview": "",
+            "size": 2,
+            "bitmask": "0000FF00",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 3,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Do not change the current volume"
+                },
+                {
+                    "value": 1,
+                    "label": "Set the volume to 88 dB"
+                },
+                {
+                    "value": 2,
+                    "label": "Set the volume to 100 dB"
+                },
+                {
+                    "value": 3,
+                    "label": "Set the volume to 105 dB"
+                }
+            ]
+        },
+        {
+            "id": 80,
+            "label": "Enable Notifications to Group 1",
+            "description": "what type of notification to send to Group 1",
+            "overview": "<p>Enable to send notifications to associated devices (Group1) when the state of Siren changed (0=nothing,1=hailCC,2=basic CC report).<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 25,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 200,
+            "label": "Partner ID",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 252,
+            "label": "Enable\/disable Lock Configuration",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Setting of configuration parameters is allowed"
+                },
+                {
+                    "value": 1,
+                    "label": "All configuration parameters cannot be set (Locked)"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Group 1",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

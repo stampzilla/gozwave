@@ -1,0 +1,283 @@
+{
+    "database_id": 268,
+    "label": "EZMultiPli",
+    "manufacturer_name": "Express Controls",
+    "manufacturer_id": "001E",
+    "device_ref": [
+        "0004:0001"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Multi Sensor",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.099,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SENSOR_NOTIFICATION"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_NOTIFICATION_SENSOR"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 7,
+                "name": "GENERIC_TYPE_SENSOR_NOTIFICATION"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_NOTIFICATION_SENSOR"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "5",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Sensor (temperature)",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        },
+                        {
+                            "type": "sensor_luminance",
+                            "label": "Sensor (luminance)",
+                            "config": [
+                                "type=LUMINANCE"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "33",
+                    "name": "COLOR",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "color_color",
+                            "label": "Color",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_general",
+                            "label": "Alarm",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "77",
+                    "name": "NODE_NAMING",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "OnTime",
+            "description": "OnTime sets the number of minutes that the lights stay on when motion has not been detected.",
+            "overview": "<p>OnTime sets the number of minutes that the lights stay on when motion has not been detected.<\/p>\r\n<p>A value of 0 is a special mode where the lights are constantly sent a command to turn them on whenever motion is detected. EZMultiPli will NOT turn the lights off in this mode.<\/p>\r\n<p>Recommended values:<\/p>\r\n<ul>\r\n<li>5 min for hallways<\/li>\r\n<li>20 min for an office environment<\/li>\r\n<li>60 min for a library, office or other room where someone may be sitting still for a long time<\/li>\r\n<\/ul>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 2,
+            "label": "OnLevel",
+            "description": "OnLevel is the value sent by the Z-Wave BASIC_SET command to all Association Group 2 nodes when motion is detected. ",
+            "overview": "<p>OnLevel is the value sent by the Z-Wave BASIC_SET command to all Association Group 2 nodes when motion is detected.<\/p>\r\n<p>A value of 0 will turn the lights off (not recommended). A value between 1 and 99 will set the dim level to between 1% and 99% (99% is full on).<\/p>\r\n<p>A value of -1 will turn the light \u201con\u201d which depends on the device but most will set the dim level to the last dim setting.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": -1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": -1,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 3,
+            "label": "LiteMin",
+            "description": "A Luminance report is sent to the system controller every LiteMin minutes.",
+            "overview": "<p>A Luminance report is sent to the system controller every LiteMin minutes.<\/p>\r\n<p>A value of zero turns this mode off. Luminance values can still be obtained at any time by the home control application in this mode<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 60,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 4,
+            "label": "TempMin",
+            "description": "A Temperature report is sent to the controller every TempMin minutes.",
+            "overview": "<p>A Temperature report is sent to the controller every TempMin minutes.<\/p>\r\n<p>A value of zero turns this mode off. Temperature values can still be obtained at any time by polling the status of the temperature sensor.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 60,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 5,
+            "label": "TempAdj",
+            "description": "TempAdj is a twos-complement number that is used to adjust the temperature reading to make it more accurate.",
+            "overview": "<p>TempAdj is a twos-complement number that is used to adjust the temperature reading to make it more accurate. The value is in tenths of degree Fahrenheit. The temperature reading can be adjusted by +12.7F to -12.8F. A value of 1 will adjust the temperature reading by +0.1F. A value of -1 will adjust the temperature by -0.1F. A value of 123 will adjust the temperature by +12.3F.\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": -127,
+            "value_max": 128,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "LIFELINE",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "This group is normally automatically assigned to the Z-Wave system controller when EZMultiPli is added to the ZWave network. ",
+            "overview": "<p>This group is normally automatically assigned to the Z-Wave system controller when EZMultiPli is added to the ZWave network. All Notification command class reports (motion detection) are sent to the node assigned to this group. Advanced lighting control should be handled by a home control application based on these reports.<\/p>"
+        },
+        {
+            "id": 2,
+            "label": "BASIC",
+            "max_nodes": 4,
+            "controller": true,
+            "description": "This group is used to directly turn lights on or off when motion is detected.",
+            "overview": "<p>This group is used to directly turn lights on or off when motion is detected. Up to four (4) Z-Wave devices can be associated in this group. EZMultiPli will send a BASIC ON command to all devices that are associated in this group. Note that the Z-Wave devices in this group must be within direct range (about 30\u2019) of EZMultiPli. Control of nodes that are further away or blocked by metal or concrete walls should rely on the Z-Wave system controller and the home-control application for reliable operation. Note that including the NodeID of EZMultiPli in this group will control the LED which will come on when motion is detected and goes off when no motion has been detected for OnTime minutes.<\/p>"
+        }
+    ]
+}

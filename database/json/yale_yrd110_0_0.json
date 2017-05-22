@@ -1,0 +1,102 @@
+{
+    "database_id": 302,
+    "label": "YRD110",
+    "manufacturer_name": "Yale Locks",
+    "manufacturer_id": "0129",
+    "device_ref": [
+        "0004:0800"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Yale button deadbolt without keyway",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.034,
+    "listening": false,
+    "frequently_listening": true,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "ENTRY_CONTROL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SECURE_KEYPAD_DOOR_LOCK"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 64,
+                "name": "ENTRY_CONTROL"
+            },
+            "specific_class": {
+                "id": 3,
+                "name": "SECURE_KEYPAD_DOOR_LOCK"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [],
+    "associations": []
+}

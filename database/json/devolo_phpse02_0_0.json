@@ -1,0 +1,333 @@
+{
+    "database_id": 453,
+    "label": "ph-pse02",
+    "manufacturer_name": "Devolo",
+    "manufacturer_id": "0175",
+    "device_ref": [
+        "0004:000A"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Multisound indoor siren (Zipato\/Devolo)",
+    "overview": "<p><strong>### NOTE ###<\/strong><\/p> <p>The XML used for adding this device to the database comes from the Devolo Home Control Alarmsiren (http:\/\/www.devolo.de\/article\/devolo-home-control-alarmsirene\/). But it seems to be made by Zipato (https:\/\/www.zipato.com\/product\/multisound-indoor-siren).<br \/><br \/><strong>### FEATURES ###<\/strong><br \/><br \/>- Indoor multichannel siren that works with a a variety of Z-Wave networks\/controllers, regardless of the manufacturer<br \/>- The new Z-Wave 500 series chip supports multichannel operationand higher data rates (9.6\/40\/100kbps)<br \/>- 110db sound level<br \/>- 6 sounds: Door Chime, Bi Bi Arm\/Disarm, Intruder alarm, Ambulance, Police car<br \/>- Higher output power enhances communication range(+6dBm output power as compared to -2.5dBm 300 series)<br \/>- DC or Li-ion battery power (over 24 hours of battery life)<br \/>- Battery overcharge protection<br \/>- Very low power consumption<br \/>- Over-the-air firmware update<br \/>- Easy to install in EU\/China\/Taiwan wall sockets<br \/>- Tamperproof protection<br \/><br \/><br \/><strong>### TECHNICAL SPECIFICATIONS ###<\/strong><br \/><br \/>PROTOCOL: Z-Wave Plus<br \/><br \/>POWER<br \/>- DC 5V, Li-Ion battery (optional)<br \/>- BATTERY CAPACITY 1150mAh<br \/><br \/>OPERATING CONDITIONS:<br \/>- OPERATING VOLTAGE 3.7V<br \/>- OPERATING CURRENT 150 mA<br \/>- OPERATION TEMPERATURE -10\u00b0C ~ 40\u00b0C<br \/><br \/>RANGE<br \/>- Minimum 30 meters indoor<br \/>- 70 meters outdoor (meant for indoor use only)<br \/><br \/>DIMENSIONS<br \/>- DEVICE\u00a0 DIMENSIONS 110 x 110 x 22 mm<br \/>- DEVICE WEIGHT 113g<br \/>- PACKAGE DIMENSIONS 117 x 50 x 117 mm<br \/>- PACKAGE WEIGHT 217g<br \/><br \/>FREQUENCY<br \/><br \/>\u00a0\u00a0\u00a0 ph-pse02.au 921.42 MHz (AU)<br \/>\u00a0\u00a0\u00a0 ph-pse02.eu 868.42 MHz (EU)<br \/>\u00a0\u00a0\u00a0 ph-pse02.in 865.20 MHz (IN)<br \/>\u00a0\u00a0\u00a0 ph-pse02.is 916.02 MHz (IS)<br \/>\u00a0\u00a0\u00a0 ph-pse02.ru 869.02 MHz (RU)<br \/>\u00a0\u00a0\u00a0 ph-pse02.us 908.42 MHz (US)<br \/><br \/>Source: https:\/\/www.zipato.com\/product\/multisound-indoor-siren<\/p>",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 4.005,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_SIREN"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 5,
+                "name": "SPECIFIC_TYPE_SIREN"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "notification_send",
+                            "label": "Sounds",
+                            "config": [
+                                "event1=SMOKE:1",
+                                "event2=ACCESS_CONTROL:22",
+                                "event3=BURGLAR:1",
+                                "event4=EMERGENCY:1",
+                                "event5=EMERGENCY:2",
+                                "event6=EMERGENCY:3",
+                                "event7=ACCESS_CONTROL:3",
+                                "event8=ACCESS_CONTROL:4",
+                                "event9=EMERGENCY:254"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "30",
+                    "name": "SENSOR_BINARY",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_binary",
+                            "label": "Binary Sensor",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "4",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_burglar",
+                            "label": "Alarm (burglar)",
+                            "config": [
+                                "type=BURGLAR"
+                            ]
+                        },
+                        {
+                            "type": "alarm_general",
+                            "label": "Alarm (general)",
+                            "config": [
+                                "type=GENERAL"
+                            ]
+                        },
+                        {
+                            "type": "notification_send",
+                            "label": "Start Sound",
+                            "config": [
+                                "event1=SMOKE:1",
+                                "event2=ACCESS_CONTROL:22",
+                                "event3=BURGLAR:1",
+                                "event4=EMERGENCY:1",
+                                "event5=EMERGENCY:2",
+                                "event6=EMERGENCY:3",
+                                "event7=ACCESS_CONTROL:3",
+                                "event8=ACCESS_CONTROL:4",
+                                "event9=EMERGENCY:254"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "7A",
+                    "name": "FIRMWARE_UPDATE_MD",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 7,
+            "label": "Costumer  Function",
+            "description": " NotificationReport\/BinaryReport",
+            "overview": "<p>Notification Type,<\/p> <p>0: Using Notification Report.<\/p> <p>1: Using Sensor Binary Report.<\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 4,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 29,
+            "label": "Disable Alarm",
+            "description": "Disable the alarm  function.",
+            "overview": "<p>Disable the alarm function.<\/p> <p>1: Disable Alarm,<\/p> <p>0: Enable Alarm.<\/p> <p>Caution: After the power up, this configuration is always 0.<\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": []
+        },
+        {
+            "id": 31,
+            "label": "Alarm Duration",
+            "description": "Play alarm sound duration.",
+            "overview": "<p>Play alarm sound duration, 1 tick is 30 seconds.<\/p> <p>Default is 3 minutes, maximum is 63.5 minutes.<\/p> <p>0 means never auto stop.<\/p>",
+            "size": 4,
+            "bitmask": "0000000C",
+            "default": 6,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Report Message",
+            "max_nodes": 8,
+            "controller": true,
+            "description": "Report Message, e.g. tamper alarm",
+            "overview": "<p>Notice: The device supports 1 group.<\/p>\r\n<p>The group 1 is for receiving the report message, like tamper event. And the group 8 nodes maximum<\/p>"
+        }
+    ]
+}

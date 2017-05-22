@@ -1,0 +1,533 @@
+{
+    "database_id": 263,
+    "label": "ZW056",
+    "manufacturer_name": "AEON Labs",
+    "manufacturer_id": "0086",
+    "device_ref": [
+        "0004:0038",
+        "0104:0038",
+        "0204:0038",
+        "0304:0038",
+        "0904:0038",
+        "0A04:0038",
+        "1A04:0038",
+        "1D04:0038"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Doorbell",
+    "overview": "<p>Aeon Labs Doorbell is a switch binary device based on Z-wave enhanced slave library V6.51.06.<\/p>\n<p>The Doorbell supports playing MP3 music files with a press of this doorbell. It has a 16MB flash memory that can store up to 100 ringtones. The volume can be adjusted manually via short press on the Volume Button, also you can switch the doorbell sound to the next via long press on the Volume Button. You may change\/update your doorbell ringtone at any point in time you want by connecting your Doorbell to your PC to update the sound track on your Doorbell\u2019s flash memory.\u00a0<\/p>",
+    "inclusion": "<p>1. Install Doorbell, and plug it into the socket of AC Power.<br \/>2. Let the primary controller into inclusion mode (If you don\u2019t know how to do this, please refer to its manual).<br \/>3. Press the Action Button.<br \/>4. If the inclusion is failed, please repeat the process from step 2.\u00a0<\/p>",
+    "exclusion": "<p>1. Install Doorbell, and plug it into the socket of AC Power.<br \/>2. Let the primary controller into exclusion mode (If you don\u2019t know how to do this, refer to its manual).<br \/>3. Press the Action Button.<br \/>4. If the remove is failed, please repeat the process from step 2.<\/p>\n<p>Note: If Doorbell is removed from Z-wave network, it will be reset to factory default.\u00a0<\/p>",
+    "wakeup": "",
+    "protocol_version": 3.092,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_SIREN"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 5,
+                "name": "SPECIFIC_TYPE_SIREN"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "config_decimal",
+                            "label": "Volume",
+                            "config": [
+                                "parameter=8"
+                            ]
+                        },
+                        {
+                            "type": "config_decimal",
+                            "label": "Repititions",
+                            "config": [
+                                "parameter=2"
+                            ]
+                        },
+                        {
+                            "type": "config_decimal",
+                            "label": "Play Chime Now",
+                            "config": [
+                                "parameter=6"
+                            ]
+                        },
+                        {
+                            "type": "config_decimal",
+                            "label": "Doorbell Notifications",
+                            "config": [
+                                "parameter=80"
+                            ]
+                        },
+                        {
+                            "type": "config_decimal",
+                            "label": "Button Battery Status",
+                            "config": [
+                                "parameter=42"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "7A",
+                    "name": "FIRMWARE_UPDATE_MD",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "98",
+                    "name": "SECURITY",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 2,
+            "label": "Repetitions of ringtone",
+            "description": "Set the repetitions for playing doorbell ringtone.\u00a0",
+            "overview": "<p>Value=1 to 255, the range of repetition is 1 to 100.\u00a0\u00a0 Value =0, ignore. Note: If the time of playing doorbell ringtone is more than 20s, the volume of ringtone will reduce to silence no matter how many repetitions of doorbell ringtone are set.\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 5,
+            "label": "Default ringtone",
+            "description": "Set the default doorbell ringtone. Default=1",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 6,
+            "label": "Ringtone to play",
+            "description": "Set a ringtone to play. Default=0",
+            "overview": "<p>Set this to any ringtone (1-100) to have it play that ringtone.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": true,
+            "value_min": 0,
+            "value_max": 100,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Stop"
+                },
+                {
+                    "value": 255,
+                    "label": "play the default ringtone"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "label": "Control items",
+            "description": "Control current output",
+            "overview": "<p>Control items: Value=1, play Value=2, stop Value=3, pause Value=4, Next Value=5, Previous Other, ignore<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": true,
+            "value_min": 1,
+            "value_max": 5,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Ignore"
+                },
+                {
+                    "value": 1,
+                    "label": "Play"
+                },
+                {
+                    "value": 2,
+                    "label": "Stop"
+                },
+                {
+                    "value": 3,
+                    "label": "Pause"
+                },
+                {
+                    "value": 4,
+                    "label": "Next"
+                },
+                {
+                    "value": 5,
+                    "label": "Previous"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "label": "Ringtone volume",
+            "description": "Default=10",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 10,
+            "options": []
+        },
+        {
+            "id": 10,
+            "label": "Define button- and button+ action",
+            "description": "Define functions of \u201cButton\u00a0\u2010\u201d\u00a0\u00a0and \u201cButton+\u201d.",
+            "overview": "<p>0:\u00a0 button- is previous, button+ is next<\/p> <p>1:\u00a0 button- is next, button+ is previous<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "\u201cButton\u00a0\u2010\u201d is previous, \u201cButton+\u201d is next"
+                },
+                {
+                    "value": 1,
+                    "label": "\u201cButton\u00a0\u2010\u201d is next, \u201cButton+\u201d is previous"
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "label": "Define long press button- and button+",
+            "description": "Define short\/long button presses",
+            "overview": "<p>0: short pressing changes volume, long pressing changes<br \/>default ringtone.<br \/>1: long pressing changes volume, short pressing changes<br \/>default ringtone.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "short press changes vol, long press changes default ringtone"
+                },
+                {
+                    "value": 1,
+                    "label": "long press changes vol, short press changes default ringtone"
+                }
+            ]
+        },
+        {
+            "id": 42,
+            "label": "Get wireless button battery status",
+            "description": "Alert for low battery",
+            "overview": "<p>0x00:\u00a0 normal battery level<\/p> <p>0xff:\u00a0 low battery level<\/p> <p>set 0x00:\u00a0 cancel low battery alert<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Battery Level Good"
+                },
+                {
+                    "value": 255,
+                    "label": "Low Battery"
+                }
+            ]
+        },
+        {
+            "id": 80,
+            "label": "Enable Notifications",
+            "description": "Enable to send notifications to associated devices (Group1)",
+            "overview": "<p>Enable\/disable to send notifications to associated devices (Group 1) when the state of Doorbell is changed (0=nothing, 1=hail CC, 2=basic CC report)<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "nothing"
+                },
+                {
+                    "value": 1,
+                    "label": "hail CC"
+                },
+                {
+                    "value": 2,
+                    "label": "basic CC report"
+                }
+            ]
+        },
+        {
+            "id": 81,
+            "label": "Enable\/disable battery group notification",
+            "description": "Notifies Group 1 when battery state is low",
+            "overview": "<p>Enable\/disable to send notifications to associated devices (Group<br \/>1) when the Wireless Button\u2019s battery is in low battery state<br \/>(0=nothing, 1=Configuration report 0x2A)<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "nothing"
+                },
+                {
+                    "value": 1,
+                    "label": "Configuration report parameter 42"
+                }
+            ]
+        },
+        {
+            "id": 241,
+            "label": "Pair doorbell with button",
+            "description": "Starts wireless button pairing mode",
+            "overview": "<p>Pair the Wireless Button with Doorbell.<br \/>Value=0x55555555, Start the Wireless Button pairing mode and<br \/>the blue Led will blink slowly, short press the Wireless Button<br \/>once, if the blue Led change to be solid, which means the pairing<br \/>is successful. Otherwise, repeat the steps.<br \/>It will automatically exit the pairing mode after 8s if there is no<br \/>pressing action of the Wireless Button.<br \/>Note:<br \/>You can send this configuration Get CC to ask the pairing result:<br \/>If configuration report value=0x00000000, which means the<br \/>pairing is failed.<br \/>If configuration report value =0xFFFFFFFF, which means the<br \/>pairing is successful.<br \/><\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": []
+        },
+        {
+            "id": 252,
+            "label": "Lock configuration",
+            "description": "Lock configuration",
+            "overview": "<p>0:\u00a0 config not locked<\/p> <p>1:\u00a0 config locked<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": []
+        },
+        {
+            "id": 255,
+            "label": "Reset",
+            "description": "Reset to factory settings",
+            "overview": "<p>1. Size=0x01\uff0c Configuration Value=0x00:<br \/>Reset configuration setting.<br \/>2. Size=0x04\uff0c Configuration Value=0x55555555:<br \/>Reset Factory setting.<\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Group 1",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "",
+            "overview": "<p><span style=\"color: #000000; font-family: Calibri; font-size: 10pt; font-style: normal; font-variant: normal;\">When the state of Doorbell (trigger to turn on\/off the rington<br \/><span style=\"color: #000000; font-family: Calibri; font-size: 10pt; font-style: normal; font-variant: normal;\">e ) is changed:<br \/><span style=\"color: #000000; font-family: Calibri; font-size: 10pt; font-style: normal; font-variant: normal;\">1, Set Configuration parameter 80 to 0<span style=\"color: #000000; font-family: SimSun; font-size: 10pt; font-style: normal; font-variant: normal;\">\uff1a <span style=\"color: #000000; font-family: Calibri; font-size: 10pt; font-style: normal; font-variant: normal;\">Reserved (Default).<br \/><span style=\"color: #000000; font-family: Calibri; font-size: 10pt; font-style: normal; font-variant: normal;\">2, Set Configuration parameter 80 to 1<span style=\"color: #000000; font-family: SimSun; font-size: 10pt; font-style: normal; font-variant: normal;\">\uff1a <span style=\"color: #000000; font-family: Calibri; font-size: 10pt; font-style: normal; font-variant: normal;\">Send Hail CC.<br \/><span style=\"color: #000000; font-family: Calibri; font-size: 10pt; font-style: normal; font-variant: normal;\">3. Set Configuration parameter 80 to 2: Send the Basic<br \/><span style=\"color: #000000; font-family: Calibri; font-size: 10pt; font-style: normal; font-variant: normal;\">Report.<\/span><\/span><\/span><\/span><\/span><\/span><\/span><\/span><\/span><\/span><\/p>"
+        },
+        {
+            "id": 2,
+            "label": "Forward basic set",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": "<p><span style=\"color: #000000; font-family: Calibri; font-size: 10pt; font-style: normal; font-variant: normal;\">Forward the Basic Set, Switch Binary Set, Switch Multilevel<br \/><span style=\"color: #000000; font-family: Calibri; font-size: 10pt; font-style: normal; font-variant: normal;\">Start Level Change, Switch Multilevel Stop Level Change,<br \/><span style=\"color: #000000; font-family: Calibri; font-size: 10pt; font-style: normal; font-variant: normal;\">Switch Multilevel Set, Scene Activation Set to associated<br \/><span style=\"color: #000000; font-family: Calibri; font-size: 10pt; font-style: normal; font-variant: normal;\">nodes in Group 2 when the Doorbell receives the Basic Set,<br \/><span style=\"color: #000000; font-family: Calibri; font-size: 10pt; font-style: normal; font-variant: normal;\">Switch Binary Set, Switch Multilevel Start Level Change,<br \/><span style=\"color: #000000; font-family: Calibri; font-size: 10pt; font-style: normal; font-variant: normal;\">Switch Multilevel Stop Level Change, Switch Multilevel Set,<br \/><span style=\"color: #000000; font-family: Calibri; font-size: 10pt; font-style: normal; font-variant: normal;\">Scene Activation Set commands from main controller.<\/span><\/span><\/span><\/span><\/span><\/span><br style=\"text-transform: none; line-height: normal; text-indent: 0px; letter-spacing: normal; font-style: normal; font-variant: normal; font-weight: normal; word-spacing: 0px; white-space: normal; orphans: 2; widows: 2; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px;\" \/><\/span><\/p>"
+        }
+    ]
+}

@@ -1,0 +1,766 @@
+{
+    "database_id": 207,
+    "label": "ZMNHND",
+    "manufacturer_name": "Goap",
+    "manufacturer_id": "0159",
+    "device_ref": [
+        "0002:0053"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Flush 1D relay",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 4.005,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "30",
+                    "name": "SENSOR_BINARY",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_binary",
+                            "label": "Binary Sensor",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "7",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Sensor (temperature)",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "60",
+                    "name": "MULTI_INSTANCE",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8E",
+                    "name": "MULTI_INSTANCE_ASSOCIATION",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 1",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8E",
+                    "name": "MULTI_INSTANCE_ASSOCIATION",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 33,
+                "name": "GENERIC_TYPE_SENSOR_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_ROUTING_SENSOR_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "7",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Sensor (temperature) 2",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8E",
+                    "name": "MULTI_INSTANCE_ASSOCIATION",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Input 1 switch type",
+            "description": "Input 1 switch type",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "mono-stable switch type (push button)"
+                },
+                {
+                    "value": 1,
+                    "label": "bi-stable switch type"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "Input 2 contact type",
+            "description": "Input 2 contact type",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "NO (normaly open) input type"
+                },
+                {
+                    "value": 1,
+                    "label": "NC (normaly close) input type"
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "label": "Activate \/ deactivate functions ALL ON\/ALL OFF",
+            "description": "Flush 1D relay module responds to commands ALL ON \/ \r\nALL OFF that may be sent by the main controller or by \r\nother controller belonging to the system.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "ALL ON is not active ALL OFF is not active"
+                },
+                {
+                    "value": 1,
+                    "label": "ALL ON is not active ALL OFF active"
+                },
+                {
+                    "value": 2,
+                    "label": "ALL ON active ALL OFF is not active"
+                },
+                {
+                    "value": 255,
+                    "label": "ALL ON active, ALL OFF active"
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "label": "Automatic turning off relay after set time",
+            "description": "When relay is ON it goes automatically OFF after time defined by this parameter. \r\nTimer is reset to zero each time the module receive ON command regardless from where it comes \r\n(push button, associated module, controller,..).\r\n0 - Auto OFF disabled.\r\n1 ",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 12,
+            "label": "Automatic turning on relay after set time",
+            "description": "When relay is OFF it goes automatically ON after time defined by this parameter.\r\nTimer is reset to zero each time the module receive OFF command regardless from where it comes\r\n(push button, associated module, controller,..).\r\n0 - Auto ON disabled.\r\n1 \u2013 ",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 15,
+            "label": "Automatic turning off \/ on seconds or milliseconds selection",
+            "description": "NOTE: Parameter is the same for turning OFF or ON.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Seconds selected"
+                },
+                {
+                    "value": 1,
+                    "label": "Milliseconds selected"
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "label": "Saving the state of the relay after a power failure",
+            "description": "Saving the state of the relay after a power failure",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Flush 1D relay module saves its state before power failure (it returns"
+                },
+                {
+                    "value": 1,
+                    "label": "Flush 1D relay module does not save the state after a power failure, i"
+                }
+            ]
+        },
+        {
+            "id": 63,
+            "label": "Output Switch selection",
+            "description": "Set value means the type of the device that is connected to the output. \r\nThe device type can be normally open (NO) or normally close (NC).",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "When system is turned off the output is 0V (NC)."
+                },
+                {
+                    "value": 1,
+                    "label": "When system is turned off the output is 230V or 24V (NO)."
+                }
+            ]
+        },
+        {
+            "id": 100,
+            "label": "Enable \/ Disable Endpoints I2 or select Notification Type and Event",
+            "description": "Enabling I2 means that Endpoint (I2) will be present on UI. \r\nDisabling it will result in hiding the endpoint according to the parameter set value. \r\nAdditionally, a Notification Type and Event can be selected for the endpoint.\r\nEndpoint device type selec",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Endpoint, I2 disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Home Security; Motion Detection, unknown loc."
+                },
+                {
+                    "value": 2,
+                    "label": "Carbon Monoxide; Carbon Monoxide detected, unknown location."
+                },
+                {
+                    "value": 3,
+                    "label": "Carbon Dioxide; Carbon Dioxide detected, unknown location."
+                },
+                {
+                    "value": 4,
+                    "label": "Water Alarm; Water Leak detected, unknown lo.."
+                },
+                {
+                    "value": 5,
+                    "label": "Heat Alarm; Overheat detected, unknown loc."
+                },
+                {
+                    "value": 6,
+                    "label": "Smoke Alarm; Smoke detected, unknown loc."
+                },
+                {
+                    "value": 9,
+                    "label": "Sensor binary."
+                }
+            ]
+        },
+        {
+            "id": 110,
+            "label": "Temperature sensor offset settings",
+            "description": "Set value is added or subtracted to actual measured value by sensor.\r\n32536 \u2013 offset is 0.0C\r\nFrom 1 to 100\u2013value from 0.1\u00b0C to 10.0\u00b0C is added to actual measured temperature.\r\nFrom 1001 to 1100 \u2013 value from -0.1 \u00b0C to -10.0 \u00b0C is subtracted to actual mea",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 32536,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 120,
+            "label": "Digital temperature sensor reporting",
+            "description": "If digital temperature sensor is connected, module reports measured temperature \r\non temperature change defined by this parameter.\r\n0 \u2013 Reporting disabled\r\n1- 127 = 0,1\u00b0C \u2013 12,7\u00b0C, step is 0,1\u00b0C",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Lifeline to Controller (reserved for communication with the main contr",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Basic on\/off (triggered at change of the input Q \r\nstate and reflectin",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "Basic on\/off (triggered at change of the input I2 \r\nstate and reflecti",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 4,
+            "label": "Notification report (triggered at change of the input I2 \r\nstate and r",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 5,
+            "label": "Binary Sensor (triggered at change of the input I2 \r\nstate and reflect",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 9,
+            "label": "Multilevel Sensor report (triggered at change of temperature sensor)",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

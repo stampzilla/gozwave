@@ -1,0 +1,316 @@
+{
+    "database_id": 445,
+    "label": "Energy Switch +",
+    "manufacturer_name": "BeNext",
+    "manufacturer_id": "008A",
+    "device_ref": [
+        "0020:0001"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Energy Switch +",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.042,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": false,
+    "beaming": false,
+    "library_type": {
+        "id": 6,
+        "name": "LIB_SLAVE_ROUTING"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh)",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "56",
+                    "name": "CRC_16_ENCAP",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "75",
+                    "name": "PROTECTION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Set to Default",
+            "description": "If value is set to 0XFF (255), device set to default",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 2,
+            "label": "Amount of decimals",
+            "description": "If value is set to 1 the info shall be presented with 1 decimal",
+            "overview": "<p>0,1,2,3 amount of decimals. Every Amount higher then 3 shall be printed as 3 decimals.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 3,
+            "options": []
+        },
+        {
+            "id": 3,
+            "label": "Power Limit ",
+            "description": "The device will shut down when it reaches an amount higher then defined (W)",
+            "overview": "<p>0 = no power limit.<\/p> <p>1-4500 are acceptable values and can be used, everything above the 4500 shall be changed to 4500.<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 4500,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 4500,
+            "options": []
+        },
+        {
+            "id": 4,
+            "label": "Start up with last known socket status",
+            "description": "If 0 then the device will always be off, when 1-255 it will emain the last known state",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 6,
+            "label": "Auto report %",
+            "description": "The value will change when the % is changed.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 20,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 10,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 7,
+            "label": "Auto report Watt",
+            "description": "The value will change when the Watt is changed.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 5,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 8,
+            "label": "Auto report time",
+            "description": "The time between 2 of the meter rerport",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 20,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 10,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 9,
+            "label": "Relais delay time",
+            "description": "The time that needs to pass before the next state change",
+            "overview": "<p>Value * 10 miliseconds<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 50,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 10,
+            "label": "Led indicator",
+            "description": "The state of the Led compared to the relais state",
+            "overview": "<p>0 = Indication Led never off<\/p> <p>1 = led ON when relais ON<\/p> <p>2 = led On when relais OFF<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": []
+        }
+    ],
+    "associations": []
+}

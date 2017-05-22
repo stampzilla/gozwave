@@ -1,0 +1,187 @@
+{
+    "database_id": 187,
+    "label": "ZWN-SC7",
+    "manufacturer_name": "Wenzhou MTLC Electric Appliances Co.,Ltd.",
+    "manufacturer_id": "011A",
+    "device_ref": [
+        "0801:0B03"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Scene Controller",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.042,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": false,
+    "beaming": true,
+    "library_type": {
+        "id": 2,
+        "name": "LIB_CONTROLLER"
+    },
+    "basic_class": {
+        "id": 2,
+        "name": "BASIC_TYPE_STATIC_CONTROLLER"
+    },
+    "generic_class": {
+        "id": 2,
+        "name": "GENERIC_TYPE_STATIC_CONTROLLER"
+    },
+    "specific_class": {
+        "id": 2,
+        "name": "SPECIFIC_TYPE_SCENE_CONTROLLER"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 2,
+                "name": "BASIC_TYPE_STATIC_CONTROLLER"
+            },
+            "generic_class": {
+                "id": 2,
+                "name": "GENERIC_TYPE_STATIC_CONTROLLER"
+            },
+            "specific_class": {
+                "id": 2,
+                "name": "SPECIFIC_TYPE_SCENE_CONTROLLER"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "2B",
+                    "name": "SCENE_ACTIVATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "scene_number",
+                            "label": "Scene Number",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Group 1",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Group 2",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "Group 3",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 4,
+            "label": "Group 4",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 5,
+            "label": "Group 5",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 6,
+            "label": "Group 6",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 7,
+            "label": "Group 7",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

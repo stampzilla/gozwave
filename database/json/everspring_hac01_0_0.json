@@ -1,0 +1,190 @@
+{
+    "database_id": 270,
+    "label": "HAC01",
+    "manufacturer_name": "Everspring",
+    "manufacturer_id": "0060",
+    "device_ref": [
+        "0010:0001"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "In-Wall Remote Insert",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.042,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 6,
+        "name": "LIB_SLAVE_ROUTING"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_REMOTE"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_SWITCH_REMOTE_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 18,
+                "name": "GENERIC_TYPE_SWITCH_REMOTE"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_SWITCH_REMOTE_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "22",
+                    "name": "APPLICATION_STATUS",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Basic Set Level",
+            "description": "The Basic Set Command is sent with this value.",
+            "overview": "<p>The Basic Set Command is sent with value to have the receiving device recognize the value for controlled level, for example, if the Basic Set Command sent to dimmer with value, the dimmer would activate the luminance according to the value. <br \/><br \/>0 : Off<br \/>1 \u2013 99 : On (for Binary Switch Device); Dim Level (for Multilevel Switch Device)<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 99,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 2,
+            "label": "Amount Of Delay",
+            "description": "Amount Of Delay (seconds) to send the Basic Set Off command.",
+            "overview": "<p>This is applied to determine the delay time setting to send the Basic Set Off command when the manual switch input at NO (open). <br \/><br \/>Example : <br \/>0 : immediately Off <br \/>1 \u2013 127 : delay 1 ~ 127 second to Off<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Switch Input Change",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "Target nodes that receive Basic Set command when the switch input changed.",
+            "overview": "<p>The remote module supports association with maximum 5 node for Grouping 1. Grouping 1 supports BASIC_SET.<\/p>\r\n<p>When the manual switch input is from NC to NO or from NO to NC, HAC01 would send Basic Set Command to the nodes in Grouping 1 to On or Off the controlled device. Basic Set Command:<\/p>\r\n<p>Manual switch input at NC: Command Class Basic, Basic Set, Value = 0xFF(255)<\/p>\r\n<p>Manual switch input at NO: Command Class Basic, Basic Set, Value = 0x00(0)<\/p>"
+        }
+    ]
+}

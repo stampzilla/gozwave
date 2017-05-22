@@ -1,0 +1,346 @@
+{
+    "database_id": 567,
+    "label": "ZMNHWD",
+    "manufacturer_name": "Goap",
+    "manufacturer_id": "0159",
+    "device_ref": [
+        "0001:0054"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Qubino Flush RGBW Dimmer",
+    "overview": "<p>Qubino Flush RGBW module controls\u00a0RGB\/RGBW strips and LED strips or bulbs and has 5 special scene effects. It can also control halogen lights and fans. Its extremely small size allows for easy installation behind wall sockets and switches. Controlled devices may be powered by 12 or 24 VDC.<\/p> <p>Supported control types:<\/p> <ul><li>Push button (monostable switch)<\/li> <li>Bistable switch<\/li> <\/ul><p>This should hopefully work with models\u00a0ZMNHWD1-ZMNHWD8 (which work on different frequencies).<\/p>",
+    "inclusion": "<p>To include the device, press the service button 3 times within 2 seconds. The LED will turn green if the device was properly included.<\/p> <p>The device supports auto inclusion: Install the device and connect the power. The auto inclusion function will be active for\u00a0about 2 minutes.<\/p>",
+    "exclusion": "<p>To exclude the device, press the service button 3 times within 2 seconds.\u00a0The green LED will blink\u00a0if the device was properly included and the device will be reset to factory defaults.<\/p>",
+    "wakeup": "",
+    "protocol_version": 4.024,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Dimmer",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "33",
+                    "name": "COLOR",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "color_color",
+                            "label": "Color Control",
+                            "config": []
+                        },
+                        {
+                            "type": "color_temperature",
+                            "label": "Color Temperature",
+                            "config": [
+                                "colorMode=DIFF_WHITE"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "7A",
+                    "name": "FIRMWARE_UPDATE_MD",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Input switch type",
+            "description": "Change the type of switch (bistable\/monostable)",
+            "overview": "<p>NOTE: Please power cycle the device when parameter is changed.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "bistable switch type"
+                },
+                {
+                    "value": 2,
+                    "label": "monostable (push button) switch type"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "Switch mode",
+            "description": "Choose RGBW Dimmer operation mode.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 3,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Normal Mode"
+                },
+                {
+                    "value": 2,
+                    "label": "Brightness Mode"
+                },
+                {
+                    "value": 3,
+                    "label": "Rainbow Mode"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "label": "Auto scene mode set",
+            "description": "Activation of the programmed scene changing color shades.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 5,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Ocean"
+                },
+                {
+                    "value": 2,
+                    "label": "Lightning"
+                },
+                {
+                    "value": 3,
+                    "label": "Rainbow"
+                },
+                {
+                    "value": 4,
+                    "label": "Snow"
+                },
+                {
+                    "value": 5,
+                    "label": "Sun"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "label": "Auto scene duration",
+            "description": "Change auto scene mode duration.",
+            "overview": "<ul><li>1 - 127 delay duration is from 1s to 127s<\/li> <li>-128 ~ -1 delay duration is from 1min. to 127min.<\/li> <\/ul>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": -128,
+            "value_max": 127,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Send basic report to this group",
+            "max_nodes": 1,
+            "controller": false,
+            "description": "",
+            "overview": "<p>The Module can be set 1 auto-report ID in Group 1.<\/p>\r\n<p>The Module will send BASIC_REPORT to device associated in Group 1 when correspond Device is activated.<\/p>"
+        }
+    ]
+}

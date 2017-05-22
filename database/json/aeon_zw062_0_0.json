@@ -1,0 +1,563 @@
+{
+    "database_id": 256,
+    "label": "ZW062",
+    "manufacturer_name": "AEON Labs",
+    "manufacturer_id": "0086",
+    "device_ref": [
+        "0003:003E",
+        "0103:003E",
+        "0203:003E"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Aeon Labs Garage Door Controller  Gen5 ",
+    "overview": "<p>Aeon Labs Garage Door Controller is a smart and wireless Garage Door Control system, you can control\u00a0the garage door to open, close, or stop moving via wireless signal on your gateway client or phone\u00a0application.<\/p> <p>The Garage Door Controller allows you to configure different alarm sounds to indicate the door \u2019s action.<\/p> <p>Each action alarm sound can be customized. To change or update new alarm sounds for the Garage Door\u00a0Controller, connect the Garage Door Controller to your PC host with a USB cable and download your\u00a0sound files to the flash memory (128 MB) of the Garage Door Controller.<\/p> <p>It can be included and operated in any Z-wave network with other Z-wave certified devices from other\u00a0manufacturers and\/or other applications. All non-battery operated nodes within the network will act as\u00a0repeaters regardless of vendor to increase reliability of the network.<\/p> <p>It is also a security Z-wave device and supports the Over The Air (OTA) feature for the product\u2019s firmware\u00a0upgrade.<\/p>",
+    "inclusion": "<p>Add Garage Door Controller into Z-Wave Network:<\/p> <ol><li>Install Garage Door Controller, and connect it to the 5V DC Adapter.<\/li> <li>Let the primary controller into inclusion mode (If you don\u2019t know\u00a0how to do this, please refer to its manual).<\/li> <li>Press the Z-Wave Button.<\/li> <\/ol>",
+    "exclusion": "<p>Remove Garage Door Controller from Z-Wave Network:<\/p> <ol><li>Install Garage Door Controller, and connect it to the 5V DC Adapter.<\/li> <li>Let the primary controller into exclusion mode (If you don\u2019t know\u00a0how to do this, refer to its manual).<\/li> <li>Press the Z-Wave Button.<\/li> <li>If the remove is failed, please repeat the process from step 2.<\/li> <\/ol><p>Note: If Garage Door Controller is removed from Z-wave network, it\u00a0will be reset to factory default.<\/p>",
+    "wakeup": "",
+    "protocol_version": 3.099,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "66",
+                    "name": "BARRIER_OPERATOR",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "barrier_state",
+                            "label": "Barrier State",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 32,
+            "label": "Startup ringtone",
+            "description": "Configure the default startup ringtone",
+            "overview": "<p>Configure the default startup ringtone.<\/p> <p>Value=0, disable the Startup ringtone.<br \/>Value=others, Enable and select a startup ringtone for the Garage\u00a0Door Controller.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 34,
+            "label": "Sensor Calibration",
+            "description": "Perform Sensor Calibration",
+            "overview": "<p>Sensor Calibration.<\/p> <p><br \/>Calibration Steps:<\/p> <ol><li>Let the garage door move to full close position.<\/li> <li>Send this parameter (0x22) with \u201cvalue=1\u201d to Garage Door\u00a0Controller.<\/li> <li>Let the garage door move to full open position.<\/li> <li>Let the garage door move to full close position after the\u00a0step 3 is completed.<\/li> <\/ol><p>After the step 4 is completed, all calibration steps are\u00a0complete.<\/p> <p>Note: This process should be implemented when the Garage\u00a0Door Controller just only has one Sensor is installed on the\u00a0garage door.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": true,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Calibration not active"
+                },
+                {
+                    "value": 1,
+                    "label": "Begin calibration"
+                }
+            ]
+        },
+        {
+            "id": 35,
+            "label": "Calibration timout",
+            "description": "Set the timeout of all calibration steps for the Sensor.",
+            "overview": "<p>Set the timeout of all calibration steps for the Sensor.<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 60,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 36,
+            "label": "Number of alarm musics",
+            "description": "Get the number of alarm musics",
+            "overview": "<p>Get the numbers of alarm music.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": true,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 37,
+            "label": "Disable opening alarm",
+            "description": "Disable opening alarm",
+            "overview": "<p>Configure the alarm mode when the garage door is opening.<\/p> <p>Value4=0, disable the alarm prompt. <br \/>Value4=1, enable the\u00a0alarm prompt.<\/p>",
+            "size": 4,
+            "bitmask": "000000FF",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable alarm prompt"
+                },
+                {
+                    "value": 1,
+                    "label": "Enable alarm prompt"
+                }
+            ]
+        },
+        {
+            "id": 37,
+            "label": "Opening alarm volume",
+            "description": "Opening alarm volume",
+            "overview": "<p>Configure the alarm mode when the garage door is opening.<\/p> <p>Value3: configure the volume of alarm sound (there are 10\u00a0levels, the min volume is 1 level and the max volume is 10\u00a0levels).<\/p>",
+            "size": 4,
+            "bitmask": "0000FF00",
+            "default": 8,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 10,
+            "options": []
+        },
+        {
+            "id": 37,
+            "label": "Opening alarm choice",
+            "description": "Alarm mode when the garage door is opening",
+            "overview": "<p>Configure the alarm mode when the garage door is opening.<\/p> <p>Value2: configure the alarm sound (there are 4 types sound\u00a0saved in EEPROM and user also can update it).<\/p>",
+            "size": 4,
+            "bitmask": "00FF0000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 4,
+            "options": []
+        },
+        {
+            "id": 37,
+            "label": "Opening alarm LED mode",
+            "description": "Opening alarm LED mode",
+            "overview": "<p>Configure the alarm mode when the garage door is opening.<\/p> <p>Value1: configure the frequency of blinking for the Alarm\u00a0LED , there are 10 levels from 1 to 10, the minimum\u00a0frequency is level 1 and the max frequency is level 10.<\/p>",
+            "size": 4,
+            "bitmask": "0F000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 10,
+            "options": []
+        },
+        {
+            "id": 38,
+            "label": "Disable closing alarm",
+            "description": "Disable closing alarm",
+            "overview": "<p>Configure the alarm mode when the garage door is closing.<\/p> <p>Value4=0, disable the alarm prompt.<br \/>Value4=1, enable the\u00a0alarm prompt.<\/p>",
+            "size": 4,
+            "bitmask": "000000FF",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable alarm prompt"
+                },
+                {
+                    "value": 1,
+                    "label": "Enable alarm prompt"
+                }
+            ]
+        },
+        {
+            "id": 38,
+            "label": "Closing alarm volume",
+            "description": "Closing alarm volume",
+            "overview": "<p>Configure the alarm mode when the garage door is closing.<\/p> <p>Value3: configure the volume of alarm sound (there are 10\u00a0levels, the min volume is 1 level and the max volume is 10\u00a0levels).<\/p>",
+            "size": 4,
+            "bitmask": "0000FF00",
+            "default": 8,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 10,
+            "options": []
+        },
+        {
+            "id": 38,
+            "label": "Closing alarm choice",
+            "description": "Alarm mode when the garage door is closing",
+            "overview": "<p>Configure the alarm mode when the garage door is closing.<\/p> <p>Value2: configure the alarm sound (there are 4 types sound\u00a0saved in EEPROM and user also can update it).<\/p>",
+            "size": 4,
+            "bitmask": "00FF0000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 4,
+            "options": []
+        },
+        {
+            "id": 38,
+            "label": "Closing alarm LED mode",
+            "description": "Closing alarm LED mode",
+            "overview": "<p>Configure the alarm mode when the garage door is closing.<\/p> <p>Value1: configure the frequency of blinking for the Alarm\u00a0LED , there are 10 levels from\u00a01 to 10, the minimum\u00a0frequency is level 1 and the max frequency is level 10.<\/p>",
+            "size": 4,
+            "bitmask": "0F000000",
+            "default": 6,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 10,
+            "options": []
+        },
+        {
+            "id": 39,
+            "label": "Unknown state alarm mode",
+            "description": "Configuration alarm mode when the garage door is in \"unknown\" state",
+            "overview": "<p>Configuration alarm mode when the garage door is in<br \/>\"unknown\" state:<br \/>1, Value1: configure the frequency of blinking for the Alarm<br \/>LED , there are 10 levels that 1 to10 level, the minimum<br \/>frequency is level 1 and the max frequency is level 10.<br \/>2, Value2: configure the alarm sound (there are 4 types sound<br \/>saved in EEPROM and user also can update it).<br \/>3, Value3: configure the volume of alarm sound (there are 10<br \/>levels, the min volume is 1 level and the max volume is 10<\/p>\r\n<p>levels).<br \/>4, Value4=0, disable the alarm prompt. Value4=1, enable the<br \/>alarm prompt.<\/p>\r\n<p>\u00a0<\/p>\r\n<p>default values:<\/p>\r\n<p>Value1=4<br \/>Value2=3<br \/>Value3=8<br \/>Value4=0<\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": []
+        },
+        {
+            "id": 40,
+            "label": "Closed alarm mode",
+            "description": "Configure the alarm mode when the garage door is in closed position.",
+            "overview": "<p>Configuration alarm mode when the garage door is in<br \/>\"closed\" state:<br \/>1, Value1: configure the frequency of blinking for the Alarm<br \/>LED , there are 10 levels that 1 to10 level, the minimum<br \/>frequency is level 1 and the max frequency is level 10.<br \/>2, Value2: configure the alarm sound (there are 4 types sound<br \/>saved in EEPROM and user also can update it).<br \/>3, Value3: configure the volume of alarm sound (there are 10<br \/>levels, the min volume is 1 level and the max volume is 10 levels).<br \/>4, Value4=0, disable the alarm prompt. Value4=1, enable the<br \/>alarm prompt.<\/p>\r\n<p>\u00a0<\/p>\r\n<p>default values:<\/p>\r\n<p>Value1=2<br \/>Value2=4<br \/>Value3=8<br \/>Value4=0<\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": []
+        },
+        {
+            "id": 41,
+            "label": "Tamper switch configuration",
+            "description": "Configuration report for the tamper switch State",
+            "overview": "<p>Configuration report for the tamper switch state:<br \/>1, Value=0x00: Sensor is not removed<br \/>2, Value=0x0F: Sensor is removed<\/p> <p><br \/>Note:<br \/>1. The Garage Door Controller will send this configuration\u00a0report to gateway controller or associated nodes automatically\u00a0if the Sensor is removed.<br \/>2. You can send the value=0x55555555 of this parameter to\u00a0controller to relieve the alarm state.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 42,
+            "label": "Battery state",
+            "description": "Configuration report for the battery state of Sensor",
+            "overview": "<p>Configuration report for the battery state of Sensor:<br \/>1, Value=0x00: battery power is nominal.<br \/>2, Value=0x0F: battery power of Sensor is in low battery.<br \/>It will report the battery power state to associated nodes\u00a0automatically when the battery power is in low battery.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": true,
+            "write_only": true,
+            "value_min": 0,
+            "value_max": 16,
+            "options": []
+        },
+        {
+            "id": 43,
+            "label": "Play or Pause ringtone",
+            "description": "Start playing or Stop playing the ringtone",
+            "overview": "<p>Start playing or Stop playing the ringtone:<br \/>1, Value=255, stop playing ringtone.<br \/>2, Value=1 to 100, start playing the ringtone that you\u00a0selected.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": true,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 44,
+            "label": "Ringtone test volume",
+            "description": "Set volume for test of ringtone",
+            "overview": "<p>Test the volume of the current ringtone.<\/p> <p>Value=1 to value=10, which map to the volume level 1 to level\u00a010.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": true,
+            "value_min": 1,
+            "value_max": 10,
+            "options": []
+        },
+        {
+            "id": 45,
+            "label": "Temperature",
+            "description": "Get the environment temperature",
+            "overview": "<p>Get the environment temperature:<br \/>The temperature value contains one decimal point.\u00a0E.g. If the report value=252, the temperature is\u00a025.2 \u00b0C .<br \/>Range is 0 to 500 (0 to 50.0 \u00b0C ).<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": true,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 500,
+            "options": []
+        },
+        {
+            "id": 47,
+            "label": "Button definition",
+            "description": "Define the function of Button- or Button+.",
+            "overview": "<p>Define the function of Button- or Button+.<br \/>Value=0, short pressing the \u201cButton +\/-\u201d will be used to adjust\u00a0the volume of sound. Long pressing the \u201cButton +\/-\u201d will be\u00a0used to switch the sound to the next.<br \/>Value=1, short pressing the \u201cButton +\/-\u201d will be used to switch\u00a0the sound to the next. Long pressing the \u201cButton +\/-\u201d will be\u00a0used to adjust the volume of sound.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Mode 0"
+                },
+                {
+                    "value": 1,
+                    "label": "Mode 1"
+                }
+            ]
+        },
+        {
+            "id": 80,
+            "label": "Door state change report type",
+            "description": "Configure the door state change report type",
+            "overview": "<p>It will send the Hail CC\/configuration report CC when the state of garage door is changed:<\/p> <p>1, Value=0 , reserved.<br \/> 2, Value=1 , send Hail CC<br \/> 3, Value=2 , send Barrier operator report CC<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Send hail CC"
+                },
+                {
+                    "value": 2,
+                    "label": "Send barrier operator report CC"
+                }
+            ]
+        },
+        {
+            "id": 241,
+            "label": "Pair the Sensor",
+            "description": "Pair the Sensor with Garage Door Controller",
+            "overview": "<p>Pair the Sensor with Garage Door Controller.<\/p> <p>Send Configuration Set:<br \/>Value=0x55555501, which will trigger to start the pairing of\u00a0Sensor (installed on the top of the garage door), at this time,\u00a0the Network LED on the Garage Door Controller will blink\u00a0slowly and then short press Tamper Switch back of the Sensor.<br \/>If pairing is successful, the Network LED will stop blinking and\u00a0the Garage Door Controller will send the configuration report\u00a0with value=0x01FF to primary controller\/gateway. Otherwise,\u00a0repeat the operation.<\/p> <p>Note:<br \/>1. If you do not press the Tamper Switch when starting the\u00a0pairing mode, the pairing status will keep for 8 second and\u00a0then exit the pairing status automatically.<br \/>2. The Sensor has been paired with the Garage Door Controller\u00a0after factory.<\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1431655681,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Stop sensor pairing"
+                },
+                {
+                    "value": 1431655681,
+                    "label": "Start sensor pairing"
+                }
+            ]
+        },
+        {
+            "id": 252,
+            "label": "Lock Configuration",
+            "description": "Enable\/disable configuration",
+            "overview": "<p>Enable\/disable configuration<br \/>1, Value=0 : Enable.<br \/>2, Value=1 : Disable.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Configuration enabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Configuration disabled (locked)"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Group 1",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "Position status changed",
+            "overview": "<p>When the state of load (position status) is changed:<\/p>\r\n<p>1, Set Configuration parameter 80 to 0 : Reserved (Default).<br \/>2, Set Configuration parameter 80 to 1 : Send Hail CC.<br \/>3, Set Configuration parameter 80 to 2: send Barrier operator\u00a0report CC.<\/p>"
+        },
+        {
+            "id": 2,
+            "label": "Group 2",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "Forward the Basic Set",
+            "overview": "<p>Forward the Basic Set, Switch Binary Set commands to associated\u00a0nodes in Group 2 when the Garage Door Controller receives the\u00a0Basic Set, Switch Binary Set commands from main controller.<\/p>"
+        }
+    ]
+}

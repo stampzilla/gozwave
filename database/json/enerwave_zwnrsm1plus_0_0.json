@@ -1,0 +1,184 @@
+{
+    "database_id": 575,
+    "label": "ZWN-RSM1-PLUS",
+    "manufacturer_name": "Wenzhou MTLC Electric Appliances Co.,Ltd.",
+    "manufacturer_id": "011A",
+    "device_ref": [
+        "0101:5605"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Smart Relay Switch Module",
+    "overview": "<p>ZWN-RSM1-Plus<\/p> <p>Transform any home into a connected home with the Enerwave Z-Wave Plus Smart Single Relay Wireless Lighting Control Module. The lighting control enables wireless control of on\/off functions for standard table and floor lamps, and is compatible with incandescent, LED, Xenon, Halogen, fluorescent and compact fluorescent bulbs. The Z-Wave Plus Module provides ultimate flexibility for your home lighting by creating custom scenes and scheduling timed events when you\u2019re either home or away. Compared to Z-Wave Classic models, the Enerwave Z-Wave Plus Smart Meter Module offers 50% more wireless range and energy efficiency a 250% faster processor and 400% more memory<\/p> <p>Take charge of your home\u2019s appliances power outlet by installed directly behind your wall sockets. \u00a0The Z-Wave Plus Smart Relay Module offers all the power of intelligent automation and remote control. \u00a0Discrete and smart, the Smart Module Switch work invisibly behind your existing switches without the need to replace them.<\/p> <p>Easily controlled by your mobile device or computer using any Z-Wave certified gateway, Take control of your home lighting with Enerwave Z-Wave Plus Smart Single Relay Wireless Lighting Controls! Z-Wave is the world\u2019s largest ecosystem of interoperable smart home products. Z-Wave lighting controls provide an easy-to-install and affordable system to control lighting and small appliances in your home. Add an Enerwave Z-Wave lighting controls to a Z-Wave certified gateway to access and control your home from anywhere in the world using your smartphone, tablet or computer as a home automation command center.<\/p> <p>Never worry if you accidentally left the lights on because you can turn them off remotely or program your lights to go on\/off at specific times. Create customized lighting scenes for any occasion such as a \u201cgo to sleep\u201d scene or a \u201cmovie night\u201d scene. Give the illusion that someone is home by programming the lights to turn on\/off while you are away\u2014perfect for deterring crime and adding additional security!<\/p>",
+    "inclusion": "<p>DEVICE INCLUSION\/ EXCLUSION<\/p> <p>The process of \"Inclusion\/ Exclusion\" is to Add or Remove the device from the Hub. All Z-Wave devices must be \"Included\" on the Controller (Hub) before it can be controlled from a smart device. The Hub should be brought physically closer to the device just for the \"Inclusion\" process (recommended within 10ft). When finished, the Hub and device can be moved back to final installation location. Download the App or log onto the website associated with the Hub you are using and follow their Inclusion\/ Exclusion instructions as each Hub's programming and features are different.<\/p> <p>\u2022 During the Inclusion\/ Exclusion process, the Program Button on the relay or the ON\/OFF toggle on the switch can be used for including\/ excluding the device.<\/p> <p>o When using the ON\/OFF toggle, the toggle must be toggled ON and OFF 3 times.<\/p> <p>\u2022 It is best to perform an Exclusion of the device prior to performing an Inclusion.<\/p> <p>Step 1. From the Control Panel, go the the device Exclusion page.<\/p> <p>o Select \"Exclude Device\".<\/p> <p>o When prompted, press the Program Button on the Relay once or the ON\/OFF toggle on the switch 3 times.<\/p> <p>Step 2. Go to the \"Add Device\" page.<\/p> <p>o Select \"Include Device\".<\/p> <p>o When prompted, press the Program Button on the Relay once or the ON\/OFF toggle on the switch 3 times.<\/p> <p>The primary controller should indicate that the action was successful. If the controller indicates the action was unsuccessful, please repeat from Step 1. Once the relay is part of the network, the same basic procedure is used to add<\/p> <p>the relay to groups &amp; scenes or change advanced functions. Refer to the Hub\u2019s instructions for details. Step 3. Follow the On-Screen instructions in the Control Panel on adding or removing rooms, scenes, other devices, and other functions and features.<\/p>",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 4.005,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 6,
+        "name": "LIB_SLAVE_ROUTING"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 3,
+            "label": "Unsolicited Report Configuration",
+            "description": "Unsolicited Report Configuration",
+            "overview": "<p>ZWN-RSM1-PLUS can send unsolicited status reports to the primary controller (Node ID 0x1) when the switch is toggled if the controller is designed as a gateway. If your controller is not a gateway or does not need the status reported or you think it could confuse your Z-Wave network, you can use Command_Class_Configuration to disable this function. By default this function is disabled.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "LIfeline",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "Send device reset locally notification",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "StatusReport_ EP",
+            "max_nodes": 3,
+            "controller": false,
+            "description": "Switch Binary Report",
+            "overview": ""
+        }
+    ]
+}

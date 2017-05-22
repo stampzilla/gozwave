@@ -1,0 +1,384 @@
+{
+    "database_id": 274,
+    "label": "ZW112",
+    "manufacturer_name": "AEON Labs",
+    "manufacturer_id": "0086",
+    "device_ref": [
+        "0002:0070",
+        "0102:0070",
+        "0202:0070",
+        "1D02:0070"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Door\/Window Sensor 6",
+    "overview": "<p>Aeon Labs Door\/ Window Sensor 6 is a smart Z-Wave sensor that can detect the status of door\/window's open\/close in real time.\u00a0<br \/>It\u2019s a security Z-Wave device that supports security encryption. Also it supports the \u201cOver the Air Firmware Updating\u201d that allows you wirelessly update its firmware if needs.\u00a0<br \/>It can be included and operated in any Z-Wave network with other Z-Wave certified devices from manufacturers and\/or other applications.<\/p>",
+    "inclusion": "<p>Turn the primary controller into inclusion mode, short press the product\u2019s Action Button that you can find in the back of the product.\u00a0<\/p>",
+    "exclusion": "<p>Turn the primary controller into exclusion mode, short press the product\u2019s Action Button that you can find in back of the product.\u00a0<\/p>",
+    "wakeup": "<p>Press the Action Button once, which will trigger sending out the Wake up notification command, press and hold the Action Button for 3 seconds, which will toggle on\/off the Sensor be waked up for 10 minutes.\u00a0<\/p>",
+    "protocol_version": 4.5,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SENSOR_NOTIFICATION"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_NOTIFICATION_SENSOR"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 7,
+                "name": "GENERIC_TYPE_SENSOR_NOTIFICATION"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_NOTIFICATION_SENSOR"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "30",
+                    "name": "SENSOR_BINARY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_door",
+                            "label": "Door Sensor",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "7A",
+                    "name": "FIRMWARE_UPDATE_MD",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "98",
+                    "name": "SECURITY",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Value that will be sent on open\/close events",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "On for opened, Off for closed"
+                },
+                {
+                    "value": 1,
+                    "label": "\tOff for opened, On for closed"
+                }
+            ]
+        },
+        {
+            "id": 39,
+            "label": "Low battery threshold (10% to 50%)",
+            "description": "The value the sensor will use to determine a low battery level",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 20,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 10,
+            "value_max": 50,
+            "options": []
+        },
+        {
+            "id": 101,
+            "label": "Low battery voltage check",
+            "description": "Enable or disables the low battery voltage check",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                },
+                {
+                    "value": 1,
+                    "label": "Enable"
+                }
+            ]
+        },
+        {
+            "id": 111,
+            "label": "Low battery voltage check time",
+            "description": "Sets the value of the interval for the low battery check time (in seconds)",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 86640,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 240,
+            "value_max": 134217727,
+            "options": []
+        },
+        {
+            "id": 121,
+            "label": "Reporting mode on open\/close event",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 3,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Send nothing"
+                },
+                {
+                    "value": 1,
+                    "label": "Send Basic Set CC"
+                },
+                {
+                    "value": 2,
+                    "label": "Send Sensor Binary Report CC"
+                },
+                {
+                    "value": 3,
+                    "label": "Send Basic Set CC and Sensor Binary Report CC"
+                }
+            ]
+        },
+        {
+            "id": 252,
+            "label": "Lock\/Unlock all configuration parameters",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Unlock"
+                },
+                {
+                    "value": 1,
+                    "label": "Lock"
+                }
+            ]
+        },
+        {
+            "id": 255,
+            "label": "Reset sensor to factory default and remove from network",
+            "description": "Reset sensor to factory default and remove from network",
+            "overview": "<p>Writing \u00a01431655765 to this parameter will reset to factory default and the sensor will be removed from network.<\/p> <p>If 1 byte is sent with a value of 0, then the senor will be reset to factory default, but the sensor will not be removed from the network.<\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2147483647,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Lifeline",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "Sends sensor report as configured in parameter 121 when the sensor is triggered",
+            "overview": "<p>1-5 nodes<\/p>"
+        }
+    ]
+}

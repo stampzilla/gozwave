@@ -1,0 +1,297 @@
+{
+    "database_id": 525,
+    "label": "Ecolink PIR v2.5",
+    "manufacturer_name": "Ecolink",
+    "manufacturer_id": "014A",
+    "device_ref": [
+        "0004:0001"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Z-Wave PIR Motion Sensor v2.5",
+    "overview": "<p><strong>Overview:<\/strong><\/p> <p>This is a hardware revision update to EcoLink's prior PIR sensor. \u00a0It provides the same general capabilities as the prior detector--motion detection, battery state messages, and \"burgler\" alarm for the case being opened. \u00a0On motion detection a green LED will flash and the notification will be sent to Group 1.<\/p> <p><strong>Association Groups:<\/strong><\/p> <p>The device has two association groups of up to 5 nodes each.<\/p> <p><strong>Configuration Parameters:<\/strong><\/p> <p>The device has two configuration parameters.\u00a0Parameter 1 configures the sensor to send or not send Basic Set commands of 0x00 to nodes in Association group 2 turning the devices off when the sensor is in a restored state (i.e. motion not detected). \u00a0By default the sensor does NOT send Basic Set commands of 0x00. \u00a0Paremter 2 configures the sensor to either send or not to send Sensor Binary Report commands to Association Group 1 when the sensor is faulted and restored. \u00a0If the controller is fully compatible with the Notification Command Class thereby making the Sensor Binary Reports redundant, the controller \u00a0can disable the Sensor Binary Report Commands completely.<\/p>",
+    "inclusion": "<p>Initial device inclusion is started by removing the pull tab from the back of the unit. \u00a0This connects the battery and the device will immediately be eligible for inclusion. \u00a0Place your controller in inclusion mode prior to pulling the tab from the back.<\/p> <p>The manual indicates network-wide inclusion is supported, but also indicates that the device should be within 15 feet of the controller during the inclusion process.<\/p>",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 4.005,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 6,
+        "name": "LIB_SLAVE_ROUTING"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SENSOR_NOTIFICATION"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_NOTIFICATION_SENSOR"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 7,
+                "name": "GENERIC_TYPE_SENSOR_NOTIFICATION"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_NOTIFICATION_SENSOR"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "30",
+                    "name": "SENSOR_BINARY",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_binary",
+                            "label": "Binary Sensor",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "5",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_power",
+                            "label": "Alarm (power)",
+                            "config": [
+                                "type=POWER_MANAGEMENT"
+                            ]
+                        },
+                        {
+                            "type": "alarm_burglar",
+                            "label": "Alarm (burglar)",
+                            "config": [
+                                "type=BURGLAR"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Send Basic Sets",
+            "description": "Send or do not send Basic Set commands to AG2",
+            "overview": "<p>Parameter 1 configures the sensor to send or not send Basic Set commands of 0x00 to nodes in Association group 2 turning the devices off when the sensor is in a restored state (i.e. motion not detected). \u00a0By default the sensor does NOT send Basic Set commands of 0x00.<\/p> <p>Configuration Value: 0x00:<\/p> <p>(Default) Sensor does NOT send Basic Sets to Node IDs in Association Group 2 when the sensor is restored (i.e. Motion Not Detected)<\/p> <p>Configuration Value: 0xFF:<\/p> <p>Sensor sends Basic Sets of 0x00 to nodes in Association Group2 when sensor is restored<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Do not send"
+                },
+                {
+                    "value": 255,
+                    "label": "Send Basic Sets"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "Send Binary Reports",
+            "description": "Send Sensor Binary Reports for backward compatibility",
+            "overview": "<p>Paremter 2 configures the sensor to either send or not to send Sensor Binary Report commands to Association Group 1 when the sensor is faulted and restored. \u00a0If the controller is fully compatible with the Notification Command Class thereby making the Sensor Binary Reports redundant, the controller \u00a0can disable the Sensor Binary Report Commands completely.<\/p> <p>Configuration Value: 0x00:<\/p> <p>(Default) Sensor sends Sensor Binary Reports when sensor is faulted and restored for backwards compatibility in addition to Notification Reports.<\/p> <p>Configuration Value: 0xFF:<\/p> <p>Sensor will send only Notification Reports and NOT Sensor Binary Reports when the sensor is faulted and restored.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Send Sensor Binary Reports"
+                },
+                {
+                    "value": 255,
+                    "label": "Send only Notification Reports"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Group 1",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "",
+            "overview": "<p>Group 1 is a lifeline group who will receive unsolicited messages relating to motion detection notifications, case tampering notifications, low-battery notifications, and snsor binary reports.<\/p>"
+        },
+        {
+            "id": 2,
+            "label": "Group 2",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": "<p>Group 2 is intended for devices that are to be controlled i.e. turned on or off (on only by default) with a Basic Set. \u00a0On inclusion the controller should put its node ID in group 1 but not in group 2.<\/p>"
+        }
+    ]
+}

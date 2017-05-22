@@ -1,0 +1,284 @@
+{
+    "database_id": 189,
+    "label": "ZIR010",
+    "manufacturer_name": "ACT - Advanced Control Technologies",
+    "manufacturer_id": "0001",
+    "device_ref": [
+        "4952:3130"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "PIR Motion Sensor",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 1.069,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": false,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SENSOR_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_ROUTING_SENSOR_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 32,
+                "name": "GENERIC_TYPE_SENSOR_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_ROUTING_SENSOR_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "30",
+                    "name": "SENSOR_BINARY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_binary",
+                            "label": "Binary Sensor",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_general",
+                            "label": "Alarm",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 17,
+            "label": "Mode",
+            "description": "Notification modes: 0=light, 1=alarm, 2=sensor",
+            "overview": "<p>The ZIR010 can be configured to operate in 1 of 3 modes. Those modes are: <\/p> <p>\u2022 Lighting Mode (factory default)<br \/>\u2022 Alarm Mode<br \/>\u2022 Sensor Mode<\/p> <p>To change the mode of operation:<br \/>For Lighting Mode: Send a value of 0 to Configuration Parameter #17.<br \/>For Alarm Mode: Send a value of 1 to Configuration Parameter #17.<br \/>For Sensor Mode: Send a value of 2 to Configuration Parameter # 17.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Lightning"
+                },
+                {
+                    "value": 1,
+                    "label": "Alarm"
+                },
+                {
+                    "value": 2,
+                    "label": "Sensor"
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "label": "Off\/Idle delay",
+            "description": "Configuring the off\/idle delay",
+            "overview": "<p>OFF\/IDLE (Applicable only when the ZIR010 is configured for Lighting or Binary Sensor Mode).<\/p> <p>The ZIR010 will consider there to be \u201cNo Activity\u201d after 2 minutes passes during which the ZIR010 detected no motion. At that point, the ZIR010 can be configured to immediately send the OFF or IDLE command or it can be configured to send it from 1 minute to 255 minutes later. (+\/- 1 minute).<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 19,
+            "label": "Unsolicited Commands",
+            "description": "Disabling the zir010 trom sending commands unsolicited",
+            "overview": "<p>The ZIR010 can be disabled from sending commands unsolicited without removing associated devices by setting Configuration Parameter # 19 to 0 (when asked for number of bytes, select 1). Setting it back to 1 will re-enable the ZIR010.\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "enabled"
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "label": "Awake Time",
+            "description": "Duration ranges from 15 to 45 seconds. Valid values range from 15 to 45.",
+            "overview": "<p>The ZIR010 will send a Wakeup Notification Command approximately 3 minutes after power up IF and only IF it has been included into a Z-Wave network. From that point on, the ZIR010 will wake up every 4 hours and re-send the Wakeup Notification Command unless configured for another time interval. The ZIR010 will stay awake by default for 30 seconds and then go back to sleep to conserve battery life. <\/p> <p>The time interval between Wakeup Notification Commands can be adjusted if you have a device that supports this. Refer to that device\u2019s instructions. <\/p> <p>The time the ZIR010 stays awake can be adjusted from 15 seconds to 45 seconds by sending a value of 15 to 45 to the ZIR010 using Configuration Parameter # 22 (when asked for the number of bytes, select 1). This awake time period starts over every time the ZIR010 receives a command or request.\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 30,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 15,
+            "value_max": 45,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Motion",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": "<p>If the ZIR010 is configured to operate in Lighting Mode, any device that is associated into Group 1 will be sent ON and OFF commands. See OFF\/IDLE command section below for how to configure the length of a delay before an OFF command is sent*.<\/p>\r\n<p>If the ZIR010 is configured to operate in Alarm Mode, any device that is associated into Group 1 will be sent an ALARM command when the ZIR010 detects motion.<\/p>\r\n<p>If the ZIR010 is configured to operate in Binary Sensor Mode, any device that is associated into Group 1 will be sent an update whenever the ZIR010 detects motion or stops detecting motion.<\/p>\r\n<p>* See OFF\/IDLE command section below to configure the length of a delay before an OFF command is sent.<\/p>"
+        },
+        {
+            "id": 2,
+            "label": "Tamper",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": "<p>If the ZIR010 is configured to operate in Lighting Mode, any device that is associated into Group 2 will be sent ON commands when the housing of the ZIR010 is opened.<\/p>\r\n<p>If the ZIR010 is configured to operating in Alarm Mode, any device that is associated into Group 2 will be sent an Alarm command when the housing of the ZIR010 is opened.<\/p>\r\n<p>If the ZIR010 is configured to operate in Binary Sensor Mode, any device that is associated into Group 2 will be sent an update when the housing of the ZIR010 is opened.<\/p>"
+        },
+        {
+            "id": 3,
+            "label": "Battery",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": "<p>\u00a0<\/p>\r\n<div class=\"page\" title=\"Page 3\">\r\n<div class=\"layoutArea\">\r\n<div class=\"column\">\r\n<p><span style=\"font-size: 10.000000pt; font-family: 'Arial';\">Any device that is associated into Group 3 will be sent battery level indications at specific intervals. There can be up to 5 devices associated into each group.\u00a0<\/span><\/p>\r\n<\/div>\r\n<\/div>\r\n<\/div>"
+        }
+    ]
+}

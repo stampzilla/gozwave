@@ -1,0 +1,239 @@
+{
+    "database_id": 448,
+    "label": "ZFM-80",
+    "manufacturer_name": "Remotec",
+    "manufacturer_id": "5254",
+    "device_ref": [
+        "8000:0002"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Fixture Switch Module",
+    "overview": "<p>The ZFM-80US Fixture Switch Module is a Z-Wave enabled device and fully compatible with any Z-Wave enabled network. It allows remote On\/Off control of specified resistive household appliance. Each fixture switch module is designed to act as a repeater, which will re-transmit the RF signal to ensure that the signal is received by its intended destination by routing the signal around obstacle and radio dead spots.<\/p> <p>Key Features:<\/p> <p>- High output power<\/p> <p>- Remote ON\/OFF control via the Z-Wave controller<\/p> <p>- Manual ON\/OFF control with the front panel push button<\/p> <p>- Support External ON\/OFF key connects to the module<\/p> <p>- Advanced function<\/p> <p>Conditional trigger for \"Fail Safe Installation\"<\/p> <p>- Support Network Wide Inclusion (NWI) and Explore Frames<\/p> <p>- Screw terminals for wires connection<\/p> <p>- Flexible mounting structure - mount inside gang box or any place<\/p>",
+    "inclusion": "<p>Include or exclude the Fixture Switch Module from the existing ZWave home control network with your primary controller.<\/p> <p>- Refer to your primary controller instructions to process the inclusion \/ exclusion setup procedure.<\/p> <p>- When prompted by your primary controller, click once on the PROG button or external switch.<\/p> <p>- The primary controller should indicate that the action was successful. If the controller indicates the action was unsuccessful, please repeat the procedure.<\/p> <p>- Once the Fixture Switch Module is part of the network, the same basic procedure is used to add the Fixture Switch Module to groups or scenes. Refer to the primary controller's instructions for details.<\/p>",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.04,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 6,
+        "name": "LIB_SLAVE_ROUTING"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "ExternalSwitchType",
+            "description": "Set External switch type Definitions",
+            "overview": "<p>ZFM-80 provides an option to user that can add an external switch to control the On\/Off function. ZFM-80US can be placed into the switch box with external wall switch cover. User can configure the external switch type through the configuration command<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 4,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                },
+                {
+                    "value": 1,
+                    "label": "TypeA"
+                },
+                {
+                    "value": 2,
+                    "label": "TypeB"
+                },
+                {
+                    "value": 3,
+                    "label": "TypeC"
+                },
+                {
+                    "value": 4,
+                    "label": "TypeD"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "Timeout",
+            "description": "Set timeout period",
+            "overview": "<p>ZFM-80US provides an advanced function \"Conditional trigger for Fail Safe Installation\". It can turn on or turn off the relay if ZFM-80US has not received any Z-Wave commands from a specified Z-Wave Node ID and within a specified period. For example: Z-Wave gateway can monitor a Z-Wave device status and power on equipment if this Z-Wave device is out of service.<\/p> <p>(default value is 0 [function disabled])<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 240,
+            "options": []
+        },
+        {
+            "id": 3,
+            "label": "NodeIdNumber",
+            "description": "Configure Node ID number for Z-Wave command source",
+            "overview": "<p>ZFM-80US provides an advanced function \"Conditional trigger\u00a0for Fail Safe Installation\". It can turn on or turn off the relay if\u00a0ZFM-80US has not received any Z-Wave commands from a\u00a0specified Z-Wave Node ID and within a specified period. For\u00a0example: Z-Wave gateway can monitor a Z-Wave device status\u00a0and power on equipment if this Z-Wave device is out of service.<\/p> <p>(default value is 0 [function disabled])<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 232,
+            "options": []
+        },
+        {
+            "id": 4,
+            "label": "OutputStatus",
+            "description": "Set relay output status if timeout period has been reached",
+            "overview": "<p>\u00a0ZFM-80US provides an advanced function \"Conditional trigger for Fail Safe Installation\". It can turn on or turn off the relay if ZFM-80US has not received any Z-Wave commands from a specified Z-Wave Node ID and within a specified period. For example: Z-Wave gateway can monitor a Z-Wave device status and power on equipment if this Z-Wave device is out of service.<\/p> <p>1 = turn on relay<\/p> <p>0 = turn off relay<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "AssociationGroup",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "",
+            "overview": "<p>Used to report the relay on\/off status to specify nodes with ZFM-80US predefined association group once the relay state has been changed.<\/p>"
+        }
+    ]
+}

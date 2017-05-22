@@ -1,0 +1,546 @@
+{
+    "database_id": 407,
+    "label": "BTZW125",
+    "manufacturer_name": "Poly-control",
+    "manufacturer_id": "010E",
+    "device_ref": [
+        "0008:0002"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Danalock v2 circle",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 0,
+    "listening": false,
+    "frequently_listening": true,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 0,
+        "name": "Unknown"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_ENTRY_CONTROL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_SECURE_KEYPAD_DOOR_LOCK"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 64,
+                "name": "GENERIC_TYPE_ENTRY_CONTROL"
+            },
+            "specific_class": {
+                "id": 3,
+                "name": "SPECIFIC_TYPE_SECURE_KEYPAD_DOOR_LOCK"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "22",
+                    "name": "APPLICATION_STATUS",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "62",
+                    "name": "DOOR_LOCK",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "lock_door",
+                            "label": "Door Lock",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8A",
+                    "name": "TIME",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8B",
+                    "name": "TIME_PARAMETERS",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Direction",
+            "description": "Direction",
+            "overview": "<p>0 -&gt;\u00a0The motor goes clockwise when latched<\/p> <p>1 -&gt;\u00a0The motor goes counterclockwise when latched<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Clockwise"
+                },
+                {
+                    "value": 1,
+                    "label": "The motor goes counterclockwise when latched"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "Speed (Torque)",
+            "description": "Speed (Torque)",
+            "overview": "<p>1 -&gt; Slowest<\/p> <p>2 -&gt; Slow<\/p> <p>3 -&gt; (Default) Normal<\/p> <p>4 -&gt; Fast<\/p> <p>5 -&gt; Fastest<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 5,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Slowest"
+                },
+                {
+                    "value": 2,
+                    "label": "Slow"
+                },
+                {
+                    "value": 3,
+                    "label": "Normal"
+                },
+                {
+                    "value": 4,
+                    "label": "Fast"
+                },
+                {
+                    "value": 5,
+                    "label": "Fastest"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "label": "Mode",
+            "description": "Mode",
+            "overview": "<p>0 -&gt; Stepper motor mode wave drive(power saving)<\/p> <p>1 -&gt; (Default) Stepper motor mode full drive(Normal)<\/p> <p>2 -&gt; Relay mode<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Powersaving"
+                },
+                {
+                    "value": 1,
+                    "label": "Full drive"
+                },
+                {
+                    "value": 2,
+                    "label": "Relay mode"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "label": "Turn degrees",
+            "description": "Turn degrees",
+            "overview": "<p>(Default) Factor 10 turn degrees ( 1 = 10 degrees, 9 = 90 degrees etc.)<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 5,
+            "label": "Auto Latch time",
+            "description": "Auto Latch time",
+            "overview": "<p>How many seconds from the lock has been unlatched to it automatically should close again. If 0 then it is disabled.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 60,
+            "options": []
+        },
+        {
+            "id": 6,
+            "label": "Sound",
+            "description": "Sound",
+            "overview": "<p>Enable the beep sound from latch or unlatch operations<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable sound"
+                },
+                {
+                    "value": 1,
+                    "label": "Enable Sound"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "label": "Battery Type",
+            "description": "Battery Type",
+            "overview": "<p>2\u00a0-&gt;\u00a0Mains power, changing from and to mains power requires the Danalock to be excluded and included.<\/p> <p>0\u00a0-&gt;\u00a03,6 Volt battery<\/p> <p>1\u00a0-&gt;\u00a0(Default) 3.0 Volt battery.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "3,6V"
+                },
+                {
+                    "value": 1,
+                    "label": "3,0V"
+                },
+                {
+                    "value": 2,
+                    "label": "Mains power"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "label": "Battery alarm",
+            "description": "Battery alarm value",
+            "overview": "<p>When the battery level is under this value, the device will notify user with a beep sound after latch or unlatch<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 9,
+            "label": "TurnAndGo",
+            "description": "TurnAndGo",
+            "overview": "<p>using a optional rotation sensor. Latch&amp;Go on will turn automatically when manual turn is detected.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Off"
+                },
+                {
+                    "value": 1,
+                    "label": "On"
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "label": "BrakeAndGoBack\t",
+            "description": "Turn 75 degrees back after x seconds",
+            "overview": "<p>0 -&gt;\u00a0(Default) Disabled<\/p> <p>1 to 15 -&gt; Seconds to brake. When used the lock will brake for x amount of seconds and then turn 75 degrees back. Made for special doors without door lever.(Only when unlatching).<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 15,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "1 second"
+                },
+                {
+                    "value": 2,
+                    "label": "Brake for 2 seconds"
+                },
+                {
+                    "value": 3,
+                    "label": "Brake for 3 seconds"
+                },
+                {
+                    "value": 4,
+                    "label": "Brake for 4 seconds"
+                },
+                {
+                    "value": 5,
+                    "label": "Brake for 5 seconds"
+                },
+                {
+                    "value": 6,
+                    "label": "Brake for 6 seconds"
+                },
+                {
+                    "value": 7,
+                    "label": "Brake for 7 seconds"
+                },
+                {
+                    "value": 8,
+                    "label": "Brake for 8 seconds"
+                },
+                {
+                    "value": 9,
+                    "label": "Brake for 9 seconds"
+                },
+                {
+                    "value": 10,
+                    "label": "Brake for 10 seconds"
+                },
+                {
+                    "value": 11,
+                    "label": "Brake for 11 seconds"
+                },
+                {
+                    "value": 12,
+                    "label": "Brake for 12 seconds"
+                },
+                {
+                    "value": 13,
+                    "label": "Brake for 13 seconds"
+                },
+                {
+                    "value": 14,
+                    "label": "Brake for 14 seconds"
+                },
+                {
+                    "value": 15,
+                    "label": "Brake for 15 seconds"
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "label": "Async",
+            "description": "Used if the lock is using an optional rotation sensor",
+            "overview": "<p>0 -&gt;\u00a0(Default) Async off<\/p> <p>1 -&gt;\u00a0Async on. Used if the lock is using an optional rotation sensor. When async is enabled the lock will auto calibrate if already unlatched and asked to Unlatch again (used for special door locks where the key turn is asynced from the inside nob.)<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Async off"
+                },
+                {
+                    "value": 1,
+                    "label": "Async on"
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "label": "ReportType",
+            "description": "Door lock operation report type",
+            "overview": "<p>Door lock operation report type<\/p> <p>2 -&gt; No Door lock operation reports are sent unsolicited.<\/p> <p>0 -&gt; (Default) Simple supported by all controllers that support door locks.<\/p> <p>1 -&gt; Advanced, more specific reports through notification Command Class.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Default"
+                },
+                {
+                    "value": 1,
+                    "label": "Advanced"
+                },
+                {
+                    "value": 2,
+                    "label": "No reporting"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "LifeLine",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "Z-Wave Plus Lifeline",
+            "overview": ""
+        }
+    ]
+}

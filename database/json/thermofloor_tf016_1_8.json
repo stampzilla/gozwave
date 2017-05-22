@@ -1,0 +1,460 @@
+{
+    "database_id": 412,
+    "label": "TF016",
+    "manufacturer_name": "ThermoFloor",
+    "manufacturer_id": "019B",
+    "device_ref": [
+        "0001:0001"
+    ],
+    "version_min": 1.8,
+    "version_max": 255.255,
+    "decription": "ZWave Thermostat",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.083,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 6,
+        "name": "LIB_SLAVE_ROUTING"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_THERMOSTAT"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_THERMOSTAT_GENERAL_V2"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 8,
+                "name": "GENERIC_TYPE_THERMOSTAT"
+            },
+            "specific_class": {
+                "id": 6,
+                "name": "SPECIFIC_TYPE_THERMOSTAT_GENERAL_V2"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "5",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Sensor (temperature)",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "40",
+                    "name": "THERMOSTAT_MODE",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "thermostat_mode",
+                            "label": "Thermostat mode",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "43",
+                    "name": "THERMOSTAT_SETPOINT",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "thermostat_setpoint",
+                            "label": "Setpoint (heating)",
+                            "config": [
+                                "type=HEATING"
+                            ]
+                        },
+                        {
+                            "type": "thermostat_setpoint",
+                            "label": "Setpoint (heating economy)",
+                            "config": [
+                                "type=HEATING_ECON"
+                            ]
+                        },
+                        {
+                            "type": "thermostat_setpoint",
+                            "label": "Setpoint (furnace)",
+                            "config": [
+                                "type=FURNACE"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Operation mode",
+            "description": "",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 8,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "OFF"
+                },
+                {
+                    "value": 1,
+                    "label": "HEAT"
+                },
+                {
+                    "value": 2,
+                    "label": "COOL"
+                },
+                {
+                    "value": 11,
+                    "label": "ENERGY SAVE HEAT"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "Sensor mode",
+            "description": "",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 5,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "F-mode"
+                },
+                {
+                    "value": 1,
+                    "label": "A-mode"
+                },
+                {
+                    "value": 2,
+                    "label": "AF-mode"
+                },
+                {
+                    "value": 3,
+                    "label": "A2-mode"
+                },
+                {
+                    "value": 4,
+                    "label": " P-mode"
+                },
+                {
+                    "value": 5,
+                    "label": " FP-mode"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "label": "Floor sensor type",
+            "description": "",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 5,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "10k NTC"
+                },
+                {
+                    "value": 1,
+                    "label": "12k NTC"
+                },
+                {
+                    "value": 2,
+                    "label": "15k NTC"
+                },
+                {
+                    "value": 3,
+                    "label": "22k NTC"
+                },
+                {
+                    "value": 4,
+                    "label": "33k NTC"
+                },
+                {
+                    "value": 5,
+                    "label": "47k NTC"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "label": "DIFF l. Temperature control Hysteresis",
+            "description": "Range 3-30 (0.3\u00b0C 3.0\u00b0C)",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 3,
+            "value_max": 30,
+            "options": []
+        },
+        {
+            "id": 5,
+            "label": "FLo, Floor min limit",
+            "description": "Range 50-400 (5.0\u00b0C 40.0\u00b0C)",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 50,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 50,
+            "value_max": 400,
+            "options": []
+        },
+        {
+            "id": 6,
+            "label": "FHi, Floor max limit",
+            "description": "Range 50-400 (5.0\u00b0C 40.0\u00b0C)",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 400,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 50,
+            "value_max": 400,
+            "options": []
+        },
+        {
+            "id": 7,
+            "label": "ALo, Air min limit",
+            "description": "Range 50-400 (5.0\u00b0C 40.0\u00b0C)",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 50,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 50,
+            "value_max": 400,
+            "options": []
+        },
+        {
+            "id": 8,
+            "label": "AHi, Air max limit",
+            "description": "Range 50-400 (5.0\u00b0C 40.0\u00b0C)",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 400,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 50,
+            "value_max": 400,
+            "options": []
+        },
+        {
+            "id": 9,
+            "label": "PLo, FP-mode P setting",
+            "description": "",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 9,
+            "options": []
+        },
+        {
+            "id": 10,
+            "label": "CO mode setpoint",
+            "description": "Range 50-400 (5.0\u00b0C 40.0\u00b0C)",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 210,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 50,
+            "value_max": 400,
+            "options": []
+        },
+        {
+            "id": 11,
+            "label": "ECO mode setpoint",
+            "description": "Range 50-400 (5.0\u00b0C 40.0\u00b0C)",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 180,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 50,
+            "value_max": 400,
+            "options": []
+        },
+        {
+            "id": 12,
+            "label": "P setting",
+            "description": "",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 10,
+            "options": []
+        },
+        {
+            "id": 13,
+            "label": "COOL setpoint",
+            "description": "Only if cooling enabled. Range 50-400 (5.0\u00b0C 40.0\u00b0C)",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 210,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 50,
+            "value_max": 400,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Lifeline",
+            "max_nodes": 8,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "On\/Off control",
+            "max_nodes": 8,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

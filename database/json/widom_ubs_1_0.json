@@ -1,0 +1,267 @@
+{
+    "database_id": 298,
+    "label": "WiDom Universal Relay Switch",
+    "manufacturer_name": "wiDom",
+    "manufacturer_id": "0149",
+    "device_ref": [
+        "0012:0104"
+    ],
+    "version_min": 1,
+    "version_max": 1.7,
+    "decription": "WiDom Universal Relay Switch",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.067,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "77",
+                    "name": "NODE_NAMING",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Device status 1 click",
+            "description": "\tDevice status when the external switch receives 1 click",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 4,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "TOGGLE"
+                },
+                {
+                    "value": 2,
+                    "label": "ON"
+                },
+                {
+                    "value": 3,
+                    "label": "OFF"
+                },
+                {
+                    "value": 4,
+                    "label": "IGNORE"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "Device status 2 click",
+            "description": "",
+            "overview": "<p>Device status when the external switch receives 2 click<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 4,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "TOGGLE"
+                },
+                {
+                    "value": 2,
+                    "label": "ON"
+                },
+                {
+                    "value": 3,
+                    "label": "OFF"
+                },
+                {
+                    "value": 4,
+                    "label": "IGNORE"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Group 1",
+            "max_nodes": 16,
+            "controller": true,
+            "description": "",
+            "overview": "<p>Devices that will be notified of changes in its status<\/p>"
+        },
+        {
+            "id": 2,
+            "label": "Group 2",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": "<p>Devices that will be controlled by a single click on the external switch<\/p>"
+        },
+        {
+            "id": 3,
+            "label": "Group 3",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": "<p>Devices that will be controlled by a double click on the external switch<\/p>"
+        },
+        {
+            "id": 4,
+            "label": "Group 4",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": "<p>Devices that will be controlled by a triple click on the external switch<\/p>"
+        },
+        {
+            "id": 5,
+            "label": "Group 5",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": "<p>Devices that will be controlled by hold on the external switch<\/p>"
+        }
+    ]
+}

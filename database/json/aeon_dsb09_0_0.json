@@ -1,0 +1,665 @@
+{
+    "database_id": 84,
+    "label": "DSB09",
+    "manufacturer_name": "AEON Labs",
+    "manufacturer_id": "0086",
+    "device_ref": [
+        "0002:0009"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Home Energy Meter",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 2.078,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SENSOR_MULTILEVEL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_ROUTING_SENSOR_MULTILEVEL"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 33,
+                "name": "GENERIC_TYPE_SENSOR_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_ROUTING_SENSOR_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_power",
+                            "label": "Sensor (power)",
+                            "config": [
+                                "type=POWER"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh)",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        },
+                        {
+                            "type": "meter_reset",
+                            "label": "Reset Meter",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "60",
+                    "name": "MULTI_INSTANCE",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 33,
+                "name": "GENERIC_TYPE_SENSOR_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_ROUTING_SENSOR_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_power",
+                            "label": "Sensor (power) 1",
+                            "config": [
+                                "type=POWER"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh) 1",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts) 1",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 33,
+                "name": "GENERIC_TYPE_SENSOR_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_ROUTING_SENSOR_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_power",
+                            "label": "Sensor (power) 2",
+                            "config": [
+                                "type=POWER"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh) 2",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts) 2",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 33,
+                "name": "GENERIC_TYPE_SENSOR_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_ROUTING_SENSOR_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_power",
+                            "label": "Sensor (power) 3",
+                            "config": [
+                                "type=POWER"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh) 3",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts) 3",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Voltage",
+            "description": "Voltage to calculate wattage from amperage. Values represent voltage.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 240,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32000,
+            "options": []
+        },
+        {
+            "id": 3,
+            "label": "Selective Reporting",
+            "description": "Enable selective reporting only when power change reaches a certain threshold or percentage set in 4-11 below. This is used to reduce network traffic. (0 == disable, 1 == enable)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": []
+        },
+        {
+            "id": 4,
+            "label": "Current Threshold - Whole HEM",
+            "description": "Threshold change in wattage to induce an automatic report (Whole HEM). (Valid values 0-60000)",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 50,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 60000,
+            "options": []
+        },
+        {
+            "id": 5,
+            "label": "Current Threshold - Clamp 1",
+            "description": "Threshold change in wattage to induce an automatic report (Clamp 1). (Valid values 0-60000)",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 50,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 60000,
+            "options": []
+        },
+        {
+            "id": 6,
+            "label": "Current Threshold - Clamp 2",
+            "description": "Threshold change in wattage to induce an automatic report (Clamp 2). (Valid values 0-60000)",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 50,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 60000,
+            "options": []
+        },
+        {
+            "id": 7,
+            "label": "Current Threshold - Clamp 3",
+            "description": "Threshold change in wattage to induce an automatic report (Clamp 3). (Valid values 0-60000)",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 50,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 60000,
+            "options": []
+        },
+        {
+            "id": 8,
+            "label": "Percent Change - Whole HEM",
+            "description": "Percentage change in wattage to induce an automatic report (Whole HEM). (Valid values 0-100)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 50,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 9,
+            "label": "Percent Change - Clamp 1",
+            "description": "Percentage change in wattage to induce an automatic report (Clamp 1). (Valid values 0-100)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 50,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 10,
+            "label": "Percent Change - Clamp 2",
+            "description": "Percentage change in wattage to induce an automatic report (Clamp 2). (Valid values 0-100)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 50,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 11,
+            "label": "Percent Change - Clamp 3",
+            "description": "Percentage change in wattage to induce an automatic report (Clamp 3). (Valid values 0-100)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 50,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 101,
+            "label": "Which reports need to send automatically for group 1",
+            "description": "Sum values of all wanted reports (see Overview)",
+            "overview": "<p>1 \u00a0 \u00a0 \u00a0 \u00a0-&gt; \u00a0 Battery Report<\/p> <p>2 \u00a0 \u00a0 \u00a0 \u00a0-&gt; \u00a0 MultiSensor Report for Watt (whole device)<\/p> <p>4 \u00a0 \u00a0 \u00a0 \u00a0-&gt; \u00a0 Meter Report for Watt (whole device)<\/p> <p>8 \u00a0 \u00a0 \u00a0 \u00a0-&gt; \u00a0 Meter Report for kWh (whole device)<\/p> <p>256 \u00a0 \u00a0 -&gt; \u00a0 Meter Report for Watt (clamp 1)<\/p> <p>512 \u00a0 \u00a0 -&gt; \u00a0 Meter Report for Watt (clamp 2)<\/p> <p>1024 \u00a0\u00a0-&gt; \u00a0 Meter Report for Watt (clamp 3)<\/p> <p>2048 \u00a0\u00a0-&gt; \u00a0 Meter Report for kWh (clamp 1)<\/p> <p>4096 \u00a0\u00a0-&gt; \u00a0 Meter Report for kWh (clamp 2)<\/p> <p>8192 \u00a0\u00a0-&gt; \u00a0 Meter Report for kWh (clamp 3)<\/p> <p>NOTE: If a report is included in more then one Report Group, it will only be sent in the Report Group with the most recently updated configuration parameter.<\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 8,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 102,
+            "label": "Which reports need to send automatically for group 2",
+            "description": "Sum values of all wanted reports (see Overview)",
+            "overview": "<p>1 \u00a0 \u00a0 \u00a0 \u00a0-&gt; \u00a0 Battery Report<\/p> <p>2 \u00a0 \u00a0 \u00a0 \u00a0-&gt; \u00a0 MultiSensor Report for Watt (whole device)<\/p> <p>4 \u00a0 \u00a0 \u00a0 \u00a0-&gt; \u00a0 Meter Report for Watt (whole device)<\/p> <p>8 \u00a0 \u00a0 \u00a0 \u00a0-&gt; \u00a0 Meter Report for kWh (whole device)<\/p> <p>256 \u00a0 \u00a0 -&gt; \u00a0 Meter Report for Watt (clamp 1)<\/p> <p>512 \u00a0 \u00a0 -&gt; \u00a0 Meter Report for Watt (clamp 2)<\/p> <p>1024 \u00a0\u00a0-&gt; \u00a0 Meter Report for Watt (clamp 3)<\/p> <p>2048 \u00a0\u00a0-&gt; \u00a0 Meter Report for kWh (clamp 1)<\/p> <p>4096 \u00a0\u00a0-&gt; \u00a0 Meter Report for kWh (clamp 2)<\/p> <p>8192 \u00a0\u00a0-&gt; \u00a0 Meter Report for kWh (clamp 3)<\/p> <p>NOTE: If a report is included in more then one Report Group, it will only be sent in the Report Group with the most recently updated configuration parameter.<\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 8,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 103,
+            "label": "Which reports need to send automatically for group 3",
+            "description": "Sum values of all wanted reports (see Overview)",
+            "overview": "<p>1 \u00a0 \u00a0 \u00a0 \u00a0-&gt; \u00a0 Battery Report<\/p> <p>2 \u00a0 \u00a0 \u00a0 \u00a0-&gt; \u00a0 MultiSensor Report for Watt (whole device)<\/p> <p>4 \u00a0 \u00a0 \u00a0 \u00a0-&gt; \u00a0 Meter Report for Watt (whole device)<\/p> <p>8 \u00a0 \u00a0 \u00a0 \u00a0-&gt; \u00a0 Meter Report for kWh (whole device)<\/p> <p>256 \u00a0 \u00a0 -&gt; \u00a0 Meter Report for Watt (clamp 1)<\/p> <p>512 \u00a0 \u00a0 -&gt; \u00a0 Meter Report for Watt (clamp 2)<\/p> <p>1024 \u00a0\u00a0-&gt; \u00a0 Meter Report for Watt (clamp 3)<\/p> <p>2048 \u00a0\u00a0-&gt; \u00a0 Meter Report for kWh (clamp 1)<\/p> <p>4096 \u00a0\u00a0-&gt; \u00a0 Meter Report for kWh (clamp 2)<\/p> <p>8192 \u00a0\u00a0-&gt; \u00a0 Meter Report for kWh (clamp 3)<\/p> <p>NOTE: If a report is included in more then one Report Group, it will only be sent in the Report Group with the most recently updated configuration parameter.<\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 8,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 111,
+            "label": "Interval to send out reports of group 1",
+            "description": "",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 720,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 2678400,
+            "options": []
+        },
+        {
+            "id": 112,
+            "label": "Interval to send out reports of group 2",
+            "description": "",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 720,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 2678400,
+            "options": []
+        },
+        {
+            "id": 113,
+            "label": "Interval to send out reports of group 3",
+            "description": "",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 720,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 2678400,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Report group 1",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Report group 2",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "Report group 3",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

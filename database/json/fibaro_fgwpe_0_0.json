@@ -1,0 +1,670 @@
+{
+    "database_id": 130,
+    "label": "FGWPE",
+    "manufacturer_name": "Fibaro System",
+    "manufacturer_id": "010F",
+    "device_ref": [
+        "0600:1000"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Metered Wall Plug Switch",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.052,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "BINARY_SWITCH"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "NOT_USED"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "BINARY_SWITCH"
+            },
+            "specific_class": {
+                "id": 0,
+                "name": "NOT_USED"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_power",
+                            "label": "Sensor (power)",
+                            "config": [
+                                "type=POWER"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh)",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Always on function",
+            "description": "Once activated, Wall Plug will keep a connected device constantly ON, will stop reacting to alarm frames and B-button push.<BR\/>\r\n'Always on' function turns the Plug into a power and energy meter. Also, connected device will not be turned off upon receivi",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Activated"
+                },
+                {
+                    "value": 1,
+                    "label": "Inactive"
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "label": "Remember device status after power failure",
+            "description": "Define how will the Plug react after the power supply is back on.<BR\/>\r\nDefault setting: 1<BR\/>\r\nAvailable settings:<BR\/>\r\n0 - Wall Plug does not memorize its state after a power failure. Connected device will be off after the power supply is reconnected.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Do not remember state"
+                },
+                {
+                    "value": 1,
+                    "label": "Remember state before power failure"
+                }
+            ]
+        },
+        {
+            "id": 34,
+            "label": "Reaction to alarms",
+            "description": "Define Z-Wave network alarms to which the Wall Plug will respond.<BR\/>\r\nDefault setting: 63<BR\/>\r\nAvailable settings: 0 - 63.<BR\/>\r\n1 - general alarm<BR\/>\r\n2 - smoke alarm<BR\/>\r\n4 - CO alarm<BR\/>\r\n8 - CO2 alarm<BR\/>\r\n16 - high temperature alarm<BR\/>\r\n32 -",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 63,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 63,
+            "options": []
+        },
+        {
+            "id": 35,
+            "label": "Response to alarms",
+            "description": "Parameter defines how the Wall Plug will respond to alarms (device's status change).<BR\/>\r\nAvailable settings:<BR\/>\r\n0 - no reaction<BR\/>\r\n1 - turn on connected device. LED ring signals an alarm through defined time period (parameter 39) or untill the ala",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No reaction"
+                },
+                {
+                    "value": 1,
+                    "label": "Turn ON"
+                },
+                {
+                    "value": 2,
+                    "label": "Turn OFF"
+                },
+                {
+                    "value": 3,
+                    "label": "Cycle ON\/OFF"
+                }
+            ]
+        },
+        {
+            "id": 39,
+            "label": "Alarm duration",
+            "description": "Wall Plug's alarm mode duration. If a device sending an alarm frame through the Z-Wave network sets alarm duration as well, this parameter's settings are ignored.Default setting: 600 (seconds).Available settings: 1 - 65535 (seconds)",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 600,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 40,
+            "label": "Immediate power report",
+            "description": "Parameter defines by how much power load must change, in percents, to be reported to the main controller, with the highest priority in the Z-Wave network. By default, Fibaro Wall Plug immediately sends power report if the power load changes by 80%.<BR\/>\r\n",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 80,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 42,
+            "label": "Standard power load report",
+            "description": "Parameter defines by how much power load must change, in percents, to be reported to the main controller. By default, Fibaro Wall Plug sends power report if the power load changes by 15%. By default such changes in power load may be reported up to 5 times",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 15,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 43,
+            "label": "Power reporting frequency",
+            "description": "This parameter defines how frequently standard power reports (parameter 42) will be sent. By default Wall Plug sends up to 5 reports each 30 seconds, provided the power load changes by 15%.<BR\/>\r\n\t\t\tDefault seting: 30 (s)<BR\/>\r\nAvailable settings: 1 - 254",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 30,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 45,
+            "label": "Reporting Changes in energy consumed by controlled devices",
+            "description": "Defines the required change in power to generate an unsolicited power report.<BR\/>\r\n\t\t\tNew, reported energy value is calculated based on last reported value. Default setting: 10 (0,1 kWh).<BR\/>\r\nAvailable settings: 1 - 254 (0,01kWh - 2,54kWh).<BR\/>\r\nValue",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 47,
+            "label": "Time Period between reports on power and energy consumption",
+            "description": "Parameter defines time period between reports sent when changes in power load have not been recorded. By default, if power load changes have not been recorded, reports are sent every hour. Default setting: 3 600 (s)Available settings: 1 - 65534 (s)",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 3600,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 65534,
+            "options": []
+        },
+        {
+            "id": 49,
+            "label": "Metering energy consumed by the Wall Plug itself.",
+            "description": "This parameter determines whether energy metering should include the amount of energy consumed by the Wall Plug itself.<BR\/>\n\nResults are being added to energy consumed by controlled device.<BR\/>\r\nDefault setting: INACTIVE",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Inactive"
+                },
+                {
+                    "value": 1,
+                    "label": "Activated"
+                }
+            ]
+        },
+        {
+            "id": 50,
+            "label": "DOWN value",
+            "description": "Lower power threshold, used in parameter 52.<BR\/>\r\nDefault setting: 300 (30 W)<BR\/>\r\nAvailable settings: 0 - 25 000 (0,0W - 2 500W)<BR\/>\r\nDOWN value cannot be higher than a value specified in parameter 51.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 300,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 51,
+            "label": "UP value",
+            "description": "Upper power threshold, used in parameter 52.<BR\/>\r\nDefault setting: 500 (50 W)<BR\/>\r\nAvailable settings: 0 - 25 000 (0,0W - 2 500W)<BR\/>\r\nUP value cannot be lower than a value specified in parameter 510",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 500,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 52,
+            "label": "Action in case defined power values exceeded",
+            "description": "\r\nParameter defines the way 2nd association group devices are controlled, depending on the current power load.<BR\/>\r\nValues are defined in parameters 50 and 51.<BR\/>\r\nAvailable settings:<BR\/>\r\n0 - function inactive<BR\/>\r\n1 - turn the associated devices on",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 6,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Function inactive"
+                },
+                {
+                    "value": 1,
+                    "label": "Turn devices ON when power below DOWN"
+                },
+                {
+                    "value": 2,
+                    "label": "Turn devices OFF when power below DOWN"
+                },
+                {
+                    "value": 3,
+                    "label": "Turn devices ON when power above UP"
+                },
+                {
+                    "value": 4,
+                    "label": "Turn devices OFF when power above UP"
+                },
+                {
+                    "value": 5,
+                    "label": "Turn devices ON when power below DOWN and off when power above UP"
+                },
+                {
+                    "value": 6,
+                    "label": "Turn devices OFF when power below DOWN and off when power above UP"
+                }
+            ]
+        },
+        {
+            "id": 60,
+            "label": "Power load to make red ring flash violet",
+            "description": "Function is active only when parameter 61 is set to 0 or 1.<BR\/>\r\nDefault setting: 25 000 (2 500W)<BR\/>\r\nAvailable settings: 1 000 - 32 000 (100W - 3200W).",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 25000,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 61,
+            "label": "LED color when device is on",
+            "description": "  ",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "LED will use predefined steps depending on power"
+                },
+                {
+                    "value": 1,
+                    "label": "LED will use continuous color depending on power"
+                },
+                {
+                    "value": 2,
+                    "label": "White illumination"
+                },
+                {
+                    "value": 3,
+                    "label": "Red illumination"
+                },
+                {
+                    "value": 4,
+                    "label": "Green illumination"
+                },
+                {
+                    "value": 5,
+                    "label": "Blue illumination"
+                },
+                {
+                    "value": 6,
+                    "label": "Yellow illumination"
+                },
+                {
+                    "value": 7,
+                    "label": "Cyan illumination"
+                },
+                {
+                    "value": 8,
+                    "label": "Magenta illumination"
+                },
+                {
+                    "value": 9,
+                    "label": "NO illumination"
+                }
+            ]
+        },
+        {
+            "id": 62,
+            "label": "LED color when device is off",
+            "description": "  ",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 8,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "LED will use predefined steps depending on the last power when on"
+                },
+                {
+                    "value": 1,
+                    "label": "White illumination"
+                },
+                {
+                    "value": 2,
+                    "label": "Red illumination"
+                },
+                {
+                    "value": 3,
+                    "label": "Green illumination"
+                },
+                {
+                    "value": 4,
+                    "label": "Blue illumination"
+                },
+                {
+                    "value": 5,
+                    "label": "Yellow illumination"
+                },
+                {
+                    "value": 6,
+                    "label": "Cyan illumination"
+                },
+                {
+                    "value": 7,
+                    "label": "Magenta illumination"
+                },
+                {
+                    "value": 8,
+                    "label": "NO illumination"
+                }
+            ]
+        },
+        {
+            "id": 63,
+            "label": "LED color when Z Wave alarm",
+            "description": "  ",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No change in color"
+                },
+                {
+                    "value": 1,
+                    "label": "LED flashes RED BLUE WHITE"
+                },
+                {
+                    "value": 2,
+                    "label": "White illumination"
+                },
+                {
+                    "value": 3,
+                    "label": "Red illumination"
+                },
+                {
+                    "value": 4,
+                    "label": "Green illumination"
+                },
+                {
+                    "value": 5,
+                    "label": "Blue illumination"
+                },
+                {
+                    "value": 6,
+                    "label": "Yellow illumination"
+                },
+                {
+                    "value": 7,
+                    "label": "Cyan illumination"
+                },
+                {
+                    "value": 8,
+                    "label": "Magenta illumination"
+                },
+                {
+                    "value": 9,
+                    "label": "NO illumination"
+                }
+            ]
+        },
+        {
+            "id": 70,
+            "label": "Overload safety switch",
+            "description": "This function allows for turning off the controlled device in case of exceeding the defined power. Controlled device will be turned off even if 'always on' function is active (parameter 1).<BR\/>\r\nControlled device can be turned back on via B-button or sen",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 65535,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Group 1",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Group 2",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "Controller Updates",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

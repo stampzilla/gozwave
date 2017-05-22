@@ -1,0 +1,433 @@
+{
+    "database_id": 170,
+    "label": "PST02C",
+    "manufacturer_name": "Philio Technology Corp",
+    "manufacturer_id": "013C",
+    "device_ref": [
+        "0002:000E"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Slim Multi-Sensor (Door\/Temperature\/Illumination)",
+    "overview": "<p>The slim multisensor PST02 has PIR, door\/window, temperature and illumination, 4 sensors function in one, based on Z-WaveTM technology. It is the Z-WaveTM plus product, it support the security, OTA... Those newest features of the Z-WaveTM technology. Z-WaveTM is a wireless communication protocol designed for home automation, specifically to remotely control applications in residential and light commercial environments. The technology uses a low-power RF radio embedded or retrofitted into home electronics devices and systems, such as lighting, home access control, entertainment systems and household appliances.<\/p> <p>This product can be included and operated in any Z-WaveTM network with other Z-WaveTM certified devices from other manufacturers and\/or other applications. All non-battery operated nodes within the network will act as repeaters regardless of vendor to increase reliability of the network.<\/p> <p>The device adopt the Z-WaveTM 500 series chip, when your Z-WaveTM network system is all made by Z-WaveTM 500 series devices. The network system will have the advantages as below.<\/p>",
+    "inclusion": "<p>There are two tamper keys in the device, one is in the back side, another is in the front side. Both of them can add, remove, reset or association from Z-WaveTM network.<\/p> <p>In the first time, add the device into the Z-WaveTM network. First, make sure the primary controller is in the add mode. And then power on the device, just take out the insulation Mylar in the back side of the device. The device will auto start the NWI (Network Wide Inclusion) mode. And it should be included in 5 seconds. You will see the LED light ON one second.<\/p> <ol><li>Have Z-WaveTM Controller entered inclusion mode.<\/li> <li>Pressing tamper key three times within 1.5 seconds to enter the inclusion mode.<\/li> <li>After add successful, the device will wake to receive the setting command from Z-WaveTM Controller about 20 seconds.<\/li> <\/ol>",
+    "exclusion": "<p>There are two tamper keys in the device, one is in the back side, another is in the front side. Both of them can add, remove, reset or association from Z-WaveTM network.<\/p> <p>In the first time, add the device into the Z-WaveTM network. First, make sure the primary controller is in the add mode. And then power on the device, just take out the insulation Mylar in the back side of the device. The device will auto start the NWI (Network Wide Inclusion) mode. And it should be included in 5 seconds. You will see the LED light ON one second.<\/p> <ol><li>Have Z-WaveTM Controller entered exclusion mode.<\/li> <li>Pressing tamper key three times within 1.5 seconds to enter the exclusion mode. Node ID has been excluded.<\/li> <\/ol>",
+    "wakeup": "<p>After the device adding to the network, it will wake-up once per day in default. When it wake-up it will broadcast the \u201cWake Up Notification\u201d message to the network, and wake-up 10 seconds for receive the setting commands.<\/p> <p>The wake-up interval minimum setting is 30 minutes, and maximum setting is 120 hours. And the interval step is 30 minutes.<\/p> <p>If the user want to wake-up the device immediately, please remove the front cover, and press the tamper key once. The device will wake-up 10 seconds.<\/p>",
+    "protocol_version": 3.095,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SENSOR_NOTIFICATION"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_NOTIFICATION_SENSOR"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 7,
+                "name": "GENERIC_TYPE_SENSOR_NOTIFICATION"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_NOTIFICATION_SENSOR"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "30",
+                    "name": "SENSOR_BINARY",
+                    "version": "2",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_binary",
+                            "label": "Binary Sensor (door)",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "5",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Sensor (temperature)",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        },
+                        {
+                            "type": "sensor_luminance",
+                            "label": "Sensor (luminance)",
+                            "config": [
+                                "type=LUMINANCE"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_door",
+                            "label": "Door sensor",
+                            "config": [
+                                "type=ACCESS_CONTROL"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8F",
+                    "name": "MULTI_CMD",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 2,
+            "label": "Basic Set Level",
+            "description": "Setting the BASIC command value to turn on the light.",
+            "overview": "<p>Setting the BASIC command value to turn on the light.<\/p> <ul><li>-1 = 0xFF(-1) turns on the light. (Default)<\/li> <li>0 = Turn off the light.<\/li> <li>1 - 100 = For dimmers 1 to 100 means the light strength.<\/li> <\/ul>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": -1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": -1,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 4,
+            "label": "Light Threshold",
+            "description": "Setting the illumination threshold to turn on the light. ",
+            "overview": "<p>Setting the illumination threshold to turn on the light. When the event triggers and the environment illumination is lower than the threshold, the device will turn on the light.<\/p> <ul><li>0 = Turn off illumination detected function and never turn\u00a0<\/li> <\/ul>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 100,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 5,
+            "label": "Operation Mode",
+            "description": "Parameter to set the Operation Mode.",
+            "overview": "<p>Parameter to set the Operation Mode.<\/p> <ul><li>Bit 0: Reserved.<\/li> <li>Bit 1: 1 means enable test mode; 0 means normal mode. Notice: Ignored if DIP Switch is not set to Customer Mode. Otherwise it decides by DIP switch setting to Test or Normal mode<\/li> <li>Bit 2: Disable the door\/window function. (1: Disable, 0: Enable)<\/li> <li>Bit 3: Setting the temperature scale (0: Fahrenheit, 1: Celcius)<\/li> <li>Bit 4: Disable the illumination report after event triggered (1: Disable, 0: Enable)<\/li> <li>Bit 5: Disable the temperature report after event triggered\u00a0(1: Disable, 0: Enable)<\/li> <li>Bit 6: Reserved<\/li> <li>Bit 7: Disable the back key release into test mode (1: Disable, 0: Enable)<\/li> <\/ul>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 6,
+            "label": "Multi-Sensor Function Switch",
+            "description": "Parameter to set the sensor functions.",
+            "overview": "<p>Parameter to set the sensor functions.<\/p> <ul><li>Bit 0: Disable magnetic integrate illumination to turn ON the lighting nodes in the association group 2. (1:Disable, 0:Enable)<\/li> <li>Bit 1: Disable PIR integrate Illumination to turn ON the lighting nodes in the association group 2. (1:Disable, 0:Enable)<\/li> <li>Bit 2: Disable magnetic integrate PIR to turn ON the lighting nodes in the association group 2. (1:Disable, 0:Enable) (Default is Disable)<\/li> <li>Bit 3: When Bit2 is 0 (Enable), Are the device and the lighting in the same room?<\/li> <\/ul><p>0: In the same room(Default), <br \/> 1: In the different room. <br \/>Notice: If this bit is 1, it is recommended also set the Bit1 to 1, cause the PIR triggered, doesn't mean the people in that room.<\/p> <ul><li>Bit 4: Disable delay 5 seconds to turn off the light, when door\/window closed. (1:Disable, 0:Enable)<\/li> <li>Bit 5: Disable auto turn off the light, after door\/window opened to turn on the light. (1:Disable, 0:Enable)<\/li> <\/ul><p>Notice: If bit2 is zero, this setting is useless<br \/>Notice: If the configuration No.9 is zero, this setting is useless.<\/p> <ul><li>Bit 6: Reserve.<\/li> <li>Bit 7: Reserve.<\/li> <\/ul>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 4,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 7,
+            "label": "Customer Function",
+            "description": "Parameter to set the Customer Function.",
+            "overview": "<p>Parameter to set the Customer Function.<\/p> <ul><li>Bit 0: Reserve.<\/li> <li>Bit 1: Enable sending motion OFF report. (0:Disable, 1:Enable) <br \/>Note: Depends on the Bit4, <br \/>Report Notification CC, Type: 0x07, Event: 0xFE 1: Sensor Binary Report, Type: 0x0C, Value: 0x00<\/li> <li>Bit 2: Enable PIR super sensitivity mode. (0:Disable, 1:Enable)<\/li> <li>Bit 3: Disable send out BASIC OFF after door closed. (1:Disable, 0:Enable)<\/li> <li>Bit 4: Notification Type, <br \/>Using Notification Report. 1: Using Sensor Binary Report.<\/li> <li>Bit 5: Disable Multi CC in auto report. (1:Disable, 0:Enable)<\/li> <li>Bit 6: Disable to report battery state when the device triggered. (1:Disable, 0:Enable)<\/li> <li>Bit 7: Reserve.<\/li> <\/ul>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 4,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 8,
+            "label": "PIR Re-Detect Interval Time",
+            "description": "",
+            "overview": "<p>In the normal mode, after the PIR motion detected, setting the re-detect time. 8 seconds per tick, default is 3 (24 seconds).<\/p> <ul><li>1 - 127 = Number of ticks. 8 seconds per tick, default value is 3 (24 seconds).<\/li> <\/ul>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 9,
+            "label": "Turn Off Light Time",
+            "description": "",
+            "overview": "<p>After turn on the light, setting the delay time to turn off the light when the PIR motion is not detected.<\/p> <ul><li>0 = Never send turn off light command.<\/li> <li>1 - 127 = Number of ticks. 8 seconds per tick, default value is 4 (32 seconds<\/li> <\/ul>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 4,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 10,
+            "label": "Auto Report Battery Time",
+            "description": "",
+            "overview": "<p>The interval time for auto reporting the battery level.<\/p> <ul><li>0 = Turn off auto report battery.<\/li> <li>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.<\/li> <\/ul>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 12,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 11,
+            "label": "Auto Report Door\/Window State Time",
+            "description": "",
+            "overview": "<p>The interval time for auto reporting the door\/window state.<\/p> <ul><li>0 = Turn off auto report door\/window state.<\/li> <li>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.<\/li> <\/ul>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 12,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 12,
+            "label": "Auto Report Illumination Time",
+            "description": "The Interval time for auto reporting the illumination state.",
+            "overview": "<p>The Interval time for auto reporting the illumination state.<\/p> <ul><li>0 = Turn off auto report illumination.<\/li> <li>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.<\/li> <\/ul>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 12,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 13,
+            "label": "Auto Report Temperature Time",
+            "description": "The interval time for auto reporting the temperature state.",
+            "overview": "<p>The interval time for auto reporting the temperature state.<\/p> <ul><li>0 = Turn off auto report temperature.<\/li> <li>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.<\/li> <\/ul>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 12,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 20,
+            "label": "Auto Report Tick Interval",
+            "description": "The interval time for each auto report tick.",
+            "overview": "<p>The interval time for each auto report tick. Setting this configuration will effect configuration No.10, No.11, No.12 and No.13.<\/p> <ul><li>0 = Turn off all auto report functions.<\/li> <li>1-255 = Interval time for each tick. Default is 30.<\/li> <\/ul>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 30,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 21,
+            "label": "Temperature Differential Report",
+            "description": "The temperature differential to report. ",
+            "overview": "<p>The temperature differential to report.\u00a00 means turn off this function.\u00a0The unit is Fahrenheit.\u00a0Enable this function the device will\u00a0detect every minutes.\u00a0And when the temperature is over 140\u00a0degree Fahrenheit, it will continue\u00a0report.\u00a0Enable this functionality will cause\u00a0some issue please see the detail in the\u00a0\u201cTemperature Report\u201d section.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 22,
+            "label": "Illumination Differential Report",
+            "description": "The illumination differential to report. ",
+            "overview": "<p>The illumination differential to report.\u00a00 means turn off this function.\u00a0The unit is percentage.\u00a0Enable this function the device will\u00a0detect every minutes.\u00a0Enable this functionality will cause\u00a0some issue please see the detail in the\u00a0\u201cIllumination Report\u201d section.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 99,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Reports",
+            "max_nodes": 8,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Light Control",
+            "max_nodes": 8,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

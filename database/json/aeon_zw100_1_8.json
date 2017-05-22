@@ -1,0 +1,869 @@
+{
+    "database_id": 387,
+    "label": "ZW100",
+    "manufacturer_name": "AEON Labs",
+    "manufacturer_id": "0086",
+    "device_ref": [
+        "0002:0064",
+        "0102:0064",
+        "0202:0064"
+    ],
+    "version_min": 1.8,
+    "version_max": 255.255,
+    "decription": "MultiSensor 6",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 4.005,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SENSOR_MULTILEVEL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_ROUTING_SENSOR_MULTILEVEL"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 33,
+                "name": "GENERIC_TYPE_SENSOR_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_ROUTING_SENSOR_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "30",
+                    "name": "SENSOR_BINARY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_binary",
+                            "label": "Binary Sensor",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "5",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_relhumidity",
+                            "label": "Sensor (relative humidity)",
+                            "config": [
+                                "type=RELATIVE_HUMIDITY"
+                            ]
+                        },
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Sensor (temperature)",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        },
+                        {
+                            "type": "sensor_luminance",
+                            "label": "Sensor (luminance)",
+                            "config": [
+                                "type=LUMINANCE"
+                            ]
+                        },
+                        {
+                            "type": "sensor_ultraviolet",
+                            "label": "Sensor (ultraviolet)",
+                            "config": [
+                                "type=ULTRAVIOLET"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "3",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_burglar",
+                            "label": "Alarm (burglar)",
+                            "config": [
+                                "type=BURGLAR"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "7A",
+                    "name": "FIRMWARE_UPDATE_MD",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 2,
+            "label": "Stay Awake in Battery Mode\t\t\t",
+            "description": "Stay awake for 10 minutes at power on",
+            "overview": "<p>Enable\/Disable waking up for 10 minutes when re-power on (battery mode) the MultiSensor.<br \/>1. Value = 0, disable.<br \/>2. Value =others, enable.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                },
+                {
+                    "value": 1,
+                    "label": "enable"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "label": "Motion Sensor reset timeout",
+            "description": "Motion Sensor reset timeout",
+            "overview": "<ol>\r\n<li>The default PIR time is 4 minutes. The Multisensor will send BASIC SET CC\u00a0(0x00) to the associated nodes if no motion is triggered again in 4 minutes.<\/li>\r\n<li>Range: 10~3600.<\/li>\r\n<\/ol>\r\n<p><strong>Note<\/strong>:<\/p>\r\n<ol>\r\n<li>The time unit is second if the value range is in 10 to 255.<\/li>\r\n<li>If the value range is in 256 to 3600, the time unit will be minute and its value\u00a0should follow the below rules:<br \/>a), Interval time =Value\/60, if the interval time can be divided by 60 and\u00a0without remainder.<br \/>b), Interval time= (Value\/60) +1, if the interval time can be divided by 60 and\u00a0has remainder.<\/li>\r\n<li>Other values will be ignored.<\/li>\r\n<\/ol>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 240,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 5,
+            "value_max": 3600,
+            "options": []
+        },
+        {
+            "id": 4,
+            "label": "Motion sensor sensitivity",
+            "description": " Sensitivity level of PIR sensor (1=minimum, 5=maximum)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                },
+                {
+                    "value": 1,
+                    "label": "Enable, sensitivity level 1 (minimum)"
+                },
+                {
+                    "value": 2,
+                    "label": "Enable, sensitivity level 2"
+                },
+                {
+                    "value": 3,
+                    "label": "Enable, sensitivity level 3"
+                },
+                {
+                    "value": 4,
+                    "label": "Enable, sensitivity level 4"
+                },
+                {
+                    "value": 5,
+                    "label": "Enable, sensitivity level 5 (maximum)"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "label": "Motion Sensor Triggered Command",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Send Basic Set CC"
+                },
+                {
+                    "value": 2,
+                    "label": "Send Sensor Binary Report CC"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "label": "Timeout after wake up",
+            "description": "Set the timeout of awake after the Wake Up CC is sent out...",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 30,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 8,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 9,
+            "label": "Report the current power mode",
+            "description": "Report the current power mode and the product state of battery power mode",
+            "overview": "<p>Value1 (MSB): 0x00=USB power mode, 0x01=Battery power mode<\/p> <p>Value2 (LSB): 0x00=keep sleep state for Battery power mode, 0x01=keep awake for 10 minutes for battery power mode<\/p> <p>NOTE: this parameter cannot be used as Get\/Set usage<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": true,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": []
+        },
+        {
+            "id": 39,
+            "label": "Low Battery Report",
+            "description": "Report Low Battery if below this value",
+            "overview": "<p>Configure low battery value.<br \/>Value=10 to 50.(10% to 50%)<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 20,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 10,
+            "value_max": 50,
+            "options": []
+        },
+        {
+            "id": 40,
+            "label": "Selective Reporting",
+            "description": "Select to report on thresholds",
+            "overview": "<p>Enable\/disable the selective reporting only when measurements reach a certain\u00a0threshold or percentage set in 41-44 below. This is used to reduce network\u00a0traffic. (0 == disable, 1 == enable)<\/p> <p>Note: If USB Power, the Sensor will check threshold every 10 seconds. If battery power, the Sensor will check the threshold when it is waken up.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                },
+                {
+                    "value": 1,
+                    "label": "Enable"
+                }
+            ]
+        },
+        {
+            "id": 41,
+            "label": "Temperature Threshold",
+            "description": "Temperature change threshold",
+            "overview": "<p>Threshold change in temperature to induce an automatic report.<br \/><strong>Note<\/strong>:<\/p> <ol><li>The unit is Fahrenheit for US version, Celsius for EU\/AU version.<\/li> <li>High byte is the threshold value. Low byte is the unit (0x01=Celsius, 0x02=Fahrenheit).<\/li> <li>The threshold value (high byte) contains one decimal point. E.g. if the value is set to 20 (0x1401), the\u00a0threshold value =2.0\u00b0C (EU\/AU version) or if the value is set to 20 (0x1402), the threshold value=2.0 \u00b0F (US version). When the\u00a0current temperature gap is more then 2.0, which will induce a temperature\u00a0report to be sent out.<\/li> <\/ol>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 20,
+            "read_only": false,
+            "write_only": true,
+            "value_min": 0,
+            "value_max": 100,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Temperature Threshold Unit"
+                }
+            ]
+        },
+        {
+            "id": 41,
+            "label": "Temperature Threshold Unit",
+            "description": "Sets the unit of the threshold",
+            "overview": "",
+            "size": 2,
+            "bitmask": "000000FF",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Celsius"
+                },
+                {
+                    "value": 2,
+                    "label": "Fahrenheit"
+                }
+            ]
+        },
+        {
+            "id": 41,
+            "label": "Temperature Threshold",
+            "description": "Threshold change in temperature to induce an automatic report.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "0000FF00",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 42,
+            "label": "Humidity Threshold",
+            "description": "Humidity percent change threshold",
+            "overview": "<p>Threshold change in humidity to induce an automatic report.<br \/>Note:<br \/>1. The unit is %.<br \/>2. The default value is 10, which means that if the current humidity gap is<br \/>more than 10%, it will send out a humidity report.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 43,
+            "label": "Luminance Threshold",
+            "description": " Luminance change threshold",
+            "overview": "<p>Threshold change in luminance to induce an automatic report.<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 100,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1000,
+            "options": []
+        },
+        {
+            "id": 44,
+            "label": "Battery Threshold",
+            "description": "Battery level threshold",
+            "overview": "<p>Threshold change in battery level to induce an automatic report.<\/p> <p>Note:<br \/>1. The unit is %.<br \/>2. The default value is 10, which means that if the current battery level gap is<br \/>more than 10%, it will send out a battery report.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 45,
+            "label": "Ultraviolet Threshold",
+            "description": "Ultraviolet change threshold",
+            "overview": "<p>Threshold change in ultraviolet to induce an automatic report.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 46,
+            "label": "Send Alarm Report if low temperature",
+            "description": "Send an alarm report if temperature is less than -15 \u00b0C",
+            "overview": "<p>Enable\/Disable to send the alarm report of low temperature (&lt;-15\u00b0C)<\/p> <p>Value=0, disable<\/p> <p>Value=1, enable (The MultiSensor will send a report of Multi Level Temperature CC to controller if the current temperature is less then -15\u00b0C).<\/p> <p>Note: The battery activity will reduced at low temperatures (-15 degrees Celsius and below), wich will lead to the product may not work normally. It is recommended to use USB power at low temperatures.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                },
+                {
+                    "value": 1,
+                    "label": "Enable"
+                }
+            ]
+        },
+        {
+            "id": 81,
+            "label": "LED function",
+            "description": "Disable\/Enable LED function",
+            "overview": "<p>Disable\/Enable LED function (0: enabled 1: disabled)<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": []
+        },
+        {
+            "id": 100,
+            "label": "Set parameters 101-103 to default.\t\t\t",
+            "description": "Reset 101-103 to defaults",
+            "overview": "<p>Set 101-103 to default.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": true,
+            "value_min": 0,
+            "value_max": 1,
+            "options": []
+        },
+        {
+            "id": 101,
+            "label": "Group 1 Periodic Reports",
+            "description": "Periodic reports to send to Group 1",
+            "overview": "<p>This value is a combination number made up of the sum of the values for the individual sensors and battery. The sensors have these values:<\/p> <ul><li>Battery=1<\/li> <li>Ultraviolet=16<\/li> <li>Temperature=32<\/li> <li>Humidity=64<\/li> <li>Light=128<\/li> <\/ul><p>1+16+32+64+128 = 241 and is the default value<\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 241,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 102,
+            "label": "Group 2 Periodic Reports\t\t\t",
+            "description": "Periodic reports to send to Group 2",
+            "overview": "<p>This value is a combination number made up of the sum of the values for the individual sensors and battery. The sensors have these values:<\/p> <ul><li>Battery=1<\/li> <li>Ultraviolet=16<\/li> <li>Temperature=32<\/li> <li>Humidity=64<\/li> <li>Light=128<\/li> <\/ul>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 103,
+            "label": "Group 3 Periodic Reports\t\t\t",
+            "description": "Periodic reports to send to Group 3",
+            "overview": "<p>This value is a combination number made up of the sum of the values for the individual sensors and battery. The sensors have these values:<\/p> <ul><li>Battery=1<\/li> <li>Ultraviolet=16<\/li> <li>Temperature=32<\/li> <li>Humidity=64<\/li> <li>Light=128<\/li> <\/ul>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 110,
+            "label": "Set parameters 111-113 to default.\t\t\t",
+            "description": "Set parameters 111-113 to default.\t",
+            "overview": "<p>Set parameters 111-113 to default.\u00a0\u00a0\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": true,
+            "value_min": 0,
+            "value_max": 1,
+            "options": []
+        },
+        {
+            "id": 111,
+            "label": "Group 1 Report Interval",
+            "description": "How often to update Group 1",
+            "overview": "<p>The interval time of sending reports in Report group 1 (Valid values 0x05-0x28DE80).<\/p>\r\n<ol>\r\n<li>The unit of interval time is second if USB power.<\/li>\r\n<li>If battery power, the minimum interval time is 60 minutes by default, for\u00a0example, if the value is set to be more than 5 and less than 3600, the interval\u00a0time is 60 minutes, if the value is set to be more than 3600 and less than 7200,\u00a0the interval time is 120 minutes. You can also change the minimum interval time\u00a0to 4 minutes via setting the interval value(3 bytes) to 240 in Wake Up Interval Set\u00a0CC.<\/li>\r\n<\/ol>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 3600,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 5,
+            "value_max": 2678400,
+            "options": []
+        },
+        {
+            "id": 112,
+            "label": "Group 2 Report Interval",
+            "description": "Group 2 Report Interval",
+            "overview": "<p>The interval time of sending reports in Report group 2 (Valid values 0x05-<br \/>0x28DE80).<br \/>Note:<br \/>1. The unit of interval time is second if USB power.<br \/>2. If battery power, the minimum interval time is 60 minutes by default, for<br \/>example, if the value is set to be more than 5 and less than 3600, the interval<br \/>time is 60 minutes, if the value is set to be more than 3600 and less than 7200,<br \/>the interval time is 120 minutes. You can also change the minimum interval time<br \/>to 4 minutes via setting the interval value(3 bytes) to 240 in Wake Up Interval Set<br \/>CC.<\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 3600,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 5,
+            "value_max": 2678400,
+            "options": []
+        },
+        {
+            "id": 113,
+            "label": "Group 3 Report Interval",
+            "description": "Group 3 Report Interval",
+            "overview": "<p>The interval time of sending reports in Report group 3<\/p>\r\n<ol>\r\n<li>The unit of interval time is second if USB power.<\/li>\r\n<li>If battery power, the minimum interval time is 60 minutes by default, for\u00a0example, if the value is set to be more than 5 and less than 3600, the interval\u00a0time is 60 minutes, if the value is set to be more than 3600 and less than 7200,\u00a0the interval time is 120 minutes. You can also change the minimum interval time\u00a0to 4 minutes via setting the interval value(3 bytes) to 240 in Wake Up Interval Set\u00a0CC.<\/li>\r\n<\/ol>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 3600,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 5,
+            "value_max": 2678400,
+            "options": []
+        },
+        {
+            "id": 201,
+            "label": "Temperature Calibration",
+            "description": "Temperature calibration in 0.1 deg steps",
+            "overview": "<p>Temperature calibration (the available value range is [-128,127] or [-12.8\u00b0C ,12.7 \u00b0C ] ).<br \/><strong>Note<\/strong>:<\/p> <ol><li>High byte is the calibration value. Low byte is the unit (0x01=Celsius, 0x02=Fahrenheit).<\/li> <li>The calibration value (high byte) contains one decimal point. E.g. if the value is set to 20 (0x1401), the\u00a0calibration value is 2.0\u00b0C (EU\/AU version) or if the value is set to 20 (0x1402), the calibration value is 2.0 \u00b0F (US version)<\/li> <li>The calibration value = standard value - measure value.\u00a0\u00b0C and the standard value = 23.2 \u00b0C , so the\u00a0calibration value= 23.2 \u00b0C - 25.3 \u00b0C = -2.1 \u00b0C (0xEB).\u00a0If the measure value =30.1 \u00b0C and the standard value = 33.2 \u00b0C , so the calibration\u00a0value= 33.2 \u00b0C - 30.1 \u00b0C =3.1 \u00b0C (0x1F).<\/li> <\/ol>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": -128,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 201,
+            "label": "Temperature Calibration Unit",
+            "description": "",
+            "overview": "",
+            "size": 2,
+            "bitmask": "000000FF",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Celsius"
+                },
+                {
+                    "value": 2,
+                    "label": "Fahrenheit"
+                }
+            ]
+        },
+        {
+            "id": 201,
+            "label": "Temperature Calibration Value",
+            "description": "Calibration value containing one decimal point",
+            "overview": "",
+            "size": 2,
+            "bitmask": "0000FF00",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": -127,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 202,
+            "label": "Humidity Sensor Calibration",
+            "description": "Humidity Sensor Calibration",
+            "overview": "<p>Humidity sensor calibration (the available value range is [-50, 50]).<br \/>The calibration value = standard value - measure value.<br \/>E.g. If measure value =80RH and the standard value = 75RH, so the calibration<br \/>value= 75RH \u2013 80RH= -5RH (0xFB).<br \/>If the measure value =85RH and the standard value = 90RH, so the calibration<br \/>value= 90RH \u2013 85RH=5RH (0x05).<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": -50,
+            "value_max": 50,
+            "options": []
+        },
+        {
+            "id": 203,
+            "label": "Luminance Sensor Calibration",
+            "description": "Luminance Sensor Calibration",
+            "overview": "<p>Luminance sensor calibration (the available value range is [-1000, 1000]).<br \/>The calibration value = standard value - measure value.<br \/>E.g. If measure value =800Lux and the standard value = 750Lux, so the<br \/>calibration value= 750 \u2013 800= -50 (0xFFCE).<br \/>If the measure value =850Lux and the standard value = 900Lux, so the calibration<br \/>value= 900 \u2013 850=50 (0x0032).<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": -1000,
+            "value_max": 1000,
+            "options": []
+        },
+        {
+            "id": 204,
+            "label": "Ultraviolet Sensor Calibration",
+            "description": "Ultraviolet Sensor Calibration",
+            "overview": "<p>Ultraviolet sensor calibration (the available value range is [-10, 10]).<br \/>The calibration value = standard value - measure value.<br \/>E.g. If measure value =9 and the standard value = 8, so the calibration value= 8 \u2013<br \/>9= -1 (0xFE).<br \/>If the measure value =7 and the standard value = 9, so the calibration value= 9 \u2013<br \/>7=2 (0x02).<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": -10,
+            "value_max": 10,
+            "options": []
+        },
+        {
+            "id": 252,
+            "label": "Lock Configuration Parameters\t\t\t",
+            "description": "Enable or Disable changing of configuration parameters",
+            "overview": "<p>Enable\/disable Configuration Locked (0 =disable, 1 = enable).<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                },
+                {
+                    "value": 1,
+                    "label": "Enable"
+                }
+            ]
+        },
+        {
+            "id": 255,
+            "label": "Reset to default factory settings",
+            "description": "",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": true,
+            "value_min": 0,
+            "value_max": 1431655765,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Resets all configuration parameters to defaults"
+                },
+                {
+                    "value": 1431655765,
+                    "label": "Reset to default factory settings and be excluded"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Group 1",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Group 2",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "Group 3",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

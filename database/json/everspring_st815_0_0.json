@@ -1,0 +1,142 @@
+{
+    "database_id": 32,
+    "label": "ST815",
+    "manufacturer_name": "Everspring",
+    "manufacturer_id": "0060",
+    "device_ref": [
+        "0007:0001"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Illumination Sensor",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 0,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": false,
+    "beaming": false,
+    "library_type": {
+        "id": 0,
+        "name": "Unknown"
+    },
+    "basic_class": {
+        "id": 0,
+        "name": null
+    },
+    "generic_class": {
+        "id": 0,
+        "name": null
+    },
+    "specific_class": {
+        "id": 0,
+        "name": "SPECIFIC_TYPE_NOT_USED"
+    },
+    "endpoints": [],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Basic Set Level",
+            "description": "Basic Set Level",
+            "overview": "<p>Set basic set value to be on or off.<\/p> <p>Set to 0 to disable<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 99,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 2,
+            "label": "Lux Trigger On Value",
+            "description": "Lux Trigger On Value",
+            "overview": "<p>Lux level when ON command is sent out.<\/p> <p>Set to 0 to disable.<\/p> <p>Valid values - 30-1000 or 0<\/p> <p>Default 30<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 300,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1000,
+            "options": []
+        },
+        {
+            "id": 3,
+            "label": "Lux Trigger Off Value",
+            "description": "",
+            "overview": "<p>Lux level when Off command is sent out.<\/p> <p>Values 30-1000 or 0<\/p> <p>Default 500<\/p> <p>Set to 0 to disable.<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 500,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1000,
+            "options": []
+        },
+        {
+            "id": 4,
+            "label": "Lux Trigger Off Timer Value.",
+            "description": "Lux Trigger Off Timer Value.",
+            "overview": "<p>Timer value in minutes.<\/p> <p>Values : 1-480 or 0<\/p> <p>Default 240<\/p> <p>Set to 0 to disable.<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 480,
+            "options": []
+        },
+        {
+            "id": 5,
+            "label": "Auto Report Time Interval",
+            "description": "Auto Report Time Interval",
+            "overview": "<p>Time interval in minutes to auto report to association group 1<\/p> <p>Valid values 1-1439 minutes or 0<\/p> <p>Set to 0 to Disable<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1439,
+            "options": []
+        },
+        {
+            "id": 6,
+            "label": "Auto Report Lux Interval",
+            "description": "Auto Report Lux Interval",
+            "overview": "<p>Lux interval step size to auto report to association group 1<\/p> <p>Valid Values 30-1000 (Lux)<\/p> <p>Set to 0 to Disable<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1000,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Reports",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Control",
+            "max_nodes": 3,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

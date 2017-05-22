@@ -1,0 +1,203 @@
+{
+    "database_id": 451,
+    "label": "Sensoair",
+    "manufacturer_name": "SIEGENIA-AUBI KG",
+    "manufacturer_id": "0081",
+    "device_ref": [
+        "00A0:0001"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Air quality sensor for indoor use",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 2.078,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 6,
+        "name": "LIB_SLAVE_ROUTING"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SENSOR_MULTILEVEL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_ROUTING_SENSOR_MULTILEVEL"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 33,
+                "name": "GENERIC_TYPE_SENSOR_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_ROUTING_SENSOR_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "3",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_co2",
+                            "label": "Sensor (CO2)",
+                            "config": [
+                                "type=CO2"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "9E",
+                    "name": "SENSOR_CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Device Configuration Value 1",
+            "description": "Configuration of the device operating mode",
+            "overview": "<ul><li>bit 0\u00a0\u00a0\u00a0 Unsolicited Multilevel Report Mode A\u00a0 \u00a0 0 = disabled, 1 = <strong>enabled<\/strong><\/li> <li>bit 1 \u00a0\u00a0 Unsolicited Multilevel Report Mode B\u00a0 \u00a0 0 = <strong>disabled<\/strong>, 1 = enabled<\/li> <li>bit 2 \u00a0\u00a0 Basic Set\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 0 = disabled, 1 = <strong>enabled<\/strong><\/li> <li>bit 3 \u00a0\u00a0 Broadcast Multilevel Report\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0\u00a0 0 = disabled, 1 = <strong>enabled<\/strong><\/li> <li>bit 7\u00a0\u00a0\u00a0 SENSOAIR LEDs\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 0 = disabled, 1 = <strong>enabled<\/strong><\/li> <\/ul><p><strong>Unsolicited Multilevel Report Mode A<\/strong><\/p> <p>SENSOAIR sends an usolicited multilevel report when the CO<sub>2<\/sub> value<br \/>exceeds one of the following threshold values:<br \/>600 ppm, 800 ppm, 1000 ppm, 1500 ppm, 2000 ppm, 2500 ppm<\/p> <p><strong>Unsolicited Multilevel Report Mode B<br \/><\/strong><\/p> <p>SENSOAIR sends the current CO<sub>2<\/sub> value (without being requested) in an interval of<br \/>5 - 65000 seconds. The interval can be configured with parameter 2.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 141,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 143,
+            "options": []
+        },
+        {
+            "id": 2,
+            "label": "Interval for unsolicited Sensor Report Mode B",
+            "description": "defines how often a Sensor report is sent",
+            "overview": "<p>When enabled by parameter 1, SENSOAIR sends the current CO<sub>2<\/sub> value (without being requested) in an interval of 5 - 65000 seconds. The interval (default setting = 30s) is configured as follows:<\/p> <p>Device Configuration Value 1 = MSB (default 0x00)<\/p> <p>Device Configuration Value 2 = LSB (default 0x1e)<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 30,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 5,
+            "value_max": 65000,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Group 1",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

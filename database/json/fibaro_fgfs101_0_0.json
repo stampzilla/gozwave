@@ -1,0 +1,652 @@
+{
+    "database_id": 127,
+    "label": "FGFS101",
+    "manufacturer_name": "Fibargroup",
+    "manufacturer_id": "010F",
+    "device_ref": [
+        "0B00:1001",
+        "0B00:2001",
+        "0B00:3001"
+    ],
+    "version_min": 0,
+    "version_max": 3,
+    "decription": "Flood Sensor",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.067,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SENSOR_ALARM"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_ROUTING_ALARM_SENSOR"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 161,
+                "name": "GENERIC_TYPE_SENSOR_ALARM"
+            },
+            "specific_class": {
+                "id": 2,
+                "name": "SPECIFIC_TYPE_ROUTING_ALARM_SENSOR"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "30",
+                    "name": "SENSOR_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_binary",
+                            "label": "Binary Sensor",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "60",
+                    "name": "MULTI_INSTANCE",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "9C",
+                    "name": "SENSOR_ALARM",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_general",
+                            "label": "Alarm (general)",
+                            "config": [
+                                "type=GENERAL"
+                            ]
+                        },
+                        {
+                            "type": "sensor_flood",
+                            "label": "Alarm (water)",
+                            "config": [
+                                "type=FLOOD"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 32,
+                "name": "GENERIC_TYPE_SENSOR_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_ROUTING_SENSOR_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "30",
+                    "name": "SENSOR_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_binary",
+                            "label": "Binary Sensor 1",
+                            "config": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 33,
+                "name": "GENERIC_TYPE_SENSOR_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_ROUTING_SENSOR_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "0",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Sensor (temperature) 2",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Alarm Cancellation Delay",
+            "description": "Additional delay after an alarm has ceased. The parameter allows you to specify additional time, after which the alarm is cancelled once its violation has ceased",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 3600,
+            "options": []
+        },
+        {
+            "id": 2,
+            "label": "Acoustic and visual signals On \/ Off in case of flooding",
+            "description": "Parameter allows for LED indicator and acoustic alarm deactivation in case of flooding detection",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Acoustic and visual alarms inactive"
+                },
+                {
+                    "value": 1,
+                    "label": "Acoustic alarm inactive, visual alarm active"
+                },
+                {
+                    "value": 2,
+                    "label": "Acoustic alarm active, visual alarm inactive"
+                },
+                {
+                    "value": 3,
+                    "label": "Acoustic and visual alarms active"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "label": "Type of alarm frame sent to 1-st association group (FLOOD)",
+            "description": "Parameter determines a type of command frame sent by the Sensor in case flooding has been detected or cancelled",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": -127,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": -127,
+                    "label": "BASIC_SET"
+                },
+                {
+                    "value": 0,
+                    "label": "ALARM WATER"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "label": "Forced Level of Dimming group 1",
+            "description": "Value of the parameter specifying the forced level of dimming \/ opening sun blinds when comes 'switch on' \/ 'open' command to devices from association group no. 1.<BR\/>\r\nIn the case of alarm frames the alarm priority is specified. Possible parameter setti",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 9,
+            "label": "Alarm cancelling or turning a device off (Basic) command frame deactivation",
+            "description": "Allows for deactivating device turn off and alarm cancellation functions for the devices assigned to 1-st association group",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Alarm (flooding) cancellation inactive"
+                },
+                {
+                    "value": 1,
+                    "label": "Alarm (flooding) cancellation active"
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "label": "Interval between successive readings of temperature sensors",
+            "description": "Interval between successive readings of temperature from all sensors connected to the device in seconds.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 300,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 32767,
+            "options": []
+        },
+        {
+            "id": 12,
+            "label": "Insensitiveness to temperature changes.",
+            "description": "Determines a minimum temperature change value (insensitivity level; def: 0,5C), resulting in a temperature report being sent to the main controller, according to the Parameter 10 settings",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 50,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1000,
+            "options": []
+        },
+        {
+            "id": 13,
+            "label": "Alarm BROADCAST",
+            "description": "Transmitting the alarm or control frame in 'broadcast' mode (i.e. to all devices within range), information sent in this mode is not repeated by the mesh network.<BR\/><B>NOTE:<\/B> If the broadcast mode of information transmission is activated for a given ",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Broadcast inactive"
+                },
+                {
+                    "value": 1,
+                    "label": "Flood broadcast mode active, Tamper broadcast mode inactive"
+                },
+                {
+                    "value": 2,
+                    "label": "Tamper broadcast mode inactive, Tamper broadcast mode active"
+                },
+                {
+                    "value": 3,
+                    "label": "Flood and Tamper broadcast mode active"
+                }
+            ]
+        },
+        {
+            "id": 50,
+            "label": "Low temperature alarm threshold",
+            "description": "The parameter stores a temperature value (def. 15C), below which LED indicator blinks with a colour determined by a Parameter 61 settings. By default the LED indicator blinks blue.<BR\/><B>NOTE:<\/B> The main controller does not interpret negative numbers a",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 1500,
+            "read_only": false,
+            "write_only": false,
+            "value_min": -10000,
+            "value_max": 10000,
+            "options": []
+        },
+        {
+            "id": 51,
+            "label": "High temperature alarm threshold",
+            "description": "The parameter stores a temperature value (def. 35C), above which LED indicator blinks with a colour determined by the Parameter 62 settings. By default the LED indicator blinks red",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 3500,
+            "read_only": false,
+            "write_only": false,
+            "value_min": -10000,
+            "value_max": 10000,
+            "options": []
+        },
+        {
+            "id": 61,
+            "label": "Low temperature alarm indicator colour",
+            "description": "Default is blue (0x000000FF).<BR\/><B>NOTE:<\/B> A main controller interprets colours as a sum of it component colours value. Each colours value is a number from 0 to 255. Eg: Indicated colour = 65536 * RED value + 256 * GREEN value + BLUE value",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 16777215,
+            "options": []
+        },
+        {
+            "id": 62,
+            "label": "High temperature alarm indicator colour",
+            "description": "Default is red (0x00FF0000).<BR\/><B>NOTE:<\/B> A main controller interprets colours as a sum of it component colours value. Each colours value is a number from 0 to 255. Eg: Indicated colour = 65536 * RED value + 256 * GREEN value + BLUE value",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 16711680,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 16777215,
+            "options": []
+        },
+        {
+            "id": 63,
+            "label": "Managing a LED indicator under standard operation",
+            "description": "Parameter determines LED indicator\u2019s operation. Set to 0 turns the indicator off, saving a battery life",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "LED indicator doesn\u2019t indicate the temperature"
+                },
+                {
+                    "value": 1,
+                    "label": "LED indicator indicates the temperature (blink) every Temperature Meas"
+                },
+                {
+                    "value": 2,
+                    "label": "LED indicator indicates the temperature continuously, only in constant"
+                }
+            ]
+        },
+        {
+            "id": 73,
+            "label": "Temperature measurement compensation",
+            "description": "Parameter stores a temperature value to be added to or deducted from the current temperature measured by internal temperature sensor in order to compensate the difference between air temperature and temperature at the floor level",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": -10000,
+            "value_max": 10000,
+            "options": []
+        },
+        {
+            "id": 74,
+            "label": "Alarm frame sent to 2-nd Association Group activation",
+            "description": "(MOVEMENT_TAMPER \/ BUTTON_TAMPER) The device is able to turn on alarms resulting from sensor\u2019s vibrations e.g. when the sensor is moved, or the TMP button released. 2-nd Association Group alarms are not cancelled.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Tamper alarms inactive"
+                },
+                {
+                    "value": 1,
+                    "label": "Button tamper alarm active"
+                },
+                {
+                    "value": 2,
+                    "label": "Movement tamper alarm active"
+                },
+                {
+                    "value": 3,
+                    "label": "Button and movement tampers alarm active"
+                }
+            ]
+        },
+        {
+            "id": 75,
+            "label": "Visual and audible alarms duration",
+            "description": "The user can silence the Flood Sensor. Because the Sensor\u2019s alarm may last for a long time, it\u2019s possible to turn off visual and audible alarm signaling to save battery. The parameter determines a time period after which alarm will become \u201cquiet\u201d - still ",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 76,
+            "label": "Visual and audible alarms duration",
+            "description": "Parameter determines a time period after which an alarm frame will be retransmitted. The value of 0 cancels an alarm frame retransmission. The value of 65535 means 'each 1 second'.<BR\/><B>NOTE:<\/B> In case a time period set in this parameter is shorter th",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 77,
+            "label": "Flood sensor functionality turned off",
+            "description": "Allows for turning of the internal flood sensor. Tamper and built in temperature sensor will remain active",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Default flood sensor operation (flood detection, reactions)"
+                },
+                {
+                    "value": 1,
+                    "label": "Built in flood sensor TURNED OFF (doesn\u2019t change its state in the main"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Flood Alarm",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Tilt Sensor",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "Device Status",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

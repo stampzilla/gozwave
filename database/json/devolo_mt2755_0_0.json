@@ -1,0 +1,471 @@
+{
+    "database_id": 508,
+    "label": "MT02755",
+    "manufacturer_name": "Devolo",
+    "manufacturer_id": "0175",
+    "device_ref": [
+        "0002:0020"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Humidity Sensor",
+    "overview": "<p>The multisensor MT02755 has temperature and humidity function in one, based on Z-WaveTM technology.<br \/><\/p>",
+    "inclusion": "<p>There are one tamper keys in the back side of the device, It can add, remove, reset or association from the Z-WaveTM network. <\/p> <p>In the first time, add the device into the Z-WaveTM network. First, make sure the primary controller is in the add mode. And then power on the device, just take out the insulation Mylar in the back side of the device. The device will auto start the NWI (Network Wide Inclusion) mode. And it should be included in 5 seconds. You will see the LED light ON one second.<\/p> <ol><li>Have Z-WaveTM Controller entered inclusion mode. <\/li> <li>Pressing the tamper key three times within 1.5\u00a0seconds to enter the inclusion mode.<\/li> <li>After add successful, the device will wake to\u00a0receive the setting command from Z-WaveTM Controller about 20 seconds.<\/li> <\/ol>",
+    "exclusion": "<p><strong>Exclude\/Remove:<\/strong><\/p> <ol><li>Have Z-WaveTM Controller entered exclusion mode. <\/li> <li>Pressing tamper key three times within 1.5 seconds\u00a0to enter the exclusion mode. Node ID has been excluded.\u00a0<\/li> <\/ol> <p><strong>Reset:<\/strong><\/p> <p>Notice: Use this procedure only in the event that the primary controller is lost or otherwise inoperable. <\/p> <ol><li> <p>Pressing tamper key four times within 1.5 seconds and do not release the tamper key in the 4th pressed, and the LED will light ON.<\/p> <\/li> <li> <p>After 3 seconds the LED will turn OFF, after that within 2 seconds, release the tamper key. If successful, the LED will light ON one second. Otherwise, the LED will flash once.\u00a0<\/p> <\/li> <li> <p>IDs are excluded and all settings will reset to factory default.\u00a0<\/p> <\/li> <\/ol>",
+    "wakeup": "<p>Press the tamper button on the back side<\/p>",
+    "protocol_version": 4.005,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SENSOR_MULTILEVEL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_ROUTING_SENSOR_MULTILEVEL"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 33,
+                "name": "GENERIC_TYPE_SENSOR_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_ROUTING_SENSOR_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "30",
+                    "name": "SENSOR_BINARY",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_binary",
+                            "label": "Binary Sensor",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "5",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_relhumidity",
+                            "label": "Sensor (relative humidity)",
+                            "config": [
+                                "type=RELATIVE_HUMIDITY"
+                            ]
+                        },
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Sensor (temperature)",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "4",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_burglar",
+                            "label": "Alarm (burglar)",
+                            "config": [
+                                "type=BURGLAR"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "7A",
+                    "name": "FIRMWARE_UPDATE_MD",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8F",
+                    "name": "MULTI_CMD",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "98",
+                    "name": "SECURITY",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 5,
+            "label": "Operation Mode",
+            "description": "Setting the temperature scale",
+            "overview": "<p>Setting the temperature scale: 0: Fahrenheit, 1:Celsius<\/p>",
+            "size": 1,
+            "bitmask": "00000008",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 8,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Fahrenheit"
+                },
+                {
+                    "value": 8,
+                    "label": "Celsius"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "label": "Multi Sensor Function Switch",
+            "description": "Disable the humidity report after event triggered",
+            "overview": "<p>Disable the humidity report after event triggered. (1:Disable, 0:Enable)\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000020",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Enable"
+                },
+                {
+                    "value": 32,
+                    "label": "Disable"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "label": "Customer Function",
+            "description": "Notification Type",
+            "overview": "<p>Notification Type:<br \/> 0: Using Notification Report. 1: Using Sensor Binary Report.\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000010",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 16,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Using Notification Report"
+                },
+                {
+                    "value": 16,
+                    "label": "Using Sensor Binary Report"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "label": "Customer Function",
+            "description": "Disable Multi CC in auto report",
+            "overview": "<p>Disable Multi CC in auto report. (1:Disable, 0:Enable)\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000020",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Enable"
+                },
+                {
+                    "value": 32,
+                    "label": "Disable"
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "label": "Auto Report Battery Time",
+            "description": "The interval time for auto report the battery level.",
+            "overview": "<p>The interval time for auto report the battery level.<br \/> 0 means turn off auto report.<br \/> The default value is 12. The tick time can setting by the configuration No.20.\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 12,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 13,
+            "label": "Auto Report Temperature Time",
+            "description": "The interval time for auto report the temperature.",
+            "overview": "<p>The interval time for auto report the temperature.<br \/> 0 means turn off auto report.<br \/> The default value is 12. The tick time can setting by the configuration No.20.\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 12,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 14,
+            "label": "Auto Report Humidity Time",
+            "description": "The interval time for auto report the humidity",
+            "overview": "<p>The interval time for auto report the humidity.<br \/> 0 means turn off auto report.<br \/> The default value is 12. The tick time can setting by the configuration No.20.\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 12,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 20,
+            "label": "Auto Report Tick Interval",
+            "description": "The interval time for auto report each tick",
+            "overview": "<p>Setting this configuration will effect configuration No.10, No.13, No.14 and No.15.<\/p> <p>Units of one minute.<br \/><strong>Caution1:<\/strong> Setting to 0 means turn off all auto report function.<\/p> <p><strong>Caution2:<\/strong> The value is unsigned byte\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 30,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 21,
+            "label": "Temperature Differential Report",
+            "description": "The temperature differential to report",
+            "overview": "<p>The temperature differential to report. 0 means turn off this function.<br \/> The unit is Fahrenheit.<br \/> Enable this function the device will detect every 10 seconds. <\/p> <p>And when the temperature is over 140 degree Fahrenheit, it will continue report.\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 23,
+            "label": "Humidity Differential Report",
+            "description": "The humidity differential to report.",
+            "overview": "<p>The humidity differential to report. 0 means turn off this function. The unit is percentage.<br \/> Enable this function the device will detect every 10 seconds.\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 60,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Receiving Report Message",
+            "max_nodes": 8,
+            "controller": true,
+            "description": "",
+            "overview": "<p>\u00a0<\/p>\r\n<div class=\"page\" title=\"Page 2\">\r\n<div class=\"section\">\r\n<div class=\"layoutArea\">\r\n<div class=\"column\">\r\n<p><span style=\"font-size: 12.000000pt; font-family: 'Tahoma';\">Group 1 is for receiving the report message, like triggered event, temperature, humidity\u00a0<\/span><\/p>\r\n<\/div>\r\n<\/div>\r\n<\/div>\r\n<\/div>"
+        }
+    ]
+}

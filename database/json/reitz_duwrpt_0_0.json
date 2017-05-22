@@ -1,0 +1,141 @@
+{
+    "database_id": 586,
+    "label": "DUW_RPT",
+    "manufacturer_name": "Reitz-Group.de",
+    "manufacturer_id": "0064",
+    "device_ref": [
+        "5003:0000"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "D\u00fcwi Repeater",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 2.064,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": false,
+    "beaming": false,
+    "library_type": {
+        "id": 1,
+        "name": "LIB_CONTROLLER_STATIC"
+    },
+    "basic_class": {
+        "id": 2,
+        "name": "BASIC_TYPE_STATIC_CONTROLLER"
+    },
+    "generic_class": {
+        "id": 2,
+        "name": "GENERIC_TYPE_STATIC_CONTROLLER"
+    },
+    "specific_class": {
+        "id": 2,
+        "name": "SPECIFIC_TYPE_NOT_USED"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 2,
+                "name": "BASIC_TYPE_STATIC_CONTROLLER"
+            },
+            "generic_class": {
+                "id": 2,
+                "name": "GENERIC_TYPE_STATIC_CONTROLLER"
+            },
+            "specific_class": {
+                "id": 0,
+                "name": null
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "1",
+                    "nif": true,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_general",
+                            "label": "Alarm",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "87",
+                    "name": "INDICATOR",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [],
+    "associations": []
+}

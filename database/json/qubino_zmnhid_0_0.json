@@ -1,0 +1,552 @@
+{
+    "database_id": 358,
+    "label": "ZMNHID",
+    "manufacturer_name": "Goap",
+    "manufacturer_id": "0159",
+    "device_ref": [
+        "0005:0051"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Flush on\/off thermostat",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 4.005,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_THERMOSTAT"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_THERMOSTAT_GENERAL_V2"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 8,
+                "name": "GENERIC_TYPE_THERMOSTAT"
+            },
+            "specific_class": {
+                "id": 6,
+                "name": "SPECIFIC_TYPE_THERMOSTAT_GENERAL_V2"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "5",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Sensor (temperature)",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        },
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh)",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "40",
+                    "name": "THERMOSTAT_MODE",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "thermostat_mode",
+                            "label": "Thermostat mode",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "43",
+                    "name": "THERMOSTAT_SETPOINT",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "thermostat_setpoint",
+                            "label": "Setpoint (heating)",
+                            "config": [
+                                "type=HEATING"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Input 1 switch type",
+            "description": "Input 1 switch type",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "mono-stable switch type (push button)"
+                },
+                {
+                    "value": 1,
+                    "label": "bi-stable switch type"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "Input 2 switch type",
+            "description": "Input 2 switch type",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "mono-stable switch type (push button)"
+                },
+                {
+                    "value": 1,
+                    "label": "bi-stable switch type"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "label": "Input 3 switch type",
+            "description": "Input 3 switch type",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "mono-stable switch type (push button)"
+                },
+                {
+                    "value": 1,
+                    "label": "bi-stable switch type"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "label": "Input 2 contact type",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "NO (normally open) input type"
+                },
+                {
+                    "value": 1,
+                    "label": "NC (normally close) input type"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "label": "Input 3 contact type",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "NO (normally open) input type"
+                },
+                {
+                    "value": 1,
+                    "label": "NC (normally close) input type"
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "label": "Activate \/ deactivate functions ALL ON\/ALL OFF",
+            "description": "Module responds to commands ALL ON \/ ALL OFF \r\n\t\t\t\tthat may be sent by the main controller or by other controller belonging to the system.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "ALL ON is not active ALL OFF is not active"
+                },
+                {
+                    "value": 1,
+                    "label": "ALL ON is not active ALL OFF active"
+                },
+                {
+                    "value": 2,
+                    "label": "ALL ON active ALL OFF is not active"
+                },
+                {
+                    "value": 255,
+                    "label": "ALL ON active, ALL OFF active"
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "label": "Set point set by I2",
+            "description": "Set point set by I2",
+            "overview": "<p>When I2 is pressed set point will be set according to the value of this parameter. Available config. parameters<\/p> <p>Default Value 65535<\/p> <p>65535 - input I2 does not influence on the set point.<\/p> <p>From 0 to 990 - set point from 0.0 \u00b0C to 99.0 \u00b0C<\/p> <p>From 1001 to 1150 - set point from -0.1 \u00b0C to -15.0 \u00b0C<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 12,
+            "label": "Set point set by I3",
+            "description": "65535 \u2013 input I3 does not influence on the set point<BR\/>\r\n\t\t\tFrom 0 to 990 set point from 0.0 \u00b0C to 99.0 \u00b0C<BR\/>\r\n\t\t\tFrom 1001 to 1150 \u2013 set point from -0.1 \u00b0C to -15.0 \u00b0C",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 40,
+            "label": "Power reporting in Watts on power change for Q1",
+            "description": "Power report is sent (pushed) only when actual power in Watts in real time changed for more than \r\n\t\t\t\tset percentage comparing to previous actual power in Watts, step is 1%.<br\/>\r\n\t\t\t\t<ul><li>0 = Reporting Disabled<\/li>\r\n\t\t\t\t<li>1\u2013100 = 1% - 100% Reporti",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 42,
+            "label": "Power reporting in Watts by time interval for Q1",
+            "description": "default value is 300 (power report in Watts is sent each 300s)<br\/>\r\n\t\t\t\t<ul><li>0 = Reporting Disabled<\/li>\r\n\t\t\t\t<li>1\u201365535 = 1 second \u2013 65535 seconds. Reporting enabled. \r\n\t\t\t\tPower report is sent with time interval set by entered value.<\/li><\/ul>",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 300,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 43,
+            "label": "Hysteresis On",
+            "description": "This parameter defines temperature min difference between real measured temperature and set-point temperature to turn device on. Parameter can be set from 0 to 255 where 0 to 127 means from 0.0 \u00b0C to 12.7 \u00b0C and from 128 to 255 means from - 0.1 \u00b0C to -12.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 132,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 44,
+            "label": "Hysteresis Off",
+            "description": "This parameter defines temperature min difference between real measured temperature and set-point temperature to turn device on. Parameter can be set from 0 to 255 where 0 to 127 means from 0.0 \u00b0C to 12.7 \u00b0C and from 128 to 255 means from - 0.1 \u00b0C to -12.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 45,
+            "label": "Antifreeze",
+            "description": "Set value means at which temperature the device will be turned on even if the thermostat was manually set to off. Parameter can be set from 0 to 255 where 0 to 127 means from 0.0 \u00b0C to 12.7 \u00b0C and from 128 to 254 means from - 0.1 \u00b0C to -12.6 \u00b0C. 255 is di",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 60,
+            "label": "Too low temperature limit",
+            "description": "1 - 1000 = 0.1\u00b0C \u2013 100.0\u00b0C, step is 0.1\u00b0C. Too low temperature limit is set by entered value. In case is set value out of this range, module is changing set value automatically to default value.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 50,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 61,
+            "label": "Too high temperature limit",
+            "description": "1 - 1000 = 0.1\u00b0C \u2013 100.0\u00b0C, step is 0.1\u00b0C. Too low temperature limit is set by entered value. In case is set value out of this range, module is changing set value automatically to default value.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 700,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 63,
+            "label": "Switch selection",
+            "description": "Set value means the type of the device that is connected to the relay output. The device type can be normally open (NO) or normally close (NC).\r\nAvailable configuration parameters (data type is 1 Byte DEC):\r\n\u2022 default value 0\r\n\u2022 0 - When system is turned ",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Basic on\/off Q1",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Basic on\/off I2",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "Basic on\/off I3",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 4,
+            "label": "High Temperature",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 5,
+            "label": "Low Temperature",
+            "max_nodes": 16,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 6,
+            "label": "Default Reporting Group",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

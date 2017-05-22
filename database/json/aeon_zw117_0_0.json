@@ -1,0 +1,394 @@
+{
+    "database_id": 527,
+    "label": "ZW117",
+    "manufacturer_name": "AEON Labs",
+    "manufacturer_id": "0086",
+    "device_ref": [
+        "0004:0075"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Range Extender 6",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 4.034,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_REPEATER_SLAVE"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_REPEATER_SLAVE"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 15,
+                "name": "GENERIC_TYPE_REPEATER_SLAVE"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_REPEATER_SLAVE"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Dimmer",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "33",
+                    "name": "COLOR",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "color_color",
+                            "label": "Color Control",
+                            "config": []
+                        },
+                        {
+                            "type": "color_temperature",
+                            "label": "Color Temperature",
+                            "config": [
+                                "colorMode=DIFF_WHITE"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "7A",
+                    "name": "FIRMWARE_UPDATE_MD",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 33,
+            "label": "RGB value",
+            "description": "Set the RGB value of the LED for the quality test of the LED diode.",
+            "overview": "",
+            "size": 3,
+            "bitmask": "00000021",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 4,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Reserved"
+                },
+                {
+                    "value": 2,
+                    "label": "Red value"
+                },
+                {
+                    "value": 3,
+                    "label": "Green value"
+                },
+                {
+                    "value": 4,
+                    "label": "Blue value"
+                }
+            ]
+        },
+        {
+            "id": 82,
+            "label": "Default status of the LED",
+            "description": "Set the default status of the LED when the Range Extender relays Z-Wave message.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000052",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "The green LED remains On for 2 seconds"
+                },
+                {
+                    "value": 1,
+                    "label": "Off"
+                }
+            ]
+        },
+        {
+            "id": 200,
+            "label": "Partner ID",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "000000C8",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Aeon Labs Standard Product"
+                },
+                {
+                    "value": 1,
+                    "label": "others"
+                }
+            ]
+        },
+        {
+            "id": 252,
+            "label": "Enable\/disable the Configuration to be locked",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "000000FC",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "disable"
+                },
+                {
+                    "value": 1,
+                    "label": "enable"
+                }
+            ]
+        },
+        {
+            "id": 254,
+            "label": "Device Tag.",
+            "description": "",
+            "overview": "",
+            "size": 2,
+            "bitmask": "000000FE",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": []
+        },
+        {
+            "id": 255,
+            "label": "Reset to factory default",
+            "description": "Reset to factory default settings and removed from the z-wave network",
+            "overview": "",
+            "size": 4,
+            "bitmask": "000000FF",
+            "default": 1,
+            "read_only": false,
+            "write_only": true,
+            "value_min": 0,
+            "value_max": 0,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "DELETE ME"
+                },
+                {
+                    "value": 1431655765,
+                    "label": "Reset to factory default"
+                }
+            ]
+        },
+        {
+            "id": 255,
+            "label": "Reset configuration",
+            "description": "Reset all configuration parameters to factory default settings",
+            "overview": "",
+            "size": 1,
+            "bitmask": "000000FF",
+            "default": 1,
+            "read_only": false,
+            "write_only": true,
+            "value_min": 0,
+            "value_max": 0,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Reset configuration"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Group 1",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "Lifeline",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Group 2",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "Retransmit",
+            "overview": ""
+        }
+    ]
+}

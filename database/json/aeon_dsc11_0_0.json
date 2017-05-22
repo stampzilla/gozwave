@@ -1,0 +1,1032 @@
+{
+    "database_id": 89,
+    "label": "DSC11",
+    "manufacturer_name": "AEON Labs",
+    "manufacturer_id": "0086",
+    "device_ref": [
+        "0003:000B"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Smart Strip",
+    "overview": "<p>Update command classes -:<br \/>METER:5 :: ADD<br \/>METER:6 :: ADD<\/p>",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.067,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        },
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh) entire strip",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts) entire strip",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "60",
+                    "name": "MULTI_INSTANCE",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 1",
+                            "config": []
+                        },
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 1",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh) 1",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts) 1",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 2",
+                            "config": []
+                        },
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 2",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh) 2",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts) 2",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 3",
+                            "config": []
+                        },
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 3",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh) 3",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts) 3",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 4",
+                            "config": []
+                        },
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 4",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh) 4",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts) 4",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 5",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh) 5",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts) 5",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 6",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh) 6",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts) 6",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Voltage to calculate power",
+            "description": "Line voltage used for device calculations of wattage",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 120,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32000,
+            "options": []
+        },
+        {
+            "id": 4,
+            "label": "Selective Reporting",
+            "description": "Enable selective reporting only when power changes",
+            "overview": "<p>Enable selective reporting only when power change reaches a certain threshold or percentage set in 4-11 below. This is used to reduce network traffic.\u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 16,
+            "options": []
+        },
+        {
+            "id": 5,
+            "label": "Wattage Threshold - Whole strip",
+            "description": "Threshold change in wattage to induce a automatic report",
+            "overview": "<p>Threshold change in wattage to induce a automatic report (Whole HEM). (Valid values 0-60000)\u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 25,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 60000,
+            "options": []
+        },
+        {
+            "id": 6,
+            "label": "Wattage Threshold - Socket 1",
+            "description": "Threshold change in wattage to induce a automatic report",
+            "overview": "<p>Threshold change in wattage to induce a automatic report (Socket 1). (Valid values 0-60000)\u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 25,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 60000,
+            "options": []
+        },
+        {
+            "id": 7,
+            "label": "Wattage Threshold - Socket 2",
+            "description": "Threshold change in wattage to induce a automatic report",
+            "overview": "<p>Threshold change in wattage to induce a automatic report (Socket 2). (Valid values 0-60000)\u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 25,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 60000,
+            "options": []
+        },
+        {
+            "id": 8,
+            "label": "Wattage Threshold - Socket 3",
+            "description": "Threshold change in wattage to induce a automatic report",
+            "overview": "<p>Threshold change in wattage to induce a automatic report (Socket 3). (Valid values 0-60000)\u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 25,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 60000,
+            "options": []
+        },
+        {
+            "id": 9,
+            "label": "Wattage Threshold - Socket 4",
+            "description": "Threshold change in wattage to induce a automatic report",
+            "overview": "<p>Threshold change in wattage to induce a automatic report (Socket 4). (Valid values 0-60000)\u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 25,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 60000,
+            "options": []
+        },
+        {
+            "id": 10,
+            "label": "Wattage Threshold - Socket 5",
+            "description": "Threshold change in wattage to induce a automatic report",
+            "overview": "<p>Threshold change in wattage to induce a automatic report (Socket 5). (Valid values 0-60000)\u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 25,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 60000,
+            "options": []
+        },
+        {
+            "id": 11,
+            "label": "Wattage Threshold - Socket 6",
+            "description": "Threshold change in wattage to induce a automatic report",
+            "overview": "<p>Threshold change in wattage to induce a automatic report (Socket 6). (Valid values 0-60000)\u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 25,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 60000,
+            "options": []
+        },
+        {
+            "id": 12,
+            "label": "Percent Change - Whole Strip",
+            "description": "Percentage change in wattage to induce a automatic report",
+            "overview": "<p>Percentage change in wattage to induce a automatic report (Whole Smart Strip). (Valid values 0-100)\u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 13,
+            "label": "Percent Change - Socket 1",
+            "description": "Percentage change in wattage to induce a automatic report",
+            "overview": "<p>Percentage change in wattage to induce a automatic report (Socket 1). (Valid values 0-100)\u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 14,
+            "label": "Percent Change - Socket 2",
+            "description": "Percentage change in wattage to induce a automatic report",
+            "overview": "<p>Percentage change in wattage to induce a automatic report (Socket 2). (Valid values 0-100)\u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 15,
+            "label": "Percent Change - Socket 3",
+            "description": "Percentage change in wattage to induce a automatic report",
+            "overview": "<p>Percentage change in wattage to induce a automatic report (Socket 3). (Valid values 0-100)\u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 16,
+            "label": "Percent Change - Socket 4",
+            "description": "Percentage change in wattage to induce a automatic report",
+            "overview": "<p>Percentage change in wattage to induce a automatic report (Socket 4). (Valid values 0-100)\u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 17,
+            "label": "Percent Change - Socket 5",
+            "description": "Percentage change in wattage to induce a automatic report",
+            "overview": "<p>Percentage change in wattage to induce a automatic report (Socket 5). (Valid values 0-100)\u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 18,
+            "label": "Percent Change - Socket 6",
+            "description": "Percentage change in wattage to induce a automatic report",
+            "overview": "<p>Percentage change in wattage to induce a automatic report (Socket 6). (Valid values 0-100)\u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 80,
+            "label": "Status of load changed report",
+            "description": "Status of load changed,send group 1",
+            "overview": "<p>Status of load changed,send group 1 associate nodes Hail CC or Basic report CC.\u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0<\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 8,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Not sent"
+                },
+                {
+                    "value": 1,
+                    "label": "Send Hail"
+                },
+                {
+                    "value": 2,
+                    "label": "Send Basic"
+                }
+            ]
+        },
+        {
+            "id": 90,
+            "label": "Get Temperature",
+            "description": "Get temperature of Smart Strip",
+            "overview": "<p>Get temperature of Smart Strip (Only GET is valid)<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 100,
+            "label": "Reset 0x65~0x67 to default value",
+            "description": "Reset 0x65~0x67 to default value",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Reset"
+                }
+            ]
+        },
+        {
+            "id": 101,
+            "label": "select channels to report consumtion as item 1",
+            "description": "A binary field for reporting consumption (kWh) of channels",
+            "overview": "<p>Choose the channel or channels to auto-report kWh based on a time interval set in parameter 111.\u00a0 This is the LSB<\/p>\r\n<p>\u00a0<\/p>\r\n<p>\u00a01 - report only a summary of all channels ( bit 1)<\/p>\r\n<p>\u00a02 - report channel 1 wattage (bit 2)<\/p>\r\n<p>\u00a03 - report a summary of all channels and channel 1 (bits 1 and 2)<\/p>\r\n<p>\u00a04 - report channel 2 wattage<\/p>\r\n<p>&lt;...&gt;<\/p>\r\n<p>14 - channel 3, channel 2, and channel 1<\/p>\r\n<p>\u00a015 - channel 3, channel 2, channel 1, and summary<\/p>\r\n<p>\u00a0etc.<\/p>\r\n<p>\u00a0127 - in the end is reporting values for each individual channel (1-6) and the summary data.\u00a0 In binary, bits 1 through 7 set to 1.<\/p>\r\n<p>\u00a0The bit values are as follows:<\/p>\r\n<p>\u00a01 - summary report<\/p>\r\n<p>2 - channel 1 report<\/p>\r\n<p>4 - channel 2 report<\/p>\r\n<p>8 - channel 3 report<\/p>\r\n<p>16 - channel 4 report<\/p>\r\n<p>32 - channel 5 report<\/p>\r\n<p>64 - channel 6 report<\/p>",
+            "size": 4,
+            "bitmask": "000000FF",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 101,
+            "label": "Select channels to report power as item 1",
+            "description": "A binary field to choose channels to report power",
+            "overview": "<p>Choose the channel or channels to auto-report wattage based on a time interval set in parameter 111.\u00a0<\/p>\r\n<p><strong>\u00a0examples:<\/strong><\/p>\r\n<p>\u00a01 - report only a summary of all channels ( bit 1)<\/p>\r\n<p>\u00a02 - report channel 1 wattage (bit 2)<\/p>\r\n<p>\u00a03 - report a summary of all channels and channel 1 (bits 1 and 2)<\/p>\r\n<p>\u00a04 - report channel 2 wattage<\/p>\r\n<p>&lt;...&gt;<\/p>\r\n<p>14 - channel 3, channel 2, and channel 1<\/p>\r\n<p>\u00a015 - channel 3, channel 2, channel 1, and summary<\/p>\r\n<p>\u00a0etc.<\/p>\r\n<p>\u00a0127 - in the end is reporting values for each individual channel (1-6) and the summary data.\u00a0 In binary, bits 1 through 7 set to 1.<\/p>\r\n<p>\u00a0<\/p>\r\n<p>\u00a0The bit values are as follows:<\/p>\r\n<p>\u00a01 - summary report<\/p>\r\n<p>2 - channel 1 report<\/p>\r\n<p>4 - channel 2 report<\/p>\r\n<p>8 - channel 3 report<\/p>\r\n<p>16 - channel 4 report<\/p>\r\n<p>32 - channel 5 report<\/p>\r\n<p>64 - channel 6 report<\/p>",
+            "size": 4,
+            "bitmask": "0000FF00",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 102,
+            "label": "Item 2 (kWh)",
+            "description": "",
+            "overview": "<p>Choose the channel or channels to auto-report kWh based on a time interval set in parameter 112.\u00a0 This is the LSB<\/p>\r\n<p>\u00a0<\/p>\r\n<p>\u00a01 - report only a summary of all channels ( bit 1)<\/p>\r\n<p>\u00a02 - report channel 1 wattage (bit 2)<\/p>\r\n<p>\u00a03 - report a summary of all channels and channel 1 (bits 1 and 2)<\/p>\r\n<p>\u00a04 - report channel 2 wattage<\/p>\r\n<p>&lt;...&gt;<\/p>\r\n<p>14 - channel 3, channel 2, and channel 1<\/p>\r\n<p>\u00a015 - channel 3, channel 2, channel 1, and summary<\/p>\r\n<p>\u00a0etc.<\/p>\r\n<p>\u00a0127 - in the end is reporting values for each individual channel (1-6) and the summary data.\u00a0 In binary, bits 1 through 7 set to 1.<\/p>\r\n<p>\u00a0The bit values are as follows:<\/p>\r\n<p>\u00a01 - summary report<\/p>\r\n<p>2 - channel 1 report<\/p>\r\n<p>4 - channel 2 report<\/p>\r\n<p>8 - channel 3 report<\/p>\r\n<p>16 - channel 4 report<\/p>\r\n<p>32 - channel 5 report<\/p>\r\n<p>64 - channel 6 report<\/p>",
+            "size": 4,
+            "bitmask": "000000FF",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 255,
+            "value_max": 0,
+            "options": []
+        },
+        {
+            "id": 102,
+            "label": "Item 2 (power)",
+            "description": "",
+            "overview": "<p>Choose the channel or channels to auto-report wattage based on a time interval set in parameter 112.\u00a0<\/p>\r\n<p><strong>\u00a0examples:<\/strong><\/p>\r\n<p>\u00a01 - report only a summary of all channels ( bit 1)<\/p>\r\n<p>\u00a02 - report channel 1 wattage (bit 2)<\/p>\r\n<p>\u00a03 - report a summary of all channels and channel 1 (bits 1 and 2)<\/p>\r\n<p>\u00a04 - report channel 2 wattage<\/p>\r\n<p>&lt;...&gt;<\/p>\r\n<p>14 - channel 3, channel 2, and channel 1<\/p>\r\n<p>\u00a015 - channel 3, channel 2, channel 1, and summary<\/p>\r\n<p>\u00a0etc.<\/p>\r\n<p>\u00a0127 - in the end is reporting values for each individual channel (1-6) and the summary data.\u00a0 In binary, bits 1 through 7 set to 1.<\/p>\r\n<p>\u00a0<\/p>\r\n<p>\u00a0The bit values are as follows:<\/p>\r\n<p>\u00a01 - summary report<\/p>\r\n<p>2 - channel 1 report<\/p>\r\n<p>4 - channel 2 report<\/p>\r\n<p>8 - channel 3 report<\/p>\r\n<p>16 - channel 4 report<\/p>\r\n<p>32 - channel 5 report<\/p>\r\n<p>64 - channel 6 report<\/p>",
+            "size": 4,
+            "bitmask": "0000FF00",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 111,
+            "label": "Interval to send out reports of Group 1",
+            "description": "",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 600,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 2678400,
+            "options": []
+        },
+        {
+            "id": 112,
+            "label": "Interval to send out reports of Group 2",
+            "description": "",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 600,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 2678400,
+            "options": []
+        },
+        {
+            "id": 113,
+            "label": "Interval to send out reports of Group 3",
+            "description": "",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 600,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 2678400,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Group 1",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

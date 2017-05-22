@@ -1,0 +1,294 @@
+{
+    "database_id": 338,
+    "label": "45602",
+    "manufacturer_name": "ACT - Advanced Control Technologies",
+    "manufacturer_id": "0001",
+    "device_ref": [
+        "4450:3030"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Lamp Module with Dimmer Control",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 2.048,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 4,
+        "name": "LIB_SLAVE"
+    },
+    "basic_class": {
+        "id": 3,
+        "name": "BASIC_TYPE_SLAVE"
+    },
+    "generic_class": {
+        "id": 3,
+        "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+    },
+    "specific_class": {
+        "id": 3,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 3,
+                "name": "BASIC_TYPE_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Dimmer",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "75",
+                    "name": "PROTECTION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 5,
+            "label": "Ignore Start Level When Receiving Dim Commands",
+            "description": "",
+            "overview": "<p>Every \u201cDim\u201d command from your remote controller includes a start level embedded in it. The 45602 can be set to ignore the start level that is part of the dim command. Setting parameter 5 to a value of 0 will cause the 45602 to dim or brighten from the start level embedded in the command<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Respect Start Level"
+                },
+                {
+                    "value": 1,
+                    "label": "Ignore Start Level (default)"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "label": "Dim Rate Step Count - ZWave Control",
+            "description": "Number of steps the dimmer will change when controlling via ZWave",
+            "overview": "<p>Dim Rate Adjustments: Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences. The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is \u201c3\u201d. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 8,
+            "label": "Dim Rate Step Duration - ZWave Control",
+            "description": "Timing of each step the dimmer will change when controlling via ZWave",
+            "overview": "<p>Dim Rate Adjustments: Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences. The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is \u201c3\u201d. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 9,
+            "label": "Dim Rate Step Count - Manual Control",
+            "description": "Number of steps the dimmer will change when controlling manually",
+            "overview": "<p>Dim Rate Adjustments: Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences. The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is \u201c3\u201d. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 10,
+            "label": "Dim Rate Step Duration - manual Control",
+            "description": "Timing of each step the dimmer will change when controlling manually",
+            "overview": "<p>Dim Rate Adjustments: Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences. The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is \u201c3\u201d. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 11,
+            "label": "Dim Rate Step Count - ZWave All on\/off",
+            "description": "Number of steps the dimmer will change when receiving a ZWave all on\/off command",
+            "overview": "<p>Dim Rate Adjustments: Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences. The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is \u201c3\u201d. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 12,
+            "label": "Dim Rate Step Duration - ZWave All on\/off",
+            "description": "Timing of each step the dimmer will change when receiving a ZWave all on\/off command",
+            "overview": "<p>Dim Rate Adjustments: Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences. The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is \u201c3\u201d. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 29,
+            "label": "Load Sensing",
+            "description": "Sense when existing switch is used to turn on the lamp",
+            "overview": "<p>Load sensing\u00a0allows you to operate the lamp using the existing switch on the lamp by sensing a change in the resistive load of the\u00a0light plugged in. When it detects the change in resistance it will turn the lamp on to full power.<\/p>\r\n<p>When replacing a burned-out light bulb, the load sensing feature will automatically turn the light ON when the new bulb is installed even if the Z-wave module was previously turned OFF<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled (default)"
+                },
+                {
+                    "value": 1,
+                    "label": "Enabled"
+                }
+            ]
+        }
+    ],
+    "associations": []
+}

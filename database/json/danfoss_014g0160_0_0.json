@@ -1,0 +1,397 @@
+{
+    "database_id": 359,
+    "label": "014G0160",
+    "manufacturer_name": "Danfoss",
+    "manufacturer_id": "0002",
+    "device_ref": [
+        "0003:8010"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Z-Wave room sensor",
+    "overview": "",
+    "inclusion": "<p>Push one time LED Button<\/p>",
+    "exclusion": "<p>Push one time LED Button<\/p>",
+    "wakeup": "<p>Any button (LED, Temp+ or Temp-)<\/p>",
+    "protocol_version": 3.067,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 6,
+        "name": "LIB_SLAVE_ROUTING"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SENSOR_MULTILEVEL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_ROUTING_SENSOR_MULTILEVEL"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 33,
+                "name": "GENERIC_TYPE_SENSOR_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_ROUTING_SENSOR_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "5",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Sensor (temperature)",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "43",
+                    "name": "THERMOSTAT_SETPOINT",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "thermostat_setpoint",
+                            "label": "Setpoint (heating)",
+                            "config": [
+                                "type=HEATING"
+                            ]
+                        },
+                        {
+                            "type": "thermostat_setpoint",
+                            "label": "Setpoint (cooling)",
+                            "config": [
+                                "type=COOLING"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "87",
+                    "name": "INDICATOR",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8F",
+                    "name": "MULTI_CMD",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Temperature Report threshold",
+            "description": "Range is from 0.1 to 10\u00b0C 1=0.1\u00b0C 100=10\u00b0C",
+            "overview": "<p>Default value 5 = 0.5 \u00b0C<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 2,
+            "label": "Set-point display resolution",
+            "description": "range from 0.1 to 10\u00b0C 1=0.1\u00b0C 100=10\u00b0C",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 3,
+            "label": "Min Set-point and override limit",
+            "description": "from min 0\u00b0C to max setpoint override limit 0=0\u00b0C 40=40\u00b0C",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 12,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 40,
+            "options": []
+        },
+        {
+            "id": 4,
+            "label": "Max Set-point and override limit",
+            "description": "from min setpoint override limit to max 40\u00b0C 0=0\u00b0C 40=40\u00b0C",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 28,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 40,
+            "options": []
+        },
+        {
+            "id": 5,
+            "label": "LED Flash period",
+            "description": "0 to 65535 seconds",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 6,
+            "label": "Set-point control function",
+            "description": "0=Disabled 1=Enabled",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "enabled"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "label": "Temporarily override scheduler",
+            "description": "0=Disabled 1=Enabled",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "enabled"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "label": "Set-point type in Thermostat_Setpoint_Reports",
+            "description": "1=Heating 2=Cooling 10=Auto Changeover",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 10,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Heating"
+                },
+                {
+                    "value": 2,
+                    "label": "Cooling"
+                },
+                {
+                    "value": 10,
+                    "label": "Auto-Changeover"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "label": "LED on time",
+            "description": "1=100ms 5=500ms",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 5,
+            "options": []
+        },
+        {
+            "id": 10,
+            "label": "Number of LED flashes (duration)",
+            "description": "0 to 255",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 11,
+            "label": "LED color",
+            "description": "1=Green 2=Red",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Green"
+                },
+                {
+                    "value": 2,
+                    "label": "Red"
+                }
+            ]
+        }
+    ],
+    "associations": []
+}

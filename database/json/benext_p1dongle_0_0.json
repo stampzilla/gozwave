@@ -1,0 +1,342 @@
+{
+    "database_id": 340,
+    "label": "P1-dongle",
+    "manufacturer_name": "BeNext",
+    "manufacturer_id": "008A",
+    "device_ref": [
+        "002F:0100"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "P1-dongle",
+    "overview": "<p>The P1-dongle sends smart meter data wirelessly to your controller, helping you get insight of your consumption and things like the overall yield of your solar panels. The P1-dongle can connect to smart meters that support DSMR (Dutch Smart Meter Reader Protocol)\u00a0eg.\u00a0all smart meters with a\u00a0P1-connector.<\/p> <p>LED Status Information<\/p> <ul><li>Ready to install: LED pulse once per second<\/li> <li>Including: LED pulse twice per second<\/li> <li>Excluding: LED pulse three times per 1.5 second<\/li> <li>Include Successful: LED on for one second<\/li> <li>Ready and\u00a0operating in a Z-Wave network: LED continuously on<\/li> <li>No ready and not included in a Z-Wave network:\u00a0LED pulse once per second<\/li> <\/ul>",
+    "inclusion": "<ul><li>Put you controller in inclusion mode<\/li> <li>Connect the P1 Dongle to your Smart Meter (use a power source when needed)<\/li> <li>The P1 Dongle will switch to\u00a0Network Wide Inclusion automatically<\/li> <\/ul><p>Use the button to\u00a0switch the P1 Dongle to Inclusion (LED pulse twice per second) or Exclusion \/ Reset (LED pulse three times per 1.5 second) mode<\/p>",
+    "exclusion": "<ul><li>Put your controller and the P1 Dongle in exclusion\u00a0mode (LED pulse three times per 1.5 second)<\/li> <li>The dongle will exclude from it's former network and reset to node ID zero\u00a0<\/li> <li>If the\u00a0P1 Dongle wasn't included in\u00a0a network before, this\u00a0procedure will act as a node reset<\/li> <\/ul><p>Use the button to\u00a0switch the P1 Dongle to Inclusion (LED pulse twice per second) or Exclusion \/ Reset (LED pulse three times per 1.5 second) mode<\/p>",
+    "wakeup": "",
+    "protocol_version": 4.005,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_METER"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_WHOLE_HOME_METER_SIMPLE"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 0,
+                "name": "NOT_KNOWN"
+            },
+            "generic_class": {
+                "id": 0,
+                "name": "GENERIC_TYPE_NOT_KNOWN"
+            },
+            "specific_class": {
+                "id": 0,
+                "name": null
+            },
+            "commandclasses": [
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh)",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "56",
+                    "name": "CRC_16_ENCAP",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "60",
+                    "name": "MULTI_INSTANCE",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "7A",
+                    "name": "FIRMWARE_UPDATE_MD",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "98",
+                    "name": "SECURITY",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 49,
+                "name": "GENERIC_TYPE_METER"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_SIMPLE_METER"
+            },
+            "commandclasses": [
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh) 1",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts) 1",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 49,
+                "name": "GENERIC_TYPE_METER"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_SIMPLE_METER"
+            },
+            "commandclasses": [
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh) 2",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts) 2",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 49,
+                "name": "GENERIC_TYPE_METER"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_SIMPLE_METER"
+            },
+            "commandclasses": [
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_gas_cubic_meters",
+                            "label": "Gas meter (G_Cubic_Meters) 3",
+                            "config": [
+                                "type=G_Cubic_Meters"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 4,
+            "label": "Baud Rate",
+            "description": "Baud rate: the rate the device sends data between the smart meter and z-wave",
+            "overview": "<p>Set BAUD rate value * 100.<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 1152,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 40000,
+            "options": []
+        }
+    ],
+    "associations": []
+}

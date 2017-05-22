@@ -1,0 +1,177 @@
+{
+    "database_id": 220,
+    "label": "SSA1\/SSA2",
+    "manufacturer_name": "FortrezZ LLC",
+    "manufacturer_id": "0084",
+    "device_ref": [
+        "0311:010B",
+        "0313:0108",
+        "0313:010B"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Siren and Strobe Alarm",
+    "overview": "<h1>Description<\/h1> <p>The SSA1\/SSA2 is a Z-Wave<sup>TM<\/sup> enabled device and will sound a loud siren and flash a strobe light when an alarm message or alert is received on any Z-Wave<sup>TM<\/sup> enabled network.<\/p> <ul><li>SSA1: Clear lense<\/li> <li>SSA2: Red lense<\/li> <\/ul><h1>Testing the SSA1<\/h1> <p>After connecting power to the SSA1, you can test the alarm mode after manually exiting the Network Wide Inclusion (NWI) mode by pressing the button once or after the unit is included into any Z-Wave<sup>TM<\/sup> enabled network. To test the SSA1, press and hold the button. The SSA1 will turn on and remain on until the button is released. While the siren is on, it will continually cycle for 1 second off \/ 4 seconds on for up to 5 minutes or until it is turned off. While the strobe is on, the unit will flash at a rate of once per second.<\/p>",
+    "inclusion": "<ol><li>Set up the inclusion mode at the controller (If the controller supports NWI, the SSA1 will automatically be included at power on);<\/li> <li>If the controller does not support NWI, press the SSA1 button once to exit NWI mode.<\/li> <li>Press the button again to include the unit in the network. The controller will indicate that the unit has been included in the network. Also, the Status LED will flash when the inclusion completes. Inclusion and exclusion are always done at normal transmit power mode.<\/li> <\/ol>",
+    "exclusion": "<ol><li>Set up the exclusion mode at the controller<\/li> <li>Press the SSA1 button once. The SSA1 will be removed from the network and the Status LED will flash.\u00a0<\/li> <\/ol>",
+    "wakeup": "",
+    "protocol_version": 2.097,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 7,
+        "name": "LIB_CONTROLLER_BRIDGE"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": null
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 0,
+                "name": null
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "22",
+                    "name": "APPLICATION_STATUS",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Dimmer",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_burglar",
+                            "label": "Alarm (burglar)",
+                            "config": [
+                                "type=BURGLAR"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Delay before accept of Basic Set Off",
+            "description": "Delay, from the time the siren-strobe turns on, before the Basic Set Off command is accepted.",
+            "overview": "<p>Delay, from the time the siren-strobe turns on, before the Basic Set Off command is accepted; 1 Byte (in seconds, default is 0, interpreted as unsigned integer for negative values sent in set command). This could be used, for example, to avoid the situation where an associated window\/door sensor turns the SSA1 alarm on and then immediately off when the window\/door is opened and then quickly closed.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        }
+    ],
+    "associations": []
+}

@@ -1,0 +1,551 @@
+{
+    "database_id": 125,
+    "label": "FGK101",
+    "manufacturer_name": "Fibargroup",
+    "manufacturer_id": "010F",
+    "device_ref": [
+        "0700:1000",
+        "0700:2000",
+        "0700:3000"
+    ],
+    "version_min": 0,
+    "version_max": 2.5,
+    "decription": "Door Opening Sensor",
+    "overview": "",
+    "inclusion": "<p><strong>Prepare the sensor:<\/strong><\/p> <ol><li>Open the sensor with a small screwdriver (be careful)<\/li> <li>Remove the paper between the battery an the contact to activate the sensor.<\/li> <li>Close the sensor (be sure that it is closed correctly. The sensor must not act like a button if you push the casing. This sometimes happens. It is important to close the device correctly.)<\/li> <\/ol><p><strong>Include the sensor in the network:<\/strong><\/p> <ol><li>Start HABmin.<\/li> <li>Navigate to Configuration &gt; Bindings &gt; select the ZWAVE Binding &gt; select the devices tab on the right<\/li> <li>You should see at least your ZWAVE-Controller in the list of devices.<\/li> <li>Hit \"include\" to start the 30 sec include mode<\/li> <li>Hit the button on the back of the sensor 3 times in a short row.<\/li> <li>The device starts to blink in blue. If it stops repeat step 5 until the 30 sec inclusion is over. Keep the sensor not to close and not too far from the controller (between 30 cm and 100 cm)<\/li> <li>Hit \"reload properties\" in HABmin.<\/li> <li>The new device should appear in the list (grey with no name)<\/li> <li>If not, hit reload in your browser and navigate back to the device list.<\/li> <li>The new device should appear in the list (grey with no name)<\/li> <li>If not, restart your openHAB server, hit reload in your browser and navigate back to the device list.<\/li> <li>The new device should appear in the list (grey with no name)<\/li> <li>If not, repeat from step 4 until the device appears (This should happen rarely. I once needed two tries. Iadded 10 devices all together.)<\/li> <li>Hit the button on the back of the sensor 3 times in a short row.<\/li> <li>The device starts to blink in blue. Keep the sensor not to close and not too far from the controller (between 30 cm and 100 cm)<\/li> <li>Hit \"reload properties\" in HABmin.<\/li> <li>Repeat steps 14 - 16 several times. The device in the list will first show up a name, then turn to yellow and then to green.<\/li> <li>Congratulations, you fully added the sensor and it should work correctly now.<\/li> <\/ol>",
+    "exclusion": "",
+    "wakeup": "<p>The default wake-up interval will drain the battery in a few weeks to months. It's advised to set a minimum wake-up interval of 3 hours to 24 hours after the device is configured correctly and a node.xml file has been created for the device.<\/p>",
+    "protocol_version": 3.042,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SENSOR_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_ROUTING_SENSOR_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 32,
+                "name": "GENERIC_TYPE_SENSOR_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_ROUTING_SENSOR_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "30",
+                    "name": "SENSOR_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_door",
+                            "label": "Door Sensor",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "9C",
+                    "name": "SENSOR_ALARM",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_flood",
+                            "label": "Alarm (water)",
+                            "config": [
+                                "type=FLOOD"
+                            ]
+                        },
+                        {
+                            "type": "alarm_co",
+                            "label": "Alarm (CO)",
+                            "config": [
+                                "type=CARBON_MONOXIDE"
+                            ]
+                        },
+                        {
+                            "type": "alarm_smoke",
+                            "label": "Alarm (smoke)",
+                            "config": [
+                                "type=SMOKE"
+                            ]
+                        },
+                        {
+                            "type": "alarm_co2",
+                            "label": "Alarm (CO2)",
+                            "config": [
+                                "type=CARBON_DIOXIDE"
+                            ]
+                        },
+                        {
+                            "type": "alarm_general",
+                            "label": "Alarm (general)",
+                            "config": [
+                                "type=GENERAL"
+                            ]
+                        },
+                        {
+                            "type": "alarm_heat",
+                            "label": "Alarm (heat)",
+                            "config": [
+                                "type=HEAT"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 32,
+                "name": "GENERIC_TYPE_SENSOR_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_ROUTING_SENSOR_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "30",
+                    "name": "SENSOR_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 32,
+                "name": "GENERIC_TYPE_SENSOR_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_ROUTING_SENSOR_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "2",
+                    "nif": false,
+                    "basic": true,
+                    "secure": true,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Temperature Sensor",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "IN1 Alarm Cancellation Delay",
+            "description": "Additional delay after an alarm from input IN1 has ceased. ",
+            "overview": "<p>The parameter allows you\u00a0to specify additional time, after which the input no. 1 alarm is\u00a0cancelled once its violation has ceased. \u00a0\u00a0\u00a0<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 2,
+            "label": "Status change signalled by LED",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "LED turned Off"
+                },
+                {
+                    "value": 1,
+                    "label": "LED turned On"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "label": "Type of input no. 1",
+            "description": "Type of IN input",
+            "overview": "<p>Default = 0- INPUT_NC (Normally closed)<\/p>\r\n<p>Available parameter settings<\/p>\r\n<p>0 - INPUT_NC (Normally closed)<\/p>\r\n<p>1 - INPUT_NO (Normally open)\u00a0<\/p>\r\n<p>2 - INPUT_MONOSTABLE<\/p>\r\n<p>3 - INPUT_BISTABLE<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Normally Open"
+                },
+                {
+                    "value": 1,
+                    "label": "Normally Closed"
+                },
+                {
+                    "value": 2,
+                    "label": "Monostable"
+                },
+                {
+                    "value": 3,
+                    "label": "Bistable"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "label": "Type of transmitted control frame for association",
+            "description": "Type of transmitted control frame for association group 1",
+            "overview": "<p>Type of transmitted control frame for association group 1, activated via input IN1. The parameter allows to specify the type of alarm frame or to force transmission of control commands (BASIC_SET)<\/p>\r\n<p>Default value = 255 - BASIC SET<\/p>\r\n<p>Available parameter settings<\/p>\r\n<p>1 - ALARM SMOKE frame<\/p>\r\n<p>2 - ALARM CO frame<\/p>\r\n<p>3 - ALARM CO2 frame<\/p>\r\n<p>4 - ALARM HEAT frame<\/p>\r\n<p>5 - ALARM WATER frame<\/p>\r\n<p>255 Control frame BASIC_SET<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "ALARM GENERIC"
+                },
+                {
+                    "value": 1,
+                    "label": "ALARM SMOKE"
+                },
+                {
+                    "value": 2,
+                    "label": "ALARM CO"
+                },
+                {
+                    "value": 3,
+                    "label": "ALARM CO2"
+                },
+                {
+                    "value": 4,
+                    "label": "ALARM HEAT"
+                },
+                {
+                    "value": 5,
+                    "label": "ALARM WATER"
+                },
+                {
+                    "value": 255,
+                    "label": "BASIC_SET"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "label": "Forced Level of Dimming group 1",
+            "description": "Parameter for dimming\/opening blinds",
+            "overview": "<p>Value of the parameter specifying the forced level of dimming\/opening roller blinds when \u201cswitch on\u201d\/\u201dopen\u201d commands are sent to devices from association group no.1. In case of alarm frames an alarm priority is specified. Default value: 255 Possible parameter settings: (1 \u2013 99) and 255 Value of 255 makes it possible to activate a device. In case of the Dimmer module it means activating the device and setting it to the previously stored condition, e.g. when Dimmer is set to 30%, deactivated and then reactivated using 255 commend, it will be automatically set to the previous condition i.e. 30%<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 9,
+            "label": "Enable\/Disable transmission of frame cancelling alarm \t",
+            "description": "Enable\/Disable transmission of frame cancelling alarm \t",
+            "overview": "<p>Deactivating transmission of the alarm cancelling frame or the control frame deactivating the device (Basic). It allows for disabling the function of deactivating the device and cancelling alarms for devices associated with IN input. Default value: 0<\/p>\r\n<p>Available parameter settings: 0 \u2013 for association group no. 1 information is sent 1 \u2013 for association group no.<\/p>\r\n<p>1 information is not sent.<\/p>\r\n<p>Parameter size: 1 [byte].<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Groups 1 and 2 sent"
+                },
+                {
+                    "value": 1,
+                    "label": "Group 1 sent, Group 2 not sent."
+                },
+                {
+                    "value": 2,
+                    "label": "Group 2 sent, Group 1 not sent."
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "label": "Sensitivity to temperature changes",
+            "description": "Sensitivity to temperature changes",
+            "overview": "<p>Sensitivity to temperature changes. The maximum acceptable difference between the last reported temperature and the current temperature read from the sensor. If the temperatures differ by the set value or more, a report with the current temperature value is sent to the device assigned to association group no. 3.<\/p>\r\n<p>Default value: 8 [0,5o C]<\/p>\r\n<p>Available parameter settings: 0 \u2013 255 [0o C to 16o C] [32o F \u2013 60,8o F] To set an appropriate parameter value use the following formula: x = delta T x 16 - for Celsius x = delta T x 80 \/ 9 - for Fahrenheit x = parameter value delta T \u2013 maximum acceptable temperature gradient in Celsius or Fahrenheit If the value is set to 0: - if the wake-up interval is set to 255 seconds, temperature report will be sent according to the interval, - if the wake-up interval is set to over 255, temperature report will be sent each ca. 4 minutes. Parameter size: 1 [byte].<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 8,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 13,
+            "label": "Transmitting the alarm or control frame broadcast",
+            "description": "Enabling\/Disabling broadcast alarm for IN and TMP",
+            "overview": "<p>Sending an alarm or control frame (for IN input, depending on parameter no.5 value), and TMP button alarm frame. The frame is sent in \u201cbroadcast\u201d mode, i.e. to all devices within range - information sent in this mode is not repeated by the mesh network.<\/p>\r\n<p>Default value: 0<\/p>\r\n<p>Available parameter settings: 0 \u2013 IN and TMP Broadcast mode inactive,<\/p>\r\n<p>1 \u2013 IN broadcast mode active, TMP broadcast mode inactive<\/p>\r\n<p>2 \u2013 IN broadcast mode inactive, TMP broadcast mode active<\/p>\r\n<p>3 \u2013 IN and TMP broadcast mode active<\/p>\r\n<p>Parameter size: 1 [byte].<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "IN and TMP Broadcast mode inactive"
+                },
+                {
+                    "value": 1,
+                    "label": "IN broadcast mode active, TMP broadcast mode inactive\t"
+                },
+                {
+                    "value": 2,
+                    "label": "IN broadcast mode inactive, TMP broadcast mode active"
+                },
+                {
+                    "value": 3,
+                    "label": "IN and TMP broadcast mode active"
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "label": "Scene activation",
+            "description": "Enable\/Disable scene functionality",
+            "overview": "<p>Scene activation functionality.<\/p>\r\n<p>Default value: 0<\/p>\r\n<p>Available parameter settings:<\/p>\r\n<p>0 - functionality deactivated<\/p>\r\n<p>1 - functionality activated The device offers the possibility of sending commands compatible with Command class scene activation. Information is sent to devices assigned to association group no. 3 Controllers such as the Home Center 2 are able to interpret such commands and based on these commands activate scenes, to which specific scene IDs have been assigned. The user may expand the functionality of a button connected to IN input by distinguishing the sequence of it being pushed. For example: double click would trigger the \u201cgoodnight\u201d scene and triple click would trigger the \u201cmorning\u201d scene. To fully use the possibilities offered by the parameter no.14 it is recommended to use a momentary or a toggle switch (parameter no.3). Scene ID is determined in the following manner: IN input: Switch from \u201coff\u201d to \u201con\u201d ID10 Switch from \u201con\u201d to \u201coff\u201d ID11 Remaining IDs are recognized correctly if the value of parameter no.3 was set to 2 Holding down ID12 Releasing ID13 Double click ID14 Triple click ID15 Parameter size: 1 [byte].<\/p>\r\n<p>\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Enabled"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Input IN1",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "TMP Button",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "Condition",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

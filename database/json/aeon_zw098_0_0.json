@@ -1,0 +1,531 @@
+{
+    "database_id": 91,
+    "label": "ZW098",
+    "manufacturer_name": "AEON Labs",
+    "manufacturer_id": "0086",
+    "device_ref": [
+        "0003:0062",
+        "0103:0062",
+        "0203:0062"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "LED Bulb",
+    "overview": "",
+    "inclusion": "<p>Non-secure inclusion:<br \/>1. Power on your LED Bulb.<br \/>2. Set\u00a0the primary controller into inclusion mode (If you don\u2019t know how to do this, please refer to its manual).<br \/>3. Turn off the LED Bulb and then turn on.<br \/>4. If the inclusion is failed, please repeat the process from step 2.\u00a0<\/p>\n<p>Secure inclusion:<br \/>1. Power on your LED Bulb.<br \/>2. Set\u00a0the primary controller into inclusion mode (If you don\u2019t know how to do this, please refer to its manual).<br \/>3. Turn off the LED Bulb and then turn on it\u00a0on 3 times within 2 seconds.<br \/>4. If the inclusion fails, please repeat the process from step 2.<\/p>\n<p>Note: If LED Bulb has been successfully included into your Z-Wave network, its warm white LED will be solid. If the linking was unsuccessful and the LED Bulb continues to be active with a colourful gradient.\u00a0<\/p>",
+    "exclusion": "<p>1. Power on your LED Bulb.<br \/>2. Set\u00a0the primary controller into exclusion mode (If you don\u2019t know how to do this, please refer to its manual).<br \/>3. Turn off the LED Bulb and then turn on 3 times within 2 seconds.<br \/>4. If the exclusion fails, please repeat the process from step 2.<\/p>\n<p>Note: If LED Bulb has been successfully excluded from your Z-Wave network, its warm white LED will be active with a colourful gradient. If the exclusion was unsuccessful and the LED Bulb continues to be solid.\u00a0<\/p>",
+    "wakeup": "",
+    "protocol_version": 4.005,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": false,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "2",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Dimmer",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "2B",
+                    "name": "SCENE_ACTIVATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "33",
+                    "name": "COLOR",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "color_color",
+                            "label": "Color Control",
+                            "config": [
+                                "colorMode=RGB"
+                            ]
+                        },
+                        {
+                            "type": "color_temperature",
+                            "label": "Color Temperature",
+                            "config": [
+                                "colorMode=DIFF_WHITE"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 32,
+            "label": "Toggle send report on color change",
+            "description": "Toggle send report on color change",
+            "overview": "<p>Enable\/disable to send out a report when the color is changed.<br \/>0=disable.&lt;default&gt;<br \/>1=Hail CC.<br \/>Others=ignore.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "disable color updates"
+                },
+                {
+                    "value": 1,
+                    "label": "send HAIL CC"
+                }
+            ]
+        },
+        {
+            "id": 34,
+            "label": "Allow external switch to toggle bulb",
+            "description": "Allow external switch to toggle bulb",
+            "overview": "<p>Enable\/disable the function of using External Switch to turn<br \/>on\/off the bulb.<br \/>0=disable.<br \/>1=enable.<br \/>Others=ignore.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "enabled"
+                }
+            ]
+        },
+        {
+            "id": 35,
+            "label": "Allow external switch to change color",
+            "description": "Allow external switch to change color",
+            "overview": "<p>Enable\/disable the function of using External Switch to changes<br \/>the bulb\u2019s color.<br \/>0=disable.<br \/>1=enable.<br \/>Others=ignore.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "enabled"
+                }
+            ]
+        },
+        {
+            "id": 36,
+            "label": "Control color mode",
+            "description": "Reboot\/save\/exit Colorful mode",
+            "overview": "<p>Reboot\/save\/exit Colorful mode.<br \/>0==Un-reboot Colorful mode.<br \/>1==Reboot Colorful mode.<br \/>2==Exit Colorful mode.<br \/>3==Save the current Colorful mode value and then exit<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": true,
+            "value_min": 0,
+            "value_max": 3,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "reboot normal mode"
+                },
+                {
+                    "value": 1,
+                    "label": "boot into color programming"
+                },
+                {
+                    "value": 2,
+                    "label": "exit color programming"
+                },
+                {
+                    "value": 3,
+                    "label": "save and exit color programming"
+                }
+            ]
+        },
+        {
+            "id": 37,
+            "label": "Colour Residence Time",
+            "description": "Colour Residence Time",
+            "overview": "<p>0-254 : Corresponds from 0 to 25.4 seconds.<\/p>\r\n<p>255 : no change<\/p>",
+            "size": 4,
+            "bitmask": "000000FF",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 37,
+            "label": "Colour Change Speed",
+            "description": "Colour Change Speed",
+            "overview": "<p>Colour Change Speed (8 bits)<br \/>This field specifies the transition speed when one colour changes to another.<\/p>\r\n<p>\u00a0<\/p>\r\n<p>0 is slowest adn 254 is fastest.\u00a0 255 will have no effect.<\/p>",
+            "size": 4,
+            "bitmask": "0000FF00",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 37,
+            "label": "Cycle count",
+            "description": "Cycle count",
+            "overview": "<p><br \/>The Cycle Count is used to define the number of repetitions\/cycles displayed by your LED Bulb in Colour<br \/>Display Cycle before stopping.<\/p>\r\n<p>0 = Unlimited<\/p>\r\n<p>1-254 = cycle this number and then stop<\/p>\r\n<p>255 = no change to setting<\/p>\r\n<p>\u00a0<\/p>\r\n<p>For example:<br \/><br \/>When the Bulb is in Rainbow mode, the colour change from red to pink (Red Orange Yellow Green<br \/>Cyan Blue Purple Pink), going through the colours is regarded as 1 cycle.<\/p>",
+            "size": 4,
+            "bitmask": "00FF0000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 37,
+            "label": "Color transitions (Value 1 MSB) see Overview",
+            "description": "Value 1 (MSB) see Overview",
+            "overview": "<p>scroll to bottom for examples.<\/p>\r\n<p>\u00a0<\/p>\r\n<p>bits 7 and 6 for colour transition style<\/p>\r\n<p>bits 5 and 4 are reserved (always 0)<\/p>\r\n<p>bits 3,2,1,0 are colour display<\/p>\r\n<p>\u00a0<\/p>\r\n<p>colour display options are:<\/p>\r\n<p>\u00a0<\/p>\r\n<p>0 single colour mode<\/p>\r\n<p>1 Rainbow Mode(red, orange, yellow, green, cyan, blue, violet,pinkish)<\/p>\r\n<p>2 Multi Colour Mode(colours cycle between selected colours)<\/p>\r\n<p>3 Random mode<\/p>\r\n<p>15 Inactive (keep current mode)<\/p>\r\n<p>\u00a0<\/p>\r\n<p>Single colour mode: The Bulb is solid with one colour in this mode. If you want to change its current<br \/>colour, you need to turn the Bulb off and on 2 times via wall switch within 1 second, the Bulb will enter<br \/>into colour change status. During this time, turning the wall switch off when your desired colour appears,<br \/>will be used as the colour of the bulb when it is on.<br \/>\u2192<br \/>Rainbow mode: The Bulb has 8 colours to display and will change through a range of colors (Red<br \/>Orange Yellow Green Cyan Blue Violet pinkish).<br \/>Multi-colour mode: The Bulb can change between multiple colours according to the colour index which<br \/>is configurable through configuration parameter 38, see the configuration table of parameter 38 below.<\/p>\r\n<p>Random mode: The Bulb\u2019s colour will be displayed randomly.<\/p>\r\n<p>\u00a0<\/p>\r\n<p>Colour Transition Style (2 bits)<\/p>\r\n<p>0 Smooth transitions<\/p>\r\n<p>1 Fast\/Direct transition<\/p>\r\n<p>2 Fade out\/Fade in<\/p>\r\n<p>3 Inactive (keep current configuration)<\/p>\r\n<p>\u00a0<\/p>\r\n<p><strong>examples:<\/strong><\/p>\r\n<p>Default is 00 single color mode with smooth color transitions.\u00a0<\/p>\r\n<p>Set to 01 for rainbow mode with smooth color transitions<\/p>\r\n<p>Set to 02 for multi color mode with smooth color transitions<\/p>\r\n<p>Set to 03 for random mode with smooth color transitions<\/p>\r\n<p>Set to 64 for single color mode with direct color transitions<\/p>\r\n<p>Set to 65 for rainbow color mode with direct color transitions<\/p>\r\n<p>Set to 66 for multi color mode with direct color transitions<\/p>\r\n<p>Set to 67 for random color mode with direct color transitions<\/p>\r\n<p><strong>Note:<\/strong> The four modes below are available to the bulb, but not currently available in openHAB.<\/p>\r\n<p>Set to 128 for single color mode with fade out\/fade in transitions<\/p>\r\n<p>Set to 129 for rainbow color mode with fade out\/fade in transitions<\/p>\r\n<p>Set to 130 for multi color mode with fade out\/fade in transitions<\/p>\r\n<p>Set to 131 for random color mode with fade out\/fade in transitions<\/p>",
+            "size": 4,
+            "bitmask": "7F000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "single color mode with smooth color transitions (default)"
+                },
+                {
+                    "value": 1,
+                    "label": "rainbow mode with smooth color transitions"
+                },
+                {
+                    "value": 2,
+                    "label": "multi color mode with smooth color transitions"
+                },
+                {
+                    "value": 3,
+                    "label": "random mode with smooth color transitions"
+                },
+                {
+                    "value": 64,
+                    "label": "single color mode with direct color transitions"
+                },
+                {
+                    "value": 65,
+                    "label": "rainbow color mode with direct color transitions"
+                },
+                {
+                    "value": 66,
+                    "label": "multi color mode with direct color transitions"
+                },
+                {
+                    "value": 67,
+                    "label": "random color mode with direct color transitions"
+                },
+                {
+                    "value": 128,
+                    "label": "single color mode with fade out\/fade in transitions"
+                },
+                {
+                    "value": 129,
+                    "label": "rainbow color mode with fade out\/fade in transitions"
+                },
+                {
+                    "value": 130,
+                    "label": "multi color mode with fade out\/fade in transitions"
+                },
+                {
+                    "value": 131,
+                    "label": "random color mode with fade out\/fade in transitions"
+                }
+            ]
+        },
+        {
+            "id": 38,
+            "label": "Color index configuration for multi mode (1,2)",
+            "description": "Color index configuration for multi mode (1,2)",
+            "overview": "<p>The colour will be changed from index 1 to index 8 circularly when your bulb is in Multi colour mode.<\/p>\r\n<p>This value controls indexes 1 and 2<\/p>\r\n<p>Values are additive.\u00a0 The smaller numbers control index 1, and the larger control index 2.\u00a0<\/p>\r\n<p><strong>Example:<\/strong><\/p>\r\n<p>You want to have the 1st color be red and the 2nd color switched to to be blue.\u00a0 Set this value to 97 (1+96)<\/p>\r\n<p>\u00a0<\/p>\r\n<p>The colors are:<\/p>\r\n<p>1,16 = red<\/p>\r\n<p>2,32 = orange<\/p>\r\n<p>3,48 = yellow<\/p>\r\n<p>4,64 = green<\/p>\r\n<p>5,80 = cyan<\/p>\r\n<p>6,96 = blue<\/p>\r\n<p>7,112 = violet<\/p>\r\n<p>8,128 = pinkish (Aeon's term)<\/p>",
+            "size": 4,
+            "bitmask": "000000FF",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 136,
+            "options": []
+        },
+        {
+            "id": 38,
+            "label": "Color index configuration for multi mode (3,4)",
+            "description": "Color index configuration for multi mode (3,4)",
+            "overview": "<p>The colour will be changed from index 1 to index 8 circularly when your bulb is in Multi colour mode.<\/p>\r\n<p>This value controls indexes 3 and 4<\/p>\r\n<p>Values are additive.\u00a0 The smaller numbers control index 3, and the larger control index 4.\u00a0<\/p>\r\n<p><strong>Example:<\/strong><\/p>\r\n<p>You want to have the 3rd color be red and the 4th color switched to to be blue.\u00a0 Set this value to 97 (1+96)<\/p>\r\n<p>\u00a0<\/p>\r\n<p>The colors are:<\/p>\r\n<p>1,16 = red<\/p>\r\n<p>2,32 = orange<\/p>\r\n<p>3,48 = yellow<\/p>\r\n<p>4,64 = green<\/p>\r\n<p>5,80 = cyan<\/p>\r\n<p>6,96 = blue<\/p>\r\n<p>7,112 = violet<\/p>\r\n<p>8,128 = pinkish (Aeon's term)<\/p>",
+            "size": 4,
+            "bitmask": "0000FF00",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 136,
+            "options": []
+        },
+        {
+            "id": 38,
+            "label": "Color index configuration for multi mode (5.6)",
+            "description": "Color index configuration for multi mode (5,6)",
+            "overview": "<p>The colour will be changed from index 1 to index 8 circularly when your bulb is in Multi colour mode.<\/p>\r\n<p>This value controls indexes 5 and 6<\/p>\r\n<p>Values are additive.\u00a0 The smaller numbers control index 5, and the larger control index 6.\u00a0<\/p>\r\n<p><strong>Example:<\/strong><\/p>\r\n<p>You want to have the 5th color be red and the 6th color switched to to be blue.\u00a0 Set this value to 97 (1+96)<\/p>\r\n<p>\u00a0<\/p>\r\n<p>The colors are:<\/p>\r\n<p>1,16 = red<\/p>\r\n<p>2,32 = orange<\/p>\r\n<p>3,48 = yellow<\/p>\r\n<p>4,64 = green<\/p>\r\n<p>5,80 = cyan<\/p>\r\n<p>6,96 = blue<\/p>\r\n<p>7,112 = violet<\/p>\r\n<p>8,128 = pinkish (Aeon's term)<\/p>",
+            "size": 4,
+            "bitmask": "00FF0000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 136,
+            "options": []
+        },
+        {
+            "id": 38,
+            "label": "Color index configuration for multi mode (7,8)",
+            "description": "Color index configuration for multi mode (7,8)",
+            "overview": "<p>The colour will be changed from index 1 to index 8 circularly when your bulb is in Multi colour mode.<\/p>\r\n<p>This is value 1, the MSB.\u00a0 It controls indexes 7 and 8<\/p>\r\n<p>Values are additive.\u00a0 The smaller numbers control index 7, and the larger control index 8.\u00a0<\/p>\r\n<p><strong>Example:<\/strong><\/p>\r\n<p>You want to have the 7th color be red and the 8th color switched to to be blue.\u00a0 Set this value to 97 (1+96)<\/p>\r\n<p>\u00a0<\/p>\r\n<p>The colors are:<\/p>\r\n<p>1,16 = red<\/p>\r\n<p>2,32 = orange<\/p>\r\n<p>3,48 = yellow<\/p>\r\n<p>4,64 = green<\/p>\r\n<p>5,80 = cyan<\/p>\r\n<p>6,96 = blue<\/p>\r\n<p>7,112 = violet<\/p>\r\n<p>8,128 = pinkish (Aeon's term)<\/p>\r\n<p>\u00a0<\/p>",
+            "size": 4,
+            "bitmask": "7F000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 136,
+            "options": []
+        },
+        {
+            "id": 80,
+            "label": "Enable notifications",
+            "description": "set send notifications type for Group 1            ",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                },
+                {
+                    "value": 1,
+                    "label": "Hail"
+                },
+                {
+                    "value": 2,
+                    "label": "Basic"
+                }
+            ]
+        },
+        {
+            "id": 252,
+            "label": "Lock configuration",
+            "description": "Enable\/disable the ability to configure the device.\r\n            ",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "enabled"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Group 1",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Group 2",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

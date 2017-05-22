@@ -1,0 +1,255 @@
+{
+    "database_id": 362,
+    "label": "ZDM230",
+    "manufacturer_name": "ACT - Advanced Control Technologies",
+    "manufacturer_id": "0001",
+    "device_ref": [
+        "444D:3330"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "HomePro Wall Dimmer ZDM230",
+    "overview": "Radio Frequency (RF) Controlled, 500W, 230 VAC, European Wall Mounted, 3-Way Dimmer Receiver, Dual Switch, Release 1.1",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 1,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": false,
+    "library_type": {
+        "id": 0,
+        "name": "Unknown"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Dimmer",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Ignore Start-Level (Transmitting)",
+            "description": "Dimmers controlled by this switch will start dimming from their current level.",
+            "overview": "Set ignore start level bit when transmitting dim commands. The ZDM230 can send Dim commands to Z-Wave enabled dimmers. The Dim command has a start level embedded in it. A dimmer receiving this command will start dimming from that start level. However, the command also has a bit that indicates whether the dimmer should ignore the start level. If the bit is set to 1, the dimmer will ignore the start level and instead start dimming from its current level. If this bit is set to 0, the dimmer will not ignore the start level.",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No"
+                },
+                {
+                    "value": 1,
+                    "label": "Yes"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "Suspend group 4",
+            "description": "Disable transmitting commands to Z-Wave devices that are in Group 4 without disassociating those devices from the group.",
+            "overview": "You may wish to disable transmitting commands to Z-Wave devices that are in Group 4 without \u201cdisassociating\u201d those devices from the group. Setting parameter 2 to the value of 1 will stop the ZDM230 from transmitting to devices that are \u201cassociated\u201d into Group 4. It is possible that you may only want the units in Group 4 to track when the dimmer is being turned ON and OFF and not when dimming.",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No"
+                },
+                {
+                    "value": 1,
+                    "label": "Yes"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "label": "Night Light",
+            "description": "n night-light mode the LED on the switch will turn ON when the switch is turned OFF.",
+            "overview": "The LED on the ZDM230 will by default, turn ON when the load attached is turned ON. To make the LED turn ON when the load attached is turned OFF instead, set parameter 3 to a value of 1.",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No"
+                },
+                {
+                    "value": 1,
+                    "label": "Yes"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Group 1",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "Left paddle",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Group 2",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "Right Paddle",
+            "overview": "Right Paddle"
+        },
+        {
+            "id": 3,
+            "label": "Group 3",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "Right double click paddle",
+            "overview": "Right double click paddle"
+        },
+        {
+            "id": 4,
+            "label": "Group 4",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "Group used to inform devices about status updates",
+            "overview": "Group used to inform devices about the updates of status of the ZDM230 dimmer"
+        }
+    ]
+}

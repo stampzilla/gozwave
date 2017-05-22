@@ -1,0 +1,674 @@
+{
+    "database_id": 233,
+    "label": "009303",
+    "manufacturer_name": "Popp & Co",
+    "manufacturer_id": "0154",
+    "device_ref": [
+        "0100:0101"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Wall Controller",
+    "overview": "",
+    "inclusion": "<p>see attached file \"Popp 009303 Battery Wall Controller Manual\" (section Reference Documents)<\/p>",
+    "exclusion": "<p>see attached file \"Popp 009303 Battery Wall Controller Manual\" (section Reference Documents)<\/p>",
+    "wakeup": "<p>see attached file \"Popp 009303 Battery Wall Controller Manual\" (section Reference Documents)<\/p>",
+    "protocol_version": 4.005,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": false,
+    "beaming": true,
+    "library_type": {
+        "id": 2,
+        "name": "LIB_CONTROLLER"
+    },
+    "basic_class": {
+        "id": 1,
+        "name": "BASIC_TYPE_CONTROLLER"
+    },
+    "generic_class": {
+        "id": 1,
+        "name": "GENERIC_TYPE_WALL_CONTROLLER"
+    },
+    "specific_class": {
+        "id": 1,
+        "name": "SPECIFIC_TYPE_BASIC_WALL_CONTROLLER"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 1,
+                "name": "BASIC_TYPE_CONTROLLER"
+            },
+            "generic_class": {
+                "id": 24,
+                "name": "GENERIC_TYPE_WALL_CONTROLLER"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_BASIC_WALL_CONTROLLER"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "0",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Dimmer",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "2B",
+                    "name": "SCENE_ACTIVATION",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "scene_number",
+                            "label": "Scene Activation",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "2D",
+                    "name": "SCENE_CONTROLLER_CONF",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5B",
+                    "name": "CENTRAL_SCENE",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "scene_number",
+                            "label": "Scene Number",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8E",
+                    "name": "MULTI_INSTANCE_ASSOCIATION",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8F",
+                    "name": "MULTI_CMD",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Button 1 and 3 pair mode",
+            "description": "In separate mode button 1 works with Group A, button\r\n\t\t\t\t3 with Group C. Click is ON, Hold is dimming UP, Double click is\r\n\t\t\t\tOFF, Click-Hold is dimming DOWN. In pair button 1\/3 are UP\/DOWN\r\n\t\t\t\tcorrespondingly. Click is ON\/OFF, Hold is dimming UP\/DOWN.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Separately"
+                },
+                {
+                    "value": 1,
+                    "label": "In pair without double clicks (Default)"
+                },
+                {
+                    "value": 2,
+                    "label": "In pair with double clicks"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "Button 2 and 4 pair mode",
+            "description": "In separate mode button 2 works with control group B,\r\n\t\t\t\tbutton 4 with control group D. Click is ON, Hold is dimming UP,\r\n\t\t\t\tDouble click is OFF, Click-Hold is dimming DOWN. In pair button B\/D\r\n\t\t\t\tare UP\/DOWN correspondingly. Click is ON\/OFF, Hold is ",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Separately"
+                },
+                {
+                    "value": 1,
+                    "label": "In pair without double clicks (Default)"
+                },
+                {
+                    "value": 2,
+                    "label": "In pair with double clicks"
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "label": "Command to control Group A",
+            "description": "defines the command to be sent to devices of control\r\n\t\t\t\tgroup A when the related button is pressed\r\n\t\t\t",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 8,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                },
+                {
+                    "value": 1,
+                    "label": "Switch on\/off and Dim (send Basic Set and Switch\r\n\t\t\t\t\tMultilevel)\r\n\t\t"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch on\/off only (send Basic Set)"
+                },
+                {
+                    "value": 3,
+                    "label": "Switch all"
+                },
+                {
+                    "value": 4,
+                    "label": "Send scenes"
+                },
+                {
+                    "value": 5,
+                    "label": "Send preconfigured scenes"
+                },
+                {
+                    "value": 6,
+                    "label": "Control devices in proximity"
+                },
+                {
+                    "value": 7,
+                    "label": "Control door lock"
+                },
+                {
+                    "value": 8,
+                    "label": "Central scene to gateway (default)"
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "label": "Command to control Group B",
+            "description": "defines the command to be sent to devices of control\r\n\t\t\t\tgroup B when the related button is pressed\r\n\t\t\t",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 8,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                },
+                {
+                    "value": 1,
+                    "label": "Switch on\/off and Dim (send Basic Set and Switch\r\n\t\t\t\t\tMultilevel)\r\n\t\t"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch on\/off only (send Basic Set)"
+                },
+                {
+                    "value": 3,
+                    "label": "Switch all"
+                },
+                {
+                    "value": 4,
+                    "label": "Send scenes"
+                },
+                {
+                    "value": 5,
+                    "label": "Send preconfigured scenes"
+                },
+                {
+                    "value": 6,
+                    "label": "Control devices in proximity"
+                },
+                {
+                    "value": 7,
+                    "label": "Control door lock"
+                },
+                {
+                    "value": 8,
+                    "label": "Central scene to gateway (default)"
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "label": "Command to control Group C",
+            "description": "defines the command to be sent to devices of control\r\n\t\t\t\tgroup C when the related button is pressed\r\n\t\t\t",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 8,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                },
+                {
+                    "value": 1,
+                    "label": "Switch on\/off and Dim (send Basic Set and Switch\r\n\t\t\t\t\tMultilevel)\r\n\t\t"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch on\/off only (send Basic Set)"
+                },
+                {
+                    "value": 3,
+                    "label": "Switch all"
+                },
+                {
+                    "value": 4,
+                    "label": "Send scenes"
+                },
+                {
+                    "value": 5,
+                    "label": "Send preconfigured scenes"
+                },
+                {
+                    "value": 6,
+                    "label": "Control devices in proximity"
+                },
+                {
+                    "value": 7,
+                    "label": "Control door lock"
+                },
+                {
+                    "value": 8,
+                    "label": "Central scene to gateway (default)"
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "label": "Command to control Group D",
+            "description": "defines the command to be sent to devices of control\r\n\t\t\t\tgroup D when the related button is pressed\r\n\t\t\t",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 8,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                },
+                {
+                    "value": 1,
+                    "label": "Switch on\/off and Dim (send Basic Set and Switch\r\n\t\t\t\t\tMultilevel)\r\n\t\t"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch on\/off only (send Basic Set)"
+                },
+                {
+                    "value": 3,
+                    "label": "Switch all"
+                },
+                {
+                    "value": 4,
+                    "label": "Send scenes"
+                },
+                {
+                    "value": 5,
+                    "label": "Send preconfigured scenes"
+                },
+                {
+                    "value": 6,
+                    "label": "Control devices in proximity"
+                },
+                {
+                    "value": 7,
+                    "label": "Control door lock"
+                },
+                {
+                    "value": 8,
+                    "label": "Central scene to gateway (default)"
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "label": "Send the following switch all commands",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Switch off only (default)"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch on only"
+                },
+                {
+                    "value": 255,
+                    "label": "Switch all on and off"
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "label": "Invert buttons",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No (default)"
+                },
+                {
+                    "value": 1,
+                    "label": "Yes"
+                }
+            ]
+        },
+        {
+            "id": 25,
+            "label": "Block wake up even when Wake Up Interval is set",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Wake up is blocked (default)"
+                },
+                {
+                    "value": 1,
+                    "label": "Wake up is possible if configured accordingly\r\n\t\t\t\t"
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "label": "end unsolicited battery report on Wake Up",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No"
+                },
+                {
+                    "value": 1,
+                    "label": "To same node as Wake Up Notification (default)\r\n\t\t\t\t"
+                },
+                {
+                    "value": 2,
+                    "label": "Broadcast to neighbors"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Lifeline",
+            "max_nodes": 10,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Control Group A",
+            "max_nodes": 10,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "Control Group B",
+            "max_nodes": 10,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 4,
+            "label": "Control Group C",
+            "max_nodes": 10,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 5,
+            "label": "Control Group D",
+            "max_nodes": 10,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

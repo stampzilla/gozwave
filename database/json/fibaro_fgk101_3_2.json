@@ -1,0 +1,631 @@
+{
+    "database_id": 381,
+    "label": "FGK101",
+    "manufacturer_name": "Fibargroup",
+    "manufacturer_id": "010F",
+    "device_ref": [
+        "0701:1001",
+        "0701:3001"
+    ],
+    "version_min": 3.2,
+    "version_max": 255.255,
+    "decription": "Door Opening Sensor",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 4.005,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SENSOR_NOTIFICATION"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_NOTIFICATION_SENSOR"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 7,
+                "name": "GENERIC_TYPE_SENSOR_NOTIFICATION"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_NOTIFICATION_SENSOR"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "22",
+                    "name": "APPLICATION_STATUS",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "2B",
+                    "name": "SCENE_ACTIVATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "scene_number",
+                            "label": "Scene Number",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "30",
+                    "name": "SENSOR_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_binary",
+                            "label": "Binary Sensor",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "5",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Sensor (Temperature)",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "56",
+                    "name": "CRC_16_ENCAP",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_door",
+                            "label": "Door Sensor",
+                            "config": [
+                                "type=ACCESS_CONTROL"
+                            ]
+                        },
+                        {
+                            "type": "alarm_tamper",
+                            "label": "Tamper Alarm",
+                            "config": [
+                                "type=BURGLAR"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "9C",
+                    "name": "SENSOR_ALARM",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_general",
+                            "label": "Alarm (general)",
+                            "config": [
+                                "type=GENERAL"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Operations mode",
+            "description": "Parameter defines device operation mode",
+            "overview": "<p>Available settings:<\/p> <p>0 - Door\/Window Sensor or external alarm sensor<br \/>1 - external button<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": []
+        },
+        {
+            "id": 2,
+            "label": "Door\/Window or alarm status",
+            "description": "Parameter defines state of the sensor when the magnet ...",
+            "overview": "<p>... is close. If the alarm sensor is connected, it determines the output type. Parameter inactive in external button mode (parameter 1 set to 1).<\/p> <p>Available settings:<\/p> <p>0 - Door\/Window Sensor or external alarm sensor<br \/>1 - external button<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": []
+        },
+        {
+            "id": 3,
+            "label": "Visual LED indications",
+            "description": "This parameter defines events indicated by the visual ...",
+            "overview": "<p>... LED indicator. Disabling events might extend battery life.<\/p> <p>Available settings:<\/p> <p>0 - no indications<br \/>1 - indication of opening\/closing status change<br \/>(input IN)<br \/>2 - indication of wake up (1 x click or periodical)<br \/>4 - indication of device tampering<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 6,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 6,
+            "options": []
+        },
+        {
+            "id": 4,
+            "label": "Range test after double click",
+            "description": "Allows to enable activation of Z-Wave range test with ...",
+            "overview": "<p>... double click of a TMP button.<\/p> <p>Available settings:<\/p> <p>0 - disabled<br \/>1 - enabled<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": []
+        },
+        {
+            "id": 10,
+            "label": "2nd association group triggers",
+            "description": "Parameter defines events which result in sending on\/off ...",
+            "overview": "<p>... commands to devices added to the 2nd association group. These commands are sent alternately to switch the devices on and off. Commands represent the values of BASIC SET command frames. Parameter is inactive in external button mode (parameter 1 set to 1). <\/p> <p>Available settings:<\/p> <p>0 - switch after opening and closing<br \/>1 - switch after opening<br \/>2 - switch after closing<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": []
+        },
+        {
+            "id": 11,
+            "label": "Commands sent to 2nd association group",
+            "description": "Command frames sent to devices added to the 2nd association group.",
+            "overview": "<p>Available settings:<\/p> <p>0 - ON<br \/>1 - OFF<br \/>2 - ON &amp; OFF<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": []
+        },
+        {
+            "id": 12,
+            "label": "Value of ON command frame sent to 2nd association group",
+            "description": "Value of ON command frame sent to 2nd association group",
+            "overview": "<p>The value of 0 turns OFF the device, 255 turns it On. In case of associating the Dimmer or Roller Shutter module, values 1-99 allow to set<br \/>an associated device to a specifed level. <\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 13,
+            "label": "Value of OFF command frame sent to 2nd association group",
+            "description": "The value of 0 turns OFF the device, 255 turns it ON. ",
+            "overview": "<p>In case of associating the Dimmer or Roller Shutter module, values 1-99 allow to set an associated device to a specified level<\/p> <p>The value of 0 turns OFF the device, 255 turns it On. In case of associating the Dimmer or Roller Shutter module, values 1-99 allow to set<br \/>an associated device to a specifed level.<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 14,
+            "label": "Time delay of ON command frame",
+            "description": "Time period after which ON command frame will be sent.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32400,
+            "options": []
+        },
+        {
+            "id": 15,
+            "label": "Time delay of OFF command frame",
+            "description": "Time period after which OFF command frame will be sent.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32400,
+            "options": []
+        },
+        {
+            "id": 20,
+            "label": "Type of sent alarm frames",
+            "description": "Type of control frames transmitted to the main controller ...",
+            "overview": "<p>... and 3rd association group \u201cAlarm\u201d. If an external sensor is connected to IN input, it is possible to choose its functionality. Otherwise it is recommended to set this parameter to default value.<\/p> <p>Available settings:<\/p> <p>0 - Door\/Window Sensor (General Purpose Alarm)<br \/>1 - smoke sensor (Smoke Alarm)<br \/>2 - CO detector (CO Alarm)<br \/>3 - CO2 detector (CO2 Alarm)<br \/>4 - high temperature sensor (Heat Alarm)<br \/>5 - flood sensor (Water Alarm)<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 5,
+            "options": []
+        },
+        {
+            "id": 30,
+            "label": "Delay of tamper alarm cancellation",
+            "description": "Time period after which a tamper alarm will be cancelled.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32400,
+            "options": []
+        },
+        {
+            "id": 31,
+            "label": "Reporting tamper alarm cancellation",
+            "description": "Reporting cancellation of tamper alarm to the controller ...",
+            "overview": "<p>... and 5th association group.<\/p> <p>Available settings:<\/p> <p>0 - do not send tamper cancellation report<br \/>1 - send tamper cancellation report<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": []
+        },
+        {
+            "id": 50,
+            "label": "Interval of temperature measurements",
+            "description": "This parameter defines how often the temperature will ...",
+            "overview": "<p>... be measured. The shorter the time, the more frequently the temperature will be measured, but the battery life will shorten.<\/p> <p>Available settings:<\/p> <p>0 - temperature measurements disabled<br \/>5-32400 - time in seconds<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 300,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32400,
+            "options": []
+        },
+        {
+            "id": 51,
+            "label": "Temperature reports threshold",
+            "description": "This parameter defines the change of temperature in ...",
+            "overview": "<p>...comparison with last reported, resulting in temperature report being sent to the main controller.<\/p> <p>Available settings:<\/p> <p>0 - temperature reports based on threshold disabled<br \/>1-300 - temperature threshold (0.1-30\u00b0C, 0.1\u00b0C step)<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 300,
+            "options": []
+        },
+        {
+            "id": 52,
+            "label": "Interval of temperature reports",
+            "description": "This parameter determines how often the temperature ...",
+            "overview": "<p>...\u00a0 reports will be sent to the main controller.<\/p> <p>Available settings:<\/p> <p>0 - periodic temperature reports disabled<br \/>5-32400 - time in seconds<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32400,
+            "options": []
+        },
+        {
+            "id": 53,
+            "label": "Temperature offset",
+            "description": "The value to be added to the actual temperature, measured ...",
+            "overview": "<p>... by the sensor (temperature compensation).<\/p> <p>Available settings:<\/p> <p>-1000-1000 (-100-100\u00b0C, 0.1\u00b0C step)<\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": -1000,
+            "value_max": 1000,
+            "options": []
+        },
+        {
+            "id": 54,
+            "label": "Temperature alarm reports",
+            "description": "Temperature alarms reported to the Z-Wave controller. ",
+            "overview": "<p>Thresholds are set in parameters 55 and 56.<\/p> <p>Available settings:<\/p> <p>0 - temperature alarms disabled<br \/>1 - high temperature alarm<br \/>2 - low temperature alarm<br \/>3 - high and low temperature alarms enabled<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 3,
+            "options": []
+        },
+        {
+            "id": 55,
+            "label": "High temperature alarm threshold",
+            "description": "If temperature is higher than set value, overheat ...",
+            "overview": "<p>... notification will be sent and high temperature scene will be triggered (if activated).<\/p> <p>Available settings:<\/p> <p>0-1000 (0-100\u00b0C, 0.1\u00b0C step)<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 540,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1000,
+            "options": []
+        },
+        {
+            "id": 56,
+            "label": "Low temperature alarm threshold",
+            "description": "If temperature is lower than the set value, underheat ...",
+            "overview": "<p>... notification will be sent and low temperature scene will be triggered (if activated).<\/p> <p>Available settings:<\/p> <p>-300-700 (-30-70\u00b0C, 0.1\u00b0C step)<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 40,
+            "read_only": false,
+            "write_only": false,
+            "value_min": -300,
+            "value_max": 700,
+            "options": []
+        },
+        {
+            "id": 70,
+            "label": "Scene activation functionality",
+            "description": "The device can trigger scenes using scene IDs assigned ...",
+            "overview": "<p>... to different events. To deactivate all scenes set the value to 0. To activate all scenes set the value to 3903.<\/p> <p>Available settings:<\/p> <p>1 - [ID 10] opening door\/window (single click)<br \/>2 - [ID 11] closing door\/window (single click)<br \/>4 - [ID 12] holding<br \/>8 - [ID 13] releasing<br \/>16 - [ID 14] double click<br \/>32 - [ID 15] triple click<br \/>256 - [ID 50] high temperature - door\/window<br \/>opened<br \/>512 - [ID 50] high temperature - door\/window<br \/>closed<br \/>1024 - [ID 51] low temperature - door\/window<br \/>opened<br \/>2048 - [ID 51] low temperature - door\/window<br \/>closed<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 2048,
+            "options": []
+        },
+        {
+            "id": 71,
+            "label": "Alarm broadcast",
+            "description": "Settings for broadcasting ON\/OFF commands, sensor ...",
+            "overview": "<p>... alarm and tamper alarm. Value other than 0 means alarms are sent in Broadcast Mode, to all devices only within the range of the device. They are not repeated by the mesh network.<\/p> <p>Available settings:<\/p> <p>0 - broadcasts inactive<br \/>1 - ON\/OFF commands broadcast active<br \/>2 - sensor alarm broadcast active<br \/>4 - tamper alarm broadcast active<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 4,
+            "options": []
+        },
+        {
+            "id": 72,
+            "label": "Associations in Z-Wave network Security Mode",
+            "description": "This parameter defines how commands are sent in ...",
+            "overview": "<p>... specified association groups: as secure or non-secure. Parameter is active only in Z-Wave network security mode. It does not apply to 1st group \u201cLifeline\u201d.<\/p> <p>Available settings:<\/p> <p>0 - none of the groups sent as secure<br \/>1 - 2nd group \u201dControl\u201d sent as secure<br \/>2 - 3rd group \u201dAlarm\u201d sent as secure<br \/>4 - 4th group \u201cSensor ZW3\u201d sent as secure<br \/>8 - 5th group \u201cTamper ZW3\u201d sent as secure<\/p> <p>15 - (all)<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 15,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 15,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Lifeline",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Control",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "Alarm",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 4,
+            "label": "Sensor ZW3",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 5,
+            "label": "Tamper ZW3",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

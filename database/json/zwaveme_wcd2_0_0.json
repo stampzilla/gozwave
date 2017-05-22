@@ -1,0 +1,525 @@
+{
+    "database_id": 147,
+    "label": "WCD2",
+    "manufacturer_name": "Z-Wave.Me",
+    "manufacturer_id": "0115",
+    "device_ref": [
+        "0100:0004"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Double Paddle Wall Controller",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.042,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_REMOTE"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_SWITCH_REMOTE_MULTILEVEL"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 18,
+                "name": "GENERIC_TYPE_SWITCH_REMOTE"
+            },
+            "specific_class": {
+                "id": 2,
+                "name": "SPECIFIC_TYPE_SWITCH_REMOTE_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "2B",
+                    "name": "SCENE_ACTIVATION",
+                    "version": "0",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "scene_number",
+                            "label": "Scene Number",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Button 1 and 3 pair mode",
+            "description": "In separate mode button 1 works with group 1, button 3 with groups 3. Click is On, Hold is dimming Up, Double click is Off, Click-Hold is dimming Down. In pair button 1\/3 are Up\/Down correspondingly. Click is On\/Off, Hold is dimming Up\/Down. Single clicks",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Separately"
+                },
+                {
+                    "value": 1,
+                    "label": "In pair without double clicks"
+                },
+                {
+                    "value": 2,
+                    "label": "In pair with double clicks"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "Button 2 and 4 pair mode",
+            "description": "In separate mode button 1 works with group 2, button 4 with groups 3. Click is On, Hold is dimming Up, Double click is Off, Click-Hold is dimming Down. In pair button 2\/4 are Up\/Down correspondingly. Click is On\/Off, Hold is dimming Up\/Down. Single clicks",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Separately"
+                },
+                {
+                    "value": 1,
+                    "label": "In pair without double clicks"
+                },
+                {
+                    "value": 2,
+                    "label": "In pair with double clicks"
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "label": "Action on group 1",
+            "description": "In Switch On\/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 * group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Switch On\/Off and Dim (send Basic Set and Switch Multilevel)"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch On\/Off only (send Basic Set)"
+                },
+                {
+                    "value": 3,
+                    "label": "Switch all"
+                },
+                {
+                    "value": 4,
+                    "label": "Send Scenes"
+                },
+                {
+                    "value": 5,
+                    "label": "Send Preconfigured Scenes"
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "label": "Action on group 2",
+            "description": "In Switch On\/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 * group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Switch On\/Off and Dim (send Basic Set and Switch Multilevel)"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch On\/Off only (send Basic Set)"
+                },
+                {
+                    "value": 3,
+                    "label": "Switch all"
+                },
+                {
+                    "value": 4,
+                    "label": "Send Scenes"
+                },
+                {
+                    "value": 5,
+                    "label": "Send Preconfigured Scenes"
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "label": "Action on group 3",
+            "description": "In Switch On\/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 * group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Switch On\/Off and Dim (send Basic Set and Switch Multilevel)"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch On\/Off only (send Basic Set)"
+                },
+                {
+                    "value": 3,
+                    "label": "Switch all"
+                },
+                {
+                    "value": 4,
+                    "label": "Send Scenes"
+                },
+                {
+                    "value": 5,
+                    "label": "Send Preconfigured Scenes"
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "label": "Action on group 4",
+            "description": "In Switch On\/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 * group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Switch On\/Off and Dim (send Basic Set and Switch Multilevel)"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch On\/Off only (send Basic Set)"
+                },
+                {
+                    "value": 3,
+                    "label": "Switch all"
+                },
+                {
+                    "value": 4,
+                    "label": "Send Scenes"
+                },
+                {
+                    "value": 5,
+                    "label": "Send Preconfigured Scenes"
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "label": "Typical click timeout",
+            "description": "Typical time used to differentiate click, hold and double clicks in 10ms units",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 50,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 21,
+            "label": "Send the following Switch All commands",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "NO (Normal Open)"
+                },
+                {
+                    "value": 2,
+                    "label": "NC (Normal Close)"
+                },
+                {
+                    "value": 255,
+                    "label": "Switch all on and off"
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "label": "Invert buttons",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No"
+                },
+                {
+                    "value": 1,
+                    "label": "Yes"
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "label": "Led Confirmation Mode",
+            "description": "This allows to save battery",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No Confirmations"
+                },
+                {
+                    "value": 1,
+                    "label": "Confirm Button Press"
+                },
+                {
+                    "value": 2,
+                    "label": "Confirm Button Press and delivery"
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "label": "Send unsolicited Battery Report on Wake Up",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No"
+                },
+                {
+                    "value": 1,
+                    "label": "To same node as wake up notification"
+                },
+                {
+                    "value": 2,
+                    "label": "Broadcast to neighbours"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Group 1",
+            "max_nodes": 8,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Group 2",
+            "max_nodes": 8,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "Group 3",
+            "max_nodes": 8,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 4,
+            "label": "Group 4",
+            "max_nodes": 8,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

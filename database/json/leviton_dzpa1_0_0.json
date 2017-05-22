@@ -1,0 +1,325 @@
+{
+    "database_id": 305,
+    "label": "DZPA1",
+    "manufacturer_name": "Leviton",
+    "manufacturer_id": "001D",
+    "device_ref": [
+        "1A02:0334",
+        "3601:0001"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Plug-in Appliance Module",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.052,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_SCENE_SWITCH_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 3,
+                "name": "SPECIFIC_TYPE_SCENE_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "2B",
+                    "name": "SCENE_ACTIVATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "77",
+                    "name": "NODE_NAMING",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 0,
+            "label": "",
+            "description": "",
+            "overview": "",
+            "size": 0,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": []
+        },
+        {
+            "id": 3,
+            "label": "Night Light",
+            "description": "Defines the behavior of the blue LED. <br>\r\n\t\t\tDefault is Night Light mode where LED is on when switch is off.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "LED on when switch is OFF"
+                },
+                {
+                    "value": 1,
+                    "label": "LED on when switch is ON"
+                },
+                {
+                    "value": 2,
+                    "label": "LED always off"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "label": "Invert Switch",
+            "description": "Invert the ON\/OFF Switch State. <br>\r\n\t\t\t Setting this parameter to Yes will change the top of the switch to OFF and the bottom to ON. <br> \r\n\t\t\t Note: If you invert the switches and also install the product upside down, the load will now \r\n\t\t\t be control",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No"
+                },
+                {
+                    "value": 1,
+                    "label": "Yes"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "label": "Ignore Start-Level (Receiving)",
+            "description": "This dimmer will start dimming from its current\r\n\t\t\t\tlevel.\r\n\t\t\t",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No"
+                },
+                {
+                    "value": 1,
+                    "label": "Yes"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "label": "On\/Off Command Dim Step",
+            "description": "Indicates how many levels the dimmer will change for\r\n\t\t\t\teach dimming step.\r\n\t\t\t",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 8,
+            "label": "On\/Off Command Dim Rate",
+            "description": "This value indicates in 10 millisecond resolution. <br>\r\n\t\t\tThis sets how often the dim level will change. For example, if you set this parameter to 1, \r\n\t\t\tthen every 10ms the dim level will change. If you set it to 255, then every 2.55 \r\n\t\t\tseconds the ",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 9,
+            "label": "Local Control Dim Step",
+            "description": "Indicates how many levels the dimmer will change for\r\n\t\t\t\teach dimming step.\r\n\t\t\t",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 10,
+            "label": "Local Control Dim Rate",
+            "description": "This value indicates in 10 millisecond resolution. <br>\r\n\t\t\tThis sets how often the dim level will change. For example, if you set this parameter to 1, \r\n\t\t\tthen every 10ms the dim level will change. If you set it to 255, then every 2.55 \r\n\t\t\tseconds the ",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 11,
+            "label": "ALL ON\/ALL OFF Dim Step",
+            "description": "Indicates how many levels the dimmer will change for\r\n\t\t\t\teach dimming step.\r\n\t\t\t",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 12,
+            "label": "ALL ON\/ALL OFF Dim Rate",
+            "description": "This value indicates in 10 millisecond resolution. <br>\r\n\t\t\tThis sets how often the dim level will change. For example, if you set this parameter to 1, \r\n\t\t\tthen every 10ms the dim level will change. If you set it to 255, then every 2.55 \r\n\t\t\tseconds the ",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        }
+    ],
+    "associations": []
+}

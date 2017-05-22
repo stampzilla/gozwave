@@ -1,0 +1,508 @@
+{
+    "database_id": 560,
+    "label": "ZIP-PAB01",
+    "manufacturer_name": "Philio Technology Corp",
+    "manufacturer_id": "013C",
+    "device_ref": [
+        "0006:001A"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Zipato Micromodule Energy Meter",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 4.005,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": false,
+    "beaming": false,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_METER"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_WHOLE_HOME_METER_SIMPLE"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 49,
+                "name": "GENERIC_TYPE_METER"
+            },
+            "specific_class": {
+                "id": 3,
+                "name": "SPECIFIC_TYPE_WHOLE_HOME_METER_SIMPLE"
+            },
+            "commandclasses": [
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_current",
+                            "label": "Intensty meter 0 (amps)",
+                            "config": [
+                                "type=E_A"
+                            ]
+                        },
+                        {
+                            "type": "meter_powerfactor",
+                            "label": "Power factor 0",
+                            "config": [
+                                "type=E_Power_Factor"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Power meter 0 (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        },
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh)",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_voltage",
+                            "label": "Line voltage (volts)",
+                            "config": [
+                                "type=E_V"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "56",
+                    "name": "CRC_16_ENCAP",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "60",
+                    "name": "MULTI_INSTANCE",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "7A",
+                    "name": "FIRMWARE_UPDATE_MD",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8E",
+                    "name": "MULTI_INSTANCE_ASSOCIATION",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 49,
+                "name": "GENERIC_TYPE_METER"
+            },
+            "specific_class": {
+                "id": 3,
+                "name": "SPECIFIC_TYPE_WHOLE_HOME_METER_SIMPLE"
+            },
+            "commandclasses": [
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_current",
+                            "label": "Intensity meter 1 (amps)",
+                            "config": [
+                                "type=E_A"
+                            ]
+                        },
+                        {
+                            "type": "meter_powerfactor",
+                            "label": "Power factor meter 1",
+                            "config": [
+                                "type=E_Power_Factor"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Power meter 1 (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        },
+                        {
+                            "type": "meter_kwh",
+                            "label": "Energy meter 1 (kWh)",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_voltage",
+                            "label": "Line voltage (volts)",
+                            "config": [
+                                "type=E_V"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "60",
+                    "name": "MULTI_INSTANCE",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 49,
+                "name": "GENERIC_TYPE_METER"
+            },
+            "specific_class": {
+                "id": 3,
+                "name": "SPECIFIC_TYPE_WHOLE_HOME_METER_SIMPLE"
+            },
+            "commandclasses": [
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_current",
+                            "label": "Intensity meter 2 (amps)",
+                            "config": [
+                                "type=E_A"
+                            ]
+                        },
+                        {
+                            "type": "meter_powerfactor",
+                            "label": "power factor 2",
+                            "config": [
+                                "type=E_Power_Factor"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Power meter 2 (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        },
+                        {
+                            "type": "meter_kwh",
+                            "label": "Energy meter 2 (kWh)",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_voltage",
+                            "label": "Line voltage 2 (volts)",
+                            "config": [
+                                "type=E_V"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 49,
+                "name": "GENERIC_TYPE_METER"
+            },
+            "specific_class": {
+                "id": 3,
+                "name": "SPECIFIC_TYPE_WHOLE_HOME_METER_SIMPLE"
+            },
+            "commandclasses": [
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_current",
+                            "label": "Intensity meter 3 (amps)",
+                            "config": [
+                                "type=E_A"
+                            ]
+                        },
+                        {
+                            "type": "meter_powerfactor",
+                            "label": "Power factor 3",
+                            "config": [
+                                "type=E_Power_Factor"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Power meter 3 (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        },
+                        {
+                            "type": "meter_kwh",
+                            "label": "Energy meter 3 (kWh)",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_voltage",
+                            "label": "Voltage 3 (volts)",
+                            "config": [
+                                "type=E_V"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Power meter report period",
+            "description": "Power meter report period, in 5 seconds unit. 720 -> 1 hour",
+            "overview": "<p>If the setting is configured for 1 hour (set value 720), the module will report its instant power consumption every 1 hour to the node of the corresponding group. The maximum interval to report its instant power consumption is 45h (5s * 32767 \/ 3600 = 45h)<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 720,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 32767,
+            "options": []
+        },
+        {
+            "id": 2,
+            "label": "Energy meter report period",
+            "description": "The accumulated power consumption report period",
+            "overview": "<p>If the setting is configured for 1 hour (set value 720), the module will report its accumulated\u00a0power consumption every 1 hour to the node of the corresponding group. The maximum interval to report its accumulated\u00a0power consumption is 45h (5s * 32767 \/ 3600 = 45h)<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 720,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 32767,
+            "options": []
+        },
+        {
+            "id": 3,
+            "label": "Selected default endpoint",
+            "description": "1 => CT1 and CT2, 2 => CT1, 3 => CT2",
+            "overview": "<p>If Controller does not use Multi Channel command class to access the endpoint of the module, you may configure the endpoint that will react to the Basic Command Class, Binary Switch command class or Meter command class V3.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 3,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "CT1 and CT2",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "Sum of CT1 and CT2",
+            "overview": "<p>Sum of :<\/p>\r\n<ul>\r\n<li>Instant power consumption from CT1 and CT2 (W)<\/li>\r\n<li>Accumulated power consumption from CT1 and CT2 (kWh)<\/li>\r\n<\/ul>"
+        },
+        {
+            "id": 2,
+            "label": "CT1",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "Data from CT1",
+            "overview": "<ul>\r\n<li>Instant power consumption from CT1 (W)<\/li>\r\n<li>Accumulated power consumption from CT1 (kWh)<\/li>\r\n<\/ul>"
+        },
+        {
+            "id": 3,
+            "label": "CT2",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "Data from CT2",
+            "overview": "<ol>\r\n<li>Instant power consumption from CT2 (W)<\/li>\r\n<li>Accumulated power consumption from CT2 (kWh)<\/li>\r\n<\/ol>"
+        }
+    ]
+}

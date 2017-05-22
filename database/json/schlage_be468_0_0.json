@@ -1,0 +1,345 @@
+{
+    "database_id": 240,
+    "label": "BE468",
+    "manufacturer_name": "Allegion",
+    "manufacturer_id": "003B",
+    "device_ref": [
+        "6349:5044"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Touchscreen Deadbolt",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 0,
+    "listening": false,
+    "frequently_listening": true,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 0,
+        "name": "Unknown"
+    },
+    "basic_class": {
+        "id": 0,
+        "name": null
+    },
+    "generic_class": {
+        "id": 0,
+        "name": null
+    },
+    "specific_class": {
+        "id": 0,
+        "name": "SPECIFIC_TYPE_NOT_USED"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 64,
+                "name": "GENERIC_TYPE_ENTRY_CONTROL"
+            },
+            "specific_class": {
+                "id": 3,
+                "name": "SPECIFIC_TYPE_SECURE_KEYPAD_DOOR_LOCK"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "22",
+                    "name": "APPLICATION_STATUS",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "62",
+                    "name": "DOOR_LOCK",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "lock_door",
+                            "label": "Door Lock",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "63",
+                    "name": "USER_CODE",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_access",
+                            "label": "Alarm (access)",
+                            "config": [
+                                "type=ACCESS_CONTROL"
+                            ]
+                        },
+                        {
+                            "type": "alarm_power",
+                            "label": "Alarm (power)",
+                            "config": [
+                                "type=POWER_MANAGEMENT"
+                            ]
+                        },
+                        {
+                            "type": "alarm_system",
+                            "label": "Alarm (system)",
+                            "config": [
+                                "type=SYSTEM"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "7A",
+                    "name": "FIRMWARE_UPDATE_MD",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "98",
+                    "name": "SECURITY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 3,
+            "label": "Beeper",
+            "description": "Audio feedback when keypad pressed during normal operation",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                },
+                {
+                    "value": 255,
+                    "label": "Enable"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "label": "Vacation Mode",
+            "description": "Prevents all user codes from unlocking the deadbolt",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                },
+                {
+                    "value": 255,
+                    "label": "Enable"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "label": "Lock & Leave",
+            "description": "Press the Schlage button to lock the deadbolt",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                },
+                {
+                    "value": 255,
+                    "label": "Enable"
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "label": "Auto Lock",
+            "description": "Automatically locks 30 seconds after unlocking",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                },
+                {
+                    "value": 255,
+                    "label": "Enable"
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "label": "User Code PIN Length",
+            "description": "User codes can be 4-8 digits. Changing length will delete all existing codes.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 4,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 4,
+            "value_max": 8,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Group 1",
+            "max_nodes": 2,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

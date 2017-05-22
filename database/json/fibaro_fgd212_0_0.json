@@ -1,0 +1,1667 @@
+{
+    "database_id": 133,
+    "label": "FGD212",
+    "manufacturer_name": "Fibargroup",
+    "manufacturer_id": "010F",
+    "device_ref": [
+        "0102:1000",
+        "0102:2000",
+        "0102:3000",
+        "0102:4000"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Dimmer 2",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 4.005,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "22",
+                    "name": "APPLICATION_STATUS",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "3",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Dimmer",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "2B",
+                    "name": "SCENE_ACTIVATION",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "scene_number",
+                            "label": "Scene Number",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "4",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_power",
+                            "label": "Sensor (power)",
+                            "config": [
+                                "type=POWER"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh)",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        },
+                        {
+                            "type": "meter_reset",
+                            "label": "Reset the total power consumption",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "56",
+                    "name": "CRC_16_ENCAP",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": false,
+                    "config": "REMOVE",
+                    "channels": []
+                },
+                {
+                    "id": "60",
+                    "name": "MULTI_INSTANCE",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_general",
+                            "label": "Alarm",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "3",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Dimmer",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "4",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_power",
+                            "label": "Sensor (power) 1",
+                            "config": [
+                                "type=POWER"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh) 1",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts) 1",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": false,
+                    "config": "REMOVE",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_general",
+                            "label": "Alarm 1",
+                            "config": []
+                        },
+                        {
+                            "type": "notification_send",
+                            "label": "Send notification",
+                            "config": [
+                                "event1=SMOKE:1",
+                                "event2=ACCESS_CONTROL:22",
+                                "event3=BURGLAR:1",
+                                "event4=EMERGENCY:1",
+                                "event5=EMERGENCY:2",
+                                "event6=EMERGENCY:3"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "3",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Dimmer",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": false,
+                    "config": "REMOVE",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Minimum brightness level",
+            "description": "The parameter is set automatically during the calibration process. The parameter can be changed manually after the calibration.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 98,
+            "options": []
+        },
+        {
+            "id": 2,
+            "label": "Maximum brightness level",
+            "description": "The parameter is set automatically during the calibration process. The parameter can be changed manually after the calibration.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 99,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 3,
+            "label": "Incandescence level of dimmable compact fluorescent lamps",
+            "description": "Virtual value set as a percentage level between parameters MIN (1%) and MAX. (99%). The Dimmer will set to this value after first switch on. It is required for warming up and switching dimmable compact fluorescent lamps and certain types of light sources.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 4,
+            "label": "Incandescence time of dimmable compact fluorescent lamps",
+            "description": "This parameter determines the time required for switching compact fluorescent lamps and certain types of light sources. Setting this parameter to 0 will disable the incandescence functionality. Available settings: 0-255 (0s - 25,5s)",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 5,
+            "label": "Dimming Step at Automatic Control",
+            "description": "The parameter defines the percentage of a dimming step at automatic control. 1-99",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 6,
+            "label": "Dimming Step Timing at Automatic Control",
+            "description": "The parameter defines the time of a dimming step at automatic control. Available settings: 0-255 (0s - 2,55s)",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 7,
+            "label": "Dimming Step at Manual Control",
+            "description": "The parameter defines the percentage of a dimming step at manual control. 1-99",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 8,
+            "label": "Dimming Step Timing at Manual Control",
+            "description": "The parameter defines the time of a dimming step at manual control. Available settings: 0-255 (0s - 2,55s)",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 9,
+            "label": "Saving state before power failure",
+            "description": "Saving state before power failure",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "State NOT saved at power failure, all outputs are set to OFF upon powe"
+                },
+                {
+                    "value": 1,
+                    "label": "State saved at power failure, all outputs are set to previous state up"
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "label": "Timer functionality (auto - off). 0 disables the function",
+            "description": "The parameter defines the setting of the timer. Available settings:1-32767 - time to turn off measured in seconds (1s - 9,1h)",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32767,
+            "options": []
+        },
+        {
+            "id": 11,
+            "label": "ALL ON\/ALL OFF function",
+            "description": "The parameter specifies the available functions.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "ALL ON not active, ALL OFF not active"
+                },
+                {
+                    "value": 1,
+                    "label": "ALL ON not active, ALL OFF active"
+                },
+                {
+                    "value": 2,
+                    "label": "ALL ON active, ALL OFF not active"
+                },
+                {
+                    "value": 255,
+                    "label": "ALL ON active, ALL OFF active"
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "label": "Force auto-calibration",
+            "description": "Changing the value of this parameter to 1 will force the calibration process. During the calibration parameter is set to 1 and switched to 0 upon completion.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "readout"
+                },
+                {
+                    "value": 1,
+                    "label": "force auto-calibration of the load without Fibaro Bypass"
+                },
+                {
+                    "value": 2,
+                    "label": "force auto-calibration of the load with Fibaro Bypass"
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "label": "Auto-calibration status (read-only parameter)",
+            "description": "This parameter determines operating mode of the Dimmer (automatic\/manual settings).",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": true,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "calibration procedure not performed or Dimmer operates on manual setti"
+                },
+                {
+                    "value": 1,
+                    "label": "Dimmer operates on auto-calibration settings"
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "label": "Burnt out bulb detection",
+            "description": "percentage value of power variation, compared to standard power consumption, measured during the calibration procedure (to be interpreted as load error\/burnt out bulb). 1-99, 0 disables the function.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 30,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 16,
+            "label": "Time delay of a burnt out bulb (parameter 15) or overload (parameter 39) detection",
+            "description": "Time of delay (in seconds) for power variation detection, interpreted as a LOAD ERROR or OVERLOAD detection (too much power connected to the Dimmer 2). 0 disables the function.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 19,
+            "label": "Forced switch on brightness level",
+            "description": "If the parameter is active, switching on the Dimmer 2 (S1 single click) will always set this brightness level. 0 disables the function.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 20,
+            "label": "Inputs Button\/Switch configuration",
+            "description": "Binary inputs type configuration",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Mono-stable input (button)"
+                },
+                {
+                    "value": 1,
+                    "label": "Bi-stable input (switch)"
+                },
+                {
+                    "value": 2,
+                    "label": "Roller blind switch (UP \/ DOWN)"
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "label": "Value sent to associated devices on single click",
+            "description": "The value sent to associated devices on single click.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "0xFF value is sent, which will set associated devices to their last sa"
+                },
+                {
+                    "value": 1,
+                    "label": "current Dimmer 2 state is sent, which will synchronize brightness leve"
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "label": "Change [On-Off] bi-stable keys",
+            "description": "This function allow user to change [On-Off] bi-stable keys (parameter no. 14) (default value 0)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Device changes status on key status change"
+                },
+                {
+                    "value": 1,
+                    "label": "Device status depends on key status; ON when the key is ON, OFF when t"
+                }
+            ]
+        },
+        {
+            "id": 23,
+            "label": "Double click option",
+            "description": "Double-click set lighting at 100%",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable double click"
+                },
+                {
+                    "value": 1,
+                    "label": "Enable double click"
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "label": "Command frames sent in 2nd and 3rd association groups (S1 associations)",
+            "description": "Parameter determines, which actions will not result in sending frames to association groups.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "all actions send to association groups"
+                },
+                {
+                    "value": 1,
+                    "label": "do not send when switching ON (single click)"
+                },
+                {
+                    "value": 2,
+                    "label": "do not send when switching OFF (single click)"
+                },
+                {
+                    "value": 4,
+                    "label": "do not send when changing dimming level (holding and releasing)"
+                },
+                {
+                    "value": 8,
+                    "label": "do not send on double click"
+                },
+                {
+                    "value": 16,
+                    "label": "send 0xFF value on double click"
+                }
+            ]
+        },
+        {
+            "id": 25,
+            "label": "Command frames sent in 4th and 5th association groups (S2associations)",
+            "description": "Parameter determines, which actions will not result in sending frames to association groups.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "all actions send to association groups"
+                },
+                {
+                    "value": 1,
+                    "label": "do not send when switching ON (single click)"
+                },
+                {
+                    "value": 2,
+                    "label": "do not send when switching OFF (single click)"
+                },
+                {
+                    "value": 4,
+                    "label": "do not send when changing dimming level (holding and releasing)"
+                },
+                {
+                    "value": 8,
+                    "label": "do not send on double click"
+                },
+                {
+                    "value": 16,
+                    "label": "send 0xFF value on double click"
+                }
+            ]
+        },
+        {
+            "id": 26,
+            "label": "The function of 3-way switch",
+            "description": "Key no. 2 controls the Dimmer additionally (in 3-way switch mode). Function disabled for parameter 20 set to 2 (roller blind switch).",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "3-way switch function for S2 disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "3-way switch function for S2 enabled"
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "label": "Associations in Z-Wave network security mode",
+            "description": "This parameter defines how commands are sent in specified association groups: as secure or non-secure. Parameter is active only in Z-Wave network security mode. It does not apply to 1st Lifeline group.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 15,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "all groups (II-V) sent as non-secure"
+                },
+                {
+                    "value": 1,
+                    "label": "2nd group sent as secure"
+                },
+                {
+                    "value": 2,
+                    "label": "3rd group sent as secure"
+                },
+                {
+                    "value": 4,
+                    "label": "4th group sent as secure"
+                },
+                {
+                    "value": 8,
+                    "label": "5th group sent as secure"
+                },
+                {
+                    "value": 15,
+                    "label": "all groups (II-V) sent as secure"
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "label": "Scene activation functionality",
+            "description": "SCENE ID depends on the switch type configuration",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Scene functionality deactivated"
+                },
+                {
+                    "value": 1,
+                    "label": "Scene functionality activated"
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "label": "Switch functionality of S1 and S2",
+            "description": "Switch S1 and S2 buttons",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "standard mode"
+                },
+                {
+                    "value": 1,
+                    "label": "S1 operates as S2, S2 operates as S1"
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "label": "Load control mode",
+            "description": "The parameter defines the used control mode.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "forced leading edge control"
+                },
+                {
+                    "value": 1,
+                    "label": "forced trailing edge control"
+                },
+                {
+                    "value": 2,
+                    "label": "control mode selected automatically (based on auto-calibration)"
+                }
+            ]
+        },
+        {
+            "id": 31,
+            "label": "Load control mode recognized during auto-calibration",
+            "description": "Load control mode recognized during auto-calibration",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": true,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "leading edge control"
+                },
+                {
+                    "value": 1,
+                    "label": "trailing edge control"
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "label": "On\/Off mode",
+            "description": "This mode is necessary while connecting non-dimmable light sources. Enabling parameter 32 automatically ignores brightening\/- dimming time settings.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "on\/off mode disabled (dimming is possible)"
+                },
+                {
+                    "value": 1,
+                    "label": "on\/off mode enabled (dimming is not possible)"
+                },
+                {
+                    "value": 2,
+                    "label": "mode selected automatically"
+                }
+            ]
+        },
+        {
+            "id": 33,
+            "label": "Dimmability of the load (read only)",
+            "description": "Dimmability of the load (read only)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": true,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Load recognized as dimmable"
+                },
+                {
+                    "value": 1,
+                    "label": "Load recognized as non-dimmable"
+                }
+            ]
+        },
+        {
+            "id": 34,
+            "label": "Soft-Start functionality",
+            "description": "Time required to warm up the filament of halogen bulb.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "no soft-start"
+                },
+                {
+                    "value": 1,
+                    "label": "short soft-start (0,1s)"
+                },
+                {
+                    "value": 2,
+                    "label": "long soft-start (0,5s)"
+                }
+            ]
+        },
+        {
+            "id": 35,
+            "label": "Auto-calibration after power on",
+            "description": "This parameter determines the trigger of auto-calibration procedure, e.g. power on, load error, etc.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No auto-calibration of the load after power on"
+                },
+                {
+                    "value": 1,
+                    "label": "Auto-calibration performed after first power on"
+                },
+                {
+                    "value": 2,
+                    "label": "Auto-calibration performed after each power on"
+                },
+                {
+                    "value": 3,
+                    "label": "Auto-calibration performed after first power on or after each LOAD ERR"
+                },
+                {
+                    "value": 4,
+                    "label": "Auto-calibration performed after each power on or after each LOAD ERRO"
+                }
+            ]
+        },
+        {
+            "id": 37,
+            "label": "Behaviour of the Dimmer after overload or surge",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "device permanently disabled until re-enabling by comand or push-button"
+                },
+                {
+                    "value": 1,
+                    "label": "three attempts to turn on the load"
+                }
+            ]
+        },
+        {
+            "id": 39,
+            "label": "Power limit - OVERLOAD",
+            "description": "Reaching the defined value will result in turning off the load. Parameter 39 is relevant only in a 3-wire connection i or a 2-wire connection for load of cos\u03c6 \u2265 0.99. (1 W - 250 W). 0 disables the function.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 250,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 250,
+            "options": []
+        },
+        {
+            "id": 40,
+            "label": "General Purpose Alarm",
+            "description": "The parameter specifies the response to an alarm.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No reaction"
+                },
+                {
+                    "value": 1,
+                    "label": "Turn on the load"
+                },
+                {
+                    "value": 2,
+                    "label": "Turn off the load"
+                },
+                {
+                    "value": 3,
+                    "label": "Load blinking"
+                }
+            ]
+        },
+        {
+            "id": 41,
+            "label": "Water Flooding Alarm",
+            "description": "The parameter specifies the response to an alarm.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No reaction"
+                },
+                {
+                    "value": 1,
+                    "label": "Turn on the load"
+                },
+                {
+                    "value": 2,
+                    "label": "Turn off the load"
+                },
+                {
+                    "value": 3,
+                    "label": "Load blinking"
+                }
+            ]
+        },
+        {
+            "id": 42,
+            "label": "Smoke, CO or CO2 Alarm",
+            "description": "The parameter specifies the response to an alarm.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No reaction"
+                },
+                {
+                    "value": 1,
+                    "label": "Turn on the load"
+                },
+                {
+                    "value": 2,
+                    "label": "Turn off the load"
+                },
+                {
+                    "value": 3,
+                    "label": "Load blinking"
+                }
+            ]
+        },
+        {
+            "id": 43,
+            "label": "Temperature Alarm",
+            "description": "The parameter specifies the response to an alarm.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No reaction"
+                },
+                {
+                    "value": 1,
+                    "label": "Turn on the load"
+                },
+                {
+                    "value": 2,
+                    "label": "Turn off the load"
+                },
+                {
+                    "value": 3,
+                    "label": "Load blinking"
+                }
+            ]
+        },
+        {
+            "id": 44,
+            "label": "Time of alarm state",
+            "description": "Alarm state may be cancelled earlier, as a result of pushing the wall-switch keys or sending the Z-Wave command frame. Available settings: 1-32767 (1s - 32767s).",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 600,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 32767,
+            "options": []
+        },
+        {
+            "id": 45,
+            "label": "OVERLOAD alarm report",
+            "description": "(load power consumption too high)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No reaction"
+                },
+                {
+                    "value": 1,
+                    "label": "Send an alarm frame"
+                }
+            ]
+        },
+        {
+            "id": 46,
+            "label": "LOAD ERROR alarm report",
+            "description": "(no load, load failure, burnt out bulb)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No reaction"
+                },
+                {
+                    "value": 1,
+                    "label": "Send an alarm frame"
+                }
+            ]
+        },
+        {
+            "id": 47,
+            "label": "OVERCURRENT alarm report",
+            "description": "(short circuit, burnt out bulb causing overcurrent)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No reaction"
+                },
+                {
+                    "value": 1,
+                    "label": "Send an alarm frame"
+                }
+            ]
+        },
+        {
+            "id": 48,
+            "label": "SURGE alarm report",
+            "description": "(Dimmer output overvoltage)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No reaction"
+                },
+                {
+                    "value": 1,
+                    "label": "Send an alarm frame"
+                }
+            ]
+        },
+        {
+            "id": 49,
+            "label": "OVERHEAT (critical temperature) and VOLTAGE DROP (low voltage) alarm report",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No reaction"
+                },
+                {
+                    "value": 1,
+                    "label": "Send an alarm frame"
+                }
+            ]
+        },
+        {
+            "id": 50,
+            "label": "Active power reports",
+            "description": "The parameter defines the power level change that will result in a new power report being sent. The value is a percentage of the previous report. 0 disables the function.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 52,
+            "label": "Periodic active power and energy reports",
+            "description": "Parameter 52 defines a time period between consecutive reports. Timer is reset and counted from zero after each report (1 sec - 32767 sec). 0 disables the function.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 3600,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32767,
+            "options": []
+        },
+        {
+            "id": 53,
+            "label": "Energy reports",
+            "description": "Energy level change which will result in sending a new energy report. Available settings: 1-255 (0,01 - 2,55 kWh). 0 disables the function.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 54,
+            "label": "Self-measurement",
+            "description": "The Dimmer may include active power and energy used by itself in reports sent to the main controller.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Self-measurement inactive"
+                },
+                {
+                    "value": 1,
+                    "label": "Self-measurement active"
+                }
+            ]
+        },
+        {
+            "id": 58,
+            "label": "Method of calculating the active power",
+            "description": "This parameter defines how to calculate active power. It is useful in a case of 2-wire connection with light sources other than resistive. Note: Parameter 58 is set to 0 after forced auto-calibration",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "measurement based on the standard algorithm"
+                },
+                {
+                    "value": 1,
+                    "label": "approximation based on the calibration data"
+                },
+                {
+                    "value": 2,
+                    "label": "approximation based on the control angle"
+                }
+            ]
+        },
+        {
+            "id": 59,
+            "label": "Approximated power at the maximum brightness level",
+            "description": "This parameter determines the approximate value of the power that will be reported by the device at its maximum brightness level. Available settings: 0-500 (0-500W). Note: Parameter 59 works only when parameter 58 has a value other than 0.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 500,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Lifeline - Controller Updates",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Sends BASIC SET command class frame according to the state of the devi",
+            "max_nodes": 10,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "Sends BASIC SET command class frame according to the state of the devi",
+            "max_nodes": 10,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 4,
+            "label": "Sends BASIC SET command class frame according to the state of the devi",
+            "max_nodes": 10,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 5,
+            "label": "Sends BASIC SET command class frame according to the state of the devi",
+            "max_nodes": 10,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

@@ -1,0 +1,739 @@
+{
+    "database_id": 149,
+    "label": "ZME_RC2",
+    "manufacturer_name": "Z-Wave.Me",
+    "manufacturer_id": "0115",
+    "device_ref": [
+        "1000:0300"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Z-Wave Remote Control+",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.067,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_REMOTE"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_SWITCH_REMOTE_MULTILEVEL"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 18,
+                "name": "GENERIC_TYPE_SWITCH_REMOTE"
+            },
+            "specific_class": {
+                "id": 2,
+                "name": "SPECIFIC_TYPE_SWITCH_REMOTE_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "2B",
+                    "name": "SCENE_ACTIVATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "scene_number",
+                            "label": "Scene Number",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8E",
+                    "name": "MULTI_INSTANCE_ASSOCIATION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 10,
+            "label": "Command to Control Group No1 (association group 2)",
+            "description": "This parameter defines the command to be sent to devices of control group No1 when the related button is pressed (association group 2)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Switch On\/Off and Dim (send Basic Set and Switch Multilevel)"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch On\/Off only (send Basic Set)"
+                },
+                {
+                    "value": 3,
+                    "label": "Switch All"
+                },
+                {
+                    "value": 4,
+                    "label": "Send Scenes"
+                },
+                {
+                    "value": 5,
+                    "label": "Send Preconfigured Scenes"
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "label": "Command to Control Group No2 (association group 3)",
+            "description": "This parameter defines the command to be sent to devices of control group No2 when the related button is pressed (association group 3)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Switch On\/Off and Dim (send Basic Set and Switch Multilevel)"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch On\/Off only (send Basic Set)"
+                },
+                {
+                    "value": 3,
+                    "label": "Switch All"
+                },
+                {
+                    "value": 4,
+                    "label": "Send Scenes"
+                },
+                {
+                    "value": 5,
+                    "label": "Send Preconfigured Scenes"
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "label": "Command to Control Group No3 (association group 4)",
+            "description": "This parameter defines the command to be sent to devices of control group No3 when the related button is pressed (association group 4)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Switch On\/Off and Dim (send Basic Set and Switch Multilevel)"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch On\/Off only (send Basic Set)"
+                },
+                {
+                    "value": 3,
+                    "label": "Switch All"
+                },
+                {
+                    "value": 4,
+                    "label": "Send Scenes"
+                },
+                {
+                    "value": 5,
+                    "label": "Send Preconfigured Scenes"
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "label": "Command to Control Group No4 (association group 5)",
+            "description": "This parameter defines the command to be sent to devices of control group No4 when the related button is pressed (association group 5)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Switch On\/Off and Dim (send Basic Set and Switch Multilevel)"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch On\/Off only (send Basic Set)"
+                },
+                {
+                    "value": 3,
+                    "label": "Switch All"
+                },
+                {
+                    "value": 4,
+                    "label": "Send Scenes"
+                },
+                {
+                    "value": 5,
+                    "label": "Send Preconfigured Scenes"
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "label": "Command to Control Group No5 (association group 6)",
+            "description": "This parameter defines the command to be sent to devices of control group No5 when the related button is pressed (association group 6)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Switch On\/Off and Dim (send Basic Set and Switch Multilevel)"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch On\/Off only (send Basic Set)"
+                },
+                {
+                    "value": 3,
+                    "label": "Switch All"
+                },
+                {
+                    "value": 4,
+                    "label": "Send Scenes"
+                },
+                {
+                    "value": 5,
+                    "label": "Send Preconfigured Scenes"
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "label": "Command to Control Group No6 (association group 7)",
+            "description": "This parameter defines the command to be sent to devices of control group No6 when the related button is pressed (association group 7)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Switch On\/Off and Dim (send Basic Set and Switch Multilevel)"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch On\/Off only (send Basic Set)"
+                },
+                {
+                    "value": 3,
+                    "label": "Switch All"
+                },
+                {
+                    "value": 4,
+                    "label": "Send Scenes"
+                },
+                {
+                    "value": 5,
+                    "label": "Send Preconfigured Scenes"
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "label": "Command to Control Group No7 (association group 8)",
+            "description": "This parameter defines the command to be sent to devices of control group No7 when the related button is pressed (association group 8)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Switch On\/Off and Dim (send Basic Set and Switch Multilevel)"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch On\/Off only (send Basic Set)"
+                },
+                {
+                    "value": 3,
+                    "label": "Switch All"
+                },
+                {
+                    "value": 4,
+                    "label": "Send Scenes"
+                },
+                {
+                    "value": 5,
+                    "label": "Send Preconfigured Scenes"
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "label": "Command to Control Scene No1 (association group 9)",
+            "description": "This parameter defines the command to be sent to devices of control scene group No1 when the related button is pressed (association group 9)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 4,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Switch On\/Off and Dim (send Basic Set and Switch Multilevel)"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch On\/Off only (send Basic Set)"
+                },
+                {
+                    "value": 3,
+                    "label": "Switch All"
+                },
+                {
+                    "value": 4,
+                    "label": "Send Scenes"
+                },
+                {
+                    "value": 5,
+                    "label": "Send Preconfigured Scenes"
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "label": "Command to Control Scene No2 (association group 10)",
+            "description": "This parameter defines the command to be sent to devices of control scene group No2 when the related button is pressed (association group 10)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 4,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Switch On\/Off and Dim (send Basic Set and Switch Multilevel)"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch On\/Off only (send Basic Set)"
+                },
+                {
+                    "value": 3,
+                    "label": "Switch All"
+                },
+                {
+                    "value": 4,
+                    "label": "Send Scenes"
+                },
+                {
+                    "value": 5,
+                    "label": "Send Preconfigured Scenes"
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "label": "Command to Control Scene No3 (association group 11)",
+            "description": "This parameter defines the command to be sent to devices of control scene group No3 when the related button is pressed (association group 11)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 4,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Switch On\/Off and Dim (send Basic Set and Switch Multilevel)"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch On\/Off only (send Basic Set)"
+                },
+                {
+                    "value": 3,
+                    "label": "Switch All"
+                },
+                {
+                    "value": 4,
+                    "label": "Send Scenes"
+                },
+                {
+                    "value": 5,
+                    "label": "Send Preconfigured Scenes"
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "label": "Command to Control group All On\/Off (association group 12)",
+            "description": "This parameter defines the command to be sent to devices of control group All On\/Off when the related button is pressed (association group 12)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Switch On\/Off and Dim (send Basic Set and Switch Multilevel)"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch On\/Off only (send Basic Set)"
+                },
+                {
+                    "value": 3,
+                    "label": "Switch All"
+                },
+                {
+                    "value": 4,
+                    "label": "Send Scenes"
+                },
+                {
+                    "value": 5,
+                    "label": "Send Preconfigured Scenes"
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "label": "Send the following Switch All commands",
+            "description": "Send the following Switch All commands",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Switch off only"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch on only"
+                },
+                {
+                    "value": 255,
+                    "label": "Switch all on and off"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Lifeline. Send to controller battery level and WakeUp Notification",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "The buttons of group No1",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "The buttons of group No2",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 4,
+            "label": "The buttons of group No3",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 5,
+            "label": "The buttons of group No4",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 6,
+            "label": "The buttons of group No5",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 7,
+            "label": "The buttons of group No6",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 8,
+            "label": "The buttons of group No7",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 9,
+            "label": "The buttons of scene No1",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 10,
+            "label": "The buttons of scene No2",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 11,
+            "label": "The buttons of scene No3",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 12,
+            "label": "The buttons of All On\/Off",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

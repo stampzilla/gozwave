@@ -1,168 +1,140 @@
 package main
 
 import (
-	"bytes"
-	"encoding/binary"
-	"encoding/hex"
-	"encoding/xml"
+	"encoding/json"
 	"flag"
 	"fmt"
-	"html/template"
 	"io/ioutil"
 	"log"
 	"os"
 	"path/filepath"
-	"strconv"
 	"strings"
+	"text/template"
 )
 
-// http://products.z-wavealliance.org/products/1729
-// http://www.pepper1.net/zwavedb/
-
-type deviceDataValue struct {
-	Value string `xml:"value,attr"`
-}
+// http://www.cd-jackson.com/index.php/zwave/zwave-device-database
 
 type deviceData struct {
-	ManufacturerID  deviceDataValue `xml:"manufacturerId"`
-	ProductType     deviceDataValue `xml:"productType"`
-	ProductID       deviceDataValue `xml:"productId"`
-	LibType         deviceDataValue `xml:"libType"`
-	ProtoVersion    deviceDataValue `xml:"protoVersion"`
-	ProtoSubVersion deviceDataValue `xml:"protoSubVersion"`
-	AppVersion      deviceDataValue `xml:"appVersion"`
-	AppSubVersion   deviceDataValue `xml:"appSubVersion"`
-	BasicClass      deviceDataValue `xml:"basicClass"`
-	GenericClass    deviceDataValue `xml:"genericClass"`
-	SpecificClass   deviceDataValue `xml:"specificClass"`
-	Optional        deviceDataValue `xml:"optional"`
-	Listening       deviceDataValue `xml:"listening"`
-	Routing         deviceDataValue `xml:"routing"`
-	BeamSensor      string          `xml:"beamSensor"`
-	RfFrequency     string          `xml:"rfFrequency"`
+	Label               string         `json:"label"`
+	ManufacturerName    string         `json:"manufacturer_name"`
+	ManufacturerID      string         `json:"manufacturer_id"`
+	DeviceRefs          []deviceRef    `json:"device_ref"`
+	VersionMin          float64        `json:"version_min"`
+	VersionMax          float64        `json:"version_max"`
+	Decription          string         `json:"decription"`
+	Overview            string         `json:"overview"`
+	Inclusion           string         `json:"inclusion"`
+	Exclusion           string         `json:"exclusion"`
+	Wakeup              string         `json:"wakeup"`
+	ProtocolVersion     float64        `json:"protocolVersion"`
+	Listening           bool           `json:"listening"`
+	FrequentlyListening bool           `json:"frequently_listening"`
+	Routing             bool           `json:"routing"`
+	Beaming             bool           `json:"beaming"`
+	LibraryType         idName         `json:"library_type"`
+	BasicClass          idName         `json:"basic_class"`
+	GenericClass        idName         `json:"generic_class"`
+	SpecificClass       idName         `json:"specific_class"`
+	Endpoints           []endpoint     `json:"endpoints"`
+	CommandClasses      []commandClass `json:"-"`
+	Parameters          []parameter    `json:"parameters"`
+	Associations        []association  `json:"associations"`
+}
+
+type deviceRef struct {
+	ProductType string
+	ProductID   string
+}
+
+func (ref *deviceRef) UnmarshalJSON(b []byte) error {
+	var s string
+	if err := json.Unmarshal(b, &s); err != nil {
+		return err
+	}
+	ss := strings.Split(s, ":")
+	switch len(ss) {
+	case 2:
+		ref.ProductID = ss[1]
+		fallthrough
+	case 1:
+		ref.ProductType = ss[0]
+	}
+	return nil
+}
+
+type idName struct {
+	ID   int    `json:"id"`
+	Name string `json:"name"`
+}
+
+type endpoint struct {
+	BasicClass     idName         `json:"basic_class"`
+	GenericClass   idName         `json:"generic_class"`
+	SpecificClass  idName         `json:"specific_class"`
+	CommandClasses []commandClass `json:"commandclasses"`
 }
 
 type commandClass struct {
-	ID         string `xml:"id,attr"`
-	Controlled string `xml:"controlled,attr"`
-	InNIF      string `xml:"inNIF,attr"`
-	Secure     string `xml:"secure,attr"`
-	NonSecure  string `xml:"nonSecure,attr"`
-	Version    string `xml:"version,attr"`
+	ID        string    `json:"id"`
+	Name      string    `json:"name"`
+	Version   string    `json:"version"`
+	Nif       bool      `json:"nif"`
+	Basic     bool      `json:"basic"`
+	Secure    bool      `json:"secure"`
+	NonSecure bool      `json:"nonsecure"`
+	Config    string    `json:"config"`
+	Channels  []channel `json:"channels"`
 }
 
-func (c commandClass) IDasHex() string {
-	return "0x" + c.ID
+type channel struct {
+	Type  string `json:"type"`
+	Label string `json:"label"`
+	//	Config []??? `json:"config"`
 }
 
-type deviceDescription struct {
-	BrandName   string `xml:"brandName"`
-	ProductName string `xml:"productName"`
-	Description string `xml:"description"`
-}
-
-func (dd deviceDescription) EscapedDescription() string {
-	return removeNewLines(dd.Description)
-}
-
-func (dd deviceDescription) EscapedProductName() string {
-	return removeNewLines(dd.ProductName)
-}
-func (dd deviceDescription) EscapedBrandName() string {
-	return removeNewLines(dd.BrandName)
-}
-
-type lang struct {
-	Language string `xml:"lang,attr"`
-	Body     string `xml:",chardata"`
-}
-
-type value struct {
-	From string `xml:"from,attr"`
-	To   string `xml:"to,attr"`
-	Desc []lang `xml:"description>lang"`
-	Unit string `xml:"unit,attr"`
-
-	size int
-}
-
-func (p value) FromDec() string {
-	return strToUint(p.From, p.size)
-}
-func (p value) ToDec() string {
-	return strToUint(p.To, p.size)
-}
-
-func strToUint(str string, size int) string {
-	b, _ := hex.DecodeString(str)
-	buf := bytes.NewReader(b)
-
-	var res int
-
-	switch size {
-	case 1:
-		var i uint8
-		binary.Read(buf, binary.BigEndian, &i)
-		res = int(i)
-	case 2:
-		var i uint16
-		binary.Read(buf, binary.BigEndian, &i)
-		res = int(i)
-	case 4:
-		var i uint32
-		binary.Read(buf, binary.BigEndian, &i)
-		res = int(i)
-	}
-
-	ret := strconv.Itoa(res)
-	return ret
-}
-
-func (p value) EscapedDesc() string {
-	for _, v := range p.Desc {
-		if v.Language == "en" && v.Body != "" {
-			return removeNewLines(v.Body)
-		}
-	}
-
-	return ""
+type option struct {
+	Value int    `json:"value"`
+	Label string `json:"label"`
 }
 
 type parameter struct {
-	ID      string `xml:"number,attr"`
-	Name    []lang `xml:"name>lang"`
-	Desc    []lang `xml:"description>lang"`
-	Type    string `xml:"type,attr"`
-	Size    string `xml:"size,attr"`
-	Default string `xml:"default,attr"`
-
-	Values []value `xml:"value"`
+	ID          int      `json:"id"`
+	Label       string   `json:"label"`
+	Description string   `json:"description"`
+	Overview    string   `json:"overview"`
+	Size        int      `json:"size"`
+	Bitmask     string   `json:"bitmask"`
+	Default     int      `json:"default"`
+	ReadOnly    bool     `json:"read_only"`
+	WriteOnly   bool     `json:"write_only"`
+	ValueMin    int      `json:"value_min"`
+	ValueMax    int      `json:"value_max"`
+	Options     []option `json:"options"`
 }
 
-func (p parameter) NameCombined() string {
-	for _, v := range p.Name {
-		if v.Language == "en" && v.Body != "" {
-			return removeNewLines(v.Body)
-		}
-	}
-	for _, v := range p.Desc {
-		if v.Language == "en" && v.Body != "" {
-			return removeNewLines(v.Body)
-		}
-	}
-
-	return "Parameter " + p.ID
+type association struct {
+	ID          int    `json:"id"`
+	Label       string `json:"label"`
+	MaxNodes    int    `json:"max_nodes"`
+	Controller  bool   `json:"controller"`
+	Description string `json:"description"`
+	Overview    string `json:"overview"`
 }
 
-type zWaveDevice struct {
-	Filename          string
-	Name              string
-	XMLName           xml.Name          `xml:"ZWaveDevice"`
-	DescriptorVersion string            `xml:"descriptorVersion"`
-	DeviceData        deviceData        `xml:"deviceData"`
-	DeviceDescription deviceDescription `xml:"deviceDescription"`
-	CommandClasses    []commandClass    `xml:"commandClasses>commandClass"`
-	Parameters        []parameter       `xml:"configParams>configParam"`
+var escaper = strings.NewReplacer(
+	"\\", "\\\\", // backslash
+	"\"", "\\\"", // quote
+	"\r", "\\r",
+	"\n", "\\n",
+)
+
+var funcMap = template.FuncMap{
+	"escape": func(s string) string {
+		return escaper.Replace(s)
+	},
+	"lowercase": func(s string) string {
+		return strings.ToLower(s)
+	},
 }
 
 var templ = `package {{.Package}}
@@ -196,42 +168,42 @@ type Device struct{
 	ProductID string
 }
 func New(manufacturerID, productType, productID string) *Device{
-	dev := manufacturerID+productType+productID
+	dev := manufacturerID+"_"+productType+"_"+productID
 	switch dev {
 {{- range $value := .Devices }}
-	case "{{ $value.DeviceData.ManufacturerID.Value }}{{ $value.DeviceData.ProductType.Value }}{{ $value.DeviceData.ProductID.Value }}":
-		return New{{ $value.DeviceData.ManufacturerID.Value }}{{ $value.DeviceData.ProductType.Value }}{{ $value.DeviceData.ProductID.Value }}() // {{ $value.Filename }} | {{ $value.Name }}
+{{- range $ref := $value.DeviceRefs }}
+	case "{{ $value.ManufacturerID | lowercase }}_{{ $ref.ProductType | lowercase }}_{{ $ref.ProductID | lowercase }}":
+		return New{{ $value.ManufacturerID }}_{{ $ref.ProductType }}_{{ $ref.ProductID }}()
+{{- end}}
 {{- end}}
 	}
 
 	return nil
 }
 {{- range $value := .Devices }}
-func New{{ $value.DeviceData.ManufacturerID.Value }}{{ $value.DeviceData.ProductType.Value }}{{ $value.DeviceData.ProductID.Value }}() *Device{
+{{- range $ref := $value.DeviceRefs }}
+func New{{ $value.ManufacturerID }}_{{ $ref.ProductType }}_{{ $ref.ProductID }}() *Device{
 	return &Device{
-		Brand: "{{ $value.DeviceDescription.EscapedBrandName }}",
-		Product: "{{ $value.DeviceDescription.EscapedProductName }}",
-		Description: "{{ $value.DeviceDescription.EscapedDescription }}",
+		Brand: "{{ $value.ManufacturerName | escape }}",
+		Product: "{{ $value.Label | escape }}",
+		Description: "{{ $value.Decription | escape }}",
 
-		ManufacturerID: "{{$value.DeviceData.ManufacturerID.Value }}",
-		ProductType: "{{$value.DeviceData.ProductType.Value }}",
-		ProductID: "{{$value.DeviceData.ProductID.Value }}",
+		ManufacturerID: "{{ $value.ManufacturerID }}",
+		ProductType: "{{ $ref.ProductType }}",
+		ProductID: "{{ $ref.ProductID }}",
 		CommandClasses: []*CommandClass{
 {{- range $cmd := $value.CommandClasses }}
 			&CommandClass{
 				{{- if ne $cmd.ID ""}}
-				ID: {{$cmd.IDasHex}},
+				ID: 0x{{$cmd.ID}},
 				{{- end }}
-				{{- if ne $cmd.Controlled "" }}
-				Controlled: "{{$cmd.Controlled}}",
+				{{- if $cmd.Nif}}
+				InNIF: {{$cmd.Nif}},
 				{{- end }}
-				{{- if ne $cmd.InNIF ""}}
-				InNIF: "{{$cmd.InNIF}}",
-				{{- end }}
-				{{- if ne $cmd.Secure ""}}
+				{{- if $cmd.Secure}}
 				Secure: {{$cmd.Secure}},
 				{{- end }}
-				{{- if ne $cmd.NonSecure ""}}
+				{{- if $cmd.NonSecure}}
 				NonSecure: {{$cmd.NonSecure}},
 				{{- end }}
 				{{- if ne $cmd.Version ""}}
@@ -243,21 +215,24 @@ func New{{ $value.DeviceData.ManufacturerID.Value }}{{ $value.DeviceData.Product
 		Parameters: []*parameter{
 {{- range $cmd := $value.Parameters }}
 			&parameter{
-				{{- if ne $cmd.ID ""}}
+				{{- if gt $cmd.ID 0}}
 				ID: {{$cmd.ID}},
 				{{- end }}
-				Name: "{{$cmd.NameCombined}}",
-				Type: "{{$cmd.Type}}",
+				Name: "{{$cmd.Label | escape}}",
 				Size: {{$cmd.Size}},
 				Values: []Value{
-{{- range $value := $cmd.Values }}
+{{- range $option := $cmd.Options }}
 					Value{
-						From: {{$value.FromDec }},
-						To: {{$value.ToDec}},
-						Desc: "{{$value.EscapedDesc}}",
-						Unit: "{{$value.Unit}}",
+						From: {{$option.Value}},
+						To: {{$option.Value}},
+						Desc: "{{$option.Label | escape}}",
 					},
-{{- end }}
+{{- else}}
+					Value{
+						From: {{$cmd.ValueMin}},
+						To: {{$cmd.ValueMax}},
+					},
+{{- end}}
 				},
 			},
 {{- end}}
@@ -265,11 +240,12 @@ func New{{ $value.DeviceData.ManufacturerID.Value }}{{ $value.DeviceData.Product
 	}
 }
 {{- end}}
+{{- end}}
 `
 
 type templates struct {
-	Devices map[string]*zWaveDevice
 	Package string
+	Devices []deviceData
 }
 
 var outputfile string
@@ -277,9 +253,9 @@ var databaseDir string
 var packageName string
 
 func main() {
-	flag.StringVar(&outputfile, "file", "", "Output file")
-	flag.StringVar(&databaseDir, "databasedir", "./database", "Directory with xml files")
-	flag.StringVar(&packageName, "package", "devices", "Package name of generated code")
+	flag.StringVar(&outputfile, "file", "./database/devices.go", "Output file")
+	flag.StringVar(&databaseDir, "databasedir", "./database/json", "Directory with xml files")
+	flag.StringVar(&packageName, "package", "database", "Package name of generated code")
 
 	flag.Parse()
 
@@ -291,53 +267,55 @@ func main() {
 		log.Fatal(err)
 	}
 
-	devices.Devices = make(map[string]*zWaveDevice)
+	idens := map[string]bool{}
+	devices.Devices = make([]deviceData, 0, 1024)
 
 	for _, file := range files {
-		if filepath.Ext(file.Name()) != ".xml" {
+		if filepath.Ext(file.Name()) != ".json" {
 			continue
 		}
-		var dev *zWaveDevice
-		xmlFile, err := os.Open(filepath.Join(databaseDir, file.Name()))
+		jsonFile, err := os.Open(filepath.Join(databaseDir, file.Name()))
 		if err != nil {
 			fmt.Println("Error opening file:", err)
 			return
 		}
-		decoder := xml.NewDecoder(xmlFile)
-
-		err = decoder.Decode(&dev)
-		xmlFile.Close()
-		if err != nil {
+		decoder := json.NewDecoder(jsonFile)
+		var dev deviceData
+		if err = decoder.Decode(&dev); err != nil {
 			log.Println(file.Name())
 			log.Println(err)
 			return
 		}
-
-		dev.Filename = file.Name()
-		dev.Name =
-			dev.DeviceData.ManufacturerID.Value +
-				dev.DeviceData.ProductType.Value +
-				dev.DeviceData.ProductID.Value
-
-		// Copy the parameter size to each value (used to decode the values)
-		for k, p := range dev.Parameters {
-			s, _ := strconv.Atoi(p.Size)
-			for k2 := range p.Values {
-				dev.Parameters[k].Values[k2].size = s
-			}
+		switch len(dev.Endpoints) {
+		default:
+			// FIXME: How do we support more than one endpoint?
+			//        Is that "index" on openzwave setValue? "instance"?
+			log.Printf("warning: %s supports more than one endpoint\n", file.Name())
+			fallthrough
+		case 1:
+			dev.CommandClasses = dev.Endpoints[0].CommandClasses
+		case 0:
 		}
 
-		//spew.Dump(dev)
-		//TODO wee need to be more specific in our template above
-		// 135-0115-1000-0001-06-03-16-01-04.xml
-		// 132-0115-1000-0001-06-03-16-01-05.xml
-		// has same ManufacturerID-ProductType-ProductID ?
-		devices.Devices[dev.Name] = dev
+		refs := []deviceRef{}
+		for _, ref := range dev.DeviceRefs {
+			iden := dev.ManufacturerID + "_" + ref.ProductType + "_" + ref.ProductID
+			if idens[iden] {
+				// FIXME: How do we handle duplicates?
+				log.Printf("warning: %s duplicate iden %s\n", iden, file.Name())
+				continue
+			}
+			idens[iden] = true
+			refs = append(refs, ref)
+		}
 
-		//spew.Dump(dev.Parameters)
+		if len(refs) > 0 {
+			dev.DeviceRefs = refs
+			devices.Devices = append(devices.Devices, dev)
+		}
 	}
 
-	t := template.New("t")
+	t := template.New("t").Funcs(funcMap)
 	t, err = t.Parse(templ)
 	if err != nil {
 		panic(err)

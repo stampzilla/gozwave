@@ -1,0 +1,488 @@
+{
+    "database_id": 177,
+    "label": "PAN11",
+    "manufacturer_name": "Philio Technology Corp",
+    "manufacturer_id": "013C",
+    "device_ref": [
+        "0001:0001",
+        "0001:0011",
+        "0001:0030"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Smart Energy Plug In Switch",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.083,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "NOGET",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "ADD",
+                    "channels": [
+                        {
+                            "type": "meter_powerfactor",
+                            "label": "Electric meter (power factor)",
+                            "config": [
+                                "type=E_Power_Factor"
+                            ]
+                        },
+                        {
+                            "type": "meter_current",
+                            "label": "Electric meter (amps)",
+                            "config": [
+                                "type=E_A"
+                            ]
+                        },
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh)",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_voltage",
+                            "label": "Electric meter (volts)",
+                            "config": [
+                                "type=E_V"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        },
+                        {
+                            "type": "meter_reset",
+                            "label": "Reset the total power consumption",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "NOGET",
+                    "channels": [
+                        {
+                            "type": "alarm_general",
+                            "label": "Alarm",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "75",
+                    "name": "PROTECTION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "7A",
+                    "name": "FIRMWARE_UPDATE_MD",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "98",
+                    "name": "SECURITY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "W meter report period",
+            "description": "Set automatic W meter reporting interval",
+            "overview": "<p>If the setting is configured for 1hour (set value =720), the PAN11 will report its\u00a0instant power consumption every 1 hour to Group1 node. The maximum interval\u00a0to report its instant power consumption is 45 hours (5s*32767\/3600=45hr).<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 720,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32767,
+            "options": []
+        },
+        {
+            "id": 2,
+            "label": "kWh meter report period",
+            "description": "Set automatic kWh meter reporting interval.",
+            "overview": "<p>If the setting is configured for 1hour (set value =6), the PAN11 will report its\u00a0Accumulated Power Consumption (KW\/h) every 1 hour to Group1 node. The\u00a0maximum interval to report its Accumulated Power Consumption (KW\/h) is 227.55\u00a0days (10min*32767\/1440=227.55 days).<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 6,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32767,
+            "options": []
+        },
+        {
+            "id": 3,
+            "label": "Threshold of Watt for load caution",
+            "description": "Set threshold of wattage meter value for load caution .",
+            "overview": "<p>This is a warning when the current of load over the preset threshold value, if the\u00a0setting value is 1300, when the load current of Relay1 over this value, PAN11\u00a0will send current meter report to warn the Group1 node, the Range of the setting\u00a0value is from 10 to 1300,and the default value is 1300.\u00a0<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 1300,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 10,
+            "value_max": 1300,
+            "options": []
+        },
+        {
+            "id": 4,
+            "label": "Threshold of kWh for Load Caution",
+            "description": "If threshold of kWh is reached, a Meter Report will be generated",
+            "overview": "<p>Enable automatic warning when the accumulated kWh power consumption exceeds the setting value from 1KWh ~ 10000KWh.. Set to 0 will disable kWh load caution reporting.<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 10000,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 10000,
+            "options": []
+        },
+        {
+            "id": 5,
+            "label": "Restore switch state mode",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Switch Off"
+                },
+                {
+                    "value": 1,
+                    "label": "Last State"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch On"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "label": "Mode of switch Off function",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "SWITCH OFF commands received are ignored."
+                },
+                {
+                    "value": 1,
+                    "label": "SWITCH OFF commands received are honored."
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "label": "LED indication mode",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "The LED follows the state of the switch."
+                },
+                {
+                    "value": 2,
+                    "label": "LED off with load ON"
+                },
+                {
+                    "value": 3,
+                    "label": "One flash mode"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "label": "Auto Off Timer",
+            "description": "Auto off timer. 0 will disable the auto off function.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 9,
+            "label": "RF Off command mode",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Switch Off"
+                },
+                {
+                    "value": 1,
+                    "label": "Ignore"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch Toggle"
+                },
+                {
+                    "value": 3,
+                    "label": "Switch On"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Reports",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

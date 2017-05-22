@@ -1,0 +1,434 @@
+{
+    "database_id": 425,
+    "label": "ASP-3-1",
+    "manufacturer_name": "ID-RF",
+    "manufacturer_id": "0165",
+    "device_ref": [
+        "0001:0001"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Smart Plug",
+    "overview": "<h1>\"Learning Mode\"<\/h1> <p>Press on the Smart Plug button during 2 seconds until the LED becomes red. Release the button, the LED will then glow in red. The Smart Plug is in \u201cLearning mode\u201d. To add or to remove the Smart Plug from a Z-Wave\u00ae network, follow \u201cINCLUSION\u201d or \u201cEXCLUSION\u201d procedures below.<\/p> <p>If the Smart Plug is not added or removed from a network within 30 seconds (or if the button is pushed during learning mode), the Smart Plug will automatically exit learning mode.<\/p> <h1>\u201cFactory Reset\u201d<\/h1> <p>To perform a factory reset, press on the Smart Plug button during 5 seconds until the LED becomes orange. Release the button, the LED will blink red\/green. Factory Reset clears the Smart Plug\u2019s memory and set parameters to default value.<\/p> <p>Please use this procedure only when the primary controller is missing or otherwise inoperable. Resetting the Smart Plug does not mean it has been removed from Z-Wave network controller\u2019s memory. Use the primary controller to remove the Smart Plug from its Z-Wave network (follow \u201cEXCLUSION\u201d procedures below), before doing a Factory Reset.<\/p>",
+    "inclusion": "<p>To add the Smart Plug into a Z-Wave network:<\/p> <ol><li>Plug the Smart Plug.<\/li> <li>Put the Smart Plug in \u201cLearning mode\u201d.<\/li> <li>Within 30 seconds put the Z-Wave Controller in \u201cLearning mode\u201d (See the Controller user guide for its own Inclusion procedure).<\/li> <li>The Smart Plug will confirm the Inclusion procedure by blinking its LED in Green.<\/li> <\/ol>",
+    "exclusion": "<p>To remove the Smart Plug from a Z-Wave network:<\/p> <ol><li>Make sure the Smart Plug is plugged.<\/li> <li>Put the Smart Plug in \u201cLearning mode\u201d.<\/li> <li>Within 30 seconds put the Z-Wave Controller in \u201cLearning mode\u201d (See the Controller user guide for its own Exclusion procedure).<\/li> <li>The Smart Plug will confirm the Exclusion procedure by blinking its LED in Red.<\/li> <\/ol>",
+    "wakeup": "",
+    "protocol_version": 3.083,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "3",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_system",
+                            "label": "Alarm (system)",
+                            "config": [
+                                "type=SYSTEM"
+                            ]
+                        },
+                        {
+                            "type": "alarm_power",
+                            "label": "Alarm (power)",
+                            "config": [
+                                "type=POWER_MANAGEMENT"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "75",
+                    "name": "PROTECTION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "87",
+                    "name": "INDICATOR",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Default State",
+            "description": "",
+            "overview": "<p>Status of the Smart Plug after a Power Failure or after being plugged<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 63,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "OFF"
+                },
+                {
+                    "value": 1,
+                    "label": "ON"
+                },
+                {
+                    "value": 2,
+                    "label": "Status before Power Failure"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "Power Failure",
+            "description": "",
+            "overview": "<p>This parameter is to set-up the Power Failure \/ Recover notification and the associated group (Groups 4, 5, 6, 7, 8).<\/p> <p>The value may be a sum of available values.\u00a0For example, if you want to activate Power Failure and\u00a0enable group 4 &amp; 5, the parameter value should be 1+2+4=7.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 63,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Power Failure detection disable"
+                },
+                {
+                    "value": 1,
+                    "label": "Power Failure enable (report to Lifeline only)"
+                },
+                {
+                    "value": 2,
+                    "label": "Enable group 4"
+                },
+                {
+                    "value": 4,
+                    "label": "Enable group 5"
+                },
+                {
+                    "value": 8,
+                    "label": "Enable group 6"
+                },
+                {
+                    "value": 16,
+                    "label": "Enable group 7"
+                },
+                {
+                    "value": 32,
+                    "label": "Enable group 8"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "label": "Follow State",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 3,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable group 2 & 3"
+                },
+                {
+                    "value": 1,
+                    "label": "Enable group 2"
+                },
+                {
+                    "value": 2,
+                    "label": "Enable group 3"
+                },
+                {
+                    "value": 3,
+                    "label": "Enable group 2 & 3"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "label": "Always On",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Always ON disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Always ON enabled"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Lifeline",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "",
+            "overview": "<p>This group is generally used to report information of\u00a0the Smart Plug to the Main Controller of the network.<\/p>"
+        },
+        {
+            "id": 2,
+            "label": "Follow State",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": "<p>When the Smart Plug is switched ON (respectively OFF)\u00a0using the local button, it will send ON (respectively OFF)\u00a0command to the associated devices. No command is\u00a0sent if the Smart Plug is switched ON or OFF wirelessly.<\/p>"
+        },
+        {
+            "id": 3,
+            "label": "Follow Complementary State",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": "<p>When the Smart Plug is switched ON (respectively OFF)\u00a0using the local button, it will send OFF (respectively ON)\u00a0command to the associated devices. No command is\u00a0sent if the Smart Plug is switched ON or OFF wirelessly.<\/p>"
+        },
+        {
+            "id": 4,
+            "label": "Power Failure Notification",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": "<p>When the Smart Plug detects a power failure or\u00a0recovers from a power failure, it sends the notification\u00a0report to the associated devices.<\/p>\r\n<p>The notification\u00a0sent\u00a0is \u201cNotification Report: Power\u00a0Management \u2013 AC Disconnected \/ Re-connected\u201d.<\/p>"
+        },
+        {
+            "id": 5,
+            "label": "Power Failure Set ON",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": "<p>When the Smart Plug detects a Power Failure, it will\u00a0switch ON the associated devices.<\/p>"
+        },
+        {
+            "id": 6,
+            "label": "Power Failure Set OFF",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": "<p>When the Smart Plug detects a Power Failure, it will\u00a0switch OFF the associated devices.<\/p>"
+        },
+        {
+            "id": 7,
+            "label": "Power Recover Set ON",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": "<p>When the Smart Plug detects a Power Recover, it will switch ON the associated devices.<\/p>"
+        },
+        {
+            "id": 8,
+            "label": "Power Recover Set OFF",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": "<p>When the Smart Plug detects a Power Recover, it will switch OFF the associated devices.<\/p>"
+        }
+    ]
+}

@@ -1,0 +1,130 @@
+{
+    "database_id": 304,
+    "label": "HA-01C",
+    "manufacturer_name": "Intermatic",
+    "manufacturer_id": "0005",
+    "device_ref": [
+        "0001:0003"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "In-Wall Dual Receptacle",
+    "overview": "<p>The Intermatic HA01C Wall Receptacle is an in\u00ad-wall Z-\u00adWave switch that can be controlled to automatically and wirelessly to replace an existing receptacle to control lamps, or small appliances. It also works as a range extender for your other Z-\u00adWave devices. This In-Wall receptacle features two plug receptacles, both of which provide standard power operation, only the bottom plug in the outlet is controllable by Z-Wave. Ratings: 15 A, 125 VAC, 50\/60 Hz Operating Temperature Range: 32\u00b0F to 104\u00b0F \/ 0\u00b0C to 40\u00b0C Radio Operating Frequency: 908.42 MHz RF (wireless) Range: 50-100 ft. under normal operating conditions<\/p>",
+    "inclusion": "<p>After hard-wiring the HA01 into place, the device is ready to join your Z-Wave\u2122 network.<\/p>\n<p>NOTE: Before you begin, devices (such as lamps) should be plugged in and turned ON before including the HA01 in your network. Put the controller into INCLUSION mode. Press the ON\/OFF\/PROGRAM button on the HA01 In-Wall Receptacle.<\/p>",
+    "exclusion": "<p>If necessary, you can delete the HA01 In-Wall Receptacle from your Z-Wave\u2122 network. Put the controller into EXCLUSION mode. Press the ON\/OFF\/PROGRAM button on the HA01 In-Wall Receptacle.<\/p>",
+    "wakeup": "",
+    "protocol_version": 2.009,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": false,
+    "library_type": {
+        "id": 4,
+        "name": "LIB_SLAVE"
+    },
+    "basic_class": {
+        "id": 3,
+        "name": "BASIC_TYPE_SLAVE"
+    },
+    "generic_class": {
+        "id": 3,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 3,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 3,
+                "name": "BASIC_TYPE_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [],
+    "associations": []
+}

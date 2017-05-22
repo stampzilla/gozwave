@@ -1,0 +1,680 @@
+{
+    "database_id": 129,
+    "label": "FGSD002",
+    "manufacturer_name": "Fibargroup",
+    "manufacturer_id": "010F",
+    "device_ref": [
+        "0C02:1002"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Smoke Detector",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.099,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SENSOR_NOTIFICATION"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_NOTIFICATION_SENSOR"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 7,
+                "name": "GENERIC_TYPE_SENSOR_NOTIFICATION"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_NOTIFICATION_SENSOR"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "22",
+                    "name": "APPLICATION_STATUS",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "5",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Temperature Sensor",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "56",
+                    "name": "CRC_16_ENCAP",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "3",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_smoke",
+                            "label": "Smoke Alarm",
+                            "config": [
+                                "type=SMOKE",
+                                " event=3"
+                            ]
+                        },
+                        {
+                            "type": "alarm_tamper",
+                            "label": "Tamper Alarm",
+                            "config": [
+                                "type=BURGLAR",
+                                " event=3"
+                            ]
+                        },
+                        {
+                            "type": "alarm_battery",
+                            "label": "Low Battery Alarm",
+                            "config": [
+                                "type=POWER_MANAGEMENT"
+                            ]
+                        },
+                        {
+                            "type": "alarm_system",
+                            "label": "Hardware Failure Alarm",
+                            "config": [
+                                "type=SYSTEM"
+                            ]
+                        },
+                        {
+                            "type": "alarm_heat",
+                            "label": "Heat Alarm",
+                            "config": [
+                                "type=HEAT"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "7A",
+                    "name": "FIRMWARE_UPDATE_MD",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8B",
+                    "name": "TIME_PARAMETERS",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "time_offset",
+                            "label": "Clock Time Offset",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "8E",
+                    "name": "MULTI_INSTANCE_ASSOCIATION",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "9C",
+                    "name": "SENSOR_ALARM",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Smoke Sensor sensitivity",
+            "description": "There are 3 levels of sensitivity to smoke presence. ",
+            "overview": "<p>Level 1 means the highest sensitivity. Rising the parameter value lowers the sensitivity to smoke presence.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "HIGH Sensitivity"
+                },
+                {
+                    "value": 2,
+                    "label": "MEDIUM Sensitivity"
+                },
+                {
+                    "value": 3,
+                    "label": "LOW Sensitivity"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "Z-Wave notifications status",
+            "description": "This parameter allows to activate excess temperature ...",
+            "overview": "<p>...\u00a0 and\/or enclosure opening notifications sent to the main controller<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "All notifications disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Enclosure opening notification enabled"
+                },
+                {
+                    "value": 2,
+                    "label": "Exceeding temperature threshold notification enabled"
+                },
+                {
+                    "value": 3,
+                    "label": "All notifications enabled"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "label": "Visual indicator notifications status",
+            "description": "This parameter allows to activate visual indications",
+            "overview": "<p>\u00a0but does not apply to major alarms, such as FIRE, TROUBLE and LOW BATTERY ALARM.<\/p> <p>Available settings: 0 - 7 <\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "All notifications disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Enclosure opening notification enabled"
+                },
+                {
+                    "value": 2,
+                    "label": "Exceeding temperature threshold notification enabled"
+                },
+                {
+                    "value": 3,
+                    "label": "Enclosure opening notification enabled +"
+                },
+                {
+                    "value": 4,
+                    "label": "Lack of Z-Wave range notification"
+                },
+                {
+                    "value": 5,
+                    "label": "Enclosure opening notification enabled +"
+                },
+                {
+                    "value": 6,
+                    "label": "Exceeding temperature threshold notification enabled + "
+                },
+                {
+                    "value": 7,
+                    "label": "Enclosure opening notification enabled + "
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "label": "Sound notifications status",
+            "description": "This parameter allows to activate sound signals...",
+            "overview": "<p>\u00a0but does not apply to major alarms, such as FIRE, TROUBLE and LOW BATTERY ALARM.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "All notifications disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Enclosure opening notification enabled"
+                },
+                {
+                    "value": 2,
+                    "label": "Exceeding temperature threshold notification enabled"
+                },
+                {
+                    "value": 3,
+                    "label": "Enclosure opening notification enabled +"
+                },
+                {
+                    "value": 4,
+                    "label": "Lack of Z-Wave range notification"
+                },
+                {
+                    "value": 5,
+                    "label": "Enclosure opening notification enabled + "
+                },
+                {
+                    "value": 6,
+                    "label": "Exceeding temperature threshold notification enabled +"
+                },
+                {
+                    "value": 7,
+                    "label": "Enclosure opening notification enabled + "
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "label": "Configuration of control frames in BASIC command class",
+            "description": "This parameter defines which frames will be sent ...",
+            "overview": "<p>in the 2-nd Association Group (FIRE ALARM). The values of BASIC ON and BASIC OFF frames may be defined as described in further parameters.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "BASIC ON and BASIC OFF enabled"
+                },
+                {
+                    "value": 1,
+                    "label": "BASIC ON enabled "
+                },
+                {
+                    "value": 2,
+                    "label": "BASIC OFF enabled"
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "label": "BASIC ON frame value",
+            "description": "BASIC ON frame is sent in case of smoke presence detection ...",
+            "overview": "<p>and FIRE ALARM triggering. Its value is defined by the parameter. Available settings: 0-99, 255. 0 - turn off the device. 1-99 - set the device to 1-99%. 255 - set the last status<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 12,
+            "label": "BASIC OFF frame value",
+            "description": "BASIC OFF frame is sent in case of FIRE ALARM cancellation.",
+            "overview": "<p>Its value is defined by the parameter. Available settings: 0-99, 255. 0 - turn off the device. 1-99 - set the device to 1-99%. 255 - set the last status<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 13,
+            "label": "Alarm broadcast",
+            "description": "A value other than 0 means that alarms are being sent in ...",
+            "overview": "<p>broadcast mode, i.e. to all devices within a Fibaro Smoke Sensor\u2019s range<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "broadcast inactive"
+                },
+                {
+                    "value": 1,
+                    "label": "FIRE ALARM broadcast (2-nd and 4-th Association Group) ..."
+                },
+                {
+                    "value": 2,
+                    "label": "FIRE ALARM broadcast (2-nd and 4-th Association Group) ..."
+                },
+                {
+                    "value": 3,
+                    "label": "FIRE ALARM broadcast (2-nd and 4-th Association Group) ..."
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "label": "Temperature report interval",
+            "description": "Time interval between consecutive temperature reports.",
+            "overview": "<p>Report is sent when new temperature value is different from the one previously reported - according to the set hysteresis (parameter 21). Temperature reports can be also sent as a result of polling.<br \/><\/p> <p>Available settings: 0, 1-8640 (multiply by 10 seconds) [10s-24h]<br \/><\/p> <p>0 \u2013 reports inactive<br \/>1-8640 - [10s-24h]<br \/><\/p> <p>Default setting: 1 (10 seconds)<br \/>Parameter size: 2 [bytes] <\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 8640,
+            "options": []
+        },
+        {
+            "id": 21,
+            "label": "Temperature report hysteresis",
+            "description": "The temperature report will only be sent if there is a difference ...",
+            "overview": "<p>in temperature value from the previous value reported, defined in this parameter (hysteresis). Temperature reports can be also sent as a result of polling.<br \/><\/p> <p>Available settings: 1 \u2013 100 (in 0,1oC steps)<br \/>1-100 - (multiply by 0,1) [0,1oC - 10oC]<br \/><\/p> <p>Default setting: 10 (1oC)<br \/>Parameter size: 1 [byte] <\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 30,
+            "label": "Temperature threshold",
+            "description": "Temperature value measured by the built-in temperature ...",
+            "overview": "<p>sensor above which the excess temperature notification is sent (visual indication\/sound\/Z-Wave report). <\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 55,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 31,
+            "label": "Excess temperature signaling interval",
+            "description": "Time interval of signaling (visual indication\/sound) excess ...",
+            "overview": "<p>\u00a0temperature level<\/p> <p><br \/>Available settings: 1-8640 (multiply by 10 seconds) [10s-24h]<br \/>1-8640 - [10s-24h]<br \/><\/p> <p>Default setting: 1 (10 seconds)<br \/>Parameter size: 2 [bytes] <\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 8640,
+            "options": []
+        },
+        {
+            "id": 32,
+            "label": "Lack of Z-Wave range indication interval",
+            "description": "Time interval of signaling (visual indication\/sound) lack of ...",
+            "overview": "<p>Z-Wave range.<\/p> <p><br \/>Available settings: 1-8640 (multiply by 10 seconds) [10s-24h]<br \/>1-8640 - [10s-24h]<br \/><\/p> <p>Default setting: 180 (30min)<br \/>Parameter size: 2 [bytes] <\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 180,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 8640,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Device Status",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Smoke Alarm",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "Tamper Alarm",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 4,
+            "label": "Fire Alarm",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 5,
+            "label": "Tamper Alarm",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

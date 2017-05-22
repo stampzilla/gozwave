@@ -1,0 +1,434 @@
+{
+    "database_id": 343,
+    "label": "ZME_05433",
+    "manufacturer_name": "Z-Wave.Me",
+    "manufacturer_id": "0115",
+    "device_ref": [
+        "1000:0002",
+        "1000:0009"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Zwave.Me Dimmer Set Everlux",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.042,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "2",
+                    "nif": true,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Dimmer",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "2B",
+                    "name": "SCENE_ACTIVATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "scene_number",
+                            "label": "Scene Number",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "2C",
+                    "name": "SCENE_ACTUATOR_CONF",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "2D",
+                    "name": "SCENE_CONTROLLER_CONF",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "75",
+                    "name": "PROTECTION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "77",
+                    "name": "NODE_NAMING",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "87",
+                    "name": "INDICATOR",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8E",
+                    "name": "MULTI_INSTANCE_ASSOCIATION",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "LED mode",
+            "description": "Set LED indication mode",
+            "overview": "Set LED indication mode",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 3,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Show switch state"
+                },
+                {
+                    "value": 2,
+                    "label": "Night mode (inverted switch state)"
+                },
+                {
+                    "value": 3,
+                    "label": "Operated by Indicator Command Class (Default)"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "Automatically switch off after",
+            "description": "If not zero, automatically switch off after a user defined time",
+            "overview": "Automatically switch off after: 0 Disabled (Default); 1 \u2014 65535 sec",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled (Default)"
+                },
+                {
+                    "value": 1,
+                    "label": "Sec"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "label": "What to do on RF off command",
+            "description": "Defines how to interpret RF Off command.",
+            "overview": "Defines how to interpret RF Off command. Can be used in conjunction with Auto Off function: Ignore - to switch on the light by motion detectors and switch it off after some amount of time: in case of multiple motion detectors each would try to switch the light off that would break logics; Switch on - to switch on the light on both On and Off paddle press on the remote and switch it off after some amount of time. Button off click will still work (if button operations are not disabled).",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 3,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Switch off (Default)"
+                },
+                {
+                    "value": 1,
+                    "label": " Ignore"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch on"
+                },
+                {
+                    "value": 3,
+                    "label": "Switch on if load is off else switch off"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "label": "Ignore start level",
+            "description": "ignore start level in StartLevelChange",
+            "overview": "<p>Defines if the dimmer shall ignore start level in StartLevelChange command despite it is specified or not<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No"
+                },
+                {
+                    "value": 1,
+                    "label": "Yes (Default)"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "label": "Dimming speed",
+            "description": "Time to dim on button presses",
+            "overview": "<p>Time to dim on button presses and Set command (if it has no duration specified). If not 0, dimming will be done smoothly to preserv bulb life.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 30,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Instantly"
+                },
+                {
+                    "value": 30,
+                    "label": "Default"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "label": "Dimming long speed",
+            "description": "Time to dim on button holds and StartLevelChange",
+            "overview": "<p>Time to dim on button holds and StartLevelChange command (if it has no duration specified).<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 7,
+            "label": "Set maximum light level on On click",
+            "description": "set action on ON command",
+            "overview": "<p>Defines if the dimmer shall set maximum light level on On command. By default on On command dimmer restores last level. This parameter allows to configure to set maximum level on second On command (if already On) or to always switch on to maximum level<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No (Default)"
+                },
+                {
+                    "value": 1,
+                    "label": "If already On"
+                },
+                {
+                    "value": 2,
+                    "label": "Always"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Association group 1",
+            "max_nodes": 14,
+            "controller": false,
+            "description": "Single press and hold of up\/down buttons (max. nodes in group: 14)",
+            "overview": "Association group 1: Single press and hold of up\/down buttons (max. nodes in group: 14)"
+        },
+        {
+            "id": 2,
+            "label": "Association group 2",
+            "max_nodes": 14,
+            "controller": false,
+            "description": "",
+            "overview": "Double press and press-hold of up\/down buttons (max. nodes in group: 14)"
+        },
+        {
+            "id": 3,
+            "label": "Association group 3",
+            "max_nodes": 14,
+            "controller": true,
+            "description": "Send Reports on blind state change",
+            "overview": "<p>Send Reports on blind state change (max. nodes in group: 14)<\/p>"
+        }
+    ]
+}

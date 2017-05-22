@@ -1,0 +1,119 @@
+{
+    "database_id": 360,
+    "label": "ZRP200",
+    "manufacturer_name": "ACT - Advanced Control Technologies",
+    "manufacturer_id": "0001",
+    "device_ref": [
+        "7FFF:7FFF"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "HomePro Applicance Module ZRP200",
+    "overview": "<p>This is a very old appliance module, which doesn't report the manufacturer information. You'll have to edit the node.xml file(s) yourself. Change the manufacturer from 0x7fffffff to 0x1, to set it to manufacturer ACT. Also, change the deviceType to 7fff and the deviceid to 7fff.<\/p>",
+    "inclusion": "<p>Use the button on the device.<\/p>",
+    "exclusion": "<p>Use Habmin or another zwave tool to exclude the device from the zwave mesh.<\/p>",
+    "wakeup": "",
+    "protocol_version": 0,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": false,
+    "library_type": {
+        "id": 0,
+        "name": "Unknown"
+    },
+    "basic_class": {
+        "id": 3,
+        "name": "BASIC_TYPE_SLAVE"
+    },
+    "generic_class": {
+        "id": 3,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 3,
+        "name": "SPECIFIC_TYPE_NOT_USED"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 3,
+                "name": "BASIC_TYPE_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 0,
+                "name": null
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "75",
+                    "name": "PROTECTION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [],
+    "associations": []
+}

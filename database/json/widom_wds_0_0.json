@@ -1,0 +1,690 @@
+{
+    "database_id": 432,
+    "label": "WDS",
+    "manufacturer_name": "wiDom",
+    "manufacturer_id": "0149",
+    "device_ref": [
+        "1214:0504"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": " Universal Double Switch",
+    "overview": "<p>Universal Double Switch is an ON\/OFF control device designed to independently control two separate loads, suited for use as both a local and remote switch. Similarly to the other WiDom \u201cin wall\u201d devices, it can be fully integrated into pre-existing systems and configured to associate configurable behaviours to a specific number of clicks, in full integration with the Z-Wave home automation ecosystem.<\/p> <p>Each of its two channels features an integrated consumption measurement device. The Universal Double Switch also boasts the lowest energy consumption on the market.<\/p> <p>At the same time, it is completely configurable so that it can adapt to the most varied needs while also being ready to be used without needing additional configurations in order to operate.<\/p> <p>Thanks to the framework developed by WiDom, the various types of \u201cevents\u201d on the \u201cExternal Switch\u201d can be recognised and associated to actions to be performed on the device, on any associated devices, on all devices on the network. The events that the system recognises are the number of \u201cclicks\u201d or hold on the External Switch.<\/p> <p><br \/>External switch: External button or switch connected to the input I1 or I2<\/p> <p>Events: The actions performed on the external Switch: Clicks or Hold.<\/p> <p>Click: If the external switch is a button (when pressed it autonomously returns to the initial position), a click means pressing and then releasing it. If the external switch is bistable (when pressed it does not return to the initial position), a single click means one single flip of the switch.<\/p> <p>Technical Specifications<\/p> <p>Power Supply: 230 VAC\u00b110% 50\/60 Hz<br \/>Maximum Load on Relay Resistive Loads: 8 A for each channel; 10A for both channels<br \/>Limit Temperature: 105 \u00b0C<br \/>Work Temperature: -10 \u2013 40 \u00b0C<br \/>Radio Protocol Z-Wave: 868,4 MHz<br \/>Radio Range: Up to 100 m outdoor, Up to 40 m indoor<br \/>Dimensions (WxDxH): 37x37x17 mm<br \/>Consumption: &lt; 260 mW in standby; &lt; 480 mW with one working load; &lt; 700 mW with both working loads<br \/>Electrical IP Rating: IP 20<br \/>Actuator element: Relay<br \/>Conformity: CE, RoHS<\/p>",
+    "inclusion": "<p>The device supports both the Network Wide Inclusion (which offers the opportunity of inclusion into a network even if the device is not directly connected to the controller) and the Normal Inclusion mechanisms.<\/p> <p>If the device is not included into a Z-Wave network, a single click on the (B) button or on one of the external switches will launch the process of traditional inclusion. If the device inclusion procedure does not start within 2 seconds, the Network Wide Inclusion network will be launched lasting a variable amount of time between 15-30 seconds.<\/p> <p>INFO: Through the inclusion procedure, activated with a single click on one of the external switches, the system determines the type of external switch (see parameter No. 62).<\/p>",
+    "exclusion": "<p>Only a controller can remove a device from the network. WiDom Universal Double Switch is compatible with all Z-Wave certified controllers. After the exclusion procedure has been activated by the controller, the device can be removed, putting it in Exclusion Mode by three consecutive clicks on the (B) button or on the external switch, when available.<\/p>",
+    "wakeup": "",
+    "protocol_version": 4.005,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "60",
+                    "name": "MULTI_INSTANCE",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 1",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts) 1",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 2",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts) 2",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 0,
+            "label": "Defines how to control the devices associated to group 4 and 5.",
+            "description": "Defines how to control the devices associated to group 4 and 5.",
+            "overview": "<h4>Configuration value and Action performed on the associated device<\/h4> <h5><br \/>0 \u2013 SWITCH_OFF<\/h5> <p>The associated devices are switched OFF<\/p> <h5><br \/>-1 \u2013 SWITCH_ON<\/h5> <p>The associated devices are switched ON<\/p> <h5>From 1 to 99<\/h5> <p>The associated devices (dimmer, roller shutters) are set to the indicated level (only for devices associated to group 3)<\/p> <h5><br \/>100 \u2013 RELAY_STATUS (Default Value)<\/h5> <p>If the Relay 1 is ON\/OFF, the associated devices are ON\/OFF<\/p> <h5><br \/>101 \u2013 RELAY_STATUS_BUT_IGNORE_IF_OFF<\/h5> <p>If the Relay 1 is ON the associated devices are ON; if it is OFF no action is taken on the associated devices<\/p> <h5><br \/>102 \u2013 RELAY_STATUS_BUT_IGNORE_IF_ON<\/h5> <p>If the Relay 1 is OFF the associated devices are OFF; if it is ON no action is taken on the associated devices<\/p> <h5><br \/>103 \u2013 RELAY_OPPOSITE_BUT_IGNORE_IF_OFF<\/h5> <p>If the Relay 1 is ON the associated devices are OFF; if it is OFF no action is taken on the associated devices<\/p> <h5><br \/>104 \u2013 RELAY_OPPOSITE_BUT_IGNORE_IF_ON<\/h5> <p>If the Relay 1 is OFF the associated devices are ON; if it is ON no action is taken on the associated devices<\/p> <h5><br \/>105 \u2013 RELAY_OPPOSITE<\/h5> <p>If the Relay 1 is ON\/OFF, the associated devices are OFF\/ON<\/p> <h5>106 \u2013 IGNORE<\/h5> <p>No action is taken on the associated devices<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 100,
+            "read_only": false,
+            "write_only": false,
+            "value_min": -1,
+            "value_max": 106,
+            "options": []
+        },
+        {
+            "id": 1,
+            "label": "Outputs status upon receipt of 1 click on its command",
+            "description": "Defines the status of the output O1\/O2 when the switch connected to I1\/I2 receives 1 Click",
+            "overview": "<p>INFO:<\/p> <p>0 \u2013 IN_OUT configuration is available on WiDom Universal Double Switch starting from the<br \/>firmware version 1.40.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 4,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "IN_OUT"
+                },
+                {
+                    "value": 1,
+                    "label": "TOGGLE"
+                },
+                {
+                    "value": 2,
+                    "label": "ON"
+                },
+                {
+                    "value": 3,
+                    "label": "OFF"
+                },
+                {
+                    "value": 4,
+                    "label": "IGNORE"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "Outputs status upon receipt of 2 clicks on its command",
+            "description": "Defines the status of the output O1\/O2 when the switch connected to I1\/I2 receives 2 Click",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 4,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "TOGGLE"
+                },
+                {
+                    "value": 2,
+                    "label": "ON"
+                },
+                {
+                    "value": 3,
+                    "label": "OFF"
+                },
+                {
+                    "value": 4,
+                    "label": "IGNORE"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "label": "Type of outputs",
+            "description": "Defines if the outputs are controlled individually, as a traditional device with two channels, or if its behaviour simulates a single pole double throw relay",
+            "overview": "<p><strong>Parameter value and<\/strong> d<strong>evice reaction<\/strong><\/p> <p>0 \u2013 SINGLE CHANNELS (Default Value)<\/p> <p>Channel 1 and Channel 2 are controlled individually<\/p> <p>From 1 to 9 \u2013 SINGLE POLE DOUBLE THROW RELAY<\/p> <p>The two channels are in opposite status. If the Channel 1 is close the Channel 2 is open, if the Channel 1 is open the Channel 2 is close. The value of the parameter defines the closing delay of the relay in tenth of seconds<\/p> <p>From 10 to 19 \u2013 SEQUENCING RELAY<\/p> <p>Channels are toggled in this way: both channels ON, only channel 1 ON, only channel 2 ON, both channels OFF. The value of the parameter, deducted of 9, defines the closing delay of the relay in tenth of seconds.<\/p> <p>From 20 to 39 \u2013 SELECTOR<\/p> <p>Both channels can be OFF but they can never be ON simultaneously. It can be used for fan coil control, roller shutters, and in general for two-speed systems. The value of the parameter, deducted of 19, defines the closing delay of the relay in tenth of seconds.<\/p> <p>INFO: 0 \u2013 configuration is available on WiDom Universal Double Switch starting from the<br \/>firmware version 1.40.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 39,
+            "options": []
+        },
+        {
+            "id": 4,
+            "label": "Number of clicks that activate the control of the associated devices",
+            "description": "Defines the number of clicks on the Switch 1 or Switch 2 that enable the control of the correspondent associated devices",
+            "overview": "<p>TIP:<\/p> <p>Through this parameter, together the setting of the parameters 1 and 2, it is possible to control simultaneously the local load and the associated devices (e.g. 1 click control both local load and associated devices) or in totally independent way (e.g. 1 click control only the local load, 2 clicks control only the associated devices).<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "1 CLICK"
+                },
+                {
+                    "value": 2,
+                    "label": "2 CLICKS"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "label": "Level used to control the devices associated to group 2 and 3",
+            "description": "Defines how to control the devices associated to group 2 and 3.",
+            "overview": "<h4>Configuration value and Action performed on the associated device<\/h4> <h5><br \/>0 \u2013 SWITCH_OFF<\/h5> <p>The associated devices are switched OFF<\/p> <h5><br \/>-1 \u2013 SWITCH_ON<\/h5> <p>The associated devices are switched ON<\/p> <h5>From 1 to 99<\/h5> <p>The associated devices (dimmer, roller shutters) are set to the indicated level (only for devices associated to group 3)<\/p> <h5><br \/>100 \u2013 RELAY_STATUS (Default Value)<\/h5> <p>If the Relay 1 is ON\/OFF, the associated devices are ON\/OFF<\/p> <h5><br \/>101 \u2013 RELAY_STATUS_BUT_IGNORE_IF_OFF<\/h5> <p>If the Relay 1 is ON the associated devices are ON; if it is OFF no action is taken on the associated devices<\/p> <h5><br \/>102 \u2013 RELAY_STATUS_BUT_IGNORE_IF_ON<\/h5> <p>If the Relay 1 is OFF the associated devices are OFF; if it is ON no action is taken on the associated devices<\/p> <h5><br \/>103 \u2013 RELAY_OPPOSITE_BUT_IGNORE_IF_OFF<\/h5> <p>If the Relay 1 is ON the associated devices are OFF; if it is OFF no action is taken on the associated devices<\/p> <h5><br \/>104 \u2013 RELAY_OPPOSITE_BUT_IGNORE_IF_ON<\/h5> <p>If the Relay 1 is OFF the associated devices are ON; if it is ON no action is taken on the associated devices<\/p> <h5><br \/>105 \u2013 RELAY_OPPOSITE<\/h5> <p>If the Relay 1 is ON\/OFF, the associated devices are OFF\/ON<\/p> <h5>106 \u2013 IGNORE<\/h5> <p>No action is taken on the associated devices<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 100,
+            "read_only": false,
+            "write_only": false,
+            "value_min": -1,
+            "value_max": 106,
+            "options": []
+        },
+        {
+            "id": 10,
+            "label": "Timer to switch OFF the Channel 1",
+            "description": "Defines the time after which the Channel 1 is switched OFF",
+            "overview": "<p>0 (Default Value): Timer disabled<\/p> <p><br \/>From 1 to 32000 (seconds): After this time the relay of the Channel 1 is OFF<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32000,
+            "options": []
+        },
+        {
+            "id": 11,
+            "label": "Timer to switch OFF the Channel 2",
+            "description": "Defines the time after which the Channel 2 is switched OFF",
+            "overview": "<p>0 (Default Value): Timer disabled<\/p> <p><br \/>From 1 to 32000 (seconds): After this time the relay of the Channel 2 is OFF<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32000,
+            "options": []
+        },
+        {
+            "id": 12,
+            "label": "Timer to switch ON the Channel 1",
+            "description": "Defines the time after which the Channel 1 is switched ON",
+            "overview": "<p>0 (Default Value): Timer disabled<\/p> <p>From 1 to 32000 (seconds): After this time the relay of the Channel 1 is ON<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32000,
+            "options": []
+        },
+        {
+            "id": 13,
+            "label": "Timer to switch ON the Channel 2",
+            "description": "Defines the time after which the Channel 2 is switched ON",
+            "overview": "<p>0 (Default Value): Timer disabled<\/p> <p>From 1 to 32000 (seconds): After this time the relay of the Channel 2 is ON<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": true,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32000,
+            "options": []
+        },
+        {
+            "id": 20,
+            "label": "Outputs status upon receipt of a Multi-Channel Basic Set command",
+            "description": "The two channels can be controlled individually by Z-Wave network. The status of the channels upon receipt of a Multi-Channel Basic Set command is defined by the value set on the parameter.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 4,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "AS RECEIVED"
+                },
+                {
+                    "value": 2,
+                    "label": "IGNORE IF ON"
+                },
+                {
+                    "value": 3,
+                    "label": "IGNORE IF OFF"
+                },
+                {
+                    "value": 4,
+                    "label": "IGNORE"
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "label": "Outputs status upon receipt of a Basic Set command",
+            "description": "The channels of the device can be controlled individually from all other Z-Wave devices that support the multichannel feature. In order to support also the integration with no-multichannel systems, this parameter allows to define if the receipt of a no-mu",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 3,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "CHANNEL 1"
+                },
+                {
+                    "value": 3,
+                    "label": "BOTH CHANNELS"
+                }
+            ]
+        },
+        {
+            "id": 60,
+            "label": "Start-up status",
+            "description": "Defines the status of the device following a restart.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 4,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 4,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "OFF_OFF"
+                },
+                {
+                    "value": 1,
+                    "label": "ON_OFF"
+                },
+                {
+                    "value": 2,
+                    "label": "OFF_ON"
+                },
+                {
+                    "value": 3,
+                    "label": "ON_ON"
+                },
+                {
+                    "value": 4,
+                    "label": "PREVIOUS STATUS"
+                }
+            ]
+        },
+        {
+            "id": 61,
+            "label": "Configuration reset",
+            "description": "Defines which parameters should be reset to default values",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 4,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 4,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "FACTORY RESET"
+                },
+                {
+                    "value": 1,
+                    "label": "ASSOCIATIONS RESET"
+                },
+                {
+                    "value": 2,
+                    "label": "CONFIGURATIONS RESET"
+                },
+                {
+                    "value": 3,
+                    "label": "RESTART DEVICE"
+                },
+                {
+                    "value": 4,
+                    "label": "IGNORE"
+                }
+            ]
+        },
+        {
+            "id": 62,
+            "label": "Type of external switch",
+            "description": "Defines the type of external switch connected to the device",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "IGNORE"
+                },
+                {
+                    "value": 1,
+                    "label": "BUTTON"
+                },
+                {
+                    "value": 2,
+                    "label": "SWITCH"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "LifeLine Group",
+            "max_nodes": 8,
+            "controller": true,
+            "description": "",
+            "overview": "<p>Devices to receive notifications on: status changes; instantaneous power level; device local reset\u00a0<\/p>"
+        },
+        {
+            "id": 2,
+            "label": "On\/Off control (Switch 1)",
+            "max_nodes": 8,
+            "controller": false,
+            "description": "",
+            "overview": "<p>Devices controlled by switch 1<\/p>"
+        },
+        {
+            "id": 3,
+            "label": "Dimming control (Switch 1)",
+            "max_nodes": 8,
+            "controller": false,
+            "description": "",
+            "overview": "<p>Devices controlled by switch 1<\/p>"
+        },
+        {
+            "id": 4,
+            "label": "On\/Off control (Switch 2)",
+            "max_nodes": 8,
+            "controller": false,
+            "description": "",
+            "overview": "<p>Devices controlled by switch 2<\/p>"
+        },
+        {
+            "id": 5,
+            "label": "Dimming control (Switch 2)",
+            "max_nodes": 8,
+            "controller": false,
+            "description": "",
+            "overview": "<p>Devices controlled by switch 2<\/p>"
+        }
+    ]
+}
