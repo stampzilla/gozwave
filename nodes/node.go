@@ -150,6 +150,7 @@ func (n *Node) Identify() {
 
 	for {
 		if n.ProtocolInfo() == nil {
+			logrus.Infof("Identify %d - Step 1 (RequestProtocolInfo)", n.Id)
 			resp, err := n.RequestProtocolInfo()
 			if err != nil {
 				logrus.Errorf("Node ident: Failed RequestProtocolInfo: %s", err.Error())
@@ -168,9 +169,11 @@ func (n *Node) Identify() {
 
 		// set basic commandClasses
 		classes := database.GetMandatoryCommandClasses(n.ProtocolInfo().Generic, n.ProtocolInfo().Specific)
+		desc := database.GetDescription(n.ProtocolInfo().Generic, n.ProtocolInfo().Specific)
 
 		n.Lock()
 		n.CommandClasses = classes
+		n.Description = desc
 		n.Unlock()
 
 		//<-self.Connection.SendRaw([]byte{serialapi.GetNodeProtocolInfo, byte(index + 1)}) // Request node information
@@ -179,6 +182,7 @@ func (n *Node) Identify() {
 		// All manufacturer specific information such as vendor, vendors product ID and product type
 		if n.ManufacurerSpecific == nil {
 			<-n.isAwake()
+			logrus.Infof("Identify %d - Step 2 (RequestManufacturerSpecific)", n.Id)
 			resp, err := n.RequestManufacturerSpecific()
 			if err != nil {
 				logrus.Errorf("Node ident: Failed ManufacurerSpecific: %s", err.Error())
@@ -238,9 +242,10 @@ func (n *Node) Identify() {
 
 		// Request node endpoints
 		n.RLock()
-		if n.Endpoints == nil {
+		if n.Endpoints == nil && n.HasCommand(commands.MultiInstance) {
 			n.RUnlock()
 			<-n.isAwake()
+			logrus.Infof("Identify %d - Step 3 (RequestEndpoints)", n.Id)
 			err := n.RequestEndpoints()
 			if err != nil {
 				<-time.After(time.Second * 10)
@@ -260,6 +265,7 @@ func (n *Node) Identify() {
 		if !n.statesOk {
 			n.RUnlock()
 			<-n.isAwake()
+			logrus.Infof("Identify %d - Step 4 (RequestStates)", n.Id)
 			err := n.RequestStates()
 			if err != nil {
 				<-time.After(time.Second * 10)

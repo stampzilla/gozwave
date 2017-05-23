@@ -101,9 +101,11 @@ func (conn *Connection) WriteAndWaitForReport(msg interfaces.Encodable, t time.D
 	go func() {
 		defer close(returnChan)
 		for msg := range pkg.returnChan {
-			if f, ok := msg.Data.(*serialapi.FuncApplicationCommandHandler); ok {
-				returnChan <- f.Report
-				return
+			if msg != nil {
+				if f, ok := msg.Data.(*serialapi.FuncApplicationCommandHandler); ok {
+					returnChan <- f.Report
+					return
+				}
 			}
 
 			logrus.Errorf("WriteAndWaitForReport: Received wrong type: %t", msg)
@@ -210,7 +212,7 @@ func (conn *Connection) Reader() error {
 				logrus.Errorf("%s - %d", err.Error(), l)
 			}
 
-			if l == 1 {
+			if l == 1 && msg != nil {
 				for index, c := range conn.inFlight {
 					conn.RLock()
 					if c.uuid == conn.lastCommand {
@@ -253,7 +255,7 @@ func (conn *Connection) Reader() error {
 				conn.Lock()
 				for index, c := range conn.inFlight {
 					if !c.Match(incomming) {
-						logrus.Info("Check match %#v", c)
+						logrus.Infof("Check match %#v", c)
 						continue
 					}
 

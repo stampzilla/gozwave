@@ -14,6 +14,7 @@ import (
 
 type templates struct {
 	CommandClasses map[string][]string
+	Descriptions   map[string]string
 	Package        string
 }
 
@@ -30,6 +31,7 @@ func main() {
 
 	data := &templates{
 		CommandClasses: make(map[string][]string),
+		Descriptions:   make(map[string]string),
 		Package:        packageName,
 	}
 	//data.CommandClasses[database.Definition{Generic: 0x01, Specific: 0x02}] = []string{
@@ -51,6 +53,7 @@ func main() {
 		if text == "" {
 			for _, def := range defs {
 				data.CommandClasses[def[0]+"|"+def[1]] = classes
+				data.Descriptions[def[0]+"|"+def[1]] = def[2]
 			}
 			defs = [][]string{}
 			classes = []string{}
@@ -66,6 +69,7 @@ func main() {
 			defs = append(defs, []string{
 				strings.TrimSpace(tmp[len(tmp)-2]),
 				strings.TrimSpace(tmp[len(tmp)-1]),
+				strings.TrimSpace(strings.TrimLeft(strings.Join(tmp[:len(tmp)-2], "-"), "#")),
 			})
 		}
 
@@ -243,6 +247,16 @@ var definitions = map[Definition][]*CommandClass{
 		},
 {{- end }}
 	},
+
+{{- end}}
+}
+
+var descriptions = map[Definition]string{
+{{- range $key, $value := .Descriptions }}
+	Definition{
+		Generic:  protocol.{{ getGeneric $key }},
+		Specific: protocol.{{ getSpecific $key }},
+	}: "{{ $value }}",
 
 {{- end}}
 }
