@@ -165,19 +165,16 @@ func (n *Node) Identify() {
 				Address: n.Id,
 			})
 			n.Unlock()
+
+			// set basic commandClasses and desc
+			classes := database.GetMandatoryCommandClasses(n.ProtocolInfo().Generic, n.ProtocolInfo().Specific)
+			desc := database.GetDescription(n.ProtocolInfo().Generic, n.ProtocolInfo().Specific)
+
+			n.Lock()
+			n.CommandClasses = classes
+			n.Description = desc
+			n.Unlock()
 		}
-
-		// set basic commandClasses
-		classes := database.GetMandatoryCommandClasses(n.ProtocolInfo().Generic, n.ProtocolInfo().Specific)
-		desc := database.GetDescription(n.ProtocolInfo().Generic, n.ProtocolInfo().Specific)
-
-		n.Lock()
-		n.CommandClasses = classes
-		n.Description = desc
-		n.Unlock()
-
-		//<-self.Connection.SendRaw([]byte{serialapi.GetNodeProtocolInfo, byte(index + 1)}) // Request node information
-		//		nodeinfo := self.WaitForGetNodeProtocolInfo()
 
 		// All manufacturer specific information such as vendor, vendors product ID and product type
 		if n.ManufacurerSpecific == nil {
@@ -185,7 +182,7 @@ func (n *Node) Identify() {
 			logrus.Infof("Identify %d - Step 2 (RequestManufacturerSpecific)", n.Id)
 			resp, err := n.RequestManufacturerSpecific()
 			if err != nil {
-				logrus.Errorf("Node ident: Failed ManufacurerSpecific: %s", err.Error())
+				logrus.Errorf("Identify %d - Step 2 failed: %s", n.Id, err.Error())
 				<-time.After(time.Second * 10)
 				continue
 			}
@@ -206,6 +203,33 @@ func (n *Node) Identify() {
 			})
 			n.Unlock()
 		}
+
+		// If not found in database, we need to ask for command classes
+		n.RLock()
+		if len(n.CommandClasses) == 0 {
+			n.RUnlock()
+			<-n.isAwake()
+
+			logrus.Infof("Identify %d - Step 3 (RequestNodeInfo)", n.Id)
+			resp, err := n.RequestNodeInfo()
+			if err != nil {
+				logrus.Errorf("Identify %d - Step 3 failed: %s", n.Id, err.Error())
+				<-time.After(time.Second * 10)
+				continue
+			}
+
+			if len(resp) > 0 {
+				n.Lock()
+				for _, v := range resp {
+					logrus.Warnf("command classes found in NIF: %#v", v)
+					n.CommandClasses = append(n.CommandClasses, v)
+				}
+				n.Unlock()
+				continue
+			}
+			n.RLock()
+		}
+		n.RUnlock()
 
 		// Get node version
 		//resp := <-n.connection.SendRaw([]byte{
@@ -245,7 +269,7 @@ func (n *Node) Identify() {
 		if n.Endpoints == nil && n.HasCommand(commands.MultiInstance) {
 			n.RUnlock()
 			<-n.isAwake()
-			logrus.Infof("Identify %d - Step 3 (RequestEndpoints)", n.Id)
+			logrus.Infof("Identify %d - Step 4 (RequestEndpoints)", n.Id)
 			err := n.RequestEndpoints()
 			if err != nil {
 				<-time.After(time.Second * 10)
@@ -265,7 +289,7 @@ func (n *Node) Identify() {
 		if !n.statesOk {
 			n.RUnlock()
 			<-n.isAwake()
-			logrus.Infof("Identify %d - Step 4 (RequestStates)", n.Id)
+			logrus.Infof("Identify %d - Step 5 (RequestStates)", n.Id)
 			err := n.RequestStates()
 			if err != nil {
 				<-time.After(time.Second * 10)

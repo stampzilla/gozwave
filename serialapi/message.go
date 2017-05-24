@@ -118,11 +118,11 @@ func NewMessage(data []byte) (*Message, error) {
 
 		message.Data, err = NewApplicationCommandHandler(data[7 : 7+data[6]])
 	case DiscoveryNodes:
-
 		message.Data, err = NewDiscoverdNodes(data[7 : 7+data[6]])
 	case GetNodeProtocolInfo:
-
 		message.Data, err = NewGetNodeProtocolInfo(data[4:])
+	case ApplicationUpdate:
+		message.Data, err = NewApplicationUpdate(data[4:])
 	default:
 		err = fmt.Errorf("Dropping message function='%s' with data %x (not implemented)", message.Function, data[4:])
 	}

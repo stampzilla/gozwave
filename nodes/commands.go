@@ -22,7 +22,13 @@ func (n *Node) On() {
 
 		send = cmd
 	default:
-		return
+		cmd := commands.NewRaw([]byte{
+			commands.Basic,
+			0x01,
+			0xFF,
+		})
+		cmd.SetNode(n.Id)
+		send = cmd
 	}
 
 	n.connection.Write(send)
@@ -45,7 +51,13 @@ func (n *Node) Off() {
 
 		send = cmd
 	default:
-		return
+		cmd := commands.NewRaw([]byte{
+			commands.Basic,
+			0x01,
+			0x00,
+		})
+		cmd.SetNode(n.Id)
+		send = cmd
 	}
 
 	n.connection.Write(send)
