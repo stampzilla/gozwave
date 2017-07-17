@@ -1,0 +1,627 @@
+{
+    "database_id": 114,
+    "label": "FGS212",
+    "manufacturer_name": "Fibargroup",
+    "manufacturer_id": "010F",
+    "device_ref": [
+        "0401:100A",
+        "0402:1002"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Relay Switch 1x2.5kW",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.052,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "60",
+                    "name": "MULTI_INSTANCE",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "87",
+                    "name": "INDICATOR",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 1",
+                            "config": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 2",
+                            "config": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Enable\/Disable ALL ON\/OFF",
+            "description": "Activate\/Deactive ALL ON\/OFF",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "ALL ON disabled \/ ALL OFF disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "ALL ON disabled \/ ALL OFF active"
+                },
+                {
+                    "value": 2,
+                    "label": "ALL ON active \/ ALL OFF disabled"
+                },
+                {
+                    "value": 255,
+                    "label": "ALL ON active \/ ALL OFF active"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "label": "Override OFF-delay",
+            "description": "Forced auto off period",
+            "overview": "<p>If Parameter 4 states an auto off period, this parameter enable the possibility to turn off the relay with a button push. Default value 0 disallow turn off with a button push during the auto off interval.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Turn off with push button disabled in auto off interval"
+                },
+                {
+                    "value": 1,
+                    "label": "Turn off with push button enabled in auto off interval"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "label": "Relay 1: OFF-delay time (100ms steps)",
+            "description": "Automatic turning off relay 1 after set time ...",
+            "overview": "<p>Default: 0 (Auto off disabled). In 100ms increments.<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 6,
+            "label": "Separation of association sending (key 1)",
+            "description": "Sending commands to control devices assigned ...",
+            "overview": "<p>to 1-st association group (key no. 1)<\/p> <p>- Also see param #15<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Map status to all devices in group 1"
+                },
+                {
+                    "value": 1,
+                    "label": "Map OFF status to all devices in group 1  ..."
+                },
+                {
+                    "value": 2,
+                    "label": "Map OFF status to all devices in group 1 ..."
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "label": "Inputs behaviour",
+            "description": "Assigns bistable key status to the device status.",
+            "overview": "<p>Available configuration parameters:<br \/>0 - [On \/ Off] device changes status on key status change.<br \/>1 - Device status depends on key status: ON when the key is ON, OFF when the key is OFF <\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Toggle"
+                },
+                {
+                    "value": 1,
+                    "label": "Follow switch contact (closed=ON, open=OFF)"
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "label": "Inputs Button\/Switch configuration",
+            "description": "Binary inputs type configuration",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Mono-stable input (button)"
+                },
+                {
+                    "value": 1,
+                    "label": "Bi-stable input (switch)"
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "label": "Dimmer\/Roller shutter control",
+            "description": "Enable\/Disable operation of dimmer or roller shutter devices ...",
+            "overview": "<p>enabling this option allows the user to dim lighting\/shut roller by associating Dimmer\/Roller Shutter Controller and holding or double press of double switch (only mono-stable switch). <\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable Dimmer\/Roller shutter control"
+                },
+                {
+                    "value": 1,
+                    "label": "Enable Dimmer\/Roller shutter control"
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "label": "Saving state before power failure",
+            "description": "Saving state before power failure",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "State NOT saved at power failure, all outputs are set ..."
+                },
+                {
+                    "value": 1,
+                    "label": "State saved at power failure, all outputs are set to ..."
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "label": "Relay 1: Response to General Alarm",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "DEACTIVATION - no response to alarm frames"
+                },
+                {
+                    "value": 1,
+                    "label": "ALARM RELAY ON - relay will turn ON upon receipt ..."
+                },
+                {
+                    "value": 2,
+                    "label": "ALARM RELAY OFF - relay will turn OFF upon receipt ..."
+                },
+                {
+                    "value": 3,
+                    "label": "ALARM FLASHING - relay will turn ON and OFF ..."
+                }
+            ]
+        },
+        {
+            "id": 31,
+            "label": "Relay 1: Response to Water Flood Alarm",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "DEACTIVATION - no response to alarm frames"
+                },
+                {
+                    "value": 1,
+                    "label": "ALARM RELAY ON - relay will turn ON upon receipt ..."
+                },
+                {
+                    "value": 2,
+                    "label": "ALARM RELAY OFF - relay will turn OFF upon receipt ..."
+                },
+                {
+                    "value": 3,
+                    "label": "ALARM FLASHING - relay will turn ON and OFF ..."
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "label": "Relay 1: Response to Smoke, CO, CO2 Alarm",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "DEACTIVATION - no response to alarm frames"
+                },
+                {
+                    "value": 1,
+                    "label": "ALARM RELAY ON - relay will turn ON upon receipt ..."
+                },
+                {
+                    "value": 2,
+                    "label": "ALARM RELAY OFF - relay will turn OFF upon receipt ..."
+                },
+                {
+                    "value": 3,
+                    "label": "ALARM FLASHING - relay will turn ON and OFF ..."
+                }
+            ]
+        },
+        {
+            "id": 33,
+            "label": "Relay 1: Response to Temperature Alarm",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "DEACTIVATION - no response to alarm frames"
+                },
+                {
+                    "value": 1,
+                    "label": "ALARM RELAY ON - relay will turn ON upon receipt ..."
+                },
+                {
+                    "value": 2,
+                    "label": "ALARM RELAY OFF - relay will turn OFF upon receipt ..."
+                },
+                {
+                    "value": 3,
+                    "label": "ALARM FLASHING - relay will turn ON and OFF ..."
+                }
+            ]
+        },
+        {
+            "id": 39,
+            "label": "ALARM FLASHING alarm time",
+            "description": "Amount of time (ms) the device keeps on flashing after receipt of Alarm Frame",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 600,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Switch 1",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Switch 2",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "Controller Updates",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

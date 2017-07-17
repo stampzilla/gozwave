@@ -1,0 +1,861 @@
+{
+    "database_id": 213,
+    "label": "ZMNHCD",
+    "manufacturer_name": "Goap",
+    "manufacturer_id": "0159",
+    "device_ref": [
+        "0003:0002",
+        "0003:0052"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Flush Shutter",
+    "overview": "<p>To enable endpoint 2 (lamella tilt for venetian blinds), follow the procedure:<\/p> <ol><li>set Param 71 to 0 -&gt; save ( make sure it has been set really )<\/li> <li>set Param 71 to 1 -&gt; save ( make sure it has been set really )<\/li> <li>exclude device from network and delete Node xml, stop openHAB<\/li> <li>switch off the power supply of the device ( according to the support team this is an alternative to wait 30s )<\/li> <li>switch on the power supply again and start openHAB<\/li> <li>include device to the network<\/li> <li>add the Thing to openhab via HABmin<\/li> <li>Be patient until the binding until processed all your nodes again<\/li> <\/ol>",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 4.005,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_CLASS_C_MOTOR_CONTROL"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 7,
+                "name": "SPECIFIC_TYPE_CLASS_C_MOTOR_CONTROL"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "3",
+                    "nif": true,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "blinds_control",
+                            "label": "Blinds Control",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Sensor (temperature)",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh)",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "60",
+                    "name": "MULTI_INSTANCE",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8E",
+                    "name": "MULTI_INSTANCE_ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 7,
+                "name": "SPECIFIC_TYPE_CLASS_C_MOTOR_CONTROL"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 1",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "3",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "blinds_control",
+                            "label": "Blinds control 1",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh) 1",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts) 1",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8E",
+                    "name": "MULTI_INSTANCE_ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 7,
+                "name": "SPECIFIC_TYPE_CLASS_C_MOTOR_CONTROL"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 2",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "3",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "blinds_control",
+                            "label": "Blinds control 2",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8E",
+                    "name": "MULTI_INSTANCE_ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 10,
+            "label": "ALL ON\/ALL OFF",
+            "description": "Responds to commands ALL ON \/ ALL OFF from Main Controller",
+            "overview": "<p>Module responds to commands ALL ON \/ ALL OFF that may be sent by the main controller or by other controller belonging to the system.<\/p> <p>Available config. parameters (data type is 2 Byte DEC):<\/p> <ul><li>\u00a0default value 255<\/li> <li>\u00a0255 - ALL ON active, ALL OFF active.<\/li> <li>\u00a00 - ALL ON is not active, ALL OFF is not active<\/li> <li>\u00a01 - ALL ON is not active ALL OFF active<\/li> <li>\u00a02 - ALL ON active ALL OFF is not active<\/li> <\/ul>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "0 - ALL ON is not active ALL OFF is not active"
+                },
+                {
+                    "value": 1,
+                    "label": "1 - ALL ON is not active ALL OFF active"
+                },
+                {
+                    "value": 2,
+                    "label": "2 - ALL ON is not active ALL OFF is not active"
+                },
+                {
+                    "value": 255,
+                    "label": "255 - ALL ON active, ALL OFF active"
+                }
+            ]
+        },
+        {
+            "id": 40,
+            "label": "Power reporting in watts on power change",
+            "description": "Power consumption change threshold for sending updates",
+            "overview": "<p>Power\u00a0report is send (push) only when actual power (in Watts) in real time changes for more than set percentage comparing to previous actual power in Watts, step is 1%.<\/p> <p>Set value means percentage, set value from 0 \u2013 100 = 0% - 100%. Available configuration parameters (data type is 1 Byte DEC):<\/p> <ul><li>\u00a0default value 1<\/li> <li>\u00a00 - reporting disabled<\/li> <li>\u00a01 - 100 = 1% - 100% Reporting enabled.<\/li> <\/ul><p>NOTE: if power changed is less than 1W, the report is not send (pushed), independent of percentage set.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 42,
+            "label": "Power reporting in Watts by time interval",
+            "description": "Power reporting in Watts by time interval for Q1 or Q2",
+            "overview": "<p>Set value means time interval (0 \u2013 32767) in seconds, when power report is send. Available configuration parameters (data type is 2 Byte DEC):<\/p> <ul><li>\u00a0default value 300 = 300s<\/li> <li>\u00a00 - Reporting Disabled<\/li> <li>\u00a01 - 32767 = 1 second - 32767 seconds. Reporting\u00a0enabled, power report is send with time interval set\u00a0by entered value.<\/li> <\/ul>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 300,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32767,
+            "options": []
+        },
+        {
+            "id": 71,
+            "label": "Operating modes",
+            "description": "Operation Mode (Shutter or Venetian)",
+            "overview": "<p>This parameter defines selection between two available operating modes. Available configuration parameters (data type is 1 Byte DEC):<\/p> <ul><li>\uf0b7 default value 0<\/li> <li>\uf0b7 0 - Shutter mode<\/li> <li>\uf0b7 1 - venetian mode (up\/down and slate rotation) NOTE1: After parameter change, first exclude module (without setting parameters to default value) then wait at least 30s and then re include the module!<\/li> <\/ul>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "0 \u2013 Shutter mode"
+                },
+                {
+                    "value": 1,
+                    "label": "1 \u2013 Venetian mode (up\/down and slate rotation)"
+                }
+            ]
+        },
+        {
+            "id": 72,
+            "label": "Slats tilting full turn time",
+            "description": "Slat full turn time in tenths of a second.",
+            "overview": "<p>This parameter defines the time necessary for slats to make full turn (180 degrees). Available configuration parameters (data type is 2 Byte DEC):<\/p> <ul><li>\uf0b7 default value 150 = 1,5 seconds<\/li> <li>\uf0b7 0 - tilting time disabled<\/li> <li>\uf0b7 1 - 32767 = 0,01seconds - 327,67 seconds<\/li> <\/ul><p>NOTE: If time set is too high, this will result that after full turn, Shutter will start move up\/down, for time remaining.<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 150,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32767,
+            "options": []
+        },
+        {
+            "id": 73,
+            "label": "Slats position",
+            "description": "Slats position after up\/down movement.",
+            "overview": "<p>This parameter defines slats position after up\/down movement through Z-wave or push-buttons. Available configuration parameters (data type is 1 Byte DEC):<\/p> <ul><li>\u00a0default value 1<\/li> <li>\u00a00 - Slats return to previously set position only in case of Z-wave control (not valid for limit switch positions).<\/li> <li>\u00a01 - Slats return to previously set position in case of Z-wave control, push-button operation or when the lower limit switch is reached.<\/li> <\/ul>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "0 - return to previous position for Z-wave control only"
+                },
+                {
+                    "value": 0,
+                    "label": ""
+                },
+                {
+                    "value": 1,
+                    "label": "1 - return to previous position in all cases"
+                }
+            ]
+        },
+        {
+            "id": 74,
+            "label": "Motor moving up\/down time",
+            "description": "Shutter motor moving time of complete opening or complete closing",
+            "overview": "<p>This parameter defines Shutter motor moving time of complete opening or complete closing. Available configuration parameters (data type is 2 Byte DEC):<\/p> <ul><li>\u00a0default value 0<\/li> <li>\u00a00 - moving time disabled (working with limit switches)<\/li> <li>\u00a01 - 32767 = 0,1seconds - 3276,7seconds. After that time motor is stopped (relay goes to off state)<\/li> <\/ul><p>NOTE: Important is that the reference position to manually set moving time is always Shutter lower position!<\/p> <p>Set parameter 74 to 0 and move the Shutter (using up\/down push buttons or main controller UI) to the lowest desired position. On this Shutter position, set parameter 74 to time for complete opening or complete closing. At this point Shutter can be moved up (open) for set time, but can't be moved down because this position is already set as lower Shutter position.<\/p> <p>To change Shutter lower position below already set (manual recalibration), parameter 74 must be set to 0 and repeat the procedure described above.<\/p> <p>In case Shutter has limit switches, but anyhow you would like to limit opening\/closing position by time, you can still do it. In case you put time that is longer that opening\/closing real time limited by limit switches, Shutter will stop at limit switch, but the module relay will switch off after define time, not by Shutter limit switch. Take in consideration that in this condition, the positioning with slider through UI will not show correct Shutter position. NOTE that is not recommended using this for slates operation since its positioning can be compromised during time.<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32767,
+            "options": []
+        },
+        {
+            "id": 76,
+            "label": "Motor operation detection",
+            "description": "Power threshold to be interpreted when motor reach the limit switch",
+            "overview": "<p>Power threshold to be interpreted when motor reach the limit switch. Available configuration parameters (data type is 1 Byte DEC):<\/p> <ul><li>\u00a0default value 6 = 0,6W<\/li> <li>\u00a05 - 100 (0,5W - 10W), step is 0,1W.<\/li> <\/ul><p>NOTE: Motors with power consumption less than 0,5W could not be auto calibrated. In that case set time manually (par. 74).<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 78,
+            "label": "Forced Shutter calibration",
+            "description": "Enters calibration mode if set to 1",
+            "overview": "<p>By modifying the parameters setting from 0 to 1 a Shutter DC module enters the calibration mode. Available configuration parameters (data type is 1 Byte DEC):<\/p> <ul><li>\u00a0default value 0<\/li> <li>\u00a01 - Start calibration process (when calibration\u00a0process is finished, completing full cycle - up, down and up, set the parameter 78 (Forced Shutter calibration) value back to 0.<\/li> <\/ul>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "0 - Default"
+                },
+                {
+                    "value": 1,
+                    "label": "1 - Start Calibration Process"
+                }
+            ]
+        },
+        {
+            "id": 80,
+            "label": "Reporting to Controller",
+            "description": "Defines if reporting regarding power level, etc is reported to controller.",
+            "overview": "<p>This parameter defines if reporting regarding power level, multilevel, etc,\u2026is reported to controller or not. Available configuration parameters: default value 1<\/p> <ul><li>0 reporting to controller is disabled<\/li> <li>1 reporting to controller<\/li> <\/ul>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "0 - Reporting to Controller Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "1 - Reporting to Controller Enabled"
+                }
+            ]
+        },
+        {
+            "id": 85,
+            "label": "Power consumption max delay time",
+            "description": "Time delay for detecting motor errors",
+            "overview": "<p>This parameter defines the max time before motor power consumption is read after one of the relays is switched ON. If there is no power consumption during this max time (motor not connected, damaged or requires higher time to start, motor in end position,...) the relay will switch OFF. Time is defined by entering it manually. Available configuration parameters (data type is 1 Byte DEC):<\/p> <ul><li>\u00a0default value 8 = 800ms<\/li> <li>\u00a03 - 50 = 0,3seconds - 5seconds (100ms resolution)<\/li> <\/ul>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 8,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 50,
+            "options": []
+        },
+        {
+            "id": 86,
+            "label": "Power consumption at limit switch delay time",
+            "description": "Sets the time delay for detecting limit switches",
+            "overview": "<p>This parameter defines the max time at limit switch, when power consumption is below power threshold. If the power consumption during this time is below power threshold (par. 76), the active output will switch off, means that limit switch is reached. Available configuration parameters (data type is 1 Byte DEC):<\/p> <ul><li>\u00a0default value 8 = 800ms<\/li> <li>\u00a03 - 50 = 0,3seconds - 5seconds (100ms resolution)<\/li> <\/ul>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 8,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 3,
+            "value_max": 50,
+            "options": []
+        },
+        {
+            "id": 90,
+            "label": "Relay delay time",
+            "description": "Defines the minimum time delay between next motor movement",
+            "overview": "<p>This parameter defines the minimum time delay between next motor movement (minimum time between switching motor off and on again). Available configuration parameters (data type is 1 Byte DEC):<\/p> <ul><li>\u00a0default value 5 = 500ms<\/li> <li>\u00a01 - 30 = 0,1seconds - 3seconds (100ms resolution)<\/li> <\/ul>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 30,
+            "options": []
+        },
+        {
+            "id": 110,
+            "label": "Temperature sensor offset settings",
+            "description": "Adds or removes an offset from the measured temperature.",
+            "overview": "<p>Set value is added or subtracted to actual measured value by sensor. Available configuration parameters (data type is 2 Byte DEC):<\/p> <ul><li>\u00a0default value 32536<\/li> <li>\u00a032536 - offset is 0.0C<\/li> <li>\u00a0From 1 to 100 - value from 0.1 \u00b0C to 10.0 \u00b0C is added to actual measured temperature.<\/li> <li>\u00a0From 1001 to 1100 - value from -0.1 \u00b0C to -10.0 \u00b0C is subtracted to actual measured temperature.<\/li> <\/ul>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 32536,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 32536,
+            "options": []
+        },
+        {
+            "id": 120,
+            "label": "Digital temperature sensor reporting",
+            "description": "Threshold for sending temperature change reports",
+            "overview": "<p>If digital temperature sensor is connected, module reports measured temperature on temperature change defined by this parameter. Available configuration parameters (data type is 1 Byte DEC):<\/p> <ul><li>\u00a0Default value 5 = 0,5\u00b0C<\/li> <li>\u00a00 - reporting disabled<\/li> <li>\u00a01-127 = 0,1\u00b0C - 12,7\u00b0C, step is 0,1\u00b0C<\/li> <\/ul>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Controller Updates",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "On\/Off Triggered by I2",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "On\/Off Triggered by I3",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 4,
+            "label": "Multi-level Triggerd by Shutter Position",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 5,
+            "label": "Multilevel Trigger by Slat Position",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

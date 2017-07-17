@@ -1,0 +1,760 @@
+{
+    "database_id": 215,
+    "label": "ZMNHBD",
+    "manufacturer_name": "Goap",
+    "manufacturer_id": "0159",
+    "device_ref": [
+        "0002:0051"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Flush 2 relays",
+    "overview": "<p>This Z-Wave module is used for switching on or off two electrical devices (e.g. lights or fans,..). The module can be controlled either through Z-Wave network or through the wallswitches. The module is designed to be mounted inside a \"flush mountingbox\", hidden behind a traditional wall switch. Module measures power consumption of two electrical devices and supports connection of digital temperature sensor. It is designed to act as repeater in order to improve range and stability of Z-wave network.<\/p>",
+    "inclusion": "<p><b>Module Inclusion (Adding to Z-Wave network)<\/b><\/p> <ul><li>Connect module to power supply (with temperature sensor connected -if purchased)<\/li> <li>Enable add\/remove mode on main controller<\/li> <li>Auto-inclusion (works forabout 5 seconds after connected to power supply) or<\/li> <li>Press push button I1 three times within 3s (3 times change switch state within 3 seconds) or<\/li> <li>Press service button <b>S<\/b> (only applicable for 24 V SELV supply voltage) for more than 2 seconds.<\/li> <\/ul><p><strong>NOTE1:<\/strong> For auto-inclusion procedure, first set main controller into inclusion mode and then connect module to power supply.<\/p> <p><strong>NOTE2:<\/strong> When connecting temperature sensor to module that has already been included, you have to exclude module first. Switch off power supply , connect the sensor and re-include the module.<\/p>",
+    "exclusion": "<p><b>Module Exclusion\/Reset (Removing from Z-Wavenetwork)<\/b><\/p> <ul><li>Connect module to power supply<\/li> <li>Bring module within maximum 1 meter (3 feet) of the main controller,<\/li> <li>Enable add\/remove mode on main controller,<\/li> <li>Press push button <b>I1 <\/b>five times within 3s (5 times change switch state within 3 seconds) in the first 60 seconds after the module is connected to the power supply or<\/li> <li>Press service button <b>S <\/b>(only applicable for 24 V SELV supply voltage) for more than 6 seconds.<\/li> <\/ul><p>By this function all parameters of the module are set to default values and own ID is deleted.<\/p> <p>If push button I1 is pressed three times within 3s (or service button S is pressed more than 2 and less than 6 seconds) module is excluded, but configuration parameters are not set to default values.<\/p>",
+    "wakeup": "",
+    "protocol_version": 4.005,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "5",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Sensor (temperature)",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        },
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh)",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "60",
+                    "name": "MULTI_INSTANCE",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 1",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts) 1",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        },
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh) 1",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 2",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts) 2",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        },
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh) 2",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Input 1 switch type",
+            "description": "Input 1 switch type",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "mono-stable switch type (push button)"
+                },
+                {
+                    "value": 1,
+                    "label": "bi-stable switch type"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "Input 2 switch type",
+            "description": "Input 2 switch type",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "mono-stable switch type (push button)"
+                },
+                {
+                    "value": 1,
+                    "label": "bi-stable switch type"
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "label": "Functions ALL ON\/ALL OFF",
+            "description": "Activate \/ deactivate functions ALL ON\/ALL OFF",
+            "overview": "<p>Flush 1 relay module responds to commands ALL ON \/ ALL OFF that may be sent by the main controller or by other controller belonging to the system.<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "ALL ON is not active ALL OFF is not active"
+                },
+                {
+                    "value": 1,
+                    "label": "ALL ON is not active ALL OFF active"
+                },
+                {
+                    "value": 2,
+                    "label": "ALL ON active ALL OFF is not active"
+                },
+                {
+                    "value": 255,
+                    "label": "ALL ON active, ALL OFF active"
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "label": "Automatic turning off output Q1 after set time",
+            "description": "When relay Q1 is ON it goes automatically OFF after defined time",
+            "overview": "<p>Timer is reset to zero each time the module receive ON command regardless from where it comes\u00a0 (push button, associated module, controller,..).<\/p> <ul><li>0 - Auto OFF disabled<\/li> <li>1 - 32535 = 1second (0,01s) - 32535 seconds (325,35s) Auto OFF enabled with define time, step is 1s or 10ms according to parameter nr.15.<\/li> <\/ul>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32535,
+            "options": []
+        },
+        {
+            "id": 12,
+            "label": "Automatic turning on output Q1 after set time",
+            "description": "When relay Q1 is OFF it goes automatically ON after defined time",
+            "overview": "<p>Timer is reset to zero each time the module receive OFF command regardless from where it comes (push button, associated module, controller,..).<\/p> <ul><li>0 - Auto ON disabled<\/li> <li>1 - 32535 = 1second (0,01s) - 32536 seconds (325,35s) Auto ON enabled with define time, step is 1s or 10ms according to parameter nr.15.<\/li> <\/ul>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32535,
+            "options": []
+        },
+        {
+            "id": 13,
+            "label": "Automatic turning off relay Q2 after set time",
+            "description": "When relay Q2 is ON it goes automatically OFF after defined time",
+            "overview": "<p>Timer is reset to zero each time the module receive ON command regardless from where it comes (push button, associated module, controller,..).<\/p> <ul><li>0 -Auto OFF disabled<\/li> <li>1 - 32535 = 1second (0,01s) - 32535 seconds (325,35s) Auto OFF enabled with define time, step is 1s or 10ms according to parameter nr.15.<\/li> <\/ul>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32535,
+            "options": []
+        },
+        {
+            "id": 14,
+            "label": "Automatic turning on output Q2 after set time",
+            "description": "When relay Q2 is OFF it goes automatically ON after defined time",
+            "overview": "<p>Timer is reset to zero each time the module receive OFF command regardless from where it comes (push button, associated module, controller,..).<\/p> <ul><li>0 -Auto ON disabled<\/li> <li>1 - 32535 = 1second (0,01s) - 32536 seconds (325,35s) Auto ON enabled with define time, step is 1s or 10ms according to parameter nr.15.<\/li> <\/ul>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32535,
+            "options": []
+        },
+        {
+            "id": 15,
+            "label": "Automatic turning off \/ on seconds or milliseconds selection",
+            "description": "Automatic turning off \/ on seconds or milliseconds selection",
+            "overview": "<p>Available configuration parameters:<\/p> <ul><li>0 \u2013 seconds selected<\/li> <li>1 \u2013 milliseconds selected<\/li> <\/ul><p><strong>NOTE:<\/strong> Parameter is valid for both outputs Q1, Q2 and is the same for turning off or on.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 30,
+            "label": "Saving the state after a power failure",
+            "description": "Saving the state of the relays Q1 and Q2 after a power failure",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Saves its state before power failure"
+                },
+                {
+                    "value": 1,
+                    "label": "Does not save the state after a power failure"
+                }
+            ]
+        },
+        {
+            "id": 40,
+            "label": "Power reporting in Watts for Q1",
+            "description": "Power reporting in Watts on power change for Q1",
+            "overview": "<p>Set value means percentage, set value from 0 \u2013100 = 0% -100%.<\/p> <p>Available configuration parameters:<\/p> <ul><li>0 - reporting disabled<\/li> <li>1 -100 = 1% -100% Reporting enabled. Power report is send (push) only when actual power in Watts in real time changes for more than set percentage comparing to previous actual power in Watts, step is 1%.<\/li> <\/ul><p><strong>NOTE:<\/strong> If power changed is less than 1W, the report is not send (pushed), independent of percentage set.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 41,
+            "label": "Power reporting in Watts for Q2",
+            "description": "Power reporting in Watts on power change for Q2",
+            "overview": "<p>Set value means percentage, set value from 0 \u2013100 = 0% -100%. Available configuration parameters:<\/p> <ul><li>0 - reporting disabled<\/li> <li>1 - 100 = 1% - 100% Reporting enabled. Power report is send (push) only when actual power in Watts in real time changes for more than set percentage comparing to previous actual power in Watts, step is 1%.<\/li> <\/ul><p><strong>NOTE:<\/strong> If power changed is less than 1W, the report is not send (pushed), independent of percentage set.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 42,
+            "label": "Power reporting time interval for Q1",
+            "description": "Power reporting in Watts by time interval for Q1",
+            "overview": "<p>Set value means time interval (0 \u2013 32535) in seconds, when power report is send. Available configuration parameters:<\/p> <ul><li>Default value 300 (power report in Watts is send each 300s)<\/li> <li>0 - reporting disabled<\/li> <li>1 - 32535 = 1 second - 32535 seconds. Reporting enabled, Power report is send with time interval set by entered value.<\/li> <\/ul>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 300,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32535,
+            "options": []
+        },
+        {
+            "id": 43,
+            "label": "Power reporting time interval for Q2",
+            "description": "Power reporting in Watts by time interval for Q2",
+            "overview": "<p>Set value means time interval (0 \u201332535) in seconds, when power report is send. Available configuration parameters:<\/p> <ul><li>Default value 300 (power report in Watts is send each 300s)<\/li> <li>0 - reporting disabled<\/li> <li>1 - 32535 = 1 second - 32535 seconds. Reporting enabled, Power report is send with time interval set by entered value.<\/li> <\/ul>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 300,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32535,
+            "options": []
+        },
+        {
+            "id": 63,
+            "label": "Output Q1 Switch selection",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "When system is turned off the output is 0V (NC)"
+                },
+                {
+                    "value": 1,
+                    "label": "When system is turned off the output is 230V or 24V (NO)"
+                }
+            ]
+        },
+        {
+            "id": 64,
+            "label": "Output Q2 Switch selection",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "When system is turned off the output is 0V (NC)"
+                },
+                {
+                    "value": 1,
+                    "label": "When system is turned off the output is 230V or 24V (NO)"
+                }
+            ]
+        },
+        {
+            "id": 110,
+            "label": "Temperature sensor offset",
+            "description": "Temperature sensor offset settings",
+            "overview": "<p>Set value is added or subtracted to actual measured value by sensor. Available configuration parameters:<\/p> <ul><li>Default value 32536<\/li> <li>32536 - offset is 0.0C<\/li> <li>From 1 to 100 - value from 0.1 \u00b0C to 10.0 \u00b0C is added to actual measured temperature.<\/li> <li>From 1001 to 1100 -value from -0.1 \u00b0C to -10.0 \u00b0C is subtracted to actual measured temperature.<\/li> <\/ul>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 32536,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32536,
+            "options": []
+        },
+        {
+            "id": 120,
+            "label": "Digital temperature sensor reporting",
+            "description": "Digital temperature sensor reporting",
+            "overview": "<p>If digital temperature sensor is connected, module reports measured temperature on temperature change defined by this parameter. Available configuration parameters:<\/p> <ul><li>Default value 5 = 0,5\u00b0C<\/li> <li>0 \u2013 Reporting disabled<\/li> <li>1 - 127 = 0,1\u00b0C \u2013 12,7\u00b0C, step is 0,1\u00b0C<\/li> <\/ul>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Default Reporting Group",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Q1 basic on\/off",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "Q1 switch binary",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 4,
+            "label": "Q1 power meter",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 5,
+            "label": "Q2 basic on\/off",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 6,
+            "label": "Q2 switch binary",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 7,
+            "label": "Q2 power meter",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 8,
+            "label": "Multilevel sensor",
+            "max_nodes": 16,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

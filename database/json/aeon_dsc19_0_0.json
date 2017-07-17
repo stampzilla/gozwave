@@ -1,0 +1,479 @@
+{
+    "database_id": 79,
+    "label": "DSC19",
+    "manufacturer_name": "AEON Labs",
+    "manufacturer_id": "0086",
+    "device_ref": [
+        "0003:0013"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Micro Smart Energy Illuminator G2",
+    "overview": "The Aeon Labs Micro Smart Dimmer (2nd Edition) is a scene multilevel switch device based on Z\u2010wave enhanced slave library V4.55.00.",
+    "inclusion": "Include Smart Dimmer into an existing Z\u2010Wave network: 1. Install Micro Smart Dimmer, and connect Micro Smart Dimmer to an AC\u2010input power source. 2. Let the primary controller of existing Z\u2010Wave network into inclusion mode (If you don\u2019t know how to do this, refer to its manual). 3. Press the Z\u2010Wave button. 4. If the Learning failed, please repeat the process from step 2.",
+    "exclusion": "Remove Smart Switch from an existing Z\u2010Wave network: 1. Installed Micro Smart Dimmer, and connect Micro Smart Dimmer to an AC\u2010 input power source. 2. Let the primary controller of existing Z\u2010Wave network into remove mode (If you don\u2019t know how to do this, refer to its manual). 3. Press the Z\u2010Wave button. 4. If the remove failed, please repeat the process from step 2",
+    "wakeup": "",
+    "protocol_version": 3.04,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_SCENE_SWITCH_MULTILEVEL"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 4,
+                "name": "SPECIFIC_TYPE_SCENE_SWITCH_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "2",
+                    "nif": true,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Dimmer",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "2B",
+                    "name": "SCENE_ACTIVATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "2C",
+                    "name": "SCENE_ACTUATOR_CONF",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh)",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_voltage",
+                            "label": "Electric meter (volts)",
+                            "config": [
+                                "type=E_V"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        },
+                        {
+                            "type": "meter_current",
+                            "label": "Electric meter (amps)",
+                            "config": [
+                                "type=E_A"
+                            ]
+                        },
+                        {
+                            "type": "meter_kvah",
+                            "label": "Electric Meter (kVah)",
+                            "config": [
+                                "type=E_KVAh"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 2,
+            "label": "Make Micro Smart Dimmer 2nd Edition Blink",
+            "description": "The LSB defines the total time the device need to blink.",
+            "overview": "This is a double byte value. The LSB defines the total time the device need to blink. The value if set in seconds. The MSB defines the on\/off interval of the blinking. The unit is 0.1 s.",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 3,
+            "label": "Current Overload Protection",
+            "description": "Load will be closed when current more that 2.7A and time more than 2 minutes",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Deactivate"
+                },
+                {
+                    "value": 1,
+                    "label": "Activate"
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "label": "Enable\/Disable CRC16 encapsulation",
+            "description": "Parameter to Enable\/Disable CRC16 encapsulation",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 80,
+            "label": "Notification on Status Change",
+            "description": "Send load notification to associated devices",
+            "overview": "Parameter to Enable to send notification to associated devices (Group 1) when the state of Micro Smart Dimmer's load changed",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Deactivate"
+                },
+                {
+                    "value": 1,
+                    "label": "Hail CC Sent"
+                },
+                {
+                    "value": 2,
+                    "label": "Basic CC Report Sent"
+                }
+            ]
+        },
+        {
+            "id": 90,
+            "label": "Sending of a Report triggered by minimal change of value.",
+            "description": "Automated sending of a Report triggered by minimal change of value.",
+            "overview": "Parameter to Enable\/Disable automated sending of a Report triggered by minimal change of value.",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Deavtivate"
+                },
+                {
+                    "value": 1,
+                    "label": "Activate"
+                }
+            ]
+        },
+        {
+            "id": 91,
+            "label": "Minimum Change to send Report (Watt)",
+            "description": "The value represents the minimum change in Wattage for a Report to be sent.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 25,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 92,
+            "label": "Minimum Change to send Report (%)",
+            "description": "The minimum change in Watage Percent for a report to be sent.",
+            "overview": "The value represents the minimum change in Watage Percent for a report to be sent.",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 101,
+            "label": "Reports for Group 1",
+            "description": "Which reports need to send automatically in timing intervals for group 1",
+            "overview": "The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 4,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 102,
+            "label": "Reports for Group 2",
+            "description": "Which reports need to send automatically in timing intervals for group 2",
+            "overview": "The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 8,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 103,
+            "label": "Reports for Group 3",
+            "description": "Which reports need to send automatically in timing intervals for group 3",
+            "overview": "The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 111,
+            "label": "Interval to send out reports of group 1",
+            "description": "",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 2678400,
+            "options": []
+        },
+        {
+            "id": 112,
+            "label": "Interval to send out reports of group 2",
+            "description": "",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 600,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 2678400,
+            "options": []
+        },
+        {
+            "id": 113,
+            "label": "Interval to send out reports of group 3",
+            "description": "",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 600,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 2678400,
+            "options": []
+        },
+        {
+            "id": 120,
+            "label": "Turn External Button Mode",
+            "description": "Parameter to set External button type",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Momentary Button Mode"
+                },
+                {
+                    "value": 1,
+                    "label": "2 State Switch Mode"
+                },
+                {
+                    "value": 2,
+                    "label": "3 Way Switch Mode"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Target for automatic meter reports",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Target for automatic reports",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "",
+            "overview": "According to the info in de nodeXX.xml file, this group doesn't exist for this device. - It doesn't work."
+        }
+    ]
+}

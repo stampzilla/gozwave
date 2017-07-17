@@ -1,0 +1,278 @@
+{
+    "database_id": 11,
+    "label": "NGD00Z-4",
+    "manufacturer_name": "Linear Corp",
+    "manufacturer_id": "014F",
+    "device_ref": [
+        "4744:3030",
+        "4744:3530"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Garage Door Controller",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 4.005,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_ENTRY_CONTROL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_SECURE_BARRIER_ADDON"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 64,
+                "name": "GENERIC_TYPE_ENTRY_CONTROL"
+            },
+            "specific_class": {
+                "id": 7,
+                "name": "SPECIFIC_TYPE_SECURE_BARRIER_ADDON"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "66",
+                    "name": "BARRIER_OPERATOR",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "barrier_state",
+                            "label": "Barrier State",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "4",
+                    "nif": false,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_system",
+                            "label": "Device Initializing Alert",
+                            "config": [
+                                "type=0x06",
+                                " event=64"
+                            ]
+                        },
+                        {
+                            "type": "alarm_system",
+                            "label": "Motor Force Exceeded Alert",
+                            "config": [
+                                "type=0x06",
+                                " event=65"
+                            ]
+                        },
+                        {
+                            "type": "alarm_system",
+                            "label": "Motor Time Exceeded Alert",
+                            "config": [
+                                "type=0x06",
+                                " event=66"
+                            ]
+                        },
+                        {
+                            "type": "alarm_system",
+                            "label": "Physical\/Mechanical Limit Exceeded Alert",
+                            "config": [
+                                "type=0x06",
+                                " event=67"
+                            ]
+                        },
+                        {
+                            "type": "alarm_access",
+                            "label": "Door Unable to Move Alert",
+                            "config": [
+                                "type=0x06",
+                                " event=68"
+                            ]
+                        },
+                        {
+                            "type": "alarm_access",
+                            "label": "Remote Operation Suspended Alert",
+                            "config": [
+                                "type=0x06",
+                                " event=69"
+                            ]
+                        },
+                        {
+                            "type": "alarm_access",
+                            "label": "Device Malfunction Alert",
+                            "config": [
+                                "type=0x06",
+                                " event=70"
+                            ]
+                        },
+                        {
+                            "type": "alarm_access",
+                            "label": "Vacation Mode Enabled Alert",
+                            "config": [
+                                "type=0x06",
+                                " event=71"
+                            ]
+                        },
+                        {
+                            "type": "alarm_access",
+                            "label": "Safety Beam Obstacle Alert",
+                            "config": [
+                                "type=0x06",
+                                " event=72"
+                            ]
+                        },
+                        {
+                            "type": "alarm_system",
+                            "label": "Door Sensor Not Detected Alert",
+                            "config": [
+                                "type=0x06",
+                                " event=73"
+                            ]
+                        },
+                        {
+                            "type": "alarm_battery",
+                            "label": "Low Battery Alert",
+                            "config": [
+                                "type=0x06",
+                                " event=74"
+                            ]
+                        },
+                        {
+                            "type": "alarm_system",
+                            "label": "Wallwire Short Detected Alert",
+                            "config": [
+                                "type=0x06",
+                                " event=75"
+                            ]
+                        },
+                        {
+                            "type": "alarm_tamper",
+                            "label": "Tamper Cover Removed Alert",
+                            "config": [
+                                "type=0x07",
+                                " event=3"
+                            ]
+                        },
+                        {
+                            "type": "alarm_system",
+                            "label": "Tamper Invalid Code Alert",
+                            "config": [
+                                "type=0x07",
+                                " event=4"
+                            ]
+                        },
+                        {
+                            "type": "notification_access_control",
+                            "label": "AccessControl Alert",
+                            "config": [
+                                "type=0x06"
+                            ]
+                        },
+                        {
+                            "type": "notification_home_security",
+                            "label": "Burglar Alert",
+                            "config": [
+                                "type=0x07"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Group 1",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

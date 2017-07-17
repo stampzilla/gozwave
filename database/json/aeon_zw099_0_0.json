@@ -1,0 +1,743 @@
+{
+    "database_id": 275,
+    "label": "ZW099",
+    "manufacturer_name": "AEON Labs",
+    "manufacturer_id": "0086",
+    "device_ref": [
+        "0003:0063",
+        "0103:0063",
+        "0203:0063",
+        "1D03:0063"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Smart Dimmer 6",
+    "overview": "<p>Turn the primary controller of Z-Wave network into inclusion mode, short press the product\u2019s Action button that you can find on the product's housing.<\/p> <p>Endpoint 1 is used to Set\/Get the state of output load.<\/p> <p>Endpoint 2 is used to Set\/Get the brightness level of RGB LED when it is in Night light mode.\u00a0<\/p>",
+    "inclusion": "<p>1. Insert the Smart Dimmer to power socket, The RGB LED will be colorful gradient status.<br \/>2. Let the primary controller into inclusion mode (If you don\u2019t know how to do this, refer to its manual).<br \/>3. Press the Action button.<br \/>4. If the inclusion success, Smart Dimmer LED will be solid. Otherwise, the LED will remain colorful gradient status, in which you need to repeat the process from step 2.\u00a0<\/p>",
+    "exclusion": "<p>1. Insert the Smart Dimmer to power socket, The Smart Dimmer LED will be solid.<br \/>2. Let the primary controller into remove mode (If you don\u2019t know how to do this, refer to its manual).<br \/>3. Press the Action button.<br \/>4. If the remove is successful, Smart Dimmer LED will be colorful gradient status. If Smart Dimmer LED still be solid, please repeat the process from step 2.<\/p>",
+    "wakeup": "",
+    "protocol_version": 0,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 0,
+        "name": "Unknown"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "2",
+                    "nif": true,
+                    "basic": true,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Dimmer",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_kwh",
+                            "label": "Power Consumption (kWh)",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Energy Consumption (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "33",
+                    "name": "COLOR",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "color_color",
+                            "label": "Night mode color",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "60",
+                    "name": "MULTI_INSTANCE",
+                    "version": "4",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "7A",
+                    "name": "FIRMWARE_UPDATE_MD",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "81",
+                    "name": "CLOCK",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "82",
+                    "name": "HAIL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8E",
+                    "name": "MULTI_INSTANCE_ASSOCIATION",
+                    "version": "3",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "98",
+                    "name": "SECURITY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "EF",
+                    "name": "MARK",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 3,
+            "label": "Current Overload Protection",
+            "description": "Toggle current overload protection",
+            "overview": "<p>Output Load will be turned off automatically when the Current overrun 2.6A and the time more than 2 minutes (0=disabled, 1=enabled).\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Enabled"
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "label": "Initial Load State",
+            "description": "Configure the iniital output load state after re-power on",
+            "overview": "<p>Configure the output load status after re-power on (0=last status, 1=always on, 2=always off)\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Last Status"
+                },
+                {
+                    "value": 1,
+                    "label": "Always On"
+                },
+                {
+                    "value": 2,
+                    "label": "Always Off"
+                }
+            ]
+        },
+        {
+            "id": 33,
+            "label": "RGB LED Color Test",
+            "description": "Set the RGB LED color value for testing",
+            "overview": "<p>Set the RGB LED color value for testing (64-bit value).<\/p> <ul><li>Value1: Red value\u00a0(0-255) (16-bits:\u00a048-63)<\/li> <li>Value2: Green value\u00a0(0-255) (16-bits:\u00a032-47)<\/li> <li>Value3: Blue value (0-255) (16-bits:\u00a016-31)<\/li> <li>Value4: Reserved\u00a0(0-255) (16-bits:\u00a00-15)<\/li> <\/ul><p>Example Values:<\/p> <ul><li>Red = -16777216\u00a0(0xFF000000)<\/li> <li>Green =\u00a016711680\u00a0(0x00FF0000)<\/li> <li>Blue =\u00a065280\u00a0(0x0000FF00)<\/li> <\/ul><p><strong>NOTE:<br \/><\/strong>In OpenHAB and HABmin (or other Java software) To enter an unsigned integer value greater than\u00a02147483647 you must convert the value to a signed 32-bit value. \u00a0<\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2147483647,
+            "options": []
+        },
+        {
+            "id": 80,
+            "label": "Notification on Status Change",
+            "description": "Enable notifications for Group 1 device associations.",
+            "overview": "<p>Enable to send notifications to associated devices (Group 1) when the state of Smart Dimmer\u2019s load changed (0=nothing, 1=hail CC, 2=basic CC report).\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "None"
+                },
+                {
+                    "value": 1,
+                    "label": "Hail"
+                },
+                {
+                    "value": 2,
+                    "label": "Basic CC Report"
+                }
+            ]
+        },
+        {
+            "id": 81,
+            "label": "LED Indicator Mode",
+            "description": "Configure the LED mode.",
+            "overview": "<p>Configure the state of LED when it is in 3 modes below:<br \/><\/p> <ul><li>0= Energy mode, the LED will follow the status (on\/off) of its load.<\/li> <li>1= Momentary indicate mode, when the state of Dimmer\u2019s load changed, The LED will follow the status (on\/off) of its load, but the red LED will turn off after 5 seconds if there is no any switch action.<\/li> <li>2= Night light mode.\u00a0<\/li> <\/ul>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Energy Mode (Load State)"
+                },
+                {
+                    "value": 1,
+                    "label": "Momentary Mode"
+                },
+                {
+                    "value": 2,
+                    "label": "Night Light Mode"
+                }
+            ]
+        },
+        {
+            "id": 83,
+            "label": "LED Color for Night Light",
+            "description": "Configure the RGB value when it is in Night light mode",
+            "overview": "<p>Configure the RGB value when it is in Night light mode. (48-bit value)<\/p> <ul><li>Value1: Red color value (0-255) (16-bits: 32-47)<\/li> <li>Value2: Green color value\u00a0(0-255)\u00a0(16-bits: 16-31)<\/li> <li>Value3: Blue color value\u00a0(0-255)\u00a0(16-bits: 0-15)<\/li> <\/ul><p>Example Values:<\/p> <ul><li>Blue = 255 (0x0000FF)<\/li> <li>Green =\u00a065280\u00a0(0x00FF00)<\/li> <li>Red =\u00a016711680\u00a0(0xFF0000)<\/li> <li>White =\u00a01774619 (0xFFFFFF)<\/li> <\/ul>",
+            "size": 3,
+            "bitmask": "00000000",
+            "default": 1774619,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 16777215,
+            "options": []
+        },
+        {
+            "id": 84,
+            "label": "LED Brightness",
+            "description": "Brightness level of RGB LED (0%-100%) ",
+            "overview": "<p>Configure the brightness level of RGB LED (0%-100%) when it is in Energy Mode\/momentary indicate mode. (48-bit value)<\/p> <ul><li>Value1: green\u00a0brightness\u00a0value.\u00a0(0-100)\u00a0(16-bits:\u00a032-47)<\/li> <li>Value2: yellow\u00a0brightness\u00a0value.\u00a0(0-100)\u00a0(16-bits:\u00a016-31)<\/li> <li>Value3: red\u00a0brightness\u00a0value. (0-100)\u00a0(16-bits: 0-15)<\/li> <\/ul><p>Default value is 50% brightness on all colors:\u00a03289650 (0x323232)<\/p> <ul><li>Green=50 (0x320000)<\/li> <li>Yellow=50\u00a0(0x003200)<\/li> <li>Red=50\u00a0(0x000032)<\/li> <\/ul><p>Maximum\u00a0value is 100% brightness on all colors:\u00a06579300 (0x646464)<\/p> <ul><li>Green=100 (0x640000)<\/li> <li>Yellow=100 (0x006400)<\/li> <li>Red=100 (0x000064)<\/li> <\/ul>",
+            "size": 3,
+            "bitmask": "00000000",
+            "default": 3289650,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 6579300,
+            "options": []
+        },
+        {
+            "id": 90,
+            "label": "Enable Report triggered by minimal change of value",
+            "description": "Enables\/disables parameter 91 and 92 (reporting minimum wattage)",
+            "overview": "<p>Enables\/disables parameter 91 (minimum change in wattage value) and 92 (minimum change in wattage percent).<\/p> <p>Supported values: 1=enabled, 0=disabled<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": true,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Enabled"
+                }
+            ]
+        },
+        {
+            "id": 91,
+            "label": "Minimum Change to send Report (Watt)",
+            "description": "The minimum change in wattage value for a report to be sent",
+            "overview": "<p>The value here represents minimum change in wattage (in terms of wattage) for a REPORT to be sent (Valid values 0- 60000).\u00a0<\/p> <p>Default value: 25 (watts)<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 25,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 60000,
+            "options": []
+        },
+        {
+            "id": 92,
+            "label": "Minimum Change to send Report (%)",
+            "description": "The minimum change in wattage percentage for a report to be sent",
+            "overview": "<p>The value here represents minimum change in wattage percent (in terms of percentage) for a REPORT to be sent (Valid values 0-100).<\/p> <p>Default value: 5 (%)\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 100,
+            "label": "Reset Report Assignments for All Groups",
+            "description": "Reset the reports to send to each report group to default values.",
+            "overview": "<p>Reset the reports to send to each report\u00a0group to default values.<br \/>Set configuration parameters 101-103 to default.\u00a0<br \/>See instruction manual for details on reporting configuration.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": true,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Do Nothing"
+                },
+                {
+                    "value": 1,
+                    "label": "Reset to Defaults"
+                }
+            ]
+        },
+        {
+            "id": 101,
+            "label": "Reports for Group 1",
+            "description": "Define which reports to send in report group 1.",
+            "overview": "<p>Which reports need to send in Report group 1 (See flags in user manual).\u00a0<\/p> <p>See instruction manual for details on reporting configuration.<\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2147483647,
+            "options": []
+        },
+        {
+            "id": 102,
+            "label": "Reports for Group 2",
+            "description": "Define which reports to send in report group 2.",
+            "overview": "<p>Which reports need to send in Report group 2\u00a0(See flags in user manual).\u00a0<\/p> <p>See instruction manual for details on reporting configuration.<\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2147483647,
+            "options": []
+        },
+        {
+            "id": 103,
+            "label": "Reports for Group 3",
+            "description": "Define which reports to send in report group 3.",
+            "overview": "<p>Which reports need to send in Report group 3\u00a0(See flags in user manual).\u00a0<\/p> <p>See instruction manual for details on reporting configuration.<\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2147483647,
+            "options": []
+        },
+        {
+            "id": 110,
+            "label": "Reset Report Time Intervals for All Groups",
+            "description": "Reset the reports time interval for each report group to default values.",
+            "overview": "<p>Reset the reports to time interval for each report\u00a0group to default values.<br \/>Set configuration parameters 111-113 to default.\u00a0<br \/>See instruction manual for details on reporting configuration.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": true,
+            "write_only": true,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Do Nothing"
+                },
+                {
+                    "value": 1,
+                    "label": "Reset to Defaults"
+                }
+            ]
+        },
+        {
+            "id": 111,
+            "label": "Report Group 1 Time Interval",
+            "description": "The time interval of sending Report group .",
+            "overview": "<p>The time interval of sending Report group 1 (Valid values 0x01-0x7FFFFFFF).\u00a0<\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 600,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2147483647,
+            "options": []
+        },
+        {
+            "id": 112,
+            "label": "Report Group 2 Time Interval",
+            "description": "The time interval of sending Report group 2.",
+            "overview": "<p>The time interval of sending Report group 2 (Valid values 0x01-0x7FFFFFFF).\u00a0<\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 600,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2147483647,
+            "options": []
+        },
+        {
+            "id": 113,
+            "label": "Report Group 3 Time Interval",
+            "description": "The time interval of sending Report group 3.",
+            "overview": "<p>The time interval of sending Report group 3 (Valid values 0x01-0x7FFFFFFF).\u00a0<\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 600,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2147483647,
+            "options": []
+        },
+        {
+            "id": 200,
+            "label": "Partner ID",
+            "description": "Partner ID (0= Aeon Labs Standard Product, 1= others).",
+            "overview": "<p>Partner ID<br \/> (0= Aeon Labs Standard Product, 1= others).\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": true,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Aeon Labs Standard Product"
+                },
+                {
+                    "value": 1,
+                    "label": "Others"
+                }
+            ]
+        },
+        {
+            "id": 252,
+            "label": "Configuration Lock",
+            "description": "Enable\/disable Configuration Lock",
+            "overview": "<p>Enable\/disable Configuration Locked (0 =disable, 1 = enable).\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Enabled"
+                }
+            ]
+        },
+        {
+            "id": 254,
+            "label": "Device Tag",
+            "description": "Device Tag",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 255,
+            "label": "Reset to Factory Default Settings",
+            "description": "Reset to Factory Default Settings",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Reset"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Group 1",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "Lifeline",
+            "overview": "<p>When the state of Smart Dimmer(on\/off\/dim the load ) is changed:<\/p>\r\n<p>1. Set Configuration parameter 80 to 0:Reserved (Default).<br \/>2. Set Configuration parameter 80 to 1:Send Hail CC.<br \/>3. Set Configuration parameter 80 to 2: Send the Basic Report. \u00a0<\/p>"
+        },
+        {
+            "id": 2,
+            "label": "Group 2",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "Retransmit",
+            "overview": "<p>Forward the Basic Set, Switch Multilevel Start Level Change, Switch Multilevel Stop Level Change, Switch Multilevel Set to associated nodes in Group 2 when the Smart Dimmer receives the Basic Set, Switch Multilevel Start Level Change, Switch Multilevel Stop Level Change, Switch Multilevel Set commands from main controller. \u00a0<\/p>"
+        }
+    ]
+}

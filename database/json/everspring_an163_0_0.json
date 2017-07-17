@@ -1,0 +1,278 @@
+{
+    "database_id": 492,
+    "label": "AN163",
+    "manufacturer_name": "Everspring",
+    "manufacturer_id": "0060",
+    "device_ref": [
+        "0004:0005"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Metering Power Switch",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.052,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 6,
+        "name": "LIB_SLAVE_ROUTING"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh)",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_general",
+                            "label": "Alarm",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "True Period",
+            "description": "Timeout before unit transmits ON\/OFF state after manual button press",
+            "overview": "<p>This setting configures the timeout after the manual on\/off button is pressed before the status is transmitted. When the on\/off button is pressed, the timer starts. After the timeout expires, the status of the switch is examined, and if it is different than it was prior to the first button press, the updated status is transmitted. If it is the same, no status is transmitted.<\/p> <p>The time setting is made in increments of 100ms, so a setting of \"10\" sets the timer to 10 * 100ms, or 1000ms (1s).<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 120,
+            "options": []
+        },
+        {
+            "id": 2,
+            "label": "Send Basic Command to Group 2",
+            "description": "Configure the unit to send command to other devices in Grouping 2",
+            "overview": "<p>If set to 0, pressing the manual on\/off button or receiving a basic_set command will not send a command to other devices in grouping 2. If set to 1, the device will send a command to other devices in grouping 2.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Enabled"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "label": "Meter Report Period (W)",
+            "description": "How often the meter should report load (W).",
+            "overview": "<p>This setting configures how often the module should report instant power load (in Watts) to the controller. The maximum interval is 9h (10s * 3240 \/ 3600 = 9h).<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 3240,
+            "options": []
+        },
+        {
+            "id": 4,
+            "label": "Meter Report Period (kWh)",
+            "description": "How often the meter should report load (kWh).",
+            "overview": "<p>This setting configures the period for the module to report power load over time (kWh). The default is 24h. Maximum period is 1 week (1min * 10080 \/ 60 = 168h = 1 week). Smaller loads generally need more time for accurate calculation of kilowatt-hours.\u00a0<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 1440,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 10080,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Grouping 1",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "Grouping 1 reports status",
+            "overview": "<p>\u00a0Grouping 1 includes ALARM_REPORT, SWITCH_BINARY_REPORT,\u00a0METER_REPORT_COMMAND<\/p>"
+        },
+        {
+            "id": 2,
+            "label": "Grouping 2",
+            "max_nodes": 4,
+            "controller": false,
+            "description": "Allows control of up to four other devices",
+            "overview": "<p><\/p>\r\n<p>\u00a0Grouping 2 includes BASIC_SET.<\/p>"
+        }
+    ]
+}

@@ -1,0 +1,691 @@
+{
+    "database_id": 566,
+    "label": "ZME_05431",
+    "manufacturer_name": "Reitz-Group.de",
+    "manufacturer_id": "0064",
+    "device_ref": [
+        "1000:0009"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Switch",
+    "overview": "<h3>Inclusion\/Exclusion<\/h3> <p>On factory default the device does not belong to any Z-Wave network. The device needs to be\u00a0<b>added to an existing wireless network<\/b>\u00a0to communicate with the devices of this network. This process is called\u00a0<b>Inclusion<\/b>.<\/p> <p>Devices can also be removed from a network. This process is called\u00a0<b>Exclusion<\/b>. Both processes are initiated by the primary controller of the Z-Wave network. This controller is turned into exclusion respective inclusion mode. Inclusion and Exclusion is then performed doing a special manual action right on the device.<\/p> <h4>Inclusion<\/h4> <p>Blinking red\/green LED indicates that the device is in factory reset state. Once the controller is turned into inclusion mode\u00a0<strong>triple click of the buttons on the device will include the device<\/strong>. A green blinking of the LED will indicate successful inclusion that will be turned off shortly afterwards. The\u00a0<strong>device is excluded by triple click to one of the buttons<\/strong>\u00a0when the controller is in exclusion mode.<\/p> <h4>Exclusion<\/h4> <p>Blinking red\/green LED indicates that the device is in factory reset state. Once the controller is turned into inclusion mode\u00a0<strong>triple click of the buttons on the device will include the device<\/strong>. A green blinking of the LED will indicate successful inclusion that will be turned off shortly afterwards. The\u00a0<strong>device is excluded by triple click to one of the buttons<\/strong>\u00a0when the controller is in exclusion mode.<\/p> <h3>Product Usage<\/h3> <p>The actuator is operated by the local switching paddles or wirelessly using Z-Wave commands (communication patterns 1, 4, 5 and 7). If the insert is mounted correctly pushing the upper part of the paddle will turn on the load; pushing the lower part of the paddle will turn off the electric load.<\/p> <p>The device is also able to report status changes to a controller (communication pattern 2) and to remotely operate other devices (communication pattern 5) by sending wireless Z-Wave commands. In case the remote device is a switch as well the remote operation is similar to the local operation by pushing upper to lower part of the switching paddle. However the device can also be configured with configuration parameter\u00a0<strong>13<\/strong>\u00a0and\u00a0<strong>14<\/strong>\u00a0to operate remote dimmers. To dim a remote device the paddle needs to be pushed and hold (upper part to dim up, lower part to dim down). Its furthermore possible to assign remote operation functions to the double click of the paddles.<\/p> <p>Configuration parameter\u00a0<strong>2<\/strong>\u00a0enables a special function of the device. Its possible to define a timeout to automatically turn off the device after it was turned on manually.<\/p> <h3>Quick trouble shooting<\/h3> <p>Here are a few hints for network installation if things dont work as expected.<\/p> <ol><li>Make sure a device is in factory reset state before including. In doubt exclude before include.<\/li> <li>If inclusion still fails, check if both devices use the same frequency.<\/li> <li>Remove all dead devices from associations. Otherwise you will see severe delays.<\/li> <li>Never use sleeping battery devices without a central controller.<\/li> <li>Dont poll FLIRS devices.<\/li> <li>Make sure to have enough mains powered device to benefit from the meshing<\/li> <\/ol><h3>Configuration Parameters<\/h3> <p>Z-Wave products are supposed to work out of the box after inclusion, however certain configuration can adapt the function better to user needs or unlock further enhanced features.<\/p> <p><b>IMPORTANT:<\/b>\u00a0Controllers may only allow configuring signed values. In order to set values in the range 128 ... 255 the value sent in the application shall be the desired value minus 256. For example: To set a parameter to 200\u2008it may be needed to set a value of 200 minus 256 = minus 56. In case of a two byte value the same logic applies: Values greater than 32768 may needed to be given as negative values too.<\/p>",
+    "inclusion": "<p>If the controller is in inclusion mode, press one of the buttons three times<\/p>",
+    "exclusion": "<p>If the controller is in exclusion mode, press one of the buttons three times<\/p>",
+    "wakeup": "",
+    "protocol_version": 4.005,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Dimmer",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "2B",
+                    "name": "SCENE_ACTIVATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "scene_number",
+                            "label": "Scene Number",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "2C",
+                    "name": "SCENE_ACTUATOR_CONF",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "2D",
+                    "name": "SCENE_CONTROLLER_CONF",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        },
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh)",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "75",
+                    "name": "PROTECTION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "77",
+                    "name": "NODE_NAMING",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "87",
+                    "name": "INDICATOR",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8E",
+                    "name": "MULTI_INSTANCE_ASSOCIATION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Set LED indication mode",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Show switch state"
+                },
+                {
+                    "value": 2,
+                    "label": "Night mode"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "Automatic switch off",
+            "description": "If not zero, automatically switch off after a user defined time",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 3,
+            "label": "Function of RF off command",
+            "description": "Defines how to interpret RF Off command. ",
+            "overview": "<p>Defines how to interpret RF Off command. Can be used in conjunction with Auto Off function:<\/p> <ul><li>Ignore - to switch on the light by motion detectors and switch it off after some amount of time: in case of multiple motion detectors each would try to switch the light off that would break logics<\/li> <li>Switch on - to switch on the light on both On and Off paddles press on the remote and switch it off after some amount of time. Button off click will still work (if button operations are not disabled)<\/li> <\/ul>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 3,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Switch off (default)"
+                },
+                {
+                    "value": 1,
+                    "label": "Ignore"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch on"
+                },
+                {
+                    "value": 3,
+                    "label": "Switch on if load is off else switch off"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "label": "Switch on\/off by holding buttons",
+            "description": "Defines if the switch should change its state to on\/off if being hold",
+            "overview": "<p>Defines if the switch should change its state to on\/off buttons if buttons are being hold<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No"
+                },
+                {
+                    "value": 1,
+                    "label": "Yes (default)"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "label": "Restore switch state after power cycle",
+            "description": "Defines if the switch should restore state to the last state",
+            "overview": "<p>Defines if the switch should restore switch\u00a0 state to the last state prior to device power off (power cycle).<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No, turn off"
+                },
+                {
+                    "value": 1,
+                    "label": "Yes (default)"
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "label": "Invert buttons",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No (default)"
+                },
+                {
+                    "value": 1,
+                    "label": "Yes"
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "label": "Switch by buttons",
+            "description": "If disabled, the local operations by buttons will not switch the load",
+            "overview": "<p>If disabled, the local operations by buttons will not switch the load, but only send commands to On\/Off association group. In this mode buttons are not linked with the switch anymore. They can be used separately: buttons to control remote device, switch will operate by RF commands only.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No"
+                },
+                {
+                    "value": 1,
+                    "label": "By single press and hold (default)"
+                },
+                {
+                    "value": 2,
+                    "label": "By double press and press-hold"
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "label": "Action on button single press or hold",
+            "description": "Defines which command should be sent on button single press or hold",
+            "overview": "<p>Defines which command should be sent on button single press or hold. Basic commands are sent to Association group. Switch All commands are sent broadcast.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 8,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Switch On, Off and dim"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch On, Off only (send Basic Set) (default)"
+                },
+                {
+                    "value": 3,
+                    "label": "Switch All"
+                },
+                {
+                    "value": 4,
+                    "label": "Send scenes"
+                },
+                {
+                    "value": 5,
+                    "label": "Send preconfigured scenes"
+                },
+                {
+                    "value": 6,
+                    "label": "Control devices in proximity"
+                },
+                {
+                    "value": 7,
+                    "label": "Control door lock"
+                },
+                {
+                    "value": 8,
+                    "label": "Control scene to gateway"
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "label": "Action on button double press or hold",
+            "description": "Defines which command should be sent on button double press or press-hold",
+            "overview": "<p>Defines which command should be sent on button double press or press-hold. Basic commands are sent to Association group. Switch All commands are sent broadcast. If not disabled, the device will wait for a click timeout to see if the second click would be pressed. This will introduce a small delay for single click commands.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 8,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Switch On, Off and dim"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch On, Off only (send Basic Set) (default)"
+                },
+                {
+                    "value": 3,
+                    "label": "Switch All"
+                },
+                {
+                    "value": 4,
+                    "label": "Send scenes"
+                },
+                {
+                    "value": 5,
+                    "label": "Send preconfigured scenes"
+                },
+                {
+                    "value": 6,
+                    "label": "Control devices in proximity"
+                },
+                {
+                    "value": 7,
+                    "label": "Control door lock"
+                },
+                {
+                    "value": 8,
+                    "label": "Control scene to gateway"
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "label": "Send the following switch all commands",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Switch Off only (default)"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch On only"
+                },
+                {
+                    "value": 255,
+                    "label": "Switch All on and off"
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "label": "What to do on button Down press",
+            "description": "Defines hot to interprete button Down press. ",
+            "overview": "<p>Defines hot to interprete button Down press. Depends on parameters 12 and 32 \"Switch by buttons\" parameter. If not disabled this parameter will affect the action selected by the latter parameter. Can be used in conjunction with \"Auto Off\" function.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Switch off (default)"
+                },
+                {
+                    "value": 1,
+                    "label": "Switch on if load is off else switch off"
+                },
+                {
+                    "value": 2,
+                    "label": "Switch on"
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "label": "Energy consumption",
+            "description": "Specify the consumption of the loads in watts (0=disabled)",
+            "overview": "<p>Specify the consumption of the loads in watts, for the calculation of power consumption. Max. load 1800 W. 0=disabled.<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": true,
+            "value_min": 0,
+            "value_max": 1800,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled (default)"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Lifeline",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "Send reports on switch state change",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Single press",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "Single press and hold of up\/down buttons",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "Double press",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "Double press and hold of up\/down buttons",
+            "overview": ""
+        }
+    ]
+}

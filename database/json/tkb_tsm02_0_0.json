@@ -1,0 +1,377 @@
+{
+    "database_id": 162,
+    "label": "TSM02",
+    "manufacturer_name": "TKB Home",
+    "manufacturer_id": "0118",
+    "device_ref": [
+        "0002:0002"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Slim Multi-Sensor",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.041,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 7,
+        "name": "LIB_CONTROLLER_BRIDGE"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SENSOR_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_ROUTING_SENSOR_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 32,
+                "name": "GENERIC_TYPE_SENSOR_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_ROUTING_SENSOR_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "30",
+                    "name": "SENSOR_BINARY",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_motion",
+                            "label": "Motion Sensor",
+                            "config": [
+                                "type=MOTION"
+                            ]
+                        },
+                        {
+                            "type": "alarm_tamper",
+                            "label": "Tamper Alarm",
+                            "config": [
+                                "type=TAMPER"
+                            ]
+                        },
+                        {
+                            "type": "sensor_door",
+                            "label": "Door\/Window Sensor",
+                            "config": [
+                                "type=DOORWINDOW"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "5",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Sensor (temperature)",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        },
+                        {
+                            "type": "sensor_luminance",
+                            "label": "Sensor (luminance)",
+                            "config": [
+                                "type=LUMINANCE"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 2,
+            "label": "Basic Set Level",
+            "description": "-1\t   ->  \t0xFF(-1) turns on the light.\r\n1 - 100\t   ->  \tFor dimmers 1 to 100 means the light strength",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": -1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": -1,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 3,
+            "label": "PIR Sensitivity",
+            "description": "parameter to set the Sensitivity for the PIR (Passive Infrared Sensor)\r\n\t\t\t0\t   ->  \t0 means disable the PIR motion;\r\n1 - 99\t   ->  \t1 means the lowest sensitivity, 99 means the highest sensitivity",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 70,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 4,
+            "label": "Light Threshold",
+            "description": "Setting the illumination threshold to turn on the light. When the event triggered and the environment illumination lower then the threshold, the device will turn on the light\r\n0\t   ->  \t0 means turn off illumination detected function And never turn on the",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 100,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 5,
+            "label": "Operation Mode",
+            "description": "Bit 0: 1 means security mode; 0 means home automation mode. Bit 1: 1 means enable test mode; 0 means disable test mode. Notice: Bit0 and Bit1 will effect when the DIP Switch setting to program mode. If Bit1 is enabled, the Bit0 is useless. Bit 2: Disable ",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 6,
+            "label": "Multi-Sensor Function Switch",
+            "description": "Bit 0: Disable magnetic integrate illumination. Bit 1: Disable PIR integrate Illumination. Bit 2: Disable magnetic integrate PIR (Default is Disable) Bit 3: When Bit2 is 0 (Enable), the device is install in the same room with the light? 0: In the same roo",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 4,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 8,
+            "label": "PIR Re-Detect Interval Time",
+            "description": "In the security mode, after the PIR motion detected, setting the re-detect time\r\n\t\t\t3 8 sec - 127 8 sec\t   ->  \t8 seconds per tick, and minimum time is 24 seconds, default tick is 3 (24 seconds).",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 3,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 9,
+            "label": "Turn Off Light Time",
+            "description": "After turn on the light, setting the delay time to turn off the light when the PIR motion is not detected\r\n\t\t\t4 8 sec - 127 8 sec\t   ->  \t8 seconds per tick, and minimum time is 32 seconds, default tick is 4 (32 seconds)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 4,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 4,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 10,
+            "label": "Auto Report Battery Time",
+            "description": "interval time for auto report the battery level\r\n\t\t\t1 30 min - 127 30 min\t   ->  \t30 minutes per tick and minimum time is 30 minutes, default tick is 12 (6 hours)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 12,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 11,
+            "label": "Auto Report Door\/Window State Time",
+            "description": "interval time for auto report the door\/window state\r\n\t\t\t1 30 min - 127 30 min\t   ->  \t30 minutes per tick and minimum time is 30 minutes, default tick is 12 (6 hours)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 12,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 12,
+            "label": "Auto Report Illumination Time",
+            "description": "interval time for auto report the illumination state\r\n\t\t\t1 30 min - 127 30 min\t   ->  \t30 minutes per tick and minimum time is 30 minutes, default tick is 12 (6 hours)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 12,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 13,
+            "label": "Auto Report Temperature Time",
+            "description": "Interval time for auto report the temperature state\r\n\t\t\t1 30 min - 127 30 min\t   ->  \t30 minutes per tick and minimum time is 30 minutes, default tick is 12 (6 hours)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 12,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 127,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Light Control",
+            "max_nodes": 7,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Reports",
+            "max_nodes": 7,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

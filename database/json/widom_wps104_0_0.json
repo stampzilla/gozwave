@@ -1,0 +1,952 @@
+{
+    "database_id": 246,
+    "label": "WPS104",
+    "manufacturer_name": "wiDom",
+    "manufacturer_id": "0149",
+    "device_ref": [
+        "1214:0304"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Energy Driven Switch",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.099,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_power",
+                            "label": "Sensor (power)",
+                            "config": [
+                                "type=POWER"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_voltage",
+                            "label": "Electric meter (volts)",
+                            "config": [
+                                "type=E_V"
+                            ]
+                        },
+                        {
+                            "type": "meter_powerfactor",
+                            "label": "Electric meter (power factor)",
+                            "config": [
+                                "type=E_Power_Factor"
+                            ]
+                        },
+                        {
+                            "type": "meter_current",
+                            "label": "Electric meter (amps)",
+                            "config": [
+                                "type=E_A"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        },
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh)",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "7A",
+                    "name": "FIRMWARE_UPDATE_MD",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "",
+            "description": "Controlling the relay by means of a single click on the external switch or on the \r\n\t\t\tintegrated button. \r\n\t\t\tTOGGLE: If initial status is ON, then final status is OFF. If initial status \r\n\t\t\tis OFF, then final status is ON.\r\n\t\t\tON: If the initial status",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "TOGGLE:ON\/OFF"
+                },
+                {
+                    "value": 2,
+                    "label": "ON"
+                },
+                {
+                    "value": 3,
+                    "label": "OFF"
+                },
+                {
+                    "value": 4,
+                    "label": "IGNORE"
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "label": "Device Status",
+            "description": "The final status achieved by the device when it receives a Basic Set command through \r\n\t\t\tthe Z-Wave network. Available Parameters are;\r\n\t\t\tAS RECIEVED: If received command is ON, then final status is ON. If received command is OFF, then \r\n\t\t\tfinal status",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "AS RECEIVED"
+                },
+                {
+                    "value": 2,
+                    "label": "IGNORE IF ON"
+                },
+                {
+                    "value": 3,
+                    "label": "IGNORE IF OFF"
+                },
+                {
+                    "value": 4,
+                    "label": "IGNORE"
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "label": "Overcurrent Level",
+            "description": "Sets the current level above which the time spent above that level is measured. \r\n\t\t\tDefined value is divided by 100.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 4500,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 4500,
+            "options": []
+        },
+        {
+            "id": 31,
+            "label": "Overcurrent Time",
+            "description": "Sets the time beyond which, in the case of overcurrent at a level higher than that \r\n\t\t\testablished in parameter 30, an OverCurrent event occurs.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 10800,
+            "options": []
+        },
+        {
+            "id": 32,
+            "label": "Next State",
+            "description": "Defines the next state of the device if an overcurrent event has occurred.\r\n\t\t\tAvailable Parameters: IGNORE - The device maintains the initial status.\r\n\t\t\tON - If the initial status is OFF the system switches to ON; \r\n\t\t\tconversely, it maintains its statu",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "IGNORE"
+                },
+                {
+                    "value": 1,
+                    "label": "ON"
+                },
+                {
+                    "value": 2,
+                    "label": "OFF"
+                },
+                {
+                    "value": 3,
+                    "label": "TOGGLE"
+                }
+            ]
+        },
+        {
+            "id": 33,
+            "label": "Meter Reset",
+            "description": "Provides total operating time from last meter reset. When set \r\n\t\t\tto 0 it resets the cumulative values of energy and total operating time.",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Meter parameters, including total operating time, will be reset."
+                },
+                {
+                    "value": 1,
+                    "label": "Greater than 0 \u2013 IGNORE (The meter will not be reset.)"
+                }
+            ]
+        },
+        {
+            "id": 34,
+            "label": "Energy flow",
+            "description": "Determines whether energy events are related to energy consumed or energy produced.\r\n\t\t\tAvailable Parameters are: CONSUMED - Events will be active for Consumed energy flows to which the \r\n\t\t\tpositive sign will be attributed.\r\n\t\t\tPRODUCED - Events will be ",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "CONSUMED"
+                },
+                {
+                    "value": 2,
+                    "label": "PRODUCED"
+                }
+            ]
+        },
+        {
+            "id": 35,
+            "label": "UP Power Level",
+            "description": "Sets the level of instantaneous power in Watts beyond which time of permanence above this \r\n\t\t\tlevel is calculated.\r\n\t\t\t0 W - 11250 W Define level of instantaneous power.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 11250,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 11250,
+            "options": []
+        },
+        {
+            "id": 36,
+            "label": "UP Power Time",
+            "description": "Sets the time in seconds beyond which, if instantaneous power remains at \r\n\t\t\tlevels exceeding threshold defined by parameter 35, a UP Power event occurs.\r\n\t\t\t0 sec - 10800 sec Define time parameter.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 10800,
+            "options": []
+        },
+        {
+            "id": 37,
+            "label": "UP Power State",
+            "description": "Defines the next status of the device in the case of a UP Power event occurring.\r\n\t\t\tAvailable Parameters: IGNORE - The device maintains the initial status.\r\n\t\t\tON - If the initial status is OFF the system switches to ON; \r\n\t\t\tconversely, it maintains its",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "IGNORE"
+                },
+                {
+                    "value": 1,
+                    "label": "ON"
+                },
+                {
+                    "value": 2,
+                    "label": "OFF"
+                },
+                {
+                    "value": 3,
+                    "label": "TOGGLE"
+                }
+            ]
+        },
+        {
+            "id": 38,
+            "label": "UP Power Associated",
+            "description": "Sets the level of instantaneous power beyond which the time \r\n\t\t\tof permanence below this level is calculated. \r\n\t\t\t0 - Associated devices are switched OFF.\r\n\t\t\t-1 - Associated devices are switched ON.\r\n\t\t\t1 - 99 Set parameter for dimming purposes.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": -1,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 39,
+            "label": "DOWN Power Level",
+            "description": "Sets the level of instantaneous power beyond which the time \r\n\t\t\tof permanence below this level is calculated.\r\n\t\t\t0 W - 11250 W Define level of instantaneous power.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 11250,
+            "options": []
+        },
+        {
+            "id": 40,
+            "label": "DOWN Power Time",
+            "description": "SSets the time beyond which, if instantaneous power remains at \r\n\t\t\tlevels below threshold defined by parameter 39, a DOWN Power event occurs.\r\n\t\t\t0 sec - 10800 sec. Define time parameter.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 10800,
+            "options": []
+        },
+        {
+            "id": 41,
+            "label": "DOWN Power State",
+            "description": "Defines the next state of the device in the case of a DOWN Power event occurring.\r\n\t\t\tAvailable Parameters: IGNORE - The device maintains the initial status.\r\n\t\t\tON - If the initial status is OFF the system switches to ON; \r\n\t\t\tconversely, it maintains it",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "IGNORE"
+                },
+                {
+                    "value": 1,
+                    "label": "ON"
+                },
+                {
+                    "value": 2,
+                    "label": "OFF"
+                },
+                {
+                    "value": 3,
+                    "label": "TOGGLE"
+                }
+            ]
+        },
+        {
+            "id": 42,
+            "label": "DOWN Power Associated",
+            "description": "Defines the status of associated devices in the presence of a DOWN Power event.\r\n \t\t\t0 - Associated devices are switched OFF.\r\n\t\t\t-1 - Associated devices are switched ON.\r\n\t\t\t1 - 99 Set parameter for dimming purposes.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": -1,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 43,
+            "label": "DOWN Power Associated",
+            "description": "Sets the energy level that once exceeded an Energy Limit event occurs.\r\n\t\t\tAvailable Range: 0 KWh - 2000000 KWh",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 2000000,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2000000,
+            "options": []
+        },
+        {
+            "id": 44,
+            "label": "Energy Limit State",
+            "description": "Defines the next state of the device in the case of an Energy Limit event occurring.\r\n\t\t\tAvailable Parameters: IGNORE - The device maintains the initial status.\r\n\t\t\tON - If the initial status is OFF the system switches to ON; \r\n\t\t\tconversely, it maintains",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "IGNORE"
+                },
+                {
+                    "value": 1,
+                    "label": "ON"
+                },
+                {
+                    "value": 2,
+                    "label": "OFF"
+                },
+                {
+                    "value": 3,
+                    "label": "TOGGLE"
+                }
+            ]
+        },
+        {
+            "id": 45,
+            "label": "Variation Instantaneous Power",
+            "description": "Defines the percentage variation of instantaneous power determining the sending of the report.\r\n\t\t\tAvailable Range: 1 % - 100 %",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 46,
+            "label": "Report Time Frequency",
+            "description": "Defines the percentage variation of instantaneous power determining the sending of the report.\r\n\t\t\tAvailable Range: 1 min - 100 mins",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 47,
+            "label": "Variation Total Energy",
+            "description": "Defines the increase of total energy required to generate a report listing the level \r\n\t\t\tof total energy to the devices associated to the Energy Notification Group.\r\n\t\t\t",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "IGNORE: No report provided."
+                },
+                {
+                    "value": 1,
+                    "label": "No report provided."
+                },
+                {
+                    "value": 2,
+                    "label": "Report at 1 hundredth of KWh."
+                },
+                {
+                    "value": 3,
+                    "label": "Report at 1 tenth of KWh"
+                },
+                {
+                    "value": 4,
+                    "label": "Report at 1 KWh"
+                }
+            ]
+        },
+        {
+            "id": 48,
+            "label": "Nominal Voltage",
+            "description": "Defines the nominal voltage value in tenths of volts. Together with parameter No. 49 \r\n\t\t\tthis is used by the automatic notification system to send reports on variations of voltage.\r\n\t\t\tAvailable Range: 1100 v - 2500 v",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 2300,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1100,
+            "value_max": 2500,
+            "options": []
+        },
+        {
+            "id": 49,
+            "label": "Fall In Maximum Voltage",
+            "description": "Defines, as a percentage, the nominal value for permitted fall in maximum voltage.\r\n\t\t\tAvailable Range: 1 - 100%",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 50,
+            "label": "Electric parameters subjected to automatic notification",
+            "description": "Defines which electric parameters, other than power, will be subjected to automatic \r\n\t\t\tnotification. The value to be set for this parameter must be calculated as the sum of values \r\n\t\t\tassociated to the individual electric parameter: Power=0, Energy=2, ",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 62,
+            "options": []
+        },
+        {
+            "id": 51,
+            "label": "Voltage RMS value",
+            "description": "Reading of this parameter returns the value of voltage RMS at the time of the reading \r\n\t\t\texpressed in tenths of Volts.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 52,
+            "label": "Current RMS value",
+            "description": "Returns the value of current RMS expressed in hundredths of Amperes.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 53,
+            "label": "Power Factor",
+            "description": "Returns the value of power factor as a percentage",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 54,
+            "label": "Total energy consumed",
+            "description": "Returns the value of total energy consumed expressed in Wh (thousandths of KWh).",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 55,
+            "label": "Total energy produced",
+            "description": "Returns the value of total energy consumed expressed in Wh (thousandths of KWh).",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 60,
+            "label": "Start-up status",
+            "description": "Defines the status of the device following a restart.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "ON: Device on"
+                },
+                {
+                    "value": 2,
+                    "label": "OFF: Device off"
+                },
+                {
+                    "value": 3,
+                    "label": "PREVIOUS STATUS: Status prior to restart"
+                }
+            ]
+        },
+        {
+            "id": 61,
+            "label": "Configuration reset",
+            "description": "Defines which parameters should be reset to default values.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "FACTORY RESET: The device is reset to the original factory settings."
+                },
+                {
+                    "value": 1,
+                    "label": "ASSOCIATIONS RESET: All associations and only the associations are res"
+                },
+                {
+                    "value": 2,
+                    "label": "CONFIGURATIONS RESET: The associations are maintained while all other "
+                },
+                {
+                    "value": 3,
+                    "label": "IGNORE: No action is performed."
+                }
+            ]
+        },
+        {
+            "id": 62,
+            "label": "Type of external switch",
+            "description": "Defines the type of external switch connected to the device.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "IGNORE: The external switch is not connected or not present."
+                },
+                {
+                    "value": 1,
+                    "label": "BUTTON: The external switch is a normally open button."
+                },
+                {
+                    "value": 2,
+                    "label": "SWITCH: The external switch is a traditional switch."
+                },
+                {
+                    "value": 3,
+                    "label": "AUTOMATIC RECOGNITION:"
+                }
+            ]
+        },
+        {
+            "id": 63,
+            "label": "Load Control",
+            "description": "Defines the load control mode. Available Parameters are:\r\n\t\t\t1 - DIRECT CONTROL The external load is controlled directly by the relay. \r\n\t\t\t\tReference diagram local load control.\r\n\t\t\t2 - The external load is controlled by a contactor that in a resting sta",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "DIRECT CONTROL"
+                },
+                {
+                    "value": 2,
+                    "label": "CONTROL BY MEANS OF A CONTACTOR WITH NORMALLY OPEN COMMAND:"
+                },
+                {
+                    "value": 3,
+                    "label": "CONTROL BY MEANS OF A CONTACTOR WITH NORMALLY CLOSED COMMAND:"
+                },
+                {
+                    "value": 4,
+                    "label": "AS AN EXTERNAL INDICATOR:"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Lifeline Group",
+            "max_nodes": 8,
+            "controller": true,
+            "description": "",
+            "overview": "<p>Devices who will receive notification on: status changes; energy level and power; \u00a0local reset of the device<\/p>\r\n<p>Received commands:\u00a0Basic Report, Device Reset Locally Notification, Meter Report, Multilevel Sensor: Power Report<\/p>"
+        },
+        {
+            "id": 2,
+            "label": "Up Power Level Group",
+            "max_nodes": 8,
+            "controller": false,
+            "description": "",
+            "overview": "<p>Devices controlled from Up Power Event<\/p>"
+        },
+        {
+            "id": 3,
+            "label": "Down Power Level Group",
+            "max_nodes": 8,
+            "controller": false,
+            "description": "",
+            "overview": "<p><span style=\"font-size: 12.16px; line-height: 15.808px;\">Devices controlled from Down Power Event<\/span><\/p>"
+        }
+    ]
+}

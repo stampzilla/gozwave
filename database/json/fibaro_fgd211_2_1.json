@@ -1,0 +1,636 @@
+{
+    "database_id": 119,
+    "label": "FGD211",
+    "manufacturer_name": "Fibargroup",
+    "manufacturer_id": "010F",
+    "device_ref": [
+        "0100:0104",
+        "0100:0106",
+        "0100:0107",
+        "0100:0109",
+        "0100:100A",
+        "0100:300A"
+    ],
+    "version_min": 2.1,
+    "version_max": 255.255,
+    "decription": "Universal Dimmer 500W",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.052,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Dimmer",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "2B",
+                    "name": "SCENE_ACTIVATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "scene_number",
+                            "label": "Scene Number",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "7A",
+                    "name": "FIRMWARE_UPDATE_MD",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8E",
+                    "name": "MULTI_INSTANCE_ASSOCIATION",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Enable\/Disable ALL ON\/OFF",
+            "description": "Activate\/Deactive ALL ON\/OFF",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "ALL ON disabled \/ ALL OFF disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "ALL ON disabled \/ ALL OFF active"
+                },
+                {
+                    "value": 2,
+                    "label": "ALL ON active \/ ALL OFF disabled"
+                },
+                {
+                    "value": 255,
+                    "label": "ALL ON active \/ ALL OFF active"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "label": "Separation of association sending (key 1)",
+            "description": "Activate\/Deactivate association sending for group\t\t\t\t1 - Also see param #16",
+            "overview": "<p>Sending commands to control devices\u00a0assigned to 1-st association group (key no. 1).<\/p> <p>NOTE: Parameter 15 value must be set to 1 to work properly. This\u00a0activates the double-click functionality - dimmer\/roller shutter control.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Map status to all devices in group 1"
+                },
+                {
+                    "value": 1,
+                    "label": "Map OFF status to all devices in group 1 - last state"
+                },
+                {
+                    "value": 2,
+                    "label": "Map OFF status to all devices in group 1 - 100% state"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "label": "Control key #2 behaviour",
+            "description": "Checking the device status before sending a control frame from the key no. 2.",
+            "overview": "<p>Info: Key no. 2 is not represented by any physical device expect of\u00a0devices on association list. This functionality prevents of lack of\u00a0reaction on pressing key no. 2 through polling devices from list one\u00a0by one and checking thier actual states.<\/p> <p>It is not possible to check the device status before sending a control\u00a0frame from the key no. 2 if roller blind switch is chosen in parameter\u00a014 (value 2)<\/p> <p>If devices state is checked before sending asociation then parameter\u00a019 should be set to value 0.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Device status is not checked"
+                },
+                {
+                    "value": 1,
+                    "label": "Device status is checked"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "label": "Dimming step at automatic control",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 9,
+            "label": "Time of MANUALLY moving between the extreme dimming values",
+            "description": "Options for changing parameter 1-255 (10ms - 2,5s)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 10,
+            "label": "Time of AUTOMATIC moving between the extreme dimming values",
+            "description": "Time of Automatic moving the Dimmer between the extreme dimming values",
+            "overview": "<p>Options for changing parameter 0-255 (0ms \u2013 2.5s)<\/p> <p>0 - this value disables the smooth change in light intensity<\/p> <p>NOTE value 0 is required for inductive and capacitive devices\u00a0unsuitable for dimming, (e.g. fluorescent lamps , motors etc.)<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 11,
+            "label": "Dimming step at manual control",
+            "description": "Options for changing parameter 1-99",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 12,
+            "label": "Maximum dimmer level control",
+            "description": "Options for changing parameter 2-99",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 99,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 2,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 13,
+            "label": "Minimum dimmer level control",
+            "description": "Options for changing parameter 1-98",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 98,
+            "options": []
+        },
+        {
+            "id": 14,
+            "label": "Inputs Button\/Switch configuration",
+            "description": "Binary inputs type configuration",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Mono-stable input (button)"
+                },
+                {
+                    "value": 1,
+                    "label": "Bi-stable input (switch)"
+                },
+                {
+                    "value": 2,
+                    "label": "Roller blind switch (UP \/ DOWN)"
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "label": "Parm 15",
+            "description": "Double-click set lighting at 100%",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable double click"
+                },
+                {
+                    "value": 1,
+                    "label": "Enable double click"
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "label": "Saving state before power failure",
+            "description": "Saving state before power failure",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "State NOT saved at power failure"
+                },
+                {
+                    "value": 1,
+                    "label": "State saved at power failure."
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "label": "3-way switch",
+            "description": "3-way switch function",
+            "overview": "<p>The function of 3 - way switch, provides the\u00a0option to double key no. 1.<br \/>The Dimmer may control two toggle push-buttons or an infinite\u00a0number of momentary push-buttons.\u00a0\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                },
+                {
+                    "value": 1,
+                    "label": "Enable"
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "label": "Synchronizing light level for associated devices",
+            "description": "The dimmer communicate the level to the associated devices. (default value 0)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                },
+                {
+                    "value": 1,
+                    "label": "Enable"
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "label": "Change [On-Off] bi-stable keys",
+            "description": "Assigns bistable key status to the device status.",
+            "overview": "<p>Info: Remote control from Fibaro System Is Still Possible. This\u00a0function is useful When you want display status of external devices,\u00a0e.g. Motion Sensor, in Fibaro System.\u00a0\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "[On \/ Off] Device changes status on key status change"
+                },
+                {
+                    "value": 1,
+                    "label": "Device status depends on key status."
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "label": "Minimum level of the Dimmer",
+            "description": "Enable decreasing the minimum level of the Dimmer",
+            "overview": "<p>This function will enable decreasing the minimum level of the Dimmer by extending the control impulse.\u00a0[100 - 170] \u00a0 \u00a0 \u00a0<\/p> <p>By changing the minimem level, the user may completely dim LED bulbs.<\/p> <p>Not all LED bulbs available on the market have the dimmm<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 110,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 100,
+            "value_max": 170,
+            "options": []
+        },
+        {
+            "id": 30,
+            "label": "Relay 1: Response to General Alarm",
+            "description": "Resonse to alarm of any type",
+            "overview": "<p>Alarm of any type (general alarm, water\u00a0flooding alarm, smoke alarm: CO, CO2, temperature alarm).\u00a0\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Deactivation"
+                },
+                {
+                    "value": 1,
+                    "label": "Alarm Dimmer ON"
+                },
+                {
+                    "value": 2,
+                    "label": "Alarm Dimmer OFF"
+                },
+                {
+                    "value": 3,
+                    "label": "Alarm Flashing"
+                }
+            ]
+        },
+        {
+            "id": 39,
+            "label": "ALARM FLASHING alarm time",
+            "description": "Amount of time (ms) the device keeps on flashing after receipt of Alarm Frame",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 600,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 40,
+            "label": "Updating the dimming level without switch.",
+            "description": "Available settings: from 1 to 99.",
+            "overview": "<p>Parameter\u2019s value changes depending on the dimming level.\u00a0\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 99,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 41,
+            "label": "Scene activation functionality",
+            "description": "Sending commands with command class scene activation",
+            "overview": "<p>The device offers the possibility of sending commands compatible\u00a0with Command class scene activation. Information is sent to devices\u00a0assigned to association group no. 3. Controllers such as Home\u00a0Center 2 are able to interpret such commands and based on these\u00a0commands they activate scenes, to which specific scene IDs have\u00a0been assigned. The user may expand the functionality of the button\u00a0connected to inputs S1 and S2 by distinguishing the actions of keys\u00a0connected to those inputs. For example: double click would activate\u00a0the scene \"goodnight\" and triple click would activate the scene\u00a0\"morning\"<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Scene functionality deactivated"
+                },
+                {
+                    "value": 1,
+                    "label": "Scene functionality activated"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Switch 1",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Switch 2",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "Controller Updates",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

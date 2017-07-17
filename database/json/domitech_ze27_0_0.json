@@ -1,0 +1,215 @@
+{
+    "database_id": 280,
+    "label": "DTA19",
+    "manufacturer_name": "Domitech Products, LLC",
+    "manufacturer_id": "020E",
+    "device_ref": [
+        "4754:3038",
+        "4C42:3134",
+        "4C42:3135"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Smart LED Light",
+    "overview": "<p>Domitech Smart LED Retrofit Kit ZE27EU is a member of the Z-Wave\u00ae family and communicate with other Z-Wave\u00ae certified devices in a control network. The Smart Bulb can be controlled by the Z-Wave remote controller or apps. Each Z-Wave device serves as a node to repeat the signal in the network, thus, extending the overall Z-Wave mesh wireless network range. Different types and brands of Z-Wave devices can be associated with domitech Smart Bulb in your system and they will work together to optimize and expand the coverage of your Z-Wave network. Once setup is completed, you can enjoy the convenience and leisure which Smart Bulb offers.\u00a0<\/p>",
+    "inclusion": "<p>Step 1: Place the controller in inclusion mode.<\/p> <p>Step 2: Turn on power to the socket after promoted by your network controller inclusion mode. The Smart Bulb will be included into your network within 30 seconds. The smart bulb will flash 2 times after Inclusion is successful. If the controller\/gateway shows it failed, repeat the procedure.<\/p> <p>Note: If Inclusion still fails after the 2nd attempt, you need to first RESET the Smart Bulb before repeating the above steps.<\/p> <p>Before repeating the above steps, try moving the Smart Bulb to the bulb socket in the same room as your home gateway in case the preferred outlet is out of range initially. Repeat step 1-2 until the Smart Bulb is added to your network. Once the light bulb has been successfully added to your home network, you can move it to the preferred location in the home.<\/p> <p>Manually Reset \u2013 Flick the wall switch \u201cOFF-ON\u201d cycle 4 times within 4 seconds (Turn OFF and turn ON will be counted as 1 \u201cOFF-ON\u201d cycle). The Smart Bulb will flash twice after Reset is successful. Use this procedure only in the event that the network primary controller is lost or otherwise inoperable.<\/p>",
+    "exclusion": "<p><strong>By controller<\/strong> - The Smart Bulb can be excluded from your network by your controller\/Gateway. Similar to the Inclusion process, turn off power to your light bulb and place your network controller into exclusion mode by following the controller manufacturer's instructions. Once prompted by your network controller, turn ON the light switch. The Smart Bulb will flash twice to confirm that it has successfully been excluded from your network. Please refer to your controller\/gateway instructions manual for details.<\/p> <p><strong>Manually<\/strong>\u00a0\u2013 The Smart Bulb can be excluded manually by flicking the wall switch \u201dOFF-ON\u201d cycle 4 times within 4 seconds (Turn OFF and turn ON will be counted as 1 \u201cOFF-ON\u201d cycle). The bulb will flash twice after Reset is successful. Use this procedure only in the event that the network primary controller is lost or otherwise inoperable.<\/p>",
+    "wakeup": "",
+    "protocol_version": 45,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Dimmer",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Dim level when the bulb is turned on",
+            "description": "",
+            "overview": "<p>You may select the dim level whenever the light is turned back on\u00a0to be either full brightness (100% dim level) or be the same as the last dim setting when the light is on by flicking the wall switch.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Full brightness"
+                },
+                {
+                    "value": 1,
+                    "label": "Last setting"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "label": "Dimming \/ brightening step level",
+            "description": "Controls the speed of dimming \/ brightening",
+            "overview": "<p>You may change the dimming step level when you adjust the brightness from your\u00a0controller.<\/p>\r\n<p>When the value is low, dimming \/ brightening is gradual. When the value is high, dimming \/ brightening is rapid.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 10,
+            "label": "Dimming \/ brightening step timing",
+            "description": "",
+            "overview": "<p>This parameter controls the dimming speed. When the value is low, the step timing is quick. When the value is high, the step timing is slow.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 10,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Group 1",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

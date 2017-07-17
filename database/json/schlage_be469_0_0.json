@@ -1,0 +1,603 @@
+{
+    "database_id": 303,
+    "label": "BE469",
+    "manufacturer_name": "Allegion",
+    "manufacturer_id": "003B",
+    "device_ref": [
+        "6341:5044"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Touchscreen Deadbolt",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.042,
+    "listening": false,
+    "frequently_listening": true,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 7,
+        "name": "LIB_CONTROLLER_BRIDGE"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_ENTRY_CONTROL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_SECURE_KEYPAD_DOOR_LOCK"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 64,
+                "name": "GENERIC_TYPE_ENTRY_CONTROL"
+            },
+            "specific_class": {
+                "id": 3,
+                "name": "SPECIFIC_TYPE_SECURE_KEYPAD_DOOR_LOCK"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "22",
+                    "name": "APPLICATION_STATUS",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "62",
+                    "name": "DOOR_LOCK",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "lock_door",
+                            "label": "Door Lock",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "63",
+                    "name": "USER_CODE",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_general",
+                            "label": "Alarm",
+                            "config": []
+                        },
+                        {
+                            "type": "notification_access_control",
+                            "label": "Alarm (access)",
+                            "config": [
+                                "type=ACCESS_CONTROL"
+                            ]
+                        },
+                        {
+                            "type": "alarm_number",
+                            "label": "Alarm (number)",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "7A",
+                    "name": "FIRMWARE_UPDATE_MD",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": false,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "98",
+                    "name": "SECURITY",
+                    "version": "0",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 3,
+            "label": "Beeper",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable Beeper"
+                },
+                {
+                    "value": 255,
+                    "label": "Enable Beeper"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "label": "Vacation Mode",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable Vacation Mode"
+                },
+                {
+                    "value": 255,
+                    "label": "Enable Vacation Mode"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "label": "Lock & Leave",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable Lock & Leave"
+                },
+                {
+                    "value": 255,
+                    "label": "Enable Lock & Leave"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "label": "User Slot Status",
+            "description": "",
+            "overview": "Byte 1 (msb): Bit 7: User 8 Status Bit 6: User 7 Status Bit 5: User 6 Status Bit 4: User 5 Status Bit 3: User 4 Status Bit 2: User 3 Status Bit 1: User 2 Status Bit 0: User 1 Status Byte 2 : Bit 7: User 16 Status Bit 6: User 15 Status Bit 5: User 14 Status Bit 4: User 13 Status Bit 3: User 12 Status Bit 2: User 11 Status Bit 1: User 10 Status Bit 0: User 9 Status Byte 3 : Bit 7: User 24 Status Bit 6: User 23 Status Bit 5: User 22 Status Bit 4: User 21 Status Bit 3: User 20 Status Bit 2: User 19 Status Bit 1: User 18 Status Bit 0: User 17 Status Byte 4 (lsb): Bit 7: reserved Bit 6: reserved Bit 5: User 30 Status Bit 4: User 29 Status Bit 3: User 28 Status Bit 2: User 27 Status Bit 1: User 26 Status Bit 0: User 25 Status",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": true,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 7,
+            "label": "Lock Specific Alarm Mode",
+            "description": "BE469 Only",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 3,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Alarm Off"
+                },
+                {
+                    "value": 1,
+                    "label": "Alert"
+                },
+                {
+                    "value": 2,
+                    "label": "Tamper"
+                },
+                {
+                    "value": 3,
+                    "label": "Forced Entry"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "label": "Lock Specific Alarm Alert Sensitivity",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 5,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Not Supported"
+                },
+                {
+                    "value": 1,
+                    "label": "Most Sensitive"
+                },
+                {
+                    "value": 2,
+                    "label": "More Sensitive"
+                },
+                {
+                    "value": 3,
+                    "label": "Medium Sensitivity"
+                },
+                {
+                    "value": 4,
+                    "label": "Less Sensitive"
+                },
+                {
+                    "value": 5,
+                    "label": "Least Sensitive"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "label": "Lock Specific Alarm Tamper Sensitivity",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 5,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Not Supported"
+                },
+                {
+                    "value": 1,
+                    "label": "Most Sensitive"
+                },
+                {
+                    "value": 2,
+                    "label": "More Sensitive"
+                },
+                {
+                    "value": 3,
+                    "label": "Medium Sensitivity"
+                },
+                {
+                    "value": 4,
+                    "label": "Less Sensitive"
+                },
+                {
+                    "value": 5,
+                    "label": "Least Sensitive"
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "label": "Lock Specific Alarm Kick Sensitivity",
+            "description": "BE469 Only",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 5,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Not Supported"
+                },
+                {
+                    "value": 1,
+                    "label": "Most Sensitive"
+                },
+                {
+                    "value": 2,
+                    "label": "More Sensitive"
+                },
+                {
+                    "value": 3,
+                    "label": "Medium Sensitivity"
+                },
+                {
+                    "value": 4,
+                    "label": "Less Sensitive"
+                },
+                {
+                    "value": 5,
+                    "label": "Least Sensitive"
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "label": "Lock Specific Alarm Disable\u2014Local Controls",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable Local Control"
+                },
+                {
+                    "value": 255,
+                    "label": "Enable Local Control"
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "label": "Electronic Transition Count",
+            "description": "",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 2147483647,
+            "read_only": true,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": []
+        },
+        {
+            "id": 13,
+            "label": "Mechanical Transition Count",
+            "description": "",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": true,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2147483647,
+            "options": []
+        },
+        {
+            "id": 14,
+            "label": "Electronic Failed Count",
+            "description": "",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": true,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2147483647,
+            "options": []
+        },
+        {
+            "id": 15,
+            "label": "Auto Lock",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable Auto Lock"
+                },
+                {
+                    "value": 255,
+                    "label": "Enable Auto Lock"
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "label": "User Code PIN Length",
+            "description": "User Code PIN length, a value between 4 and 8 (default 4)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 4,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 4,
+            "value_max": 8,
+            "options": [
+                {
+                    "value": 4,
+                    "label": "Four Digits"
+                },
+                {
+                    "value": 5,
+                    "label": "Five Digits"
+                },
+                {
+                    "value": 6,
+                    "label": "Six Digits"
+                },
+                {
+                    "value": 7,
+                    "label": "Seven Digits"
+                },
+                {
+                    "value": 8,
+                    "label": "Eight Digits"
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "label": "Get Bootloader Version",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": true,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Alarm Reports",
+            "max_nodes": 2,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

@@ -1,0 +1,454 @@
+{
+    "database_id": 374,
+    "label": "Molite",
+    "manufacturer_name": "BeNext",
+    "manufacturer_id": "008A",
+    "device_ref": [
+        "0003:0101",
+        "0003:0100"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Movement sensor with temperature and light sensor",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.042,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 6,
+        "name": "LIB_SLAVE_ROUTING"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SENSOR_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": null
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 32,
+                "name": "GENERIC_TYPE_SENSOR_BINARY"
+            },
+            "specific_class": {
+                "id": 0,
+                "name": null
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "30",
+                    "name": "SENSOR_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_binary",
+                            "label": "Binary Sensor",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "5",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_luminance",
+                            "label": "Sensor (luminance)",
+                            "config": [
+                                "type=LUMINANCE"
+                            ]
+                        },
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Sensor (temperature)",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_general",
+                            "label": "Alarm",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Reset to factory settings",
+            "description": "Set all configuration values to default values (factory settings).",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 2,
+            "label": "Mode timeout",
+            "description": "The time used in mode 2 to turn the sensor off. This time will start running as soon as detection is seen.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 900,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": []
+        },
+        {
+            "id": 3,
+            "label": "Switch off time",
+            "description": "The switch off time will start running as soon as mode timeout is done. The Motion sensor is turned on and when movement is detected again. The mode timeout (cfg param 1) will start running all over again. When switch off time is done a basic off message ",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 2700,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": []
+        },
+        {
+            "id": 4,
+            "label": "sensitivity",
+            "description": "the sensitivity of the motion circuit",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 80,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 5,
+            "label": "The mode",
+            "description": "The mode that is entered after detection",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Mode 1: no detection possible. Battery save mode."
+                },
+                {
+                    "value": 2,
+                    "label": "Mode 2: normal operation mode: send on after detection and off after g"
+                },
+                {
+                    "value": 3,
+                    "label": "Mode 3: Z-Wave chip is always on to request e.g. version or manufactur"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "label": "The temperature offset",
+            "description": "An offset for the temperature.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": []
+        },
+        {
+            "id": 7,
+            "label": "Light table 100 %",
+            "description": "If a LDR resistance measured lower then this value the returned light percentage is 100%. See chapter light table for more information.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 17,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": []
+        },
+        {
+            "id": 8,
+            "label": "Light table 90 %",
+            "description": "If a LDR resistance measured lower then this value the returned light percentage is 90%. See chapter light table for more information.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 38,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": []
+        },
+        {
+            "id": 9,
+            "label": "Light table 80 %",
+            "description": "If a LDR resistance measured lower then this value the returned light percentage is 80%. See chapter light table for more information.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 85,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": []
+        },
+        {
+            "id": 10,
+            "label": "Light table 70 %",
+            "description": "If a LDR resistance measured lower then this value the returned light percentage is 70%. See chapter light table for more information.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 186,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": []
+        },
+        {
+            "id": 11,
+            "label": "Light table 60 %",
+            "description": "If a LDR resistance measured lower then this value the returned light percentage is 60%. See chapter light table for more information.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 407,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": []
+        },
+        {
+            "id": 12,
+            "label": "Light table 50 %",
+            "description": "If a LDR resistance measured lower then this value the returned light percentage is 50%. See chapter light table for more information.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 891,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": []
+        },
+        {
+            "id": 13,
+            "label": "Light table 40 %",
+            "description": "If a LDR resistance measured lower then this value the returned light percentage is 40%. See chapter light table for more information.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 1949,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": []
+        },
+        {
+            "id": 14,
+            "label": "Light table 30 %",
+            "description": "If a LDR resistance measured lower then this value the returned light percentage is 30%. See chapter light table for more information.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 4265,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": []
+        },
+        {
+            "id": 15,
+            "label": "Light table 20 %",
+            "description": "If a LDR resistance measured lower then this value the returned light percentage is 20%. See chapter light table for more information.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 9332,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": []
+        },
+        {
+            "id": 16,
+            "label": "Light table 10 %",
+            "description": "If a LDR resistance measured lower then this value the returned light percentage is 10%. See chapter light table for more information.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 20417,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Devices to be switched on when motion detected and off after on time",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

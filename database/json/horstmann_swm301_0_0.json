@@ -1,0 +1,338 @@
+{
+    "database_id": 459,
+    "label": "SWM301",
+    "manufacturer_name": "Horstmann Controls Limited",
+    "manufacturer_id": "0059",
+    "device_ref": [
+        "000F:0001"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Z-Wave Module for Water Meter",
+    "overview": "<p>SWM 301 is a battery-powered RF module using Z-Wave\u00ae technology for reporting secondary water metering readings in domestic dwellings.<\/p> <p>The RF module records the meter reading by backlash-free pick-up on the litre wheel of the meter register and transmits the data over the Zwave network either on a time or delta change.<\/p>",
+    "inclusion": "<ol><li>Put network controller in Inclusion \/ Exclusion mode.<\/li> <li>Hold a small magnet near to reed switch until the LED is turned on. Remove magnet right away when LED turned on. LED will remain on for next 4 seconds and then it will flash once to indicate NIF is sent.<\/li> <li>Repeat the step 2 if LED is not flashed once.<\/li> <li>The controller will indicate the successful inclusion\/ exclusion operation.<\/li> <\/ol>",
+    "exclusion": "",
+    "wakeup": "<p>Hold a small magnet near to reed switch until the LED is turned on. Remove magnet right away when LED turned on. LED will remain on for next 4 seconds and then it will flash once to indicate NIF is sent.<\/p> <p>SWM301 will wake up for 10 seconds after sending NIF<\/p>",
+    "protocol_version": 3.042,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 6,
+        "name": "LIB_SLAVE_ROUTING"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_METER"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_SIMPLE_METER"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 49,
+                "name": "GENERIC_TYPE_METER"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_SIMPLE_METER"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Sensor (temperature)",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_water_cubic_meters",
+                            "label": "Water meter (amps)",
+                            "config": [
+                                "type=W_Cubic_Meters"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "56",
+                    "name": "CRC_16_ENCAP",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "9C",
+                    "name": "SENSOR_ALARM",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_heat",
+                            "label": "Alarm (heat)",
+                            "config": [
+                                "type=HEAT"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Meter register offset",
+            "description": "current meter reading",
+            "overview": "<p>Offset to adjust the reported to the actual meter reading.<\/p>",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 99999999,
+            "options": []
+        },
+        {
+            "id": 2,
+            "label": "Meter reading reporting intervals",
+            "description": "how often meter reading is sent",
+            "overview": "<p>Defines how often the meter reading is sent.<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 1440,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 10000,
+            "options": []
+        },
+        {
+            "id": 3,
+            "label": "Delta config for meter reading",
+            "description": "min. delta for automatic report",
+            "overview": "<p>Defines the minimum change of the meter reading that results in an unsolicited meter report.<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 10000,
+            "options": []
+        },
+        {
+            "id": 4,
+            "label": "Mechanical meter serial number",
+            "description": "",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": []
+        },
+        {
+            "id": 5,
+            "label": "Temperature monitor on \/ off",
+            "description": "enable temperature monitor",
+            "overview": "<p>Enables or disables the temperature monitor.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": []
+        },
+        {
+            "id": 6,
+            "label": "Temperature delta",
+            "description": "change in temperature for report",
+            "overview": "<p>Defines how much the temperature has to change for an unsolicited temperature report.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 30,
+            "options": []
+        },
+        {
+            "id": 7,
+            "label": "Temperature Alarm Threshold",
+            "description": "temperature triggering alarm",
+            "overview": "<p>Defines below what temperature a low temperature alarm is reported.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 40,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Meter reading",
+            "max_nodes": 2,
+            "controller": true,
+            "description": "Group receiving meter readings",
+            "overview": "<p>Group 1 - Nodes to receive unsolicited water meter reading.<\/p>"
+        },
+        {
+            "id": 2,
+            "label": "low battery",
+            "max_nodes": 2,
+            "controller": true,
+            "description": "Group receiving battery warnings",
+            "overview": "<p>Group 2 - Nodes to receive unsolicited low battery warnings report.<\/p>"
+        },
+        {
+            "id": 3,
+            "label": "Temperature and low temp alarm",
+            "max_nodes": 2,
+            "controller": true,
+            "description": "Group receiving temperature",
+            "overview": "<p>Group 3 - Nodes to receive unsolicited temperature report and low temperature alarm.<\/p>"
+        }
+    ]
+}

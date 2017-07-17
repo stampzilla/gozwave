@@ -1,0 +1,204 @@
+{
+    "database_id": 455,
+    "label": "MH9-CO2-WD",
+    "manufacturer_name": "McoHome Technology Co., Ltd",
+    "manufacturer_id": "015F",
+    "device_ref": [
+        "0905:0201"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "CO2 Monitor Air quality detector",
+    "overview": "<p>MCOHome CO2 Monitor is an air quality detector which compatible with Z-Wave technology.<\/p> <p>It is mainly used to monitor CO2 concentration in industrial, agricultural, and residence environment, while monitoring the indoor temperature, humidity and VOC (optional) air quality.<\/p> <p>Device can be included into any Z-Wave network, and is compatible with any other Z-Wave certified devices.<\/p> <p><strong>Specification<\/strong><\/p> <ul><li>Power Supply\uff1aDC12V<\/li> <li>CO2 display range: 0-2000ppm<\/li> <li>Default threshold:1000ppm (adjustable)<\/li> <li>Temperature range\uff1a-9.0\uff5e50 \u2103<\/li> <li>Humidity range: 0%\uff5e99%RH<\/li> <li>Installation: Wall-mounted (Vertical)<\/li> <li>Work environment:-10~+8\u2103 0-90%RH (Non-condensation)<\/li> <li>Dimension\uff1a90* 130*28mm<\/li> <li>Hole Pitch\uff1a60mm or 82m<\/li> <li>Housing: Tempered glass+ PC Alloy<\/li> <\/ul><p><strong>Command Class supported by the device<\/strong><\/p> <ul><li>COMMAND_CLASS_BASIC<\/li> <li>COMMAND_CLASS_SENSOR_MULTILEVEL_V5<\/li> <li>COMMAND_CLASS_CONFIGURATION<\/li> <li>COMMAND_CLASS_NOTIFICATION<\/li> <li>COMMAND_CLASS_ASSOCIATION<\/li> <li>COMMAND_CLASS_MANUFACTURER_SPECIFIC<\/li> <li>COMMAND_CLASS_VERSION<\/li> <\/ul>",
+    "inclusion": "<p>Activate Inclusion\/Exclusion mode in the gateway.<\/p> <p>When device is powered on, long press K2 can enter interface for inclusion or exclusion of Z-Wave network.<\/p> <p>If device has not been included into any Z-Wave network before, \u201c- - -\u201dwill display on the screen.<\/p> <p>Then press K2 once, \u201c- - -\u201d flashing and device enters into learning mode to get a node ID. If inclusion is success, a node ID will display on the screen. If not, \u201c- - -\u201d will stop flashing in 20 sec.<\/p>",
+    "exclusion": "<p>Activate Inclusion\/Exclusion mode in the gateway.<\/p> <p>When device is powered on, long press K2 can enter interface for inclusion or exclusion of Z-Wave network.<\/p> <p>If a node ID displays, it means the device is already in a Z-Wave network.<\/p> <p>To press K2 once can remove it from the network. \u201c- - -\u201d displays and press K1 once can return to normal work.<\/p>",
+    "wakeup": "",
+    "protocol_version": 3.067,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": false,
+    "beaming": false,
+    "library_type": {
+        "id": 5,
+        "name": "LIB_INSTALLER"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SENSOR_MULTILEVEL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_ROUTING_SENSOR_MULTILEVEL"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 33,
+                "name": "GENERIC_TYPE_SENSOR_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_ROUTING_SENSOR_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "5",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Sensor (temperature)",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        },
+                        {
+                            "type": "sensor_relhumidity",
+                            "label": "Sensor (relative humidity)",
+                            "config": [
+                                "type=RELATIVE_HUMIDITY"
+                            ]
+                        },
+                        {
+                            "type": "sensor_co2",
+                            "label": "Sensor (CO2)",
+                            "config": [
+                                "type=CO2"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "4",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_co2",
+                            "label": "Alarm (CO2)",
+                            "config": [
+                                "type=CARBON_DIOXIDE"
+                            ]
+                        },
+                        {
+                            "type": "alarm_general",
+                            "label": "Alarm (general)",
+                            "config": [
+                                "type=GENERAL"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "9E",
+                    "name": "SENSOR_CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Notification Threshold",
+            "description": "CO2 Notification Threshold",
+            "overview": "<p>Sets the CO2 notification threshold for association group 1.<\/p> <p>When the detected CO2 value is higher than the setting value, the device will send a (CO2 Detected Event) report to the Group 1. And this report will keep sending every 30 sec until the detected value is lower than the setting value.<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 1000,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 2000,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Notification",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "sends report ever 30s when CO2 value above threshold",
+            "overview": "<p>Group 1 is for \u201cNotification\u201d purpose, which can add up to 5 Node ID. Device works in \u201cPush\u201d mode in \u201cNotification Command Class\u201d.<\/p>\r\n<p>When the detected CO2 value is higher than the setting value, the device will send a (CO2 Detected Event) report to the Group 1. And this report will keep sending every 30 sec until the detected value is lower than the setting value.<\/p>\r\n<p>Use \u201cNotification Set\u201d can set this unsolicited report; this function is default as \u201cOFF\u201d.<\/p>"
+        },
+        {
+            "id": 2,
+            "label": "Gateway report",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "CO2, Temperature and Humidity is reported when changed",
+            "overview": "<p>A gateway is suggested to associate with Group 2, which can support only one Node ID. The<br \/>gateway can ask for detected data any time. And the device will report to this associated device<br \/>(gateway) when detected data changes:<br \/>CO2: report when any change \u226550ppm\u201cMultilevel sensor Report (CO2=0x11)\u201d<br \/>Temperature: report when any change\u2265 0.5 \u201cMultilevel \u2103 sensor Report (Temp=0x01)\u201d<br \/>Humidity: report when any change\u2265 2%\u201cMultilevel sensor Report (Humidity=0x05)\u2019<\/p>"
+        }
+    ]
+}

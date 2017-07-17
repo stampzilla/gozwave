@@ -1,0 +1,202 @@
+{
+    "database_id": 479,
+    "label": "ZWM-RSM1",
+    "manufacturer_name": "Wenzhou MTLC Electric Appliances Co.,Ltd.",
+    "manufacturer_id": "011A",
+    "device_ref": [
+        "0111:0605"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Smart Single Relay Switch Module",
+    "overview": "<p>Z-Wave unifies all your home electronics into an integrated wireless network and helps them talk to each other. It can be added to the network, and making your home electronics fully compatible. The ZWN-RSM1 Switch Module is a component of lighting control system, it can\u2019t be used separately but should turn an existing switch into a Z-Wave switch. This ZWN-RSM1 module is a Z-Wave enabled device and fully interoperable with other Z-Wave certified device from other manufacturers and\/or other applications. In a Z-Wave network, each device is designed to act as a wireless repeater. Once the ZWN-RSM1 module is installed and setup with in your wall, it will retransmit the RF signal from one device to another until the intended device is reached. This ensures that the signal is received by its intended destination by routing the signal around obstacles and radio dead spots. \u00a0<\/p>",
+    "inclusion": "<p>. When the controller is in add mode, and once program button is pressed and release, or Flick 3 times of the connected switch in 1.5S will also set the ZWN-RSM1 module enter into learn mode . and then the controller will verify the add.<\/p>",
+    "exclusion": "<p>When the controller is in remove mode, and once program button is pressed and release, or Flick 3 times of the connected switch in 1.5S will also set the ZWN-RSM1 module enter into learn mode . and then the controller will verify the remove.<\/p>",
+    "wakeup": "",
+    "protocol_version": 4.024,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 6,
+        "name": "LIB_SLAVE_ROUTING"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Lifeline",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "Lifeline: Send device reset locally notification",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "StatusReport",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "StatusReport: Send basic report",
+            "overview": ""
+        }
+    ]
+}

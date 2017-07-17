@@ -1,0 +1,519 @@
+{
+    "database_id": 290,
+    "label": "MT02647",
+    "manufacturer_name": "Devolo",
+    "manufacturer_id": "0175",
+    "device_ref": [
+        "0002:000D"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Devolo Motion Sensor",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.095,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SENSOR_NOTIFICATION"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_NOTIFICATION_SENSOR"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 64,
+                "name": "GENERIC_TYPE_ENTRY_CONTROL"
+            },
+            "specific_class": {
+                "id": 3,
+                "name": "SPECIFIC_TYPE_SECURE_KEYPAD_DOOR_LOCK"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "30",
+                    "name": "SENSOR_BINARY",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_binary",
+                            "label": "Binary Sensor",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "5",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_luminance",
+                            "label": "Sensor (luminance)",
+                            "config": [
+                                "type=LUMINANCE"
+                            ]
+                        },
+                        {
+                            "type": "sensor_temperature",
+                            "label": "Sensor (temperature)",
+                            "config": [
+                                "type=TEMPERATURE"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "62",
+                    "name": "DOOR_LOCK",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "63",
+                    "name": "USER_CODE",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_general",
+                            "label": "Alarm",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": true,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "75",
+                    "name": "PROTECTION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "76",
+                    "name": "LOCK",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8F",
+                    "name": "MULTI_CMD",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "98",
+                    "name": "SECURITY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 2,
+            "label": "Basic Set Level",
+            "description": "Setting the BASIC command value to turn on the light.",
+            "overview": "<ul style=\"font: 12.16px\/15.8px Tahoma, Helvetica, Arial, sans-serif; color: #333333; text-transform: none; text-indent: 0px; letter-spacing: normal; word-spacing: 0px; white-space: normal; widows: 1; font-size-adjust: none; font-stretch: normal; -webkit-text-stroke-width: 0px;\">\r\n<li>0: Turn off the light.<\/li>\r\n<li>1 - 100: For dimmers 1 to 100 means the light level.<\/li>\r\n<li>255: Turns on the light. (Default)\u00a0<\/li>\r\n<\/ul>\r\n<p>\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Off"
+                },
+                {
+                    "value": 255,
+                    "label": "On"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "label": "PIR Sensitivity",
+            "description": "Set the sensitivity for the PIR (Passive Infrared Sensor).",
+            "overview": "<ul style=\"font: 12.16px\/15.8px Tahoma, Helvetica, Arial, sans-serif; color: #333333; text-transform: none; text-indent: 0px; letter-spacing: normal; word-spacing: 0px; white-space: normal; widows: 1; font-size-adjust: none; font-stretch: normal; -webkit-text-stroke-width: 0px;\">\r\n<li>0 = Disable the PIR motion detection.<\/li>\r\n<li>1 - 99 = 1 means the lowest sensitivity, 99 means the highest sensitivity<\/li>\r\n<\/ul>\r\n<p style=\"font: 12.16px\/15.8px Tahoma, Helvetica, Arial, sans-serif; color: #333333; text-transform: none; text-indent: 0px; letter-spacing: normal; word-spacing: 0px; white-space: normal; widows: 1; font-size-adjust: none; font-stretch: normal; -webkit-text-stroke-width: 0px;\">High sensitivity means de<\/p>\r\n<p>\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 70,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 99,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "label": "Light Threshold",
+            "description": "Set the illumination threshold to turn on the light. ",
+            "overview": "<p style=\"font: 12.16px\/15.8px Tahoma, Helvetica, Arial, sans-serif; color: #333333; text-transform: none; text-indent: 0px; letter-spacing: normal; word-spacing: 0px; white-space: normal; widows: 1; font-size-adjust: none; font-stretch: normal; -webkit-text-stroke-width: 0px;\">When the event triggers and the environment illumination is lower than the threshold, the device will turn on the light.<\/p>\r\n<ul style=\"font: 12.16px\/15.8px Tahoma, Helvetica, Arial, sans-serif; color: #333333; text-transform: none; text-indent: 0px; letter-spacing: normal; word-spacing: 0px; white-space: normal; widows: 1; font-size-adjust: none; font-stretch: normal; -webkit-text-stroke-width: 0px;\">\r\n<li>0 = Turn off illumination detected function and never turn<\/li>\r\n<\/ul>\r\n<p>\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 100,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "label": "Operation Mode",
+            "description": "Parameter to set the Operation Mode.\t\t\t\tBit 0: Reserved.\t\t\t\tBit 1: 1 means enable test mode; 0 means normal mode. Notice: Ignored if DIP Switch is not set to Customer Mode.\t\t\t\tBit 2: Disable the door\/window function. 1",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 6,
+            "label": "Multi-Sensor Function Switch",
+            "description": "Parameter to set the sensor functions.\t\t\t\tBit 0: Disable magnetic integrate illumination to turn on the lighting nodes in the association group 2. 1: Disable, 0: Enable\t\t\t\tBit 1: Disable PIR integrate Illumination to turn on the ",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 4,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 7,
+            "label": "Customer Function",
+            "description": "Parameter to set the Customer Function.",
+            "overview": "<p style=\"font: 12.16px\/15.8px Tahoma, Helvetica, Arial, sans-serif; color: #333333; text-transform: none; text-indent: 0px; letter-spacing: normal; word-spacing: 0px; white-space: normal; widows: 1; font-size-adjust: none; font-stretch: normal; -webkit-text-stroke-width: 0px;\"><strong>Parameter 7 Customer Function.\u00a0<\/strong><\/p>\r\n<p style=\"font: 12.16px\/15.8px Tahoma, Helvetica, Arial, sans-serif; color: #333333; text-transform: none; text-indent: 0px; letter-spacing: normal; word-spacing: 0px; white-space: normal; widows: 1; font-size-adjust: none; font-stretch: normal; -webkit-text-stroke-width: 0px;\">\u00a0<\/p>\r\n<table style=\"height: 191px;\" width=\"1073\">\r\n<tbody>\r\n<tr>\r\n<td style=\"border: 1px dashed #bbbbbb; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;\"><strong><span style=\"font-family: Tahoma, Helvetica, Arial, sans-serif; font-size: 12.16px; line-height: 15.808px;\">Available_Bits_for_Z110_Model<\/span><\/strong><\/td>\r\n<td style=\"border: 1px dashed #bbbbbb; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;\"><strong>Default\u00a0<\/strong><\/td>\r\n<td style=\"border: 1px dashed #bbbbbb; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;\"><strong>Recommended<\/strong><\/td>\r\n<\/tr>\r\n<tr>\r\n<td style=\"border: 1px dashed #bbbbbb; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;\"><span style=\"line-height: 15.808px;\">Bit0: unused for Z110 Model<\/span><\/td>\r\n<td style=\"border: 1px dashed #bbbbbb; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;\">0<\/td>\r\n<td style=\"border: 1px dashed #bbbbbb; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;\">0<\/td>\r\n<\/tr>\r\n<tr>\r\n<td style=\"border: 1px dashed #bbbbbb; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;\"><span style=\"line-height: 15.808px;\">Bit1: unused for Z110 Model<\/span><\/td>\r\n<td style=\"border: 1px dashed #bbbbbb; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;\">0<\/td>\r\n<td style=\"border: 1px dashed #bbbbbb; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;\">0<\/td>\r\n<\/tr>\r\n<tr>\r\n<td style=\"border: 1px dashed #bbbbbb; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;\">Bit2: unused for Z110 Model<\/td>\r\n<td style=\"border: 1px dashed #bbbbbb; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;\">1<\/td>\r\n<td style=\"border: 1px dashed #bbbbbb; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;\">1<\/td>\r\n<\/tr>\r\n<tr>\r\n<td style=\"border: 1px dashed #bbbbbb; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;\">Bit3: Disable send out BASIC OFF after door closed. (1:Disable, 0:Enable)<\/td>\r\n<td style=\"border: 1px dashed #bbbbbb; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;\">0<\/td>\r\n<td style=\"border: 1px dashed #bbbbbb; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;\">0<\/td>\r\n<\/tr>\r\n<tr>\r\n<td style=\"border: 1px dashed #bbbbbb; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;\"><span style=\"font-family: Tahoma, Helvetica, Arial, sans-serif; font-size: 12.16px; line-height: 15.808px;\">Bit4: Notification Type, 0: Using Notification Report. 1: Using Sensor Binary Report.\u00a0<\/span><\/td>\r\n<td style=\"border: 1px dashed #bbbbbb; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;\">0<\/td>\r\n<td style=\"border: 1px dashed #bbbbbb; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;\">1<\/td>\r\n<\/tr>\r\n<tr>\r\n<td style=\"border: 1px dashed #bbbbbb; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;\"><span style=\"font-family: Tahoma, Helvetica, Arial, sans-serif; font-size: 12.16px; line-height: 15.808px;\">Bit5: Disable Multi CC in auto report. (1:Disable, 0:Enable).<\/span><\/td>\r\n<td style=\"border: 1px dashed #bbbbbb; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;\">0<\/td>\r\n<td style=\"border: 1px dashed #bbbbbb; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;\">0<\/td>\r\n<\/tr>\r\n<tr>\r\n<td style=\"border: 1px dashed #bbbbbb; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;\"><span style=\"font-family: Tahoma, Helvetica, Arial, sans-serif; font-size: 12.16px; line-height: 15.808px;\">Bit6: Disable to report battery state when the device triggered. (1:Disable, 10 0:Enable).<\/span><\/td>\r\n<td style=\"border: 1px dashed #bbbbbb; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;\">0<\/td>\r\n<td style=\"border: 1px dashed #bbbbbb; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;\">0<\/td>\r\n<\/tr>\r\n<tr>\r\n<td style=\"border: 1px dashed #bbbbbb; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;\"><span style=\"font-family: Tahoma, Helvetica, Arial, sans-serif; font-size: 12.16px; line-height: 15.808px;\"><span style=\"font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; line-height: 15.808px;\">Bit7: unused for Z110 Model<\/span><\/span><\/td>\r\n<td style=\"border: 1px dashed #bbbbbb; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;\">0<\/td>\r\n<td style=\"border: 1px dashed #bbbbbb; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;\">0<\/td>\r\n<\/tr>\r\n<\/tbody>\r\n<\/table>\r\n<p style=\"font: 12.16px\/15.8px Tahoma, Helvetica, Arial, sans-serif; color: #333333; text-transform: none; text-indent: 0px; letter-spacing: normal; word-spacing: 0px; white-space: normal; widows: 1; font-size-adjust: none; font-stretch: normal; -webkit-text-stroke-width: 0px;\">\u00a0<\/p>\r\n<p style=\"font: 12.16px\/15.8px Tahoma, Helvetica, Arial, sans-serif; color: #333333; text-transform: none; text-indent: 0px; letter-spacing: normal; word-spacing: 0px; white-space: normal; widows: 1; font-size-adjust: none; font-stretch: normal; -webkit-text-stroke-width: 0px;\">Comments \/ Tips for this device from the community:<\/p>\r\n<ul style=\"font: 12.16px\/15.8px Tahoma, Helvetica, Arial, sans-serif; color: #333333; text-transform: none; text-indent: 0px; letter-spacing: normal; word-spacing: 0px; white-space: normal; widows: 1; font-size-adjust: none; font-stretch: normal; -webkit-text-stroke-width: 0px;\">\r\n<li>Setting this Parameter\u00a0to<span class=\"Apple-converted-space\">\u00a0<\/span><strong>20<\/strong><span class=\"Apple-converted-space\">\u00a0<\/span>is from user side wanted as this enables Binary Sensor to report OPEN \/ CLOSE status by changing Bit 4<\/li>\r\n<\/ul>\r\n<p style=\"font: 12.16px\/15.8px Tahoma, Helvetica, Arial, sans-serif; color: #333333; text-transform: none; text-indent: 0px; letter-spacing: normal; word-spacing: 0px; white-space: normal; widows: 1; font-size-adjust: none; font-stretch: normal; -webkit-text-stroke-width: 0px;\">\u00a0<\/p>\r\n<p style=\"font: 12.16px\/15.8px Tahoma, Helvetica, Arial, sans-serif; color: #333333; text-transform: none; text-indent: 0px; letter-spacing: normal; word-spacing: 0px; white-space: normal; widows: 1; font-size-adjust: none; font-stretch: normal; -webkit-text-stroke-width: 0px;\">The calculation from the recommended column is: \u00a0Bit7 to Bit0 = 000100100 Binary which is euqal to 20 decimal<\/p>\r\n<p style=\"font: 12.16px\/15.8px Tahoma, Helvetica, Arial, sans-serif; color: #333333; text-transform: none; text-indent: 0px; letter-spacing: normal; word-spacing: 0px; white-space: normal; widows: 1; font-size-adjust: none; font-stretch: normal; -webkit-text-stroke-width: 0px;\">\u00a0<\/p>\r\n<p>\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 4,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 8,
+            "label": "PIR Re-Detect Interval Time",
+            "description": "In the normal mode, after the PIR motion detected, setting the re-detect time. 8 seconds per tick, default is 3 (24 seconds).\t\t\t\t1 - 127 = Number of ticks. 8 seconds per tick, default value is 3 (24 seconds)",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 9,
+            "label": "Turn Off Light Time",
+            "description": "After turn on the light, setting the delay time to turn off the light when the PIR motion is not detected.\t\t\t\t0 = Never send turn off light command.\t\t\t\t1 - 127 = Number of ticks. 8 seconds per tick, default value is 4 (32 seconds",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 4,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 10,
+            "label": "Auto Report Battery Time",
+            "description": "The interval time for auto reporting the battery level.\t\t\t\t0 = Turn off auto report battery.\t\t\t\t1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 12,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 11,
+            "label": "Auto Report Door\/Window State Time",
+            "description": "The interval time for auto reporting the door\/window state.\t\t\t\t0 = Turn off auto report door\/window state.\t\t\t\t1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 12,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 12,
+            "label": "Auto Report Illumination Time",
+            "description": "\tThe Interval time for auto reporting the illumination state.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 12,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 13,
+            "label": "Auto Report Temperature Time",
+            "description": "The interval time for auto reporting the temperature state.\t\t\t\t0 = Turn off auto report temperature.\t\t\t\t1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 12,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 20,
+            "label": "Auto Report Tick Interval",
+            "description": "The interval time for each auto report tick. Setting this configuration will effect configuration No.10, No.11, No.12 and No.13.\t\t\t\t0 = Turn off all auto report functions.\t\t\t\t1-255 = Interval time for each tick. Default is 30. Unit is in minutes",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 30,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 21,
+            "label": "Temperature Differential Report",
+            "description": "The temperature differential to report. The unit is Fahrenheit. When enabled, the device will measure the temperature every minute and when the temperature is over 140 degree Fahrenheit, it will continuesly report. Enabling this functionality will cause s",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 22,
+            "label": "Illumination Differential Report",
+            "description": "The illumination differential to report. The unit is percentage. When enabled, the device will measure every minute. Enabling this functionality will cause some issue. Please check the \u201cIllumination Report\u201d section of the Multisensor manual.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 99,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Reports",
+            "max_nodes": 8,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Light Control",
+            "max_nodes": 8,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

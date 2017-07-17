@@ -1,0 +1,441 @@
+{
+    "database_id": 495,
+    "label": "ZEN07",
+    "manufacturer_name": "Zooz",
+    "manufacturer_id": "027A",
+    "device_ref": [
+        "0003:0087"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Zooz Z-Wave Plus Mini Plug On \/ Off Module ZEN07",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 4.005,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh)",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_current",
+                            "label": "Electric meter (amps)",
+                            "config": [
+                                "type=E_A"
+                            ]
+                        },
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        },
+                        {
+                            "type": "meter_voltage",
+                            "label": "Electric meter (volts)",
+                            "config": [
+                                "type=E_V"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "4",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_power",
+                            "label": "Alarm (power)",
+                            "config": [
+                                "type=POWER_MANAGEMENT"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Metering Report",
+            "description": " send metering reports",
+            "overview": "<p>Choose if you want the Mini Plug to send metering reports to the controller. Values: 0 \u2013 Disabled; 1 \u2013 Enabled (default).<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Enabled (default)."
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "Metering Report Frequency",
+            "description": "Frecuency metering reports to the controller.",
+            "overview": "<p>Choose how often you want the Mini Plug to send metering reports to the controller. The number entered as the value corresponds to the number of seconds. So if 300 is entered by default, the Mini Plug will report power consumption every 300 seconds (5 minutes).<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 300,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 3,
+            "label": "Overload Protection ",
+            "description": "Maximum amount of electricity Mini Plug to handle.",
+            "overview": "<p>Use this parameter to adjust the maximum amount of electricity you want your Mini Plug to handle. The number entered as the value corresponds to the number of Amperes. Overload protection will turn the Mini Plug\u2019s relay off once load exceeds 13A by default. It will also send a notification (NOTIFICATION_EVENT_POWER_MANAGEMENT_OVER_LOAD_DETECTED) to the controller and all associated devices. LED indicator on the device will blink red until the load is disconnected. Press the Z-Wave button ONCE to switch the alarm off. The value set in this parameter needs to be greater than the value in parameter 4.\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 13,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 16,
+            "options": []
+        },
+        {
+            "id": 4,
+            "label": "Overload Protection Notification",
+            "description": "LED notifications of heavy load. ",
+            "overview": "<p>Use this parameter to adjust electricity value for LED notifications of heavy load. The LED indicator on the Mini Plug will light up yellow once electricity from the load is greater than the value set in this parameter. The relay will NOT turn off. The value set in this parameter can NOT be greater than the value in parameter 3. Values: 1 \u2013 13 (Amperes) or whatever the value set in parameter 3. 12 (Amperes) \u2013 default setting.\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 12,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 13,
+            "options": []
+        },
+        {
+            "id": 5,
+            "label": "LED Notifications ",
+            "description": "Use this parameter to turn LED notifications on or off",
+            "overview": "<p>Use this parameter to turn LED notifications on or off. Values: 0 \u2013 LED disabled; 1 \u2013 LED enabled (default).<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "LED disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "LED enabled (default)"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "label": "Power Report Percentage Threshold",
+            "description": "Mini Plug to report energy usage  percentage rate.",
+            "overview": "<p>Choose how you want your Mini Plug to report power consumption, electricity, voltage, and energy usage to your controller and associated devices by percentage rate. The number entered as the value corresponds to the change in percentage the appliance needs to go over for the event to be reported. So if 5% is entered by default, the Mini Plug will report any change in power consumption (W), voltage (V), electricity (A), or energy usage (kWH) over 5% (whether it\u2019s at least 5% more or 5% less compared to previous report). Values: 1 \u2013 100 (%); 5 (%) \u2013 default setting<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 7,
+            "label": "On\/Off Status Recovery After Power Failure ",
+            "description": "Choose the recovery state for your Mini Plug if power outage occurs",
+            "overview": "<p>Choose the recovery state for your Mini Plug if power outage occurs. Values: 0 \u2013 Mini Plug automatically turns OFF once power is restored (it does not remember the status prior to power outage); 1 \u2013 Mini Plug remembers the status prior to power outage and turns back to it (default);\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "OFF once power is restored"
+                },
+                {
+                    "value": 1,
+                    "label": "Remembers the status"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "label": "Auto Turn-Off Timer  Enable",
+            "description": ": Use this parameter to enable or disable the auto turn-off timer function",
+            "overview": "<p>Use this parameter to enable or disable the auto turn-off timer function. If this feature is enabled, the Mini Plug will automatically turn off after a fixed period of time (set in parameter 9). Values: 0 \u2013 timer disabled (default); 1 \u2013 timer enabled\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "timer disabled (default)"
+                },
+                {
+                    "value": 1,
+                    "label": "timer enabled "
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "label": "Auto Turn-Off Timer Interval",
+            "description": "Set the time to automatically turn off",
+            "overview": "<p>Use this parameter to set the time after which you want the Mini Plug to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes. Values: 1 \u2013 65535 (minutes); 150 (minutes) \u2013 default setting.\u00a0<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 150,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 10,
+            "label": "Manual Control",
+            "description": "Turn the Mini Plug with button",
+            "overview": "<p>Choose if you want to use the Z-Wave button to turn the Mini Plug on or off manually or if you want to disable this function. If this parameter is set to 0 (disabled), you will only be able to turn the Mini Plug on or off remotely using your Z-Wave gateway controller. Values: 0 \u2013 manual control disabled; 1 \u2013 manual control enabled (default)\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "manual control disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "manual control enabled (default) "
+                }
+            ]
+        }
+    ],
+    "associations": []
+}

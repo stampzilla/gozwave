@@ -1,0 +1,218 @@
+{
+    "database_id": 563,
+    "label": "ZW ESJ 300",
+    "manufacturer_name": "Reitz-Group.de",
+    "manufacturer_id": "0064",
+    "device_ref": [
+        "4001:0000"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Duwi ZW ESJ 300 Blind Control",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 2.051,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": false,
+    "beaming": false,
+    "library_type": {
+        "id": 6,
+        "name": "LIB_SLAVE_ROUTING"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_MOTOR_MULTIPOSITION"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 3,
+                "name": "SPECIFIC_TYPE_MOTOR_MULTIPOSITION"
+            },
+            "commandclasses": [
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "blinds_control",
+                            "label": "Blinds Control",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "75",
+                    "name": "PROTECTION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "82",
+                    "name": "HAIL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "87",
+                    "name": "INDICATOR",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 0,
+            "label": "Running time",
+            "description": "Adjustment of the operating times of the sun blind control",
+            "overview": "<p><strong>NOTE<\/strong>: The set values remain stored even after a power failure. The adjustment process of the operating times can be repeated anytime.<br \/><strong>NOTE<\/strong>: Should the adjustment of the operating times take place with the help of the configuration tool of a third-party manufacturer, you can consider the following values as the basis: Please note that the adjustments should be undertaken only by well-versed technicians.<\/p> <p>0x00 = nointerruption\/permanent operation<\/p> <p>0x01-0x7F =\u00a01 second to 127 seconds in 1-second steps<\/p> <p>0x80-0xFE = 130 seconds (0x80) to 1390 seconds (0xFE) in 10 second-steps<\/p> <p>0xFF =\u00a0factory settings 120 seconds<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 1,
+            "label": "Stop-functionality",
+            "description": "Adjusting the Stop-Functionality",
+            "overview": "<p>5.2.2 ADJUSTING THE STOP-FUNCTIONALITY:<\/p> <p>You can also programm the shutter actuator in a way, that in case of a press in the apposite direction, the shutter won\u2018t stop, but continue directly in the opposite way (Z-Wave conform). Please proceed as follows:<\/p> <ul><li> <p>Hold the \u201cUP\u201d and \u201cDOWN\u201d button of the shutter actuator simulaneausly for 5 seconds. Please note, that the devise nust not be included in the network!<\/p> <\/li> <li> <p>Alternatively by configuration command (only for adviced users): Set the configuration value \u201c1\u201d to the value \u201c0\u201d in or- der to disable the stop-functionality.<\/p> <p>In order to enable the stop-functionality, please proceed as follows:<\/p> <\/li> <li> <p>Hold the \u201cUP\u201d and \u201cDOWN\u201d button of the shutter actuator simulaneausly for 5 seconds. Please note, that the devise<\/p> <p>nust not be included in the network!<\/p> <\/li> <li> <p>Alternatively by configuration command (only for adviced users): Set the configuration value \u201c1\u201d to the value \u201c1\u201d in order<\/p> <p>to enable the stop-functionality.\u00a0<\/p> <\/li> <\/ul>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Enabled (default)"
+                }
+            ]
+        }
+    ],
+    "associations": []
+}

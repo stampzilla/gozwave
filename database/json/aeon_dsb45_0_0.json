@@ -1,0 +1,321 @@
+{
+    "database_id": 92,
+    "label": "DSB45",
+    "manufacturer_name": "AEON Labs",
+    "manufacturer_id": "0086",
+    "device_ref": [
+        "0002:002D"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Water Sensor",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "<p>To wake up the sensor, <em>don't<\/em> push the wake up button, as it does nothing.\u00a0 Instead, tap the zwave button once.\u00a0 Use wake up button to put back to sleep immediately.<\/p> <p>Press WakeUp button or hold z-wave button<\/p> <p>The Water Sensor will keep waking up for 8 seconds after sending the wake up notification command.<br \/>The Water Sensor will keep waking up for 8 seconds to waiting for the next command after receiving a\u00a0command.<br \/>The Water Sensor will be woken up for 10 minutes when power is on (configurable).<br \/>There are 3 ways to exit the Wake up 10 minutes state:<\/p> <ol><li>Triple click the tamper switch, and the Water Sensor will sleep immediately<\/li> <li>Receive the \u201cWake up no more information CC\u201d command , sleep right now;<\/li> <li>Receive the other command except \u201cWake up no more information CC\u201d , the Water Sensor will wake\u00a0up for 8 seconds and then go to sleep.<\/li> <\/ol>",
+    "protocol_version": 3.067,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SENSOR_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_ROUTING_SENSOR_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 32,
+                "name": "GENERIC_TYPE_SENSOR_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_ROUTING_SENSOR_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "30",
+                    "name": "SENSOR_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_binary",
+                            "label": "Binary Sensor",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_general",
+                            "label": "Alarm",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "80",
+                    "name": "BATTERY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Sensor Binary Report",
+            "description": "Toggle the sensor binary report value",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Open: 00, Close: FF"
+                },
+                {
+                    "value": 1,
+                    "label": "Open: FF, Close: 00"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "Wake up",
+            "description": "Enable wake up 10 minutes when the power is switched on.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disable"
+                },
+                {
+                    "value": 1,
+                    "label": "Enable"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "label": "Basic set value",
+            "description": "Toggle the basic set value when the Magnet switch is opened \/closed.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Open: 00, Close: FF"
+                },
+                {
+                    "value": 1,
+                    "label": "Open: FF, Close: 00"
+                }
+            ]
+        },
+        {
+            "id": 121,
+            "label": "Reports that will be sent",
+            "description": "configuration Value 4(LSB)",
+            "overview": "<p>See documentation for bytes<\/p>\r\n<p>Setting to 1 send BATTERY<\/p>\r\n<p>Setting to 16 sends SENSOR BINARY<\/p>\r\n<p>Setting to 17 sends SENSOR BINARY and BATTERY<\/p>",
+            "size": 4,
+            "bitmask": "000000FF",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 17,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Do not send anything"
+                },
+                {
+                    "value": 1,
+                    "label": "Send battery report"
+                },
+                {
+                    "value": 16,
+                    "label": "Send Sensor Binary report"
+                },
+                {
+                    "value": 17,
+                    "label": "Send Sensor Binary and Battery reports"
+                }
+            ]
+        },
+        {
+            "id": 121,
+            "label": "Parameter 121 Value 3",
+            "description": "See documentation",
+            "overview": "<p>set to 1 sends BASIC SET<\/p>\r\n<p>set to 16 sends ALARM<\/p>\r\n<p>set to 17 sends ALARM and BASIC SET<\/p>",
+            "size": 4,
+            "bitmask": "0000FF00",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 17,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Do not send anything"
+                },
+                {
+                    "value": 1,
+                    "label": "Send Basic Set"
+                },
+                {
+                    "value": 16,
+                    "label": "Send ALARM"
+                },
+                {
+                    "value": 17,
+                    "label": "Send Basic Set and ALARM"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Group 1",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

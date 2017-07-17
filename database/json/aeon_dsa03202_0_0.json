@@ -1,0 +1,511 @@
+{
+    "database_id": 74,
+    "label": "DSA03202",
+    "manufacturer_name": "AEON Labs",
+    "manufacturer_id": "0086",
+    "device_ref": [
+        "0001:0003",
+        "0006:0002"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Minimote 4 button remote control",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 2.078,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": false,
+    "beaming": true,
+    "library_type": {
+        "id": 2,
+        "name": "LIB_CONTROLLER"
+    },
+    "basic_class": {
+        "id": 1,
+        "name": "BASIC_TYPE_CONTROLLER"
+    },
+    "generic_class": {
+        "id": 1,
+        "name": "GENERIC_TYPE_GENERIC_CONTROLLER"
+    },
+    "specific_class": {
+        "id": 1,
+        "name": "SPECIFIC_TYPE_PORTABLE_REMOTE_CONTROLLER"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 1,
+                "name": "BASIC_TYPE_CONTROLLER"
+            },
+            "generic_class": {
+                "id": 1,
+                "name": "GENERIC_TYPE_GENERIC_CONTROLLER"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_PORTABLE_REMOTE_CONTROLLER"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "2B",
+                    "name": "SCENE_ACTIVATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "scene_number",
+                            "label": "Scene Number",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "84",
+                    "name": "WAKE_UP",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "NOGET",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 241,
+            "label": "Mode of Button 1 (upper left)",
+            "description": "Defines the switching mode of Button 1",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": true,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Factory Default"
+                },
+                {
+                    "value": 1,
+                    "label": "Scene Mode"
+                },
+                {
+                    "value": 2,
+                    "label": "Add Mode"
+                },
+                {
+                    "value": 3,
+                    "label": "Remove Mode"
+                },
+                {
+                    "value": 4,
+                    "label": "Association Mode"
+                },
+                {
+                    "value": 5,
+                    "label": "Learn Mode"
+                }
+            ]
+        },
+        {
+            "id": 242,
+            "label": "Mode of Button 2 (upper right)",
+            "description": "Defines the switching mode of Button 2",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": true,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Factory Default"
+                },
+                {
+                    "value": 1,
+                    "label": "Scene Mode"
+                },
+                {
+                    "value": 2,
+                    "label": "Add Mode"
+                },
+                {
+                    "value": 3,
+                    "label": "Remove Mode"
+                },
+                {
+                    "value": 4,
+                    "label": "Association Mode"
+                },
+                {
+                    "value": 5,
+                    "label": "Learn Mode"
+                }
+            ]
+        },
+        {
+            "id": 243,
+            "label": "Mode of Button 3 (lower left)",
+            "description": "Defines the switching mode of Button 3",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": true,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Factory Default"
+                },
+                {
+                    "value": 1,
+                    "label": "Scene Mode"
+                },
+                {
+                    "value": 2,
+                    "label": "Add Mode"
+                },
+                {
+                    "value": 3,
+                    "label": "Remove Mode"
+                },
+                {
+                    "value": 4,
+                    "label": "Association Mode"
+                },
+                {
+                    "value": 5,
+                    "label": "Learn Mode"
+                }
+            ]
+        },
+        {
+            "id": 244,
+            "label": "Mode of Button 4 (lower right)",
+            "description": "Defines the switching mode of Button 4",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": true,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Factory Default"
+                },
+                {
+                    "value": 1,
+                    "label": "Scene Mode"
+                },
+                {
+                    "value": 2,
+                    "label": "Add Mode"
+                },
+                {
+                    "value": 3,
+                    "label": "Remove Mode"
+                },
+                {
+                    "value": 4,
+                    "label": "Association Mode"
+                },
+                {
+                    "value": 5,
+                    "label": "Learn Mode"
+                }
+            ]
+        },
+        {
+            "id": 245,
+            "label": "Mode of Button 5 (Include)",
+            "description": "Defines the switching mode of Button 5",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": true,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Factory Default"
+                },
+                {
+                    "value": 1,
+                    "label": "Scene Mode"
+                },
+                {
+                    "value": 2,
+                    "label": "Add Mode"
+                },
+                {
+                    "value": 3,
+                    "label": "Remove Mode"
+                },
+                {
+                    "value": 4,
+                    "label": "Association Mode"
+                },
+                {
+                    "value": 5,
+                    "label": "Learn Mode"
+                }
+            ]
+        },
+        {
+            "id": 246,
+            "label": "Mode of Button 6 (Exclude)",
+            "description": "Defines the switching mode of Button 6",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": true,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Factory Default"
+                },
+                {
+                    "value": 1,
+                    "label": "Scene Mode"
+                },
+                {
+                    "value": 2,
+                    "label": "Add Mode"
+                },
+                {
+                    "value": 3,
+                    "label": "Remove Mode"
+                },
+                {
+                    "value": 4,
+                    "label": "Association Mode"
+                },
+                {
+                    "value": 5,
+                    "label": "Learn Mode"
+                }
+            ]
+        },
+        {
+            "id": 247,
+            "label": "Mode of Button 7 (Association)",
+            "description": "Defines the switching mode of Button 7",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": true,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Factory Default"
+                },
+                {
+                    "value": 1,
+                    "label": "Scene Mode"
+                },
+                {
+                    "value": 2,
+                    "label": "Add Mode"
+                },
+                {
+                    "value": 3,
+                    "label": "Remove Mode"
+                },
+                {
+                    "value": 4,
+                    "label": "Association Mode"
+                },
+                {
+                    "value": 5,
+                    "label": "Learn Mode"
+                }
+            ]
+        },
+        {
+            "id": 248,
+            "label": "Mode of Button 8 (Learn)",
+            "description": "Defines the switching mode of Button 8",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": true,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Factory Default"
+                },
+                {
+                    "value": 1,
+                    "label": "Scene Mode"
+                },
+                {
+                    "value": 2,
+                    "label": "Add Mode"
+                },
+                {
+                    "value": 3,
+                    "label": "Remove Mode"
+                },
+                {
+                    "value": 4,
+                    "label": "Association Mode"
+                },
+                {
+                    "value": 5,
+                    "label": "Learn Mode"
+                }
+            ]
+        },
+        {
+            "id": 250,
+            "label": "Secondary Controller Mode",
+            "description": "When in Group Mode, the minimote is paired directly to devices.  When in Scene Mode, minimote button presses will send SCENE_ACTIVATION commands.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": true,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Group Mode"
+                },
+                {
+                    "value": 1,
+                    "label": "Scene Mode"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Scene 1",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Scene 2",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "Scene 3",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 4,
+            "label": "Scene 4",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

@@ -1,0 +1,218 @@
+{
+    "database_id": 281,
+    "label": "ZW4002",
+    "manufacturer_name": "Jasco Products",
+    "manufacturer_id": "0063",
+    "device_ref": [
+        "4944:3034",
+        "4944:3131"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "In-Wall Smart Fan Control",
+    "overview": "<p><strong>Basic Operation<\/strong><\/p> <p>Note: Before starting, fan must be set to \u2018HIGH\u2019 position using pull chain.\u00a0The connected fan can then be turned ON\/OFF and adjust speed levels in two ways:<\/p> <ol><li>Manually from the front panel rocker of the In-wall Fan Control<\/li> <li>Remotely with a Z-Wave controller<\/li> <\/ol><p><strong>Manual Control<\/strong><\/p> <p>To turn the connected fan ON: Press and release the top of the rocker.\u00a0Note: Fan will return to last speed setting of Fan Control. Default setting \u2013 HIGH.<\/p> <p>To turn the fan OFF: Press and release the bottom of the rocker.<\/p> <p><strong>Adjust fan speed<\/strong><\/p> <p>To decrease fan speed: Press and hold lower rocker.<\/p> <p>To increase fan speed: Press and hold upper rocker.<\/p> <p>The LED indicator confirms fan speed settings by flashing patterns<\/p> <ul><li>LOW \u2013 LED will blink every 2 seconds for 10 seconds<\/li> <li>MEDIUM \u2013 LED will blink every second for 10 seconds<\/li> <li>HIGH \u2013 LED will blink every half second for 10 seconds<\/li> <\/ul>",
+    "inclusion": "<p>Once the controller is ready to include your device, press and release the top or bottom of the smart fan control switch\u00a0(rocker) to include it in the network.<\/p>",
+    "exclusion": "Tap up or down",
+    "wakeup": "Tap up or down",
+    "protocol_version": 3.067,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 6,
+        "name": "LIB_SLAVE_ROUTING"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Dimmer",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 3,
+            "label": "Night Light",
+            "description": "Defines the behavior of the blue LED",
+            "overview": "<p>Default is Night Light mode where LED is on when switch is off.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "LED on when switch is OFF"
+                },
+                {
+                    "value": 1,
+                    "label": "LED on when switch is ON"
+                },
+                {
+                    "value": 2,
+                    "label": "LED always off"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "label": "Invert Switch",
+            "description": "Invert the ON\/OFF Switch State",
+            "overview": "<p>Setting this parameter to Yes will change the top of the switch to OFF and the bottom to ON. \u00a0Note: If you invert the switches and also install the product upside down, the load will now be control.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "No"
+                },
+                {
+                    "value": 1,
+                    "label": "Yes"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Lifeline",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "Z-Wave Plus Lifeline",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Controlled with local load",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "Supports Basic Set and is controlled with the local load",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "Double Tap",
+            "max_nodes": 5,
+            "controller": true,
+            "description": "Supports Basic Set and is controlled by double pressing the On or Off button",
+            "overview": ""
+        }
+    ]
+}

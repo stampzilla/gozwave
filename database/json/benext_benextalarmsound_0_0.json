@@ -1,0 +1,366 @@
+{
+    "database_id": 443,
+    "label": "BeNext Alarm Sound",
+    "manufacturer_name": "BeNext",
+    "manufacturer_id": "008A",
+    "device_ref": [
+        "0005:0101"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Alarm sound",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.042,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 6,
+        "name": "LIB_SLAVE_ROUTING"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": null
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 0,
+                "name": null
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_general",
+                            "label": "Alarm",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8F",
+                    "name": "MULTI_CMD",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Set to Default",
+            "description": "Set all configuration values to default values (factory settings)",
+            "overview": "<p>If value is set to 255 reset to default settings.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 2,
+            "label": "Destination routine on\/off",
+            "description": "Test connection by sending a periodic test. if the device doesn't react the user will be notified by a sound.",
+            "overview": "<p>0 this is turned off. 1-255 turn it on.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 25,
+            "options": []
+        },
+        {
+            "id": 3,
+            "label": "Desitnation routine succes time",
+            "description": "Time it takes to send a new frame after the last frame has succesfully send",
+            "overview": "<p>t(s) = param1 * 6 *60<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 60,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": []
+        },
+        {
+            "id": 4,
+            "label": "Destination routine failed time",
+            "description": "Time elapsed between failing to end a frame and sending a new frame.",
+            "overview": "<p>t(s) = param1 *60<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 240,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": []
+        },
+        {
+            "id": 7,
+            "label": "Select index sound\/light mode",
+            "description": "The index of the sound mode when a switch binary\/basic set frame been received",
+            "overview": "<p>0 to switch off, 1-6 to select light\/sound mode.<\/p> <p>If value is put higher then 5 the application will read this as 1.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 6,
+            "options": []
+        },
+        {
+            "id": 8,
+            "label": "power offline sound\/light mode",
+            "description": "The sound and light mode that will be used when the device gets unplugged.",
+            "overview": "<p>0 to switch off, 1-6 to select light\/sound mode.<\/p> <p>If value is put higher then 5 the application will read this as 1.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 6,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 6,
+            "options": []
+        },
+        {
+            "id": 10,
+            "label": "sound\/light index 1",
+            "description": "Sound\/light that will be played when index 1 has been selected",
+            "overview": "<p>Params 10-27 are the values to set the sound\/light (this will be set when index 1)<\/p> <p>When the configuration is not this size the frame will be ignored.<\/p> <p>For the configuration of the light\/sound mode i would like to refer to the manual.<\/p>",
+            "size": 18,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": []
+        },
+        {
+            "id": 28,
+            "label": "sound\/light index 2",
+            "description": "Sound\/light that will be played when index 2 has been selected",
+            "overview": "<p>Params 28-45 are the values to set the sound\/light (this will be set when index 2)<\/p> <p>When the configuration is not this size the frame will be ignored.<\/p> <p>For the configuration of the light\/sound mode i would like to refer to the manual.<\/p>",
+            "size": 18,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": []
+        },
+        {
+            "id": 46,
+            "label": "sound\/light index 3",
+            "description": "Sound\/light that will be played when index 3 has been selected",
+            "overview": "<p>Params 45-63 are the values to set the sound\/light (this will be set when index 3)<\/p> <p>When the configuration is not this size the frame will be ignored.<\/p> <p>For the configuration of the light\/sound mode i would like to refer to the manual.<\/p>",
+            "size": 18,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": []
+        },
+        {
+            "id": 64,
+            "label": "sound\/light index 4",
+            "description": "Sound\/light that will be played when index 4 has been selected",
+            "overview": "<p>Params 64-81 are the values to set the sound\/light (this will be set when index 4)<\/p> <p>When the configuration is not this size the frame will be ignored.<\/p> <p>For the configuration of the light\/sound mode i would like to refer to the manual.<\/p>",
+            "size": 18,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": []
+        },
+        {
+            "id": 82,
+            "label": "sound\/light index 5",
+            "description": "Sound\/light that will be played when index 5 has been selected",
+            "overview": "<p>Params 82-99 are the values to set the sound\/light (this will be set when index 5)<\/p> <p>When the configuration is not this size the frame will be ignored.<\/p> <p>For the configuration of the light\/sound mode i would like to refer to the manual.<\/p>",
+            "size": 18,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": []
+        },
+        {
+            "id": 100,
+            "label": "sound\/light index 6",
+            "description": "Sound\/light that will be played when index 6 has been selected",
+            "overview": "<p>Params 100-117 are the values to set the sound\/light (this will be set when index 6)<\/p> <p>When the configuration is not this size the frame will be ignored.<\/p> <p>For the configuration of the light\/sound mode i would like to refer to the manual.<\/p>",
+            "size": 18,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 0,
+            "options": []
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Association group 1",
+            "max_nodes": 1,
+            "controller": false,
+            "description": "Changes the LED on the device",
+            "overview": "<p>When the device receives an binary switch\/ basic report, this will update the LED<\/p>"
+        },
+        {
+            "id": 2,
+            "label": "Association group 2",
+            "max_nodes": 1,
+            "controller": false,
+            "description": "The alarm sound reports it status to the associated devices",
+            "overview": "<p>- In case the device gets unplugged this shall send Alarm report (code 3, Triggered).<\/p>\r\n<p>- When the device is connected to the power, this shall send an Alarm report (code 3, off).<\/p>\r\n<p>- When the device is truned of by clicking on the button, this shall send a Switch binary (off).<\/p>\r\n<p>- When the device gets unplugged the standard \"power offline\" sound is on, the device will send a Switch binary report (on).<\/p>\r\n<p>\u00a0<\/p>\r\n<p>When the Device is connected to a powersupply, the device will say it has connection to the associated devices in group 2. when the connection is succesful the led will be on for 1 second. If the device cannot make a connection the led will blink 6 times. If the led doesn't go on there is no device in this association group.<\/p>"
+        }
+    ]
+}

@@ -1,0 +1,1094 @@
+{
+    "database_id": 423,
+    "label": "FGS213",
+    "manufacturer_name": "Fibargroup",
+    "manufacturer_id": "010F",
+    "device_ref": [
+        "0403:1000",
+        "0403:3000"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Single Switch 2",
+    "overview": "<p>FIBARO Switch 2 is designed to be installed in standard wall switch\u00a0boxes or anywhere else where it is necessary to control electric\u00a0devices. FIBARO Switch 2 allows to control connected devices either\u00a0via the Z-Wave+ network or via a switch connected directly to it and\u00a0is equipped with active power and energy consumption metering\u00a0functionality.<\/p> <p>Main features of FIBARO Switch 2:<\/p> <ul><li>Compatible with any Z-Wave or Z-Wave+ Controller,<\/li> <li>Supports protected mode (Z-Wave network security mode) with<\/li> <li>AES-128 encryption,<\/li> <li>Advanced microprocessor control,<\/li> <li>Active power and energy metering functionality,<\/li> <li>Works with various types of switches \u2013 momentary, toggle,\u00a0three-way, etc,<\/li> <li>To be installed in wall switch boxes of dimensions allowing for\u00a0installation, conforming to provisions of applicable regulations,<\/li> <li>FIBARO Switch 2 is an extension unit<\/li> <\/ul>",
+    "inclusion": "<p>Put controller into inclusion mode and triple click S1 switch<\/p>",
+    "exclusion": "<p>Put controller into exclusion mode and triple click S1 switch<\/p>",
+    "wakeup": "",
+    "protocol_version": 4.005,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "22",
+                    "name": "APPLICATION_STATUS",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "4",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_power",
+                            "label": "Sensor (power)",
+                            "config": [
+                                "type=POWER"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        },
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh)",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        },
+                        {
+                            "type": "meter_reset",
+                            "label": "Reset the total power consumption",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "56",
+                    "name": "CRC_16_ENCAP",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5B",
+                    "name": "CENTRAL_SCENE",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "scene_number",
+                            "label": "Scene Number",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "60",
+                    "name": "MULTI_INSTANCE",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "71",
+                    "name": "ALARM",
+                    "version": "5",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "alarm_heat",
+                            "label": "Alarm (heat)",
+                            "config": [
+                                "type=HEAT"
+                            ]
+                        },
+                        {
+                            "type": "alarm_power",
+                            "label": "Alarm (power)",
+                            "config": [
+                                "type=POWER_MANAGEMENT"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "75",
+                    "name": "PROTECTION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "7A",
+                    "name": "FIRMWARE_UPDATE_MD",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8E",
+                    "name": "MULTI_INSTANCE_ASSOCIATION",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 1",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts) 1",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        },
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh) 1",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8E",
+                    "name": "MULTI_INSTANCE_ASSOCIATION",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 2",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8E",
+                    "name": "MULTI_INSTANCE_ASSOCIATION",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 9,
+            "label": "Restore state after power failure",
+            "description": "Restore state after power failure",
+            "overview": "<p>This parameter determines if the device will return to state prior to\u00a0the power failure after power is restored.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "off after power loss"
+                },
+                {
+                    "value": 1,
+                    "label": "restore last state"
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "label": "First channel operating mode",
+            "description": "First channel - operating mode",
+            "overview": "<p>This parameter allows to choose operating for the 1st channel controlled\u00a0by the S1 switch.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 5,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "standard operation"
+                },
+                {
+                    "value": 1,
+                    "label": "delay ON"
+                },
+                {
+                    "value": 2,
+                    "label": "delay OFF"
+                },
+                {
+                    "value": 3,
+                    "label": "auto ON"
+                },
+                {
+                    "value": 4,
+                    "label": "auto OFF"
+                },
+                {
+                    "value": 5,
+                    "label": "flashing mode"
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "label": "1st ch. reaction to switch",
+            "description": "First channel - reaction to switch for delay\/auto ON\/OFF modes",
+            "overview": "<p>This parameter determines how the device in timed mode reacts to\u00a0pushing the switch connected to the S1 terminal.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "cancel mode and set target state"
+                },
+                {
+                    "value": 1,
+                    "label": "no reaction to switch - mode runs until it ends"
+                },
+                {
+                    "value": 2,
+                    "label": "reset timer - start counting from the beginning"
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "label": "time parameter for delay\/auto ON\/OFF modes",
+            "description": "First channel - time parameter for delay\/auto ON\/OFF modes",
+            "overview": "<p>This parameter allows to set time parameter used in timed modes.<\/p> <p>Available settings:\u00a00 (0.1s), 1-32000 (1-32000s, 1s step) - time\u00a0parameter<\/p> <p>Default setting: 50 (50s)<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 50,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32000,
+            "options": []
+        },
+        {
+            "id": 13,
+            "label": "1st ch. pulse time for flashing mode",
+            "description": "First channel - pulse time for flashing mode",
+            "overview": "<p>This parameter allows to set time of switching to opposite state in\u00a0flashing mode<\/p> <p>Available settings: 1-32000 (0.1-3200.0s, 0.1s step) - time parameter<\/p> <p>Default setting: 5 (0.5s)<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 32000,
+            "options": []
+        },
+        {
+            "id": 20,
+            "label": "Switch type",
+            "description": "Switch type",
+            "overview": "<p>This parameter defines as what type the device should treat the\u00a0switch connected to the S1 and S2 terminals<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 2,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "momentary switch"
+                },
+                {
+                    "value": 1,
+                    "label": "toggle switch stable"
+                },
+                {
+                    "value": 2,
+                    "label": "toggle switch"
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "label": "Flashing mode - reports",
+            "description": "Flashing mode - reports",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "the device does not send reports"
+                },
+                {
+                    "value": 1,
+                    "label": "the device sends reports"
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "label": "Associations in Z-Wave network security mode",
+            "description": "Associations in Z-Wave network security mode",
+            "overview": "<p>This parameter defines how commands are sent in specified association\u00a0groups: as secure or non-secure. Parameter is active only in\u00a0Z-Wave network security mode. This parameter does not apply to 1st\u00a0\u201eLifeline\u201d group.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 15,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 15,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "no group sent as secure"
+                },
+                {
+                    "value": 1,
+                    "label": "2nd group sent as secure"
+                },
+                {
+                    "value": 2,
+                    "label": "3rd group sent as secure"
+                },
+                {
+                    "value": 4,
+                    "label": "4th group sent as secure"
+                },
+                {
+                    "value": 8,
+                    "label": "5th group sent as secure"
+                },
+                {
+                    "value": 15,
+                    "label": "all groups sent as secure"
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "label": "S1 switch - scenes sent",
+            "description": "S1 switch - scenes sent",
+            "overview": "<p>This parameter determines which actions result in sending scene IDs\u00a0assigned to them<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 15,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "no scenes sent"
+                },
+                {
+                    "value": 1,
+                    "label": "Key pressed 1 time"
+                },
+                {
+                    "value": 2,
+                    "label": "Key pressed 2 times"
+                },
+                {
+                    "value": 4,
+                    "label": "Key pressed 3 times"
+                },
+                {
+                    "value": 8,
+                    "label": "Key Hold Down and Key Released"
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "label": "S2 switch - scenes sent",
+            "description": "S2 switch - scenes sent",
+            "overview": "<p>This parameter determines which actions result in sending scene IDs\u00a0assigned to them<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 15,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "no scenes sent"
+                },
+                {
+                    "value": 1,
+                    "label": "Key pressed 1 time"
+                },
+                {
+                    "value": 2,
+                    "label": "Key pressed 2 times"
+                },
+                {
+                    "value": 4,
+                    "label": "Key pressed 3 times"
+                },
+                {
+                    "value": 8,
+                    "label": "Key Hold Down and Key Released"
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "label": "S1 assocs. sent to 2nd and 3rd group",
+            "description": "S1 switch - associations sent to 2nd and 3rd association groups",
+            "overview": "<p>This parameter determines which actions are ignored when sending\u00a0commands to devices associated in 2nd and 3rd association group.\u00a0All actions are active by default.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 15,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "All actions are active by default"
+                },
+                {
+                    "value": 1,
+                    "label": "ignore turning ON with 1 click of the switch"
+                },
+                {
+                    "value": 2,
+                    "label": "ignore turning OFF with 1 click of the switch"
+                },
+                {
+                    "value": 4,
+                    "label": "ignore holding and releasing the switch"
+                },
+                {
+                    "value": 8,
+                    "label": "ignore double click of the switch"
+                }
+            ]
+        },
+        {
+            "id": 31,
+            "label": "S1 ON val sent to 2nd and 3rd groups",
+            "description": "S1 switch - Switch ON value sent to 2nd and 3rd association groups",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 32,
+            "label": "S1 OFF val sent to 2nd and 3rd groups",
+            "description": "S1 switch - Switch ON value sent to 2nd and 3rd association groups",
+            "overview": "<p>This parameter defines value sent with Switch OFF command to devices\u00a0associated in 2nd and 3rd association group.<\/p>",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 33,
+            "label": "S1 DblClick val sent to 2nd and 3rd groups",
+            "description": "S1 switch - Double Click value sent to 2nd and 3rd association groups",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 99,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 35,
+            "label": "S2 assocs. sent to 4th and 5th group",
+            "description": "\tS2 switch - associations sent to 4th and 5th association groups",
+            "overview": "<p>This parameter determines which actions result in sending commands\u00a0to devices associated in 4th and 5th association group.\u00a0All actions are active by default.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 15,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "All actions are active by default"
+                },
+                {
+                    "value": 1,
+                    "label": "ignore turning on with 1 click of the switch"
+                },
+                {
+                    "value": 2,
+                    "label": "ignore turning off with 1 click of the switch"
+                },
+                {
+                    "value": 4,
+                    "label": "ignore holding and releasing the switch"
+                },
+                {
+                    "value": 8,
+                    "label": "ignore double click of the switch"
+                }
+            ]
+        },
+        {
+            "id": 50,
+            "label": "Active power reports",
+            "description": "The parameter defines the power level change that will result in a new power report being sent. The value is a percentage of the previous report. 0 disables the function.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 20,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 51,
+            "label": "Minimal time between power report",
+            "description": "This  parameter  determines  minimum  time  that  has  to  elapse  before   sending new power report to the main controller. 0 disables the function. 1-120s - report interval in seconds",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 120,
+            "options": []
+        },
+        {
+            "id": 53,
+            "label": "Energy reports",
+            "description": "Energy level change which will result in sending a new energy report. Available settings: 1-32000 (0.01 - 320 kWh). 0 disables the function.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 100,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32000,
+            "options": []
+        },
+        {
+            "id": 58,
+            "label": "Periodic power reports",
+            "description": "This  parameter  determines  in  what  time  interval  the  periodic  power   reports are sent to the main controller. 0  - periodic reports are disabled, 1-32000  (1-32000s) - report interval",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 3600,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32000,
+            "options": []
+        },
+        {
+            "id": 59,
+            "label": "Periodic energy reports",
+            "description": "This parameter determines in what time interval the periodic energy  reports are sent to the main controller. 0  - periodic reports are disabled 1-32000  (1-32000s) - report interval",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 3600,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 32000,
+            "options": []
+        },
+        {
+            "id": 60,
+            "label": "Measuring energy consumed by the device itself",
+            "description": "This parameter determines whether energy metering should include  the amount of energy consumed by the device itself. Results are be - ing added to energy reports for first endpoint. 0: Function deactivated 1: Function activated",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Self-measurement inactive"
+                },
+                {
+                    "value": 1,
+                    "label": "Self-measurement active"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Lifeline",
+            "max_nodes": 10,
+            "controller": true,
+            "description": "Status",
+            "overview": "<p>Reports the device status and allows<\/p>"
+        },
+        {
+            "id": 2,
+            "label": "Switch 1",
+            "max_nodes": 10,
+            "controller": false,
+            "description": "Switch 1 On\/Off",
+            "overview": "<p>This is assigned to the switch connected to the S1 terminal (uses Basic command class).<\/p>\r\n<p>\u00a0<\/p>"
+        },
+        {
+            "id": 3,
+            "label": "Dimmer 1",
+            "max_nodes": 10,
+            "controller": false,
+            "description": "Dimmer for Switch 1",
+            "overview": ""
+        },
+        {
+            "id": 4,
+            "label": "Switch 2",
+            "max_nodes": 10,
+            "controller": false,
+            "description": "Switch 2 On\/Off",
+            "overview": "<p>This is assigned to the switch connected to the S2 terminal (uses Basic command class).<\/p>\r\n<p>\u00a0<\/p>"
+        },
+        {
+            "id": 5,
+            "label": "Dimmer 2",
+            "max_nodes": 10,
+            "controller": false,
+            "description": "Dimmer for Switch 2",
+            "overview": "<p>This is assigned to the switch connected to the S2 terminal (uses Switch Multilevel command class).<\/p>\r\n<p>\u00a0<\/p>"
+        }
+    ]
+}

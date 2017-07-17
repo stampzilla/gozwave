@@ -1,0 +1,883 @@
+{
+    "database_id": 131,
+    "label": "FGRGBW",
+    "manufacturer_name": "Fibargroup",
+    "manufacturer_id": "010F",
+    "device_ref": [
+        "0900:1000",
+        "0900:2000",
+        "0900:3000",
+        "0900:4000"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "RGBW Controller",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 3.052,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Dimmer",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "name": "SWITCH_ALL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "31",
+                    "name": "SENSOR_MULTILEVEL",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "sensor_power",
+                            "label": "Sensor (power)",
+                            "config": [
+                                "type=POWER"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "name": "METER",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "meter_watts",
+                            "label": "Electric meter (watts)",
+                            "config": [
+                                "type=E_W"
+                            ]
+                        },
+                        {
+                            "type": "meter_kwh",
+                            "label": "Electric meter (kWh)",
+                            "config": [
+                                "type=E_KWh"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "33",
+                    "name": "COLOR",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "color_color",
+                            "label": "Color",
+                            "config": [
+                                "colorMode=RGB"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "60",
+                    "name": "MULTI_INSTANCE",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "scene_number",
+                            "label": "Start animation",
+                            "config": [
+                                "parameter=72"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "NOGET",
+                    "channels": []
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "NOGET",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Red",
+                            "config": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "NOGET",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Green",
+                            "config": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "NOGET",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Blue",
+                            "config": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 17,
+                "name": "GENERIC_TYPE_SWITCH_MULTILEVEL"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_MULTILEVEL"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "NOGET",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "White",
+                            "config": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "ALL ON \/ ALL OFF function activation",
+            "description": "Activation\/deactivation of ALL ON\/ALL OFF functions.\t\t\t",
+            "overview": "<p>By default, ALL ON active ALL OFF active.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": -1,
+                    "label": "ALL ON active ALL OFF active"
+                },
+                {
+                    "value": 0,
+                    "label": "ALL ON inactive ALL OFF inactive"
+                },
+                {
+                    "value": 1,
+                    "label": "ALL ON inactive ALL OFF active"
+                },
+                {
+                    "value": 2,
+                    "label": "ALL ON active ALL OFF inactive"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "label": "Associations command class choice",
+            "description": "Associations command class choice. By default, Normal (Dimmer) - BASIC_SET\/SWITCH_MULTILEVEL_START\/STOP.                             Default setting: Normal (Dimmer) - BASIC_SET\/SWITCH_MULTILEVEL_START\/STOP\t\t\t",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Normal (Dimmer) - BASIC_SET\/SWITCH_MULTILEVEL_START\/STOP"
+                },
+                {
+                    "value": 1,
+                    "label": "Normal (RGBW) - COLOR_CONTROL_SET\/START\/STOP_STATE_CHANGE"
+                },
+                {
+                    "value": 2,
+                    "label": "Normal (RGBW) - COLOR_CONTROL_SET"
+                },
+                {
+                    "value": 3,
+                    "label": "Brightness - BASIC_SET\/SWITCH_MULTILEVEL_START\/STOP"
+                },
+                {
+                    "value": 4,
+                    "label": "Rainbow (RGBW) - COLOR_CONTROL_SET"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "label": "Outputs state change mode",
+            "description": "MODE1, Example: change saturation level from 0% to 99%  \t\t\t                 Parameter 9: Step = 5  \t\t\t\t\t\t\t Parameter 10: Time between steps: 10ms.                             Default setting: MODE1\t\t\t",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "MODE1 (related parameters: 9-step value, 10-time between steps)"
+                },
+                {
+                    "value": 1,
+                    "label": "MODE2 (related parameters: 11-time to change value, relevant for RGB\/R"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "label": "Step value (relevant for MODE1)",
+            "description": "Step value (relevant for MODE1).<BR\/>\r\n\t\t\t                 Default setting: 1<BR\/>\r\n                             Available settings: 1 - 255.\r\n\t\t\t",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 10,
+            "label": "Time between steps (relevant for MODE1)",
+            "description": "Time between steps (relevant for MODE1).<BR\/>\r\n\t\t\t                 Default setting: 10 ms<BR\/>\r\n\t\t\t                 0 - immediate change of state<BR\/>\r\n                             Available settings: 1 - 60000 ms.<BR\/>\r\n\t\t\t",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 60000,
+            "options": []
+        },
+        {
+            "id": 11,
+            "label": "Time for changing from start to end value",
+            "description": "Step value (relevant for MODE1).<BR\/>\r\n\t\t\t                 Default setting: 67 (3s)<BR\/>\r\n\t\t\t\t\t\t\t 0: immediate change<BR\/>\r\n\t\t\t\t\t\t\t 1-63: 20-126 [ms] value*20ms<BR\/>\r\n\t\t\t\t\t\t\t 65-127: 1-63 [s] (value-64)*1s<BR\/>\r\n\t\t\t\t\t\t\t 129-191: 10-630 [s] (value-128)*10s",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 67,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 12,
+            "label": "Maximum Brightening level",
+            "description": "Maximum Brightening level.<BR\/>\r\n\t\t\t                 Default setting: 255<BR\/>\r\n                             Available settings: 3 - 255.\r\n\t\t\t",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 3,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 13,
+            "label": "Minimum dim level",
+            "description": "Minimum dim level.<BR\/>\r\n\t\t\t                 Default setting: 2<BR\/>\r\n                             Available settings: 3 - 255.\r\n\t\t\t",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 3,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 14,
+            "label": "Inputs\/Outputs configuration - relevant for main controllers other than Home Center 2 only",
+            "description": "Inputs\/Outputs configuration - relevant for main controllers other than Home Center 2 only.<BR\/>\r\n\t\t\t                 Default setting: 4369<BR\/>\r\n\t\t\t                 Controlled device: RGBW, toggle switch inputs (NORMAL MODE).<BR\/>\r\n                      ",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 4369,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 65535,
+            "options": []
+        },
+        {
+            "id": 16,
+            "label": "Remember device status after power failure",
+            "description": "Define how will the Plug react after the power supply is back on.                              Default setting: 1                              Available settings:                              0 - Device does not memorize its state aft",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Do not remember state"
+                },
+                {
+                    "value": 1,
+                    "label": "Remember state before power failure"
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "label": "Alarm of any type (General alarm, flood alarm, smoke alarm: CO, CO2, temperature alarm.)",
+            "description": "Alarm of any type (General alarm, flood alarm, smoke alarm: CO, CO2, temperature alarm.)                              Default setting: INACTIVE\t\t\t",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "INACTIVE - the device doesn't respond to alarm frames"
+                },
+                {
+                    "value": 1,
+                    "label": "ALARM ON - the device turns on once alarm is detected (all channels se"
+                },
+                {
+                    "value": 2,
+                    "label": "ALARM OFF - the device turns off once alarm is detected (all channels "
+                },
+                {
+                    "value": 3,
+                    "label": "ALARM PROGRAM - alarm sequence turns on (program selected in parameter"
+                }
+            ]
+        },
+        {
+            "id": 38,
+            "label": "Alarm sequence program",
+            "description": "Alarm sequence program.<BR\/>\r\n\t\t\t                 Default setting: 10<BR\/>\r\n                             1-10 specifies alarm program number.\r\n\t\t\t",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 10,
+            "options": []
+        },
+        {
+            "id": 39,
+            "label": "Active PROGRAM alarm time",
+            "description": "IActive PROGRAM alarm time.<BR\/>\r\n\t\t\t                 Default setting: 600s<BR\/>\r\n                             1-65534 specifies alarm time in seconds.\r\n\t\t\t",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 600,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 65534,
+            "options": []
+        },
+        {
+            "id": 42,
+            "label": "Command class reporting Outputs status change",
+            "description": "Command class reporting Outputs status change.                              Default setting: 0\t\t\t",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Reporting as a result of inputs and controllers actions (SWITCH MULTIL"
+                },
+                {
+                    "value": 1,
+                    "label": "Reporting as a result of inputs actions (SWITCH MULTILEVEL)"
+                },
+                {
+                    "value": 2,
+                    "label": "Reporting as a result of inputs actions (COLOR CONTROL)"
+                }
+            ]
+        },
+        {
+            "id": 43,
+            "label": "Reporting 0-10v analog inputs change threshold",
+            "description": "Parameter defines a value by which input voltage must change in order to be reported to the main controller.<BR\/>\r\n\t\t\t                 New value is calculated based on last reported value.<BR\/>\r\n\t\t\t                 Default setting: 5<BR\/>\r\n               ",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 44,
+            "label": "Power load reporting frequency",
+            "description": "Parameter defines Time between reports. The report will be sent if last reported value differs from the current value, else reports will also be sent in case of polling.<BR\/> \r\n\t\t                     Default setting: 3 600 (s)<BR\/>\r\n                      ",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 30,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 65534,
+            "options": []
+        },
+        {
+            "id": 45,
+            "label": "Reporting Changes in energy consumed by controlled devices",
+            "description": "Defines the required change in power to generate an unsolicited power report.<BR\/>\r\n\t\t\t                 New, reported energy value is calculated based on last reported value.<BR\/>\r\n\t\t\t\t\t\t\t Default setting: 10 (0,1 kWh).<BR\/>\r\n                             ",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 71,
+            "label": "Response to BRIGHTNESS set to 0%",
+            "description": "Response to BRIGHTNESS set to 0%.                              Default setting: 1\t\t\t",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "illumination colour set to white (all channels controlled together)"
+                },
+                {
+                    "value": 1,
+                    "label": "last set colour is memorized"
+                }
+            ]
+        },
+        {
+            "id": 72,
+            "label": "Starting animation program",
+            "description": "Starting animation programm.\t\t\t                 Starting predefined program when device set to work in RGB\/RGBW mode (parameter 14) - relevant for main controllers other than Home Center 2 only.\t\t\t                 Default setting: 1  ",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 10,
+            "options": []
+        },
+        {
+            "id": 73,
+            "label": "Triple click action",
+            "description": "Triple click action.                              Default setting: 0\t\t\t",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "NODE INFO control frame is sent"
+                },
+                {
+                    "value": 1,
+                    "label": "starting favourite program"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Assigned to IN1 input",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Assigned to IN2 input",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "Assigned to IN3 input",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 4,
+            "label": "Assigned to IN4 input",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 5,
+            "label": "Reports device status",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

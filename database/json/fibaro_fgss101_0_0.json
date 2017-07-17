@@ -1,0 +1,384 @@
+{
+    "database_id": 128,
+    "label": "FGSS101",
+    "manufacturer_name": "Fibargroup",
+    "manufacturer_id": "010F",
+    "device_ref": [
+        "0C00:1000"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "Smoke Sensor",
+    "overview": "",
+    "inclusion": "",
+    "exclusion": "",
+    "wakeup": "",
+    "protocol_version": 0,
+    "listening": false,
+    "frequently_listening": false,
+    "routing": false,
+    "beaming": false,
+    "library_type": {
+        "id": 0,
+        "name": "Unknown"
+    },
+    "basic_class": {
+        "id": 0,
+        "name": null
+    },
+    "generic_class": {
+        "id": 0,
+        "name": null
+    },
+    "specific_class": {
+        "id": 0,
+        "name": "SPECIFIC_TYPE_NOT_USED"
+    },
+    "endpoints": [],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Alarm Cancellation Delay",
+            "description": "Additional delay after an alarm has ceased. The parameter allows you to specify additional time, after which the alarm is cancelled once its violation has ceased.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 3600,
+            "options": []
+        },
+        {
+            "id": 2,
+            "label": "Acoustic and visual signals On \/ Off in case of alarm",
+            "description": "parameter allows for LED indicator and acoustic alarm deactivation in case of smoke detection",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 3,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "acoustic and visual alarms inactive"
+                },
+                {
+                    "value": 1,
+                    "label": "acoustic alarm inactive, visual alarm active"
+                },
+                {
+                    "value": 2,
+                    "label": "acoustic alarm active, visual alarm inactive"
+                },
+                {
+                    "value": 3,
+                    "label": "acoustic and visual alarms active"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "label": "Type of alarm frame sent to 1-st association group (SMOKE)",
+            "description": "parameter determines a type of command frame sent by the Sensor in case smoke detection has been detected or cancelled",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": -127,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": -127,
+                    "label": "BASIC_SET"
+                },
+                {
+                    "value": 0,
+                    "label": "ALARM SENSOR (SMOKE)"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "label": "Forced Level of Dimming group 1",
+            "description": "Value of the parameter specifying the forced level of dimming \/ opening sun blinds when comes 'switch on' \/ 'open' command to devices from association group no. 1.<BR\/>\r\nIn the case of alarm frames the alarm priority is specified. Possible parameter setti",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 10,
+            "label": "Interval between successive readings of temperature sensors",
+            "description": "Interval between successive readings of temperature from all sensors connected to the device in seconds. Note: taking temperature readings from the sensor does not result in sending a temperature condition report to the central hub.",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 300,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 32767,
+            "options": []
+        },
+        {
+            "id": 12,
+            "label": "Insensitiveness to temperature changes.",
+            "description": "",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 20,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 13,
+            "label": "Transmitting the alarm or control frame broadcast mode",
+            "description": "Transmitting the alarm or control frame in 'broadcast' mode (i.e. to all devices within range), information sent in this mode is not repeated by the mesh network.<BR\/><B>NOTE:<\/B> If the broadcast mode of information transmission is activated for a given ",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Broadcast inactive"
+                },
+                {
+                    "value": 1,
+                    "label": "Smoke broadcast mode active, Tamper broadcast mode inactive"
+                },
+                {
+                    "value": 2,
+                    "label": "Smoke broadcast mode inactive, Tamper broadcast mode active"
+                },
+                {
+                    "value": 3,
+                    "label": "Smoke and Tamper broadcast mode active"
+                }
+            ]
+        },
+        {
+            "id": 73,
+            "label": "Temperature measurement compensation",
+            "description": "Temperature value to be added to or deducted from the current measured temperature<BR\/>\r\n\t\t\t-1000 0,1\u00b0C - 1000 0,1\u00b0C",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": -1000,
+            "value_max": 1000,
+            "options": []
+        },
+        {
+            "id": 80,
+            "label": "Z-Wave range test interval",
+            "description": "Time period between the consecutive Z-Wave network range tests.<BR\/>\r\n\t\t\t0 10min[10min-24h] - 17 10min[10min-24h]\t   ->  \t0 \u2013 Z-Wave network range test inactive",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 81,
+            "label": "Temperature alarm threshold",
+            "description": "0\t   ->  \t0 \u2013 temperature alarm inactive<BR\/>\r\n\t\t\t2 \u00b0C - 100 \u00b0C\t   ->  Temperature",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 54,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 82,
+            "label": "Smoke Sensor sensitivity",
+            "description": "There are 3 levels of sensitivity to smoke presence. Level 1 means the highest sensitivity.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 2,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "High"
+                },
+                {
+                    "value": 2,
+                    "label": "Medium"
+                },
+                {
+                    "value": 3,
+                    "label": "Low"
+                }
+            ]
+        },
+        {
+            "id": 83,
+            "label": "Black Box sensitivity level",
+            "description": "Parameter specifies temperature and smoke level after which the Black Box starts recording them.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "High"
+                },
+                {
+                    "value": 2,
+                    "label": "Medium"
+                },
+                {
+                    "value": 3,
+                    "label": "Low"
+                }
+            ]
+        },
+        {
+            "id": 84,
+            "label": "Malfunction alarm",
+            "description": "Time interval in which malfuntion alarm, if detected, is repeated using visual and acoustic alarms.<BR\/>\n\n\t\t\t-126 100ms[100ms-25,5s] - 127 100ms[100ms-25,5s]",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 10,
+            "read_only": false,
+            "write_only": false,
+            "value_min": -126,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 85,
+            "label": "Temperature alarm",
+            "description": "Time interval in which temperature alarm, if detected, is repeated using visual and acoustic alarms.<BR\/>\r\n\t\t\t-126 100ms[100ms-25,5s] - 127 100ms[100ms-25,5s] -> 5 means 500ms",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 5,
+            "read_only": false,
+            "write_only": false,
+            "value_min": -126,
+            "value_max": 127,
+            "options": []
+        },
+        {
+            "id": 86,
+            "label": "Lack of the Z-Wave range alarm",
+            "description": "Time interval in which lack of the Z-Wave network alarm, if detected, is repeated using visual and acoustic alarms.<BR\/>\r\n\t\t\t1 5s [5s-24h] - 17280 5s [5s-24h]\t   ->  \t360 means 30min",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 360,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 17280,
+            "options": []
+        },
+        {
+            "id": 87,
+            "label": "Low battery alarm",
+            "description": "Time interval in which low battery alarm, if detected, is repeated using visual and acoustic alarms.<BR\/>\r\n\t\t\t1 5s [5s-24h] - 17280 5s [5s-24h]\t   ->  \t360 means 30min",
+            "overview": "",
+            "size": 2,
+            "bitmask": "00000000",
+            "default": 360,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 1,
+            "value_max": 17280,
+            "options": []
+        },
+        {
+            "id": 88,
+            "label": "Temperature measurement compensation for report",
+            "description": "Consider temperature measurement compensation (parameter 73) when sending temperature report.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Ignore temperature compensation"
+                },
+                {
+                    "value": 1,
+                    "label": "Include temperature compensation"
+                }
+            ]
+        },
+        {
+            "id": 89,
+            "label": "Tamper alarm",
+            "description": "Activates\/inactivates temper switch alarm",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Tamper alarm inactive"
+                },
+                {
+                    "value": 1,
+                    "label": "Tamper alarm active, with cancellation option available"
+                },
+                {
+                    "value": 2,
+                    "label": "Tamper alarm active, without cancellation option"
+                }
+            ]
+        }
+    ],
+    "associations": []
+}

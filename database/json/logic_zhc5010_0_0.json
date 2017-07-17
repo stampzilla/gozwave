@@ -1,0 +1,1707 @@
+{
+    "database_id": 503,
+    "label": "ZHC5010",
+    "manufacturer_name": "Logic Home Control",
+    "manufacturer_id": "0234",
+    "device_ref": [
+        "0002:010A",
+        "0003:010A"
+    ],
+    "version_min": 0,
+    "version_max": 255.255,
+    "decription": "FUGA Wall 4-way Switch with LED + Relay",
+    "overview": "<p>ZHC5010 is a wall switch module with Z-Wave communication. The module contains four buttons, four LEDs, a built-in relay switch and is designed to fit into a standard LK FUGA\u00ae wall box (one-module format). The ZHC5010 Wall Switch allows you to control the local load as well as Z-Wave connected devices in up to four additional Z-Wave groups.<\/p> <p>Configuration updated:\u00a02017-03-12 14:35:03, firmware 1.09<\/p>",
+    "inclusion": "<p>Place your primary controller in Adding Mode by following the manufacturer's instructions, then activate the add mode on the device by triple-clicking the upper left button on the module, or by triple-clicking the little button in the middle of the module (hidden behind the small plastic cover). Adding Mode is indicated by blinking of upper left LED until the timeout occurs after 10 seconds or the module has been added in the network.\u00a0<\/p>",
+    "exclusion": "<p>Follow the inclusion procedures; the device is removed in the same manner, when the controller is in Removing Mode.<\/p> <p>Factory reset:<br \/>ZHC5010 can be factory reset by pressing the small button in the middle of the module (normally covered by small plastic cover) for at least 10 seconds.\u00a0Remove the middle plastic cover by means of a small screwdriver, and press the small button for at least 10 seconds, until all the LEDs lights up.\u00a0Please use this procedure only when the network primary controller is missing or otherwise inoperable.<\/p>",
+    "wakeup": "",
+    "protocol_version": 4.033,
+    "listening": true,
+    "frequently_listening": false,
+    "routing": true,
+    "beaming": true,
+    "library_type": {
+        "id": 3,
+        "name": "LIB_SLAVE_ENHANCED"
+    },
+    "basic_class": {
+        "id": 4,
+        "name": "BASIC_TYPE_ROUTING_SLAVE"
+    },
+    "generic_class": {
+        "id": 4,
+        "name": "GENERIC_TYPE_SWITCH_BINARY"
+    },
+    "specific_class": {
+        "id": 4,
+        "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+    },
+    "endpoints": [
+        {
+            "id": 0,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "00",
+                    "name": "NO_OPERATION",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "3",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Dimmer",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "28",
+                    "name": "SWITCH_TOGGLE_BINARY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5A",
+                    "name": "DEVICE_RESET_LOCALLY",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5B",
+                    "name": "CENTRAL_SCENE",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "scene_number",
+                            "label": "Scene Number",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "60",
+                    "name": "MULTI_INSTANCE",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "70",
+                    "name": "CONFIGURATION",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "72",
+                    "name": "MANUFACTURER_SPECIFIC",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "73",
+                    "name": "POWERLEVEL",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "7A",
+                    "name": "FIRMWARE_UPDATE_MD",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "86",
+                    "name": "VERSION",
+                    "version": "2",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "87",
+                    "name": "INDICATOR",
+                    "version": "1",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8E",
+                    "name": "MULTI_INSTANCE_ASSOCIATION",
+                    "version": "3",
+                    "nif": true,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 1",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Dimmer 1",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "28",
+                    "name": "SWITCH_TOGGLE_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "87",
+                    "name": "INDICATOR",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8E",
+                    "name": "MULTI_INSTANCE_ASSOCIATION",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 2",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Dimmer 2",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "28",
+                    "name": "SWITCH_TOGGLE_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "87",
+                    "name": "INDICATOR",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8E",
+                    "name": "MULTI_INSTANCE_ASSOCIATION",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 3",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Dimmer 3",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "28",
+                    "name": "SWITCH_TOGGLE_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "87",
+                    "name": "INDICATOR",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8E",
+                    "name": "MULTI_INSTANCE_ASSOCIATION",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "basic_class": {
+                "id": 4,
+                "name": "BASIC_TYPE_ROUTING_SLAVE"
+            },
+            "generic_class": {
+                "id": 16,
+                "name": "GENERIC_TYPE_SWITCH_BINARY"
+            },
+            "specific_class": {
+                "id": 1,
+                "name": "SPECIFIC_TYPE_POWER_SWITCH_BINARY"
+            },
+            "commandclasses": [
+                {
+                    "id": "20",
+                    "name": "BASIC",
+                    "version": "0",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "25",
+                    "name": "SWITCH_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": true,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_binary",
+                            "label": "Switch 4",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "26",
+                    "name": "SWITCH_MULTILEVEL",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": [
+                        {
+                            "type": "switch_dimmer",
+                            "label": "Dimmer 4",
+                            "config": []
+                        }
+                    ]
+                },
+                {
+                    "id": "28",
+                    "name": "SWITCH_TOGGLE_BINARY",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "59",
+                    "name": "ASSOCIATION_GROUP_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "5E",
+                    "name": "ZWAVE_PLUS_INFO",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "85",
+                    "name": "ASSOCIATION",
+                    "version": "2",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "87",
+                    "name": "INDICATOR",
+                    "version": "1",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                },
+                {
+                    "id": "8E",
+                    "name": "MULTI_INSTANCE_ASSOCIATION",
+                    "version": "3",
+                    "nif": false,
+                    "basic": false,
+                    "secure": false,
+                    "nonsecure": true,
+                    "config": "",
+                    "channels": []
+                }
+            ]
+        }
+    ],
+    "parameters": [
+        {
+            "id": 1,
+            "label": "Upper paddle buttons mode",
+            "description": "Pair Mode, upper two buttons",
+            "overview": "<p>Configuration of Pair Mode for the upper two buttons (button #1 and #2)\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Separate mode (toggle mode)."
+                },
+                {
+                    "value": 1,
+                    "label": "Pair mode"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "Lower paddle buttons mode",
+            "description": "Pair Mode, upper two buttons",
+            "overview": "<p>Configuration of Pair Mode for the upper two buttons (button #1 and #2).<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Separate mode (toggle mode)."
+                },
+                {
+                    "value": 1,
+                    "label": "Pair mode"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "label": "LED indication #1",
+            "description": "LED indication button 1",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 7,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "LED indication is disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Indicates corresponding button"
+                },
+                {
+                    "value": 2,
+                    "label": "Inverted indication"
+                },
+                {
+                    "value": 3,
+                    "label": "Status of corresponding paddle"
+                },
+                {
+                    "value": 4,
+                    "label": "Corresponding paddle, with inverted indication."
+                },
+                {
+                    "value": 5,
+                    "label": "Status of the built-in relay."
+                },
+                {
+                    "value": 6,
+                    "label": "Status of the built-in relay, inverted indication."
+                },
+                {
+                    "value": 7,
+                    "label": "5 seconds indication"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "label": "LED indication #2",
+            "description": "LED indication button 2",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 7,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "LED indication is disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Indicates corresponding button"
+                },
+                {
+                    "value": 2,
+                    "label": "Inverted indication"
+                },
+                {
+                    "value": 3,
+                    "label": "Status of corresponding paddle"
+                },
+                {
+                    "value": 4,
+                    "label": "Corresponding paddle, with inverted indication."
+                },
+                {
+                    "value": 5,
+                    "label": "Status of the built-in relay."
+                },
+                {
+                    "value": 6,
+                    "label": "Status of the built-in relay, inverted indication."
+                },
+                {
+                    "value": 7,
+                    "label": "5 seconds indication"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "label": "LED indication #3",
+            "description": "LED indication button 3",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 7,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "LED indication is disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Indicates corresponding button"
+                },
+                {
+                    "value": 2,
+                    "label": "Inverted indication"
+                },
+                {
+                    "value": 3,
+                    "label": "Status of corresponding paddle"
+                },
+                {
+                    "value": 4,
+                    "label": "Corresponding paddle, with inverted indication."
+                },
+                {
+                    "value": 5,
+                    "label": "Status of the built-in relay."
+                },
+                {
+                    "value": 6,
+                    "label": "Status of the built-in relay, inverted indication."
+                },
+                {
+                    "value": 7,
+                    "label": "5 seconds indication"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "label": "LED indication #4",
+            "description": "LED indication button 4",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 7,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "LED indication is disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Indicates corresponding button"
+                },
+                {
+                    "value": 2,
+                    "label": "Inverted indication"
+                },
+                {
+                    "value": 3,
+                    "label": "Status of corresponding paddle"
+                },
+                {
+                    "value": 4,
+                    "label": "Corresponding paddle, with inverted indication."
+                },
+                {
+                    "value": 5,
+                    "label": "Status of the built-in relay."
+                },
+                {
+                    "value": 6,
+                    "label": "Status of the built-in relay, inverted indication."
+                },
+                {
+                    "value": 7,
+                    "label": "5 seconds indication"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "label": "Percentage of light in the LED #1 when On",
+            "description": "Configure the percentage of light in LED # 1, when the LED is turned on.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 50,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 8,
+            "label": "Percentage of light in the LED #2 when On",
+            "description": "Configure the percentage of light in LED # 2, when the LED is turned on.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 50,
+            "read_only": true,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 9,
+            "label": "Percentage of light in the LED #3 when On",
+            "description": "Configure the percentage of light in LED # 3, when the LED is turned on.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 50,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 10,
+            "label": "Percentage of light in the LED #4 when On",
+            "description": "Configure the percentage of light in LED #4, when the LED is turned on.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 50,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 11,
+            "label": "Percentage of light in the LED #1 when Off",
+            "description": "Configure the percentage of light in LED # 1, when the LED is turned off.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 12,
+            "label": "Percentage of light in the LED #2 when Off",
+            "description": "Configure the percentage of light in LED # 2, when the LED is turned off.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 13,
+            "label": "Percentage of light in the LED #3 when Off",
+            "description": "Configure the percentage of light in LED #3, when the LED is turned off.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 14,
+            "label": "Percentage of light in the LED #4 when Off",
+            "description": "Configure the percentage of light in LED #4, when the LED is turned off.",
+            "overview": "",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 100,
+            "options": []
+        },
+        {
+            "id": 15,
+            "label": "Relay mode",
+            "description": "How built-in relay is controlled",
+            "overview": "<p>This parameter configures which of the buttons that shall control the built-in relay, or if the relay only will be activated for one second, each time button #1 is used.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 5,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Relay is disabled."
+                },
+                {
+                    "value": 1,
+                    "label": "Relay is controlled by button #1"
+                },
+                {
+                    "value": 2,
+                    "label": "Relay is controlled by button #2"
+                },
+                {
+                    "value": 3,
+                    "label": "Relay is controlled by button #3"
+                },
+                {
+                    "value": 4,
+                    "label": "Relay is controlled by button #4"
+                },
+                {
+                    "value": 5,
+                    "label": "Relay is activated for one second, button #1"
+                },
+                {
+                    "value": 6,
+                    "label": "Relay is activated for half a second, button #2 "
+                },
+                {
+                    "value": 7,
+                    "label": "Relay is activated for half a second, button #3 "
+                },
+                {
+                    "value": 8,
+                    "label": "Relay is activated for half a second, button #4"
+                },
+                {
+                    "value": 9,
+                    "label": "Relay follows the state of button #1"
+                },
+                {
+                    "value": 10,
+                    "label": "Relay follows the state of button #2"
+                },
+                {
+                    "value": 11,
+                    "label": "Relay follows the state of button #3"
+                },
+                {
+                    "value": 12,
+                    "label": "Relay follows the state of button #4"
+                },
+                {
+                    "value": 13,
+                    "label": "Relay is only controlled by commands sent to the root device"
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "label": "Indicator mode.",
+            "description": "set the current light level for the actual LED or the level value can be stored",
+            "overview": "<p>When ZHC5010 receives an Indicator Set message, then the received value can be used only to set the current light level for the actual LED or the level value can be stored and will then be used for subsequent internal activations.\u00a0<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Indicator Set level used to control the LED."
+                },
+                {
+                    "value": 1,
+                    "label": "Indicator Set level values and internal LED activations."
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "label": "Scene notification offset.",
+            "description": "Scene sequence numbers transmitted by Central Scene notifications.",
+            "overview": "<p>Configure the scene sequence numbers that will be transmitted by Central Scene notifications.<\/p> <p>Button #1 will send scene [value], button #2 will send scene [value] + 1, button #3 will send scene [value] + 2, button #4 will send scene [value] + 3. (Default = 1)<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 200,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Scene notifications are turned off."
+                },
+                {
+                    "value": 1,
+                    "label": "Send scene value for button #"
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "label": "Disable House Cleaning.",
+            "description": "Disable House Cleaning Mode.",
+            "overview": "<p>This parameter is able to enable or disable the so-called \u201cHouse Cleaning Mode\u201d, where ZHC5010 is able send a dimming command in order to set the level of the lights to 100%.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "House Cleaning Mode is enabled"
+                },
+                {
+                    "value": 1,
+                    "label": " 1 House Cleaning Mode is disabled."
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "label": "Multilevel Switch (button #1) Disabled\/Enabled",
+            "description": "Multilevel Switch on single press for device 1 (button #1)",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000001",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Enabled"
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "label": "Multilevel Switch - Upper switch value",
+            "description": "Multilevel Switch - Upper switch value - (button #1)",
+            "overview": "<p>When single pressing the button for ON, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 255)<\/p>",
+            "size": 4,
+            "bitmask": "0000FF00",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 19,
+            "label": "Multilevel Switch - Lower switch value",
+            "description": "Multilevel Switch - Lower switch value - (button #1)",
+            "overview": "<p>When single pressing the button for OFF, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 0)<\/p>",
+            "size": 4,
+            "bitmask": "00FF0000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 20,
+            "label": "Multilevel Switch (button #2) Disabled\/Enabled",
+            "description": "Multilevel Switch on single press for device 2 (button #2)",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000001",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Enabled"
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "label": "Multilevel Switch - Upper switch value",
+            "description": "Multilevel Switch - Upper switch value - (button #2)",
+            "overview": "<p>When single pressing the button for ON, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 255)<\/p>",
+            "size": 4,
+            "bitmask": "0000FF00",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 20,
+            "label": "Multilevel Switch - Lower switch value",
+            "description": "Multilevel Switch - Lower switch value - (button #2)",
+            "overview": "<p>When single pressing the button for OFF, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 0)<\/p>",
+            "size": 4,
+            "bitmask": "00FF0000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 21,
+            "label": "Multilevel Switch (button #3) Disabled\/Enabled",
+            "description": "Multilevel Switch on single press for device 3 (button #3)",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000001",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Enabled"
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "label": "Multilevel Switch - Upper switch value",
+            "description": "Multilevel Switch - Upper switch value - (button #3)",
+            "overview": "<p>When single pressing the button for ON, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 255)<\/p>",
+            "size": 4,
+            "bitmask": "0000FF00",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 21,
+            "label": "Multilevel Switch - Lower switch value",
+            "description": "Multilevel Switch - Lower switch value - (button #3)",
+            "overview": "<p>When single pressing the button for OFF, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 0)<\/p>",
+            "size": 4,
+            "bitmask": "00FF0000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 22,
+            "label": "Multilevel Switch (button #4) Disabled\/Enabled",
+            "description": "Multilevel Switch on single press for device 4 (button #4)",
+            "overview": "",
+            "size": 4,
+            "bitmask": "00000001",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Disabled"
+                },
+                {
+                    "value": 1,
+                    "label": "Enabled"
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "label": "Multilevel Switch - Upper switch value",
+            "description": "Multilevel Switch - Upper switch value - (button #4)",
+            "overview": "<p>When single pressing the button for ON, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 255)<\/p>",
+            "size": 4,
+            "bitmask": "0000FF00",
+            "default": 255,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 255,
+            "options": []
+        },
+        {
+            "id": 22,
+            "label": "Multilevel Switch - Lower switch value",
+            "description": "Multilevel Switch - Lower switch value - (button #4)",
+            "overview": "<p>When single pressing the button for OFF, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 0)<\/p>",
+            "size": 4,
+            "bitmask": "00FF0000",
+            "default": 0,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 99,
+            "options": []
+        },
+        {
+            "id": 23,
+            "label": "Control of association groups (button #1).",
+            "description": "Control of association groups for device 1 (button #1).",
+            "overview": "<p>Enable or disable if received commands are relayed to the nodes in the association groups.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Association groups will not be switched."
+                },
+                {
+                    "value": 1,
+                    "label": "Association groups will be switched,"
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "label": "Control of association groups (button #2).",
+            "description": "Control of association groups for device 2 (button #2).",
+            "overview": "<p>Enable or disable if received commands are relayed to the nodes in the association groups.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Association groups will not be switched."
+                },
+                {
+                    "value": 1,
+                    "label": "Association groups will be switched,"
+                }
+            ]
+        },
+        {
+            "id": 25,
+            "label": "Control of association groups (button #3).",
+            "description": "Control of association groups for device 3 (button #3).",
+            "overview": "<p>Enable or disable if received commands are relayed to the nodes in the association groups.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Association groups will not be switched."
+                },
+                {
+                    "value": 1,
+                    "label": "Association groups will be switched,"
+                }
+            ]
+        },
+        {
+            "id": 26,
+            "label": "Control of association groups (button #4).",
+            "description": "Control of association groups for device 4 (button #4).",
+            "overview": "<p>Enable or disable if received commands are relayed to the nodes in the association groups.<\/p>",
+            "size": 1,
+            "bitmask": "00000000",
+            "default": 1,
+            "read_only": false,
+            "write_only": false,
+            "value_min": 0,
+            "value_max": 1,
+            "options": [
+                {
+                    "value": 0,
+                    "label": "Association groups will not be switched."
+                },
+                {
+                    "value": 1,
+                    "label": "Association groups will be switched,"
+                }
+            ]
+        }
+    ],
+    "associations": [
+        {
+            "id": 1,
+            "label": "Lifeline",
+            "max_nodes": 1,
+            "controller": true,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 2,
+            "label": "Send Basic Report (On\/Off) when button #1 is used.",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 3,
+            "label": "Sends Basic Set (On\/Off) when button #1 is used.",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 4,
+            "label": "Sends Binary Switch Set (On\/Off) when button #1 is used.",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 5,
+            "label": "Send Binary Toggle Switch Set when button #1 is used.",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 7,
+            "label": "Send Basic Report (On\/Off) when button #2 is used.",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 8,
+            "label": "Sends Basic Set (On\/Off) when button #2 is used.",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 9,
+            "label": "Sends Binary Switch Set (On\/Off) when button #2 is used.",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 10,
+            "label": "Send Binary Toggle Switch Set when button #2 is used.",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 12,
+            "label": "Send Basic Report (On\/Off) when button #3 is used.",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 13,
+            "label": "Sends Basic Set (On\/Off) when button #3 is used.",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 14,
+            "label": "Sends Binary Switch Set (On\/Off) when button #3 is used.",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 15,
+            "label": "Send Binary Toggle Switch Set when button #3 is used.",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 17,
+            "label": "Send Basic Report (On\/Off) when button #4 is used.",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 18,
+            "label": "Sends Basic Set (On\/Off) when button #4 is used.",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 19,
+            "label": "Sends Binary Switch Set (On\/Off) when button #4 is used",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        },
+        {
+            "id": 20,
+            "label": "Send Binary Toggle Switch Set when button #4 is used",
+            "max_nodes": 5,
+            "controller": false,
+            "description": "",
+            "overview": ""
+        }
+    ]
+}

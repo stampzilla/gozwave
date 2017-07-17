@@ -29,6 +29,7 @@ func init() {
 
 func main() {
 	z, err := gozwave.Connect(port, "")
+
 	if err != nil {
 		log.Println(err)
 	}
@@ -71,7 +72,7 @@ func getNodes(z *gozwave.Controller) func(*gin.Context) {
 			nodes[id] = v
 		}
 
-		c.JSON(200, nodes)
+		c.IndentedJSON(200, nodes)
 	}
 }
 
@@ -79,17 +80,17 @@ func getNode(z *gozwave.Controller) func(*gin.Context) {
 	return func(c *gin.Context) {
 		id, err := strconv.Atoi(c.Param("id"))
 		if err != nil {
-			c.JSON(500, err)
+			c.IndentedJSON(500, err)
 			return
 		}
 		log.Println(id)
 		device := z.Nodes.Get(id)
 		if device == nil {
-			c.JSON(404, "Device not found")
+			c.IndentedJSON(404, "Device not found")
 			return
 		}
 
-		c.JSON(200, device)
+		c.IndentedJSON(200, device)
 	}
 }
 
@@ -97,13 +98,13 @@ func control(z *gozwave.Controller) func(*gin.Context) {
 	return func(c *gin.Context) {
 		id, err := strconv.Atoi(c.Param("id"))
 		if err != nil {
-			c.JSON(500, err)
+			c.IndentedJSON(500, err)
 			return
 		}
 
 		device := z.Nodes.Get(id)
 		if device == nil {
-			c.JSON(404, "Device not found")
+			c.IndentedJSON(404, "Device not found")
 			return
 		}
 
@@ -114,7 +115,7 @@ func control(z *gozwave.Controller) func(*gin.Context) {
 			device := z.Nodes.Get(id)
 			device.Off()
 		default:
-			c.JSON(404, "Action not found")
+			c.IndentedJSON(404, "Action not found")
 			return
 
 		}
