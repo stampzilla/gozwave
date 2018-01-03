@@ -5,8 +5,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Sirupsen/logrus"
 	"github.com/pborman/uuid"
+	"github.com/sirupsen/logrus"
 	"github.com/stampzilla/gozwave/commands/reports"
 	"github.com/stampzilla/gozwave/interfaces"
 	"github.com/stampzilla/gozwave/serialapi"

@@ -8,7 +8,7 @@ import (
 	"text/tabwriter"
 	"time"
 
-	"github.com/Sirupsen/logrus"
+	"github.com/sirupsen/logrus"
 	"github.com/stampzilla/gozwave/serialapi"
 	"github.com/stretchr/testify/assert"
 )
