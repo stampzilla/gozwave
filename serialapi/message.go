@@ -3,7 +3,7 @@ package serialapi
 import (
 	"fmt"
 
-	"github.com/Sirupsen/logrus"
+	"github.com/sirupsen/logrus"
 )
 
 // Message is the decoded message received from the controller
