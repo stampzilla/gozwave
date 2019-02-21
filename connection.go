@@ -106,7 +106,7 @@ func (conn *Connection) WriteAndWaitForReport(msg interfaces.Encodable, t time.D
 				return
 			}
 
-			logrus.Errorf("WriteAndWaitForReport: Received wrong type: %t", msg)
+			logrus.Errorf("WriteAndWaitForReport: Received wrong type: %T", msg)
 		}
 	}()
 
@@ -253,7 +253,7 @@ func (conn *Connection) Reader() error {
 				conn.Lock()
 				for index, c := range conn.inFlight {
 					if !c.Match(incomming) {
-						logrus.Info("Check match %#v", c)
+						logrus.Infof("Check match %#v", c)
 						continue
 					}
 
