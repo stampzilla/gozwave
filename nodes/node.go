@@ -144,9 +144,15 @@ func (n *Node) ProcessEvent(event reports.Report) {
 
 }
 
+func (n *Node) GetID() int {
+	n.RLock()
+	defer n.RUnlock()
+	return n.Id
+}
+
 func (n *Node) Identify() {
-	logrus.Infof("Started identification on node %d", n.Id)
-	defer logrus.Infof("Ended identification on node %d", n.Id)
+	logrus.Infof("Started identification on node %d", n.GetID())
+	defer logrus.Infof("Ended identification on node %d", n.GetID())
 
 	for {
 		if n.ProtocolInfo() == nil {
